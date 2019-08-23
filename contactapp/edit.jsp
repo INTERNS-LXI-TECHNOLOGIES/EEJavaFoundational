@@ -57,7 +57,7 @@
 
                     <div class="dropdown-menu">
 					  <a class="dropdown-item" href="editName.jsp">Update name</a>
-					  <a class="dropdown-item" href="#">Update PhoneNumber</a>
+					  <a class="dropdown-item" href="editPhoneNumber.jsp">Update PhoneNumber</a>
 					  </div>
 					<!-- Basic dropdown -->
 					<span class="sr-only">(current)</span></a>

@@ -17,6 +17,7 @@
   <link href="css/home.css" rel="stylesheet">
   <link href="css/create.css" rel="stylesheet">
   <link href="css/editName.css" rel="stylesheet">
+  <link href="css/editPhoneNumber.css" rel="stylesheet">
 </head>
 
 
@@ -97,7 +98,8 @@
                   <!--Grid column-->
                   <div class="col-md-6 col-xl-5 mb-4">
                     <!--Form-->
-					<form action = "editName" method = "post">
+					<form action = "editPhoneNumber" method = "post">
+                    
                     <div class="card wow fadeInRight" data-wow-delay="0.3s">
                       <div class="card-body">
                         <!--Header-->
@@ -113,9 +115,9 @@
                           <label for="form3" class="active">Your name</label>
                         </div>
                         <div class="md-form">
-                          <i class="fas fa-user prefix white-text active"></i>
-                          <input type="text" id="form3" class="white-text form-control" name="newName">
-                          <label for="form3" class="active">New name</label>
+                          <i class="fas fa-phone prefix white-text active"></i>
+                          <input type="text" id="form3" class="white-text form-control" name="PhoneNumber">
+                          <label for="form3" class="active">New PhoneNumber</label>
                         </div>
                         
                         <div class="text-center mt-4">

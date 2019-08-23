@@ -92,6 +92,27 @@ public void edit(String data,String cont,String f)
 	catch(Exception e){ System.out.println(e);}   		
 }
 
+public void editPhoneNumber(String data,String cont,String f)
+{
+	try{
+		PreparedStatement ps;
+		String sql;
+		if(f.equals("name")){
+		sql="update contactlist set name='"+data+"' where name='"+cont+"'";
+		ps=con.prepareStatement(sql);
+		ps.executeUpdate();
+		}
+		if(f.equals("phno"))
+		{
+			sql="update contactlist set phoneNo='"+data+"' where name='"+cont+"'";
+		ps=con.prepareStatement(sql);
+		ps.executeUpdate();
+		}
+	}
+	catch(Exception e){ System.out.println(e);}   		
+}
+
+
 public void search(String x)
 {
 	try{
