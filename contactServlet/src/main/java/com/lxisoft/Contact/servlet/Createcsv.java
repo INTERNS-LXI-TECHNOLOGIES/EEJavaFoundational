@@ -26,45 +26,101 @@ public class Createcsv extends HttpServlet {
 	RepositoryImpl si = new RepositoryImpl();
 	int count = 0;
 	String data;
-	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException 
-	{
+	
+protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        
 		
-		if(request.getParameter("txtPhoto") == null)
-         {
-             response.sendRedirect("upload.jsp");
-             return;
-         }
-         PrintWriter out = response.getWriter();
+	        
+	            try {
+	            	ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
+	                List <FileItem> multiparts = sf.parseRequest(request);
+	                PrintWriter out = response.getWriter();
+	                for(FileItem item : multiparts){
+	                    if(!item.isFormField()){
+	                        String name = new File(item.getName()).getName();
+	                        item.write( new File("/Users/Lenovo/Desktop/project/New folder (2)/" + name));
+	                        
+	                        File file = new File("c:/Users/Lenovo/Desktop/project/New folder (2)/" + name);
+	    	    			FileReader fR = new FileReader(file);
+	    	    			BufferedReader bR = new BufferedReader(fR);
+	    	    			while((data = bR.readLine())!= null){
+	    	    					String[] split = data.split(",");
+	    	    					ContactModel cml = new ContactModel();
+	    	    					ArrayList<String> phno = new ArrayList<String>();
+	    	    					cml.setName(split[0]);
+	    	    					cml.setMailId(split[1]);
+	    	    					for(int i=2;i<4;i++) {
+	    	    						phno.add(split[i]);
+	    	    						cml.setPhoneNumber(phno);
+	    	    					}
+	    	    					ri.createContact(cml);
+	    	    					out.println("file_source");
+	    	                
+	                    }
+	                    
+	                    
+	                }
+	                }
+	                
+	                out.println("<a href="+"Read.jsp"+">back to jsp</a>");
 
-         FileInputStream input = null;
-         File theFile = new File(request.getParameter("txtPhoto"));
-         input = new FileInputStream(theFile);
-         out.println("FullPathname" + " " + theFile.getAbsolutePath());
-
-        try {
-        	File file = new File(theFile.getAbsolutePath());
-			FileReader fR = new FileReader(file);
-			BufferedReader bR = new BufferedReader(fR);
-			while((data = bR.readLine())!= null){
-					String[] split = data.split(",");
-					ContactModel cml = new ContactModel();
-					cml.setName(split[0]);
-					ArrayList<String> phno = new ArrayList<String>();
-					
-					for(int i=2;i<4;i++){
-						phno.add(split[i+1]);
-					}
-					cml.setPhoneNumber(phno);
-					cml.setMailId(split[1]);
-					ri.createContact(cml);
-					PrintWriter out = res.getWriter();
-				}
-			}catch(FileNotFoundException e){
-
-			}
-		catch(IOException e){
-
-			}
-
-		}
+	            }catch (Exception ex) {
+	               request.setAttribute("gurumessage", "File Upload Failed due to " + ex);
+	            }         		
+	       
+	            	            
 }
+	
+	
+	    }
+
+
+
+		
+		
+			
+          
+//         if(request.getParameter("txt") == null)
+//         {
+//             response.sendRedirect("Read.jsp");
+//             return;
+//         }
+//         PrintWriter out = response.getWriter();
+//
+//         FileInputStream input = null;
+//         File theFile = new File(request.getParameter("txt"));
+//         input = new FileInputStream(theFile);
+//         out.println("FullPathname" + " " + theFile.getAbsolutePath());
+//
+//        try {
+//        	File file = new File(theFile.getAbsolutePath());
+//			FileReader fR = new FileReader(file);
+//			BufferedReader bR = new BufferedReader(fR);
+//			while((data = bR.readLine())!= null){
+//					String[] split = data.split(",");
+//					ContactModel cml = new ContactModel();
+//					ArrayList<String> phno = new ArrayList<String>();
+//					cml.setName(split[0]);
+//					cml.setMailId(split[1]);
+//					for(int i=2;i<4;i++) {
+//						phno.add(split[i]);
+//						cml.setPhoneNumber(phno);
+//					}
+//					ri.createContact(cml);
+//					out.println("file_source");
+//					out.println("<a href="+"Read.jsp"+">back to jsp</a>");
+//			}
+//        }
+//        catch(Exception e) {
+//        	
+//        }
+ 
+                 
+          
+
+	
+//<form action="createcsv" method="post">
+//<h1>File</h1>
+//<input type="file" name="txtPhoto" placeholder="Upload Your Image" accept="image/gif, image/jpeg, image/png" /><br /><br />
+//<input type="submit" value="Save">
+//</form>
