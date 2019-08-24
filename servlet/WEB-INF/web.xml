@@ -1,0 +1,46 @@
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+                      http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+  version="3.0"
+  metadata-complete="true">
+<servlet>
+<servlet-name>CreateServlet</servlet-name>
+<servlet-class>com.lxisoft.contact.servlets.CreateServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>CreateServlet</servlet-name>
+<url-pattern>/save</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>UpdateNameServlet</servlet-name>
+<servlet-class>com.lxisoft.contact.servlets.UpdateNameServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>UpdateNameServlet</servlet-name>
+<url-pattern>/upName</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>UpdateNumberServlet</servlet-name>
+<servlet-class>com.lxisoft.contact.servlets.UpdateNumberServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>UpdateNumberServlet</servlet-name>
+<url-pattern>/upNumber</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>DeleteServlet</servlet-name>
+<servlet-class>com.lxisoft.contact.servlets.DeleteServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>DeleteServlet</servlet-name>
+<url-pattern>/delete</url-pattern>
+</servlet-mapping>
+</web-app>
