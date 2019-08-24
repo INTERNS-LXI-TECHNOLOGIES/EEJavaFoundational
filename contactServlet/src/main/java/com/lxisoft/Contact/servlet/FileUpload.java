@@ -3,6 +3,7 @@ package com.lxisoft.Contact.servlet;
 import java.io.*;
 import java.util.*;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -33,35 +34,36 @@ import javax.swing.text.View;
 import com.lxisoft.Contact.model.ContactModel;
 import com.lxisoft.Contact.repositoryImpl.RepositoryImpl;
 
-
-@WebServlet("/csvfile")
+//@WebServlet("/csvupload")
 public class FileUpload extends HttpServlet implements Servlet {
 
 	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
 
 	RepositoryImpl ri = new RepositoryImpl();
-
 	
+	String data;
 	public void service(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
-		if(request.getParameter("csv")==null)
-		{
-			response.sendRedirect("View.jsp");
-			return;
-		}
-		PrintWriter out = response.getWriter();
-		response.setContentType("text/html");
-		FileInputStream in =null;
-		File file=new File(request.getParameter("csv"));
-		in =new FileInputStream(file);
-		out.println("FullPathname"+" "+ file.getAbsolutePath());
 		try {
-			String data;
-
-			File f=new File(file.getAbsolutePath());
-			FileReader fR = new FileReader(f);
+			response.setContentType("text/html");
+			PrintWriter out= response.getWriter();
+			
+		ServletFileUpload sf= new ServletFileUpload(new DiskFileItemFactory());
+		List<FileItem> multifiles=sf.parseRequest(request);
+		for(FileItem item: multifiles)
+		{
+			if(!item.isFormField())
+			{
+				String name= new File(item.getName()).getName();
+				item.write( new File("/Users/Arun Johnson/Desktop/New folder (2)/contactServlet/"+name));
+			
+			
+			File file=new File("c:/Users/Arun Johnson/Desktop/New folder (2)/contactServlet/"+name);
+			FileReader fR = new FileReader(file);
 			BufferedReader bR = new BufferedReader(fR);
+	
+		System.out.println("Uploaded");
+		
 			while ((data = bR.readLine()) != null) {
 				String[] split = data.split(",");
 				ContactModel cml = new ContactModel();
@@ -71,11 +73,14 @@ public class FileUpload extends HttpServlet implements Servlet {
 				cml.setMobNumber(split[3]);
 				cml.setEmail(split[4]);
 				ri.addContact(cml);
-				out.println("<h1>" + "Upload completd.." + "</h1>");
-				out.println("<a href=" + "View.jsp" + ">back to jsp</a>");
+			}
 			}
 		}
-
+				out.println("<h1>" + "Upload completd.." + "</h1>");
+				out.println("<a href=" + "View.jsp" + ">back to jsp</a>");
+			
+		
+		}
 		catch (Exception e) {
 
 		}

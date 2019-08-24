@@ -129,10 +129,10 @@
                             <button class="btn btn-indigo" type="submit" value="submit">Add Now</button>
                             </form>
                               
-  <form action="csvfile" method="post">
-  <h1>upload file here</h1>
-  <input type="file" name="csv" placeholder="upload" accept=" "/><br/><br/>
-  <input type="submit" value="upload">
+  <form action="csvupload" method="post" enctype="multipart/form-data">
+  upload file here
+  <input type="file" name="file" placeholder="upload" accept=" "/><br/><br/>
+  <input type="submit" value="upload" name="destination">
   </form>
                             <hr class="hr-light mb-3 mt-4">
                             <div class="inline-ul text-center">
