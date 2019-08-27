@@ -1,4 +1,4 @@
-package com.lxisoft.contact;
+package com.lxisoft.contact.model;
 public class Contact
 {
 	private String name;

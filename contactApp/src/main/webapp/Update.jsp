@@ -1,4 +1,6 @@
-<%@page import="com.lxisoft.contact.*"%>
+<%@page import="com.lxisoft.contact.model.*"%>
+<%@page import="com.lxisoft.contact.controller.*"%>
+<%@page import="com.lxisoft.contact.repository.*"%>
 <%@page import="java.sql.*" %>
 <%@page import="java.io.*"%>
 <!DOCTYPE html>

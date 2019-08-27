@@ -1,4 +1,6 @@
-package com.lxisoft.contact;
+package com.lxisoft.contact.controller;
+import com.lxisoft.contact.model.*;
+import com.lxisoft.contact.repository.*;
 import javax.servlet.http.*;  
 import javax.servlet.*;  
 import java.io.*; 

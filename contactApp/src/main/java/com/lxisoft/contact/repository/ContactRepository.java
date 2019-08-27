@@ -1,4 +1,6 @@
-package com.lxisoft.contact;
+package com.lxisoft.contact.repository;
+import com.lxisoft.contact.model.*;
+import com.lxisoft.contact.controller.*;
 import java.util.ArrayList;
 import java.sql.*;
 public class ContactRepository
