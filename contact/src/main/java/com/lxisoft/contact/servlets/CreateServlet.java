@@ -14,7 +14,7 @@ public class CreateServlet extends HttpServlet
 	{
 		String userName=request.getParameter("userName");
 		String phoneNumber=request.getParameter("phoneNumber");
-		ContactModel c=new ContactModel();
+		ContactModel cm=new ContactModel();
 		RepositoryImpl rimpl=new RepositoryImpl();
 		rimpl.add(userName,phoneNumber);
 	}

@@ -24,10 +24,7 @@ public class RepositoryImpl
 		int status=0;
 		  try
 		   {
-		     System.out.println("qqqqq"+name+"kkkkk"+number);
-			  
-              
-              
+		     
              String insertQuery="insert into contact(name,number) values(?,?)";
              ps=con.prepareStatement(insertQuery);
 		     ps.setString(1,name);
