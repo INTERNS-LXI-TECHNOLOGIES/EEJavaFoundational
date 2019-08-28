@@ -33,9 +33,10 @@ public class upload extends HttpServlet
                
                 for(FileItem item : multiparts){
                     if(!item.isFormField()){
+                    	
                         String name = new File (item.getName()).getName();
-                        
-                         File f =new File(UPLOAD_DIRECTORY + File.separator + name);
+                        item.write( new File(UPLOAD_DIRECTORY + File.separator + name));
+                         File f =new File("D:/" + File.separator + name);
                          FileReader fr=new FileReader(f);
                          BufferedReader br=new  BufferedReader(fr); 
                        String n=br.readLine();
@@ -46,6 +47,7 @@ public class upload extends HttpServlet
                     	   contactmodel.setName(a[0]);
                     	   contactmodel.setNumber(a[1]);
                     	   rimpl.add(contactmodel.getName(),contactmodel.getNumber());
+                    	   n=br.readLine();
                        }
                     }
                     
