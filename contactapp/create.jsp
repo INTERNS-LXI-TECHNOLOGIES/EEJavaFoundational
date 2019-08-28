@@ -108,13 +108,15 @@
                         <div class="text-center mt-4">
                           <button class="btn btn-indigo">Create</button>
 						  
+						   </form>
+						  
 						  <form action="uploadFile" method="post" enctype="multipart/form-data">
 						  
 						  <input type="file" name="file" multiple />
 						  <input type="submit" value="Upload File" />
 						  
 						  
-						  </form>
+						 
                           <hr class="hr-light mb-3 mt-4">
                           <div class="inline-ul text-center">
                             <a class="p-2 m-2 tw-ic">
