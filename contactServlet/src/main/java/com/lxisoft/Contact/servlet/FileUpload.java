@@ -22,6 +22,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
@@ -67,17 +68,18 @@ public class FileUpload extends HttpServlet implements Servlet {
 			while ((data = bR.readLine()) != null) {
 				String[] split = data.split(",");
 				ContactModel cml = new ContactModel();
+				HttpSession session=request.getSession();
 				cml.setFirstName(split[0]);
 				cml.setLastName(split[1]);
 				cml.setPhone(split[2]);
 				cml.setMobNumber(split[3]);
 				cml.setEmail(split[4]);
-				ri.addContact(cml);
+				String username=(String) session.getAttribute("uname");
+				ri.addContact(cml,username);
 			}
 			}
 		}
-				out.println("<h1>" + "Upload completd.." + "</h1>");
-				out.println("<a href=" + "View.jsp" + ">back to jsp</a>");
+		res.sendRedirect("View.jsp");
 			
 		
 		}

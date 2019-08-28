@@ -9,6 +9,7 @@ public class ContactModel
 	private String phone;
 	private String mobNumber;
 	private String email;
+	private String username;
 
 	
 	public String getPhone()
@@ -76,6 +77,16 @@ public class ContactModel
 		public int getId()
 		{
 			return id;
+		}
+
+
+		public String getUsername() {
+			return username;
+		}
+
+
+		public void setUsername(String username) {
+			this.username = username;
 		}
 
 

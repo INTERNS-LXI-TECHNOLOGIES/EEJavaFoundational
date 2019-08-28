@@ -4,7 +4,8 @@
 <%@ page import ="java.util.*"%>
 <%ArrayList <ContactModel> contacts=new ArrayList <ContactModel>();
 	RepositoryImpl ri=new RepositoryImpl();
-contacts=ri.viewAllContact();
+	String username=(String)session.getAttribute("uname");
+contacts=ri.viewAllContact(username);
 %>
 
 <!DOCTYPE html>
@@ -66,9 +67,13 @@ contacts=ri.viewAllContact();
                     <a onclick="window.location.href='Delete.jsp'" class="nav-link" href="#">Delete</a>
                   </li>
                 </ul>
-                <form class="form-inline">
+                <form  action="logout" method="POST" class="form-inline">
                   <div class="md-form my-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <p>
+                      <a href="Login.jsp" class="btn btn btn-lg">
+                        <span class="glyphicon glyphicon-log-out"></span> Log out
+                      </a>
+                    </p> 
                   </div>
                 </form>
               </div>

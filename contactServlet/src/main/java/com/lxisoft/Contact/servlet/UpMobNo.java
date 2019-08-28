@@ -27,8 +27,7 @@ public class UpMobNo extends HttpServlet {
 			ri.updateContact(c,b,d);
 			res.setContentType("text/html");
     		PrintWriter out = res.getWriter();
-      		out.println("<h1>" + "Updated Mobile Number" + "</h1>");
-      		out.println("<a href="+"View.jsp"+">back to jsp</a>");
+    		res.sendRedirect("View.jsp");
 		}
 			
 			

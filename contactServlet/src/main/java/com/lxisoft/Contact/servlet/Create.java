@@ -21,6 +21,7 @@ public class Create extends HttpServlet {
 	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
 		try {
 			ContactModel c=new ContactModel();
+			HttpSession session= req.getSession();
 			String firstName=req.getParameter("Your First Name");
 			String lastName=req.getParameter("Your Last Name");
 			String phone=req.getParameter("Phone Number");
@@ -31,10 +32,10 @@ public class Create extends HttpServlet {
 			c.setPhone(phone);
 			c.setMobNumber(mobNumber);
 			c.setEmail(email);
-			ri.addContact(c);
+			 String username=(String) session.getAttribute("uname");
+			ri.addContact(c,username);
     		PrintWriter out = res.getWriter();
-      		out.println("<h1>" + "created" + "</h1>");
-      		out.println("<a href="+"View.jsp"+">back to jsp</a>");
+    		res.sendRedirect("View.jsp");
 		}
 		catch(Exception e) {
 		}

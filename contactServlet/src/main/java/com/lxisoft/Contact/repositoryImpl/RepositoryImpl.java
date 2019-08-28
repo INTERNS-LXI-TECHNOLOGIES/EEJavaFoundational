@@ -34,13 +34,13 @@ public RepositoryImpl()
 	}
 }
 
-	public void addContact(ContactModel cm) 
+	public void addContact(ContactModel cm,String username) 
 	{
 		// TODO Auto-generated method stub
 		//System.out.println("AA:"+cm.getFirstName());
 		try {
 			
-			String query = "INSERT INTO contact(id,firstName,lastName,phoneNumber,mobileNumber,email) values(?,?,?,?,?,?)";
+			String query = "INSERT INTO contact(id,firstName,lastName,phoneNumber,mobileNumber,email,username) values(?,?,?,?,?,?,?)";
 			PreparedStatement prep = this.con.prepareStatement(query);
 			prep.setInt(1, cm.getId());
 			prep.setString(2, cm.getFirstName());
@@ -48,6 +48,7 @@ public RepositoryImpl()
 			prep.setString(4,cm.getPhone());
 			prep.setString(5,cm.getMobNumber());
 			prep.setString(6,cm.getEmail());
+			prep.setString(7,username);
 			boolean status = prep.execute();
 			
 			if(status)
@@ -64,13 +65,13 @@ public RepositoryImpl()
 		
 	}
 
-	public ArrayList<ContactModel> viewAllContact()
+	public ArrayList<ContactModel> viewAllContact(String username)
 	{
 		
 		try {
 			st=con.createStatement();
 
-		rs=st.executeQuery("select * from Contact");
+		rs=st.executeQuery("select * from Contact where username = '"+username+"'");
 		while(rs.next()) 
 		{
 			ContactModel contC=new ContactModel();

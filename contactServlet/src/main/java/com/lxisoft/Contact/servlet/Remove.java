@@ -21,8 +21,7 @@ public class Remove extends HttpServlet {
 int id=Integer.parseInt(req.getParameter("Id"));
 ri.deleteContact(id);
 PrintWriter out = res.getWriter();
-	out.println("<h1>" + "deleted" + "</h1>");
-	out.println("<a href="+"View.jsp"+">back to jsp</a>");
+res.sendRedirect("Delete.jsp");
 }
 catch(Exception e) {
 }
