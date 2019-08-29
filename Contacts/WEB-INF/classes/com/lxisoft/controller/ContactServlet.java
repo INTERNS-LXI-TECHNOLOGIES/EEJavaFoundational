@@ -30,14 +30,15 @@ public class ContactServlet extends HttpServlet
 				res.sendRedirect("response.jsp");
 			}
 			pw.close();
-		}
+		} 
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 	}
+}
 
-	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
+/*	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
 	{
 		try
 		{
@@ -77,5 +78,4 @@ public class ContactServlet extends HttpServlet
 		{
 			e.printStackTrace();
 		}
-	}
-} 
+	}*/
