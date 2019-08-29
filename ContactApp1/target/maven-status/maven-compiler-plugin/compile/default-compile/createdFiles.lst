@@ -1,0 +1,10 @@
+com\lxisoft\contact\Contact.class
+com\lxisoft\contact\RepoImpl.class
+com\lxisoft\controller\RegistrationServlet.class
+com\lxisoft\controller\ViewServlet.class
+com\lxisoft\controller\LoginServlet.class
+com\lxisoft\controller\LogoutServlet.class
+com\lxisoft\controller\ContactDeleteServlet.class
+com\lxisoft\controller\ContactServlet.class
+com\lxisoft\controller\ContactEditServlet.class
+com\lxisoft\controller\UploadServlet.class
