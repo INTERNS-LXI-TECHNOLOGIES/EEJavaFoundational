@@ -20,7 +20,6 @@ import com.lxisoft.contact.repositoryimpl.RepositoryImpl;;
 public class upload extends HttpServlet
 {
 	private final String UPLOAD_DIRECTORY = "D:/";
-	   
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -30,7 +29,7 @@ public class upload extends HttpServlet
         if(ServletFileUpload.isMultipartContent(request)){
             try {
                 List<FileItem> multiparts = new ServletFileUpload( new DiskFileItemFactory()).parseRequest(request);
-               
+  
                 for(FileItem item : multiparts){
                     if(!item.isFormField()){
                     	
