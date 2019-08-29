@@ -16,10 +16,10 @@ import com.lxisoft.Contact.repositoryImpl.LoginRepoImpl;
 
 
 @WebServlet("/SignUp")
-public class SignUp extends HttpServlet
+public class SignUpController extends HttpServlet
 {
 	LoginRepoImpl lg= new LoginRepoImpl();
-	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
 		try {
 			User user =new User();
 			HttpSession session = req.getSession();

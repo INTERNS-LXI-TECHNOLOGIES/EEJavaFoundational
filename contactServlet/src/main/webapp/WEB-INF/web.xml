@@ -5,11 +5,11 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name> 
   <servlet>
-  <servlet-name>FileUpload</servlet-name>
+  <servlet-name>FileUploadController</servlet-name>
   <servlet-class>com.lxisoft.Contact.servlet.FileUpload</servlet-class>
   </servlet>
   <servlet-mapping>
-  <servlet-name>FileUpload</servlet-name>
+  <servlet-name>FileUploadController</servlet-name>
   <url-pattern>/csvupload</url-pattern>
   </servlet-mapping>
   

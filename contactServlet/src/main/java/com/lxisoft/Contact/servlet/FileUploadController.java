@@ -36,14 +36,14 @@ import com.lxisoft.Contact.model.ContactModel;
 import com.lxisoft.Contact.repositoryImpl.RepositoryImpl;
 
 //@WebServlet("/csvupload")
-public class FileUpload extends HttpServlet implements Servlet {
+public class FileUploadController extends HttpServlet implements Servlet {
 
 	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
 
 	RepositoryImpl ri = new RepositoryImpl();
 	
 	String data;
-	public void service(HttpServletRequest request,
+	public void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		try {
 			response.setContentType("text/html");
@@ -79,7 +79,7 @@ public class FileUpload extends HttpServlet implements Servlet {
 			}
 			}
 		}
-		res.sendRedirect("View.jsp");
+		response.sendRedirect("View.jsp");
 			
 		
 		}

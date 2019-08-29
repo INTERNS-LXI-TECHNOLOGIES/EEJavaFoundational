@@ -13,12 +13,12 @@ import com.lxisoft.Contact.model.*;
 
 
 @WebServlet("/create")
-public class Create extends HttpServlet {
+public class CreateController extends HttpServlet {
 	ArrayList<ContactModel> contacts = new ArrayList <ContactModel>();
 	RepositoryImpl ri = new RepositoryImpl();
 	
 	int count = 0;
-	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
 		try {
 			ContactModel c=new ContactModel();
 			HttpSession session= req.getSession();

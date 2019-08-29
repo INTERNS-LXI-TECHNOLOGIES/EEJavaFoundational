@@ -10,13 +10,14 @@ import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/logout")
-public class Logout extends HttpServlet
+public class LogoutController extends HttpServlet
 {
-	public void service(HttpServletRequest req,HttpServletResponse res)
+	public void doGet(HttpServletRequest req,HttpServletResponse res)
 	{
 		HttpSession session=req.getSession();
 		
 		try {
+			session. removeAttribute("uname");
 			session.invalidate();
 			res.sendRedirect("Login.jsp");
 		} catch (IOException e) {

@@ -60,7 +60,7 @@
                   <form  action="logout" method="POST" class="form-inline">
                     <div class="md-form my-0">
                       <p>
-                        <a href="Login.jsp" class="btn btn btn-lg">
+                        <a href="" class="btn btn btn-lg">
                           <span class="glyphicon glyphicon-log-out"></span> Log out
                         </a>
                       </p> 

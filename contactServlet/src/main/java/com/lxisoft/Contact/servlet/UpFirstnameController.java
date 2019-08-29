@@ -16,12 +16,12 @@ import com.lxisoft.Contact.repositoryImpl.RepositoryImpl;
 
 
 @WebServlet("/update")
-public class UpFirstname extends HttpServlet {
+public class UpFirstnameController extends HttpServlet {
 	ArrayList<ContactModel> contacts = new ArrayList <ContactModel>();
 	RepositoryImpl ri = new RepositoryImpl();
 	
 	int count = 0;
-	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
 		try {
 			String b=req.getParameter("First Name");
 			String d=req.getParameter("Updated Name");

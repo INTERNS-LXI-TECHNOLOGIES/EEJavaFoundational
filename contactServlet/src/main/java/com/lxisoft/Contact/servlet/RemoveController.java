@@ -13,10 +13,10 @@ import com.lxisoft.Contact.model.*;
 
 
 @WebServlet("/remove")
-public class Remove extends HttpServlet {
+public class RemoveController extends HttpServlet {
 	
 	RepositoryImpl ri = new RepositoryImpl();
-	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
 		try {
 int id=Integer.parseInt(req.getParameter("Id"));
 ri.deleteContact(id);

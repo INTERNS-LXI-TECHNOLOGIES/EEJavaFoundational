@@ -15,9 +15,9 @@ import com.lxisoft.Contact.repositoryImpl.LoginRepoImpl;
 
 
 @WebServlet("/Login")
-public class Login extends HttpServlet
+public class LoginController extends HttpServlet
 {
-public void service(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
+public void doPost(HttpServletRequest req,HttpServletResponse res) throws IOException, ServletException {
 
 
 		res.setContentType("text/html");

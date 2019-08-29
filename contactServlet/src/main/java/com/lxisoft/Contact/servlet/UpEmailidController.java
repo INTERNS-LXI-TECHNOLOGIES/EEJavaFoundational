@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 import com.lxisoft.Contact.repositoryImpl.RepositoryImpl;
 
 @WebServlet("/email")
-public class UpEmailid extends HttpServlet {
+public class UpEmailidController extends HttpServlet {
 	
 	RepositoryImpl ri = new RepositoryImpl();
-	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
+	public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException {
 		try {
 			String b=req.getParameter("Email");
 			String d=req.getParameter("Updated Mail");
