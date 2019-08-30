@@ -14,8 +14,8 @@ import com.lxisoft.Contact.model.ContactModel;
 import com.lxisoft.Contact.repositoryImpl.RepositoryImpl;
 
 
-@WebServlet("/create")
-public class CreateContact extends HttpServlet {
+@WebServlet("/updatem")
+public class UpdateEmailController extends HttpServlet {
 	ArrayList<ContactModel> contacts = new ArrayList <ContactModel>();
 	ArrayList<String> phno = new ArrayList<String>();
 	RepositoryImpl ri = new RepositoryImpl();
@@ -24,15 +24,11 @@ public class CreateContact extends HttpServlet {
 	public void service(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException 
 	{
 		try {
-			ContactModel cm = new ContactModel();
-    		String username=req.getParameter("username");
-			String phone_number=req.getParameter("userphonenumber");
-			String mail_id=req.getParameter("usermailid");
-			cm.setName(username);
-			phno.add(phone_number);
-			cm.setPhoneNumber(phno);
-			cm.setMailId(mail_id);
-			ri.createContact(cm);
+			String tbna="Contactlist";
+			String ml="Email_id";
+			String email=req.getParameter("email");
+			String mail=req.getParameter("mail");
+			si.updateContact(tbna,ml,email,mail);
     		PrintWriter out = res.getWriter();
       		out.println("<a href="+"Read.jsp"+">back to jsp</a>");
 		}

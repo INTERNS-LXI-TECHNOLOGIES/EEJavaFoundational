@@ -15,7 +15,7 @@ import com.lxisoft.Contact.repositoryImpl.RepositoryImpl;
 
 
 @WebServlet("/deletec")
-public class DeleteC extends HttpServlet {
+public class DeleteController extends HttpServlet {
 	ArrayList<ContactModel> contacts = new ArrayList <ContactModel>();
 	ArrayList<String> phno = new ArrayList<String>();
 	RepositoryImpl ri = new RepositoryImpl();

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V15</title>
+	<title>login page</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -32,22 +32,22 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<div class="login100-form-title" style="background-image: url(images/bg-01.jpg);">
+				<div class="login100-form-title" style="background-image: url(img/bg-01.jpg);">
 					<span class="login100-form-title-1">
 						Sign In
 					</span>
 				</div>
 
-				<form class="login100-form validate-form">
-					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
-						<span class="label-input100">Username</span>
-						<input class="input100" type="text" name="username" placeholder="Enter username">
+				<form action="logen" class="login100-form validate-form">
+					<div class="wrap-input100 validate-input m-b-26" data-validate="Username is required" required>  
+						<span class="label-input100">User name</span>
+						<input class="input100" type="text" name="name" placeholder="Enter username">
 						<span class="focus-input100"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+					<div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required" required>
 						<span class="label-input100">Password</span>
-						<input class="input100" type="password" name="pass" placeholder="Enter password">
+						<input class="input100" type="password" name="password" placeholder="Enter password">
 						<span class="focus-input100"></span>
 					</div>
 
@@ -56,7 +56,7 @@
 							<input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
 							<label class="label-checkbox100" for="ckb1">
 								Remember me
-							</label>
+						</label>
 						</div>
 
 						<div>
@@ -66,12 +66,20 @@
 						</div>
 					</div>
 
-					<div class="container-login100-form-btn">
+					<div class="container-login100-form-btn" >
 						<button class="login100-form-btn">
 							Login
 						</button>
+						<a class="text-center p-t-100 txt-2 " href="Signup.jsp">
+					create your account
+					<i class="fa fa-long-arrow-right m-1-5"></i>
+					</a>
 					</div>
+					
+					
+				
 				</form>
+				
 			</div>
 		</div>
 	</div>
