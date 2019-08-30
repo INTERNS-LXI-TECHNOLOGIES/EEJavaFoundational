@@ -16,6 +16,8 @@ public class RegistrationServlet extends HttpServlet
 			String name=request.getParameter("username");
 			String password=request.getParameter("password");
 			RepoImpl repoImpl=new RepoImpl();
+			// System.out.println("Username"+name);
+			// System.out.println("Password"+password);
 			repoImpl.registration(name,password);
 			System.out.println("Success");
 			// if(status!=0)

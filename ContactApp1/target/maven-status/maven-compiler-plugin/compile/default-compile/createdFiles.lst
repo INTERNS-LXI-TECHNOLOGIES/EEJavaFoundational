@@ -7,4 +7,5 @@ com\lxisoft\controller\LogoutServlet.class
 com\lxisoft\controller\ContactDeleteServlet.class
 com\lxisoft\controller\ContactServlet.class
 com\lxisoft\controller\ContactEditServlet.class
+com\lxisoft\contact\RepoDataSource.class
 com\lxisoft\controller\UploadServlet.class

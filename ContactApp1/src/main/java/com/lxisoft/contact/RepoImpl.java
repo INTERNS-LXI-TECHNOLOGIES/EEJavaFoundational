@@ -4,22 +4,25 @@ package com.lxisoft.contact;
 import java.util.*;
 import java.io.*;
 import java.sql.*;
+import javax.sql.DataSource;
 
 public class RepoImpl
 {
  	//PreparedStatement ps;
 	Connection con;	
-	ResultSet rs;	
+	ResultSet rs;
+	
 	public ArrayList<Contact> contactList=new ArrayList<Contact>();
 	public  RepoImpl()
 	{
 		try
 		{
-			Class.forName("com.mysql.jdbc.Driver");
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			/*Class.forName("com.mysql.jdbc.Driver");
 			System.out.println("Connecting to a selected database...");
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact_db","root","root");
 			System.out.println("Creating database......");
-			System.out.println(con);
+			System.out.println(con);*/
 		}
 		catch(Exception se)
 		{
