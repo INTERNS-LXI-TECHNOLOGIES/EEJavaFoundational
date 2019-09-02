@@ -8,18 +8,14 @@
 	<title>Registration page</title>
 </head>
 <body>
-<form action="" method="post">
+<form action="register" method="post">
 	Registration<br><br>
-	Name<br><br>
-	<input type="text" name="name"><br><br>
-	Contact number<br><br>
-	<input type="text" name="cnumber"><br><br>
 	Username<br><br>
-	<input type="text" name="uname"><br><br>
+	<input type="text" name="username"><br><br>
 	Password<br><br>
 	<input type="text" name="password"><br><br>
 	<input type="submit" name="submit" value="Submit">
 </form>
-<a href="login.jsp">login</a>
+<a href="index.jsp">login</a>
 </body>
 </html>

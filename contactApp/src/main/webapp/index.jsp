@@ -5,23 +5,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>ContactApp</title>
+	<title>Login page</title>
 </head>
 <body>
-<form action="Create.jsp" method="post">
-	<input type="submit" value="Create">
+<form action="home.jsp" method="post">
+	Login<br><br>
+	Username<br><br>
+	<input type="text" name="username"><br><br>
+	Password<br><br>
+	<input type="text" name="password"><br><br>
+	<input type="submit" name="submit" value="Login">
 </form>
-<form action="Read.jsp" method="">
-	<input type="submit" value="Read">
-</form>
-<form action="Update.jsp" method="post">
-	<input type="submit" value="Update">
-</form>
-<form action="Delete.jsp" method="post">
-	<input type="submit" value="Delete">
-</form>
-<form action="UploadFile.jsp" method="post">
-	<input type="submit" value="Upload">
-</form>
+<a href="registration.jsp">Registration</a>
 </body>
 </html>

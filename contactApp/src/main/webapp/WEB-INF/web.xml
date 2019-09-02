@@ -1,7 +1,7 @@
 <web-app>  
 	<servlet>
 <servlet-name>demo</servlet-name>  
-<servlet-class>com.lxisoft.contact.ContactServlet</servlet-class>  
+<servlet-class>com.lxisoft.contact.controller.ContactServlet</servlet-class>  
 </servlet>  
   
 <servlet-mapping>  
@@ -16,7 +16,7 @@
 
 <servlet>  
 <servlet-name>demo1</servlet-name>  
-<servlet-class>com.lxisoft.contact.ContactServletUpdate</servlet-class>  
+<servlet-class>com.lxisoft.contact.controller.ContactServletUpdate</servlet-class>  
 </servlet>  
 
 <servlet-mapping>  
@@ -26,7 +26,7 @@
 
 <servlet>  
 <servlet-name>demo2</servlet-name>  
-<servlet-class>com.lxisoft.contact.ContactServletDelete</servlet-class>  
+<servlet-class>com.lxisoft.contact.controller.ContactServletDelete</servlet-class>  
 </servlet> 
 
 <servlet-mapping>  
@@ -36,12 +36,22 @@
   
  <servlet>  
 <servlet-name>demo3</servlet-name>  
-<servlet-class>com.lxisoft.contact.ContactServletUpload</servlet-class>  
+<servlet-class>com.lxisoft.contact.controller.ContactServletUpload</servlet-class>  
 </servlet> 
 
 <servlet-mapping>  
 <servlet-name>demo3</servlet-name>  
 <url-pattern>/upload</url-pattern>  
+</servlet-mapping> 
+
+ <servlet>  
+<servlet-name>demo4</servlet-name>  
+<servlet-class>com.lxisoft.contact.controller.RegistrationServlet</servlet-class>  
+</servlet> 
+
+<servlet-mapping>  
+<servlet-name>demo4</servlet-name>  
+<url-pattern>/register</url-pattern>  
 </servlet-mapping> 
 
 </web-app>  

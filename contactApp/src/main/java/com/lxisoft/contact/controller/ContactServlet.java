@@ -16,7 +16,7 @@ PrintWriter out=res.getWriter();//get the stream to write the data
 	contact.setNum(req.getParameter("num"));
 	ContactRepository contactR=new ContactRepository();
 	contactR.createContact(contact);
-	out.println("<a href="+"index.jsp"+">back to jsp</a>");
+	out.println("<a href="+"home.jsp"+">back to jsp</a>");
 out.close();//closing the stream  
 }
 catch(Exception e)
@@ -49,7 +49,7 @@ ArrayList<Contact> contacts=new ArrayList<Contact>();
 
 	
 	out.println("</table></body></html>");
-	out.println("<a href="+"index.jsp"+">back to jsp</a>");
+	out.println("<a href="+"home.jsp"+">back to jsp</a>");
 out.close();
 } 
  catch(Exception e)

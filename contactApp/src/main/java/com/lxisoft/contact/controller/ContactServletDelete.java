@@ -13,7 +13,7 @@ res.setContentType("text/html");//setting the content type
 PrintWriter out=res.getWriter();//get the stream to write the data  
   ContactRepository contactR=new ContactRepository();
 	contactR.deleteContact(req.getParameter("name"));
-	out.println("<a href="+"index.jsp"+">back to jsp</a>");
+	out.println("<a href="+"home.jsp"+">back to jsp</a>");
 out.close();//closing the stream  
 }
 catch(Exception e)

@@ -109,4 +109,21 @@ public class ContactRepository
 			e.printStackTrace();
 		}
 	}
+	public void addUser(String name,String pwd)throws Exception
+	{
+	try{
+		System.out.println(name);
+	sql="INSERT INTO registration(username,password)values(?,?)";
+	ps=con.prepareStatement(sql);
+	ps.setString(1,name);
+	ps.setString(2,pwd);
+	int a=ps.executeUpdate();
+	ps.close();
+	con.close();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+	}
 }

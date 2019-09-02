@@ -19,7 +19,7 @@ PrintWriter out=res.getWriter();//get the stream to write the data
 	session.setAttribute("value",value);
 	String name="success";
 	res.sendRedirect("Update.jsp?name="+name);
-	out.println("<a href="+"index.jsp"+">back to jsp</a>");
+	out.println("<a href="+"home.jsp"+">back to jsp</a>");
 out.close();//closing the stream  
 }
 catch(Exception e)
