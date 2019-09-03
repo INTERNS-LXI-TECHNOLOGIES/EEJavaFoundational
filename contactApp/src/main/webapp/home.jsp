@@ -22,6 +22,9 @@
 </form>
 <form action="UploadFile.jsp" method="post">
 	<input type="submit" value="Upload">
+</form><br><br>
+<form action="logout" method="post">
+	<input type="submit" value="Logout">
 </form>
 </body>
 </html>

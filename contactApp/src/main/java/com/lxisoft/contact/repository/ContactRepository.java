@@ -22,10 +22,10 @@ public class ContactRepository
 	{
 		try{
 		Class.forName("com.mysql.jdbc.Driver");
-		System.out.println("connecting to database");
+		//System.out.println("connecting to database");
 			
 		con=DriverManager.getConnection(DB_URL,USER,PASS);
-		System.out.println("creating database");
+		//System.out.println("creating database");
 		}
 		catch(Exception e)
 		{
@@ -130,10 +130,12 @@ public class ContactRepository
 		e.printStackTrace();
 	}
 	}
-	public void userLogin(String username,String password)throws  Exception
+	public int userLogin(String username,String password)throws  Exception
 	{
+		int k=0;
 		try
 		{	
+			
 		stmt=con.createStatement();
 		sql="select * from registration";
 		ResultSet rs=stmt.executeQuery(sql);
@@ -141,16 +143,15 @@ public class ContactRepository
 		{
 			String uname=rs.getString("username");
 			String pwd=rs.getString("password");
-			System.out.println(uname);
-			System.out.println(pwd);
-			if(username==uname)
+			//System.out.println(uname);
+			//System.out.println(pwd);
+			if(username.equals(uname))
 			{
-				if(password==pwd)
+			//System.out.println(uname);
+			//System.out.println(username);	
+				if(password.equals(pwd))
 				{
-					System.out.println("Login");
-					HttpServletResponse res=null;
-					String name="Login success";
-					res.sendRedirect("home.jsp?name="+name);
+					k++;
 				}
 			}
 		}
@@ -159,6 +160,7 @@ public class ContactRepository
 		{
 			e.printStackTrace();
 		}
+		return k;
 	}
 
 }
