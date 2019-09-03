@@ -54,4 +54,14 @@
 <url-pattern>/register</url-pattern>  
 </servlet-mapping> 
 
+ <servlet>  
+<servlet-name>demo5</servlet-name>  
+<servlet-class>com.lxisoft.contact.controller.LoginServlet</servlet-class>  
+</servlet> 
+
+<servlet-mapping>  
+<servlet-name>demo5</servlet-name>  
+<url-pattern>/login</url-pattern>  
+</servlet-mapping> 
+
 </web-app>  

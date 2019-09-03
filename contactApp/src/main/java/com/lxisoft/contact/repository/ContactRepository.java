@@ -3,6 +3,10 @@ import com.lxisoft.contact.model.*;
 import com.lxisoft.contact.controller.*;
 import java.util.ArrayList;
 import java.sql.*;
+import javax.servlet.http.*;  
+import javax.servlet.*;  
+import java.io.*; 
+import java.util.*; 
 public class ContactRepository
 {
 	//static final String JDBC_DRIVER="com.mysql.jdbc.Driver";
@@ -126,4 +130,35 @@ public class ContactRepository
 		e.printStackTrace();
 	}
 	}
+	public void userLogin(String username,String password)throws  Exception
+	{
+		try
+		{	
+		stmt=con.createStatement();
+		sql="select * from registration";
+		ResultSet rs=stmt.executeQuery(sql);
+		while(rs.next())
+		{
+			String uname=rs.getString("username");
+			String pwd=rs.getString("password");
+			System.out.println(uname);
+			System.out.println(pwd);
+			if(username==uname)
+			{
+				if(password==pwd)
+				{
+					System.out.println("Login");
+					HttpServletResponse res=null;
+					String name="Login success";
+					res.sendRedirect("home.jsp?name="+name);
+				}
+			}
+		}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
 }
