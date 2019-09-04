@@ -7,18 +7,20 @@ import javax.servlet.http.*;
 import javax.servlet.*;  
 import java.io.*; 
 import java.util.*; 
+import javax.sql.*;
 public class ContactRepository
 {
 	//static final String JDBC_DRIVER="com.mysql.jdbc.Driver";
 	
-	static final String DB_URL="jdbc:mysql://localhost/contact_db";
-	static final String USER="root";
-	static final String PASS="root";
+	//static final String DB_URL="jdbc:mysql://localhost/contact_db";
+	//static final String USER="root";
+	//static final String PASS="root";
 	Connection con=null;
 	Statement stmt=null;
 	PreparedStatement ps=null;
+	DataSource ds = ContactDataSource.getMySQLDataSource();
 	String sql;
-	public  ContactRepository()
+	/*public  ContactRepository()
 	{
 		try{
 		Class.forName("com.mysql.jdbc.Driver");
@@ -32,10 +34,11 @@ public class ContactRepository
 			System.out.println("Not connecting to database");
 			e.printStackTrace();
 		}
-	}
+	}*/
 	public void createContact(Contact contact)throws Exception
 	{
 	try{
+		con=ds.getConnection();
 	sql="INSERT INTO contact(contact_name,contact_number) values(?,?)";
 	ps=con.prepareStatement(sql);
 	ps.setString(1,contact.getName());
@@ -54,6 +57,7 @@ public class ContactRepository
 	{
 		ArrayList<Contact> contacts=new ArrayList<Contact>();
 		try{	
+			con=ds.getConnection();
 		stmt=con.createStatement();
 		sql="select * from contact";
 		ResultSet rs=stmt.executeQuery(sql);
@@ -85,6 +89,7 @@ public class ContactRepository
 		int value=0;
 		try
 		{	
+			con=ds.getConnection();
 		sql="update contact  set contact_name='"+editName+"' WHERE contact_name='"+name+"'";
 		ps=con.prepareStatement(sql);
 		value=ps.executeUpdate();
@@ -101,6 +106,7 @@ public class ContactRepository
 	{
 		try
 		{
+			con=ds.getConnection();
 		System.out.println(name);
 		sql="DELETE FROM contact WHERE contact_name='"+name+"'";
 		ps=con.prepareStatement(sql);
@@ -116,6 +122,7 @@ public class ContactRepository
 	public void addUser(String name,String pwd)throws Exception
 	{
 	try{
+		con=ds.getConnection();
 		System.out.println(name);
 	sql="INSERT INTO registration(username,password)values(?,?)";
 	ps=con.prepareStatement(sql);
@@ -135,7 +142,7 @@ public class ContactRepository
 		int k=0;
 		try
 		{	
-			
+			con=ds.getConnection();
 		stmt=con.createStatement();
 		sql="select * from registration";
 		ResultSet rs=stmt.executeQuery(sql);
@@ -143,12 +150,8 @@ public class ContactRepository
 		{
 			String uname=rs.getString("username");
 			String pwd=rs.getString("password");
-			//System.out.println(uname);
-			//System.out.println(pwd);
 			if(username.equals(uname))
 			{
-			//System.out.println(uname);
-			//System.out.println(username);	
 				if(password.equals(pwd))
 				{
 					k++;
