@@ -1,38 +1,26 @@
 package com.lxisoft.contact;
-//import com.lxisoft.contact.Model.*;
-//import com.lxisoft.contact.Repo.*;
 import java.util.*;
 import java.io.*;
 import java.sql.*;
 import javax.sql.DataSource;
+import org.apache.log4j.Logger;
 
 public class RepoImpl
 {
- 	//PreparedStatement ps;
-	Connection con;	
+ 	Connection con;	
 	ResultSet rs;
 	
 	public ArrayList<Contact> contactList=new ArrayList<Contact>();
-	public  RepoImpl()
-	{
-		try
-		{
-			DataSource ds=RepoDataSource.getMySQLDataSource();
-			/*Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Connecting to a selected database...");
-			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact_db","root","root");
-			System.out.println("Creating database......");
-			System.out.println(con);*/
-		}
-		catch(Exception se)
-		{
-			se.printStackTrace();
-   		}
-	}
+	final static Logger logger = Logger.getLogger(RepoImpl.class);
+	//public static final Logger log = Logger.getLogger(Log.class.getName());
+	
 	public void registration(String username,String password)
 	{
 		try
 		{
+			logger.info("***Entered Registration method***");
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			Connection con=ds.getConnection();
 			int x=0;
 			PreparedStatement ps;
 			String sq="select * from registration";
@@ -43,7 +31,11 @@ public class RepoImpl
 				String rsname=rs.getString("username");
 				if(rsname.equals(username))
 				{
-					x++;
+					String rspassword=rs.getString("password");
+					if(rspassword.equals(password))
+					{
+						x++;
+					}
 				}
 			}
 			if(x==0)
@@ -53,10 +45,6 @@ public class RepoImpl
 				ps.setString(1,username);
 				ps.setString(2,password);
 				ps.executeUpdate();
-			/*	PreparedStatement p;
-				String sql1=("create table "+username+"(id INT AUTO_INCREMENT,Name VARCHAR(50),Contact_No VARCHAR(50),PRIMARY KEY(id))");
-				p=con.prepareStatement(sql1);
-				p.execute();*/
 			}
 		}
 		catch(Exception e){e.printStackTrace();}
@@ -66,6 +54,10 @@ public class RepoImpl
 	{
 		// try
 		// {
+			logger.info("***Entered Login method***");
+
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			Connection con=ds.getConnection();
 			int y=0;
 			PreparedStatement ps;
 			ps=con.prepareStatement("select * from registration where username= '"+username+"'");
@@ -85,9 +77,12 @@ public class RepoImpl
 	}
 	public int createContact(Contact contact,String username)
 	{
+		logger.info("***Entered CreateContact method***");
 		int status=0;
 		try
 		{
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			Connection con=ds.getConnection();
 			PreparedStatement ps;
 			String sql="INSERT INTO CONTACTLIST(Name,Contact_No,username) VALUES(?,?,?)";
 			ps=con.prepareStatement(sql);
@@ -108,6 +103,9 @@ public class RepoImpl
 	{
 		try
 		{
+			logger.info("***Entered ViewContact method***");
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			Connection con=ds.getConnection();
 			PreparedStatement ps;
 			String sql="SELECT * FROM CONTACTLIST WHERE username='"+username+"'";
 			ps=con.prepareStatement(sql);
@@ -133,6 +131,9 @@ public class RepoImpl
 	{
 		try
 		{
+			logger.info("***Entered UpdateContact method***");
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			Connection con=ds.getConnection();
 			PreparedStatement ps;
 			String sql="UPDATE CONTACTLIST SET Name=?,Contact_No=? WHERE id="+id+"";
 			ps=con.prepareStatement(sql);
@@ -153,6 +154,9 @@ public class RepoImpl
 	{
 		try
 		{
+			logger.info("***Entered DeleteContact method***");
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			Connection con=ds.getConnection();
 			PreparedStatement ps;
 			String sql="DELETE FROM CONTACTLIST WHERE id="+id+"";
 			ps=con.prepareStatement(sql);
@@ -168,6 +172,9 @@ public class RepoImpl
 	{
 		try
 		{
+			logger.info("***Entered SearchContact method***");
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			Connection con=ds.getConnection();
 			System.out.println("Entering");
 			PreparedStatement ps;
 			ps=con.prepareStatement("SELECT * FROM CONTACTLIST WHERE Name= '"+name+"'");
@@ -192,13 +199,15 @@ public class RepoImpl
 		return contactList;
 	}
 
-	public ArrayList<Contact> getAllDB()
+	public ArrayList<Contact> getAllDB(int pageid,int total,String username)
 	{
 		try
 		{
+			logger.info("***Entered GetAllDB method***");
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			Connection con=ds.getConnection();
 			PreparedStatement ps;
-			String sql="SELECT * FROM CONTACTLIST";
-			ps=con.prepareStatement(sql);
+			ps=con.prepareStatement("select * from contactlist limit "+(pageid-1)+","+total);
 			rs=ps.executeQuery();
 			while(rs.next())
 			{
@@ -217,3 +226,32 @@ public class RepoImpl
 	
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/*public  RepoImpl()
+	{
+		try
+		{
+			DataSource ds=RepoDataSource.getMySQLDataSource();
+			Connection con=ds.getConnection();
+			// Class.forName("com.mysql.jdbc.Driver");
+			// System.out.println("Connecting to a selected database...");
+			// con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact_db","root","root");
+			// System.out.println("Creating database......");
+			// System.out.println(con);
+		}
+		catch(Exception se)
+		{
+			se.printStackTrace();
+   		}
+	}*/

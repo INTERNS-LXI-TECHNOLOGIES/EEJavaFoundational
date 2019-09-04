@@ -2,11 +2,9 @@ package com.lxisoft.contact;
 import java.util.*;
 import java.io.*;
 import java.sql.*;
-//import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
-import javax.sql.DataSource;
-
+ 
+ import javax.sql.DataSource;
 import com.mysql.cj.jdbc.MysqlDataSource;
-//import com.mysql.jdbc.Driver;
 
 public class RepoDataSource
 {

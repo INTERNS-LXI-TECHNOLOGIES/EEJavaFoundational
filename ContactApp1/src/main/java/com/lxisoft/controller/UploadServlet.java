@@ -41,13 +41,13 @@ public class UploadServlet extends HttpServlet
 				String data,username;
 				RepoImpl repoImpl=new RepoImpl();
 				Contact contact=new Contact();
-
+				username=(String)session.getAttribute("uname");
 				while((data=br.readLine())!=null)
 					{
 						String itm[]=data.split(",");
 						contact.setName(itm[k]);
 						contact.setNumber(itm[k+1]);
-						username=(String)session.getAttribute("uname");
+						
 						status=repoImpl.createContact(contact,username);
 					}
 					
@@ -55,7 +55,7 @@ public class UploadServlet extends HttpServlet
 						{
 							
 							//ArrayList<Contact> list=repoImpl.getAllDB();
-							session.setAttribute("list",repoImpl.getAllDB());
+							session.setAttribute("list",repoImpl.viewContact(username));
 							response.sendRedirect("response.jsp");
 						}
 			}

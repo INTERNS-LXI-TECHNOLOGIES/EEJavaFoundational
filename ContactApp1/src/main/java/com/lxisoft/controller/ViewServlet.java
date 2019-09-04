@@ -8,7 +8,7 @@ import java.util.*;
 
 public class ViewServlet extends HttpServlet
 {
-	public void doPost(HttpServletRequest req,HttpServletResponse res) throws ServletException,IndexOutOfBoundsException
+	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IndexOutOfBoundsException
 	{
 		try
 		{
@@ -18,10 +18,24 @@ public class ViewServlet extends HttpServlet
 			String username=(String)session.getAttribute("uname");
 			
 			RepoImpl repoImpl=new RepoImpl();
+			
+			String spageid=req.getParameter("page");
+			System.out.println("PAGE:"+spageid);
+	 		int pageid=Integer.parseInt(spageid);
+	 		
+	 		int total=5;
+	 		if(pageid==1){}
+	 		else{
+	 			pageid=pageid-1;
+	 			pageid=pageid*total+1;
+	 		}
+	 		
 						
 			if(session!=null)
 			{
-				session.setAttribute("list",repoImpl.viewContact(username));
+				//ArrayList<Contact> contactList=repoImpl.getAllDB(pageid,total,username);
+				
+				session.setAttribute("list",repoImpl.getAllDB(pageid,total,username));
 				res.sendRedirect("View.jsp");
 			}
 			pw.close();

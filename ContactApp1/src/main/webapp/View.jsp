@@ -9,6 +9,14 @@
 </head>
 <body>
 	<h2>Contact List</h2>
+	<!-- <a href='ViewServlet?page=1'>1</a>
+	<a href='ViewServlet?page=2'>2</a>
+	<a href='ViewServlet?page=3'>3</a> -->
+	<form action="viewall" method="get">
+		<button type="submit" value="1" name="page">1</button>
+		<button type="submit" value="2" name="page">2</button>
+	</form>
+
 	<table>
 		<tr>
 			<th>Id.</th>
@@ -33,7 +41,12 @@
 			<!-- System.out.println(contactList.get(i).getId()+"\t"+contactList.get(i).getName()+"\t"+contactList.get(i).getNumber()); -->
 		<% }%>
 </table>
-<a href="Home.html">Back to Home</a>
+	
+<a href='ViewServlet?page=1'>1</a>
+<a href='ViewServlet?page=2'>2</a>
+<a href='ViewServlet?page=3'>3</a>
+
+<a href="Home.jsp">Back to Home</a>
 
 </body>
 </html>

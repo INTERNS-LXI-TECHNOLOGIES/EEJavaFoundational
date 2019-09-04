@@ -26,7 +26,7 @@ public class ContactServlet extends HttpServlet
 			if(status!=0)
 			{
 				//ArrayList<Contact> list=repoImpl.getAllDB();
-				session.setAttribute("list",repoImpl.getAllDB());
+				session.setAttribute("list",repoImpl.viewContact(username));
 				res.sendRedirect("response.jsp");
 			}
 			pw.close();

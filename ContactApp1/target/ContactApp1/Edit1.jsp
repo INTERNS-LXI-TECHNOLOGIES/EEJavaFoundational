@@ -45,6 +45,6 @@
 			<button type="reset" value="Reset">Reset</button>
 		</div>
 	</form>
-	<a href="Home.html">Back to Home</a>
+	<a href="Home.jsp">Back to Home</a>
 </body>
 </html>
