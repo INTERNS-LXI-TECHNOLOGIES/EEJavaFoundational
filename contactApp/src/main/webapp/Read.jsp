@@ -11,8 +11,10 @@
 <body>
 	<h1>Read</h1>
 	<form action="read" method="">
+	<input type="hidden" name="page" value="1">	
 	<input type="submit" name="submit" value="Data">	
 	</form>
+	<a href="ViewServlet?page=1">View contacts</a>
 	<%
 	// out.println(request.getParameter("name"));
 	%>

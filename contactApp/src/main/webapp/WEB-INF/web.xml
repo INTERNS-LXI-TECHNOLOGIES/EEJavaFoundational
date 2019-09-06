@@ -74,4 +74,13 @@
 <url-pattern>/logout</url-pattern>  
 </servlet-mapping> 
 
+<servlet>  
+<servlet-name>demo7</servlet-name>  
+<servlet-class>com.lxisoft.contact.controller.PaginationServlet</servlet-class>  
+</servlet> 
+
+<servlet-mapping>  
+<servlet-name>demo7</servlet-name>  
+<url-pattern>/pagination</url-pattern>  
+</servlet-mapping> 
 </web-app>  

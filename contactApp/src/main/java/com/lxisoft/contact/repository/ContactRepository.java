@@ -142,7 +142,7 @@ public class ContactRepository
 		int k=0;
 		try
 		{	
-			con=ds.getConnection();
+		con=ds.getConnection();
 		stmt=con.createStatement();
 		sql="select * from registration";
 		ResultSet rs=stmt.executeQuery(sql);
@@ -164,6 +164,22 @@ public class ContactRepository
 			e.printStackTrace();
 		}
 		return k;
+	}
+	public  List<Contact> getRecords(int start,int total){
+		List<Contact> list=new ArrayList<Contact>();
+		try{
+			con=ds.getConnection();
+			ps=con.prepareStatement("select * from contact limit "+(start-1)+","+total);
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()){
+				Contact c=new Contact();
+				c.setName(rs.getString(1));
+				c.setNum(rs.getString(2));
+				list.add(c);
+			}
+			con.close();
+		}catch(Exception e){System.out.println(e);}
+		return list;
 	}
 
 }
