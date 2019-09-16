@@ -21,10 +21,22 @@ public void doPost(HttpServletRequest req,HttpServletResponse res)  throws Servl
 		HttpSession session=req.getSession(true);
 		session.setAttribute("username",username);
 		}
+		else
+		{
+			forwardToLogin(req,res,"Login failed");
+		}
 		}
 catch(Exception e)
 {
-	e.printStackTrace();
+	System.out.println(e.getMessage());
+          forwardToLogin(req, res, "Error: " + e.getMessage());
+          return;
 }
+}
+public static void forwardToLogin(HttpServletRequest req,HttpServletResponse res,String errorMessage)  throws ServletException,IOException,IndexOutOfBoundsException
+{
+	req.setAttribute("errorMsg",errorMessage);
+	req.getRequestDispatcher("/index.jsp")
+         .forward(req, res);
 }
 }

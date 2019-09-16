@@ -177,9 +177,24 @@ public class ContactRepository
 				c.setNum(rs.getString(2));
 				list.add(c);
 			}
+			
 			con.close();
 		}catch(Exception e){System.out.println(e);}
 		return list;
+	}
+	public int getAllData()
+	{
+		int count=0;
+		try{
+			con=ds.getConnection();
+		ps=con.prepareStatement("select * from contact");
+			ResultSet rs=ps.executeQuery();
+			while(rs.next()){
+				count++;
+			}
+			con.close();
+		}catch(Exception e){System.out.println(e);}
+		return count;
 	}
 
 }

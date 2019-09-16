@@ -65,7 +65,6 @@ out.close();*/
             pageid=pageid*total+1;
         }
         List<Contact> list=cR.getRecords(pageid,total);
-        out.println(total);
         out.print("<html><body>");
         out.print("<h1>Page No: "+spageid+"</h1>");
         out.print("<table border='1' cellpadding='4' width='60%'>");
@@ -75,7 +74,8 @@ out.close();*/
         }
         
         out.print("</table>");
-	for(int i=1;i<=5;i++)
+        int count=cR.getAllData();
+	for(int i=1;i<=count/5;i++)
 	{
         out.print("<form action='read' method=''><input type='submit' name='page' value="+i+"></form>");
     }
