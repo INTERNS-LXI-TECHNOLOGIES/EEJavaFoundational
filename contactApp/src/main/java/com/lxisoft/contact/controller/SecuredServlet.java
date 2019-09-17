@@ -2,6 +2,8 @@ package com.lxisoft.contact.controller;
  
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.*;
+import java.time.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -26,7 +28,7 @@ public class SecuredServlet extends HttpServlet{
         PrintWriter out = res.getWriter();
         out.println("Welcome to the secured app!");
       out.printf("<br/>User: " + req.getRemoteUser());
-     // out.printf("<br/>time: " + LocalDateTime.now());
+     out.printf("<br/>time: " + LocalDateTime.now());
      // out.println("<br/><a href='/logout'>Logout</a>");
   }
 

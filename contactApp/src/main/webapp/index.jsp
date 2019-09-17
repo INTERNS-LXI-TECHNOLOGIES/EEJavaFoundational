@@ -20,7 +20,11 @@
 	<input type="text" name="username"><br><br>
 	Password<br><br>
 	<input type="password" name="password"><br><br>
-	<input type="submit" name="submit" value="Login">
+	<input type="submit" name="submit" value="Login"><br><br>
+</form>
+<form action="" method="">
+	<input type="submit" name="submit1" value="Malayalam">
+	<input type="submit" name="submit2" value="Hindi">
 </form>
 <a href="registration.jsp">Registration</a>
 </body>
