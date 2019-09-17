@@ -14,6 +14,7 @@
         if(msg != null ){
            out.println(msg);
         }
+
      %>
 <form action="login" method="post">
 	Login<br><br>
@@ -23,9 +24,11 @@
 	<input type="password" name="password"><br><br>
 	<input type="submit" name="submit" value="Login"><br><br>
 </form>
-<form action="" method="">
-	<input type="submit" name="submit1" value="മലയാളം">
+<form action="loginh.jsp" method="post">
 	<input type="submit" name="submit2" value="हिंदी">
+</form>
+<form action="index.jsp" method="post">
+<input type="submit" name="submit2" value="English">
 </form>
 <a href="registration.jsp">Registration</a>
 </body>
