@@ -23,9 +23,11 @@
 	<input type="password" name="password"><br><br>
 	<input type="submit" name="submit" value="Login"><br><br>
 </form>
-<form action="" method="">
-	<input type="submit" name="submit1" value="മലയാളം">
-	<input type="submit" name="submit2" value="हिंदी">
+<form action="malayalam.jsp" method="post">
+	<input type="submit" name="submit" value="മലയാളം">
+</form>
+<form action="hindi.jsp" method="post">
+	<input type="submit" name="submit" value="हिंदी">
 </form>
 <a href="registration.jsp">Registration</a>
 </body>
