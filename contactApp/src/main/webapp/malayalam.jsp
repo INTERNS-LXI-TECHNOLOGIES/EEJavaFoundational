@@ -16,15 +16,16 @@
         if(msg != null ){
            out.println(msg);
         }
- 		ResourceBundle bundle = ResourceBundle.getBundle("MalayalamBundle", Locale.IN);  
+        Locale locale = new Locale("ml", "IN");
+ 		ResourceBundle bundle = ResourceBundle.getBundle("MalayalamBundle", locale);  
      %>
 <form action="login" method="post">
-	<%System.out.println(bundle.getString("login")); %><br><br>
-	<%System.out.println(bundle.getString("username")); %><br><br>
+	<%=bundle.getString("login") %><br><br>
+	<%=bundle.getString("username") %><br><br>
 	<input type="text" name="username"><br><br>
-	<%System.out.println(bundle.getString("password")); %><br><br>
+	<%=bundle.getString("password") %><br><br>
 	<input type="password" name="password"><br><br>
-	<input type="submit" name="submit" value=<%System.out.println(bundle.getString("login")); %>><br><br>
+	<button type="submit" name="submit"><%=bundle.getString("login")%></button><br><br>
 </form>
 <form action="hindi.jsp" method="post">
 	<input type="submit" name="submit" value="हिंदी">
