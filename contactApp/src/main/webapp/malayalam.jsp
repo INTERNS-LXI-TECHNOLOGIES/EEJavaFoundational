@@ -17,7 +17,7 @@
            out.println(msg);
         }
         Locale locale = new Locale("ml", "IN");
- 		ResourceBundle bundle = ResourceBundle.getBundle("MalayalamBundle", locale);  
+ 		ResourceBundle bundle = ResourceBundle.getBundle("LanguageBundle", locale);  
      %>
 <form action="login" method="post">
 	<%=bundle.getString("login") %><br><br>
