@@ -35,12 +35,12 @@
       
      %>
  
-<form action="login" method="post">
+<form action="j_security_check" method="post">
 	<%=bundle.getString("login") %><br><br>
 	<%=bundle.getString("username") %><br><br>
-	<input type="text" name="username"><br><br>
+	<input type="text" name="j_username"><br><br>
 	<%=bundle.getString("password") %><br><br>
-	<input type="password" name="password"><br><br>
+	<input type="password" name="j_password"><br><br>
 	<button type="submit" name="submit"><%=bundle.getString("login")%></button><br><br>
 </form>
 <form action="index.jsp" method="post">
