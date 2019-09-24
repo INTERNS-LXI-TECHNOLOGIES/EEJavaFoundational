@@ -14,7 +14,7 @@ public void doPost(HttpServletRequest req,HttpServletResponse res)  throws Servl
 		PrintWriter out=res.getWriter();
 		HttpSession session=req.getSession();  
         session.invalidate();  
-        res.sendRedirect("index.jsp");
+        res.sendRedirect("home.jsp");
         out.close();
     }
     catch(Exception e)
