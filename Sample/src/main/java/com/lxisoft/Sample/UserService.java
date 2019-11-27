@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class ManyToOneService{
+public class UserService{
 	@Autowired
-	ManyToOneRepository repo;
+	UserRepository repo;
 	public User createUser(User user) {
 		return repo.save(user);
 	}

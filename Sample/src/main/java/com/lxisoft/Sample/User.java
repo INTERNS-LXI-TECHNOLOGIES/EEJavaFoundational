@@ -9,29 +9,29 @@ public class User
 {
 	@Id
 	@GeneratedValue
-	private int id;
+	private Integer id;
 	private String name;
-	private int vNo;
+	private Integer vNo;
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public User(int id, String name, int vNo) {
+	public User(Integer id, String name, Integer vNo) {
 		super();
 		this.id = id;
 		this.name = name;
 		this.vNo = vNo;
 	}
-	public int getvNo() {
+	public Integer getvNo() {
 		return vNo;
 	}
-	public void setvNo(int vNo) {
+	public void setvNo(Integer vNo) {
 		this.vNo = vNo;
 	}
-	public int getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getName() {

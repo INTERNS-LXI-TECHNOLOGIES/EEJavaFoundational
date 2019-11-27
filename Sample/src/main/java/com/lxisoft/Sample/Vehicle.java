@@ -7,12 +7,12 @@ import javax.persistence.ManyToOne;
 public class Vehicle
 {
 	
-	private int vehicleNo;
+	private Integer vehicleNo;
 	private String vehicleName;
-	public int getVehicleNo() {
+	public Integer getVehicleNo() {
 		return vehicleNo;
 	}
-	public void setVehicleNo(int vehicleNo) {
+	public void setVehicleNo(Integer vehicleNo) {
 		this.vehicleNo = vehicleNo;
 	}
 	public String getVehicleName() {
@@ -30,7 +30,7 @@ public class Vehicle
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Vehicle(int vehicleNo, String vehicleName, User user) {
+	public Vehicle(Integer vehicleNo, String vehicleName, User user) {
 		super();
 		this.vehicleNo = vehicleNo;
 		this.vehicleName = vehicleName;

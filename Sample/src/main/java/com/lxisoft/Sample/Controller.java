@@ -8,13 +8,14 @@ import org.springframework.web.bind.annotation.RestController;
 import com.lxisoft.Sample.User;
 
 @RestController
-public class ManyToOneController
+public class Controller
 {
 @Autowired
-ManyToOneService service;
-@PostMapping("/contact")
+UserService uService;
+VehicleService vService;
+@PostMapping("/user")
 public User create(@RequestBody User user){
     
-    return service.createUser(user);
+    return uService.createUser(user);
 }
 }
