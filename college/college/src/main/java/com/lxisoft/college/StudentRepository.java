@@ -7,6 +7,7 @@ import java.util.List;
 
 @Repository
 public interface StudentRepository extends JpaRepository<Student, Integer>{
-    List<Student> findByNameContainingOrIdContaining(String text,int text1);
+ 
+   List<Student> findByNameContainingOrIdContaining(String text,int text1);
     
 }

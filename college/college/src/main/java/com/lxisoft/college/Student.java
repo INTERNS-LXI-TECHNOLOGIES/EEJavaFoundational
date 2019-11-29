@@ -9,12 +9,7 @@ public class Student {
 private int id;
 private String name;
 private float mark;
-public float getMark() {
-	return mark;
-}
-public void setMark(float mark) {
-	this.mark = mark;
-}
+
 public String getName() {
 	return name;
 }
@@ -27,8 +22,14 @@ public int getId() {
 public void setId(int id) {
 	this.id = id;
 }
+public float getMark() {
+	return mark;
+}
+public void setMark(float mark) {
+	this.mark = mark;
+}
 public String toString() {
-	return "Student [name=" + name + ", mark=" + mark + "]";
+	return "Student [id="+id+":Name=" + name + ", mark=" + mark + "]";
 }
 public Student() {
 	
