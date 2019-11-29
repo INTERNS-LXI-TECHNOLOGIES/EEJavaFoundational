@@ -2,11 +2,13 @@ package com.lxisoft.Sample;
 
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 
 @Entity
 public class Vehicle
 {
-	
+	@Id
 	private Integer vehicleNo;
 	private String vehicleName;
 	public Integer getVehicleNo() {
@@ -22,9 +24,13 @@ public class Vehicle
 		this.vehicleName = vehicleName;
 	}
 	@ManyToOne
+	@JoinColumn(name="vNo")
 	private User user;
 	public User getUser() {
 		return user;
+	}
+	public void setUser(User user) {
+		this.user = user;
 	}
 	public Vehicle() {
 		super();
@@ -36,7 +42,5 @@ public class Vehicle
 		this.vehicleName = vehicleName;
 		this.user = user;
 	}
-	public void setUser(User user) {
-		this.user = user;
-	}
+	
 }

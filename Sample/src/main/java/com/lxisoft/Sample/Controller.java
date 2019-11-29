@@ -18,4 +18,9 @@ public User create(@RequestBody User user){
     
     return uService.createUser(user);
 }
+@PostMapping("/vehicle")
+public Vehicle create(@RequestBody Vehicle vehicle){
+    
+    return vService.createVehicle(vehicle);
+}
 }

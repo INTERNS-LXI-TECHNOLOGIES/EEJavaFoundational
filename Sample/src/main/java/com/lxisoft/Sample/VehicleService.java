@@ -7,4 +7,8 @@ import org.springframework.stereotype.Service;
 public class VehicleService {
 @Autowired
 VehicleRepository repo;
+public User createVehicle(Vehicle vehicle) {
+	return repo.save(vehicle);
+}
+
 }
