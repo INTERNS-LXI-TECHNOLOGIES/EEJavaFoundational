@@ -4,10 +4,15 @@
 <%@page import="com.lxisoft.repository.*"%>
 <%@page import="java.util.*"%>
 
+<!DOCTYPE html>
 <html>
-<title>CONTACT APP</title>
+<head>
+	<title>SAVE</title>
+</head>
 <body>
-<a href="showAll">open app</a>
+	<form>
+		
+	</form>
 
 </body>
 </html>

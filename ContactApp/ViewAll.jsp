@@ -5,19 +5,38 @@
 <%@page import="java.util.*"%>
 
 <html>
-<body>
+<title>ALL CONTACTS</title>
+<body style="background-color:#D4DB65;">
+	<center style="color: blue"><h2><u><b>ALL CONTACTS</b><h2></u></center>
+	<br>
 	<table style="width:100%">
-  <tr>
-    <th>ID</th>
-    <th>NAME</th> 
-    <th>NUMBER</th>
-  </tr>
+		<style>
+			button {
+			  background-color: blue; /* Green */
+			  border-radius: 70%;
+			  color: white;
+			  padding: 30px;
+			  font-size: large;
+			 float: right;	
+			  margin: 25px 75px;
+				}
+		table, th, td {
+			border: 0.25px solid black;
+			border-collapse: collapse;
+		    padding: 10px;
+		}
+		</style>
+	  	<tr>
+		<th style="color: blue">ID</th>
+		<th style="color: blue">NAME</th> 
+		<th style="color: blue">NUMBER</th>
+	  	</tr>
 <%
 ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("list");
 for(Contact contact:contactList)
 {
 	%>
-	 <tr>
+	<tr>
     <th><%=contact.getId()%></th>
     <th><%=contact.getName()%></th> 
     <th><%=contact.getNumber()%></th>
@@ -26,5 +45,8 @@ for(Contact contact:contactList)
 }
 %>
 </table>
+ <button type="button" onclick="index.jsp">+</button>
+
+
 </body>
 </html>
