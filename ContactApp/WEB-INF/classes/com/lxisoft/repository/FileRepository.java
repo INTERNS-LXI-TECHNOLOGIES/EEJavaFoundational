@@ -3,13 +3,11 @@ import java.io.*;
 import com.lxisoft.model.*;
 import com.lxisoft.domain.*;
 import java.util.*;
-import com.lxisoft.view.*;
 import com.lxisoft.repository.*;
 
 public class FileRepository implements Repository
 {
 	File file=new File("C:\\Users\\kpmuh\\Desktop\\java\\github\\CoreJavaFoundational\\ContactApp\\src\\com\\lxisoft\\repository\\Contactlist.csv");
-	View view=new View();
 	/**
 	 *to save contact
 	 *
@@ -180,20 +178,17 @@ public class FileRepository implements Repository
 
 	public void clear()
 	{
-		String cl=view.clearAll();
-		if(cl.equals("y"))
-		{
-			try
-			{	
-				FileWriter fwr1=new FileWriter(file);
-				BufferedWriter bw1=new BufferedWriter(fwr1);
-				bw1.close();		
-			}
-			catch(IOException e)
-			{
-				System.out.println("Exception: "+e);
-			}
+		try
+		{	
+			FileWriter fwr1=new FileWriter(file);
+			BufferedWriter bw1=new BufferedWriter(fwr1);
+			bw1.close();		
 		}
+		catch(IOException e)
+		{
+			System.out.println("Exception: "+e);
+		}
+		
 	}
 }
 

@@ -1,0 +1,13 @@
+<web-app> 
+
+<servlet>
+   <servlet-name>AllContacts</servlet-name>
+   <servlet-class>com.lxisoft.controller.ShowAllServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+   <servlet-name>AllContacts</servlet-name>
+   <url-pattern>/showAll</url-pattern>
+</servlet-mapping>
+
+</web-app> 
