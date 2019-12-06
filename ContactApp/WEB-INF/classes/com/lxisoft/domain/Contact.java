@@ -1,7 +1,7 @@
 package com.lxisoft.domain;
-import com.lxisoft.controllers.*;
-import com.lxisoft.models.*;
-import com.lxisoft.view.*;
+// import com.lxisoft.controllers.*;
+// import com.lxisoft.models.*;
+// import com.lxisoft.view.*;
 import java.util.*;
 import java.io.*;
 public class Contact 

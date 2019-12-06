@@ -21,7 +21,7 @@ try
 			{
 			
 %>
-<h2><%out.println("MEGHA");%>
+<h2><%out.println("Welcome");%>
 <%
  	    }}
  	    catch(Exception e)
