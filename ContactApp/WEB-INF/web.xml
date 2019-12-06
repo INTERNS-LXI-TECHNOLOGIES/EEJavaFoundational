@@ -2,7 +2,7 @@
 
 <servlet>
       <servlet-name>view</servlet-name>
-      <servlet-class>com.lxisoft.ViewServlet</servlet-class>
+      <servlet-class>com.lxisoft.Servlet.ViewServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
