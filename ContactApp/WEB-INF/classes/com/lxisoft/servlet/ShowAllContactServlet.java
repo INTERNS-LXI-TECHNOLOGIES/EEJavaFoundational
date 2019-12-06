@@ -6,13 +6,12 @@ import java.util.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.model.*;
 import com.lxisoft.domain.*;
+
 public class ShowAllContactServlet extends HttpServlet
 {
 	
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
-		PrintWriter out=response.getWriter();
-		out.println("contact");
 		MysqlRepository dbrepo=new MysqlRepository();
 		List<Contact>contactList=dbrepo.findAllContact();
 		ContactListModel listModel=new ContactListModel();
