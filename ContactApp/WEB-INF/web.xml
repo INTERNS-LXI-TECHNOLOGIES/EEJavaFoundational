@@ -1,0 +1,12 @@
+<web-app>
+
+    <servlet>
+       <servlet-name>u</servlet-name>
+       <servlet-class>com.lxisoft.servlet.ShowAllContactServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+       <servlet-name>u</servlet-name>
+       <url-pattern>/url</url-pattern>
+    </servlet-mapping>
+</web-app>
