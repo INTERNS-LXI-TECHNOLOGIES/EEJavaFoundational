@@ -1,0 +1,13 @@
+<web-app>
+
+<servlet>
+      <servlet-name>view</servlet-name>
+      <servlet-class>com.lxisoft.ViewServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>view</servlet-name>
+      <url-pattern>/viewall</url-pattern>
+ </servlet-mapping>
+
+</web-app>
