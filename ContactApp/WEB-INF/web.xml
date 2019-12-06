@@ -10,4 +10,15 @@
    <url-pattern>/showAll</url-pattern>
 </servlet-mapping>
 
+<servlet>
+   <servlet-name>save</servlet-name>
+   <servlet-class>com.lxisoft.controller.SaveServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+   <servlet-name>save</servlet-name>
+   <url-pattern>/add</url-pattern>
+</servlet-mapping>
+
+
 </web-app> 

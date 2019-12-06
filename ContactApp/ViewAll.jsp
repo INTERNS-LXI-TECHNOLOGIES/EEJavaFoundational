@@ -12,7 +12,7 @@
 	<table style="width:100%">
 		<style>
 			button {
-			  background-color: blue; /* Green */
+			  background-color: blue;
 			  border-radius: 70%;
 			  color: white;
 			  padding: 30px;
@@ -45,8 +45,14 @@ for(Contact contact:contactList)
 }
 %>
 </table>
- <button type="button" onclick="index.jsp">+</button>
-
+<form action="Save.jsp">
+ <button>+</button>
+</form>
 
 </body>
 </html>
+
+
+
+<!-- ViewAllModel temp=request.getAttribute("list");
+for(Contact contact:temp.getList()) -->

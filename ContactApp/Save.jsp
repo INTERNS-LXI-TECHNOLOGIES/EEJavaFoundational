@@ -9,9 +9,25 @@
 <head>
 	<title>SAVE</title>
 </head>
-<body>
-	<form>
-		
+<body style="background-color:#D4DB65;">
+	<style>
+		form{
+			 text-align: center;
+			 font-size: xx-large;	
+			 margin: 200px;
+			 
+		}
+		input{
+			padding-right: 50px;
+			padding-top: 10px;
+
+		}
+	</style>
+	<form action="add">
+		<label>
+			Name:<input type="type" name="name"><br><br>
+			Number:<input type="type" name="number"><br>
+		</label>
 	</form>
 
 </body>

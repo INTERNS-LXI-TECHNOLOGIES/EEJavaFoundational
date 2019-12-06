@@ -7,7 +7,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 
-public class ShowAllServlet extends HttpServlet
+public class SaveServlet extends HttpServlet
 {
 	Repository repository=new DbRepository();
 
@@ -19,15 +19,3 @@ public class ShowAllServlet extends HttpServlet
 		rd.forward(request,response);
 	}
 }
-
-
-
-
-
-
-
-// ViewAllModel viewAllModel=new ViewAllModel();
-// 		viewAllModel.setList(repository.findAll());
-// 		request.setAttribute("list",viewAllModel);
-// 		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");
-// 		rd.forward(request,response);
