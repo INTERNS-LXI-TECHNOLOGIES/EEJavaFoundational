@@ -1,7 +1,7 @@
-package com.lxisoft.contactapp.model;
+package com.lxisoft.models;
 
-import com.lxisoft.contactapp.model.*;
-import com.lxisoft.contactapp.Domain.*;
+import com.lxisoft.models.*;
+import com.lxisoft.Domain.*;
 import java.io.*;
 import java.util.*;
 /**

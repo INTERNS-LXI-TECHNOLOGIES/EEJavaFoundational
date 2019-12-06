@@ -1,4 +1,4 @@
-package com.lxisoft.contactapp.Domain;
+package com.lxisoft.Domain;
 import  java.lang.Comparable;
 /**
  * pojo : Contact class for set and get contact details that implements Comparable

@@ -1,4 +1,4 @@
-package com.lxisoft.contactapp.model;
+package com.lxisoft.models;
 	/**
 	 * class contact model to set and get contact id and name
 	 */

@@ -1,5 +1,5 @@
-package com.lxisoft.contactapp.model;
-import com.lxisoft.contactapp.Domain.*;
+package com.lxisoft.models;
+import com.lxisoft.Domain.*;
 import java.util.Comparator;
 
 public class SortByName implements Comparator<Contact>

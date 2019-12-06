@@ -1,8 +1,8 @@
-package com.lxisoft.contactapp.repository;
+package com.lxisoft.repository;
 
-import com.lxisoft.contactapp.controller.ContactController;
-import com.lxisoft.contactapp.model.*;
-import com.lxisoft.contactapp.Domain.*;
+// import com.lxisoft.controller.ContactController;
+import com.lxisoft.models.*;
+import com.lxisoft.Domain.*;
 import java.sql.*;
 import java.util.*;
 import java.util.Collections;
@@ -22,9 +22,10 @@ public class MySqlRepo implements Repository
 	PreparedStatement stmt=null;
 	ResultSet rs=null;
 	static int id=0;
-	ArrayList<Contact> contacts=new ArrayList<Contact>();
+		ArrayList<Contact> contacts=new ArrayList<Contact>();
 
 	{
+
 	try
 		{
 		dB_Connection(true);
@@ -37,7 +38,7 @@ public class MySqlRepo implements Repository
 	{
 		try
 		{
-			
+		
 			if(dBexists)
 			{	
 				Class.forName(driver_Class);
@@ -184,8 +185,8 @@ public class MySqlRepo implements Repository
 		try
 		{
 			contacts.clear();
-			stmt=con.prepareStatement("use contacts");
-			rs = stmt.executeQuery("select * from Contactlist");
+			stm=con.createStatement();
+			rs = stm.executeQuery("select * from Contactlist");
 			while(rs.next()) 
 			{ 
 				Contact	contact=new Contact();

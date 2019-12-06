@@ -1,10 +1,10 @@
-package com.lxisoft.contactapp.repository;
-import com.lxisoft.contactapp.Domain.*;
+package com.lxisoft.repository;
+import com.lxisoft.Domain.*;
 import java.util.*;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import com.lxisoft.contactapp.*;
+
 
 public interface Repository
 {
