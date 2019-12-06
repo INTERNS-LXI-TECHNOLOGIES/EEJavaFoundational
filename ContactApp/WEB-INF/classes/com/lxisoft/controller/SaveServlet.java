@@ -11,11 +11,12 @@ public class SaveServlet extends HttpServlet
 {
 	Repository repository=new DbRepository();
 
-	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
+	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
-		ArrayList<Contact> contactList=repository.findAll();
-		request.setAttribute("list",contactList);
-		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");
-		rd.forward(request,response);
+		Contact contact=new Contact();
+		contact.setName(request.getParameter("name"));
+		contact.setNumber(request.getParameter("number"));
+		repository.save(contact);
+		response.sendRedirect("showAll");
 	}
 }

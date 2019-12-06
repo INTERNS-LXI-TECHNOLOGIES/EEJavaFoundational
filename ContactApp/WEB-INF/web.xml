@@ -17,7 +17,7 @@
 
 <servlet-mapping>
    <servlet-name>save</servlet-name>
-   <url-pattern>/add</url-pattern>
+   <url-pattern>/addContact</url-pattern>
 </servlet-mapping>
 
 
