@@ -8,7 +8,7 @@
 	%>
 	happy
 	<h1>VISHNU</h1>
-	<a href="index.jsp">Goto B</a>
+	<a href="in">Goto B</a>
 			<h6>..................</h6>
 </body>
 </html>

@@ -17,14 +17,13 @@
     <% 
     while(rs.next()) {
     %>
-    <h1><%out.println(rs.getInt(1)+rs.getString(2)+rs.getString(3));%></h1>  
+    <h1><%out.println("  Id  "+"      "+"  Name       "+"   "+"   Number     ");%></h1>  
+    <h1><%out.println(rs.getInt(1)+"  "+rs.getString(2)+"   "+rs.getString(3));%></h1>  
     <%
     }
     con.close();  
     }catch(Exception e){ System.out.println(e);} 
 	%>
 	happy
-	<h1>+CHRIST</h1>
-		
 </body>
 </html>

@@ -1,0 +1,8 @@
+<web-app>
+
+    <servlet>
+	<servlet-name>
+		<servlet-class> com.lxisoft.servlet</servlet-class>
+	</servlet-name>
+	</servlet>
+		
