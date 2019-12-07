@@ -29,21 +29,18 @@ public class Contact
 	{
 		return id;
 	}
-	 /**
- *set contact name 
- `	  /**
- * @param name contact name
- */
+   /**
+    *set contact name 
+ `  * @param name contact name
+    */
 	public void setName(String name)
 	{
 		this.name=name;
 	}
-	 /**
- * get contact name
- */
-	  /**
- * @return contact name
- */
+	/**
+     * get contact name
+     * @return contact name
+     */
 	public String getName()
 	{
 		return name;

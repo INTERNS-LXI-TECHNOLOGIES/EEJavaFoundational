@@ -1,4 +1,5 @@
 <%@page import="com.lxisoft.domain.*"%>
+<%@page import="com.lxisoft.models.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
 <!DOCTYPE html>
@@ -10,18 +11,18 @@
 	<table border="1px" width="25%">
 	<tr>
 		<th>ID</th>
-		<th>Name</th>
-		<th>Number</th></tr>
+		<th>Name</th></tr>
 	<%
-	List<Contact> contactList=(List<Contact>) request.getAttribute("contactlist");
+	List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
+	// List<Contact> contactList=(List<Contact>) request.getAttribute("contactlist");
     // out.println(contactList.size());
-	for(Contact con:contactList)
+	for(ContactModel cm:contactsList)
 	{%>
 	<TR>
-		<TD><%out.println(con.getId()+"\n");%></TD>
-    	<TD><%out.println(con.getName()+"\n");%></TD>
-    	<TD><%out.println(con.getContactNo()+"\n");%></TD>
-    </TR><%
+		<TD><%=cm.getId()%></TD>
+    	<TD><%=cm.getName()%></TD>
+    </TR>
+    <%
 	}%>
 	</table>
 </body>
