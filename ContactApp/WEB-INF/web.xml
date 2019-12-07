@@ -10,4 +10,15 @@
       <url-pattern>/viewall</url-pattern>
  </servlet-mapping>
 
+
+<servlet>
+      <servlet-name>newContact</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.ContactAdd</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>newContact</servlet-name>
+      <url-pattern>/createNewContact</url-pattern>
+ </servlet-mapping>
+
 </web-app>

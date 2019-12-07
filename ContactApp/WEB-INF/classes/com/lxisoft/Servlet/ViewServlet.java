@@ -19,10 +19,11 @@ public class ViewServlet extends HttpServlet
    		MysqlRepository repo= new MysqlRepository();
          try {
          ArrayList<Contact> contacts=repo.getAllContacts(); 
-   		PrintWriter out = response.getWriter();
-         // out.println("<h1>jdjkskjdsf</h1>");
-   		request.setAttribute("n",name);
-   		request.getRequestDispatcher("jsp\\new.jsp").forward(request, response);
+   		// PrintWriter out = response.getWriter();
+         // for(Contact a: contacts)
+         // out.println("<h1>"+a.getName()+"</h1>");
+   		request.setAttribute("contacts",contacts);
+   		request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
    		}catch(Exception e)
          {
 System.out.println("exception "+e);
