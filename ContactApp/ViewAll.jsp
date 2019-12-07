@@ -6,7 +6,8 @@
 <title>CONTACTS </title>
 <h1><center>CONTACT LIST</center></h1>
 <body>
-	<table align="center" border= "1" border color= "blue" bgcolor="yellow">
+	<a href="AddContact.jsp"><h1 align="center">+</h1></a>
+	<table align="center" border= "1" width="50%" border color= "blue" bgcolor="pink">
 		<tr>
 			<th>ID</th>
 			<th>NAME</th>

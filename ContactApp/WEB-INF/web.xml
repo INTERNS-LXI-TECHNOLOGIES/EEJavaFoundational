@@ -1,12 +1,21 @@
 <web-app>
 
     <servlet>
-       <servlet-name>u</servlet-name>
+       <servlet-name>show</servlet-name>
        <servlet-class>com.lxisoft.servlet.ShowAllContactServlet</servlet-class>
     </servlet>
 
     <servlet-mapping>
-       <servlet-name>u</servlet-name>
+       <servlet-name>show</servlet-name>
        <url-pattern>/url</url-pattern>
+    </servlet-mapping>
+    <servlet>
+       <servlet-name>add contact</servlet-name>
+       <servlet-class>com.lxisoft.servlet.AddContactServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+       <servlet-name>add contact</servlet-name>
+       <url-pattern>/add</url-pattern>
     </servlet-mapping>
 </web-app>
