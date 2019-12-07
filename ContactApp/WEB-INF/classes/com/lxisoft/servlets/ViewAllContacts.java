@@ -14,20 +14,18 @@ public class ViewAllContacts extends HttpServlet
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
     {
       // response.setContentType("text");
-       String name="Aji"; 
+       //String name=request.getParameter("name");  
         // response.sendRedirect("jsp/ContactAdd.jsp"); 
       try{
+            ArrayList<Contact> contactList=repo.getAllContacts();
+            request.setAttribute("contacts",contactList);
+            RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
+      	   rd.forward(request,response);
+         }catch(SQLException n)
+        {
+           n.printStackTrace();
+         }
+  	}
 
-      // ArrayList<Contact> contactList=repo.getAllContacts();
-      request.setAttribute("contacts",name);
-      RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
-	  rd.forward(request,response);
-      }catch(Exception n)
-  {
-    n.printStackTrace();
-  }
-	}
 
-      // PrintWriter out = response.getWriter();
-      // out.println("<h3 align="center">" + "CONTACTLIST" + "</h3>");
-    }
+}

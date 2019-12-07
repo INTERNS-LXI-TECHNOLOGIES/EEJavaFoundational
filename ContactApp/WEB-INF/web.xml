@@ -1,13 +1,21 @@
 <web-app>
 
 <servlet>
-      <servlet-name>ContactView</servlet-name>
+      <servlet-name>CView</servlet-name>
       <servlet-class>com.lxisoft.servlets.ViewAllContacts</servlet-class>
+</servlet>
+<servlet>
+      <servlet-name>CAdd</servlet-name>
+      <servlet-class>com.lxisoft.servlets.SaveContacts</servlet-class>
 </servlet>
 
 <servlet-mapping>
-		<servlet-name>ContactView</servlet-name>
+		<servlet-name>CView</servlet-name>
 		<url-pattern>/View</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+		<servlet-name>CAdd</servlet-name>
+		<url-pattern>/Add</url-pattern>
 </servlet-mapping>
 
 

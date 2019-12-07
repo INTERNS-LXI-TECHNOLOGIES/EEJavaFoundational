@@ -12,7 +12,6 @@
 					<td><a href="..\View" value="View" style="color: blue">ViewAll &nbsp;&nbsp;</td>	
 					<td><a href="..\Sort" value="Sort">Sort &nbsp;&nbsp;</td>
 					<td><a href="..\Delete" value="Delete">DeleteAll &nbsp;&nbsp;</td>
-						</form>  
 				</tr>
 			</table>
 		</body>

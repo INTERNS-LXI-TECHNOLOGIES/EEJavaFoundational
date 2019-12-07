@@ -24,16 +24,16 @@ public class MySqlRepo implements Repository
 	static int id=0;
 		ArrayList<Contact> contacts=new ArrayList<Contact>();
 
-	{
+	// {
 
-	try
-		{
-		dB_Connection(true);
-		}catch(Exception e)
-		{
-			System.out.println("error "+e);
-		}
-	}
+	// try
+	// 	{
+	// 	dB_Connection(true);
+	// 	}catch(Exception e)
+	// 	{
+	// 		System.out.println("error "+e);
+	// 	}
+	// }
 	public void dB_Connection(boolean dBexists) throws SQLException,ClassNotFoundException
 	{
 		try
@@ -41,8 +41,8 @@ public class MySqlRepo implements Repository
 		
 			if(dBexists)
 			{	
-				Class.forName(driver_Class);
-				con=DriverManager.getConnection(db_URL,userName,password);
+				Class.forName("com.mysql.jdbc.Driver");
+				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/",userName,password);
 				stm=con.createStatement();
 				System.out.println("DB Connection created successfully");
 				checkDBExists();
@@ -50,13 +50,11 @@ public class MySqlRepo implements Repository
 			}
 			else
 			{
-				Class.forName(driver_Class);
-				con=DriverManager.getConnection(db_URL+dataBase,userName,password);
+				Class.forName("com.mysql.jdbc.Driver");
+				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/"+dataBase,userName,password);
 				System.out.println("DB Connection created successfully");
 				con.setCatalog(dataBase);
 				System.out.println("DB set");
-				PreparedStatement stmt;
-				ResultSet rs;
 				
 			}
 			boolean tableExists=checkTableExists();
@@ -184,8 +182,11 @@ public class MySqlRepo implements Repository
 	{
 		try
 		{
-			contacts.clear();
-			stm=con.createStatement();
+		dB_Connection(true);
+		contacts.clear();
+		PreparedStatement stm=con.prepareStatement("use contacts");
+		// PreparedStatement stm=con.prepareStatement("use contacts");
+
 			rs = stm.executeQuery("select * from Contactlist");
 			while(rs.next()) 
 			{ 
@@ -195,7 +196,7 @@ public class MySqlRepo implements Repository
 				contact.setNo(rs.getString("NUMBER"));
 				contacts.add(contact);
 			}	
-		}catch(SQLException e)
+		}catch(Exception e)
 		{
 			e.printStackTrace();
 		}
