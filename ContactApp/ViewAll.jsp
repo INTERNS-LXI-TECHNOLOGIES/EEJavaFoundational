@@ -35,11 +35,14 @@
 ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("list");
 for(Contact contact:contactList)
 {
+	String x="sdkjksj";
 	%>
-	<tr>
-    <th><%=contact.getId()%></th>
+		<tr><%request.setAttribute("contact",x);
+			out.println("cont="+ request.getAttribute("contact"));
+			%>
+    <th><a href="Select.jsp"><%=contact.getId()%></a></th>
     <th><%=contact.getName()%></th> 
-    <th><%=contact.getNumber()%></th>
+    <th><%out.println(contact.getNumber());%></th>
   	</tr>
 	<%
 }

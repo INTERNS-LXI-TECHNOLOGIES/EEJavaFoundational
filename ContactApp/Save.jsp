@@ -13,15 +13,23 @@
 	<style>
 		form{
 			 text-align: center;
-			 font-size: xx-large;	
-			 margin: 200px;
-			 
+    font-size: xx-large;
+    margin: 79px
 		}
+		
+		#b1{
+			
+    background-color: blue;
+    color: white;
+    margin: 25px 169px;
+    font-size: large;
+}
+		
 		#b2 {
-			  background-color: blue;
-			  color: white;
-			  font-size: large;	
-			  margin: 25px 75px;
+			  background-color: red;
+    color: white;
+    font-size: large;
+    margin: -57px  653px;
 				}
 		input{
 			padding-right: 50px;
@@ -29,16 +37,23 @@
 
 		}
 	</style>
+	<%out.println("cont="+ request.getAttribute("contact"));%>
+	<div class="grid-item">
+		<div class="row-1">
+			<div class="col-1">
+
 	<form action="addContact" method="post">
-		<label>
 			Name:<input type="type" name="name"><br><br>
-			Number:<input type="type" name="number"><br>
-			<button id="b1" type="submit">save</button>
-		</label>
+			Number:<input type="type" name="number" ><br>
+			<button id="b1" type="submit" >save</button>		
 	</form>
-	<center>
-	<button id="b2" type="submit" style="color: red">save</button>
-	</center>
+
+</div>
+<div class="col-2">
+	<button id="b2"  onclick="window.location.href='index.jsp'">Back</button>
+</div>
+	</div>
+	</div>
 
 </body>
 </html>
