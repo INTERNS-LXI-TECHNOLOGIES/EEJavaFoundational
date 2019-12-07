@@ -6,7 +6,6 @@ import java.util.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.model.*;
 import com.lxisoft.domain.*;
-
 public class ShowAllContactServlet extends HttpServlet
 {
 	

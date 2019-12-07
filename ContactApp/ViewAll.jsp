@@ -4,15 +4,25 @@
 <%@page import="java.io.*"%>
 <html>
 <title>CONTACTS </title>
+<h1><center>CONTACT LIST</center></h1>
 <body>
+	<table align="center" border= "1" border color= "blue" bgcolor="yellow">
+		<tr>
+			<th>ID</th>
+			<th>NAME</th>
+		</tr>
 <%
 List<ContactModel> c=(List<ContactModel>) request.getAttribute("allContact");
-out.println(c.size());
 for(int i=0;i<c.size();i++)
 {
-	out.println(c.get(i).getId());
-	out.println(c.get(i).getName());
+	%>
+	<tr>
+		<td><%=(c.get(i).getId())%></td>
+		<td><%=(c.get(i).getName())%></td>
+		</tr>
+<%
 }
 %>
+</table>
 </body>
 </html>

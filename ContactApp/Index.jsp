@@ -1,10 +1,8 @@
-
 <html>
 <head>
 <title>CONTACT</title>
-<h1><center>CONTACT APP<center></h1>
 <body>
-<a href="url">contact</a>
+<a href="url"><h1><center>CONTACT APP<center></h1></a>
 </body>
 </head>
 </html>
