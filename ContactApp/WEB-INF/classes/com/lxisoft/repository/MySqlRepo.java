@@ -24,16 +24,16 @@ public class MySqlRepo implements Repository
 	static int id=0;
 		ArrayList<Contact> contacts=new ArrayList<Contact>();
 
-	// {
+	{
 
-	// try
-	// 	{
-	// 	dB_Connection(true);
-	// 	}catch(Exception e)
-	// 	{
-	// 		System.out.println("error "+e);
-	// 	}
-	// }
+	try
+		{
+		dB_Connection(true);
+		}catch(Exception e)
+		{
+			System.out.println("error "+e);
+		}
+	}
 	public void dB_Connection(boolean dBexists) throws SQLException,ClassNotFoundException
 	{
 		try
@@ -74,9 +74,10 @@ public class MySqlRepo implements Repository
 	 */
 	public void insertContactDetails(Contact contact,boolean tbexists)throws SQLException
 	{	
-	
+			
 		try
 		{	
+			// dB_Connection(true);
 			if(tbexists==false)
 			{
 				id=getId();
@@ -167,7 +168,7 @@ public class MySqlRepo implements Repository
 		try
 		{
 			contacts=getAllContacts();
-			rs = stmt.executeQuery("select * from Contactlist");
+			rs= stmt.executeQuery("select * from Contactlist");
 			while(rs.next()) 
 			{ 
 	 			id = rs.getInt("ID");
@@ -182,9 +183,9 @@ public class MySqlRepo implements Repository
 	{
 		try
 		{
-		dB_Connection(true);
+		// dB_Connection(true);
 		contacts.clear();
-		PreparedStatement stm=con.prepareStatement("use contacts");
+		stmt=con.prepareStatement("use contacts");
 		// PreparedStatement stm=con.prepareStatement("use contacts");
 
 			rs = stm.executeQuery("select * from Contactlist");

@@ -22,7 +22,6 @@
 			<%
 			ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("contacts");
 			for(Contact contact:contactList)
-				// out.println("hi");
 			{ %>
 				
 				<tr>

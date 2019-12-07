@@ -11,16 +11,18 @@ import java.sql.*;
 public class SaveContacts extends HttpServlet 
 {
 	private Repository repo=new MySqlRepo();
-	public void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
+	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
     {
       try{
-             String[] contacts=new String[2];
-              contacts[0]=request.getParameter("name");  
-              contacts[1]=request.getParameter("num");
               Contact contact=new Contact();
-              contact.setName(contacts[0]);
-              contact.setNo(contacts[1]);
+              contact.setName(request.getParameter("name"));
+              contact.setNo(request.getParameter("num"));
               repo.addContactDetails(contact);
+              ArrayList<Contact> contactList=repo.getAllContacts();
+              request.setAttribute("contacts",contactList);
+              RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
+              rd.forward(request,response);
+              // response.sendRedirect("jsp\\ContactView.jsp");
          }catch(SQLException n)
          {
            n.printStackTrace();
