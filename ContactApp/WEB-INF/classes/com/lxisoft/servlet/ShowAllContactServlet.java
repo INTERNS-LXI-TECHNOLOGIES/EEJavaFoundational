@@ -8,7 +8,6 @@ import com.lxisoft.model.*;
 import com.lxisoft.domain.*;
 public class ShowAllContactServlet extends HttpServlet
 {
-	
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		MysqlRepository dbrepo=new MysqlRepository();

@@ -4,6 +4,7 @@ import javax.servlet.http.*;
 import java.io.*;
 import com.lxisoft.domain.Contact;
 import com.lxisoft.repository.*;
+import com.lxisoft.servlet.*;
 public class AddContactServlet extends HttpServlet
 {
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
@@ -15,14 +16,14 @@ public class AddContactServlet extends HttpServlet
 		cont.setContactNumber(number);
 		MysqlRepository dbrepo=new MysqlRepository();
 		dbrepo.saveContact(cont);
+		// HttpSession session=request.getSession();
+		// session.setAttribute("contact"+cont);
 		request.setAttribute("getContactById",cont);
 		RequestDispatcher rd=request.getRequestDispatcher("GetContactById.jsp");
 		rd.forward(request,response);
 	}
 	// public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	// {
-	// 	doPost(request,response);
-		
 		
 	// }
 }
