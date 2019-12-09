@@ -4,10 +4,11 @@
 	<title>add new </title>
 </head>
 <body>
-<form action="..\createNewContact" method="get">
-	<input type="text" name="name" placeholder="ENTER NAME">
-	<input type="text" name="number" placeholder="ENTER NUMBER">
-	<input type="submit" name="CREATE">
+<form action="..\createNewContact" method="get"><br><center>
+	<input type="text" name="name" placeholder="ENTER NAME"><br><br>
+	<input type="text" name="number" placeholder="ENTER NUMBER"><br><br>
+	<button  type="submit" name="CREATE">create</button></center>
+	<button type="button" onClick="window.location.href='../viewall';">Back</button>
 </form>
 </body>
 </html>

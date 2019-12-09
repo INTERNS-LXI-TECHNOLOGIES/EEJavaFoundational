@@ -1,11 +1,11 @@
 <html>
 <title>CONTACT APP</title>
-<head><CENTER> welcome to contact App</CENTER></head>
+<head><CENTER> <b>welcome to contact App</b></CENTER></head>
 <body>
 
-<form action="..\viewall" method="get">
-	<input type="text" name="name">
-	<input type="submit" name="Submit">
+	
+
+<center><button onclick="window.location.href='..\\viewall';">click here to continue</button> </center>
 
 
 </form>	

@@ -13,12 +13,34 @@
 
 <servlet>
       <servlet-name>newContact</servlet-name>
-      <servlet-class>com.lxisoft.Servlet.ContactAdd</servlet-class>
+      <servlet-class>com.lxisoft.Servlet.ContactAddServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>
       <servlet-name>newContact</servlet-name>
       <url-pattern>/createNewContact</url-pattern>
+ </servlet-mapping>
+
+
+<servlet>
+      <servlet-name>deleteContacts</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.DeleteAllServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>deleteContacts</servlet-name>
+      <url-pattern>/deleteAll</url-pattern>
+ </servlet-mapping>
+
+
+ <servlet>
+      <servlet-name>search</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.SearchServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>search</servlet-name>
+      <url-pattern>/search</url-pattern>
  </servlet-mapping>
 
 </web-app>

@@ -18,6 +18,8 @@ public class MysqlRepository implements Repository
 	{
 		try
 		{
+			contacts=getAllContacts();
+			setId();
 			connection(true);
 			// System.out.println("static block mysql");
 		}catch(Exception p)
@@ -194,14 +196,8 @@ public class MysqlRepository implements Repository
 	public  void setId()throws SQLException, ClassNotFoundException
 	{
 	
-		// id=0;			System.out.println("id  ");
-		try
-		{
+		id=0;
 		
-		}catch(Exception e)
-		{
-
-		}
 		// if(contacts.size()!=0)
 		// {
 		// 	id=contacts.get(contacts.size()-1).getId();
@@ -216,7 +212,7 @@ public class MysqlRepository implements Repository
 		id++; 
 		
 		// System.out.println(contacts.size()+"===size id=="+id);
-		return ;
+		
 		
 	}
 	public void deleteContact(int i)throws SQLException, ClassNotFoundException

@@ -3,23 +3,28 @@ import java.io.*;
 import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import com.lxisoft.Models.*;
 import com.lxisoft.Repository.*;
+import com.lxisoft.Models.*;
 
 import com.lxisoft.Domain.*;
 
 
-public class ViewServlet extends HttpServlet
+public class ContactAddServlet extends HttpServlet
 {
 	// public void init()throws ServletExecption
 	// {
 	// }
+        static MysqlRepository repo=new MysqlRepository();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
    		
-   		MysqlRepository repo= new MysqlRepository();
          try {
-         ArrayList<Contact> contacts=repo.getAllContacts(); 
+         Contact contact=new Contact();
+   		contact.setName(request.getParameter("name"));
+         contact.setNo(request.getParameter("number"));
+         repo.writeNewContact(contact,true);
+         ArrayList<Contact> contacts=repo.getAllContacts();
+
          ViewList view=new ViewList();
          ArrayList<ViewListModel> listView=null;
          if(contacts!=null)
@@ -31,12 +36,12 @@ public class ViewServlet extends HttpServlet
             }
             listView=view.getAllContacts();
          }
-   		PrintWriter out = response.getWriter();
-         // fosr(Contact a: contacts)
-         // out.println("<h1>"+a.getName()+"</h1>");
-   		request.setAttribute("contacts",listView);
-   		request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
-   		}catch(Exception e)
+
+         request.setAttribute("contacts",listView);
+         request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
+         // PrintWriter out = response.getWriter();
+         // out.println("<h1>" +contact.getName()+ "</h1>");
+         }catch(Exception e)
          {
 System.out.println("exception "+e);
          }
