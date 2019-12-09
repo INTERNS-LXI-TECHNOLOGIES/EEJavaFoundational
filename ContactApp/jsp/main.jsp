@@ -10,7 +10,7 @@
  
 <button onclick="window.location.href='jsp/addnew.jsp';" >Add new Contact</button> 
 <form action="search" method="GET">
-	search a contact: <input type="text" name="names">
+	search a contact: <input type="text" name="name">
 	<button name="search" type="submit">search</button>
 </form>
  
@@ -19,7 +19,7 @@ contacts=(ArrayList<ViewListModel>)request.getAttribute("contacts");String str=n
 
 
 <% for(ViewListModel a: contacts){%>
-<!-- <% out.println(str=a.getName()+"<br>");%> -->
+<% str=a.getName()+"<br>";%>
 <br>
 <form action="search" ><button name=str type="submit"><% out.println(a.getName());}%></button></form>
 <table border="2" align="CENTER" width="20%">
@@ -33,7 +33,10 @@ contacts=(ArrayList<ViewListModel>)request.getAttribute("contacts");String str=n
 	 <%  for (ViewListModel a: contacts){%>
 
 	<tr><td><%out.println(a.getId());%></td>
-		<td><%out.println(a.getName());%></td></tr>
+		<td><%out.println(a.getName());%></td>
+		<% session.setAttribute("use",a);%>
+	</tr>
+
 	<%}%>
 </table>
 
