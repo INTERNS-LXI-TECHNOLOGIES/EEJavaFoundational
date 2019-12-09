@@ -13,9 +13,6 @@ public class ViewAllContacts extends HttpServlet
 	private Repository repo=new MySqlRepo();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
     {
-      // response.setContentType("text");
-       //String name=request.getParameter("name");  
-        // response.sendRedirect("jsp/ContactAdd.jsp"); 
       try{
             ArrayList<Contact> contactList=repo.getAllContacts();
             request.setAttribute("contacts",contactList);
@@ -24,7 +21,7 @@ public class ViewAllContacts extends HttpServlet
          }catch(SQLException n)
         {
            n.printStackTrace();
-         }
+        }
   	}
 
 

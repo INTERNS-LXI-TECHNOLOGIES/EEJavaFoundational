@@ -167,11 +167,13 @@ public class MySqlRepo implements Repository
 	{
 		try
 		{
+			id=0;
 			contacts=getAllContacts();
 			rs= stmt.executeQuery("select * from Contactlist");
 			while(rs.next()) 
 			{ 
-	 			id = rs.getInt("ID");
+	 			int temp= rs.getInt("ID");
+	 			if(temp>id) id=temp;
 			}id++;
 		}catch(SQLException e)
 		{

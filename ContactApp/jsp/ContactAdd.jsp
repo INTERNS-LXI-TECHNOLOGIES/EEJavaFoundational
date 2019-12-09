@@ -1,4 +1,3 @@
-
 <%@ page import="com.lxisoft.model.*"%>
 			<%@ page import="com.lxisoft.servlets.*"%><html>
 		<head>
@@ -9,6 +8,7 @@
 			<center>
 				 <h3> TO ADD CONTACT </h3>
 			</center>
+			<button align="left" type="button" onClick="window.location.href = 'jsp\\ContactView.jsp';">Back</button>
 			<form action="..\Add" method="">
 				<center>
 					<input type="text"  name="name" placeholder= "enter name"></br></br> 
