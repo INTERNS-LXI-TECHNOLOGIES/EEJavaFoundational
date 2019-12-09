@@ -7,8 +7,6 @@
 	<%@page import="java.sql.*"%>
 <h3>Name</h3>
 <%
-    
-	 
 	
 try
 		{

@@ -10,4 +10,18 @@
         <servlet-name>name</servlet-name>
         <url-pattern>/url</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+      <servlet-name>add</servlet-name>
+      <servlet-class>com.lxisoft.servlet.AddServ</servlet-class>
+    </servlet>
+
+
+    <servlet-mapping>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/adddata</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
+
