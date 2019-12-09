@@ -8,6 +8,10 @@
       <servlet-name>CAdd</servlet-name>
       <servlet-class>com.lxisoft.servlets.SaveContacts</servlet-class>
 </servlet>
+<servlet>
+      <servlet-name>CSelect</servlet-name>
+      <servlet-class>com.lxisoft.servlets.SelectedContact</servlet-class>
+</servlet>
 
 <servlet-mapping>
 		<servlet-name>CView</servlet-name>
@@ -17,7 +21,10 @@
 		<servlet-name>CAdd</servlet-name>
 		<url-pattern>/Add</url-pattern>
 </servlet-mapping>
-
+<servlet-mapping>
+		<servlet-name>CSelect</servlet-name>
+		<url-pattern>/select</url-pattern>
+</servlet-mapping>
 
 
 </web-app>

@@ -13,16 +13,9 @@
 				 <h3> CONTACT APPLICATION </h3>
 			</center>
 			<button align="left" type="button" onClick="window.location.href = 'jsp\\ContactAdd.jsp';">+</button>
-			<table align="center" border="10px" width="50%">
+			<table align="center" border="10px" width="20%">
 			<tr>
-					<!-- <th>ID</th> -->
-					<!-- <colgroup>
-					    <col span="2" style="background-color:"> -->
-					   
-					  <!-- </colgroup> -->
 					<th><strong>NAME</strong></th>
-					<!-- <th>NUMBER</th> -->
-
 			</tr>
 			<%
 			Repository repo=new MySqlRepo();
@@ -40,14 +33,13 @@
 				}
 				ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
 				for(ContactModel contactmodel:contacts)
-				{ %>
-					
+				{ session.setAttribute("name",contactmodel.getName()); %>
 					<tr>
 						<!-- <td><% out.println(contactmodel.getId()); %></td> -->
 						<!-- <td><% out.println(contactmodel.getName()); %></td> -->
-				<td><button class="button" type="button" onClick="window.location.href = 'jsp\\ContactAdd.jsp';"><%=contactmodel.getName() %>
-						</button></td>
 						
+					<td><button class="button" type="button" onClick="window.location.href ='select';"><%=contactmodel.getName() %>
+						</button></td>
 					</tr>
 
 				<%

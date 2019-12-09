@@ -4,7 +4,7 @@
 		</head>	
 		<body>
 			<!-- <h3 align="center">CONTACT APPLICATION</h3> -->
-			<!-- <table align="center" border="10px" width="50%">
+			<table align="center" border="10px" width="50%">
 				<tr>
 					<td><a href="..\Add" value="Add" style="color: blue">Add &nbsp;&nbsp;</td> 
 					<td><a href="..\Search" value="Search">Search &nbsp;&nbsp;</td>
@@ -12,8 +12,8 @@
 					<td><a href="..\Sort" value="Sort">Sort &nbsp;&nbsp;</td>
 					<td><a href="..\Delete" value="Delete">DeleteAll &nbsp;&nbsp;</td>
 				</tr>
-			</table> -->
-			<iframe src="..\View" align="middle" width="500" height="500" scrolling="auto" frameborder="0">
-			</iframe>
+			</table>
+			<!-- <iframe src="..\View" align="middle" width="500" height="500" scrolling="auto" frameborder="0">
+			</iframe> -->
 		</body>
 </html>
