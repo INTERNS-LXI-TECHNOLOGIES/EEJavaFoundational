@@ -24,9 +24,6 @@ public class Serv extends HttpServlet
 		}
 		
 		request.setAttribute("contactlist",lm.getContactsList());
-
-		// List<Contact> contactList=myrepo.getAllContact();
-		// request.setAttribute("contactlist",contactList);
 		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");
 		rd.forward(request,response);
 	}

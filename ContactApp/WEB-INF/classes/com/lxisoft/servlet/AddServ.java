@@ -5,15 +5,13 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.domain.*;
-import com.lxisoft.models.*;
-
+// import com.lxisoft.models.*;
 public class AddServ extends HttpServlet
 {
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		Contact c=new Contact();
 		MysqlRepository myrepo=new MysqlRepository();
-		List<Contact> contactList=new ArrayList<Contact>();
 		String name=request.getParameter("name");
 		String contactNo=request.getParameter("contactNo");
 		c.setName(name);

@@ -10,17 +10,18 @@
 <body>
 	<H1><CENTER>CONTACT LIST</CENTER></H1>
 	<center><a href="Add.jsp"><h1>+</h1></a></center>
-	<table align=center border="1px" width="25%">
+	<!-- <a href="Select.jsp"><h1>Select</h1></a> -->
+	<table align=center border="1px" width="15%">
 	<tr>
-		<th>ID</th>
-		<th>Name</th></tr>
+		<!-- <th>ID</th> -->
+		<th><b>Name</b></th></tr>
 	<%
 	List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
 	for(ContactModel cm:contactsList)
 	{%>
 	<TR>
-		<TD><%=cm.getId()%></TD>
-    	<TD><%=cm.getName()%></TD>
+		<!-- <TD><%=cm.getId()%></TD> -->
+    	<TD><a href="select"><input type="submit" value="<%=cm.getName()%>"></a></TD>
     </TR>
     <%
 	}%>
