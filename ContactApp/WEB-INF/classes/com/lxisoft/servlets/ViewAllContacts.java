@@ -15,7 +15,19 @@ public class ViewAllContacts extends HttpServlet
     {
       try{
             ArrayList<Contact> contactList=repo.getAllContacts();
-            request.setAttribute("contacts",contactList);
+            ContactsListModel contactlistmodel=new ContactsListModel();
+            if(contactList!=null)
+            { 
+              for(int i=0;i<contactList.size();i++)
+              {
+                ContactModel contactmodel=new ContactModel();
+                contactmodel.setId(contactList.get(i).getId());
+                contactmodel.setName(contactList.get(i).getName());
+                contactlistmodel.setAllContacts(contactmodel);
+              }
+            }
+              ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+               request.setAttribute("contactmodel",contacts);
             RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
       	   rd.forward(request,response);
          }catch(SQLException n)

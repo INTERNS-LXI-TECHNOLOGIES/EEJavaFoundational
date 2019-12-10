@@ -15,8 +15,9 @@ public class SelectedContact extends HttpServlet
 	{
 	//ContactModel contact=(ContactModel)request.getAttribute("id");
 	PrintWriter out=response.getWriter();
-	HttpSession session=request.getSession(false);  
-	String name=(String)session.getAttribute("name");
+	HttpSession session=request.getSession(false); 
+
+	String name=(String)request.getParameter("user");
 	out.println("hi.."+name);
 	}
 }
