@@ -13,6 +13,12 @@
 		width: 25%%;
 		background-color: #f1f1c1;
 	}
+	input[type="submit"]
+	{
+		background-color: #4CAF50;
+	 	border :none;
+	    color: white;
+	}
 </style>
 <body>
 	<table align="center" border="5" width="25%" height="25%">
@@ -25,11 +31,12 @@
 			<tr>
 				<td>Number:<input type="text" name="number"/></td>
 			</tr>			
-		</form>
-		<tr>
+			<tr>
 				<td><a href="add"><input type="submit" name="submit" value="Save" /></a>
-					<a href="url"><input type="submit" name="cancel" value="Cancel"></a></td>
+		</form>
+				<a href="home"><input type="submit" name="cancel" value="Cancel"></a></td>
 			</tr>
+
 </body>
 </head>
 </html>

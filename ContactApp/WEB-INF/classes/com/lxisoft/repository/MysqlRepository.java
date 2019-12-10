@@ -15,6 +15,7 @@ public class MysqlRepository
 		try
 		{
 			databaseConnection();
+			createStorage();
 		}
 		catch(Exception e)
 		{
@@ -60,7 +61,7 @@ public class MysqlRepository
 	 */
 	public List<Contact> findAllContact()
 	{
-		createStorage();
+		
 		try
 		{
 			contactList.clear();
