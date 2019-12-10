@@ -1,8 +1,13 @@
 <web-app>
 
     <servlet>
-	<servlet-name>
-		<servlet-class> com.lxisoft.servlet</servlet-class>
+	<servlet-name>show
+		<servlet-class> com.lxisoft.servlet.AllContacts</servlet-class>
 	</servlet-name>
 	</servlet>
 		
+  <servlet-mapping>
+  <servlet-name>show</servlet-name>
+  <url-pattern>/start</url-pattern>
+ </servlet-mapping>
+
