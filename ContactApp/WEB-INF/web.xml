@@ -10,7 +10,7 @@
 </servlet>
 <servlet>
       <servlet-name>CSelect</servlet-name>
-      <servlet-class>com.lxisoft.servlets.SelectedContact</servlet-class>
+      <servlet-class>com.lxisoft.servlets.SelectedServlet</servlet-class>
 </servlet>
 
 <servlet-mapping>

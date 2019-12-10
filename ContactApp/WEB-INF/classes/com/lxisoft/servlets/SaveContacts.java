@@ -36,7 +36,7 @@ public class SaveContacts extends HttpServlet
               //   PrintWriter out=response.getWriter();
               RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
               rd.forward(request,response);
-              response.sendRedirect("jsp\\ContactView.jsp");
+              // response.sendRedirect("jsp\\ContactView.jsp");
          }catch(SQLException n)
          {
            n.printStackTrace();
