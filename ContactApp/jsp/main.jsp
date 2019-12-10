@@ -23,7 +23,6 @@ contacts=(ArrayList<ViewListModel>)request.getAttribute("contacts");String str="
 %> <script> function functio {alert("no contacts to show");}</script>
 <% } %>
 
-
 <br>
 
 <table class="table" border="2" align="CENTER" width="20%">
@@ -36,7 +35,7 @@ contacts=(ArrayList<ViewListModel>)request.getAttribute("contacts");String str="
 		<% String useC=a.getName();%>
 		<td><%out.println(a.getName());%></td>
 		<td><a href="search?user=<%=a.getName()%>">select</td></a>
-		<% session.setAttribute("use",a);%>
+		
 	</tr>
 
 	<%}%>

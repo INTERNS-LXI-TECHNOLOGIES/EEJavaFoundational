@@ -82,7 +82,7 @@ public class MysqlRepository implements Repository
 					else
 					{
 						int Result = stm.executeUpdate("CREATE DATABASE "+dataBase);
-						connection(false);
+						
 					}	
 					// System.out.println("the d"+ exist);
 						// Statement s=con.createStatement();
@@ -94,7 +94,7 @@ public class MysqlRepository implements Repository
 
 		}
 	}
-	public static void checkTable()
+	public  void checkTable()
 	{
 		boolean exist=false;
 		try
@@ -114,7 +114,7 @@ public class MysqlRepository implements Repository
 				stmt=con.prepareStatement("create table tab(ID int(4), NAME  varchar(20), NUMBER varchar(50))");
 				stmt.execute();
 				// System.out.println("Table created succesfully");
-			}
+			}connection(false);
 		}catch(Exception e)
 		{
 				System.out.println(e+"Table creation errror");

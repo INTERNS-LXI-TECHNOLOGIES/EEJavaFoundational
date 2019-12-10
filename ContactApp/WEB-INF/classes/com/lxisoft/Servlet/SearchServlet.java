@@ -21,21 +21,26 @@ public class SearchServlet extends HttpServlet
          try {
          Contact contact=null;
          String name=(String)request.getParameter("user");
-         HttpSession session=request.getSession();
-         ViewListModel cont=(ViewListModel)session.getAttribute("use");
-         // ArrayList<Contact> contacts=repo.getAllContacts();
-         // for(int i=0;i<contacts.size();i++)
+         // HttpSession session=request.getSession();
+         // session.setAttribute("use",a);
+         // ViewListModel cont=(ViewListModel)session.getAttribute("use");
+         ArrayList<Contact> contacts=repo.getAllContacts();
+         ArrayList<Contact> users=null;
+         for(Contact a: contacts)
+         {
+            if(a.getName().equals(name))
+            {
+               users.add(a);
+            }
+
+         }
+         if(users.size()==1)
+         {
+            request.setAttribute("users",users);
+            request.getRequestDispatcher("jsp\\user.jsp").forward(request, response);
+
+         }
          // {
-         //    String s=contacts.get(i).getName();
-         //    if(s.equals(name)) 
-         //    {
-         //       contact=contacts.get(i);                        
-         //    }
-         // }
-         // if(contact!=null)
-         // {
-         //    request.setAttribute("contacts",listView);
-         //    request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
 
          // }
          // ViewList view=new ViewList();
