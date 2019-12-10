@@ -18,6 +18,7 @@
 		background-color: #4CAF50;
 	 	border :none;
 	    color: white;
+	    padding:px 22px;
 	}
 </style>
 <body>
@@ -32,9 +33,9 @@
 				<td>Number:<input type="text" name="number"/></td>
 			</tr>			
 			<tr>
-				<td><a href="add"><input type="submit" name="submit" value="Save" /></a>
+				<td><a href="add"><input type="submit" value="Save"/></a>
 		</form>
-				<a href="home"><input type="submit" name="cancel" value="Cancel"></a></td>
+				<a href="home"><input type="submit" value="Cancel"/></a></td>
 			</tr>
 
 </body>

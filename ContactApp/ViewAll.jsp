@@ -9,18 +9,16 @@
 	input[type="submit"]
 	{
 		background-color: #4CAF50;
-	 	border-radius: 40px;
+	 	border-radius :40px;
 	    color: white;
-	  /*  margin-bottom: 100px; */
 	}
 </style>
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body>
-	<table align="center" border= "5" width="80%" border color= "blue" bgcolor="pink">
+	<table align="center" border= "5" width="20%" border color= "blue" bgcolor="pink">
 		<tr>
-			<th>ID</th>
-			<th>NAME</th>
+			<th>Contacts</th>
 		</tr>
 <%
 List<ContactModel> c=(List<ContactModel>) request.getAttribute("allContact");
@@ -28,8 +26,11 @@ for(int i=0;i<c.size();i++)
 {
 	%>
 	<tr>
-		<td><%=(c.get(i).getId())%></td>
-		<td><%=(c.get(i).getName())%></td>
+		
+		<form action= "getContact" method="get">
+		<input type="hidden" name="id" value="<%=(c.get(i).getId())%>">
+		<td><a href="getContact"><input type="submit" value="<%=(c.get(i).getName())%>"/></a></td>
+		</form>
 		</tr>
 <%
 }

@@ -14,7 +14,7 @@
 		padding: 15px;
 	}
 	table{
-		width: 25%%;
+		width: 25%;
 		background-color: #f1f1c1;
 	}
 </style>
@@ -30,6 +30,8 @@ Contact con=(Contact) request.getAttribute("getContactById");
 <tr>
 	<td><center><%=(con.getContactNumber())%></center></td>
 </tr>
-<a href="home"><input type="submit" value="Back"></a></td>
+<tr>
+	<td><a href="home"><input type="submit" value="Back"></a></td>
+</tr>
 </body>
 </html>
