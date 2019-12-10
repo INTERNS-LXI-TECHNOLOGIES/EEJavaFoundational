@@ -8,32 +8,34 @@
 
 
  
-<button onclick="window.location.href='jsp/addnew.jsp';" >Add new Contact</button> 
-<form action="search" method="GET">
-	search a contact: <input type="text" name="name">
+<button align="center" style="float:left;" onclick="window.location.href='jsp/addnew.jsp';" >Add new Contact</button> 
+<form action="search" method="GET"  align="center">
+	search a contact: <input type="text" align="right" name="name">
 	<button name="search" type="submit">search</button>
 </form>
  
 <% ArrayList<ViewListModel>contacts=null;
-contacts=(ArrayList<ViewListModel>)request.getAttribute("contacts");String str=null; %>
+contacts=(ArrayList<ViewListModel>)request.getAttribute("contacts");String str="ajith"; %>
+
+<% 	if(contacts.size()==0){
+	 out.println("<b><h1><CENTER>"+" no contact to show" +"</CENTER></h1><b>");
+	 
+%> <script> function functio {alert("no contacts to show");}</script>
+<% } %>
 
 
-<% for(ViewListModel a: contacts){%>
-<% str=a.getName()+"<br>";%>
 <br>
-<form action="search" ><button name=str type="submit"><% out.println(a.getName());}%></button></form>
-<table border="2" align="CENTER" width="20%">
+
+<table class="table" border="2" align="CENTER" width="20%">
 	<p><tr><th><h3>ID</h3></th>
 		<th><h3>NAME</h3></th></p></tr>
-<% //out.println(contacts.size()+"size...");
-// if(contacts!=null)
-	// out.println("<b>"+" no contact to show" +"<b>");
-%>
 
 	 <%  for (ViewListModel a: contacts){%>
 
 	<tr><td><%out.println(a.getId());%></td>
+		<% String useC=a.getName();%>
 		<td><%out.println(a.getName());%></td>
+		<td><a href="search?user=<%=a.getName()%>">select</td></a>
 		<% session.setAttribute("use",a);%>
 	</tr>
 

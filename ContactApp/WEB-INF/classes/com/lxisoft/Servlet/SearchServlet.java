@@ -20,7 +20,7 @@ public class SearchServlet extends HttpServlet
    		
          try {
          Contact contact=null;
-         String name=(String)request.getParameter("name");
+         String name=(String)request.getParameter("user");
          HttpSession session=request.getSession();
          ViewListModel cont=(ViewListModel)session.getAttribute("use");
          // ArrayList<Contact> contacts=repo.getAllContacts();
@@ -53,7 +53,7 @@ public class SearchServlet extends HttpServlet
          // request.setAttribute("contacts",listView);
          // request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
          PrintWriter out = response.getWriter();
-         out.println("<h1>" +cont.getName()+ "</h1>");
+         out.println("<h1>" +cont.getName()+ "</h1>"+name);
          }catch(Exception e)
          {
 System.out.println("exception "+e);

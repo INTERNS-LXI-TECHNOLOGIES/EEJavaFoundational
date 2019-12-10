@@ -1,7 +1,7 @@
-body{
+.body{
 	background-color: blue;
 }
-table, th, td{
+.table, .th, .td{
 	background-color: red;
 	border: 1px solid black;
 	border-collapse: collapse;
@@ -9,4 +9,9 @@ table, th, td{
 }
 p{
 	border: 3px solid powderblue;
+}
+.button {
+	font-size: 10px;
+	background-color: #008CBA;
+	text-align: center;
 }
