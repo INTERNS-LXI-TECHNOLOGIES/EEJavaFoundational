@@ -23,7 +23,11 @@
 	<table align="center" border="5" width="25%" height="25%">
 <%
 Contact con=(Contact) request.getAttribute("getContactById");
+// Contact c=(Contact)session.getAttribute("cont");
 %>
+<tr>
+	<td><center><%=(con.getContactId())%></center></td>
+</tr>
 <tr>
 	<td><center><%=(con.getContactName())%></center></td>
 </tr>
@@ -32,6 +36,7 @@ Contact con=(Contact) request.getAttribute("getContactById");
 </tr>
 <tr>
 	<td><a href="home"><input type="submit" value="Back"></a></td>
+	<td><a href="EditContact.jsp"><input type="submit" value="Edit"></a></td>
 </tr>
 </body>
 </html>

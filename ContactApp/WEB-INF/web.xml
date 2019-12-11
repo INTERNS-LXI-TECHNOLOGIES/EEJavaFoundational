@@ -23,4 +23,12 @@
 	<servlet-name>get contact</servlet-name>
 	<url-pattern>/getContact</url-pattern>
 </servlet-mapping>
+<servlet>
+	<servlet-name>edit contact</servlet-name>
+	<servlet-class>com.lxisoft.servlet.EditContactServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>edit contact</servlet-name>
+	<url-pattern>/editContact</url-pattern>
+</servlet-mapping>
 </web-app>

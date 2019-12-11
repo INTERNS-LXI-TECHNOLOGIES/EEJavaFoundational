@@ -14,6 +14,8 @@ public class GetContactByIdServlet extends HttpServlet
 		int idd=Integer.parseInt(id);
 		Contact contact=dbrepo.findContactById(idd);
 		request.setAttribute("getContactById",contact);
+		HttpSession session=request.getSession(); 
+		session.setAttribute("cont",contact);
 		RequestDispatcher rd=request.getRequestDispatcher("GetContactById.jsp");
 		rd.forward(request,response);
 	}

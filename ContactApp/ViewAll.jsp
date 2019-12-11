@@ -6,11 +6,12 @@
 <title>CONTACTS </title>
 <head>
 	<style>
-	input[type="submit"]
+	input[type="submit" ]
 	{
-		background-color: #4CAF50;
+		background-color: pink;
 	 	border-radius :40px;
 	    color: white;
+	    width: 20%;
 	}
 </style>
 </head>
@@ -29,7 +30,7 @@ for(int i=0;i<c.size();i++)
 		
 		<form action= "getContact" method="get">
 		<input type="hidden" name="id" value="<%=(c.get(i).getId())%>">
-		<td><a href="getContact"><input type="submit" value="<%=(c.get(i).getName())%>"/></a></td>
+		<td><a href="getContact"><input type="submit" id="box1" value="<%=(c.get(i).getName())%>"/></a></td>
 		</form>
 		</tr>
 <%

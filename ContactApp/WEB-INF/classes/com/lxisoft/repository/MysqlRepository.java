@@ -113,12 +113,13 @@ public class MysqlRepository
 	 *
 	 *@param contact contact containing id,name and number
 	 */
-	public void saveContact(Contact contact)
+	public Contact saveContact(Contact contact)
 	{
 		try
 		{
 			ps=con.prepareStatement("insert into contactApp(ID,NAME,NUMBER) values(?,?,?)");
 			int id=getContactId();
+			contact.setContactId(id);
 			ps.setInt(1,id);
 			ps.setString(2,contact.getContactName());
 			ps.setString(3,contact.getContactNumber());
@@ -129,6 +130,7 @@ public class MysqlRepository
 		{
 			e.printStackTrace();
 		}
+		return contact;
 	}
 	/**
 	 *to read contact from database with the desired id
@@ -173,7 +175,7 @@ public class MysqlRepository
 	 *@param n integer value
 	 *@param c contact
 	 */
-	public void updateContact(int n,Contact c)
+	public Contact updateContact(int n,Contact c)
 	{
 		try
 		{
@@ -182,11 +184,13 @@ public class MysqlRepository
 			pst.setString(2,c.getContactNumber());
 			pst.setInt(3,n);
 			pst.execute();
+			c.setContactId(n);
 		}
 		catch(SQLException e)
 		{
 			System.out.println(e);
 		}
+		return c;
 	}
 	/**
 	 *to delete all contact
