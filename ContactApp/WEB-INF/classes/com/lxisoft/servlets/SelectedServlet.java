@@ -8,34 +8,59 @@ import com.lxisoft.repository.*;
 import java.util.*;
 import java.sql.*;
 
-public class SelectedContact extends HttpServlet
+public class SelectedServlet extends HttpServlet
 {
 	private Repository repo=new MySqlRepo();
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException
 	{
-		//ContactModel contact=(ContactModel)request.getAttribute("id");
 		PrintWriter out=response.getWriter();
 		HttpSession session=request.getSession(false); 
-
 		String name=(String)request.getParameter("user");
 		out.println("hi.."+name);
-		ArrayList<Contact> contactList=repo.getAllContacts();
-		ArrayList<Contact> currentList=new ArrayList<Contact>();
-			for(Contact contact:contactList)
-			{	if(name.equals(contact.getName()))
-				{
-	 				currentList.add(contact);			
-	 			}
-			}
-			if(currentList.size()==1)
-				{
+		try
+		{
+			ContactsListModel contactlistmodel=new ContactsListModel();
+			ArrayList<Contact> contactList=repo.getAllContacts();
+			ArrayList<Contact> currentList=new ArrayList<Contact>();
+			// ArrayList<Contact> currentList2=new ArrayList<Contact>();
+				for(Contact contact:contactList)
+				{	if(name.equalsIgnoreCase(contact.getName()))
+					{
+		 				currentList.add(contact);		
+		 			}
+	 				else{
+	 					if((contact.getName().toLowerCase()).contains(name.toLowerCase()))
+	 					{
+				 			currentList.add(contact);
+				 		}
+				 	}
+				}
+				if(currentList.size()==1)
+	 			{
 					request.setAttribute("currentcontactList",currentList);
-					RequestDispatcher rd=request.getRequestDispatcher("jsp\\SelectedContact.jsp");
+					RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactSearch.jsp");
 					rd.forward(request,response);
 				}
-			// else
-			// {
-			// 	for(Contact contact:contactList)
-			// }
+				else{
+		            if(currentList.size()!=0)
+		            { 
+		                for(int i=0;i<currentList.size();i++)
+		                {
+		                  ContactModel contactmodel=new ContactModel();
+		                  contactmodel.setId(currentList.get(i).getId());
+		                  contactmodel.setName(currentList.get(i).getName());
+		                  contactlistmodel.setAllContacts(contactmodel);
+		                }
+		            }
+	            ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+	            request.setAttribute("contactmodel",contacts);
+	            RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
+             	rd.forward(request,response);
+	            }
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 	}
 }

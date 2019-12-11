@@ -12,6 +12,14 @@
       <servlet-name>CSelect</servlet-name>
       <servlet-class>com.lxisoft.servlets.SelectedServlet</servlet-class>
 </servlet>
+<servlet>
+      <servlet-name>CEdit</servlet-name>
+      <servlet-class>com.lxisoft.servlets.EditServlet</servlet-class>
+</servlet>
+<servlet>
+      <servlet-name>CDelete</servlet-name>
+      <servlet-class>com.lxisoft.servlets.DeleteServlet</servlet-class>
+</servlet>
 
 <servlet-mapping>
 		<servlet-name>CView</servlet-name>
@@ -25,6 +33,13 @@
 		<servlet-name>CSelect</servlet-name>
 		<url-pattern>/select</url-pattern>
 </servlet-mapping>
-
+<servlet-mapping>
+		<servlet-name>CEdit</servlet-name>
+		<url-pattern>/edit</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+		<servlet-name>CDelete</servlet-name>
+		<url-pattern>/delete</url-pattern>
+</servlet-mapping>
 
 </web-app>

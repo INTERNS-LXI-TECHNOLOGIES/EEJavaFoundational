@@ -13,10 +13,12 @@
 				 <h3> CONTACT APPLICATION </h3>
 			</center>
 			<button align="left" type="button" onClick="window.location.href = 'jsp\\ContactAdd.jsp';">+</button>
+			<form action="select"><center>
+			<input type="text" name="user" placeholder= "Enter Name">
+			<button> search here </button></center></form>
 			<%
-			Repository repo=new MySqlRepo();
 			ArrayList<ContactModel> contactList=( ArrayList<ContactModel>) request.getAttribute("contactmodel");%>
-				<!-- if(contactList.size()==) -->
+				<% out.println(contactList.size());%>
 				<table align="center" border="10px" width="20%">
 				<tr><th><strong>NAME</strong></th></tr>
 				<% for(ContactModel contactmodel:contactList)
