@@ -5,57 +5,48 @@
 <%@page import="java.util.*"%>
 
 <html>
-<title>ALL CONTACTS</title>
+<title>CONTACTS</title>
 <body style="background-color:#D4DB65;">
-	<center style="color: blue"><h2><u><b>ALL CONTACTS</b><h2></u></center>
+	<center style="color: blue"><h1><b>CONTACTS</b><h1></center>
 	<br>
-	<table style="width:100%">
-		<style>
-			button {
-			  background-color: blue;
-			  border-radius: 70%;
-			  color: white;
-			  padding: 30px;
-			  font-size: large;
-			 float: right;	
-			  margin: 25px 75px;
-				}
-		table, th, td {
-			border: 0.25px solid black;
-			border-collapse: collapse;
-		    padding: 10px;
+	<style>
+		button {
+		  background-color: blue;
+		  border-radius: 70%;
+		  color: white;
+		  padding: 30px;
+		  font-size: large;
+		 float: right;	
+		  margin: 25px 75px;
 		}
-		</style>
-	  	<tr>
-		<th style="color: blue">ID</th>
-		<th style="color: blue">NAME</th> 
-		<th style="color: blue">NUMBER</th>
-	  	</tr>
+		img{
+			vertical-align: middle;
+		}
+	</style>
 <%
+
 ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("list");
+int count=0;
 for(Contact contact:contactList)
 {
-	String x="sdkjksj";
+	count++;
 	%>
-		<tr><%request.setAttribute("contact",x);
-			out.println("cont="+ request.getAttribute("contact"));
-			%>
-    <th><a href="Select.jsp"><%=contact.getId()%></a></th>
-    <th><%=contact.getName()%></th> 
-    <th><%out.println(contact.getNumber());%></th>
-  	</tr>
-	<%
+	<div style="border: 1px solid blue; background-color: yellowgreen;">
+	<h2><a href="Select.jsp?selectId=<%=contact.getId()%>">
+	<img src="person.jpg" width="50" height="50">  <%=contact.getName()%></a>
+	</h2>
+	<br>
+	</div>
+ 	<%
 }
 %>
-</table>
 <form action="Save.jsp">
  <button>+</button>
 </form>
+<div align="center" style="padding-top: 90px">total contacts: <%=count%></div>
 
 </body>
 </html>
 
 
 
-<!-- ViewAllModel temp=request.getAttribute("list");
-for(Contact contact:temp.getList()) -->

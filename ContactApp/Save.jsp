@@ -8,6 +8,7 @@
 <html>
 <head>
 	<title>SAVE</title>
+	<center style="color: blue"><h1><b>Save</b><h1></center>
 </head>
 <body style="background-color:#D4DB65;">
 	<style>
@@ -21,7 +22,6 @@
 			
     background-color: blue;
     color: white;
-    margin: 25px 169px;
     font-size: large;
 }
 		
@@ -29,7 +29,6 @@
 			  background-color: red;
     color: white;
     font-size: large;
-    margin: -57px  653px;
 				}
 		input{
 			padding-right: 50px;
@@ -37,21 +36,21 @@
 
 		}
 	</style>
-	<%out.println("cont="+ request.getAttribute("contact"));%>
+
 	<div class="grid-item">
 		<div class="row-1">
-			<div class="col-1">
 
 	<form action="addContact" method="post">
 			Name:<input type="type" name="name"><br><br>
-			Number:<input type="type" name="number" ><br>
-			<button id="b1" type="submit" >save</button>		
+			Number:<input type="type" name="number" ><br><br>
+			<button id="b1" type="submit" >save</button><br><br>		
 	</form>
 
-</div>
-<div class="col-2">
-	<button id="b2"  onclick="window.location.href='index.jsp'">Back</button>
-</div>
+<center>
+	<button id="b2"  onclick="window.location.href='showAll'">Back</button>
+</center>
+	
+
 	</div>
 	</div>
 

@@ -10,6 +10,9 @@ public class DbRepository implements Repository
 {
 	Connection connection;
 	PreparedStatement ps;
+	PreparedStatement pd;
+	PreparedStatement pu;
+	Statement smt;
 
 	public ArrayList<Contact> findAll()
 	{
@@ -76,10 +79,12 @@ public class DbRepository implements Repository
 	{
 		try
 		{
-			PreparedStatement pd=connection.prepareStatement("delete from contactList where ID=?");
+			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");
+			pd=connection.prepareStatement("delete from contactList where ID=?");
 			ArrayList<Contact> contactList=findAll();
 			for(int i=0;i<contactList.size();i++)
 			{
+				System.out.println("sm,dn,dsnaknm");
 				if(contactList.get(i).getName().equals(contact.getName()))
 				{
 					System.out.println("deleting conatact "+contactList.get(i).getName());
@@ -98,7 +103,7 @@ public class DbRepository implements Repository
 	{
 		try
 		{
-			PreparedStatement pu=connection.prepareStatement("update contactList set NAME=?,NUMBER=? where ID=?");
+			pu=connection.prepareStatement("update contactList set NAME=?,NUMBER=? where ID=?");
 			ArrayList<Contact> contactList=findAll();
 			for(int i=0;i<contactList.size();i++)
 			{
@@ -122,7 +127,7 @@ public class DbRepository implements Repository
 	{
 		try
 		{
-			Statement smt=connection.createStatement();
+			smt=connection.createStatement();
 			smt.executeUpdate("truncate contactList");
 		}
 		catch(SQLException e)

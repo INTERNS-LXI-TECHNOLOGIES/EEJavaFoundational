@@ -5,15 +5,15 @@ import java.util.ArrayList;
 
 public class SelectModel
 {
-	ArrayList<Contact> contactList=new ArrayList<Contact>();
+	Contact contact=new Contact();
 
-	public void setList(ArrayList<Contact> contactList)
+	public void setContact(Contact contact)
 	{
-		this.contactList=contactList;
+		this.contact=contact;
 	}
 
-	public ArrayList<Contact> getList()
+	public Contact getContact()
 	{
-		return contactList;
+		return contact;
 	}
 }
