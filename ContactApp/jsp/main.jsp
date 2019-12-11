@@ -1,6 +1,7 @@
 <html>
 <title> CONTACT APP</title>
-<head><link rel="stylesheet" type="css" href="styles.css"><CENTER>again.. welcome to contact App</CENTER></head>
+<head>
+	<link rel="stylesheet" type="text/css" href="jsp\styles.css"><CENTER>again.. welcome to contact App</CENTER></head>
 <body>
 <%@ page import="com.lxisoft.Domain.*" %>
 <%@ page import="com.lxisoft.Models.*" %>
@@ -16,7 +17,7 @@
 </form>
  
 <% ArrayList<ViewListModel>contacts=null;
-contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts");String str="ajith"; %>
+contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 
 <% 	if(contacts.size()==0){
 	 out.println("<b><h1><CENTER>"+" no contact to show" +"</CENTER></h1><b>");
@@ -26,7 +27,7 @@ contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts");String str="
 
 <br>
 
-<table class="table" border="2" align="CENTER" width="20%">
+<table>
 	<p><tr><th><h3>ID</h3></th>
 		<th><h3>NAME</h3></th></p></tr>
 
@@ -34,8 +35,8 @@ contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts");String str="
 
 	<tr><td><%out.println(a.getId());%></td>
 		<% String useC=a.getName();%>
-		<td><%out.println(a.getName());%></td>
-		<td><a href="search?user=<%=a.getName()%>">select</td></a>
+		
+		<td><a href="search?user=<%=a.getName()%>"><%out.println(a.getName());%></td></a>
 		
 	</tr>
 

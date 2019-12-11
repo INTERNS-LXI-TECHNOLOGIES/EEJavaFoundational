@@ -215,13 +215,13 @@ public class MysqlRepository implements Repository
 		
 		
 	}
-	public void deleteContact(int i)throws SQLException, ClassNotFoundException
+	public void deleteContact(Contact c)throws SQLException, ClassNotFoundException
 	{
 		try
 		{
 			contacts=getAllContacts();
 			stmt=con.prepareStatement("delete from tab where id=?");
-			stmt.setInt(1,contacts.get(i).getId());
+			stmt.setInt(1,c.getId());
 			stmt.executeUpdate();
 		}catch(Exception p)
 		{

@@ -4,6 +4,7 @@ import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import com.lxisoft.Repository.*;
+import com.lxisoft.Models.*;
 
 import com.lxisoft.Domain.*;
 
@@ -18,7 +19,15 @@ public class DeleteAllServlet extends HttpServlet
          repo.clearAllContacts();
         ArrayList<Contact> contacts=repo.getAllContacts();
         HttpSession session=request.getSession();
-         session.setAttribute("contacts",contacts);
+        ViewList view=new ViewList();
+        ArrayList<ViewListModel> listView=null;
+        view.clearArray();
+        for(int i=0;i<contacts.size();i++)
+        {
+            view.setContact(contacts.get(i));
+        }
+        listView=view.getAllContacts();
+         session.setAttribute("contacts",listView);
          
          request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
 		PrintWriter out = response.getWriter();

@@ -1,17 +1,13 @@
-.body{
-	background-color: blue;
+table, td, th {
+  border: 1px solid black;
 }
-.table, .th, .td{
-	background-color: red;
-	border: 1px solid black;
-	border-collapse: collapse;
 
+table {
+  border-collapse: collapse;
+  background-color: yellow;
+  width: 50%;
 }
-p{
-	border: 3px solid powderblue;
-}
-.button {
-	font-size: 10px;
-	background-color: #008CBA;
-	text-align: center;
+
+th {
+  height: 50px;
 }
