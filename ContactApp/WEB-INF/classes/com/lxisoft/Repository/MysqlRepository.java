@@ -178,7 +178,7 @@ public class MysqlRepository implements Repository
 		// System.out.println(a.getName());
 		return contacts;
 	}
-	public void editContact(Contact contact, int i)throws SQLException, ClassNotFoundException
+	public void editContact(Contact contact, int i)
 	{
 		try
 		{

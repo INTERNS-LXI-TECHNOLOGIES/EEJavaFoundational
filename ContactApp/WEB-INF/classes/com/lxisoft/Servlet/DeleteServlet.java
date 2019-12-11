@@ -8,19 +8,19 @@ import com.lxisoft.Repository.*;
 import com.lxisoft.Domain.*;
 
 
-public class DeleteAllServlet extends HttpServlet
+public class DeleteServlet extends HttpServlet
 {
 	static MysqlRepository repo=new MysqlRepository();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
 		try {
          
-         repo.clearAllContacts();
-        ArrayList<Contact> contacts=repo.getAllContacts();
-        HttpSession session=request.getSession();
-         session.setAttribute("contacts",contacts);
+  //        repo.clearAllContacts();
+  //       ArrayList<Contact> contacts=repo.getAllContacts();
+  //       HttpSession session=request.getSession();
+  //        session.setAttribute("contacts",contacts);
          
-         request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
+  //        request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
 		PrintWriter out = response.getWriter();
          out.println("<h1>" +"asdfffff"+ "</h1>");
         

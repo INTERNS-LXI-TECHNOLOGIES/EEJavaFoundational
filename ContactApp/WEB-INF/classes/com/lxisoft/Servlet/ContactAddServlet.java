@@ -36,8 +36,8 @@ public class ContactAddServlet extends HttpServlet
             }
             listView=view.getAllContacts();
          }
-
-         request.setAttribute("contacts",listView);
+         HttpSession session=request.getSession();
+         session.setAttribute("contacts",listView);
          request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
          // PrintWriter out = response.getWriter();
          // out.println("<h1>" +contact.getName()+ "</h1>");

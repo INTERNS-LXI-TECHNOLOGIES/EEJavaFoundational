@@ -9,13 +9,14 @@
 
  
 <button align="center" style="float:left;" onclick="window.location.href='jsp/addnew.jsp';" >Add new Contact</button> 
+<button align="center" style="float:left;" onclick="window.location.href='deleteAll';" >delete All Contact</button> 
 <form action="search" method="GET"  align="center">
-	search a contact: <input type="text" align="right" name="name">
+	search a contact: <input type="text" align="right" name="user">
 	<button name="search" type="submit">search</button>
 </form>
  
 <% ArrayList<ViewListModel>contacts=null;
-contacts=(ArrayList<ViewListModel>)request.getAttribute("contacts");String str="ajith"; %>
+contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts");String str="ajith"; %>
 
 <% 	if(contacts.size()==0){
 	 out.println("<b><h1><CENTER>"+" no contact to show" +"</CENTER></h1><b>");

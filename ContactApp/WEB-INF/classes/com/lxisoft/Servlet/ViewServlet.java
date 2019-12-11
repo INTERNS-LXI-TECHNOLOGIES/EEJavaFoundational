@@ -34,7 +34,9 @@ public class ViewServlet extends HttpServlet
    		PrintWriter out = response.getWriter();
          // fosr(Contact a: contacts)
          // out.println("<h1>"+a.getName()+"</h1>");
-   		request.setAttribute("contacts",listView);
+         HttpSession session=request.getSession();
+         session.setAttribute("contacts",listView);
+   		// request.setAttribute("contacts",listView);
    		request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
    		}catch(Exception e)
          {
