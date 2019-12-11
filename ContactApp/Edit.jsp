@@ -38,6 +38,9 @@ String selectModel=(String) request.getParameter("selectModel");
 %>
 <%=selectModel%>
 %>
+contact from select page 
+contact to edit model and add string[] of new contact
+pass to repo.
 
 <body style="background-color:#D4DB65;">
 	<div align="center">
@@ -47,14 +50,16 @@ String selectModel=(String) request.getParameter("selectModel");
 			Number:<input type="type" name="number" ><br><br>
 			<button id="b1" type="submit" >confirm</button><br><br><br>
 	</form>
-	<button id="b2"  onclick="window.location.href='Select.jsp?selectModel=<%=selectModel%>'">Back</button>
+	<button id="b2"  onclick="onclick=goBack()">Back</button>
 	</div>
-	
+
+	<script type="text/javascript">
+	function goBack() {
+  	window.history.back();
+	}
+	</script>
 
 </body>
 </html>
 
 
-contact from select page 
-contact to edit model and add string[] of new contact
-pass to repo

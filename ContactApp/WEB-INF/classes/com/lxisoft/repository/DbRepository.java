@@ -84,7 +84,6 @@ public class DbRepository implements Repository
 			ArrayList<Contact> contactList=findAll();
 			for(int i=0;i<contactList.size();i++)
 			{
-				System.out.println("sm,dn,dsnaknm");
 				if(contactList.get(i).getName().equals(contact.getName()))
 				{
 					System.out.println("deleting conatact "+contactList.get(i).getName());

@@ -56,7 +56,9 @@
 			out.println(session.getAttribute("selectModel"));%>
 		    <input type="submit" id="b2" value="delete" onclick="return confirm('Are you sure you want to delete?')" />
 		</form><br>
+
 		<button id="b2"  onclick="window.location.href='Edit.jsp?selectModel=<%=selectModel.getContact().getId()%>'">Edit</button><br><br><br><br><br><br><br><br>
+		
 		<button id="b3"  onclick="window.location.href='showAll'">Back</button>
 		<button onclick="goBack()">Go Back</button>
 	</div>
