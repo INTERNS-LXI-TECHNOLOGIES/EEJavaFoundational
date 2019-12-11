@@ -20,8 +20,10 @@
 	for(ContactModel cm:contactsList)
 	{%>
 	<TR>
-		<!-- <TD><%=cm.getId()%></TD> -->
+		<form action="select" method="get">
+		<input type="hidden" name="id" value="<%=cm.getId()%>"> 
     	<TD><a href="select"><input type="submit" value="<%=cm.getName()%>"></a></TD>
+    	</form>
     </TR>
     <%
 	}%>

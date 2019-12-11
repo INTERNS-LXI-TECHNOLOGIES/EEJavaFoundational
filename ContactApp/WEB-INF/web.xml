@@ -5,21 +5,32 @@
       <servlet-class>com.lxisoft.servlet.Serv</servlet-class>
     </servlet>
 
-
     <servlet-mapping>
         <servlet-name>name</servlet-name>
         <url-pattern>/url</url-pattern>
     </servlet-mapping>
+
+
 
     <servlet>
       <servlet-name>add</servlet-name>
       <servlet-class>com.lxisoft.servlet.AddServ</servlet-class>
     </servlet>
 
-
     <servlet-mapping>
         <servlet-name>add</servlet-name>
         <url-pattern>/adddata</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+      <servlet-name>selectt</servlet-name>
+      <servlet-class>com.lxisoft.servlet.SelectByIdServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>selectt</servlet-name>
+        <url-pattern>/select</url-pattern>
     </servlet-mapping>
 
 

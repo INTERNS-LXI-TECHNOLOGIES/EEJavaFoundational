@@ -9,11 +9,22 @@
 </head>
 <body>
 	<table align=center border="5px" width="25%">
-	<%Contact c=(Contact) request.getAttribute("contacts");%>
+		<form>
+
+	<%
+    Contact con=(Contact) request.getAttribute("contacts");
+    %>
 	<tr>
-    	<td><%=(c.getName())%></td>
-    	<td><%=(c.getContactNo())%></td>
+    	<td><%=(con.getName())%></td>  
     </tr>
+    <tr>
+    	<td><%=(con.getContactNo())%></td>
+    </tr>
+    <tr>
+    <td><input type="submit" value="Delete"></td>
+    <td><input type="submit" value="Edit"></td>
+    </tr>
+</form>
 </table>
 </body>
 </html>

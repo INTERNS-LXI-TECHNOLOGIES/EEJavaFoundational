@@ -30,6 +30,20 @@ public class MysqlRepository
 		c=new Contact();
 	}
 
+public Contact findContactById(String d)
+	{
+		Contact c=new Contact();
+		List<Contact>cont=getAllContact();
+		for(int i=0;i<cont.size();i++)
+		{
+			if((cont.get(i).getId()).equals(d))
+			{
+				c=cont.get(i);
+			}
+		}
+		return c;
+	}
+
 	  /**
  * connect to database 
  */
