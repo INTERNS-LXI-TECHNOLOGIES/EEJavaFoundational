@@ -6,17 +6,25 @@ import java.util.*;
 import java.sql.*;
 public class DataRepository  
 {
-  public void display(){
-  	  try{  
+  public ArrayList <Contact> displayAll(){
+  	  try{ 
+    ArrayList <Contact> contactsList = new ArrayList <Contact>();   
     Class.forName("com.mysql.jdbc.Driver");  
     Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
-    //here sonoo is database name, root is username and password  
     Statement stmt=con.createStatement();  
     
     ResultSet rs=stmt.executeQuery("select * from contactlist");  
     while(rs.next())  
-    System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
-    con.close();  
+    {
+      Contact c = new Contact();
+      c.setId(rs.getInt("ID"));
+      c.setName(rs.getName("NAME"));
+      c.setNumber(rs.getNumber("NUMBER"));
+      contactsList.add(c);
+    }
+    //System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
+      con.close();  
+    return contactslist;
     }catch(Exception e){ System.out.println(e);}  
   }
   public void add(Contact c)
