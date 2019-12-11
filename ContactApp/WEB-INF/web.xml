@@ -31,4 +31,12 @@
 	<servlet-name>edit contact</servlet-name>
 	<url-pattern>/editContact</url-pattern>
 </servlet-mapping>
+<servlet>
+	<servlet-name>delete contact</servlet-name>
+	<servlet-class>com.lxisoft.servlet.DeleteContactServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>delete contact</servlet-name>
+	<url-pattern>/delete</url-pattern>
+</servlet-mapping>
 </web-app>

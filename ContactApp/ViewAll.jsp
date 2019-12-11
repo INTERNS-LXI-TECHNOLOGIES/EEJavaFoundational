@@ -6,18 +6,26 @@
 <title>CONTACTS </title>
 <head>
 	<style>
-	input[type="submit" ]
+	#b1
+	{
+		background-color:  #3CBC8D;
+	    color: white;
+	    margin: 8px 0;
+	    border: none;
+	    box-sizing: border-box;
+	    width: 100;
+	}
+	#b2
 	{
 		background-color: pink;
-	 	border-radius :40px;
-	    color: white;
-	    width: 20%;
+	    color: black;
+	    border-radius: 
 	}
 </style>
 </head>
 <h1><center>CONTACT LIST</center></h1>
-<body>
-	<table align="center" border= "5" width="20%" border color= "blue" bgcolor="pink">
+<body style="background-color: grey">
+	<table align="center" width="100%"  border color= "blue" bgcolor="#3CBC8D">
 		<tr>
 			<th>Contacts</th>
 		</tr>
@@ -27,16 +35,15 @@ for(int i=0;i<c.size();i++)
 {
 	%>
 	<tr>
-		
 		<form action= "getContact" method="get">
-		<input type="hidden" name="id" value="<%=(c.get(i).getId())%>">
-		<td><a href="getContact"><input type="submit" id="box1" value="<%=(c.get(i).getName())%>"/></a></td>
+		<input type="hidden" name="id" value="<%=(c.get(i).getId())%>"/>
+	<td ><a href="getContact"><input type="submit" id="b1" value="<%=(c.get(i).getName())%>"/></a></td>
 		</form>
 		</tr>
 <%
 }
 %>
-<a href="AddContact.jsp"><input type="submit" name="submit" value="+" /></a>
+<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="+" /></a>
 </table>
 </body>
 </html>
