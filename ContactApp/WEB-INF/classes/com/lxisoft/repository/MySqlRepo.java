@@ -165,6 +165,7 @@ public class MySqlRepo implements Repository
 	}
 	public int getId()
 	{
+		
 		try
 		{
 			id=0;

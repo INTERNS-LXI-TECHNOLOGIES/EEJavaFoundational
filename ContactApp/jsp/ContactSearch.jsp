@@ -14,11 +14,12 @@
 			<table align="center" border="10px" width="20%">
 				<tr><th><strong>NAME</strong></th><th><strong>NUMBER</strong></th></tr>
 				<% for(Contact contact:currentList)
-				{ %>
+				{
+				session.setAttribute("contact",contact); %>
 				<tr><td> <% out.println(contact.getName()); %> </td>
 					<td> <% out.println(contact.getNo());  %></td>
 					<td><button class="button" type="button" 
-						onClick="window.location.href ='edit?user=<%=contact.getName()%>';"> Edit </button></td>
+						onClick="window.location.href ='jsp\\ContactEdit.jsp';"> Edit </button></td>
 					<td><button class="button" type="button" 
 						onClick="window.location.href ='delete?user=<%=contact.getName()%>';"> Delete </button></td>
 					</tr>
