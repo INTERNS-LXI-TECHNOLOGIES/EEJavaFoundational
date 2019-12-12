@@ -13,10 +13,16 @@ public class EditServlet extends HttpServlet
 
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
-		Contact contact=new Contact();
-		contact.setName(request.getParameter("name"));
-		contact.setNumber(request.getParameter("number"));
-		repository.save(contact);
+		EditModel editModel=new EditModel();
+		HttpSession session=request.getSession();
+		SelectModel selectModel=(SelectModel) session.getAttribute("selectModel");
+
+		System.out.println("sncsjkn edit servlet=="+selectModel.getContact().getId());
+		editModel.setContact(selectModel.getContact());
+		String[] newValue=new String[2];
+		newValue[0]=(String) request.getParameter("name");
+		newValue[1]=(String) request.getParameter("number");
+		repository.edit(editModel,newValue);
 		response.sendRedirect("showAll");
 	}
 }

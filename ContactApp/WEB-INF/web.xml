@@ -24,8 +24,16 @@
 </servlet>
 <servlet-mapping>
    <servlet-name>deleting</servlet-name>
-   <url-pattern>/delete</url-pattern>
+   <url-pattern>/deleteContact</url-pattern>
 </servlet-mapping>
 
+<servlet>
+   <servlet-name>editing</servlet-name>
+   <servlet-class>com.lxisoft.controller.EditServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>editing</servlet-name>
+   <url-pattern>/editContact</url-pattern>
+</servlet-mapping>
 
 </web-app> 

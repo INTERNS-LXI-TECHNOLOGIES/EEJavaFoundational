@@ -7,7 +7,6 @@
 <html>
 <title>CONTACTS</title>
 <body style="background-color:#D4DB65;">
-	<center style="color: blue"><h1><b>CONTACTS</b><h1></center>
 	<br>
 	<style>
 		button {
@@ -23,23 +22,28 @@
 			vertical-align: middle;
 		}
 	</style>
-<%
 
+<table style="border: 0.5px solid blue; background-color: yellowgreen; width: 40%;" align="center" tabindex="center ">
+		<tr><td><h1 style="text-align: center; color:initial;"><b>CONTACTS</b></h1></td></tr>
+<%
 ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("list");
 int count=0;
 for(Contact contact:contactList)
 {
 	count++;
 	%>
-	<div style="border: 1px solid blue; background-color: yellowgreen;">
-	<h2><a href="Select.jsp?selectId=<%=contact.getId()%>">
+	<tr>
+	<td>
+	<h2><a style="margin-left: 30px;" href="Select.jsp?selectId=<%=contact.getId()%>">
 	<img src="person.jpg" width="50" height="50">  <%=contact.getName()%></a>
 	</h2>
-	<br>
-	</div>
+	</td>
+	</tr>
  	<%
 }
 %>
+</table>
+
 <form action="Save.jsp">
  <button>+</button>
 </form>

@@ -13,6 +13,22 @@ public class DbRepository implements Repository
 	PreparedStatement pd;
 	PreparedStatement pu;
 	Statement smt;
+	{		
+		makeConnection();
+	}
+
+	public void makeConnection()
+	{
+		try
+		{			
+			Class.forName("com.mysql.jdbc.Driver"); 
+			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");
+		}
+		catch(ClassNotFoundException|SQLException e)
+		{
+			System.out.println(e);
+		}	
+	}
 
 	public ArrayList<Contact> findAll()
 	{
@@ -20,8 +36,6 @@ public class DbRepository implements Repository
 		Set<Contact> contactsSet=new TreeSet<Contact>();
 		try
 		{			
-			Class.forName("com.mysql.jdbc.Driver"); 
-			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");
 			Statement s=connection.createStatement();
 			s.executeUpdate("create table if not exists contactList (ID int,NAME varchar(25),NUMBER varchar(15))");
 			ps=connection.prepareStatement("insert into contactList (ID,NAME,NUMBER) values(?,?,?)");
@@ -38,7 +52,7 @@ public class DbRepository implements Repository
 			contactList.addAll(contactsSet);
 			
 		}
-		catch(ClassNotFoundException|SQLException e)
+		catch(SQLException e)
 		{
 			System.out.println(e);
 		}	
@@ -79,7 +93,6 @@ public class DbRepository implements Repository
 	{
 		try
 		{
-			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");
 			pd=connection.prepareStatement("delete from contactList where ID=?");
 			ArrayList<Contact> contactList=findAll();
 			for(int i=0;i<contactList.size();i++)
@@ -100,6 +113,7 @@ public class DbRepository implements Repository
 	
 	public void edit(EditModel editModel,String[] tempEdit)
 	{
+		System.out.println("updating conatact "+editModel.getContact().getName());
 		try
 		{
 			pu=connection.prepareStatement("update contactList set NAME=?,NUMBER=? where ID=?");

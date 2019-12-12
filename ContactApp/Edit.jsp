@@ -34,18 +34,15 @@
 		}
 	</style>
 <%
-String selectModel=(String) request.getParameter("selectModel");
+SelectModel selectModel=(SelectModel) session.getAttribute("selectModel");
+out.println("sncsjkn"+session.getAttribute("selectModel"));
 %>
-<%=selectModel%>
-%>
-contact from select page 
 contact to edit model and add string[] of new contact
 pass to repo.
 
 <body style="background-color:#D4DB65;">
 	<div align="center">
-	<form action="edit" method="post">
-
+	<form action="editContact" method="post">
 			Name:<input type="type" name="name"><br><br>
 			Number:<input type="type" name="number" ><br><br>
 			<button id="b1" type="submit" >confirm</button><br><br><br>
