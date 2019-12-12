@@ -15,9 +15,12 @@
   	<%@page import="java.util.*,com.lxisoft.contactapp.model.*"%>
 
   		<a href="view">click</a>
+          <br><a href="Create.jsp">create</a> </br>
+          <br><a href="search.jsp">search</a></br>
+
       <h1>All contacts</h1> 
       <table border ="1" width="500" align="center"> 
-         <tr bgcolor="00FF7F"> 
+         <tr bgcolor="00cccc"> 
           <th><b> ID</b></th> 
           <th><b> Name</b></th> 
           <th><b> Number</b></th> 
