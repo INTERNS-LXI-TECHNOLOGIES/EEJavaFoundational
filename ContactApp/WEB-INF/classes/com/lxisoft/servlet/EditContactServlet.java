@@ -13,6 +13,7 @@ public class EditContactServlet extends HttpServlet
 		int n=Integer.parseInt(id);
 		String name=request.getParameter("name");
 		String number=request.getParameter("number");
+		System.out.println("Name:\t"+name+"Number:\t");
 		Contact cont=new Contact();
 		cont.setContactName(name);
 		cont.setContactNumber(number);

@@ -43,7 +43,7 @@ for(int i=0;i<c.size();i++)
 <%
 }
 %>
-<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="+" /></a>
+<a href="AddContact.jsp"><center><input type="submit" id="b2"name="submit" value="+" /></center></a>
 </table>
 </body>
 </html>

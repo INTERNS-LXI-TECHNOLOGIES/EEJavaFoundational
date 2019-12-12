@@ -4,16 +4,13 @@ import javax.servlet.http.*;
 import java.io.*;
 import com.lxisoft.domain.*;
 import com.lxisoft.repository.*;
-import com.lxisoft.servlet.*;
 public class AddContactServlet extends HttpServlet
 {
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
-		String name=request.getParameter("name");
-		String number=request.getParameter("number");
 		Contact cont=new Contact();
-		cont.setContactName(name);
-		cont.setContactNumber(number);
+		cont.setContactName(request.getParameter("name"));
+		cont.setContactNumber(request.getParameter("number"));
 		MysqlRepository dbrepo=new MysqlRepository();
 		Contact c=dbrepo.saveContact(cont);
 		request.setAttribute("getContactById",c);

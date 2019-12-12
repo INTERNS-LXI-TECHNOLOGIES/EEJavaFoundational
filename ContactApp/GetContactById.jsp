@@ -33,7 +33,7 @@ Contact con=(Contact) request.getAttribute("getContactById");
 <tr>
 	<td><a href="home"><input type="submit" value="Back"></a></td>
 	<td><a href="EditContact.jsp"><input type="submit" value="Edit"></a>
-		<a href="delete"><input type="submit" value="Delete"></td>
+		<a href="DeleteContact.jsp"><input type="submit" value="Delete"></td>
 </tr>
 </body>
 </html>
