@@ -30,7 +30,8 @@
 	out.println(selectId);
 
 	Repository repository=new DbRepository();
-	ArrayList<Contact> contactList=repository.findAll();
+	ArrayList<Contact> contactList=new ArrayList<Contact>();
+	contactList=repository.findAll();
 	SelectModel selectModel=new SelectModel();
 	for(Contact contact:contactList)
 	{
@@ -48,7 +49,7 @@
 	<div align="center">
 		<h1>Id: <%=selectModel.getContact().getId()%></h1>
 		<h1>Name: <%=selectModel.getContact().getName()%></h1>
-		<h1>Number: <%=selectModel.getContact().getName()%></h1> 
+		<h1>Number: <%=selectModel.getContact().getNumber()%></h1> 
 	</div>
 	<%
 
@@ -56,7 +57,7 @@
 	out.println("sncsjkn"+session.getAttribute("selectModel"));
 	%>
 	<div align="center">
-		<form action="delete">
+		<form action="deleteContact">
 		    <input type="submit" id="b2" value="delete" onclick="return confirm('Are you sure you want to delete?')" />
 		</form><br>
 

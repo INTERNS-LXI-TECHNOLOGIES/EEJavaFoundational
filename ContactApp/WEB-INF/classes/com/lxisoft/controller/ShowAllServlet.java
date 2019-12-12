@@ -13,7 +13,8 @@ public class ShowAllServlet extends HttpServlet
 
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
-		ArrayList<Contact> contactList=repository.findAll();
+		ArrayList<Contact> contactList=new ArrayList<Contact>();
+		contactList=repository.findAll();
 		request.setAttribute("list",contactList);
 		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");
 		rd.forward(request,response);
