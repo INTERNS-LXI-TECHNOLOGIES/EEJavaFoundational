@@ -14,8 +14,8 @@ public class SelectedServlet extends HttpServlet
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException
 	{
 		PrintWriter out=response.getWriter();
-		HttpSession session=request.getSession(false); 
 		String name=(String)request.getParameter("user");
+		HttpSession session=request.getSession(); 
 		// out.println("hi.."+name);
 		try
 		{
@@ -31,13 +31,18 @@ public class SelectedServlet extends HttpServlet
 				}
 				if(currentList.size()==1)
 	 			{
-					request.setAttribute("currentcontactList",currentList);
+	 				session.setAttribute("currentcontactList",currentList.get(0));
+	 				//  response.sendRedirect("jsp\\ContactSearch.jsp");
+					request.setAttribute("currentcontactList",currentList.get(0));
 					RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactSearch.jsp");
 					rd.forward(request,response);
 				}
+				
 				else{
-						for(Contact contact:contactList)
-						{
+						//PrintWriter out=response.getWriter();
+					   for(Contact contact:contactList)
+				        {
+							out.println(contact.getName());
 			 				if((contact.getName().toLowerCase()).contains(name.toLowerCase()))
 			 					{
 						 			currentList.add(contact);
@@ -54,6 +59,7 @@ public class SelectedServlet extends HttpServlet
 			                }
 			            }
 		            ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+		           	// session.setAttribute("contactmodel",contacts); 
 		            request.setAttribute("contactmodel",contacts);
 		            RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
 	             	rd.forward(request,response);

@@ -11,49 +11,44 @@ import java.sql.*;
 public class EditServlet extends HttpServlet
 {
 	private Repository repo=new MySqlRepo();
+	ArrayList<Contact> contactList=null;
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException
 	{
 		PrintWriter out=response.getWriter();
-		HttpSession session=request.getSession(false); 
-		String name=(String)request.getParameter("user");
-		// out.println("hi......"+name);
-		try
-		{	
-			  int index=0,i=0;
-			  Contact currentContact=(Contact)session.getAttribute("contact");	
-			  Contact contact=new Contact();
-			  ArrayList<Contact> contactList=repo.getAllContacts();
-              for(i=0;i<contactList.size();i++)
-              {
-              	if((contactList.get(i)).equals(currentContact))
-              	{
-              		index=i;
-              	}
-			  }
-			  contact.setId(i);
+		// String name=(String)request.getParameter("user");
+		HttpSession session=request.getSession(); 
+		Contact contact= (Contact)session.getAttribute("currentcontactList");
+		out.println("hi......"+contact.getName());
+			 try{
+			 	// int i=getId(contact);
               contact.setName(request.getParameter("name"));
               contact.setNo(request.getParameter("num"));
-              repo.updateRepo(i,contact);
-			ContactsListModel contactlistmodel=new ContactsListModel();
-              if(contactList!=null)
-              { 
-                for(int j=0;j<contactList.size();i++)
-                {
-                  ContactModel contactmodel=new ContactModel();
-                  contactmodel.setId(contactList.get(i).getId());
-                  contactmodel.setName(contactList.get(i).getName());
-                  contactlistmodel.setAllContacts(contactmodel);
-                }
-              }
-              ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
-              request.setAttribute("contactmodel",contacts);
-              RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
-              rd.forward(request,response);
-
-		}catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		
+              repo.updateRepo(0,contact);
+              response.sendRedirect("jsp\\ContactView.jsp");
+          }catch(Exception e)
+          {
+          	e.printStackTrace();
+          }
 	}
+	// public int getId(Contact contact)
+	// {
+	// 	int id=0;
+		
+	// 	try
+	// 	{
+	// 	ArrayList<Contact> contactList=repo.getAllContacts();
+	// 	}catch(SQLException e)
+	// 	{
+	// 		e.printStackTrace();
+	// 	}
+	// 	for(int i=0;i<contactList.size();i++)
+	// 	{
+	// 		if(contact.equals(contactList.get(i)))
+	// 		{
+	// 			id=contact.getId();
+	// 		}
+	// 	}
+	// 	return id;
+	// }
+    
 }

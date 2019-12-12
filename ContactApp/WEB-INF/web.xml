@@ -2,11 +2,11 @@
 
 <servlet>
       <servlet-name>CView</servlet-name>
-      <servlet-class>com.lxisoft.servlets.ViewAllContacts</servlet-class>
+      <servlet-class>com.lxisoft.servlets.ViewAllServlet</servlet-class>
 </servlet>
 <servlet>
       <servlet-name>CAdd</servlet-name>
-      <servlet-class>com.lxisoft.servlets.SaveContacts</servlet-class>
+      <servlet-class>com.lxisoft.servlets.AddServlet</servlet-class>
 </servlet>
 <servlet>
       <servlet-name>CSelect</servlet-name>

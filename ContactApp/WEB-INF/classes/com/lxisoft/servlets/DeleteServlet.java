@@ -13,26 +13,40 @@ public class DeleteServlet extends HttpServlet
 	private Repository repo=new MySqlRepo();
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException
 	{
+		try
+		{
 		PrintWriter out=response.getWriter();
-		//HttpSession session=request.getSession(false); 
-		String name=(String)request.getParameter("user");
+		HttpSession session=request.getSession(); 
+		String name=request.getParameter("user");
 		out.println("hi.."+name);
-		// try
-		// {
-		// 	ArrayList<Contact> contactList=repo.getAllContacts();
-		// 	ArrayList<Contact> currentList=new ArrayList<Contact>();
-		// 		for(Contact contact:contactList)
-		// 		{	if(name.equals(contact.getName()))
-		// 			{
-		//  				request.setAttribute("currentcontact",contact);
-		// 				RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactSearch.jsp");
-		// 				rd.forward(request,response);		
-		//  			}
-		// 		}
-		// }catch(Exception e)
-		// {
-		// 	e.printStackTrace();
-		// }
+		int id=getId(contact);
+		repo.deleteContact(0);
+		response.sendRedirect("jsp\\ContactView.jsp");
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 		
+	}
+	public int getId(Contact contact)
+	{
+		int id=0;
+		
+		try
+		{
+		ArrayList<Contact> contactList=repo.getAllContacts();
+		for(int i=0;i<contactList.size();i++)
+		{
+			if(contact.equals(contactList.get(i)))
+			{
+				id=contact.getId();
+			}
+		}
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return id;
 	}
 }
