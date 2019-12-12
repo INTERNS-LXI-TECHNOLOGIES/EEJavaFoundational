@@ -24,7 +24,11 @@
 			<tr>
 				<td><a href="editContact"><input type="submit" value="Save"/></a>
 		</form>
-				<a href="home"><input type="submit" value="Cancel"/></a></td>
+		<form action= "getContact" method="get">
+				<a href="getContact">
+					<input type="hidden" name="id" value="<%=(c.getContactId())%>"/>
+					<input type="submit" value="Cancel"/></a></td>
+		</form>
 			</tr>
 </body>
 </html>

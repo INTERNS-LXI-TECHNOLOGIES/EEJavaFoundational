@@ -31,9 +31,9 @@ Contact con=(Contact) request.getAttribute("getContactById");
 <center><%=(con.getContactNumber())%></center>
 </font>
 <tr>
-	<td><a href="home"><input type="submit" value="Back"></a></td>
-	<td><a href="EditContact.jsp"><input type="submit" value="Edit"></a>
-		<a href="DeleteContact.jsp"><input type="submit" value="Delete"></td>
+	<center><a href="home"><input type="submit" value="Back"></a>
+	<a href="EditContact.jsp"><input type="submit" value="Edit"></a>
+	<a href="DeleteContact.jsp"><input type="submit" value="Delete"></a></center>
 </tr>
 </body>
 </html>

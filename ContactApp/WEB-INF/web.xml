@@ -39,4 +39,12 @@
 	<servlet-name>delete contact</servlet-name>
 	<url-pattern>/delete</url-pattern>
 </servlet-mapping>
+<servlet>
+	<servlet-name>search contact</servlet-name>
+	<servlet-class>com.lxisoft.servlet.SearchContactServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>search contact</servlet-name>
+	<url-pattern>/search</url-pattern>
+</servlet-mapping>
 </web-app>

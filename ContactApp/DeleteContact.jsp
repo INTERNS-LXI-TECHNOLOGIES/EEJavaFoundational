@@ -16,9 +16,14 @@
 			<td>
 				<form action="delete" method ="get">
 					<input type="hidden" name="id" value="<%=(c.getContactId())%>">
-				<a href="delete"><input type="submit" value="deletes"/></a>
-		</form>
-				<a href="home"><input type="submit" value="Cancel"/></a></td>
-			</tr>
+					<a href="delete"><input type="submit" value="deletes"/></a>
+				</form>
+				<form action= "getContact" method="get">
+				<a href="getContact">
+					<input type="hidden" name="id" value="<%=(c.getContactId())%>"/>
+					<input type="submit" value="Cancel"/></a>
+				</form>
+			</td>
+		</tr>
 </body>
 </html>      

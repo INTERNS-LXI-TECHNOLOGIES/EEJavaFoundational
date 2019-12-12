@@ -19,13 +19,15 @@
 	{
 		background-color: pink;
 	    color: black;
-	    border-radius: 
+	    border-radius:25%;
+	    height: 5%; 
+	    width: 3%;
 	}
 </style>
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body style="background-color: grey">
-	<table align="center" width="100%"  border color= "blue" bgcolor="#3CBC8D">
+	<table align="center" width="60%"  border color= "blue" bgcolor="#3CBC8D">
 		<tr>
 			<th>Contacts</th>
 		</tr>
@@ -44,6 +46,8 @@ for(int i=0;i<c.size();i++)
 }
 %>
 <a href="AddContact.jsp"><center><input type="submit" id="b2"name="submit" value="+" /></center></a>
+
+<a href="SearchContact.jsp"><center><input type="submit" id="b2"name="submit" value="search" /></center></a>
 </table>
 </body>
 </html>
