@@ -19,11 +19,22 @@ public class ContactAddServlet extends HttpServlet
 	{
    		
          try {
+         HttpSession session=request.getSession();
+         session.setAttribute("newcontact",new Contact());
          Contact contact=new Contact();
    		contact.setName(request.getParameter("name"));
          contact.setNo(request.getParameter("number"));
-         repo.writeNewContact(contact,true);
          ArrayList<Contact> contacts=repo.getAllContacts();
+         for(Contact c:contacts)
+         {
+            if(c.getName().toLowerCase().equals(contact.getName().toLowerCase()))
+            {
+               session.setAttribute("newcontact",contact);
+               response.sendRedirect("jsp/addnew.jsp");
+            }
+         }
+         repo.writeNewContact(contact,true);
+         contacts=repo.getAllContacts();
 
          ViewList view=new ViewList();
          ArrayList<ViewListModel> listView=null;
@@ -36,7 +47,6 @@ public class ContactAddServlet extends HttpServlet
             }
             listView=view.getAllContacts();
          }
-         HttpSession session=request.getSession();
          session.setAttribute("contacts",listView);
          request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
          // PrintWriter out = response.getWriter();

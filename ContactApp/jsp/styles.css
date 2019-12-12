@@ -5,9 +5,16 @@ table, td, th {
 table {
   border-collapse: collapse;
   background-color: yellow;
-  width: 50%;
+  width: 30%;
+  text-align:center;
 }
 
 th {
   height: 50px;
+}
+#button{
+	
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
 }

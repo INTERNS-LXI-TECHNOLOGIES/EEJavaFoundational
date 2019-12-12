@@ -4,7 +4,7 @@
 <body>
 
 	
-
+<% response.sendRedirect("..\\viewall"); %>
 <center><button onclick="window.location.href='..\\viewall';">click here to continue</button> </center>
 
 
