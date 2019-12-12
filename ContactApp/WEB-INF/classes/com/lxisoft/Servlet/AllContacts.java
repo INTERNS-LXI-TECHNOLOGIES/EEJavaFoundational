@@ -1,10 +1,9 @@
-package com.lxisoft.servlet;
+package com.lxisoft.Servlet;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
 import com.lxisoft.Repository.*;
-import com.lxisoft.Model.*;
 import com.lxisoft.Domain.*;
 public class AllContacts extends HttpServlet
 {
@@ -15,7 +14,5 @@ public class AllContacts extends HttpServlet
 		request.setAttribute("contact",contactList);
 		RequestDispatcher rd = request.getRequestDispatcher("ViewAll.jsp");
 		rd.forward(request,response);
-		//ContactListModel listModel=new ContactListModel();
-
-	  }
+	}
 }

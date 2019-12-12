@@ -6,26 +6,27 @@ import java.util.*;
 import java.sql.*;
 public class DataRepository  
 {
-  public ArrayList <Contact> displayAll(){
+  
+  public ArrayList <Contact> displayAll()
+  {   ArrayList <Contact> contactsList = new ArrayList <Contact>();   
   	  try{ 
-    ArrayList <Contact> contactsList = new ArrayList <Contact>();   
-    Class.forName("com.mysql.jdbc.Driver");  
-    Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
-    Statement stmt=con.createStatement();  
-    
-    ResultSet rs=stmt.executeQuery("select * from contactlist");  
-    while(rs.next())  
-    {
-      Contact c = new Contact();
-      c.setId(rs.getInt("ID"));
-      c.setName(rs.getName("NAME"));
-      c.setNumber(rs.getNumber("NUMBER"));
-      contactsList.add(c);
-    }
-    //System.out.println(rs.getInt(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
-      con.close();  
-    return contactslist;
-    }catch(Exception e){ System.out.println(e);}  
+        
+          Class.forName("com.mysql.jdbc.Driver");  
+          Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
+          Statement stmt=con.createStatement();  
+          ResultSet rs=stmt.executeQuery("select * from contactlist");  
+      
+        while(rs.next())  
+          {
+            Contact c = new Contact();
+            c.setId(rs.getInt("ID"));
+            c.setName(rs.getString("NAME"));
+            c.setNumber(rs.getString("NUMBER"));
+            contactsList.add(c);
+          }
+           con.close();  
+          }catch(Exception e){ System.out.println(e);}  
+          return contactsList;
   }
   public void add(Contact c)
    {
