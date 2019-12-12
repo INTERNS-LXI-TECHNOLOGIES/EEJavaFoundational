@@ -1,19 +1,20 @@
 <html>
 <title> CONTACT APP</title>
 <head>
-	<link rel="stylesheet" type="text/css" href="jsp\styles.css"><CENTER>welcome to contact App</CENTER></head>
+	<link rel="stylesheet" type="text/css" href="jsp\styles.css"><CENTER><h1><b>welcome to contact App</h1></b></CENTER></head>
 <body>
 <%@ page import="com.lxisoft.Domain.*" %>
 <%@ page import="com.lxisoft.Models.*" %>
 <%@ page import="java.util.*" %>
-
+<table><tr>
  <center>
 <button  id="button" onclick="window.location.href='jsp/addnew.jsp';" >Add new Contact</button> <br>
 <button  onclick="window.location.href='deleteAll';" >delete All Contact</button> <br></center>
 <form action="search" method="GET"  align="center"><br>
 	search a contact: <br><input type="text" align="center" name="user">
 	<button name="search" type="submit">search</button>
-</form>
+</form></tr>
+</table>
  
 <% ArrayList<ViewListModel>contacts=null;
 contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>

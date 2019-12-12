@@ -232,7 +232,7 @@ public class MysqlRepository implements Repository
 	{
 		try
 		{
-			id=0;
+			id=1;
 			stmt=con.prepareStatement("delete from tab");
 			stmt.executeUpdate();
 		}catch(Exception p)
