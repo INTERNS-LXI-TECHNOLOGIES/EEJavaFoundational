@@ -14,7 +14,7 @@ public class SelectByIdServ extends HttpServlet
 		String id=request.getParameter("id");
 		Contact c=myrepo.findContactById(id);
 		request.setAttribute("contacts",c);
-		System.out.println(c.getName()+ " dff");
+		// System.out.println(c.getName()+ " dff");
 		HttpSession session=request.getSession();
 		session.setAttribute("contact",c);
 		RequestDispatcher rd=request.getRequestDispatcher("Save.jsp");

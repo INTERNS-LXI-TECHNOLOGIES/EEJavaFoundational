@@ -10,7 +10,6 @@
 <body>
 	<H1><CENTER>CONTACT LIST</CENTER></H1>
 	<center><a href="Add.jsp"><h1>+</h1></a></center>
-	<!-- <a href="Select.jsp"><h1>Select</h1></a> -->
 	<table align=center border="1px" width="15%">
 	<tr>
 		<!-- <th>ID</th> -->

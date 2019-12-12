@@ -9,8 +9,6 @@
 </head>
 <body>
 	<table align=center border="5px" width="25%">
-		<form>
-
 	<%
     Contact con=(Contact) request.getAttribute("contacts");
     %>
@@ -21,10 +19,9 @@
     	<td><%=(con.getContactNo())%></td>
     </tr>
     <tr>
-    <td><input type="submit" value="Delete"></td>
-    <td><input type="submit" value="Edit"></td>
+        <td><a href="Edit.jsp"><input type="submit" value="Edit"></a></td>
+        <td><a href="Delete.jsp"><input type="submit" value="Delete"></a></td>
     </tr>
-</form>
 </table>
 </body>
 </html>

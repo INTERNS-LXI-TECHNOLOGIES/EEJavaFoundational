@@ -1,5 +1,5 @@
 package com.lxisoft.repository;
-import com.lxisoft.repository.*;
+// import com.lxisoft.repository.*;
 import com.lxisoft.domain.*;
 // import com.lxisoft.models.*;
 import java.sql.*;
@@ -126,20 +126,23 @@ public Contact findContactById(String d)
   /**
  * Edit contact 
  */
-  	public void updateContact(String d,Contact c)
+  	public Contact updateContact(String d,Contact c)
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("update contactlist set Number=? where ID=?");
-	 		stmt.setString(1,c.getContactNo());
-	 		stmt.setString(2,d);
-	 	    stmt.executeUpdate();
+	 		PreparedStatement s=conn.prepareStatement("update contactlist set Name=? Number=? where ID=?");
+	 		s.setString(1,c.getName());
+	 		s.setString(2,c.getContactNo());
+	 		s.setString(3,d);
+	 	    s.execute();
+	 	    c.setId(d);
 	 		System.out.println("Successfully Updated");
  		}
  		catch(Exception e)
  		{
  			System.out.println("Updation Failed"+e);
  		}
+ 		return c;
  	}
  	  /**
  * delete contact 
