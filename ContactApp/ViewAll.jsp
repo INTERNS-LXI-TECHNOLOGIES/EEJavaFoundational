@@ -23,6 +23,11 @@
 		 float: right;	
 		  margin: 18px 75px;
 		}
+		#b3{
+			background-color: red;
+			font-size: larger;
+		  margin: 18px 75px;
+		}
 		img{
 			vertical-align: middle;
 		}
@@ -30,7 +35,19 @@
 	<div>
 		<button id="b2" onclick="window.location.href='index.jsp'">close(X)</button>
 	</div>
-	<br>
+
+	<select id="b3" name="sample" onchange="javascript:handleSelect(this)">
+		<option value="nothing" selected="selected">options</option>
+		 <option value="index">Home</option>
+		 <option value="Save">About</option>
+		 <option value="https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts/">Contact</option>
+	</select>
+	 
+	<script type="text/javascript">
+	function handleSelect(elm){
+		window.location = elm.value+".jsp";
+	}
+	</script>
 	
 
 <table style="border: 0.5px solid #F4714D; background-color: #C4F48A; width: 35%;" align="center" tabindex="center ">
