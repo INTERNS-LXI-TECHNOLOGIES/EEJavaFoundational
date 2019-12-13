@@ -15,20 +15,38 @@ public class DeleteServlet extends HttpServlet
 	{
 		try
 		{
-		PrintWriter out=response.getWriter();
+		
 		HttpSession session=request.getSession(); 
 		String name=request.getParameter("user");
-		out.println("hi.."+name);
-		int id=getId(contact);
-		repo.deleteContact(0);
-		response.sendRedirect("jsp\\ContactView.jsp");
+		Contact contact= (Contact)session.getAttribute("currentcontactList");
+		PrintWriter out=response.getWriter();
+		int i=getId(contact.getName());
+		out.println("hi......"+i);
+		repo.deleteContact(i);
+		 ArrayList<Contact> contactList=repo.getAllContacts();
+              ContactsListModel contactlistmodel=new ContactsListModel();
+              if(contactList!=null)
+              { 
+                for(int j=0;j<contactList.size();j++)
+                {
+                  ContactModel contactmodel=new ContactModel();
+                  contactmodel.setId(contactList.get(j).getId());
+                  contactmodel.setName(contactList.get(j).getName());
+                  contactlistmodel.setAllContacts(contactmodel);
+                }
+              }
+              ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+               session.setAttribute("contactmodel",contacts);
+              RequestDispatcher rd=request.getRequestDispatcher("View");
+              rd.forward(request,response);
+		// response.sendRedirect("View");
 		}catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 		
 	}
-	public int getId(Contact contact)
+	public int getId(String name)
 	{
 		int id=0;
 		
@@ -37,9 +55,9 @@ public class DeleteServlet extends HttpServlet
 		ArrayList<Contact> contactList=repo.getAllContacts();
 		for(int i=0;i<contactList.size();i++)
 		{
-			if(contact.equals(contactList.get(i)))
+			if(name.equals(contactList.get(i).getName()))
 			{
-				id=contact.getId();
+				id=i;
 			}
 		}
 		}catch(SQLException e)
@@ -48,5 +66,6 @@ public class DeleteServlet extends HttpServlet
 		}
 		
 		return id;
-	}
+	}		 
+
 }

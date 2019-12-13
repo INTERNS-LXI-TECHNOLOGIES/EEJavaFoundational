@@ -36,9 +36,9 @@ public class AddServlet extends HttpServlet
               // request.setAttribute("contactmodel",contacts);
               // for(ContactModel c: contacts)
               //   PrintWriter out=response.getWriter();
-              // RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
-              // rd.forward(request,response);
-              response.sendRedirect("jsp\\ContactView.jsp");
+              RequestDispatcher rd=request.getRequestDispatcher("View");
+              rd.forward(request,response);
+              // response.sendRedirect("View");
          }catch(SQLException n)
          {
            n.printStackTrace();

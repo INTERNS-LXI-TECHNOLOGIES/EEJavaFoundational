@@ -20,6 +20,10 @@
       <servlet-name>CDelete</servlet-name>
       <servlet-class>com.lxisoft.servlets.DeleteServlet</servlet-class>
 </servlet>
+<servlet>
+      <servlet-name>CDel</servlet-name>
+      <servlet-class>com.lxisoft.servlets.DeleteAllServlet</servlet-class>
+</servlet>
 
 <servlet-mapping>
 		<servlet-name>CView</servlet-name>
@@ -40,6 +44,10 @@
 <servlet-mapping>
 		<servlet-name>CDelete</servlet-name>
 		<url-pattern>/delete</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+		<servlet-name>CDel</servlet-name>
+		<url-pattern>/DeleteAll</url-pattern>
 </servlet-mapping>
 
 </web-app>

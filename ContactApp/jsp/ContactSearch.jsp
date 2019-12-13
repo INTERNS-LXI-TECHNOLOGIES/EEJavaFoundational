@@ -5,12 +5,13 @@
 		</head>
 		<body > 
 			<%@ page import="com.lxisoft.models.*"%>
-			<%@ page import="com.lxisoft.servlets.*"%>
+		
 			<%@ page import="com.lxisoft.Domain.*"%>
-			<%@ page import="com.lxisoft.repository.*"%>
+		
 			<%@ page import="java.util.*"%>
 
 			<% Contact contact= (Contact)session.getAttribute("currentcontactList"); %>
+
 			<h1><%=contact.getName()%></h1>
 			<table align="center" border="10px" width="20%">
 				<tr><th><strong>NAME</strong></th><th><strong>NUMBER</strong></th></tr>
@@ -20,6 +21,8 @@
 						onClick="window.location.href ='jsp\\ContactEdit.jsp';"> Edit </button></td>
 					<td><button class="button" type="button" 
 						onClick="window.location.href ='delete?user=<%=contact.getName()%>';"> Delete </button></td>
+					<td><button class="button" type="button" 
+						onClick="window.location.href ='View';"> Back</button></td>
 					</tr>
 					
 		</table>

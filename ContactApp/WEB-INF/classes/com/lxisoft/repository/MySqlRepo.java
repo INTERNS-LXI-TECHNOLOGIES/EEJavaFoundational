@@ -191,7 +191,7 @@ public class MySqlRepo implements Repository
 		stmt=con.prepareStatement("use contacts");
 		// PreparedStatement stm=con.prepareStatement("use contacts");
 
-			rs = stm.executeQuery("select * from Contactlist");
+			rs = stmt.executeQuery("select * from Contactlist");
 			while(rs.next()) 
 			{ 
 				Contact	contact=new Contact();

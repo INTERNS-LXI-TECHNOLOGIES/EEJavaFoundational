@@ -5,17 +5,16 @@
 		</head>
 		<body > 
 			<%@ page import="com.lxisoft.models.*"%>
-			<%@ page import="com.lxisoft.servlets.*"%>
 			<%@ page import="com.lxisoft.Domain.*"%>
-			<%@ page import="com.lxisoft.repository.*"%>
 			<%@ page import="java.util.*"%>
 			<center>
 				 <h3> CONTACT APPLICATION </h3>
 			</center>
-			<button  class ="butt" align="left" type="button" onClick="window.location.href = '../jsp/ContactAdd.jsp';">+</button>
-			<form action="select"><center>
+			<button  class ="butt" align="left" type="button" onClick="window.location.href = 'jsp/ContactAdd.jsp';">+</button>
+			<form action="select" method="GET"><center>
 			<input type="text" name="user" placeholder= "Enter Name">
 			<button> search here </button></center></form>
+			<center> <button  type="button" onClick="window.location.href = 'DeleteAll';">DeleteAllContacts</button></center>
 			<%
 			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");%>
 				<% out.println(contactList.size());%>

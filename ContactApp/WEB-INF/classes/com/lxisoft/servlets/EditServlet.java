@@ -18,37 +18,56 @@ public class EditServlet extends HttpServlet
 		// String name=(String)request.getParameter("user");
 		HttpSession session=request.getSession(); 
 		Contact contact= (Contact)session.getAttribute("currentcontactList");
-		out.println("hi......"+contact.getName());
-			 try{
-			 	// int i=getId(contact);
+		// out.println("hi......"+contact.getName());
+		// out.println("hi....id.."+contact.getId());
+		 try{
+			 int i=getId(contact.getName());
+			  contact.setId(i);
               contact.setName(request.getParameter("name"));
               contact.setNo(request.getParameter("num"));
-              repo.updateRepo(0,contact);
-              response.sendRedirect("jsp\\ContactView.jsp");
+              repo.updateRepo(i,contact);
+              ArrayList<Contact> contactList=repo.getAllContacts();
+              ContactsListModel contactlistmodel=new ContactsListModel();
+              if(contactList!=null)
+              { 
+                for(int j=0;j<contactList.size();j++)
+                {
+                  ContactModel contactmodel=new ContactModel();
+                  contactmodel.setId(contactList.get(j).getId());
+                  contactmodel.setName(contactList.get(j).getName());
+                  contactlistmodel.setAllContacts(contactmodel);
+                }
+              }
+              ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+               session.setAttribute("contactmodel",contacts);
+              RequestDispatcher rd=request.getRequestDispatcher("View");
+              rd.forward(request,response);
+		      // response.sendRedirect("View");
           }catch(Exception e)
           {
           	e.printStackTrace();
           }
 	}
-	// public int getId(Contact contact)
-	// {
-	// 	int id=0;
+	public int getId(String name)
+	{
+		int id=0;
 		
-	// 	try
-	// 	{
-	// 	ArrayList<Contact> contactList=repo.getAllContacts();
-	// 	}catch(SQLException e)
-	// 	{
-	// 		e.printStackTrace();
-	// 	}
-	// 	for(int i=0;i<contactList.size();i++)
-	// 	{
-	// 		if(contact.equals(contactList.get(i)))
-	// 		{
-	// 			id=contact.getId();
-	// 		}
-	// 	}
-	// 	return id;
-	// }
-    
+		try
+		{
+		ArrayList<Contact> contactList=repo.getAllContacts();
+		for(int i=0;i<contactList.size();i++)
+		{
+			if(name.equals(contactList.get(i).getName()))
+			{
+				id=i;
+			}
+		}
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		
+		return id;
+	}
+			 
 }

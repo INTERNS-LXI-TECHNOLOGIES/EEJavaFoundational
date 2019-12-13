@@ -32,22 +32,27 @@ public class SelectedServlet extends HttpServlet
 				if(currentList.size()==1)
 	 			{
 	 				session.setAttribute("currentcontactList",currentList.get(0));
-	 				//  response.sendRedirect("jsp\\ContactSearch.jsp");
-					request.setAttribute("currentcontactList",currentList.get(0));
-					RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactSearch.jsp");
-					rd.forward(request,response);
+	 				 response.sendRedirect("jsp\\ContactSearch.jsp");
+					// request.setAttribute("currentcontactList",currentList.get(0));
+					// RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactSearch.jsp");
+					// rd.forward(request,response);
 				}
 				
 				else{
 						//PrintWriter out=response.getWriter();
+						 			currentList.clear();
 					   for(Contact contact:contactList)
 				        {
-							out.println(contact.getName());
+							// out.println("HI"+contact.getName());
 			 				if((contact.getName().toLowerCase()).contains(name.toLowerCase()))
 			 					{
+						 			// out.println("hi.."+contact.getName());
 						 			currentList.add(contact);
 						 		}
-						}		
+						}	
+						// for(Contact contact:currentList)
+						// {
+						// }	
 			            if(currentList.size()!=0)
 			            { 
 			                for(int i=0;i<currentList.size();i++)
@@ -56,13 +61,16 @@ public class SelectedServlet extends HttpServlet
 			                  contactmodel.setId(currentList.get(i).getId());
 			                  contactmodel.setName(currentList.get(i).getName());
 			                  contactlistmodel.setAllContacts(contactmodel);
+							// out.println(contactmodel.getName());
+							// out.println(contactmodel.getId());
 			                }
 			            }
 		            ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
-		           	// session.setAttribute("contactmodel",contacts); 
-		            request.setAttribute("contactmodel",contacts);
-		            RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
-	             	rd.forward(request,response);
+		           	session.setAttribute("contactmodel",contacts); 
+		           	response.sendRedirect("jsp\\ContactView.jsp");
+		            // request.setAttribute("contactmodel",contacts);
+		            // RequestDispatcher rd=request.getRequestDispatcher("View");
+	             // 	rd.forward(request,response);
 	            }
 		}catch(Exception e)
 		{
