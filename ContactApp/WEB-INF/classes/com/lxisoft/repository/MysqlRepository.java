@@ -130,12 +130,13 @@ public Contact findContactById(String d)
  	{
  		try
  		{
-	 		PreparedStatement s=conn.prepareStatement("update contactlist set Name=? Number=? where ID=?");
-	 		s.setString(1,c.getName());
-	 		s.setString(2,c.getContactNo());
-	 		s.setString(3,d);
-	 	    s.execute();
-	 	    c.setId(d);
+	 		PreparedStatement s=conn.prepareStatement("update contactlist set Name= ? , Number=? where ID=?");
+	 		s.setString(1, c.getName());
+	 		s.setString(2, c.getContactNo());
+	 		s.setString(3, d);
+	 		 c.setId(d);
+	 	    s.executeUpdate();
+	 	   
 	 		System.out.println("Successfully Updated");
  		}
  		catch(Exception e)

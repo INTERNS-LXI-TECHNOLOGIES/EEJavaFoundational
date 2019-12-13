@@ -8,15 +8,15 @@
 	<title>Save</title>
 </head>
 <body>
-	<table align=center border="5px" width="25%">
+	<table bgcolor="#ffcccc" align=center border="5px" width="25%">
 	<%
     Contact con=(Contact) request.getAttribute("contacts");
     %>
 	<tr>
-    	<td><%=(con.getName())%></td>  
+    	<td><center><%=(con.getName())%></center></td>  
     </tr>
     <tr>
-    	<td><%=(con.getContactNo())%></td>
+    	<td><center><%=(con.getContactNo())%></center></td>
     </tr>
     <tr>
         <td><a href="Edit.jsp"><input type="submit" value="Edit"></a></td>

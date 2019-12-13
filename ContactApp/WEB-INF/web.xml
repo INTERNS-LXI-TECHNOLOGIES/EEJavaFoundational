@@ -44,6 +44,17 @@
     </servlet-mapping>
 
 
+    <servlet>
+      <servlet-name>delete</servlet-name>
+      <servlet-class>com.lxisoft.servlet.DeleteServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/deletedata</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>
 
