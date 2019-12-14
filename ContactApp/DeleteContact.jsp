@@ -19,6 +19,7 @@
 					<a href="delete"><input type="submit" value="deletes"/></a>
 				</form>
 				<form action= "getContact" method="get">
+				<input type="hidden" name="crud" value="4"/>
 				<a href="getContact">
 					<input type="hidden" name="id" value="<%=(c.getContactId())%>"/>
 					<input type="submit" value="Cancel"/></a>

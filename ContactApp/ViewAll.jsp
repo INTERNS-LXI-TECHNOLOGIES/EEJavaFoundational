@@ -27,6 +27,15 @@
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body style="background-color: grey">
+	<a href="AddContact.jsp"><center><input type="submit" id="b2"name="submit" value="+" /></center></a>
+	<form action= "search" method="get">
+	<table align="center" border="1" width="20%" height="5%" >
+		<tr>
+			<td><input type="text" name="name" placeholder="Search"/>
+			<a href="search"><input type="submit" value="submit"></a></td>
+		</tr>
+	</table>
+</form>
 	<table align="center" width="60%"  border color= "blue" bgcolor="#3CBC8D">
 		<tr>
 			<th>Contacts</th>
@@ -35,19 +44,21 @@
 List<ContactModel> c=(List<ContactModel>) request.getAttribute("allContact");
 for(int i=0;i<c.size();i++)
 {
-	%>
-	<tr>
+%>
+	
 		<form action= "getContact" method="get">
+		<input type="hidden" name="crud" value="2"/>
 		<input type="hidden" name="id" value="<%=(c.get(i).getId())%>"/>
-	<td ><a href="getContact"><input type="submit" id="b1" value="<%=(c.get(i).getName())%>"/></a></td>
+	<tr>
+		<td>
+			<img src="user-icon-jpg-13.jpg" width="20%" height="30%"> 
+		<a href="getContact">
+		<input type="submit" id="b1" value="<%=(c.get(i).getName())%>"/></a></td>
 		</form>
-		</tr>
+	</tr>
 <%
 }
 %>
-<a href="AddContact.jsp"><center><input type="submit" id="b2"name="submit" value="+" /></center></a>
-
-<a href="SearchContact.jsp"><center><input type="submit" id="b2"name="submit" value="search" /></center></a>
 </table>
 </body>
 </html>

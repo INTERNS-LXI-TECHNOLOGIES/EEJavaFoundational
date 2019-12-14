@@ -22,18 +22,22 @@
 </head>
 <body style="background-color: grey">
 	<table align="center" border="5" width="25%" height="25%">
+	<center><a href="home"><input type="submit" value="<---"></a></center>
 <%
 Contact con=(Contact) request.getAttribute("getContactById");
-// Contact c=(Contact)session.getAttribute("cont");
+
 %>
 <font size="15">
+<center><img src="user-icon-jpg-12.jpg" width="10%" height="10%"> 
 <center><%=(con.getContactName())%></center>
 <center><%=(con.getContactNumber())%></center>
 </font>
 <tr>
-	<center><a href="home"><input type="submit" value="Back"></a>
+	<center>
+	
 	<a href="EditContact.jsp"><input type="submit" value="Edit"></a>
 	<a href="DeleteContact.jsp"><input type="submit" value="Delete"></a></center>
 </tr>
+</table>
 </body>
 </html>

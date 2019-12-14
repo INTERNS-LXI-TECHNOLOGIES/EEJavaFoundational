@@ -10,14 +10,15 @@ public class SearchContactServlet extends HttpServlet
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		MysqlRepository dbrepo=new MysqlRepository();
-		List<String>contact=new ArrayList<String>();
+		List<Contact>contact=new ArrayList<Contact>();
 		List <Contact> contactList=dbrepo.findAllContact();
 		String name=request.getParameter("name");
+		// String crud=request.getParameter("crud");
 		for(int i=0;i<contactList.size();i++)
 		{
 			if(contactList.get(i).getContactName().contains(name))
 			{
-				contact.add(contactList.get(i).getContactName());
+				contact.add(contactList.get(i));
 			}
 		}
 		request.setAttribute("search",contact);
