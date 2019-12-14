@@ -1,5 +1,6 @@
 		<html>
 		<head>
+			 <link rel="stylesheet" type="text/css" href="jsp/styles.css">
 			<title> ADD CONTACT </title>
 		</head>
 		<body > 
@@ -23,7 +24,7 @@
 					<script>
 						msg()
 						function msg(){
-						alert("same contact Name found choose another");}
+						alert("    same contact Name found choose another");}
 					</script>
 		<% } 
 		  else
