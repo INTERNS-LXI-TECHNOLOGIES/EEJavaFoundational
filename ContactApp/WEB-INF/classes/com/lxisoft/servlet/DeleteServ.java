@@ -8,12 +8,12 @@ import com.lxisoft.domain.*;
 import com.lxisoft.models.*;
 public class DeleteServ extends HttpServlet
 {
-	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		MysqlRepository myrepo=new MysqlRepository();
 		String id=request.getParameter("id");
 	    myrepo.deleteContact(id);
-		RequestDispatcher rd=request.getRequestDispatcher("DeleteView.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("url");
 		rd.forward(request,response);
 	}
 }

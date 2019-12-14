@@ -130,12 +130,12 @@ public Contact findContactById(String d)
  	{
  		try
  		{
-	 		PreparedStatement s=conn.prepareStatement("update contactlist set Name= ? , Number=? where ID=?");
-	 		s.setString(1, c.getName());
-	 		s.setString(2, c.getContactNo());
-	 		s.setString(3, d);
-	 		 c.setId(d);
-	 	    s.executeUpdate();
+	 		stmt=conn.prepareStatement("update contactlist set Name= ? , Number=? where ID=?");
+	 		stmt.setString(1, c.getName());
+	 		stmt.setString(2, c.getContactNo());
+	 		stmt.setString(3, d);
+	 		 // c.setId(d);
+	 	    stmt.executeUpdate();
 	 	   
 	 		System.out.println("Successfully Updated");
  		}
@@ -155,6 +155,7 @@ public Contact findContactById(String d)
 			stmt=conn.prepareStatement("delete from Contactlist where ID=?");
 			stmt.setString(1,d);
 			stmt.execute();
+			System.out.println("Delete Successfully");
 		}
 		catch(SQLException e)
 		{

@@ -21,6 +21,7 @@
     <tr>
         <td><a href="Edit.jsp"><input type="submit" value="Edit"></a></td>
         <td><a href="Delete.jsp"><input type="submit" value="Delete"></a></td>
+        <td><a href="url"><input type="submit" value="Cancel"></td>
     </tr>
 </table>
 </body>
