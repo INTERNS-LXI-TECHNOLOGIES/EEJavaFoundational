@@ -8,11 +8,41 @@
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body>
-	<table align="center" border= "10" width="20%" border color= "red" bgcolor="black">
+	<table align="center" border= "5" width="30%" border color= "red" bgcolor="yellow">
 		<tr>
-			<th>Contacts</th>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Number</th>
 		</tr>
-<%ArrayList<Contact> c =(ArrayList<Contact>)session.getAttribute("contact");
+
+
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+
+
+
+
+
+		
+<%
+ArrayList<Contact> c=(ArrayList<Contact>)request.getAttribute("contact");
 for(int i=0;i<c.size();i++)
 {
 %>
@@ -24,6 +54,7 @@ for(int i=0;i<c.size();i++)
 <%
 }
 %>
+<a href="Add.jsp"><h1><center>CONTACTS<center></h1></a>
 </table>
 </body>
 </html>

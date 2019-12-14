@@ -10,9 +10,18 @@
     <servlet-name>controlServlet</servlet-name>
     <servlet-class>com.lxisoft.Servlet.AllContacts</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>controlServlet</servlet-name>
+    <servlet-class>com.lxisoft.Servlet.Add</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>controlServlet</servlet-name>
     <url-pattern>/start</url-pattern>
+  </servlet-mapping>
+
+    <servlet-mapping>
+    <servlet-name>controlServlet</servlet-name>
+    <url-pattern>/Add</url-pattern>
   </servlet-mapping>
 </web-app>    
