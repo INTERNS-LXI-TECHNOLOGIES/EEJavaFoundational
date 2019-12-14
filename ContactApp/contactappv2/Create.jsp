@@ -7,7 +7,7 @@
         Name:<input type="text" name="Name"/><br/>
         Number:<input type="text" name="Number"/><br/>
         </select> <br/>
-        <input type="submit" value="Submit"/>
+        <input type="submit" value="Save"/>
  
     </form>
 </body>

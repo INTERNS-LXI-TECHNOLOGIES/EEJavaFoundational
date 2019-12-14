@@ -6,12 +6,12 @@
     <display-name>CrunchifyJSPServletExample</display-name>
 
     <servlet>
-        <servlet-name>CompressionFilterTestServlet</servlet-name>
+        <servlet-name>allcontact</servlet-name>
         <servlet-class>com.lxisoft.contactapp.servelet.ContactControl</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>CompressionFilterTestServlet</servlet-name>
+        <servlet-name>allcontact</servlet-name>
         <url-pattern>/view</url-pattern>
     </servlet-mapping>
 
@@ -26,12 +26,35 @@
     </servlet-mapping>
    
            <servlet>
-        <servlet-name>create</servlet-name>
+        <servlet-name>read</servlet-name>
         <servlet-class>com.lxisoft.contactapp.servelet.Contactsearch</servlet-class>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>create</servlet-name>
+        <servlet-name>read</servlet-name>
         <url-pattern>/search</url-pattern>
     </servlet-mapping>
+
+               <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>com.lxisoft.contactapp.servelet.ContactEdit</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/Edit</url-pattern>
+    </servlet-mapping>
+
+
+                   <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>com.lxisoft.contactapp.servelet.ContactDelete</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>
