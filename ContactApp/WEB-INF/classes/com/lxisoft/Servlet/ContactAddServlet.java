@@ -11,16 +11,13 @@ import com.lxisoft.Domain.*;
 
 public class ContactAddServlet extends HttpServlet
 {
-	// public void init()throws ServletExecption
-	// {
-	// }
+
         static MysqlRepository repo=new MysqlRepository();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
    		
          try {
          HttpSession session=request.getSession();
-         session.setAttribute("newcontact",new Contact());
          Contact contact=new Contact();
    		contact.setName(request.getParameter("name"));
          contact.setNo(request.getParameter("number"));
@@ -29,10 +26,14 @@ public class ContactAddServlet extends HttpServlet
          {
             if(c.getName().toLowerCase().equals(contact.getName().toLowerCase()))
             {
-               session.setAttribute("newcontact",contact);
-               response.sendRedirect("jsp/addnew.jsp");
+               boolean exist=false;
+              request.setAttribute("newcontacts",exist);
+               request.getRequestDispatcher("jsp/addnew.jsp").forward(request, response);
+         
             }
          }
+         // session.setAttribute("newcontact",new Contact());
+
          repo.writeNewContact(contact,true);
          contacts=repo.getAllContacts();
 

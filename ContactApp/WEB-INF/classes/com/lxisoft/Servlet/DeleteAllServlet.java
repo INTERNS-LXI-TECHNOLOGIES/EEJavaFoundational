@@ -17,19 +17,10 @@ public class DeleteAllServlet extends HttpServlet
 		try {
          
          repo.clearAllContacts();
-        ArrayList<Contact> contacts=repo.getAllContacts();
         HttpSession session=request.getSession();
-        ViewList view=new ViewList();
-        ArrayList<ViewListModel> listView=null;
-        view.clearArray();
-        for(int i=0;i<contacts.size();i++)
-        {
-            view.setContact(contacts.get(i));
-        }
-        listView=view.getAllContacts();
-         session.setAttribute("contacts",listView);
+         session.setAttribute("contacts",new ArrayList<ViewListModel>());
          
-         request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
+         request.getRequestDispatcher("viewall");
 		PrintWriter out = response.getWriter();
          out.println("<h1>" +"asdfffff"+ "</h1>");
         

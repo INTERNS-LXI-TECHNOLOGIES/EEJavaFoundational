@@ -172,7 +172,7 @@ public class MysqlRepository implements Repository
 		}
 		catch(Exception p)
 		{
-			System.out.println(p+"error");
+			System.out.println(p+"  error");
 		}
 		// for(Contact a: contacts)
 		// System.out.println(a.getName());
@@ -232,8 +232,8 @@ public class MysqlRepository implements Repository
 	{
 		try
 		{
-			id=1;
-			stmt=con.prepareStatement("delete from tab");
+			id=0;
+			stmt=con.prepareStatement("truncate table tab");
 			stmt.executeUpdate();
 		}catch(Exception p)
 		{
