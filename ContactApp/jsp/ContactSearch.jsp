@@ -18,11 +18,11 @@
 				<tr><td> <% out.println(contact.getName()); %> </td>
 					<td> <% out.println(contact.getNo());  %></td>
 					<td><button class="button" type="button" 
-						onClick="window.location.href ='jsp\\ContactEdit.jsp';"> Edit </button></td>
+						onClick="window.location.href ='ContactEdit.jsp';"> Edit </button></td>
 					<td><button class="button" type="button" 
-						onClick="window.location.href ='delete?user=<%=contact.getName()%>';"> Delete </button></td>
+						onClick="window.location.href ='../delete?user=<%=contact.getName()%>';"> Delete </button></td>
 					<td><button class="button" type="button" 
-						onClick="window.location.href ='View';"> Back</button></td>
+						onClick="window.location.href ='../View';"> Back</button></td>
 					</tr>
 					
 		</table>

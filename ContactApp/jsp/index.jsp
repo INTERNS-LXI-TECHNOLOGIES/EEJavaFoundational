@@ -1,18 +1,16 @@
 <html>
 		<head>
 			<title> Index page of Contact App </title>
+			 <link rel="stylesheet" type="css" href="jsp/styles.css">
 		</head>	
-		<body>
-			<!-- <h3 align="center">CONTACT APPLICATION</h3> -->
-			<table align="center" border="10px" width="50%">
-				<tr>
-					<td><a href="..\Add" value="Add" style="color: blue">Add &nbsp;&nbsp;</td> 
-					<td><a href="..\Search" value="Search">Search &nbsp;&nbsp;</td>
-					<td><a href="..\View" value="View" style="color: blue">ViewAll &nbsp;&nbsp;</td>	
-					<td><a href="..\Sort" value="Sort">Sort &nbsp;&nbsp;</td>
-					<td><a href="..\Delete" value="Delete">DeleteAll &nbsp;&nbsp;</td>
-				</tr>
-			</table>
+		<body background-color="#d6eaf8">
+		
+			<h3 align="center">CONTACT APPLICATION</h3>
+				</br>
+					<center><a href="..\View" ><img src="../images/contacts.png" id="contactimg" height="150px";
+    width="140px";></a></center>
+				
+			
 			<!-- <iframe src="..\View" align="middle" width="500" height="500" scrolling="auto" frameborder="0">
 			</iframe> -->
 		</body>

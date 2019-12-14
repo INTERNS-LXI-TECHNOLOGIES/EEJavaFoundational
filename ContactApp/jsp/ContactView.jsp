@@ -1,7 +1,7 @@
 <html>
 		<head>
 			<title> VIEW CONTACT </title>
-			  <link rel="stylesheet" type="text/css" href="styles.css">
+			  <link rel="stylesheet" type="text/css" href="jsp/styles.css">
 		</head>
 		<body > 
 			<%@ page import="com.lxisoft.models.*"%>

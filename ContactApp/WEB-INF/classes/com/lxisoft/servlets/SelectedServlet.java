@@ -39,20 +39,15 @@ public class SelectedServlet extends HttpServlet
 				}
 				
 				else{
-						//PrintWriter out=response.getWriter();
-						 			currentList.clear();
+						
+					   currentList.clear();
 					   for(Contact contact:contactList)
 				        {
-							// out.println("HI"+contact.getName());
 			 				if((contact.getName().toLowerCase()).contains(name.toLowerCase()))
 			 					{
-						 			// out.println("hi.."+contact.getName());
 						 			currentList.add(contact);
 						 		}
 						}	
-						// for(Contact contact:currentList)
-						// {
-						// }	
 			            if(currentList.size()!=0)
 			            { 
 			                for(int i=0;i<currentList.size();i++)

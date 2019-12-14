@@ -12,3 +12,16 @@
   background-color: #ddd;
   color: black;
 }
+#body {
+  background-color: #fff;
+  margin: 0;
+  padding: 0px ;
+  font-family: sans-serif, verdana;
+}
+#contactimg{
+     border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 5px;
+    height:10px;
+    width:40px;
+}
