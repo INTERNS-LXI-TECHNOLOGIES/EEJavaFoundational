@@ -13,16 +13,23 @@ public class SearchContactServlet extends HttpServlet
 		List<Contact>contact=new ArrayList<Contact>();
 		List <Contact> contactList=dbrepo.findAllContact();
 		String name=request.getParameter("name");
-		// String crud=request.getParameter("crud");
-		for(int i=0;i<contactList.size();i++)
+		if(!name.equals(null))
 		{
-			if(contactList.get(i).getContactName().contains(name))
+			for(int i=0;i<contactList.size();i++)
 			{
-				contact.add(contactList.get(i));
+				if(contactList.get(i).getContactName().contains(name))
+				{
+					contact.add(contactList.get(i));
+				}
 			}
+			request.setAttribute("search",contact);
+			RequestDispatcher rd=request.getRequestDispatcher("SearchContact.jsp");
+			rd.forward(request,response);
 		}
-		request.setAttribute("search",contact);
-		RequestDispatcher rd=request.getRequestDispatcher("SearchContact.jsp");
-		rd.forward(request,response);
+		else
+		{
+			RequestDispatcher rd=request.getRequestDispatcher("home");
+			rd.forward(request,response);
+		}
 	}
 }
