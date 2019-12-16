@@ -19,7 +19,7 @@
 		</tr>
 		<br>
 		<tr>
-			<td><input type="hidden" name="id"><br>
+			<td><input type="hidden" name="id" value="<%=co.getId()%>"><br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="deletedata"><input type="submit" value="Delete"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 				&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Cancel">
 			</td>

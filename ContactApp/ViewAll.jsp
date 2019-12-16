@@ -11,11 +11,14 @@
 	<H1><CENTER>CONTACT LIST</CENTER></H1>
 	
 	<table bgcolor="#ccccff" align=center border="1px" width="25%">
+		<form action="searchdata" method="get"></form>
 		<tr>
 			<td align="center"><a href="Add.jsp"><h1>+</h1></a>
-				<input type="text" name="search" placeholder="Search">
-				<input type="submit" value="OK"></td>
+				<input type="text" name="n" placeholder="Search">
+
+				<a href="searchdata"><input type="submit" value="OK"></a></td>
 		</tr>
+	</form>
 	<tr>
 		<!-- <th>ID</th> -->
 		<th><b>Name</b></th></tr>

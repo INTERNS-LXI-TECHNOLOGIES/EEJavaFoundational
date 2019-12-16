@@ -55,6 +55,17 @@
     </servlet-mapping>
 
 
+    <servlet>
+      <servlet-name>search</servlet-name>
+      <servlet-class>com.lxisoft.servlet.SearchServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/searchdata</url-pattern>
+    </servlet-mapping>
+
+
 
 </web-app>
 

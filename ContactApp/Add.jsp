@@ -12,7 +12,7 @@
 					<br><a href="adddata"><input type="submit" value="Save"></a>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					</form>
-					<input type="submit" value="Cancel">
+					<a href="url"><input type="submit" value="Cancel"></a>
 					</td>
 		    	</tr>
 		</table> 
