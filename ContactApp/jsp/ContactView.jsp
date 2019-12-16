@@ -18,14 +18,25 @@
 			<%
 			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");%>
 				<% out.println(contactList.size());%>
-				<table align="center" border="10px" width="20%">
+				<% if(contactList.size()==0)
+				{%>
+					<script>
+						msg()
+						function msg(){
+						alert(" contact list empty..");
+						window.location="jsp//ContactAdd.jsp"}
+					</script>
+				<%} %>
+				<table id="tab" align="center" border="10px" width="30%">
 				<tr><th><strong>NAME</strong></th></tr>
 				<% for(ContactModel contactmodel:contactList)
 				{ 
 					%>
 					<tr>
 					<!-- <td><% out.println(contactmodel.getName()); %>	 -->
-					<td><button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getName()%>';"><%=contactmodel.getName()%>
+					<td>
+						<img src="images/person.png" height="50px";width="50px";></td>
+					<td>	<button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getName()%>';"><%=contactmodel.getName()%>
 						</button></td>
 					</tr>
 
