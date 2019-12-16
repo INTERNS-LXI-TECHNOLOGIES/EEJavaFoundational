@@ -7,28 +7,24 @@
 <head>
 	<title>Edit Contact</title>
 </head>
-<body>
-<table align="center" border="5" width="25%" height="25%">
+<body style="background-color: grey">
+<table align="center" border="5" width="25%" height="25%"  bgcolor="#3CBC8D">
 		<caption><h1><center>Edit Contact</center></h1></caption>
 		<%
 		Contact c=(Contact)session.getAttribute("cont");
 		%>
 		<form action= "editContact" method="post">
-			<input type="hidden" name="id" value="<%=(c.getContactId())%>">
+			<input type="hidden" name="id" value="<%=(c.getContactId())%>"><br>
 			<tr>
-				<td><input type="text" name="name" placeholder="name" /></td>
-			</tr>
-			<tr>
-				<td><input type="text" name="number" placeholder="number" /></td>
-			</tr>			
-			<tr>
-				<td><a href="editContact"><input type="submit" value="Save"/></a>
+				<td><input type="text" name="name" placeholder="New Name" /><br>
+				<br><input type="text" name="number" placeholder="New Number" /><br>
+				<br><a href="editContact"><input type="submit" value="Save"/></a><br>
 		</form>
 		<form action= "getContact" method="get">
 		<input type="hidden" name="crud" value="2"/>
 		<a href="getContact">
 			<input type="hidden" name="id" value="<%=(c.getContactId())%>"/>
-			<input type="submit" value="Cancel"/></a></td>
+			<br><input type="submit" value="Cancel"/></a></td>
 		</form>
 			</tr>
 </body>

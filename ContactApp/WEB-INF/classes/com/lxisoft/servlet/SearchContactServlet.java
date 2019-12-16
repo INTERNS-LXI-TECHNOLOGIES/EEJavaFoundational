@@ -13,7 +13,7 @@ public class SearchContactServlet extends HttpServlet
 		List<Contact>contact=new ArrayList<Contact>();
 		List <Contact> contactList=dbrepo.findAllContact();
 		String name=request.getParameter("name");
-		if(!name.equals(null))
+		if(!name.equals(""))
 		{
 			for(int i=0;i<contactList.size();i++)
 			{
