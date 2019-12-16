@@ -29,7 +29,7 @@ public class DeleteServlet extends HttpServlet
         }
         listView=view.getAllContacts();
          session.setAttribute("contacts",listView);
-         request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
+         request.getRequestDispatcher("main.jsp").forward(request, response);
 		// PrintWriter out = response.getWriter();
          // out.println("<h1>" +"asdfffff"+ "</h1>");
         

@@ -37,7 +37,7 @@ public class ViewServlet extends HttpServlet
          HttpSession session=request.getSession();
          session.setAttribute("contacts",listView);
    		// request.setAttribute("contacts",listView);
-   		request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
+   		request.getRequestDispatcher("main.jsp").forward(request, response);
    		}catch(Exception e)
          {
 System.out.println("exception "+e);

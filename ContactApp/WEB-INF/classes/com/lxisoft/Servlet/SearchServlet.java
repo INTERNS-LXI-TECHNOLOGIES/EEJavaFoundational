@@ -38,7 +38,7 @@ public class SearchServlet extends HttpServlet
             if(users.size()==1)
             {
                session.setAttribute("users",users.get(0));
-               request.getRequestDispatcher("jsp\\user.jsp").forward(request, response);
+               request.getRequestDispatcher("user.jsp").forward(request, response);
 
             }
             else
@@ -68,35 +68,9 @@ public class SearchServlet extends HttpServlet
                   listView=view.getAllContacts();
                   session.setAttribute("contacts",listView);
                   request.setAttribute("search",true);
-                  request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
+                  request.getRequestDispatcher("main.jsp").forward(request, response);
                }
-               // else
-               // {
-               //    request.getRequestDispatcher("viewall").forward(request, response);
-               // }
-            
-
-
-
-
-            // {
-
-            // }
-            // ViewList view=new ViewList();
-            // ArrayList<ViewListModel> listView=null;
-            // if(contacts!=null)
-            // {
-            //    view.clearArray();
-            //    for(int i=0;i<contacts.size();i++)
-            //    {
-            //       view.setContact(contacts.get(i));
-            //    }
-            //    listView=view.getAllContacts();
-            // }
-
-            // request.setAttribute("contacts",listView);
-            // request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
-         }catch(Exception e)
+                }catch(Exception e)
          {
             System.out.println("exception "+e);
          }

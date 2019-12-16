@@ -20,7 +20,7 @@ public class DeleteAllServlet extends HttpServlet
         HttpSession session=request.getSession();
          session.setAttribute("contacts",new ArrayList<ViewListModel>());
          
-         request.getRequestDispatcher("viewall");
+         response.sendRedirect("viewall");
 		PrintWriter out = response.getWriter();
          out.println("<h1>" +"asdfffff"+ "</h1>");
         

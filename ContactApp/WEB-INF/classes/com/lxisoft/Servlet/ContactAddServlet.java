@@ -17,6 +17,7 @@ public class ContactAddServlet extends HttpServlet
 	{
    		
          try {
+             boolean exist=true;
          HttpSession session=request.getSession();
          Contact contact=new Contact();
    		contact.setName(request.getParameter("name"));
@@ -26,32 +27,39 @@ public class ContactAddServlet extends HttpServlet
          {
             if(c.getName().toLowerCase().equals(contact.getName().toLowerCase()))
             {
-               boolean exist=false;
-              request.setAttribute("newcontacts",exist);
-               request.getRequestDispatcher("jsp/addnew.jsp").forward(request, response);
+               exist=false;
          
             }
          }
          // session.setAttribute("newcontact",new Contact());
-
-         repo.writeNewContact(contact,true);
-         contacts=repo.getAllContacts();
-
-         ViewList view=new ViewList();
-         ArrayList<ViewListModel> listView=null;
-         if(contacts!=null)
-         {
-            view.clearArray();
-            for(int i=0;i<contacts.size();i++)
+         if(exist==false)
             {
-               view.setContact(contacts.get(i));
+               String name=contact.getName();
+              request.setAttribute("newcontacts",name);
+               request.getRequestDispatcher("addnew.jsp").forward(request, response);
             }
-            listView=view.getAllContacts();
+         else
+         {
+            request.setAttribute("newcontacts",new Contact());
+            repo.writeNewContact(contact,true);
+            contacts=repo.getAllContacts();
+
+            ViewList view=new ViewList();
+            ArrayList<ViewListModel> listView=null;
+            if(contacts!=null)
+            {
+               view.clearArray();
+               for(int i=0;i<contacts.size();i++)
+               {
+                  view.setContact(contacts.get(i));
+               }
+               listView=view.getAllContacts();
+            }
+            session.setAttribute("contacts",listView);
+            request.getRequestDispatcher("main.jsp").forward(request, response);
+            // PrintWriter out = response.getWriter();
+            // out.println("<h1>" +contact.getName()+ "</h1>");
          }
-         session.setAttribute("contacts",listView);
-         request.getRequestDispatcher("jsp\\main.jsp").forward(request, response);
-         // PrintWriter out = response.getWriter();
-         // out.println("<h1>" +contact.getName()+ "</h1>");
          }catch(Exception e)
          {
 System.out.println("exception "+e);
