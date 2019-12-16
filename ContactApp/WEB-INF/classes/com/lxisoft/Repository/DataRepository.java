@@ -28,7 +28,7 @@ public class DataRepository
           }catch(Exception e){ System.out.println(e);}  
           return contactsList;
   }
-  public void add(Contact c)
+  public Contact add(Contact c)
    {
   try{  
     Class.forName("com.mysql.jdbc.Driver");  
@@ -36,7 +36,9 @@ public class DataRepository
     Statement stmt=con.createStatement();  
     stmt.executeUpdate("insert into contactlist(name,number) values(  '"+c.getName()+"','"+c.getNumber()+"')");  
     con.close();  
+   
     }catch(Exception e){ System.out.println(e);} 
+     return c;
    }
 
 

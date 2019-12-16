@@ -10,9 +10,7 @@
 <body>
 	<table align="center" border= "5" width="30%" border color= "red" bgcolor="yellow">
 		<tr>
-			<th>Id</th>
-			<th>Name</th>
-			<th>Number</th>
+			<th>Contacts</th>
 		</tr>
 
 
@@ -34,13 +32,8 @@ tr:nth-child(even) {
 }
 </style>
 
+<a href="Add.jsp"><h1><center>ADD<center></h1></a>
 
-
-
-
-
-
-		
 <%
 ArrayList<Contact> c=(ArrayList<Contact>)request.getAttribute("contact");
 for(int i=0;i<c.size();i++)
@@ -54,7 +47,6 @@ for(int i=0;i<c.size();i++)
 <%
 }
 %>
-<a href="Add.jsp"><h1><center>CONTACTS<center></h1></a>
 </table>
 </body>
 </html>
