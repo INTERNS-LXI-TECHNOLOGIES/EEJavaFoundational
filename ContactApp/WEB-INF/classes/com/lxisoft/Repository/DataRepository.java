@@ -28,6 +28,27 @@ public class DataRepository
           }catch(Exception e){ System.out.println(e);}  
           return contactsList;
   }
+  public contact findById(String id)
+  {
+   try{
+       Class.forName("com.mysql.jdbc.Driver");  
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");   
+       Statement stmt=con.createStatement();  
+       ResultSet rs=stmt.executeQuery("select * from contactlist where id ='"+id+"'");
+
+        while(rs.next())  
+          {
+            Contact c = new Contact();
+            c.setId(rs.getInt("ID"));
+            c.setName(rs.getString("NAME"));
+            c.setNumber(rs.getString("NUMBER"));
+          }
+           con.close();  
+          }catch(Exception e){ System.out.println(e);}  
+          return c;
+      }
+  }
+
   public Contact add(Contact c)
    {
   try{  
@@ -59,6 +80,16 @@ public class DataRepository
    //     }
    //     }catch(Exception e){System.out.println(e);}
    // }
+   public void edit()
+   {
+    try{
+        Class.forName("com.mysql.jdbc.Driver");  
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
+        Statement stmt=con.createStatement();
+
+       }
+
+   }
    public void editByName(String name,String newname)
    {
     try{

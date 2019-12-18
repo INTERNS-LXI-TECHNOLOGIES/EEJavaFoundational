@@ -7,16 +7,17 @@ import com.lxisoft.Repository.*;
 import com.lxisoft.Domain.*;
 public class Add extends HttpServlet
 {
-  public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+  public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
   {
 	 Contact c = new Contact();
 	 c.setName(request.getParameter("name"));
 	 c.setNumber(request.getParameter("number"));
 	 DataRepository drr=new DataRepository();
-	 drr.add(c); 
-	 //request.setAttribute("contact",c);
-	 RequestDispatcher rd=request.getRequestDispatcher("start");
-	 rd.forward(request,response);
+	 Contact co=drr.add(c); 
+	 request.setAttribute("contact",c);
+	 RequestDispatcher rs=request.getRequestDispatcher("Contact.jsp");
+	 rs.forward(request,response);
+	 // response.sendRedirect("start");
 
   }
 

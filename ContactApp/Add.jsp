@@ -4,10 +4,10 @@
 <head></head>
 <h1><center>ADD</center></h1>
 <body>
-	<form action="add" method = "post">
+	<form action="add" method = "get">
   Name   : <input type="text" name="name"><br>
   Number : <input type="text" name="number"><br>
-  <a href="add"><input type="submit" value="SAVE"></a>
+ <a href="add"><input type="submit" value="SAVE"></a>
 </form>
 </body>
 </html>

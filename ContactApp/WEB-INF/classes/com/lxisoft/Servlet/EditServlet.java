@@ -1,27 +1,17 @@
 package com.lxisoft.servlet;
-import javax.servlet.*;
-import javax.servlet.http.*;
+import javax.Servlet.*;
+import javax.Servlet.http.*;
 import java.io.*;
-import com.lxisoft.domain.*;
-import com.lxisoft.repository.*;
-
-import com.lxisoft.servlet.*;
+import com.lxisoft.Domain.*;
+import com.lxisoft.Repository.*;
+import com.lxisoft.Servlet.*;
 public class EditServlet extends HttpServlet
 {
-	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		String id=request.getParameter("id");
-		int n=Integer.parseInt(id);
-		String name=request.getParameter("name");
-		String number=request.getParameter("number");
-		System.out.println("Name:\t"+name+"Number:\t");
-		Contact cont=new Contact();
-		cont.setContactName(name);
-		cont.setContactNumber(number);
-		MysqlRepository dbrepo=new MysqlRepository();
-		Contact con=dbrepo.updateContact(n,cont);
-		request.setAttribute("getContactById",con);
-		RequestDispatcher rd=request.getRequestDispatcher("GetContactById.jsp");
-		rd.forward(request,response);
+		DataRepository drr = new DataRepository();
+		drr.findById(id);
+        
 	}
 }

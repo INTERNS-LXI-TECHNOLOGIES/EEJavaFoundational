@@ -10,7 +10,9 @@
 <body>
 	<table align="center" border= "5" width="30%" border color= "red" bgcolor="yellow">
 		<tr>
-			<th>Contacts</th>
+			<th>ID</th>
+			<th>NAME</th>
+			<th>NUMBER</th>
 		</tr>
 
 
@@ -43,6 +45,10 @@ for(int i=0;i<c.size();i++)
 		 <td><%=(c.get(i).getId())%> </td>
 		 <td><%=(c.get(i).getName())%> </td>
 		  <td><%=(c.get(i).getNumber())%> </td>
+		  <%
+		  	String url = "?id=" + c.get(i).getId();
+		  %>
+		  <td><a href="<%=url%>"><h4>EDIT</h4></a>
 	</tr>
 <%
 }
