@@ -1,0 +1,39 @@
+<web-app> 
+
+<servlet>
+   <servlet-name>AllContacts</servlet-name>
+   <servlet-class>com.lxisoft.controller.ShowAllServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>AllContacts</servlet-name>
+   <url-pattern>/showAll</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>save</servlet-name>
+   <servlet-class>com.lxisoft.controller.SaveServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>save</servlet-name>
+   <url-pattern>/addContact</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>deleting</servlet-name>
+   <servlet-class>com.lxisoft.controller.DeleteServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>deleting</servlet-name>
+   <url-pattern>/deleteContact</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>editing</servlet-name>
+   <servlet-class>com.lxisoft.controller.EditServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>editing</servlet-name>
+   <url-pattern>/editContact</url-pattern>
+</servlet-mapping>
+
+</web-app> 
