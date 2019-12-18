@@ -11,11 +11,10 @@
 	<H1><CENTER>CONTACT LIST</CENTER></H1>
 	
 	<table bgcolor="#ccccff" align=center border="1px" width="25%">
-		<form action="searchdata" method="get"></form>
+		<form action="searchdata" method="get">
 		<tr>
 			<td align="center"><a href="Add.jsp"><h1>+</h1></a>
 				<input type="text" name="n" placeholder="Search">
-
 				<a href="searchdata"><input type="submit" value="OK"></a></td>
 		</tr>
 	</form>
@@ -29,7 +28,7 @@
 	<TR>
 		<form action="select" method="get">
 		<input type="hidden" name="id" value="<%=cm.getId()%>"> 
-    	<TD><a href="select"><input type="submit" value="<%=cm.getName()%>"></a></TD>
+    	<TD><input type="submit" value="<%=cm.getName()%>"></TD>
     	</form>
     </TR>
     <%

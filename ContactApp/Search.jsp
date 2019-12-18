@@ -10,12 +10,11 @@
 <body>
 	<table bgcolor="#ffcccc" align=center border="5px" width="25%">
 	<%
-    List<Contact> c=(List<Contact>) request.getAttribute("contactList");
+    List<Contact> c=(List<Contact>) request.getAttribute("contactlist");
     for(Contact co:c)
     {%>
     <tr>
-        <input type="hidden" name="id" value="<%=co.getId()%>"> 
-        <td><input type="submit" value="<%=co.getName()%>"></a></td>
+        <td><%=(co.getName())%></td>
     </tr>
     <%
     }%>
