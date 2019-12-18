@@ -1,9 +1,8 @@
 package com.lxisoft.sqlrepository;
-import com.lxisoft.view.*;
 import com.lxisoft.model.*;
 import java.util.*;
 import com.lxisoft.repository.*;
-import com.lxisoft.test.*;
+import com.lxisoft.servlet.*;
 import java.sql.*;
 import java.io.*;
 public class Sqlrepository implements Repository
@@ -12,7 +11,11 @@ public class Sqlrepository implements Repository
 	Connection con; 
 	ResultSet rs ;
 	PreparedStatement stmnt; 
-	public Sqlrepository()
+	{
+		sqlrepository();
+	}
+
+	public void sqlrepository()
 	{
 		try
 		{
@@ -57,6 +60,7 @@ public class Sqlrepository implements Repository
 				contact.setName(rs.getString("name"));
 				contact.setNumber(rs.getString("number"));
 				contactList.add(contact);
+
 			}
 			s.close();
 		}
@@ -66,14 +70,14 @@ public class Sqlrepository implements Repository
 		}
 		return contactList;
 	}
-	public void edit(int id,String name, String number)
+	public void edit(Contact contact)
 	{ 
 		try
 		{
 		stmnt = con.prepareStatement("update contact set name=?,number=? where id =?");
-		stmnt.setString(1,name);
-		stmnt.setString(2,number);
-		stmnt.setInt(3,id);
+		stmnt.setString(1,contact.name);
+		stmnt.setString(2,contact.number);
+		stmnt.setInt(3,contact.id);
 		stmnt.executeUpdate();
 		}
 		catch(Exception e)

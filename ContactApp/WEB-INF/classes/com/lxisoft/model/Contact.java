@@ -1,13 +1,12 @@
 package com.lxisoft.model;
-import com.lxisoft.view.*;
-import com.lxisoft.controller.*;
+//import com.lxisoft.controller.*;
 import java.util.Scanner;
-import com.lxisoft.test.*;
+import com.lxisoft.servlet.*;
 
 public class Contact //implements Comparable <Contact>
 {
-	private String name,number;
-	private int id;
+	public String name,number;
+	public int id;
 
 	public void setName(String name)
 	{

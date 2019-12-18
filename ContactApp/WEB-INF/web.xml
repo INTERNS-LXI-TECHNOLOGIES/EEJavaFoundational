@@ -1,11 +1,46 @@
 <web-app>
 <servlet>
-        <servlet-name>SessionExample</servlet-name>
-        <servlet-class>SessionExample</servlet-class>
+        <servlet-name>display</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Display</servlet-class>
     </servlet>
-
+    
     <servlet-mapping>
-        <servlet-name>CompressionFilterTestServlet</servlet-name>
-        <url-pattern>/CompressionTest</url-pattern>
+        <servlet-name>display</servlet-name>
+        <url-pattern>/Display</url-pattern>
     </servlet-mapping>
-</web-app>
+
+<servlet>
+        <servlet-name>add</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Add</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/Add</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>select</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Select</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>select</servlet-name>
+        <url-pattern>/Select</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Update</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/Update</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+    
+    </web-app>

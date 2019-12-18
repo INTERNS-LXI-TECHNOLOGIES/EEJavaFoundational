@@ -3,8 +3,8 @@
 <head> 
 <style>
 	table th,td 
-	{	width: 5px;
-		border: 5px solid black;
+	{	width: 2px;
+		border:2px solid black;
 
 	}
 </style> 
@@ -13,7 +13,7 @@
 		
 	</title>
 </head>
-<body style="background: yellowgreen">
+<body style="background: white">
 <%@page import = "com.lxisoft.servet.*"%>
 <%@page import = "com.lxisoft.repository.*"%>
 <%@page import = "com.lxisoft.sqlrepository.*"%>
@@ -22,7 +22,7 @@
 <table align="center" style="border-collapse: collapse;">
 	        <tr>
 				<th style="font-family: fantasy;font size: 10px">NAME</th>
-				<th style=" font-family: fantasy;">NUMBER</th>
+				
 			</tr>
 <% ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("contactList");
 	
@@ -31,11 +31,9 @@
 			<b>
 			<tr style=" font-style:oblique;  ">
 			<td>
-				<a  input type="button" name="submit" value="<%=i.getName() %>">
+				<a href="Select.jsp?temp=<%=i.getId()%>&temp1=<%=i.getName()%>&temp2=<%=i.getNumber()%>"><input type="button" name="submit" value="<%=i.getName() %>"></a>
 			</td>
-			<td>
-			<% out.println(i.getNumber()); %>
-			</td>
+			
 			</tr>
 			</b>
 			<%
@@ -43,7 +41,7 @@
 
 </table>
 <center><br>
-<a style="font-family:fantasy; font size: 70px;"  href="Add.jsp"> ADD NEW CONTACT</a>	
+<a style="font-family:fantasy; font size: 70px;"  href="Add.jsp" > ADD NEW CONTACT</a>	
 </center>
 </body>
 </html>

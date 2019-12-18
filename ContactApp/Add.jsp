@@ -5,8 +5,8 @@
 		
 	</title>
 </head>
-<body>
-
+<body style="background: lightyellow">
+   
 <%@page import = "com.lxisoft.servlet.*"%>
 <%@page import = "com.lxisoft.repository.*"%>
 <%@page import = "com.lxisoft.sqlrepository.*"%>
