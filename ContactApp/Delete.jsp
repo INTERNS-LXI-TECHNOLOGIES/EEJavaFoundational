@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html>
 <head>
 	<title>
@@ -11,14 +11,14 @@
 <%@page import = "com.lxisoft.repository.*"%>
 <%@page import = "com.lxisoft.sqlrepository.*"%>
 <%@page import = "com.lxisoft.model.*,java.util.*"%>
-<form action="Delete" method="get">
+<form action="Delete" method="get ">
 	<% String id= request.getParameter("id");%>
 	 <input type="hidden" name="id" value="<%=id%>">
 	<center>
 		 <h1>
 		 Are you sure?  <br>
 		</h1>
-	 <input type="submit" value="YES">
+	 <input type ="submit" value="YES">
 	 
 	</center>
 	
