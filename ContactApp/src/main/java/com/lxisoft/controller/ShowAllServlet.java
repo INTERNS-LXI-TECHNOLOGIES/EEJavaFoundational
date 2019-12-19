@@ -16,7 +16,7 @@ public class ShowAllServlet extends HttpServlet
 		ArrayList<Contact> contactList=new ArrayList<Contact>();
 		contactList=repository.findAll();
 		request.setAttribute("list",contactList);
-		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("jsp/ViewAll.jsp");
 		rd.forward(request,response);
 	}
 }
