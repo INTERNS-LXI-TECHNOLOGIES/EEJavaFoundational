@@ -46,7 +46,7 @@ for(int i=0;i<c.size();i++)
 		 <td><%=(c.get(i).getName())%> </td>
 		  <td><%=(c.get(i).getNumber())%> </td>
 		  <%
-		  	String url = "?id=" + c.get(i).getId();
+		  	String url = "EditServlet?id=" + c.get(i).getId();
 		  %>
 		  <td><a href="<%=url%>"><h4>EDIT</h4></a>
 	</tr>

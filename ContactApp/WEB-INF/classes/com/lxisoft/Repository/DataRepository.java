@@ -28,8 +28,8 @@ public class DataRepository
           }catch(Exception e){ System.out.println(e);}  
           return contactsList;
   }
-  public contact findById(String id)
-  {
+  public Contact findById(String id)
+  {       Contact c=null;
    try{
        Class.forName("com.mysql.jdbc.Driver");  
        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");   
@@ -38,7 +38,7 @@ public class DataRepository
 
         while(rs.next())  
           {
-            Contact c = new Contact();
+            c = new Contact();
             c.setId(rs.getInt("ID"));
             c.setName(rs.getString("NAME"));
             c.setNumber(rs.getString("NUMBER"));
@@ -46,7 +46,6 @@ public class DataRepository
            con.close();  
           }catch(Exception e){ System.out.println(e);}  
           return c;
-      }
   }
 
   public Contact add(Contact c)
@@ -61,6 +60,39 @@ public class DataRepository
     }catch(Exception e){ System.out.println(e);} 
      return c;
    }
+
+
+   public void edit(String id,String name,String number)
+   {
+    String query = "update contactlist set name ='"+name+"',number ='"+number+"' where id = '"+id+"'";
+    System.out.println(query);
+        try{
+        Class.forName("com.mysql.jdbc.Driver");  
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
+        Statement stmt=con.createStatement();
+        stmt.executeUpdate(query);
+        con.close();
+
+       }catch(Exception e){System.out.println(e);}
+   }
+   
+   // 
+   public void delete(String name)
+   {
+    try
+    {
+        Class.forName("com.mysql.jdbc.Driver");  
+        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
+        Statement stmt=con.createStatement();
+        stmt.executeUpdate("delete from contactlist where name = '"+name+"'");
+        con.close();
+       
+    }catch(Exception e){}
+   }
+}
+
+
+
 
 
    // public String edit(String name,String newname,String newnumber)
@@ -80,47 +112,35 @@ public class DataRepository
    //     }
    //     }catch(Exception e){System.out.println(e);}
    // }
-   public void edit()
-   {
-    try{
-        Class.forName("com.mysql.jdbc.Driver");  
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
-        Statement stmt=con.createStatement();
+   // public void edit()
+   // {
+   //  try{
+   //      Class.forName("com.mysql.jdbc.Driver");  
+   //      Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
+   //      Statement stmt=con.createStatement();
 
-       }
+   //     }
 
-   }
-   public void editByName(String name,String newname)
-   {
-    try{
-        Class.forName("com.mysql.jdbc.Driver");  
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
-        Statement stmt=con.createStatement();
-        stmt.executeUpdate("update contactlist set name ='"+newname+"' where name = '"+name+"'");
-        con.close();
-       }catch(Exception e){System.out.println(e);}
-   }
+   // }
 
-   public void editByNumber(String name,String newnumber)
-   {
-    try{
-        Class.forName("com.mysql.jdbc.Driver");  
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
-        Statement stmt=con.createStatement();
-        stmt.executeUpdate("update contactlist set number ='"+newnumber+"' where name = '"+name+"'");
-        con.close();
-       }catch(Exception e){System.out.println(e);}
-   }
-   public void delete(String name)
-   {
-    try
-    {
-        Class.forName("com.mysql.jdbc.Driver");  
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
-        Statement stmt=con.createStatement();
-        stmt.executeUpdate("delete from contactlist where name = '"+name+"'");
-        con.close();
-       
-    }catch(Exception e){}
-   }
-}
+//public void editByName(String name,String newname)
+   // {
+   //  try{
+   //      Class.forName("com.mysql.jdbc.Driver");  
+   //      Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
+   //      Statement stmt=con.createStatement();
+   //      stmt.executeUpdate("update contactlist set name ='"+newname+"' where name = '"+name+"'");
+   //      con.close();
+   //     }catch(Exception e){System.out.println(e);}
+   // }
+
+   // public void editByNumber(String name,String newnumber)
+   // {
+   //  try{
+   //      Class.forName("com.mysql.jdbc.Driver");  
+   //      Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
+   //      Statement stmt=con.createStatement();
+   //      stmt.executeUpdate("update contactlist set number ='"+newnumber+"' where name = '"+name+"'");
+   //      con.close();
+   //     }catch(Exception e){System.out.println(e);}
+   // }
