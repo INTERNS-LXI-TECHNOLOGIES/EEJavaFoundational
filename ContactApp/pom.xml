@@ -45,6 +45,21 @@
   </properties>
 
   <build>
-    <finalName>ContactApp</finalName>
+<finalName>ContactApp</finalName>
+<!-- Configure the Tomcat Maven plugin -->
+<plugins>
+<plugin>
+  <groupId>org.apache.tomcat.maven</groupId>
+  <artifactId>tomcat7-maven-plugin</artifactId>
+  <version>2.0</version>
+  <configuration>
+    <url>http://localhost:8080/manager/text</url>
+    <server>TomcatServer</server>
+                <username>tomcat</username>
+                <password>secret</password>
+                <path>/ContactApp</path>
+  </configuration>
+</plugin>
+</plugins>
   </build>
 </project>
