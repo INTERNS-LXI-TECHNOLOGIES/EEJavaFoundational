@@ -1,0 +1,14 @@
+com\lxisoft\servlets\ViewAllServlet.class
+com\lxisoft\models\ContactsListModel.class
+com\lxisoft\repository\Repository.class
+com\lxisoft\models\ContactModel.class
+com\lxisoft\servlets\EditServlet.class
+com\lxisoft\models\SortByNumber.class
+com\lxisoft\Domain\Contact.class
+com\lxisoft\servlets\AddServlet.class
+com\lxisoft\servlets\DeleteServlet.class
+com\lxisoft\servlets\SelectedServlet.class
+com\lxisoft\servlets\DeleteAllServlet.class
+com\lxisoft\models\SortById.class
+com\lxisoft\models\SortByName.class
+com\lxisoft\repository\MySqlRepo.class
