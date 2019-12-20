@@ -1,0 +1,7 @@
+com\lxisoft\contactapp\ContactEdit.class
+com\lxisoft\contactapp\contactrepo\Repository.class
+com\lxisoft\contactapp\ContactControl.class
+com\lxisoft\contactapp\Contactsearch.class
+com\lxisoft\contactapp\ContactDelete.class
+com\lxisoft\contactapp\contactrepo\DbRepository.class
+com\lxisoft\contactapp\model\Contact.class
