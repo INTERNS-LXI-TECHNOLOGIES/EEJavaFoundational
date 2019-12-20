@@ -1,0 +1,13 @@
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:17:51 +0530] "GET / HTTP/1.1" 302 - http-bio-8080-exec-1 970
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:17:52 +0530] "GET /viewall HTTP/1.1" 200 2019 http-bio-8080-exec-3 379
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:17:52 +0530] "GET /styles.css HTTP/1.1" 304 - http-bio-8080-exec-4 6
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:17:52 +0530] "GET /contact.png HTTP/1.1" 304 - http-bio-8080-exec-2 1
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:17:52 +0530] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-6 2
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:17:59 +0530] "GET /search?user=sanfar HTTP/1.1" 200 426 http-bio-8080-exec-7 133
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:18:01 +0530] "GET /delete HTTP/1.1" 200 1781 http-bio-8080-exec-8 140
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:18:07 +0530] "GET /search?user=pushkala HTTP/1.1" 200 428 http-bio-8080-exec-9 3
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:18:09 +0530] "GET /edit.jsp HTTP/1.1" 200 337 http-bio-8080-exec-10 114
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:18:27 +0530] "GET /viewall HTTP/1.1" 200 1781 http-bio-8080-exec-10 30
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:18:30 +0530] "GET /addnew.jsp HTTP/1.1" 200 570 http-bio-8080-exec-10 100
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:18:30 +0530] "GET /smiley.gif HTTP/1.1" 304 - http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [20/Dec/2019:10:18:38 +0530] "GET /viewall HTTP/1.1" 200 1781 http-bio-8080-exec-4 41
