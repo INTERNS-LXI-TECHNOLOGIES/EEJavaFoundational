@@ -12,13 +12,13 @@
 			</center>
 			
 			<!-- <% Contact contact=(Contact)session.getAttribute("contact");	%> -->
-			<form action="../edit" method="GET">
+			<form action="edit" method="GET">
 				<center>
 					<input type="text"  name="name" placeholder= "enter new name"></br></br> 
 					<input type="text"  name="num" placeholder= "enter new number"></br></br>
 					<input type="submit" value="save">
 					<input type="reset" value="reset">
-					<button align="left" type="button" onClick="window.location.href ='..\\View';">Back</button>
+					<button align="left" type="button" onClick="window.location.href ='View';">Back</button>
 				</center>
 		</body>
 </html>

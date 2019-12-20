@@ -10,7 +10,7 @@
 			<center>
 				 <h3> CONTACT APPLICATION </h3>
 			</center>
-			<button  class ="butt" align="left" type="button" onClick="window.location.href = 'jsp/ContactAdd.jsp';">+</button>
+			<button  class ="butt" align="left" type="button" onClick="window.location.href = 'ContactAdd.jsp';">+</button>
 			<form action="select" method="GET"><center>
 			<input type="text" name="user" placeholder= "Enter Name">
 			<button> search here </button></center></form>

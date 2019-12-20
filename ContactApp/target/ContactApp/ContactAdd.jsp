@@ -13,7 +13,7 @@
 			<% Contact contact =(Contact)request.getAttribute("contacts"); 
 			if(contact!=null) 
 			{ %>
-				<button align="left" type="button" onClick="window.location.href = '..\\View';">Back</button>
+				<button align="left" type="button" onClick="window.location.href = 'View';">Back</button>
 				<form action="../Add" method="">
 					<center>
 						<input type="text"  name="name" placeholder= "enter name"></br></br> 
@@ -29,8 +29,9 @@
 		<% } 
 		  else
 			{ %>
-				<button align="left" type="button" onClick="window.location.href = '..\\View';">Back</button>
-				<form action="../Add" method="">
+				<button align="left" type="button" onClick="window.location.href = '
+				View';">Back</button>
+				<form action="Add" method="">
 					<center>
 						<input type="text"  name="name" placeholder= "enter again name"></br></br> 
 						<input type="text"  name="num" placeholder= "phone number"></br></br>

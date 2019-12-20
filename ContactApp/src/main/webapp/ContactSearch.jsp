@@ -22,7 +22,7 @@
 					<td><button class="button" type="button" 
 						onClick="window.location.href ='../delete?user=<%=contact.getName()%>';"> Delete </button></td>
 					<td><button class="button" type="button" 
-						onClick="window.location.href ='../View';"> Back</button></td>
+						onClick="window.location.href ='View';"> Back</button></td>
 					</tr>
 					
 		</table>
