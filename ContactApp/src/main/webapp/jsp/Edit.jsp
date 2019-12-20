@@ -44,7 +44,7 @@
 
 <body style="background-color:#E6EC73;">
 	<div align="center">
-	<form action="editContact" method="post">
+	<form action="..\editContact" method="post">
 			Name:<input type="type" name="name" placeholder="enter new name"><br><br>
 			Number:<input type="type" name="number" placeholder="enter new name"><br><br>
 			<button id="b1" type="submit" >confirm</button><br><br><br>

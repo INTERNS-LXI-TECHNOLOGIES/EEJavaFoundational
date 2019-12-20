@@ -43,7 +43,7 @@
 	</div>
 
 	<div >
-		<form action="addContact" method="post">
+		<form action="..\addContact" method="post">
 			Name:<input type="type" name="name" placeholder="enter name to save"><br><br>
 			Number:<input type="type" name="number" placeholder="enter name to save"><br><br>
 			<button id="b1" type="submit" >save</button><br><br>		

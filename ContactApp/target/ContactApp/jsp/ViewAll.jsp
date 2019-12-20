@@ -71,7 +71,7 @@ for(Contact contact:contactList)
 %>
 </table>
 
-<form action="Save.jsp">
+<form action="jsp/Save.jsp">
  <button id="b1">+</button>
 </form>
 <div align="center" style="padding-top: 90px">total contacts: <%=count%></div>
