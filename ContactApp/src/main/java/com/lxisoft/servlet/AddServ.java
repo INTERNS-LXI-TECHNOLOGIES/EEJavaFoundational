@@ -12,9 +12,11 @@ public class AddServ extends HttpServlet
 	{
 		Contact c=new Contact();
 		MysqlRepository myrepo=new MysqlRepository();
-		String name=request.getParameter("name");
+		String fName=request.getParameter("fname");
+		String lName=request.getParameter("lname");
 		String contactNo=request.getParameter("contactNo");
-		c.setName(name);
+		c.setFName(fName);
+		c.setLName(lName);
 		c.setContactNo(contactNo);
 		myrepo.insertContact(c);
 		request.setAttribute("contacts",c);

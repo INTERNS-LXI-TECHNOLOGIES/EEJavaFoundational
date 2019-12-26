@@ -19,7 +19,8 @@ public class Serv extends HttpServlet
 		{
 			ContactModel model=new ContactModel();
 			model.setId(contactList.get(i).getId());
-			model.setName(contactList.get(i).getName());
+			model.setFName(contactList.get(i).getFName());
+			model.setLName(contactList.get(i).getLName());
 			lm.setContactsList(model);
 		}
 		

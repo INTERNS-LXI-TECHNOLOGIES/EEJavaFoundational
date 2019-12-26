@@ -90,8 +90,9 @@ public Contact findContactById(String d)
 			{
 				Contact c=new Contact();
 				c.setId(String.valueOf(rs.getInt("ID")));
-				c.setName(rs.getString("NAME"));	
-				c.setContactNo(rs.getString("NUMBER"));
+				c.setFName(rs.getString("First_Name"));
+				c.setLName(rs.getString("Last_Name"));	
+				c.setContactNo(rs.getString("Number"));
 				contactList.add(c);
 			}
 		}
@@ -109,10 +110,11 @@ public Contact findContactById(String d)
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("insert into contactlist(Name,Number)values(?,?)");
+	 		stmt=conn.prepareStatement("insert into contactlist(First_Name,Last_Name,Number)values(?,?,?)");
 	 		// stmt.setInt(1,Integer.parseInt(c.getId()));
-	 		stmt.setString(1,c.getName());
-	 	    stmt.setString(2,c.getContactNo());
+	 		stmt.setString(1,c.getFName());
+	 		stmt.setString(2,c.getLName());
+	 	    stmt.setString(3,c.getContactNo());
 	 		stmt.executeUpdate();
 	 		System.out.println("Successfully Inserted");
  		}
@@ -130,10 +132,11 @@ public Contact findContactById(String d)
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("update contactlist set Name= ? , Number=? where ID=?");
-	 		stmt.setString(1, c.getName());
-	 		stmt.setString(2, c.getContactNo());
-	 		stmt.setString(3, d);
+	 		stmt=conn.prepareStatement("update contactlist set First_Name= ? ,Last_Name= ?, Number=? where ID=?");
+	 		stmt.setString(1, c.getFName());
+	 		stmt.setString(2, c.getLName());
+	 		stmt.setString(3, c.getContactNo());
+	 		stmt.setString(4, d);
 	 		 // c.setId(d);
 	 	    stmt.executeUpdate();
 	 	   

@@ -3,7 +3,8 @@ package com.lxisoft.models;
 public class ContactModel
 {
 	private String id;
-	private String name;
+	private String fName;
+	private String lName;
  /**
  * set id
  */
@@ -30,9 +31,9 @@ public class ContactModel
 	  /**
  * @param name contact name
  */
-	public void setName(String name)
+	public void setFName(String fName)
 	{
-		this.name=name;
+		this.fName=fName;
 	}
 	 /**
  * get contact name
@@ -40,8 +41,16 @@ public class ContactModel
 	  /**
  * @return contact name
  */
-	public String getName()
+	public String getFName()
 	{
-		return name;
+		return fName;
+	}
+	public void setLName(String fName)
+	{
+		this.fName=fName;
+	}
+	public String getLName()
+	{
+		return fName;
 	}
 }

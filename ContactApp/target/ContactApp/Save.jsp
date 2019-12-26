@@ -13,7 +13,10 @@
     Contact con=(Contact) request.getAttribute("contacts");
     %>
 	<tr>
-    	<td><center><%=(con.getName())%></center></td>  
+    	<td><center><%=(con.getFName())%></center></td>  
+    </tr>
+    <tr>
+        <td><center><%=(con.getLName())%></center></td>  
     </tr>
     <tr>
     	<td><center><%=(con.getContactNo())%></center></td>

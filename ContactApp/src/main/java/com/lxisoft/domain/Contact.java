@@ -1,13 +1,14 @@
 package com.lxisoft.domain;
 // import com.lxisoft.controllers.*;
-import com.lxisoft.models.*;
+// import com.lxisoft.models.*;
 // import com.lxisoft.view.*;
 import java.util.*;
 import java.io.*;
 public class Contact 
 {
 	private String id;
-	private String name;
+	private String fName;
+	private String lName;
 	private String contactNo;
  /**
  * set contact id
@@ -34,9 +35,9 @@ public class Contact
  `	  /**
  * @param name contact name
  */
-	public void setName(String name)
+	public void setFName(String fName)
 	{
-		this.name=name;
+		this.fName=fName;
 	}
 	 /**
  * get contact name
@@ -44,9 +45,23 @@ public class Contact
 	  /**
  * @return contact name
  */
-	public String getName()
+	public String getFName()
 	{
-		return name;
+		return fName;
+	}
+	public void setLName(String name)
+	{
+		this.lName=lName;
+	}
+	 /**
+ * get contact name
+ */
+	  /**
+ * @return contact name
+ */
+	public String getLName()
+	{
+		return lName;
 	}
 	 /**
  * set contact number

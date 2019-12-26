@@ -28,7 +28,9 @@
 	<TR>
 		<form action="select" method="get">
 		<input type="hidden" name="id" value="<%=cm.getId()%>"> 
-    	<TD><input type="submit" value="<%=cm.getName()%>"></TD>
+    	<TD><input type="submit" value="<%=cm.getFName()%><%=cm.getLName()%>">
+        <TD><a href="delete"><input type="submit" value="Delete"></a></TD>
+        <TD><a href="edited"><input type="submit" value="Edit"></TD>
     	</form>
     </TR>
     <%
