@@ -8,7 +8,8 @@ public class ContactModel
 	 *instance variable id and name
 	 */
 	private int id;
-	private String name;
+	private String firstName;
+	private String lastName;
 	/**
 	 *to set id for contact
 	 *
@@ -28,19 +29,34 @@ public class ContactModel
 		return id;
 	}
 	/**
-	 *to set name for contact
-	 *@param name contact name
+	 *to set first name for contact
+	 *@param firstName contact first name
 	 */
-	public void setName(String name)
+	public void setFirstName(String firstName)
 	{
-		this.name=name;
+		this.firstName=firstName;
 	}
 	/**
-	 *@return contact name
+	 *@return contact first name
 	 */
-	public String getName()
+	public String getFirstName()
 	{
-		return name;
+		return firstName;
+	}
+	/**
+	 *to set last name for contact
+	 *@param lastName contact last name
+	 */
+	public void setLastName(String lastName)
+	{
+		this.lastName=lastName;
+	}
+	/**
+	 *@return contact last name
+	 */
+	public String getLastName()
+	{
+		return lastName;
 	}
 
 }

@@ -9,7 +9,8 @@ public class AddContactServlet extends HttpServlet
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		Contact cont=new Contact();
-		cont.setContactName(request.getParameter("name"));
+		cont.setContactFirstName(request.getParameter("first name"));
+		cont.setContactLastName(request.getParameter("last name"));
 		cont.setContactNumber(request.getParameter("number"));
 		MysqlRepository dbrepo=new MysqlRepository();
 		Contact c=dbrepo.saveContact(cont);

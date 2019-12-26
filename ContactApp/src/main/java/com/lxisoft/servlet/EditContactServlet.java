@@ -11,12 +11,10 @@ public class EditContactServlet extends HttpServlet
 	{
 		String id=request.getParameter("id");
 		int n=Integer.parseInt(id);
-		String name=request.getParameter("name");
-		String number=request.getParameter("number");
-		System.out.println("Name:\t"+name+"Number:\t");
 		Contact cont=new Contact();
-		cont.setContactName(name);
-		cont.setContactNumber(number);
+		cont.setContactFirstName(request.getParameter("first name"));
+		cont.setContactLastName(request.getParameter("last name"));
+		cont.setContactNumber(request.getParameter("number"));
 		MysqlRepository dbrepo=new MysqlRepository();
 		Contact con=dbrepo.updateContact(n,cont);
 		request.setAttribute("getContactById",con);

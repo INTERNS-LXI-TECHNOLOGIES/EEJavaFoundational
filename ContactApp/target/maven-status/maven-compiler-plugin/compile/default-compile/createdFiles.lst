@@ -1,10 +1,6 @@
 com\lxisoft\domain\Contact.class
-com\lxisoft\servlet\EditContactServlet.class
-com\lxisoft\servlet\GetContactByIdServlet.class
 com\lxisoft\servlet\ShowAllContactServlet.class
 com\lxisoft\model\ContactModel.class
-com\lxisoft\servlet\SearchContactServlet.class
-com\lxisoft\servlet\DeleteContactServlet.class
 com\lxisoft\model\ContactListModel.class
 com\lxisoft\repository\MysqlRepository.class
 com\lxisoft\servlet\AddContactServlet.class

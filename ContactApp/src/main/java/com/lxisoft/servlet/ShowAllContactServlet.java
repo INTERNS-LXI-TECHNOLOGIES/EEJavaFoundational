@@ -13,11 +13,13 @@ public class ShowAllContactServlet extends HttpServlet
 		MysqlRepository dbrepo=new MysqlRepository();
 		List<Contact>contactList=dbrepo.findAllContact();
 		ContactListModel listModel=new ContactListModel();
-	    for(int i=0;i<contactList.size();i++)
+	
+		for(int i=0;i<contactList.size();i++)
 	    {
 	    	ContactModel model=new ContactModel();
 	    	model.setId(contactList.get(i).getContactId());
-	    	model.setName(contactList.get(i).getContactName());
+	    	model.setFirstName(contactList.get(i).getContactFirstName());
+	    	model.setLastName(contactList.get(i).getContactLastName());
 	    	listModel.setContactListModel(model);
 	    }
 		request.setAttribute("allContact",listModel.getContactListModel());

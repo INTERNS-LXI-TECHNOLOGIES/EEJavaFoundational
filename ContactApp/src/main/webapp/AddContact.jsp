@@ -26,7 +26,10 @@
 	
 		<form action= "add" method="post">
 			<tr>
-				<td>Name&nbsp;&nbsp;:<input type="text" name="name"/></td>
+				<td>First Name:<input type="text" name="first name"/></td>
+			</tr>
+			<tr>
+				<td>Last Name:<input type="text" name="last name"/></td>
 			</tr>
 			<tr>
 				<td>Number:<input type="text" name="number"/></td>

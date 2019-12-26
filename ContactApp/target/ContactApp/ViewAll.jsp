@@ -54,7 +54,7 @@ for(int i=0;i<c.size();i++)
 		<td>
 			<img src="user-icon-jpg-13.jpg" width="20%" height="30%"> 
 		<a href="getContact">
-		<input type="submit" id="b1" value="<%=(c.get(i).getName())%>"/></a></td>
+		<input type="submit" id="b1" value="<%=(c.get(i).getFirstName())%>&nbsp;<%=(c.get(i).getLastName())%>"/></a></td>
 		</form>
 	</tr>
 <%

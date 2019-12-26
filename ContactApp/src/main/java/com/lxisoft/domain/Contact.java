@@ -6,10 +6,11 @@ import java.util.*;
 public class Contact
 {
 	/**
-	 *instance variables id, name and number
+	 *instance variables id, first name, last name and number
 	 */
 	private int contactId;
-	private String contactName;
+	private String contactFirstName;
+	private String contactLastName;
 	private String contactNumber;
 	/**
 	 *to set contact id
@@ -30,22 +31,40 @@ public class Contact
 		return contactId;
 	}
 	/**
-	 *to set contact name
+	 *to set contact first name
 	 *
-	 *@param contactName
+	 *@param contactFirstName
 	 */
-	public void setContactName(String contactName)
+	public void setContactFirstName(String contactFirstName)
 	{
-		this.contactName=contactName;
+		this.contactFirstName=contactFirstName;
 	}
 	/**
-	 *to get contact name
+	 *to get contact first name
 	 *
-	 *@return contactName
+	 *@return contactFirstName
 	 */
-	public String getContactName()
+	public String getContactFirstName()
 	{
-		return contactName;
+		return contactFirstName;
+	}
+	/**
+	 *to set contact last name
+	 *
+	 *@param contactLastName
+	 */
+	public void setContactLastName(String contactLastName)
+	{
+		this.contactLastName=contactLastName;
+	}
+	/**
+	 *to get contact last name
+	 *
+	 *@return contactLastName
+	 */
+	public String getContactLastName()
+	{
+		return contactLastName;
 	}
 	/**
 	 *to set contact number

@@ -47,7 +47,7 @@ public class MysqlRepository
 		try
 		{
 			Statement s=con.createStatement();
-			s.executeUpdate("create table if not exists contactApp(ID int,NAME varchar(20),Number varchar(20))");
+			s.executeUpdate("create table if not exists ContactList(ID int,FIRST_NAME varchar(20),LAST_NAME varchar(20),NUMBER varchar(20))");
 		}
 		catch(SQLException e)
 		{
@@ -66,12 +66,13 @@ public class MysqlRepository
 		{
 			contactList.clear();
 			Statement s=con.createStatement();
-			ResultSet rs=s.executeQuery("select * from contactApp");
+			ResultSet rs=s.executeQuery("select * from ContactList");
 			while(rs.next())
 			{
 				Contact c=new Contact();
 				c.setContactId(rs.getInt("ID"));
-				c.setContactName(rs.getString("NAME"));	
+				c.setContactFirstName(rs.getString("FIRST_NAME"));
+				c.setContactLastName(rs.getString("LAST_NAME"));			
 				c.setContactNumber(rs.getString("NUMBER"));
 				contactList.add(c);				
 			}
@@ -94,7 +95,7 @@ public class MysqlRepository
 		try
 		{
 			Statement s=con.createStatement();
-			ResultSet rs=s.executeQuery("select ID from contactApp");
+			ResultSet rs=s.executeQuery("select ID from ContactList");
 			while(rs.next())
 			{
 				id=rs.getInt("ID");
@@ -117,12 +118,13 @@ public class MysqlRepository
 	{
 		try
 		{
-			ps=con.prepareStatement("insert into contactApp(ID,NAME,NUMBER) values(?,?,?)");
+			ps=con.prepareStatement("insert into ContactList(ID,FIRST_NAME,LAST_NAME,NUMBER) values(?,?,?,?)");
 			int id=getContactId();
 			contact.setContactId(id);
 			ps.setInt(1,id);
-			ps.setString(2,contact.getContactName());
-			ps.setString(3,contact.getContactNumber());
+			ps.setString(2,contact.getContactFirstName());
+			ps.setString(3,contact.getContactLastName());
+			ps.setString(4,contact.getContactNumber());
 			int x=ps.executeUpdate();
 			System.out.println(""+x);
 		}
@@ -160,7 +162,7 @@ public class MysqlRepository
 	{
 		try
 		{
-			ps=con.prepareStatement("delete from contactApp where id=?");
+			ps=con.prepareStatement("delete from ContactList where id=?");
 			ps.setInt(1,n);
 			ps.execute();
 		}
@@ -179,10 +181,11 @@ public class MysqlRepository
 	{
 		try
 		{
-			PreparedStatement pst=con.prepareStatement("update contactApp set NAME=?,Number=? where ID=?");
-			pst.setString(1,c.getContactName());
-			pst.setString(2,c.getContactNumber());
-			pst.setInt(3,n);
+			PreparedStatement pst=con.prepareStatement("update ContactList set FIRST_NAME=?,LAST_NAME=?,NUMBER=? where ID=?");
+			pst.setString(1,c.getContactFirstName());
+			pst.setString(2,c.getContactLastName());
+			pst.setString(3,c.getContactNumber());
+			pst.setInt(4,n);
 			pst.execute();
 			c.setContactId(n);
 		}
@@ -200,7 +203,7 @@ public class MysqlRepository
 		try
 		{
 			Statement s=con.createStatement();
-			int x=s.executeUpdate("truncate contactApp");
+			int x=s.executeUpdate("truncate ContactList");
 		}
 		catch(SQLException e)
 		{

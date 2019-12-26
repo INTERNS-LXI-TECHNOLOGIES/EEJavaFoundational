@@ -49,7 +49,8 @@ Contact con=(Contact) request.getAttribute("getContactById");
 %>
 <font size="15">
 <center><img src="user-icon-jpg-12.jpg" width="10%" height="10%"> 
-<center><%=(con.getContactName())%></center>
+<center><%=(con.getContactFirstName())%></center>
+<center><%=(con.getContactLastName())%></center>
 <center><%=(con.getContactNumber())%></center>
 </font>
 <tr>
