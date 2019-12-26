@@ -39,7 +39,7 @@
 		}
 	</style>
 	<div>
-		<button id="b3" onclick="window.location.href='index.jsp'">close(X)</button>
+		<button id="b3" onclick="window.location.href='<%=request.getContextPath()%>/index.jsp'">close(X)</button>
 	</div>
 
 <body style="background-color:#E6EC73;">

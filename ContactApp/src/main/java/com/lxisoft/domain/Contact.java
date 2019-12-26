@@ -3,7 +3,8 @@ package com.lxisoft.domain;
 public class Contact implements Comparable<Contact>
 {
 	private String id;
-	private String name;
+	private String firstName;
+	private String lastName;
 	private String number;
 
 	public void setId(String id)
@@ -16,9 +17,14 @@ public class Contact implements Comparable<Contact>
 		return id;
 	} 
 
-	public void setName(String name)
+	public void setFName(String firstName)
 	{
-		this.name=name;
+		this.firstName=firstName;
+	} 
+
+	public void setLName(String lastName)
+	{
+		this.lastName=lastName;
 	} 
 
 	public void setNumber(String number)
@@ -26,9 +32,14 @@ public class Contact implements Comparable<Contact>
 		this.number=number;
 	} 
 
-	public String getName()
+	public String getFName()
 	{
-		return name;
+		return firstName;
+	}
+
+	public String getLName()
+	{
+		return lastName;
 	}
 
 	public String getNumber()

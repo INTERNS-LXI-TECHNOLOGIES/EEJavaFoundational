@@ -29,7 +29,7 @@
 		}
 	</style>
 	<div>
-		<button id="b4" onclick="window.location.href='index.jsp'">close(X)</button>
+		<button id="b4" onclick="window.location.href='<%=request.getContextPath()%>/index.jsp'">close(X)</button>
 	</div>
 
 	<%
@@ -64,7 +64,7 @@
 		    <input type="submit" id="b1" value="delete" onclick="return confirm('Are you sure you want to delete?')" />
 		</form><br>
 
-		<button id="b2" onclick="window.location.href='Edit.jsp'">Edit</button><br><br><br><br><br><br><br>
+		<button id="b2" onclick="window.location.href='<%=request.getContextPath()%>/jsp/Edit.jsp'">Edit</button><br><br><br><br><br><br><br>
 		
 		<button id="b3" onclick="goBack()">Go Back</button>
 	</div>

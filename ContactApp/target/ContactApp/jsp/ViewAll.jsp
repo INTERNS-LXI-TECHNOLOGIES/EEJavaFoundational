@@ -61,7 +61,7 @@ for(Contact contact:contactList)
 	%>
 	<tr>
 	<td>
-	<h2><a style="margin-left: 30px;" href="jsp/Select.jsp?selectId=<%=contact.getId()%>">
+	<h2><a style="margin-left: 30px;" href="<%=request.getContextPath()%>/jsp/Select.jsp?selectId=<%=contact.getId()%>">
 	<img src="WEB-INF/classes/images/person.jpg" width="50" height="50">  <%=contact.getName()%></a>
 	</h2>
 	</td>

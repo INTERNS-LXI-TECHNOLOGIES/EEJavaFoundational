@@ -8,7 +8,7 @@
 <title>CONTACT APP</title>
 <body>
 	<center>
-		<a href="..\ContactApp\showAll" style="color: black"><img src="WEB-INF/classes/images/Apps-Contacts-icon.png" width="100" height="100"><h3>CONTACT APP</h3></a>
+		<a href="<%=request.getContextPath()%>/showAll" style="color: black"><img src="images/Apps-Contacts-icon.png" width="100" height="100"><h3>CONTACT APP</h3></a>
 	</center>
 </body>
 </html>
