@@ -1,0 +1,1 @@
+0:0:0:0:0:0:0:1 - - [26/Dec/2019:16:37:54 +0530] "GET /select?type=delete&?name=pushkala HTTP/1.1" 200 13 http-bio-8080-exec-1 333

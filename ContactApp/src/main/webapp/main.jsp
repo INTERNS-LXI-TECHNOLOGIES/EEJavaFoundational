@@ -40,6 +40,10 @@ contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 		<% String useC=a.getName();%>
 		
 		<td><a href="search?user=<%=a.getName()%>"><font color=" green" size="65"><%out.println(a.getName());%></font></td></a>
+		<td><a href="select?type=edit&name=<%=a.getName()%>">edit</a></td>
+		<td><a href="select?name=<%=a.getName()%>&?type=delete">delete</a></td>
+		
+		
 		
 	</tr>
 

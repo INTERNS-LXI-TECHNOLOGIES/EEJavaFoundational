@@ -10,13 +10,16 @@
 <%@ page import="java.util.*" %>
 
 
-sdfgh
+
 <form action="edit"><center>
 	<input type="name" name="newName" placeholder="NEW NAME"><br><br>
 	<input type="number" name="newNo" placeholder="NEW NUMBER"><br><br>
 	
 	<input type="submit" name="submit"></center>
 </form>
+<center><button onclick="window.location.href='viewall';">back</button> </center>
+
+
 
 </body>
 </html>

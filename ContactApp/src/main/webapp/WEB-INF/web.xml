@@ -63,4 +63,16 @@
       <url-pattern>/delete</url-pattern>
  </servlet-mapping>
 
+ 
+
+ <servlet>
+      <servlet-name>select</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.SelectServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>select</servlet-name>
+      <url-pattern>/select</url-pattern>
+ </servlet-mapping>
+
 </web-app>
