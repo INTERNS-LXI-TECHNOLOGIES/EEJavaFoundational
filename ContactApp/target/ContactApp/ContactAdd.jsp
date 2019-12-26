@@ -1,6 +1,6 @@
 		<html>
 		<head>
-			 <link rel="stylesheet" type="text/css" href="jsp/styles.css">
+			 <link rel="stylesheet" type="text/css" href="styles.css">
 			<title> ADD CONTACT </title>
 		</head>
 		<body > 
@@ -14,7 +14,7 @@
 			if(contact!=null) 
 			{ %>
 				<button align="left" type="button" onClick="window.location.href = 'View';">Back</button>
-				<form action="../Add" method="">
+				<form action="Add" method="">
 					<center>
 						<input type="text"  name="name" placeholder= "enter name"></br></br> 
 						<input type="text"  name="num" placeholder= "phone number"></br></br>
@@ -24,13 +24,12 @@
 					<script>
 						msg()
 						function msg(){
-						alert("    same contact Name found choose another");}
+						alert(" same contact Name found choose another");}
 					</script>
 		<% } 
 		  else
 			{ %>
-				<button align="left" type="button" onClick="window.location.href = '
-				View';">Back</button>
+				<button align="left" type="button" onClick="window.location.href = 'View';">Back</button>
 				<form action="Add" method="">
 					<center>
 						<input type="text"  name="name" placeholder= "enter again name"></br></br> 

@@ -24,6 +24,10 @@
       <servlet-name>CDel</servlet-name>
       <servlet-class>com.lxisoft.servlets.DeleteAllServlet</servlet-class>
 </servlet>
+<servlet>
+      <servlet-name>CSelect2</servlet-name>
+      <servlet-class>com.lxisoft.servlets.SelectServlet</servlet-class>
+</servlet>
 
 <servlet-mapping>
 		<servlet-name>CView</servlet-name>
@@ -48,6 +52,10 @@
 <servlet-mapping>
 		<servlet-name>CDel</servlet-name>
 		<url-pattern>/DeleteAll</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+		<servlet-name>CSelect2</servlet-name>
+		<url-pattern>/selectContact</url-pattern>
 </servlet-mapping>
 
 </web-app>

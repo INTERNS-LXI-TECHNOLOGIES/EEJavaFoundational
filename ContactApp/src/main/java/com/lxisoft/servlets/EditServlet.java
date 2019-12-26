@@ -17,29 +17,27 @@ public class EditServlet extends HttpServlet
 		PrintWriter out=response.getWriter();
 		// String name=(String)request.getParameter("user");
 		HttpSession session=request.getSession(); 
-		Contact contact= (Contact)session.getAttribute("currentcontactList");
-		// out.println("hi......"+contact.getName());
-		// out.println("hi....id.."+contact.getId());
+		Contact contact= (Contact)session.getAttribute("currentcontact");
 		 try{
 			 int i=getId(contact.getName());
 			  contact.setId(i);
               contact.setName(request.getParameter("name"));
               contact.setNo(request.getParameter("num"));
               repo.updateRepo(i,contact);
-              ArrayList<Contact> contactList=repo.getAllContacts();
-              ContactsListModel contactlistmodel=new ContactsListModel();
-              if(contactList!=null)
-              { 
-                for(int j=0;j<contactList.size();j++)
-                {
-                  ContactModel contactmodel=new ContactModel();
-                  contactmodel.setId(contactList.get(j).getId());
-                  contactmodel.setName(contactList.get(j).getName());
-                  contactlistmodel.setAllContacts(contactmodel);
-                }
-              }
-              ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
-               session.setAttribute("contactmodel",contacts);
+              // ArrayList<Contact> contactList=repo.getAllContacts();
+              // ContactsListModel contactlistmodel=new ContactsListModel();
+              // if(contactList!=null)
+              // { 
+              //   for(int j=0;j<contactList.size();j++)
+              //   {
+              //     ContactModel contactmodel=new ContactModel();
+              //     contactmodel.setId(contactList.get(j).getId());
+              //     contactmodel.setName(contactList.get(j).getName());
+              //     contactlistmodel.setAllContacts(contactmodel);
+              //   }
+              // }
+              // ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+              //  session.setAttribute("contactmodel",contacts);
               RequestDispatcher rd=request.getRequestDispatcher("View");
               rd.forward(request,response);
 		      // response.sendRedirect("View");

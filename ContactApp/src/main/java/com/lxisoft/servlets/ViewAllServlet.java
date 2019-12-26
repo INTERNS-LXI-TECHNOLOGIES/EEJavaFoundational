@@ -30,7 +30,7 @@ public class ViewAllServlet extends HttpServlet
               HttpSession session=request.getSession();
                session.setAttribute("contactmodel",contacts);
             // request.setAttribute("contactmodel",contacts);
-            RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactView.jsp");
+            RequestDispatcher rd=request.getRequestDispatcher("ContactView.jsp");
       	   rd.forward(request,response);
                // response.sendRedirect("jsp\\ContactView.jsp");
          }catch(SQLException n)

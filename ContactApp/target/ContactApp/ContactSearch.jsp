@@ -1,7 +1,7 @@
 <html>
 		<head>
 			<title> VIEW CONTACT </title>
-			  <link rel="stylesheet" type="text/css" href="jsp/styles.css">
+			  <link rel="stylesheet" type="text/css" href="styles.css">
 		</head>
 		<body > 
 			<%@ page import="com.lxisoft.models.*"%>
@@ -20,7 +20,7 @@
 					<td><button class="button" type="button" 
 						onClick="window.location.href ='ContactEdit.jsp';"> Edit </button></td>
 					<td><button class="button" type="button" 
-						onClick="window.location.href ='../delete?user=<%=contact.getName()%>';"> Delete </button></td>
+						onClick="window.location.href ='delete?user=<%=contact.getName()%>';"> Delete </button></td>
 					<td><button class="button" type="button" 
 						onClick="window.location.href ='View';"> Back</button></td>
 					</tr>

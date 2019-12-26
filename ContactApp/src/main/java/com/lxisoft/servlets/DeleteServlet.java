@@ -17,26 +17,26 @@ public class DeleteServlet extends HttpServlet
 		{
 		
 		HttpSession session=request.getSession(); 
-		String name=request.getParameter("user");
-		Contact contact= (Contact)session.getAttribute("currentcontactList");
+		// String name=request.getParameter("user");
+		Contact contact= (Contact)session.getAttribute("currentcontact");
 		PrintWriter out=response.getWriter();
 		int i=getId(contact.getName());
-		out.println("hi......"+i);
+		// out.println("hi......"+i);
 		repo.deleteContact(i);
-		 ArrayList<Contact> contactList=repo.getAllContacts();
-              ContactsListModel contactlistmodel=new ContactsListModel();
-              if(contactList!=null)
-              { 
-                for(int j=0;j<contactList.size();j++)
-                {
-                  ContactModel contactmodel=new ContactModel();
-                  contactmodel.setId(contactList.get(j).getId());
-                  contactmodel.setName(contactList.get(j).getName());
-                  contactlistmodel.setAllContacts(contactmodel);
-                }
-              }
-              ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
-               session.setAttribute("contactmodel",contacts);
+		 // ArrayList<Contact> contactList=repo.getAllContacts();
+   //            ContactsListModel contactlistmodel=new ContactsListModel();
+   //            if(contactList!=null)
+   //            { 
+   //              for(int j=0;j<contactList.size();j++)
+   //              {
+   //                ContactModel contactmodel=new ContactModel();
+   //                contactmodel.setId(contactList.get(j).getId());
+   //                contactmodel.setName(contactList.get(j).getName());
+   //                contactlistmodel.setAllContacts(contactmodel);
+   //              }
+   //            }
+   //            ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+   //             session.setAttribute("contactmodel",contacts);
               RequestDispatcher rd=request.getRequestDispatcher("View");
               rd.forward(request,response);
 		// response.sendRedirect("View");

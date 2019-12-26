@@ -31,8 +31,8 @@ public class SelectedServlet extends HttpServlet
 				}
 				if(currentList.size()==1)
 	 			{
-	 				session.setAttribute("currentcontactList",currentList.get(0));
-	 				 response.sendRedirect("jsp\\ContactSearch.jsp");
+	 				session.setAttribute("currentcontact",currentList.get(0));
+	 				 response.sendRedirect("ContactSearch.jsp");
 					// request.setAttribute("currentcontactList",currentList.get(0));
 					// RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactSearch.jsp");
 					// rd.forward(request,response);
@@ -62,7 +62,7 @@ public class SelectedServlet extends HttpServlet
 			            }
 		            ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
 		           	session.setAttribute("contactmodel",contacts); 
-		           	response.sendRedirect("jsp\\ContactView.jsp");
+		           	response.sendRedirect("ContactView.jsp");
 		            // request.setAttribute("contactmodel",contacts);
 		            // RequestDispatcher rd=request.getRequestDispatcher("View");
 	             // 	rd.forward(request,response);

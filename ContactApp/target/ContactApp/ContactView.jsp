@@ -1,7 +1,7 @@
 <html>
 		<head>
 			<title> VIEW CONTACT </title>
-			  <link rel="stylesheet" type="text/css" href="jsp/styles.css">
+			  <link rel="stylesheet" type="text/css" href="styles.css">
 		</head>
 		<body > 
 			<%@ page import="com.lxisoft.models.*"%>
@@ -10,7 +10,8 @@
 			<center>
 				 <h3> CONTACT APPLICATION </h3>
 			</center>
-			<button  class ="butt" align="left" type="button" onClick="window.location.href = 'ContactAdd.jsp';">+</button>
+			<a href="ContactAdd.jsp'" ><img src="images/add.png" height="40px"; width="40px";></a></center>
+			<!-- <button  class ="butt" align="left" type="button" onClick="window.location.href = 'ContactAdd.jsp';">+</button> -->
 			<form action="select" method="GET"><center>
 			<input type="text" name="user" placeholder= "Enter Name">
 			<button> search here </button></center></form>
@@ -24,7 +25,7 @@
 						msg()
 						function msg(){
 						alert(" contact list empty..");
-						window.location="jsp//ContactAdd.jsp"}
+						window.location="ContactAdd.jsp"}
 					</script>
 				<%} %>
 				<table id="tab" align="center" border="10px" width="30%">
@@ -35,9 +36,15 @@
 					<tr>
 					<!-- <td><% out.println(contactmodel.getName()); %>	 -->
 					<td>
-						<img src="images/person.png" height="50px";width="50px";></td>
-					<td>	<button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getName()%>';"><%=contactmodel.getName()%>
-						</button></td>
+						<!-- <img src="images/person.png" height="50px";width="50px";> -->
+					<button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getName()%>';"><%=contactmodel.getName()%>
+					</button></td>
+
+					<td>
+					<button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getId()%>';">Edit</button></td>
+
+					<td>
+					<button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getName()%>';">Delete</button></td>
 					</tr>
 
 				<%
