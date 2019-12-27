@@ -7,7 +7,9 @@ public class ContactModel
 	/**
 	 * instance variables name and id.
 	 */
-	private String name;
+	private String firstName;
+	private String lastName;
+	private String fullName=firstName+" "+lastName;
 	private int id;
 	/**
 	 * setid of contact
@@ -17,21 +19,49 @@ public class ContactModel
 	{
 		this.id=id;
 	}
-	/**
-	 * set name of contact
-	 *@param name.
-	 */
-	public void setName(String name)
-	{
-		this.name=name;
+	public void setFirstName(String firstName)
+	{ 
+		this.firstName=firstName;
 	}
 	/**
-	 * getname of contact
-	 *@return name
+	 * set last name in contacts
+	 * @param lastname contactname
 	 */
-	public String getName()
+	public void setLastName(String lastName)
+	{ 
+		this.lastName=lastName;
+	}
+	/**
+	 * set last name in contacts
+	 * @param fullname contactname
+	 */
+	public void setFullName(String fullName)
+	{ 
+		this.fullName=fullName;
+	}
+		/**
+	 * get firstname in contacts
+	 * @return name
+	 */
+	public String getFirstName()
 	{
-		return this.name;
+		return this.firstName;
+	}
+	/**
+	 * get lastname in contacts
+	 * @return name
+	 */
+	public String getLastName()
+	{
+		return this.lastName;
+	}
+	/**
+	 * get fullname in contacts
+	 * @return name
+	 */
+	public String getFullName()
+	{
+		return this.fullName;
 	}
 	/**
 	 * getid of contact

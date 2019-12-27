@@ -81,17 +81,19 @@ public class MySqlRepo implements Repository
 			if(tbexists==false)
 			{
 				id=getId();
-				stmt=con.prepareStatement("insert into Contactlist values(?,?,?)");  
+				stmt=con.prepareStatement("insert into Contactlist values(?,?,?,?)");  
 				stmt.setInt(1,id);
-				stmt.setString (2,contact.getName());
-				stmt.setString(3,contact.getNo());
+				stmt.setString (2,contact.getFirstName());
+				stmt.setString (3,contact.getLastName());
+				stmt.setString(4,contact.getNo());
 				stmt.executeUpdate();
 			}else
 			{
-				stmt=con.prepareStatement("insert into Contactlist values(?,?,?)");  
+				stmt=con.prepareStatement("insert into Contactlist values(?,?,?,?)");  
 				stmt.setInt(1,contact.getId());
-				stmt.setString (2,contact.getName());
-				stmt.setString(3,contact.getNo());
+				stmt.setString (2,contact.getFirstName());
+				stmt.setString (3,contact.getLastName());
+				stmt.setString(4,contact.getNo());
 				stmt.executeUpdate();
 			}
 		}catch(SQLException ex) 
@@ -104,7 +106,7 @@ public class MySqlRepo implements Repository
 	{
 		try
 		{
-			String create_Table="create table Contactlist(ID int(3),NAME varchar(50),NUMBER varchar(10))";
+			String create_Table="create table Contactlist(ID int(3),FIRSTNAME varchar(50),LASTNAME varchar(50),NUMBER varchar(10))";
 			stmt=con.prepareStatement(create_Table);
 			stmt.execute();
 			System.out.println("table created successfully");
@@ -194,9 +196,12 @@ public class MySqlRepo implements Repository
 			rs = stmt.executeQuery("select * from Contactlist");
 			while(rs.next()) 
 			{ 
+				// String fullname=SELECT CONCAT('rs.getString("FIRSTNAME ")','rs.getString("LASTNAME ")');
 				Contact	contact=new Contact();
 				contact.setId(rs.getInt("ID"));
-				contact.setName(rs.getString("NAME"));
+				// contact.setFullName(SELECT CONCAT('rs.getString("FIRSTNAME ")','rs.getString("LASTNAME ")')
+				contact.setFirstName(rs.getString("FIRSTNAME "));
+				contact.setLastName(rs.getString("LASTNAME "));
 				contact.setNo(rs.getString("NUMBER"));
 				contacts.add(contact);
 			}	
@@ -210,10 +215,11 @@ public class MySqlRepo implements Repository
 	{
 		try
 		{
-			stmt=con.prepareStatement("update Contactlist set name=?,number=? where id=?");
-			stmt.setString(1,contact.getName());
-			stmt.setString(2,contact.getNo());
-			stmt.setInt(3,contacts.get(i).getId());
+			stmt=con.prepareStatement("update Contactlist set firstname=?,lastname=?,number=? where id=?");
+			stmt.setString(1,contact.getFirstName());
+			stmt.setString(2,contact.getLastName());
+			stmt.setString(3,contact.getNo());
+			stmt.setInt(4,contacts.get(i).getId());
 			stmt.executeUpdate();
 			System.out.println("contact updated");
 		}catch(SQLException e)

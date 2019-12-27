@@ -10,7 +10,7 @@
 		
 			<%@ page import="java.util.*"%>
 
-			<% Contact contact= (Contact)session.getAttribute("currentcontactList"); %>
+			<% Contact contact= (Contact)session.getAttribute("currentcontact"); %>
 
 			<h1><%=contact.getName()%></h1>
 			<table align="center" border="10px" width="20%">

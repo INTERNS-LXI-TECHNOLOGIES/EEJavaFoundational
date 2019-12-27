@@ -19,9 +19,10 @@ public class EditServlet extends HttpServlet
 		HttpSession session=request.getSession(); 
 		Contact contact= (Contact)session.getAttribute("currentcontact");
 		 try{
-			 int i=getId(contact.getName());
+			 int i=getId(contact.getFullName());
 			  contact.setId(i);
-              contact.setName(request.getParameter("name"));
+              contact.setFirstName(request.getParameter("fname"));
+              contact.setLastName(request.getParameter("lname"));
               contact.setNo(request.getParameter("num"));
               repo.updateRepo(i,contact);
               // ArrayList<Contact> contactList=repo.getAllContacts();
@@ -55,7 +56,7 @@ public class EditServlet extends HttpServlet
 		ArrayList<Contact> contactList=repo.getAllContacts();
 		for(int i=0;i<contactList.size();i++)
 		{
-			if(name.equals(contactList.get(i).getName()))
+			if(name.equals(contactList.get(i).getFullName()))
 			{
 				id=i;
 			}

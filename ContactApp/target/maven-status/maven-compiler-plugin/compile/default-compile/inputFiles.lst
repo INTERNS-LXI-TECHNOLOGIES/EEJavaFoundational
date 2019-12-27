@@ -2,11 +2,11 @@ E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\DeleteSe
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\SortByName.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\EditServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\SortById.java
+E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\SearchServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\ViewAllServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\ContactsListModel.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\Domain\Contact.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\SelectServlet.java
-E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\SelectedServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\repository\Repository.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\AddServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\DeleteAllServlet.java

@@ -9,7 +9,9 @@ public class Contact implements Comparable<Contact>
 	 * instance variables id name and number.
 	 */
 	private int id;
-	private String name;
+	private String firstName;
+	private String lastName;
+	private String fullName=firstName+" "+lastName;
 	private String phno;
 	/**
 	 * set id in contacts
@@ -20,12 +22,28 @@ public class Contact implements Comparable<Contact>
 		this.id=id;
 	}
 	/**
-	 * set name in contacts
-	 * @param name contactname
+	 * set first name in contacts
+	 * @param firstname contactname
 	 */
-	public void setName(String name)
+	public void setFirstName(String firstName)
 	{ 
-		this.name=name;
+		this.firstName=firstName;
+	}
+	/**
+	 * set last name in contacts
+	 * @param lastname contactname
+	 */
+	public void setLastName(String lastName)
+	{ 
+		this.lastName=lastName;
+	}
+	/**
+	 * set last name in contacts
+	 * @param fullname contactname
+	 */
+	public void setFullName(String fullName)
+	{ 
+		this.fullName=fullName;
 	}
 	/**
 	 * set number in contacts
@@ -45,12 +63,28 @@ public class Contact implements Comparable<Contact>
 	}
 
 	/**
-	 * get name in contacts
+	 * get firstname in contacts
 	 * @return name
 	 */
-	public String getName()
+	public String getFirstName()
 	{
-		return this.name;
+		return this.firstName;
+	}
+	/**
+	 * get lastname in contacts
+	 * @return name
+	 */
+	public String getLastName()
+	{
+		return this.lastName;
+	}
+	/**
+	 * get fullname in contacts
+	 * @return name
+	 */
+	public String getFullName()
+	{
+		return this.fullName;
 	}
 	/**
 	 * get number in contacts
@@ -68,7 +102,7 @@ public class Contact implements Comparable<Contact>
 	public boolean equals(Object obj)
 	{
 		Contact contact=(Contact)obj;
-		if(this.name.equals(contact.getName()))
+		if(this.fullName.equals(contact.getFullName()))
 			return true;
 		else return false;
 	}
@@ -79,6 +113,6 @@ public class Contact implements Comparable<Contact>
 	 */
 	public int compareTo(Contact contact)
 	{
-		return this.getName().compareTo(contact.getName()); 
+		return this.getFullName().compareTo(contact.getFullName()); 
 	}
 }

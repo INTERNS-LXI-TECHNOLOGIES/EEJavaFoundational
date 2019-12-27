@@ -22,22 +22,23 @@ public class ViewAllServlet extends HttpServlet
               {
                 ContactModel contactmodel=new ContactModel();
                 contactmodel.setId(contactList.get(i).getId());
-                contactmodel.setName(contactList.get(i).getName());
+                contactmodel.setFirstName(contactList.get(i).getFirstName());
+                contactmodel.setLastName(contactList.get(i).getLastName());
+                contactmodel.setFullName(contactList.get(i).getFullName());
                 contactlistmodel.setAllContacts(contactmodel);
               }
             }
-              ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
-              HttpSession session=request.getSession();
-               session.setAttribute("contactmodel",contacts);
-            // request.setAttribute("contactmodel",contacts);
+            ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+            HttpSession session=request.getSession();
+            session.setAttribute("contactmodel",contacts);
             RequestDispatcher rd=request.getRequestDispatcher("ContactView.jsp");
-      	   rd.forward(request,response);
-               // response.sendRedirect("jsp\\ContactView.jsp");
-         }catch(SQLException n)
-        {
-           n.printStackTrace();
-        }
-  	}
+        	  rd.forward(request,response);
+                 // response.sendRedirect("jsp\\ContactView.jsp");
+           }catch(SQLException n)
+          {
+             n.printStackTrace();
+          }
+    	}
 
 
 }

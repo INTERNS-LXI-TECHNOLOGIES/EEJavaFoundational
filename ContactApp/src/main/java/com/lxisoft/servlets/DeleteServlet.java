@@ -20,7 +20,7 @@ public class DeleteServlet extends HttpServlet
 		// String name=request.getParameter("user");
 		Contact contact= (Contact)session.getAttribute("currentcontact");
 		PrintWriter out=response.getWriter();
-		int i=getId(contact.getName());
+		int i=getId(contact.getFullName());
 		// out.println("hi......"+i);
 		repo.deleteContact(i);
 		 // ArrayList<Contact> contactList=repo.getAllContacts();
@@ -55,7 +55,7 @@ public class DeleteServlet extends HttpServlet
 		ArrayList<Contact> contactList=repo.getAllContacts();
 		for(int i=0;i<contactList.size();i++)
 		{
-			if(name.equals(contactList.get(i).getName()))
+			if(name.equals(contactList.get(i).getFullName()))
 			{
 				id=i;
 			}

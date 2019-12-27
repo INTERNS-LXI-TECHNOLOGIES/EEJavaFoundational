@@ -8,7 +8,7 @@ import com.lxisoft.repository.*;
 import java.util.*;
 import java.sql.*;
 
-public class SelectedServlet extends HttpServlet
+public class SearchServlet extends HttpServlet
 {
 	private Repository repo=new MySqlRepo();
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException
@@ -24,7 +24,7 @@ public class SelectedServlet extends HttpServlet
 			ArrayList<Contact> currentList=new ArrayList<Contact>();
 			// ArrayList<Contact> currentList2=new ArrayList<Contact>();
 				for(Contact contact:contactList)
-				{	if(name.equalsIgnoreCase(contact.getName()))
+				{	if(name.equalsIgnoreCase(contact.getFullName()))
 					{
 		 				currentList.add(contact);		
 		 			}
@@ -43,7 +43,7 @@ public class SelectedServlet extends HttpServlet
 					   currentList.clear();
 					   for(Contact contact:contactList)
 				        {
-			 				if((contact.getName().toLowerCase()).contains(name.toLowerCase()))
+			 				if((contact.getFullName().toLowerCase()).contains(name.toLowerCase()))
 			 					{
 						 			currentList.add(contact);
 						 		}
@@ -54,7 +54,7 @@ public class SelectedServlet extends HttpServlet
 			                {
 			                  ContactModel contactmodel=new ContactModel();
 			                  contactmodel.setId(currentList.get(i).getId());
-			                  contactmodel.setName(currentList.get(i).getName());
+			                  contactmodel.setFullName(currentList.get(i).getFullName());
 			                  contactlistmodel.setAllContacts(contactmodel);
 							// out.println(contactmodel.getName());
 							// out.println(contactmodel.getId());

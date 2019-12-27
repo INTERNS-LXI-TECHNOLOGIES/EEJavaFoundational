@@ -8,7 +8,7 @@ com\lxisoft\models\SortByNumber.class
 com\lxisoft\Domain\Contact.class
 com\lxisoft\servlets\AddServlet.class
 com\lxisoft\servlets\DeleteServlet.class
-com\lxisoft\servlets\SelectedServlet.class
+com\lxisoft\servlets\SearchServlet.class
 com\lxisoft\servlets\DeleteAllServlet.class
 com\lxisoft\models\SortById.class
 com\lxisoft\models\SortByName.class

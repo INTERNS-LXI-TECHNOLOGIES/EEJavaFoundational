@@ -14,7 +14,8 @@
 			<!-- <% Contact contact=(Contact)session.getAttribute("contact");	%> -->
 			<form action="edit" method="GET">
 				<center>
-					<input type="text"  name="name" placeholder= "enter new name"></br></br> 
+					<input type="text"  name="fname" placeholder= "enter new first name"></br></br> 
+					<input type="text"  name="lname" placeholder= "enter new last name"></br></br> 
 					<input type="text"  name="num" placeholder= "enter new number"></br></br>
 					<input type="submit" value="save">
 					<input type="reset" value="reset">

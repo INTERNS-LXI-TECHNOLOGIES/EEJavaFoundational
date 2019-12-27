@@ -15,14 +15,15 @@ public class AddServlet extends HttpServlet
     {
       try{
               Contact contact=new Contact();boolean exists=false;
-              contact.setName(request.getParameter("name"));
+              contact.setFirstName(request.getParameter("fname"));
+              contact.setLastName(request.getParameter("lname"));
               contact.setNo(request.getParameter("num"));
               ArrayList<Contact> contactList=repo.getAllContacts();
                   for(int i=0;i<contactList.size();i++)
                   {
-                   if(contact.getName().equals(contactList.get(i).getName()))
+                   if(contact.getFullName().equals(contactList.get(i).getFullName()))
                     {
-                     System.out.println("hi...equal");
+                     // System.out.println("hi...equal");
                       exists=true;
                     }
                   }
@@ -35,23 +36,26 @@ public class AddServlet extends HttpServlet
                   else{
                         repo.addContactDetails(contact);
                         //ArrayList<Contact> contactList=repo.getAllContacts();
-                        ContactsListModel contactlistmodel=new ContactsListModel();
-                        if(contactList!=null)
-                        { 
-                          for(int i=0;i<contactList.size();i++)
-                          {
-                            ContactModel contactmodel=new ContactModel();
-                            contactmodel.setId(contactList.get(i).getId());
-                            contactmodel.setName(contactList.get(i).getName());
-                            contactlistmodel.setAllContacts(contactmodel);
-                          }
-                        }
-                        ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
-                        HttpSession session=request.getSession();
-                        session.setAttribute("contactmodel",contacts);
+                            // ContactsListModel contactlistmodel=new ContactsListModel();
+                            // if(contactList!=null)
+                            // { 
+                            //   for(int i=0;i<contactList.size();i++)
+                            //   {
+                            //     ContactModel contactmodel=new ContactModel();
+                            //     contactmodel.setId(contactList.get(i).getId());
+                            //     contactmodel.setFirstName(contactList.get(i).getFirstName());
+                            //     contactmodel.setLastName(contactList.get(i).getLastName());
+                            //     contactmodel.setFullName(contactList.get(i).getFullName());
+                            //     contactlistmodel.setAllContacts(contactmodel);
+                            //   }
+                            // }
+                            // ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+                            // HttpSession session=request.getSession();
+                            // session.setAttribute("contactmodel",contacts);
                         // request.setAttribute("contactmodel",contacts);
-                        RequestDispatcher rd=request.getRequestDispatcher("View");
-                        rd.forward(request,response);
+                        // RequestDispatcher rd=request.getRequestDispatcher("View");
+                        // rd.forward(request,response);
+                        response.sendRedirect("View");
                       }
               // response.sendRedirect("View");
          }catch(SQLException n)

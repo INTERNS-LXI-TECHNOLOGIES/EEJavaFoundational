@@ -34,17 +34,17 @@
 				{ 
 					%>
 					<tr>
-					<!-- <td><% out.println(contactmodel.getName()); %>	 -->
+				
 					<td>
 						<!-- <img src="images/person.png" height="50px";width="50px";> -->
-					<button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getName()%>';"><%=contactmodel.getName()%>
+					<button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getFullName()%>';"><%=contactmodel.getFullName()%>
 					</button></td>
 
 					<td>
 					<button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getId()%>';">Edit</button></td>
 
 					<td>
-					<button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getName()%>';">Delete</button></td>
+					<button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getFullName()%>';">Delete</button></td>
 					</tr>
 
 				<%

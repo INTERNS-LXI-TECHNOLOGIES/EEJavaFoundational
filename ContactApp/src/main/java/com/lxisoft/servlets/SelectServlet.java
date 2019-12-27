@@ -35,7 +35,7 @@ public class SelectServlet extends HttpServlet
 				ArrayList<Contact> contactList=repo.getAllContacts();
 				for(Contact contact:contactList)
 				{	
-					if(select.equalsIgnoreCase(contact.getName()))
+					if(select.equalsIgnoreCase(contact.getFullName()))
 					{
 		 				session.setAttribute("currentcontact",contact);
 		 				request.getRequestDispatcher("delete").forward(request,response);	

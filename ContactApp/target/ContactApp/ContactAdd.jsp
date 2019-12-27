@@ -16,7 +16,8 @@
 				<button align="left" type="button" onClick="window.location.href = 'View';">Back</button>
 				<form action="Add" method="">
 					<center>
-						<input type="text"  name="name" placeholder= "enter name"></br></br> 
+						<input type="text"  name="fname" placeholder= "enter first name"></br></br> 
+						<input type="text"  name="lname" placeholder= "enter last name"></br></br> 
 						<input type="text"  name="num" placeholder= "phone number"></br></br>
 						<input type="submit" value="save">
 						<input type="reset" value="reset">
@@ -32,7 +33,8 @@
 				<button align="left" type="button" onClick="window.location.href = 'View';">Back</button>
 				<form action="Add" method="">
 					<center>
-						<input type="text"  name="name" placeholder= "enter again name"></br></br> 
+						<input type="text"  name="fname" placeholder= "enter again name"></br></br> 
+						<input type="text"  name="lname" placeholder= "enter last name"></br></br> 
 						<input type="text"  name="num" placeholder= "phone number"></br></br>
 						<input type="submit" value="save">
 						<input type="reset" value="reset">
