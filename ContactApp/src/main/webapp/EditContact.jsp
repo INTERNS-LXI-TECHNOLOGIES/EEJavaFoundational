@@ -17,15 +17,14 @@
 			<input type="hidden" name="id" value="<%=(c.getContactId())%>"><br>
 			<tr>
 				<td><input type="text" name="first name" placeholder="new first Name" /><br>
-				<td><input type="text" name="last name" placeholder="new last Name" /><br>
+				<br><input type="text" name="last name" placeholder="new last Name" /><br>
 				<br><input type="text" name="number" placeholder="New Number" /><br>
-				<br><a href="editContact"><input type="submit" value="Save"/></a><br>
+				<br><input type="submit" value="Save"/><br>
 		</form>
 		<form action= "getContact" method="get">
 		<input type="hidden" name="crud" value="2"/>
-		<a href="getContact">
 			<input type="hidden" name="id" value="<%=(c.getContactId())%>"/>
-			<br><input type="submit" value="Cancel"/></a></td>
+			<br><input type="submit" value="Cancel"/></td>
 		</form>
 			</tr>
 </body>

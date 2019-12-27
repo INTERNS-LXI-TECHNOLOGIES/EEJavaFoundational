@@ -47,4 +47,12 @@
 	<servlet-name>search contact</servlet-name>
 	<url-pattern>/search</url-pattern>
 </servlet-mapping>
+<servlet>
+	<servlet-name>sort contact</servlet-name>
+	<servlet-class>com.lxisoft.servlet.SortContactServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>sort contact</servlet-name>
+	<url-pattern>/sort</url-pattern>
+</servlet-mapping>
 </web-app>

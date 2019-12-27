@@ -10,19 +10,18 @@
 		Contact c=(Contact)session.getAttribute("cont");
 		%>
 		<tr>
-			<th>Are you sure you want to delete "<%=(c.getContactName())%>"</th>
+			<th>Are you sure you want to delete "<%=(c.getContactFirstName())%> <%=(c.getContactLastName())%>"</th>
 		</tr>
 		<tr>
 			<td>
 				<form action="delete" method ="get">
 					<input type="hidden" name="id" value="<%=(c.getContactId())%>">
-					<a href="delete"><input type="submit" value="deletes"/></a>
+					<input type="submit" value="deletes"/>
 				</form>
 				<form action= "getContact" method="get">
-				<input type="hidden" name="crud" value="4"/>
-				<a href="getContact">
+					<input type="hidden" name="crud" value="2"/>
 					<input type="hidden" name="id" value="<%=(c.getContactId())%>"/>
-					<input type="submit" value="Cancel"/></a>
+					<input type="submit" value="Cancel"/>
 				</form>
 			</td>
 		</tr>

@@ -24,12 +24,12 @@
 	for(int i=0;i<contact.size();i++){%>
 	<tr>
 	<form action= "getContact" method="get">
-		<input type="hidden" name="crud" value="1"/>
+		<input type="hidden" name="crud" value="2"/>
 		<input type="hidden" name="id" value="<%=(contact.get(i).getContactId())%>"/>
 		<td>
 		<a href="getContact">
-		<input type="submit" id="b1" value="<%=(contact.get(i).getContactName())%>"/>
-			</a>
+			<input type="submit" id="b1" value="<%=(contact.get(i).getContactFirstName())%> <%=(contact.get(i).getContactLastName())%>"/>
+		</a>
 		</td>
 	</form>
 	</tr>

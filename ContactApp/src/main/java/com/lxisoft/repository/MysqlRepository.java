@@ -210,30 +210,30 @@ public class MysqlRepository
 			e.printStackTrace();
 		}
 	}
-	/**
-	 *to sort contact by number
-	 *
-	 *@return arraylist of contact
-	 */
-// 	public List <Contact> sortByNumber()
-// 	{
-// 		contactList.clear();
-// 		contactList=findAllContact();
-// 		Collections.sort(contactList, new SortByNumber());
-// 		return contactList;
-// 	}
-// 	/**
-// 	 *to sort contact by name
-// 	 *
-// 	 *@return arraylist of contact
-// 	 */
-// 	public List <Contact> sortByName()
-// 	{
-// 		contactList.clear();
-// 		contactList=findAllContact();
-// 		Collections.sort(contactList, new SortByName());
-// 		return contactList;
-// 	}
+	// /**
+	//  *to sort contact by number
+	//  *
+	//  *@return arraylist of contact
+	//  */
+	// public List <Contact> sortByNumber()
+	// {
+	// 	contactList.clear();
+	// 	contactList=findAllContact();
+	// 	Collections.sort(contactList, new SortByNumber());
+	// 	return contactList;
+	// }
+	// /**
+	//  *to sort contact by name
+	//  *
+	//  *@return arraylist of contact
+	//  */
+	// public List <Contact> sortByName()
+	// {
+	// 	contactList.clear();
+	// 	contactList=findAllContact();
+	// 	Collections.sort(contactList, new SortByName());
+	// 	return contactList;
+	// }
 // 	/**
 // 	 *to sort contact by id
 // 	 *
