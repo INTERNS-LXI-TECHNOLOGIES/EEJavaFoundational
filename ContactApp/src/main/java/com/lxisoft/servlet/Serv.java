@@ -23,7 +23,6 @@ public class Serv extends HttpServlet
 			model.setLName(contactList.get(i).getLName());
 			lm.setContactsList(model);
 		}
-		
 		request.setAttribute("contactlist",lm.getContactsList());
 		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");
 		rd.forward(request,response);

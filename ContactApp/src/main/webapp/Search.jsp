@@ -14,7 +14,7 @@
     for(Contact co:c)
     {%>
     <tr>
-        <td><%=(co.getName())%></td>
+        <td><%=(co.getFName())%><%=(co.getLName())%></td>
     </tr>
     <%
     }%>

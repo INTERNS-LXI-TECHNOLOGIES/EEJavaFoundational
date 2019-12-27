@@ -25,16 +25,24 @@
 	List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
 	for(ContactModel cm:contactsList)
 	{%>
-	<TR>
 		<form action="select" method="get">
-		<input type="hidden" name="id" value="<%=cm.getId()%>"> 
-    	<TD><input type="submit" value="<%=cm.getFName()%> <%=cm.getLName()%>">
-        <TD><a href="delete"><input type="submit" value="Delete"></a></TD>
-        <TD><a href="edited"><input type="submit" value="Edit"></TD>
-    	</form>
-    </TR>
+		<tr><input type="hidden" name="id" value="<%=cm.getId()%>">
+		<input type="hidden" name="operations" value="1"> 
+    	<td><input type="submit" value="<%=cm.getFName()%> <%=cm.getLName()%>"></td></form>
+
+    	<form action="select" method="get">
+    	<input type="hidden" name="id" value="<%=cm.getId()%>">
+    	<input type="hidden" name="operations" value="2">
+        <td><input type="submit" value="Delete"></td></form>
+
+        <form action="select" method="get">
+        <input type="hidden" name="id" value="<%=cm.getId()%>">
+        <input type="hidden" name="operations" value="3">
+        <td><input type="submit" value="Edit"></td></form>
+    </tr>
     <%
 	}%>
+	
 	</table>
 </body>
 </html>

@@ -17,7 +17,8 @@
 				<input type="hidden" name="id" value="<%=co.getId()%>"/>
 			<tr>
 				
-				<td><br><input type="text" name="name" placeholder="New Contact Name"><br>
+				<td><br><input type="text" name="fName" placeholder="New First Name"><br>
+				<br><input type="text" name="lName" placeholder="New Last Name"><br>
 				<br><input type="text" name="contactNo" placeholder="New Contact Number"><br>
 				<br><a href="edit"><input type="submit" value="Save"></a></td>
 			</tr>
