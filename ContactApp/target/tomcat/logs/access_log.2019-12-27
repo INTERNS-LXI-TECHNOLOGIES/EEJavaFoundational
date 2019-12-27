@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [27/Dec/2019:15:38:06 +0530] "GET /ContactApp/Delete?id=11 HTTP/1.1" 200 2526 http-bio-8080-exec-2 1208
+0:0:0:0:0:0:0:1 - - [27/Dec/2019:15:38:16 +0530] "GET /ContactApp/Select.jsp?temp=4&temp1=ashiq&temp2=ali&temp3=99765435 HTTP/1.1" 200 798 http-bio-8080-exec-3 138
