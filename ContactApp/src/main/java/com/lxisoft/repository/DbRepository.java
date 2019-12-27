@@ -95,20 +95,9 @@ public class DbRepository implements Repository
 	{
 		try
 		{
-			ResultSet rs=ps.executeQuery("select concat(FIRST_NAME,' ',LAST_NAME) fullName from contactList");
 			pd=connection.prepareStatement("delete from contactList where ID=?");
-			ArrayList<Contact> contactList=findAll();
-			for(int i=0;i<contactList.size();i++)
-			{
-				String temp=contactList.get(i).getFName()+" "+contactList.get(i).getLName();
-				System.out.println("temp "+temp);
-				if(temp.equals(rs.getString("fullName")))
-				{
-					System.out.println("temp deleting"+temp);
-					pd.setString(1,contactList.get(i).getId());
-					pd.executeUpdate();
-				}
-			}
+			pd.setString(1,contact.getId());
+			pd.executeUpdate();
 		}
 		catch(SQLException e)
 		{
@@ -118,27 +107,20 @@ public class DbRepository implements Repository
 	
 	public void edit(EditModel editModel,String[] tempEdit)
 	{
-		// System.out.println("updating conatact "+editModel.getContact().getName());
-		// try
-		// {
-		// 	pu=connection.prepareStatement("update contactList set NAME=?,NUMBER=? where ID=?");
-		// 	ArrayList<Contact> contactList=findAll();
-		// 	for(int i=0;i<contactList.size();i++)
-		// 	{
-		// 		if(contactList.get(i).getName().equals(editModel.getContact().getName()))
-		// 		{
-		// 			System.out.println("updating conatact "+editModel.getContact().getName());
-		// 			pu.setString(1,tempEdit[0]);
-		// 			pu.setString(2,tempEdit[1]);
-		// 			pu.setString(3,contactList.get(i).getId());
-		// 			pu.executeUpdate();
-		// 		}
-		// 	}
-		// }
-		// catch(SQLException e)
-		// {
-		// 	System.out.println(e);
-		// }	
+		try
+		{
+			pu=connection.prepareStatement("update contactList set FIRST_NAME=?,LAST_NAME=?,NUMBER=? where ID=?");
+			System.out.println("updating conatact "+editModel.getContact().getFName()+" "+editModel.getContact().getLName());
+			pu.setString(1,tempEdit[0]);
+			pu.setString(2,tempEdit[1]);
+			pu.setString(3,tempEdit[2]);
+			pu.setString(4,editModel.getContact().getId());
+			pu.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}	
 	}
 
 	public void clear()

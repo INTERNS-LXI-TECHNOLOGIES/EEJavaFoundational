@@ -19,9 +19,10 @@ public class EditServlet extends HttpServlet
 
 		System.out.println("sncsjkn edit servlet=="+selectModel.getContact().getId());
 		editModel.setContact(selectModel.getContact());
-		String[] newValue=new String[2];
-		newValue[0]=(String) request.getParameter("name");
-		newValue[1]=(String) request.getParameter("number");
+		String[] newValue=new String[3];
+		newValue[0]=(String) request.getParameter("firstName");
+		newValue[1]=(String) request.getParameter("lastName");
+		newValue[2]=(String) request.getParameter("number");
 		repository.edit(editModel,newValue);
 		response.sendRedirect("showAll");
 	}
