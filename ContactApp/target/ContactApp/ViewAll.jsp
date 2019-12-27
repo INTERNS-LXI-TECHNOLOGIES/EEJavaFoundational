@@ -37,7 +37,7 @@
 <h1><center>CONTACT LIST</center></h1>
 <body style="background-color: white">
 	<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="+" /></a>
-	<a href="Sort.jsp"><input type="submit" id="b2"name="submit" value="SORT" /></a>
+	<a href="Sort.jsp"><input type="submit" name="submit" value="SORT" /></a>
 	<%List<ContactModel> c=(List<ContactModel>) request.getAttribute("allContact");%>
 	<form action= "search" method="get">
 	<table align="center" border="1" width="20%" height="5%" >
