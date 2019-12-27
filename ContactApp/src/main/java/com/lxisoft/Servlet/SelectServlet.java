@@ -23,6 +23,21 @@ public class SelectServlet extends HttpServlet
         		ArrayList<Contact> contacts=repo.getAllContacts();
         		String type=(String)request.getParameter("type");
         		String name=(String)request.getParameter("name");
+        		for(Contact a: contacts)
+	            {
+	               if(a.getFullName().equalsIgnoreCase(name))
+	               {
+	                  	HttpSession session=request.getSession();
+						session.setAttribute("users",a);
+	               }
+
+	            }
+	            switch(type)
+	            {
+	            	case "delete":response.sendRedirect("delete");break;
+	                case "edit":  response.sendRedirect("/edit.jsp");break;
+	                default:
+	            }
         		PrintWriter out=response.getWriter();
         		out.println(name+" "+ type);
         	}catch(Exception e)

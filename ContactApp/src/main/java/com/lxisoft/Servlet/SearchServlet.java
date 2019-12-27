@@ -29,7 +29,7 @@ public class SearchServlet extends HttpServlet
             ArrayList<Contact> dupUsers=new ArrayList<Contact>();
             for(Contact a: contacts)
             {
-               if(a.getName().equalsIgnoreCase(name))
+               if(a.getFullName().equalsIgnoreCase(name))
                {
                   users.add(a);
                }
@@ -45,7 +45,7 @@ public class SearchServlet extends HttpServlet
             {
                 for(Contact a: contacts)
                {
-                  if((a.getName().toLowerCase()).contains(name.toLowerCase()))
+                  if((a.getFullName().toLowerCase()).contains(name.toLowerCase()))
                   {
                      dupUsers.add(a);
                   }
@@ -54,7 +54,7 @@ public class SearchServlet extends HttpServlet
                for(Contact a: dupUsers)
                {
             PrintWriter out = response.getWriter();
-            out.println(a.getName());}
+            out.println(a.getFullName());}
             }
              if(dupUsers.size()!=0) 
                {

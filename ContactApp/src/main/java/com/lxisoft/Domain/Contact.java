@@ -3,12 +3,18 @@ package com.lxisoft.Domain;
 public class Contact implements Comparable<Contact>
 {
 	private int id;
-	private String name;
+	private String firstName;
+	private String lastName;
+	private String fullName;
 	private String phno;
-	public void setName(String name)
+	public void setFirstName(String name)
 	{
-		this.name=name;
+		this.firstName=name;
+	}public void setLastName(String name)
+	{
+		this.lastName=name;
 	}
+
 	public void setNo(String phno)
 	{
 		this.phno=phno;
@@ -17,9 +23,16 @@ public class Contact implements Comparable<Contact>
 	{
 		this.id=id;
 	}
-	public String getName()
+	public String getFirstName()
 	{
-		return name;
+		return firstName;
+	}public String getLastName()
+	{
+		return lastName;
+	}
+	public String getFullName()
+	{
+		return firstName+" "+lastName;
 	}
 	public String getNo()
 	{
@@ -32,17 +45,17 @@ public class Contact implements Comparable<Contact>
 	public boolean equals(Object o)
 	{
 		Contact c=(Contact)o;
-		if(this.name.equals(c.getName()))
+		if(this.fullName.equals(c.getFullName()))
 			return true;
 		else return false;
 	}
 	public int compareTo(Contact c)
 	{
-		return ((this.getName()).compareTo(c.getName()));
+		return ((this.getFullName()).compareTo(c.getFullName()));
 	}
 
 	public String toString() 
 	{
-			return this.name;
+			return this.fullName;
 	}
 }

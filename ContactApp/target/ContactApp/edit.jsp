@@ -12,7 +12,8 @@
 
 
 <form action="edit"><center>
-	<input type="name" name="newName" placeholder="NEW NAME"><br><br>
+	<input type="name" name="newFirstName" placeholder="NEW FIRST NAME"><br><br>
+	<input type="name" name="newLastName" placeholder="NEW LAST NAME"><br><br>
 	<input type="number" name="newNo" placeholder="NEW NUMBER"><br><br>
 	
 	<input type="submit" name="submit"></center>

@@ -6,6 +6,6 @@ public class SortByName implements Comparator<Contact>
 {
 	public int compare(Contact one, Contact two)
 	{
-		return ((one.getName()).compareTo(two.getName()));
+		return ((one.getFullName()).compareTo(two.getFullName()));
 	}
 }

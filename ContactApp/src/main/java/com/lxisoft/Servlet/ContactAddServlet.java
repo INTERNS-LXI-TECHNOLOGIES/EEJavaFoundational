@@ -20,12 +20,13 @@ public class ContactAddServlet extends HttpServlet
              boolean exist=true;
          HttpSession session=request.getSession();
          Contact contact=new Contact();
-   		contact.setName(request.getParameter("name"));
+   		contact.setFirstName(request.getParameter("firstname"));
+         contact.setLastName(request.getParameter("lastname"));
          contact.setNo(request.getParameter("number"));
          ArrayList<Contact> contacts=repo.getAllContacts();
          for(Contact c:contacts)
          {
-            if(c.getName().toLowerCase().equals(contact.getName().toLowerCase()))
+            if(c.getFullName().toLowerCase().equals(contact.getFullName().toLowerCase()))
             {
                exist=false;
          
@@ -34,8 +35,8 @@ public class ContactAddServlet extends HttpServlet
          // session.setAttribute("newcontact",new Contact());
          if(exist==false)
             {
-               String name=contact.getName();
-              request.setAttribute("newcontacts",name);
+               String name=contact.getFullName();
+               request.setAttribute("newcontacts",name);
                request.getRequestDispatcher("addnew.jsp").forward(request, response);
             }
          else

@@ -111,7 +111,7 @@ public class MysqlRepository implements Repository
 			// }
 			else
 			{
-				stmt=con.prepareStatement("create table tab(ID int(4), NAME  varchar(20), NUMBER varchar(50))");
+				stmt=con.prepareStatement("create table tab(ID int(4), FIRSTNAME  varchar(20),LASTNAME varchar(20), NUMBER varchar(50))");
 				stmt.execute();
 				// System.out.println("Table created succesfully");
 			}connection(false);
@@ -130,20 +130,22 @@ public class MysqlRepository implements Repository
 		// System.out.println("erroro"+contact.getName());
 			if (write)
 			{
-				stmt=con.prepareStatement("insert into tab values(?,?,?)");
+				stmt=con.prepareStatement("insert into tab values(?,?,?,?)");
 				stmt.setInt(1,id);
-				stmt.setString(2,contact.getName());
-				stmt.setString(3,contact.getNo());
+				stmt.setString(2,contact.getFirstName());
+				stmt.setString(3,contact.getLastName());
+				stmt.setString(4,contact.getNo());
 				stmt.executeUpdate();
 				// System.out.println(" added");
 				id++;
 			}
 			else
 			{
-				stmt=con.prepareStatement("insert into tab values(?,?,?)");
+				stmt=con.prepareStatement("insert into tab values(?,?,?,?)");
 				stmt.setInt(1,contact.getId());
-				stmt.setString(2,contact.getName());
-				stmt.setString(3,contact.getNo());
+				stmt.setString(2,contact.getFirstName());
+				stmt.setString(3,contact.getLastName());
+				stmt.setString(4,contact.getNo());
 				stmt.executeUpdate();
 				
 				// System.out.println("contact");
@@ -165,7 +167,8 @@ public class MysqlRepository implements Repository
 			{
 				Contact contact=new Contact();
 				contact.setId(rs.getInt("ID"));
-				contact.setName(rs.getString("NAME"));
+				contact.setFirstName(rs.getString("FIRSTNAME"));
+				contact.setLastName(rs.getString("LASTNAME"));
 				contact.setNo(rs.getString("NUMBER"));
 				contacts.add(contact);
 			}
@@ -182,10 +185,11 @@ public class MysqlRepository implements Repository
 	{
 		try
 		{
-			stmt=con.prepareStatement("update tab set name=?,number=? where id=?");
-			stmt.setString(1,contact.getName());
-			stmt.setString(2,contact.getNo());
-			stmt.setInt(3,contact.getId());
+			stmt=con.prepareStatement("update tab set firstname=?, lastname=?, number=? where id=?");
+			stmt.setString(1,contact.getFirstName());
+			stmt.setString(2,contact.getLastName());
+			stmt.setString(3,contact.getNo());
+			stmt.setInt(4,contact.getId());
 			stmt.executeUpdate();
 			// System.out.println("contact added");
 		}catch(Exception p)

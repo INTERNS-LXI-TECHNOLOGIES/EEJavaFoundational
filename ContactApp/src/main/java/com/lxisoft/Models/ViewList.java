@@ -21,7 +21,9 @@ public class ViewList
 	{
 		ViewListModel list=new ViewListModel();
 		list.setId(contact.getId());
-		list.setName(contact.getName());
+		list.setFirstName(contact.getFirstName());
+		list.setLastName(contact.getLastName());
+		list.setFullName(contact.getFullName());
 		viewList.add(list);
 	}
 	/**

@@ -15,7 +15,7 @@
 <table class="table" border="2" align="CENTER" width="20%">
 	<tr><th>ID</th><th>NAME</th><th>NUMBER</th></tr>
 	<tr><td><%=contact.getId() %></td>
-		<td><%=contact.getName() %> </td>
+		<td><%=contact.getFullName() %> </td>
 		<td><%=contact.getNo() %> </td>
 		<td><a href="edit.jsp">edit</td>
 		<td><a href="delete">delete</td>

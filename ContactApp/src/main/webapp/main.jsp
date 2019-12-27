@@ -37,11 +37,9 @@ contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 	<tr>
 		<td><img src="contact.png" width="50" height="50"></td>
 		<td><font color=" grey" size="65"><%out.println(a.getId());%></font></td>
-		<% String useC=a.getName();%>
-		
-		<td><a href="search?user=<%=a.getName()%>"><font color=" green" size="65"><%out.println(a.getName());%></font></td></a>
-		<td><a href="select?type=edit&name=<%=a.getName()%>">edit</a></td>
-		<td><a href="select?name=<%=a.getName()%>&?type=delete">delete</a></td>
+		<td><a href="search?user=<%=a.getFullName()%>"><font color=" green" size="65"><%out.println(a.getFirstName());%></font></td></a>
+		<td><a href="select?type=edit&name=<%=a.getFirstName()%>">edit</a></td>
+		<td><a href="select?name=<%=a.getFullName()%>&type=delete">delete</a></td>
 		
 		
 		

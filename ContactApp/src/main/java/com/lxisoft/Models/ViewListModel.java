@@ -2,7 +2,9 @@ package com.lxisoft.Models;
 public class ViewListModel
 {
 	private int id;
-	private String name;
+	private String firstName;
+	private String lastName;
+	private String fullName;
 
 	public void setId(int id)
 	{
@@ -12,12 +14,28 @@ public class ViewListModel
 	{
 		return id;
 	}
-	public void setName(String name)
+	public void setFirstName(String name)
 	{
-		this.name=name;
+		this.firstName=name;
 	}
-	public String getName()
+	public String getFirstName()
 	{
-		return name;
+		return firstName;
 	}
+	public void setLastName(String name)
+	{
+		this.lastName=name;
+	}
+	public String getLastName()
+	{
+		return lastName;
+	}
+	public void setFullName(String name)
+		{
+			this.fullName=name;
+		}
+		public String getFullName()
+		{
+			return fullName;
+		}
 }
