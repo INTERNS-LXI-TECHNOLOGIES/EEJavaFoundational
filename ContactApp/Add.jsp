@@ -7,7 +7,7 @@
 	<form action="add" method = "get">
   Name   : <input type="text" name="name"><br>
   Number : <input type="text" name="number"><br>
- <a href="add"><input type="submit" value="SAVE"></a>
+ <input type="submit" value="SAVE">
 </form>
 </body>
 </html>

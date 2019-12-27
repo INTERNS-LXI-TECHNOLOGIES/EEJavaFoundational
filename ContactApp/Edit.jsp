@@ -11,8 +11,6 @@
 		<input type="text" name="name" value="<%=((Contact)session.getAttribute("c")).getName()%>"/>
 		<input type="text" name="number" value="<%=((Contact)session.getAttribute("c")).getNumber()%>"/>
 		<input type="submit" value="SAVE">
-		<!-- <form action = "edit" method ="post"> -->
-        
 
         </form>
    
