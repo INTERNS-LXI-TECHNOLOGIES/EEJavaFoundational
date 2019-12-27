@@ -33,9 +33,10 @@ public class Sqlrepository implements Repository
 		try
 		{
 			
-	     	stmnt = con.prepareStatement("insert into contact (name,number)values(?,?)");
-			stmnt.setString(1,contact.getName());
-			stmnt.setString(2,contact.getNumber());
+	     	stmnt = con.prepareStatement("insert into contact (firstname,lastname,number)values(?,?,?)");
+			stmnt.setString(1,contact.getFirstname());
+			stmnt.setString(2,contact.getLastname());
+			stmnt.setString(3,contact.getNumber());
 			stmnt.executeUpdate();
 		
 	    }
@@ -57,7 +58,8 @@ public class Sqlrepository implements Repository
 			{
 				Contact contact = new Contact();
 				contact.setId(rs.getInt("id"));
-				contact.setName(rs.getString("name"));
+				contact.setFirstname(rs.getString("firstname"));
+				contact.setLastname(rs.getString("lastname"));
 				contact.setNumber(rs.getString("number"));
 				contactList.add(contact);
 
@@ -74,10 +76,11 @@ public class Sqlrepository implements Repository
 	{ 
 		try
 		{
-		stmnt = con.prepareStatement("update contact set name=?,number=? where id =?");
-		stmnt.setString(1,contact.name);
-		stmnt.setString(2,contact.number);
-		stmnt.setInt(3,contact.id);
+		stmnt = con.prepareStatement("update contact set firstname=?,lastname=?,number=? where id =?");
+		stmnt.setString(1,contact.firstname);
+		stmnt.setString(2,contact.lastname);
+		stmnt.setString(3,contact.number);
+		stmnt.setInt(4,contact.id);
 		stmnt.executeUpdate();
 		}
 		catch(Exception e)

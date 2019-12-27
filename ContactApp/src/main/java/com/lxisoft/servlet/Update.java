@@ -13,13 +13,14 @@ public class Update extends HttpServlet
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException
 	{
 		Contact contact = new Contact();
-		contact.setName(request.getParameter("name"));
+		contact.setFirstname(request.getParameter("firstname"));
+		contact.setLastname(request.getParameter("lastname"));
 		contact.setNumber(request.getParameter("number"));
 		contact.setId(Integer.parseInt(request.getParameter("id")));
 
 		rep.edit(contact);
 
-		System.out.println("contact saved"+contact.getName());
+		System.out.println("contact saved"+contact.getFirstname());
 		RequestDispatcher rd = request.getRequestDispatcher("/Display");
 		rd.forward(request,response);
 

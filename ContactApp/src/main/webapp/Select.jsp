@@ -22,7 +22,8 @@
 <table align="center" style="border-collapse: collapse;">
 	        <tr>
 				<th style="font-family: fantasy;font size: 10px">ID</th>
-				<th style="font-family: fantasy;font size: 10px">NAME</th>
+				<th style="font-family: fantasy;font size: 10px">FIRST NAME</th>
+				<th style="font-family: fantasy;font size: 10px">LAST NAME</th>
 				<th style="font-family: fantasy;font size: 10px">NUMBER</th>
 			</tr>
 
@@ -30,11 +31,13 @@
     String temp =request.getParameter("temp");
     String temp1 =request.getParameter("temp1");
     String temp2 =request.getParameter("temp2");
+    String temp3 =request.getParameter("temp3");
     %>
 	<tr>
 		<td><% out.println(temp);%></td>
 		<td><% out.println(temp1);%></td>
 		<td><% out.println(temp2);%></td>
+		<td><% out.println(temp3);%></td>
 	</tr>		
 </table>
 <center>

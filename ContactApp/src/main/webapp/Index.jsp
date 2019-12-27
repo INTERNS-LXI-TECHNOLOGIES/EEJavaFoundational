@@ -7,7 +7,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<h1 align="center">CONTACT APP</h1>
+	
+	<h1 align="center"> *****CONTACT APP*****</h1>
 	<title></title>
 		<style> 
 
@@ -21,10 +22,8 @@
 	
 
 	</center>
-	
-	
 	</font>
 </b>
-</div>
+</div>	
 </body>
 </html>

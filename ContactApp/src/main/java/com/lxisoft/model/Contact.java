@@ -5,16 +5,24 @@ import com.lxisoft.servlet.*;
 
 public class Contact //implements Comparable <Contact>
 {
-	public String name,number;
+	public String firstname,number,lastname;
 	public int id;
 
-	public void setName(String name)
+	public void setFirstname(String firstname)
 	{
-		this.name= name;
+		this.firstname= firstname;
 	}      
-	public String getName()
+	public String getFirstname()
 	{
-		return this.name;
+		return this.firstname;
+	}
+	public void setLastname(String lastname)
+	{
+		this.lastname= lastname;
+	}      
+	public String getLastname()
+	{
+		return this.lastname;
 	}
 	public void setNumber(String number)
 	{

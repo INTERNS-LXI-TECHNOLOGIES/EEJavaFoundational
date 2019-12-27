@@ -31,7 +31,12 @@
 			<b>
 			<tr style=" font-style:oblique;  ">
 			<td>
-				<a href="Select.jsp?temp=<%=i.getId()%>&temp1=<%=i.getName()%>&temp2=<%=i.getNumber()%>"><input type="button" name="submit" value="<%=i.getName() %>"></a>
+				<a href="Select.jsp?temp=<%=i.getId()%>
+					&temp1=<%=i.getFirstname()%>
+					&temp2=<%=i.getLastname()%>
+					&temp3=<%=i.getNumber()%>">
+					<input type="button" name="submit" value="<%=i.getFirstname()%>&nbsp;<%=i.getLastname()%>">
+				</a>
 			</td>
 			
 			</tr>
