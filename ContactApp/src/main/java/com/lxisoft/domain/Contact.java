@@ -10,75 +10,42 @@ public class Contact
 	private String fName;
 	private String lName;
 	private String contactNo;
- /**
- * set contact id
- */
-  /**
- * @param id contact id
- */
+ 
 	public void setId(String id)
 	{
 		this.id=id;
 	}
-	 /**
- * get contct id
- */
-	  /**
- * @return contact id
- */
 	public String getId()
 	{
 		return id;
 	}
-	 /**
- *set contact name 
- `	  /**
- * @param name contact name
- */
+	
+
 	public void setFName(String fName)
 	{
 		this.fName=fName;
 	}
-	 /**
- * get contact name
- */
-	  /**
- * @return contact name
- */
 	public String getFName()
 	{
 		return fName;
 	}
-	public void setLName(String name)
+
+
+	public void setLName(String lName)
 	{
 		this.lName=lName;
 	}
-	 /**
- * get contact name
- */
-	  /**
- * @return contact name
- */
 	public String getLName()
 	{
 		return lName;
 	}
-	 /**
- * set contact number
- */
-	  /**
- * @param contactNo contact number
- */
+
+
 	public void setContactNo(String contactNo)
 	{
 		this.contactNo=contactNo;
 	}
-	 /**
- * get contact number
- */
-	  /**
- * @return contact number
- */
+	
 	public String getContactNo()
 	{
 		return contactNo;
