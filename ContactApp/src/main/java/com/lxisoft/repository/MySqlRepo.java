@@ -196,12 +196,12 @@ public class MySqlRepo implements Repository
 			rs = stmt.executeQuery("select * from Contactlist");
 			while(rs.next()) 
 			{ 
-				// String fullname=SELECT CONCAT('rs.getString("FIRSTNAME ")','rs.getString("LASTNAME ")');
+				// String fullname=stmt.executeQuery("SELECT CONCAT('rs.getString("FIRSTNAME ")','rs.getString("LASTNAME ")')");
 				Contact	contact=new Contact();
 				contact.setId(rs.getInt("ID"));
-				// contact.setFullName(SELECT CONCAT('rs.getString("FIRSTNAME ")','rs.getString("LASTNAME ")')
-				contact.setFirstName(rs.getString("FIRSTNAME "));
-				contact.setLastName(rs.getString("LASTNAME "));
+				// contact.setFullName(fullname);
+				contact.setFirstName(rs.getString("FIRSTNAME"));
+				contact.setLastName(rs.getString("LASTNAME"));
 				contact.setNo(rs.getString("NUMBER"));
 				contacts.add(contact);
 			}	

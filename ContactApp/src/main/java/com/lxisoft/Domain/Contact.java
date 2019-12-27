@@ -11,7 +11,7 @@ public class Contact implements Comparable<Contact>
 	private int id;
 	private String firstName;
 	private String lastName;
-	private String fullName=firstName+" "+lastName;
+	private String fullName;
 	private String phno;
 	/**
 	 * set id in contacts
@@ -36,14 +36,6 @@ public class Contact implements Comparable<Contact>
 	public void setLastName(String lastName)
 	{ 
 		this.lastName=lastName;
-	}
-	/**
-	 * set last name in contacts
-	 * @param fullname contactname
-	 */
-	public void setFullName(String fullName)
-	{ 
-		this.fullName=fullName;
 	}
 	/**
 	 * set number in contacts
@@ -84,7 +76,7 @@ public class Contact implements Comparable<Contact>
 	 */
 	public String getFullName()
 	{
-		return this.fullName;
+		return this.firstName+ " " +this.lastName;
 	}
 	/**
 	 * get number in contacts

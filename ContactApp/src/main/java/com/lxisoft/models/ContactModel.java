@@ -9,7 +9,7 @@ public class ContactModel
 	 */
 	private String firstName;
 	private String lastName;
-	private String fullName=firstName+" "+lastName;
+	private String fullName;
 	private int id;
 	/**
 	 * setid of contact
@@ -30,14 +30,6 @@ public class ContactModel
 	public void setLastName(String lastName)
 	{ 
 		this.lastName=lastName;
-	}
-	/**
-	 * set last name in contacts
-	 * @param fullname contactname
-	 */
-	public void setFullName(String fullName)
-	{ 
-		this.fullName=fullName;
 	}
 		/**
 	 * get firstname in contacts
@@ -61,7 +53,7 @@ public class ContactModel
 	 */
 	public String getFullName()
 	{
-		return this.fullName;
+		return this.firstName+ " " +this.lastName;
 	}
 	/**
 	 * getid of contact

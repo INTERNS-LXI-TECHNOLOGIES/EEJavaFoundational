@@ -54,7 +54,8 @@ public class SearchServlet extends HttpServlet
 			                {
 			                  ContactModel contactmodel=new ContactModel();
 			                  contactmodel.setId(currentList.get(i).getId());
-			                  contactmodel.setFullName(currentList.get(i).getFullName());
+			                  contactmodel.setFirstName(currentList.get(i).getFirstName());
+			                  contactmodel.setLastName(currentList.get(i).getLastName());
 			                  contactlistmodel.setAllContacts(contactmodel);
 							// out.println(contactmodel.getName());
 							// out.println(contactmodel.getId());

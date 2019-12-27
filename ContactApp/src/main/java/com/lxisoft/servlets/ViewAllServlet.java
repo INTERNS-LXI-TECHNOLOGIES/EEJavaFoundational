@@ -24,7 +24,7 @@ public class ViewAllServlet extends HttpServlet
                 contactmodel.setId(contactList.get(i).getId());
                 contactmodel.setFirstName(contactList.get(i).getFirstName());
                 contactmodel.setLastName(contactList.get(i).getLastName());
-                contactmodel.setFullName(contactList.get(i).getFullName());
+                // contactmodel.setFullName(contactList.get(i).getFullName());
                 contactlistmodel.setAllContacts(contactmodel);
               }
             }

@@ -10,7 +10,7 @@
 			<center>
 				 <h3> CONTACT APPLICATION </h3>
 			</center>
-			<a href="ContactAdd.jsp'" ><img src="images/add.png" height="40px"; width="40px";></a></center>
+			<a href="ContactAdd.jsp" ><img src="images/add.png" height="40px"; width="40px";></a></center>
 			<!-- <button  class ="butt" align="left" type="button" onClick="window.location.href = 'ContactAdd.jsp';">+</button> -->
 			<form action="select" method="GET"><center>
 			<input type="text" name="user" placeholder= "Enter Name">
