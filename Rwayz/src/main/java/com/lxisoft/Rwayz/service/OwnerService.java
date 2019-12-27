@@ -18,7 +18,6 @@ public class OwnerService {
 	}
 
 	public Owner findById(Long id) {
-		// TODO Auto-generated method stub
 		return oRepository.findById(id).get();
 	}
 	

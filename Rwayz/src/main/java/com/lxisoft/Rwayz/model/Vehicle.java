@@ -4,9 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Vehicle {
@@ -17,8 +15,8 @@ public class Vehicle {
 		private Double mileage;
 		private Integer seats;
 		private Double price;
-		
-		@OneToOne
+		private String type;	
+/*		@OneToOne
 		private Owner owner;
 		
 		public Owner getOwner() {
@@ -26,14 +24,13 @@ public class Vehicle {
 		}
 		public void setOwner(Owner owner) {
 			this.owner = owner;
-		}
+		}*/
 		public String getType() {
 			return type;
 		}
 		public void setType(String type) {
 			this.type = type;
 		}
-		private String type;
 		public Double getPrice() {
 			return price;
 		}
