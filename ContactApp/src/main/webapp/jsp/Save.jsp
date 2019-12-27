@@ -43,8 +43,9 @@
 	</div>
 
 	<div >
-		<form action="..\addContact" method="post">
-			Name:<input type="type" name="name" placeholder="enter name to save"><br><br>
+		<form action="<%=request.getContextPath()%>/addContact" method="post">
+			First Name:<input type="type" name="firstName" placeholder="enter first name to save"><br><br>
+			Last Name:<input type="type" name="lastName" placeholder="enter last name to save"><br><br>
 			Number:<input type="type" name="number" placeholder="enter name to save"><br><br>
 			<button id="b1" type="submit" >save</button><br><br>		
 		</form>

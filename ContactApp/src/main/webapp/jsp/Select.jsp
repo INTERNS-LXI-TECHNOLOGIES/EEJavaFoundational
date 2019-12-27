@@ -52,7 +52,8 @@
 	</div>
 	<div align="center">
 		<h1>Id: <%=selectModel.getContact().getId()%></h1>
-		<h1>Name: <%=selectModel.getContact().getName()%></h1>
+		<h1>Firt Name: <%=selectModel.getContact().getFName()%></h1>
+		<h1>Last Name: <%=selectModel.getContact().getLName()%></h1>
 		<h1>Number: <%=selectModel.getContact().getNumber()%></h1> 
 	</div>
 	<%

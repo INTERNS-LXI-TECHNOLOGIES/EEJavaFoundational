@@ -3,7 +3,6 @@ com\lxisoft\controller\DeleteServlet.class
 com\lxisoft\controller\SaveServlet.class
 com\lxisoft\repository\Repository.class
 com\lxisoft\model\ViewByNameModel.class
-com\lxisoft\repository\FileRepository.class
 com\lxisoft\domain\Contact.class
 com\lxisoft\model\DeleteModel.class
 com\lxisoft\model\ViewByIdModel.class

@@ -14,7 +14,8 @@ public class SaveServlet extends HttpServlet
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
 		Contact contact=new Contact();
-		contact.setName(request.getParameter("name"));
+		contact.setFName(request.getParameter("firstName"));
+		contact.setLName(request.getParameter("lastName"));
 		contact.setNumber(request.getParameter("number"));
 		repository.save(contact);
 		response.sendRedirect("showAll");

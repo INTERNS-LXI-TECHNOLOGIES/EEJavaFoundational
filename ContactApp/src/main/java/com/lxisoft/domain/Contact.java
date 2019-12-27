@@ -49,6 +49,7 @@ public class Contact implements Comparable<Contact>
 
 	public int compareTo(Contact contact)
 	{
-		return this.name.compareTo(contact.getName());
+		String temp=contact.getFName()+" "+contact.getLName();
+		return (this.getFName()+" "+this.getLName()).compareTo(temp);
 	}
 }
