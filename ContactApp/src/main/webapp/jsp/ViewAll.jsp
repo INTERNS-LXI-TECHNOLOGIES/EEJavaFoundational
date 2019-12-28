@@ -37,20 +37,20 @@
 	</div>
 
 	<select id="b3" name="sample" onchange="javascript:handleSelect(this)">
-		<option value="nothing" selected="selected">options</option>
-		 <option value="index">Home</option>
-		 <option value="Save">About</option>
+		<option value="" selected="selected">options</option>
+		 <option value="sort?sortType=f">Firstname sort</option>
+		 <option value="sort?sortType=l">Lastname sort</option>
 		 <option value="https://support.microsoft.com/en-us/help/12445/windows-keyboard-shortcuts/">Contact</option>
 	</select>
 
 	<form action="search" style="text-align-last: center; padding:4px" method="get">
-		<input type="type" name="searchName" placeholder="enter name to search">
+		<input type="text" name="searchName" placeholder="enter name to search">
 		<button type="submit" >search</button>
 	</form>
 	 
 	<script type="text/javascript">
 	function handleSelect(elm){
-		window.location = elm.value+".jsp";
+		window.location = elm.value;
 	}
 	</script>
 	

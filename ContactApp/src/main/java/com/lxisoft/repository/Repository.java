@@ -10,5 +10,6 @@ public interface Repository
 	public void edit(EditModel editModel,String[] tempEdit);
 	public void delete(Contact contact);
 	public ArrayList<Contact> search(String searchName);
+	public ArrayList<Contact> sort(String type);
 	public void clear();
 }

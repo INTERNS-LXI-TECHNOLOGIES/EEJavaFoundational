@@ -161,4 +161,41 @@ public class DbRepository implements Repository
 		}	
 		return searchList;
 	}
+
+	public ArrayList<Contact> sort(String type)
+	{
+		ArrayList<Contact> sortList=new ArrayList<Contact>();
+		try
+		{
+			Statement s=connection.createStatement();
+			Set<Contact> contactsSet=new TreeSet<Contact>();
+			String nameType=null;
+			if(type.equals("f"))
+			{
+				nameType="FIRST_NAME";
+				System.out.println("fst"+nameType);
+			}
+			else if(type.equals("l"))
+			{
+				nameType="LAST_NAME";
+				System.out.println("lst"+nameType);
+			}
+			ResultSet rs=s.executeQuery("SELECT * FROM contactList ORDER BY "+nameType);
+			while(rs.next())
+			{
+				Contact contact=new Contact();
+				contact.setId(rs.getString("ID"));
+				contact.setFName(rs.getString("FIRST_NAME"));
+				contact.setLName(rs.getString("LAST_NAME"));
+				contact.setNumber(rs.getString("NUMBER"));
+				contactsSet.add(contact);
+			}
+			sortList.addAll(contactsSet);
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}	
+		return sortList;
+	}
 }

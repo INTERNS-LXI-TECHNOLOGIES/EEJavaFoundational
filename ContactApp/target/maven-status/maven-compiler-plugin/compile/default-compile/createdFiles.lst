@@ -6,6 +6,7 @@ com\lxisoft\model\ViewByNameModel.class
 com\lxisoft\domain\Contact.class
 com\lxisoft\model\DeleteModel.class
 com\lxisoft\model\ViewByIdModel.class
+com\lxisoft\controller\SortServlet.class
 com\lxisoft\model\SelectModel.class
 com\lxisoft\repository\DbRepository.class
 com\lxisoft\model\ViewAllModel.class
