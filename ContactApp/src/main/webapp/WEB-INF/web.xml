@@ -42,5 +42,14 @@
         <servlet-name>delete</servlet-name>
         <url-pattern>/Delete</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>search</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Search</servlet-class>
+    </servlet>
     
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+
     </web-app>

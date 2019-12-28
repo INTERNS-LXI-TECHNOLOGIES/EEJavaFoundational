@@ -3,8 +3,8 @@
 <head>
 	<style>
 		table th,td 
-	{	width: 2px;
-		border: 2px solid black;
+	{	width: 60px;
+		border: 1px solid black;
 
 	}
 	</style>
@@ -13,7 +13,7 @@
 	</title>
 </head>
 
-<body style="background: lightgreen">
+<body style="background: lightblue">
 <%@page import = "com.lxisoft.servet.*"%>
 <%@page import = "com.lxisoft.repository.*"%>
 <%@page import = "com.lxisoft.sqlrepository.*"%>
@@ -21,10 +21,10 @@
 <br><br>
 <table align="center" style="border-collapse: collapse;">
 	        <tr>
-				<th style="font-family: fantasy;font size: 10px">ID</th>
-				<th style="font-family: fantasy;font size: 10px">FIRST NAME</th>
-				<th style="font-family: fantasy;font size: 10px">LAST NAME</th>
-				<th style="font-family: fantasy;font size: 10px">NUMBER</th>
+				<th style="font-family: fantasy;font size: 5px">ID</th>
+				<th style="font-family: fantasy;font size: 5px">FIRSTNAME</th>
+				<th style="font-family: fantasy;font size: 5px">LASTNAME</th>
+				<th style="font-family: fantasy;font size: 5px">NUMBER</th>
 			</tr>
 
   <%
