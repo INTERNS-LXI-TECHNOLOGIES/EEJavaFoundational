@@ -70,10 +70,16 @@ public class SearchServlet extends HttpServlet
                   request.setAttribute("search",true);
                   request.getRequestDispatcher("main.jsp").forward(request, response);
                }
-                }catch(Exception e)
+               else
+               {
+                  session.setAttribute("contacts",new ArrayList<ViewListModel>());
+                  request.getRequestDispatcher("main.jsp").forward(request, response);
+               }
+            }catch(Exception e)
          {
             System.out.println("exception "+e);
          }
+
       	// out.println("<h1>" + request.getParameter("name")+ "</h1>");
 	}
 }

@@ -15,15 +15,24 @@
 	<button name="search" type="submit">search</button></form>
 
 </center>
-<button  onclick="window.location.href='deleteAll';" >delete All Contact</button> <br>
-
-<% ArrayList<ViewListModel>contacts=null;
+<center><button  onclick="window.location.href='deleteAll';" >delete All Contact</button> <br>
+<form action="sort">
+	<select name="sort">
+		<option value="first">first name</option>
+		<option value="last">last name</option>
+		<option value="id">id</option>
+		
+	</select>
+	<input type="submit" value="sort">
+</form>
+<button onclick="window.location.href='viewall';">refresh</button></center>
+<% ArrayList<ViewListModel>contacts=new ArrayList<ViewListModel>();
 contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 
-<% 	if(contacts.size()==0){ %>
+<% 	if(contacts.size()==0  ){ %>
 <%	 out.println("<b><h1><CENTER>"+"no contact to show"+"</CENTER></h1></b>"); %> 
 
-<% } %>
+<% } else{%>
 
 <br>
 	<!-- <img src="dead.jpg" width="50" height="50"> -->
@@ -48,6 +57,7 @@ contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 	<%}%>
 </table></div>
 
+	<%}%>
 
 
 </body>

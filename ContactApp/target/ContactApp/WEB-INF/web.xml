@@ -75,4 +75,14 @@
       <url-pattern>/select</url-pattern>
  </servlet-mapping>
 
+<servlet>
+      <servlet-name>sort</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.SortServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>sort</servlet-name>
+      <url-pattern>/sort</url-pattern>
+ </servlet-mapping>
+
 </web-app>

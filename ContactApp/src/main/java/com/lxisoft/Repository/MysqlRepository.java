@@ -244,14 +244,23 @@ public class MysqlRepository implements Repository
 			System.out.println(p);
 		}
 	}
-	public void sortByName()throws SQLException, ClassNotFoundException
+	public void sortByFirstName()throws SQLException, ClassNotFoundException
   	{
   		try
 		{
-			contacts=getAllContacts();
-		Collections.sort(contacts, new SortByName());
-		clearAllContacts();
-		resetDataBase();
+			contacts.clear();
+			rs=stmt.executeQuery("select * from tab order by firstname");
+			while(rs.next())
+			{
+				Contact contact=new Contact();
+				contact.setId(rs.getInt("ID"));
+				contact.setFirstName(rs.getString("FIRSTNAME"));
+				contact.setLastName(rs.getString("LASTNAME"));
+				contact.setNo(rs.getString("NUMBER"));
+				contacts.add(contact);
+			}
+			clearAllContacts();
+			resetDataBase();
 		}catch(Exception e)
 		// System.out.println("     "+a.getName());			
 		{
@@ -260,15 +269,49 @@ public class MysqlRepository implements Repository
 
 
   	}
+  	public void sortByLastName()throws SQLException, ClassNotFoundException
+  	{
+  		try
+		{
+			contacts.clear();
+			rs=stmt.executeQuery("select * from tab order by lastname");
+			while(rs.next())
+			{
+				Contact contact=new Contact();
+				contact.setId(rs.getInt("ID"));
+				contact.setFirstName(rs.getString("FIRSTNAME"));
+				contact.setLastName(rs.getString("LASTNAME"));
+				contact.setNo(rs.getString("NUMBER"));
+				contacts.add(contact);
+			}
+			clearAllContacts();
+			resetDataBase();	
+		}catch(Exception e)
+		// System.out.println("     "+a.getName());			
+		{
+
+		}
+
+
+  	}
+  	
   	public void sortById()throws SQLException, ClassNotFoundException
   	{
   		try
 		{
-			contacts=getAllContacts();
-		Collections.sort(contacts, new SortById());
-		
-		clearAllContacts();
-		resetDataBase();
+			contacts.clear();
+			rs=stmt.executeQuery("select * from tab order by id");
+			while(rs.next())
+			{
+				Contact contact=new Contact();
+				contact.setId(rs.getInt("ID"));
+				contact.setFirstName(rs.getString("FIRSTNAME"));
+				contact.setLastName(rs.getString("LASTNAME"));
+				contact.setNo(rs.getString("NUMBER"));
+				contacts.add(contact);
+			}
+			clearAllContacts();
+			resetDataBase();
 		}catch(Exception e)
 		{
 
@@ -280,10 +323,19 @@ public class MysqlRepository implements Repository
   	{
   		try
 		{
-			contacts=getAllContacts();
-		Collections.sort(contacts, new SortByNumber());
-		clearAllContacts();
-		resetDataBase();
+			contacts.clear();
+			rs=stmt.executeQuery("select * from tab order by number");
+			while(rs.next())
+			{
+				Contact contact=new Contact();
+				contact.setId(rs.getInt("ID"));
+				contact.setFirstName(rs.getString("FIRSTNAME"));
+				contact.setLastName(rs.getString("LASTNAME"));
+				contact.setNo(rs.getString("NUMBER"));
+				contacts.add(contact);
+			}
+			clearAllContacts();
+			resetDataBase();
 		}catch(Exception e)
 		{
 

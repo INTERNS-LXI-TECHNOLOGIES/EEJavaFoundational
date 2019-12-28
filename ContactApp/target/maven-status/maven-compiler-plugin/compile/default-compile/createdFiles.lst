@@ -1,5 +1,6 @@
 com\lxisoft\Repository\Repository.class
 com\lxisoft\Models\SortByNumber.class
+com\lxisoft\Servlet\SortServlet.class
 com\lxisoft\Servlet\DeleteServlet.class
 com\lxisoft\Models\ViewList.class
 com\lxisoft\Repository\MysqlRepository.class
