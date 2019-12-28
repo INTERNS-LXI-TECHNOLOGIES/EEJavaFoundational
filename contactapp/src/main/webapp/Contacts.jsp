@@ -1,32 +1,26 @@
-<!-- <html>
-<head>
-</head>
-<body>
-	<a href="view">click</a>
-	<% out.println(request.getAttribute("data"));%>
-</body>
-</html> -->
 <!DOCTYPE html> 
 <html> 
   <head>  
   <title>Contacts</title> 
   </head> 
   <body> 
-  	<%@page import="java.util.*,com.lxisoft.contactapp.model.*"%>
+    <%@page import="java.util.*,com.lxisoft.contactapp.model.*"%>
 
-  		<a href="view">click</a>
+    <div class="container-fluid">
+  <!-- Content here -->
+    </div>
 
-<!-- <a href="Create.jsp" class="float">
-<div class="label-container">
-<div class="label-text">Create new</div>
-<i class="fa fa-plus my-float"></i>
-</a> -->
+        <br><a href="view">all</a></br>
+
+       <form action="Create.jsp">
+      <button>Create</button>
+      </form>
 
 
-
-         <!--  <br><a href="Create.jsp">create</a> </br> -->
-      <a href="Create.jsp" class="btn-floating btn-lg btn-default"><i class="fas fa-bolt"></i></a>
-          <br><a href="search.jsp">search</a></br>
+       
+       <form action="search.jsp">
+        <button>Search</button>
+      </form>
 
 
       <h1>All contacts</h1> 
@@ -38,16 +32,19 @@
          </tr> 
  
         <%Contact contact=new Contact();%>
-        <%ArrayList<Contact> colist = (ArrayList<Contact>)request.getAttribute("data");%>
-        <%for(Contact c:colist){%> 
+        <%ArrayList<Contact> colist = (ArrayList<Contact>)session.getAttribute("data");%>
+        <%if(colist!=null){%>
+            <%for(Contact c:colist){%> 
  
-            <tr> 
-                <td><%=c.getId()%></td> 
-                <td><%=c.getName()%></td> 
-                <td><%=c.getNumber()%></td> 
-            </tr> 
-            <%}%> 
-        </table>  
-        <hr/> 
+                      <tr> 
+                      <td><%=c.getId()%></td> 
+                      <td><%=c.getName()%></td> 
+                      <td><%=c.getNumber()%></td> 
+                      </tr> 
+                 <%}%> 
+             <%}%>
+        </table> 
+
+        
     </body> 
 </html> 

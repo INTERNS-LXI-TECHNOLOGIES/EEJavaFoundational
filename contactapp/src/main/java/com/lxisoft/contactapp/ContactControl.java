@@ -9,13 +9,15 @@ public class ContactControl extends HttpServlet{
 	Repository repo=new DbRepository();
 	Contact contact=new Contact();
 	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException{
-		PrintWriter out=res.getWriter();
+		System.out.println("hai");
+	HttpSession session=req.getSession();
 		List<Contact> conlist=new ArrayList<Contact>();
 		conlist=repo.getAll();
-		out.println(conlist);
-		req.setAttribute("data",conlist);
-		 RequestDispatcher rd = req.getRequestDispatcher("Contacts.jsp"); 
-		 rd.forward(req,res);
+		System.out.println(conlist);
+		session.setAttribute("data",conlist);
+		 res.sendRedirect("Contacts.jsp"); 
+		
 
 		}
 }
+
