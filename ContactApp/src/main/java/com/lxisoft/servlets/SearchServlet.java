@@ -57,10 +57,9 @@ public class SearchServlet extends HttpServlet
 			                  contactmodel.setFirstName(currentList.get(i).getFirstName());
 			                  contactmodel.setLastName(currentList.get(i).getLastName());
 			                  contactlistmodel.setAllContacts(contactmodel);
-							// out.println(contactmodel.getName());
-							// out.println(contactmodel.getId());
 			                }
 			            }
+			           
 		            ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
 		           	session.setAttribute("contactmodel",contacts); 
 		           	response.sendRedirect("ContactView.jsp");

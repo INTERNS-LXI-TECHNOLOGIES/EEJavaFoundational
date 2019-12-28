@@ -1,7 +1,6 @@
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\DeleteServlet.java
-E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\SortByName.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\EditServlet.java
-E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\SortById.java
+E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\SortServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\SearchServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\ViewAllServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\ContactsListModel.java
@@ -11,5 +10,4 @@ E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\repository\Reposi
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\AddServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\DeleteAllServlet.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\ContactModel.java
-E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\SortByNumber.java
 E:\jsp\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\repository\MySqlRepo.java

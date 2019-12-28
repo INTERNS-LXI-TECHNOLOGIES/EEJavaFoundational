@@ -28,6 +28,10 @@
       <servlet-name>CSelect2</servlet-name>
       <servlet-class>com.lxisoft.servlets.SelectServlet</servlet-class>
 </servlet>
+<servlet>
+      <servlet-name>CSort</servlet-name>
+      <servlet-class>com.lxisoft.servlets.SortServlet</servlet-class>
+</servlet>
 
 <servlet-mapping>
 		<servlet-name>CView</servlet-name>
@@ -56,6 +60,10 @@
 <servlet-mapping>
 		<servlet-name>CSelect2</servlet-name>
 		<url-pattern>/selectContact</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+		<servlet-name>CSort</servlet-name>
+		<url-pattern>/sort</url-pattern>
 </servlet-mapping>
 
 </web-app>

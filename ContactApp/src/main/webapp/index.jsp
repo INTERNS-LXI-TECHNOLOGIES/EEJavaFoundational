@@ -9,7 +9,6 @@
 					<center><a href="View" ><img src="images/contacts.png" height="150px"; width="140px";></a></center>
 				
 			
-			<!-- <iframe src="..\View" align="middle" width="500" height="500" scrolling="auto" frameborder="0">
-			</iframe> -->
+			
 		</body>
 </html>

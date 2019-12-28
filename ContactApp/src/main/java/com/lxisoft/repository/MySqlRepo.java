@@ -196,10 +196,8 @@ public class MySqlRepo implements Repository
 			rs = stmt.executeQuery("select * from Contactlist");
 			while(rs.next()) 
 			{ 
-				// String fullname=stmt.executeQuery("SELECT CONCAT('rs.getString("FIRSTNAME ")','rs.getString("LASTNAME ")')");
 				Contact	contact=new Contact();
 				contact.setId(rs.getInt("ID"));
-				// contact.setFullName(fullname);
 				contact.setFirstName(rs.getString("FIRSTNAME"));
 				contact.setLastName(rs.getString("LASTNAME"));
 				contact.setNo(rs.getString("NUMBER"));
@@ -251,12 +249,22 @@ public class MySqlRepo implements Repository
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<Contact> sortContactByName()throws SQLException
+	public void sortContactByFirstName()throws SQLException
 	{
 		try
 		{
-			contacts=getAllContacts();
-			Collections.sort(contacts,new SortByName());
+			contacts.clear();
+			stmt=con.prepareStatement("use contacts");
+			rs=stmt.executeQuery("select * from Contactlist ORDER BY FIRSTNAME");
+			while(rs.next()) 
+			{ 
+				Contact	contact=new Contact();
+				contact.setId(rs.getInt("ID"));
+				contact.setFirstName(rs.getString("FIRSTNAME"));
+				contact.setLastName(rs.getString("LASTNAME"));
+				contact.setNo(rs.getString("NUMBER"));
+				contacts.add(contact);
+			}
 			clearRepository();
 			for(Contact contact : contacts)
 			{
@@ -267,44 +275,33 @@ public class MySqlRepo implements Repository
 		{
 			e.printStackTrace();
 		}
-		return contacts;
 	}
-
-	public ArrayList<Contact> sortContactByNumber()throws SQLException
+		public void sortContactByLastName()throws SQLException
 	{
 		try
 		{
-			contacts=getAllContacts();
-			Collections.sort(contacts,new SortByNumber());
+			contacts.clear();
+			stmt=con.prepareStatement("use contacts");
+			rs=stmt.executeQuery("select * from Contactlist ORDER BY LASTNAME");
+			while(rs.next()) 
+			{ 
+				Contact	contact=new Contact();
+				contact.setId(rs.getInt("ID"));
+				contact.setFirstName(rs.getString("FIRSTNAME"));
+				contact.setLastName(rs.getString("LASTNAME"));
+				contact.setNo(rs.getString("NUMBER"));
+				contacts.add(contact);
+			}
 			clearRepository();
-	 		for(Contact contact : contacts)
+			for(Contact contact : contacts)
 			{
 				boolean val=true;
 				insertContactDetails(contact,val);
 			}
 		}catch(SQLException e)
 		{
-			System.out.println(e);
-		}		
-		return contacts;
-	}
-	public ArrayList<Contact> sortContactById()throws SQLException
-	{
-		try
-		{
-			contacts=getAllContacts();
-			Collections.sort(contacts,new SortById());
-			clearRepository();
-	 		for(Contact contact : contacts)
-			{
-				boolean val=true;
-				insertContactDetails(contact,val);
-			}	
-		}catch(SQLException e)
-		{
 			e.printStackTrace();
 		}
-		return contacts;
 	}
 	public void addContactDetails(Contact contact)throws SQLException
 	{

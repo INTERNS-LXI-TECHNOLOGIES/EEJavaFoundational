@@ -15,17 +15,25 @@
 			<form action="select" method="GET"><center>
 			<input type="text" name="user" placeholder= "Enter Name">
 			<button> search here </button></center></form>
+			<form action="sort" method="GET"><center>
+			<select name="sortvalue">
+  				<option value="firstname">FirstName</option>
+  				<option value="lastname">LastName</option>
+  			</select>
+  			<input type="submit" value="sort"> 
+  			</center></form>
 			<center> <button  type="button" onClick="window.location.href = 'DeleteAll';">DeleteAllContacts</button></center>
 			<%
 			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");%>
 				<% out.println(contactList.size());%>
 				<% if(contactList.size()==0)
 				{%>
-					<script>
+					 <script>
 						msg()
 						function msg(){
-						alert(" contact list empty..");
-						window.location="ContactAdd.jsp"}
+						alert(" No contacts to show");
+						// window.location="ContactAdd.jsp"
+						}
 					</script>
 				<%} %>
 				<table id="tab" align="center" border="10px" width="30%">
@@ -34,7 +42,6 @@
 				{ 
 					%>
 					<tr>
-				
 					<td>
 						<!-- <img src="images/person.png" height="50px";width="50px";> -->
 					<button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getFullName()%>';"><%=contactmodel.getFullName()%>
@@ -49,6 +56,7 @@
 
 				<%
 			} %>
-		</table>
+		</table></br>
+		<center><button type="button" onClick="window.location.href='View'">Refresh</button></center>
 		</body>
 </html>

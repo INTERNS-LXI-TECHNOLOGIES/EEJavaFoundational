@@ -19,8 +19,7 @@ public interface Repository
 	public void updateRepo(int i,Contact contact)throws SQLException;
 	public void deleteContact(int i)throws SQLException;
 	public void clearRepository()throws SQLException;
-	public ArrayList<Contact> sortContactByName()throws SQLException;
-	public ArrayList<Contact> sortContactByNumber()throws SQLException;
-	public ArrayList<Contact> sortContactById()throws SQLException;
+	public void sortContactByFirstName()throws SQLException;
+	public void sortContactByLastName()throws SQLException;
 	
 }
