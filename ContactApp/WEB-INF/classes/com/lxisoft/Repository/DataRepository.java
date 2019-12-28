@@ -77,14 +77,14 @@ public class DataRepository
    }
    
    // 
-   public void delete(String name)
+   public void delete(String id)
    {
     try
     {
         Class.forName("com.mysql.jdbc.Driver");  
         Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
         Statement stmt=con.createStatement();
-        stmt.executeUpdate("delete from contactlist where name = '"+name+"'");
+        stmt.executeUpdate("delete from contactlist where id = '"+id+"'");
         con.close();
        
     }catch(Exception e){}

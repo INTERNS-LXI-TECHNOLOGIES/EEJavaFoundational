@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 
 public class update extends HttpServlet
 {
-	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		String id = request.getParameter("id");
@@ -17,5 +17,7 @@ public class update extends HttpServlet
 		String number = request.getParameter("number");
 		DataRepository drr = new DataRepository();
 		drr.edit(id,name,number);
+		RequestDispatcher rs=request.getRequestDispatcher("start");
+		rs.forward(request,response);
     }
 }

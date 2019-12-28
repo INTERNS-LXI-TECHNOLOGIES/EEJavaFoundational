@@ -47,7 +47,7 @@ for(int i=0;i<c.size();i++)
 		  <td><%=(c.get(i).getNumber())%> </td>
 		  <%
 		  	String urledit = "EditServlet?id=" + c.get(i).getId();
-		    String urldel = "DeleteContacts?id" + c.get(i).getId();
+		    String urldel = "Delete?id=" + c.get(i).getId();
 		  %>
 		  <td><a href="<%=urledit%>"><h4>EDIT</h4></a>
 		  <td><a href="<%=urldel%>"><h4>DELETE</h4></a>

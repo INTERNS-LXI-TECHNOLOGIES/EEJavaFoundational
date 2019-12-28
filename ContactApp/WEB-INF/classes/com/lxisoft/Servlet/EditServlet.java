@@ -13,7 +13,6 @@ public class EditServlet extends HttpServlet
 	{
 		String id = request.getParameter("id");
 		DataRepository drr = new DataRepository();
-		
 		HttpSession session= request.getSession();
 		session.setAttribute("c",drr.findById(id));
 		RequestDispatcher rs=request.getRequestDispatcher("Edit.jsp");

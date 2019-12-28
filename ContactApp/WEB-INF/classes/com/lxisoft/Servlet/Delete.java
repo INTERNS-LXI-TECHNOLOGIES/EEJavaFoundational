@@ -12,10 +12,10 @@ public class Delete extends HttpServlet
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		String id = request.getParameter("id");
+		System.out.println(id+"sdkjndivndivnio");
 		DataRepository drr = new DataRepository();
-		HttpSession session= request.getSession();
-		session.setAttribute("c",drr.delete(id));
-		RequestDispatcher rs=request.getRequestDispatcher("ViewAll.jsp");
+		drr.delete(id);
+		RequestDispatcher rs=request.getRequestDispatcher("start");
 	 	rs.forward(request,response);
                                   
 	}
