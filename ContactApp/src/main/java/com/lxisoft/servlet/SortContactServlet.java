@@ -19,7 +19,7 @@ public class SortContactServlet extends HttpServlet
 		{
 			case "1":contactList=dbrepo.sortByName(); break;
 			case "2":contactList=dbrepo.sortByNumber(); break;
-			// case "3":contactList=dbrepo.sortById(); break;
+			case "3":contactList=dbrepo.sortById(); break;
 		}
 		for(int i=0;i<contactList.size();i++)
 	    {

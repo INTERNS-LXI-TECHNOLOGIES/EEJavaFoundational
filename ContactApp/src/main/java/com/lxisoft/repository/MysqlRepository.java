@@ -239,11 +239,11 @@ public class MysqlRepository
 	 *
 	 *@return arraylist of contact
 	 */
-	// public List <Contact> sortById()
-	// {
-	// 	contactList.clear();
-	// 	contactList=findAllContact();
-	// 	Collections.sort(contactList, new SortById());
-	// 	return contactList;
-	// }	  
+	public List <Contact> sortById()
+	{
+		contactList.clear();
+		contactList=findAllContact();
+		Collections.sort(contactList, new SortById());
+		return contactList;
+	}	  
 }

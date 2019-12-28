@@ -21,11 +21,28 @@
 				<br><input type="text" name="number" placeholder="New Number" /><br>
 				<br><input type="submit" value="Save"/><br>
 		</form>
+		<%
+		String s=(String)session.getAttribute("c");
+		int x=Integer.parseInt(s);
+		if(x==10)
+		{
+		%>
+
 		<form action= "getContact" method="get">
-		<input type="hidden" name="crud" value="2"/>
+			<input type="hidden" name="crud" value="2"/>
 			<input type="hidden" name="id" value="<%=(c.getContactId())%>"/>
 			<br><input type="submit" value="Cancel"/></td>
 		</form>
+		<%
+		}
+		if(x==12)
+		{
+		%>
+		<a href="home"><br><input type="submit" value="Cancel"/></a>
+		<%
+		}
+		%>
 			</tr>
+		}
 </body>
 </html>

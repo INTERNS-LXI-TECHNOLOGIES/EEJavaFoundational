@@ -14,8 +14,10 @@ public class GetContactByIdServlet extends HttpServlet
 		int idd=Integer.parseInt(id);
 		Contact contact=dbrepo.findContactById(idd);
 		request.setAttribute("getContactById",contact);
+		String choice=request.getParameter("choice");
 		HttpSession session=request.getSession(); 
 		session.setAttribute("cont",contact);
+		session.setAttribute("c",choice);
 		RequestDispatcher rd=null;
 		String value=request.getParameter("crud");
 		switch(value)
