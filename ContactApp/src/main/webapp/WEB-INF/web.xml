@@ -37,12 +37,21 @@
 </servlet-mapping>
 
 <servlet>
+   <servlet-name>searching</servlet-name>
+   <servlet-class>com.lxisoft.controller.SearchServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>searching</servlet-name>
+   <url-pattern>/search</url-pattern>
+</servlet-mapping>
+
+<!-- <servlet>
    <servlet-name>selecting</servlet-name>
    <servlet-class>com.lxisoft.controller.SelectServlet</servlet-class>
 </servlet>
 <servlet-mapping>
    <servlet-name>selecting</servlet-name>
    <url-pattern>/selectContact</url-pattern>
-</servlet-mapping>
+</servlet-mapping> -->
 
 </web-app> 

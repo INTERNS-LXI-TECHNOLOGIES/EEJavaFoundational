@@ -9,5 +9,6 @@ public interface Repository
 	public ArrayList<Contact> findAll();
 	public void edit(EditModel editModel,String[] tempEdit);
 	public void delete(Contact contact);
+	public ArrayList<Contact> search(String searchName);
 	public void clear();
 }
