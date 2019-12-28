@@ -10,17 +10,26 @@
 <body>
 	<H1><CENTER>CONTACT LIST</CENTER></H1>
 	
-	<table bgcolor="#ccccff" align=center border="1px" width="25%">
+	<table bgcolor="#ccccff" align=center border="1px" width="30%">
 		<form action="searchdata" method="get">
 		<tr>
-			<td align="center"><a href="Add.jsp"><h1>+</h1></a>
+			<td align="center"><a href="Add.jsp"><h3>+</h3></a>
 				<input type="text" name="n" placeholder="Search">
 				<a href="searchdata"><input type="submit" value="OK"></a></td>
 		</tr>
 	</form>
 	<tr>
 		<!-- <th>ID</th> -->
-		<th><b>Name</b></th></tr>
+		<th><b>Name</b></th>
+		<form action="sort" method="get">
+		<th><select name="sort">
+			<option value="a" selected>Name Sort</option>
+			<option value="b">Number Sort</option>
+		</select>
+		<input type="submit" value="OK"></a>
+	</th>
+	</tr>
+	</form>
 	<%
 	List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
 	for(ContactModel cm:contactsList)

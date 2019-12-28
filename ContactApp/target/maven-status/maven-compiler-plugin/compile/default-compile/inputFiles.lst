@@ -1,10 +1,13 @@
+D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\NoComparator.java
 D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\AddServ.java
 D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\DeleteServ.java
-D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\EditServ.java
 D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\SelectByIdServ.java
-D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\Serv.java
 D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\domain\Contact.java
 D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\SearchServ.java
+D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\SortServ.java
+D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\repository\MysqlRepository.java
+D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\EditServ.java
+D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\Serv.java
 D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\ContactListModel.java
 D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\ContactModel.java
-D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\repository\MysqlRepository.java
+D:\carpro\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\NameComparator.java

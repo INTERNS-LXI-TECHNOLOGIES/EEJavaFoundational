@@ -66,4 +66,15 @@
     </servlet-mapping>
 
 
+    <servlet>
+      <servlet-name>Sort</servlet-name>
+      <servlet-class>com.lxisoft.servlet.SortServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Sort</servlet-name>
+        <url-pattern>/sort</url-pattern>
+    </servlet-mapping>
+
+
 </web-app>

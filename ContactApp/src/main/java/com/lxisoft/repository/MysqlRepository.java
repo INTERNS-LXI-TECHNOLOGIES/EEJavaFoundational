@@ -1,7 +1,7 @@
 package com.lxisoft.repository;
 // import com.lxisoft.repository.*;
 import com.lxisoft.domain.*;
-// import com.lxisoft.models.*;
+import com.lxisoft.models.*;
 import java.sql.*;
 import java.util.*;
 import java.io.*;
@@ -202,24 +202,23 @@ public Contact findContactById(String d)
  //       /**
  // * @return contactList 
  // */
- //  	public List<Contact> nameSort()
- //  	{
- //  		contactList=getAllContact();
- //  		Collections.sort(contactList,new NameComparator());
-	// 	// resetFile();
-	// 	return contactList;
- //  	}
+  	public List<Contact> nameSort()
+  	{
+  		contactList=getAllContact();
+  		Collections.sort(contactList,new NameComparator());
+		return contactList;
+  	}
  //      /**
  // * sort number 
  // */
  //       /**
  // * @return contactList 
  // */
- //  	public List<Contact> numberSort()
- //  	{
- //  		contactList=getAllContact();
- //  		Collections.sort(contactList,new NoComparator());
-	// 	// resetFile();
-	// 	return contactList;
- //  	}
+  	public List<Contact> numberSort()
+  	{
+  		contactList=getAllContact();
+  		Collections.sort(contactList,new NoComparator());
+		// resetFile();
+		return contactList;
+  	}
 }
