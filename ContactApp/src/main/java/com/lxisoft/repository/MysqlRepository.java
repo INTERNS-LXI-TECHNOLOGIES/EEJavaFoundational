@@ -196,29 +196,28 @@ public Contact findContactById(String d)
 	// 	// resetFile();
 	// 	return contactList;
  //  	}
- //      /**
- // * sort name 
- // */
- //       /**
- // * @return contactList 
- // */
+      /**
+ * sort name 
+ */
+       /**
+ * @return contactList 
+ */
   	public List<Contact> nameSort()
   	{
   		contactList=getAllContact();
   		Collections.sort(contactList,new NameComparator());
 		return contactList;
   	}
- //      /**
- // * sort number 
- // */
- //       /**
- // * @return contactList 
- // */
+      /**
+ * sort number 
+ */
+       /**
+ * @return contactList 
+ */
   	public List<Contact> numberSort()
   	{
   		contactList=getAllContact();
   		Collections.sort(contactList,new NoComparator());
-		// resetFile();
 		return contactList;
   	}
 }

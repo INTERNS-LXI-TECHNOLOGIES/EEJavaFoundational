@@ -19,6 +19,7 @@ public class SortServ extends HttpServlet
 			case "a":contactList=myrepo.nameSort();break;
 			case "b":contactList=myrepo.numberSort();break;
 		}
+
     	for(int i=0;i<contactList.size();i++)
 		{
 			ContactModel model=new ContactModel();
@@ -28,7 +29,7 @@ public class SortServ extends HttpServlet
 			lm.setContactsList(model);
 		}
     	request.setAttribute("contactlist",lm.getContactsList());
-		RequestDispatcher rd=request.getRequestDispatcher("url");
+		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");
 		rd.forward(request,response);
     }
 }
