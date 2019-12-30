@@ -16,9 +16,9 @@
 		<form action= "editContact" method="post">
 			<input type="hidden" name="id" value="<%=(c.getContactId())%>"><br>
 			<tr>
-				<td><input type="text" name="first name" placeholder="new first Name" /><br>
-				<br><input type="text" name="last name" placeholder="new last Name" /><br>
-				<br><input type="text" name="number" placeholder="New Number" /><br>
+				<td><input type="text" name="first name" value="<%=(c.getContactFirstName())%>" /><br>
+				<br><input type="text" name="last name"value="<%=(c.getContactLastName())%>"/><br>
+				<br><input type="text" name="number" value="<%=(c.getContactNumber())%>" /><br>
 				<br><input type="submit" value="Save"/><br>
 		</form>
 		<button onclick="window.history.back()">cancel</button>

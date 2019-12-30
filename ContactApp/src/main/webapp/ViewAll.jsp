@@ -42,7 +42,7 @@
     
     <option value="1">Sort contact by name</option>
     <option value="2">Sort contact by number</option>
-    <option value="3" selected>Sort contact by id</option>
+    <option value="3">Sort contact by id</option>
     <input type="submit" name="submit" value="submit"/>
   </select>
 </form>
