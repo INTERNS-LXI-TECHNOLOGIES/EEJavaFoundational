@@ -14,10 +14,21 @@ public class Search extends HttpServlet
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException
 	{
 		Contact contact= new Contact();
-		ArrayList <Contact> contactList = new ArrayList<Contact>();
+		ArrayList <Contact> searchList = new ArrayList<Contact>();
 		String name = request.getParameter("searchname");
-		contactList= rep.read();
+		searchList=rep.search(name);
 
+	   
+	   	PrintWriter out=response.getWriter();
+	   	out.println(name+searchList);
+	   
+	 //   else
+	 //   {
+	 //   	request.setAttribute("searchList",searchList);
+		// request.getRequestDispatcher("Search.jsp").forward(request,response);
+
+	   // }
+		
 	}
 
 }

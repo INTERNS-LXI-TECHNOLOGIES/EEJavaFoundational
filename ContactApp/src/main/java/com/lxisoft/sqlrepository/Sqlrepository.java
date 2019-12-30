@@ -115,5 +115,30 @@ public class Sqlrepository implements Repository
 			System.out.println(ee);
 		}
 	}
+	public ArrayList<Contact> search(String name)
+	{
+		ArrayList <Contact> searchtList = new ArrayList<Contact>();
+		try
+		{
+			Statement s = con.createStatement();
+			 rs = s.executeQuery("select * from contact where firstname LIKE '%"+name+"'");
+			while(rs.next())
+			{
+				Contact contact = new Contact();
+				contact.setId(rs.getInt("id"));
+				contact.setFirstname(rs.getString("firstname"));
+				contact.setLastname(rs.getString("lastname"));
+				contact.setNumber(rs.getString("number"));
+				searchtList.add(contact);
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		return searchtList;
+
+		}
+	
 	
 }

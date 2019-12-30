@@ -10,6 +10,7 @@ public interface Repository
 	public void delete(int id);
 	public void write(Contact contact, boolean isTrue);
 	public void clear();
-	 public  ArrayList <Contact> read();
+	public  ArrayList <Contact> read();
 	public void edit(Contact contact);
+	public ArrayList<Contact> search(String name);
 }

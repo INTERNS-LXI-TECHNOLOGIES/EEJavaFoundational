@@ -22,8 +22,8 @@
 <%@page import = "com.lxisoft.model.*,java.util.*"%>
 <form action="Search" method="get">
 		<center>
-		SEARCH <input type="text" name="searchname"><br><br>
-		
+		 <input type="text" name="searchname">
+		<input type="submit" value="search"><br><br>
 		</center>
 	</form>	
 <table align="center" style="border-collapse: collapse;">
