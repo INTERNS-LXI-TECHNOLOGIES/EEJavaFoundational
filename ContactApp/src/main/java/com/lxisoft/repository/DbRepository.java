@@ -173,12 +173,10 @@ public class DbRepository implements Repository
 			if(type.equals("f"))
 			{
 				nameType="FIRST_NAME";
-				System.out.println("fst"+nameType);
 			}
 			else if(type.equals("l"))
 			{
 				nameType="LAST_NAME";
-				System.out.println("lst"+nameType);
 			}
 			ResultSet rs=s.executeQuery("SELECT * FROM contactList ORDER BY "+nameType);
 			while(rs.next())
@@ -196,5 +194,22 @@ public class DbRepository implements Repository
 			System.out.println(e);
 		}	
 		return sortList;
+	}
+
+	public boolean validate(String username,String password)
+	{
+		boolean isTrue=false;
+		try
+		{
+			Statement s=connection.createStatement();
+			ResultSet rs=s.executeQuery("select * from users where username="+username+" and password="+password);
+			isTrue=rs.next();
+			System.out.println("statusss "+isTrue);
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}	
+		return isTrue;
 	}
 }

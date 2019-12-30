@@ -12,4 +12,5 @@ public interface Repository
 	public ArrayList<Contact> search(String searchName);
 	public ArrayList<Contact> sort(String type);
 	public void clear();
+	public boolean validate(String username,String password);
 }

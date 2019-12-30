@@ -1,10 +1,11 @@
 com\lxisoft\model\EditModel.class
 com\lxisoft\controller\DeleteServlet.class
+com\lxisoft\controller\LoginServlet.class
 com\lxisoft\controller\SaveServlet.class
 com\lxisoft\repository\Repository.class
-com\lxisoft\model\ViewByNameModel.class
 com\lxisoft\domain\Contact.class
 com\lxisoft\model\DeleteModel.class
+com\lxisoft\controller\FirstSelectServlet.class
 com\lxisoft\model\ViewByIdModel.class
 com\lxisoft\controller\SortServlet.class
 com\lxisoft\model\SelectModel.class
