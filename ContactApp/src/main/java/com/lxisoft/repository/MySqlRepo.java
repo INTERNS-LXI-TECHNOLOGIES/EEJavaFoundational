@@ -309,4 +309,21 @@ public class MySqlRepo implements Repository
 		boolean val=false;
 		insertContactDetails(contact,val);
 	}
+	public boolean validateUser(String username,String password)
+	{
+		boolean valid=false;
+		try{
+			
+			stmt=con.prepareStatement("select * from register where username=? and password=?");
+			stmt.setString(1, username);
+            stmt.setString(2, password);
+            rs=stmt.executeQuery();
+			valid=rs.next();
+			
+		}catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return valid;
+	}
 }

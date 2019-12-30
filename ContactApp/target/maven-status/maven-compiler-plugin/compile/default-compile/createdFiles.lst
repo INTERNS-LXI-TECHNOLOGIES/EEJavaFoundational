@@ -11,3 +11,4 @@ com\lxisoft\servlets\DeleteServlet.class
 com\lxisoft\servlets\SearchServlet.class
 com\lxisoft\servlets\DeleteAllServlet.class
 com\lxisoft\repository\MySqlRepo.class
+com\lxisoft\servlets\LoginServlet.class

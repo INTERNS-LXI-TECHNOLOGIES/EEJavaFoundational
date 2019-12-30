@@ -21,5 +21,6 @@ public interface Repository
 	public void clearRepository()throws SQLException;
 	public void sortContactByFirstName()throws SQLException;
 	public void sortContactByLastName()throws SQLException;
+	public boolean validateUser(String username,String password);
 	
 }

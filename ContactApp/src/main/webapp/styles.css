@@ -1,5 +1,5 @@
 .button{
-  width : 75%;
+  width : 100%;
   border: none;
   background-color: lightblue;
   color: white;
@@ -9,22 +9,24 @@
   text-align: center;
 }
 .button:hover{
-  background-color: #ddd;
+  background-color: #e7e7e7;
   color: black;
 }
-#body {
+body {
   background-color: #fff;
-  margin: 0;
-  padding: 0px ;
   font-family: sans-serif, verdana;
 }
-#contactimg{
+/*#contactimg{
      border: 1px solid #ddd;
   border-radius: 4px;
   padding: 5px;
     height:10px;
-    width:40px;
+    width:40px;*/
 }
-/*#tab{
-   border:10px width:20% border:0;
-}*/
+table {
+  table-layout: auto;
+  border-collapse: collapse;
+  border: 1px solid black;
+  text-align: center;
+}
+tr:hover {background-color:#f5f5f5;}

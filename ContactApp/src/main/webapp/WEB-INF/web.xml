@@ -32,6 +32,10 @@
       <servlet-name>CSort</servlet-name>
       <servlet-class>com.lxisoft.servlets.SortServlet</servlet-class>
 </servlet>
+<servlet>
+      <servlet-name>userlogin</servlet-name>
+      <servlet-class>com.lxisoft.servlets.LoginServlet</servlet-class>
+</servlet>
 
 <servlet-mapping>
 		<servlet-name>CView</servlet-name>
@@ -64,6 +68,10 @@
 <servlet-mapping>
 		<servlet-name>CSort</servlet-name>
 		<url-pattern>/sort</url-pattern>
+</servlet-mapping>
+<servlet-mapping>
+		<servlet-name>userlogin</servlet-name>
+		<url-pattern>/login</url-pattern>
 </servlet-mapping>
 
 </web-app>

@@ -3,7 +3,7 @@
 			<title> VIEW CONTACT </title>
 			  <link rel="stylesheet" type="text/css" href="styles.css">
 		</head>
-		<body > 
+		<body> 
 			<%@ page import="com.lxisoft.models.*"%>
 			<%@ page import="com.lxisoft.Domain.*"%>
 			<%@ page import="java.util.*"%>
@@ -24,8 +24,9 @@
   			</center></form>
 			<center> <button  type="button" onClick="window.location.href = 'DeleteAll';">DeleteAllContacts</button></center>
 			<%
-			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");%>
-				<% out.println(contactList.size());%>
+			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");
+			    String name=(String)session.getAttribute("name"); %>
+			  <center>  <h4>welcome <% out.println(name); %></h4> </center>
 				<% if(contactList.size()==0)
 				{%>
 					 <script>
@@ -36,8 +37,8 @@
 						}
 					</script>
 				<%} %>
-				<table id="tab" align="center" border="10px" width="30%">
-				<tr><th><strong>NAME</strong></th></tr>
+				<table align="center" border="10px" width="30%">
+				<tr><th colspan="3"><strong>NAME</strong></th></tr>
 				<% for(ContactModel contactmodel:contactList)
 				{ 
 					%>
@@ -57,6 +58,8 @@
 				<%
 			} %>
 		</table></br>
-		<center><button type="button" onClick="window.location.href='View'">Refresh</button></center>
+		<center><button type="button" onClick="window.location.href='View'">Refresh</button>
+		<% out.println("No of contacts"+""+contactList.size());%></center>
+
 		</body>
 </html>
