@@ -11,7 +11,7 @@
 	
 
 
-		<center>	<img src="smiley.gif" alt="Smiley face" width="42" height="42" ></center>
+		<center>	<img src="\resources\smiley.gif" alt="Smiley face" width="42" height="42" ></center>
 			<form action="createNewContact" method="get"><br><center>
 			<input type="text" name="firstname" placeholder="ENTER FIRST NAME"><br><br>
 			<input type="text" name="lastname" placeholder="ENTER LAST NAME"><br><br>

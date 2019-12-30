@@ -7,6 +7,7 @@ com\lxisoft\Repository\MysqlRepository.class
 com\lxisoft\Servlet\DeleteAllServlet.class
 com\lxisoft\Servlet\SelectServlet.class
 com\lxisoft\Models\SortByName.class
+com\lxisoft\Servlet\LoginServlet.class
 com\lxisoft\Servlet\SearchServlet.class
 com\lxisoft\Domain\Contact.class
 com\lxisoft\Servlet\EditServlet.class

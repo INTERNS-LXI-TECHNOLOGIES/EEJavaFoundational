@@ -357,5 +357,27 @@ public class MysqlRepository implements Repository
 
 		}setId();
 	}
+	public boolean loginValidate(String username, String password)throws Exception
+	{
+		
+		boolean login=false;
+		String name=null;
+		String pass=null;
+			System.out.println(name+pass);
+			PreparedStatement st=con.prepareStatement("select * from log");
+			ResultSet r=st.executeQuery();
+
+		while(r.next())
+		{
+			name=r.getString("USERNAME");
+			pass=r.getString("PASSWORD");
+			System.out.println(name+pass);
+			if(username.equals(name) && password.equals(pass))
+			{
+				login=true;
+			}
+		}
+		return login;
+	}
   	
 }
