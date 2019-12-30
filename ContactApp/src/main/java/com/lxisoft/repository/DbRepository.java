@@ -188,9 +188,8 @@ public class DbRepository implements Repository
 				contact.setFName(rs.getString("FIRST_NAME"));
 				contact.setLName(rs.getString("LAST_NAME"));
 				contact.setNumber(rs.getString("NUMBER"));
-				contactsSet.add(contact);
+				sortList.add(contact);
 			}
-			sortList.addAll(contactsSet);
 		}
 		catch(SQLException e)
 		{

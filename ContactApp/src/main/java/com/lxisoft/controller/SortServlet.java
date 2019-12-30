@@ -16,10 +16,6 @@ public class SortServlet extends HttpServlet
 		String sortType=request.getParameter("sortType");
 		ArrayList<Contact> sortList=repository.sort(sortType);
 		request.setAttribute("list",sortList);
-		for(Contact c:sortList)
-		{
-			System.out.println("sss-- "+c.getFName());
-		}
 		RequestDispatcher rd=request.getRequestDispatcher("/jsp/ViewAll.jsp");
 		rd.forward(request,response);
 	}
