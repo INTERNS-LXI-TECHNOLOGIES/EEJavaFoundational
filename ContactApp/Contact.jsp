@@ -10,6 +10,6 @@
 	<%=id%>
 	<%=c.getName()%>
 	<%=c.getNumber()%>
-	<a href="start"><input type="submit" name="back"></a>
+	<a href="start"><input type="submit" name="back" value="back"></a>
 </body>
 </html>

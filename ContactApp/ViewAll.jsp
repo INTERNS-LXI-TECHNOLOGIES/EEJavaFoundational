@@ -5,6 +5,11 @@
 <html>
 <title>CONTACTS </title>
 <head>
+
+<h5>jose</h7>
+
+
+
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body>
@@ -46,10 +51,14 @@ for(int i=0;i<c.size();i++)
 		 <td><%=(c.get(i).getName())%> </td>
 		  <td><%=(c.get(i).getNumber())%> </td>
 		  <%
-		  	String urledit = "EditServlet?id=" + c.get(i).getId();
+		  	Contact co=new Contact();
+		  	co=c.get(i);
+		  	session.setAttribute("contact",co);
 		    String urldel = "Delete?id=" + c.get(i).getId();
 		  %>
-		  <td><a href="<%=urledit%>"><h4>EDIT</h4></a>
+		  <td><form action="Edit.jsp">
+		  	<input type="hidden" name="id" value="<%=(c.get(i).getId())%>">
+		  	<input type="submit" name="EDIT" value="EDIT"></form>
 		  <td><a href="<%=urldel%>"><h4>DELETE</h4></a>
 	</tr>
 <%
@@ -58,3 +67,6 @@ for(int i=0;i<c.size();i++)
 </table>
 </body>
 </html>
+
+
+************

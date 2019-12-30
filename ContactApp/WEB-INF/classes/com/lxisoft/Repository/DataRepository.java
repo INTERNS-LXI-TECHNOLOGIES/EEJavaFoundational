@@ -28,7 +28,7 @@ public class DataRepository
           }catch(Exception e){ System.out.println(e);}  
           return contactsList;
   }
-  public Contact findById(String id)
+  public Contact findById(int id)
   {       Contact c=null;
    try{
        Class.forName("com.mysql.jdbc.Driver");  
@@ -62,22 +62,26 @@ public class DataRepository
    }
 
 
-   public void edit(String id,String name,String number)
+   public Contact edit(int id,String name,String number)
    {
     String query = "update contactlist set name ='"+name+"',number ='"+number+"' where id = '"+id+"'";
     System.out.println(query);
+    Contact c=new Contact();
+    c.setName(name);
+    c.setNumber(number);
+    c.setId(id);
         try{
-        Class.forName("com.mysql.jdbc.Driver");  
-        Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
-        Statement stmt=con.createStatement();
-        stmt.executeUpdate(query);
-        con.close();
-
-       }catch(Exception e){System.out.println(e);}
+            Class.forName("com.mysql.jdbc.Driver");  
+            Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");  
+            Statement stmt=con.createStatement();
+            stmt.executeUpdate(query);
+            con.close();
+           }catch(Exception e){System.out.println(e);}
+           return c;
    }
    
    // 
-   public void delete(String id)
+   public void delete(int id)
    {
     try
     {

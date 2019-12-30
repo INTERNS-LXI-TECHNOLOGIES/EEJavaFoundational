@@ -9,15 +9,17 @@ import javax.servlet.annotation.*;
 
 public class update extends HttpServlet
 {
-	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
 		String id = request.getParameter("id");
 		String name = request.getParameter("name");
 		String number = request.getParameter("number");
 		DataRepository drr = new DataRepository();
-		drr.edit(id,name,number);
-		RequestDispatcher rs=request.getRequestDispatcher("start");
+		int i=Integer.parseInt(id);
+		Contact c=drr.edit(i,name,number);
+		request.setAttribute("contact",c);
+		RequestDispatcher rs=request.getRequestDispatcher("Contact.jsp");
 		rs.forward(request,response);
     }
 }

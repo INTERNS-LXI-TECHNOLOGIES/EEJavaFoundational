@@ -14,10 +14,10 @@ public class Delete extends HttpServlet
 		String id = request.getParameter("id");
 		System.out.println(id+"sdkjndivndivnio");
 		DataRepository drr = new DataRepository();
-		drr.delete(id);
+		int i=Integer.parseInt(id);
+		drr.delete(i);
 		RequestDispatcher rs=request.getRequestDispatcher("start");
-	 	rs.forward(request,response);
-                                  
+	 	rs.forward(request,response);                              
 	}
 }
   
