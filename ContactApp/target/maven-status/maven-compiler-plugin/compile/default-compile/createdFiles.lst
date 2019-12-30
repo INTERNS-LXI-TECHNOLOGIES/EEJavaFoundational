@@ -1,9 +1,12 @@
 com\lxisoft\servlet\EditServ.class
+com\lxisoft\servlet\SignUpServ.class
 com\lxisoft\models\NoComparator.class
 com\lxisoft\models\ContactListModel.class
 com\lxisoft\servlet\SelectByIdServ.class
+com\lxisoft\models\UserLogin.class
 com\lxisoft\domain\Contact.class
 com\lxisoft\models\ContactModel.class
+com\lxisoft\repository\LogRepository.class
 com\lxisoft\servlet\AddServ.class
 com\lxisoft\models\NameComparator.class
 com\lxisoft\servlet\SortServ.class

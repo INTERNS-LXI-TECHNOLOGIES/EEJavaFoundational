@@ -21,11 +21,12 @@
 		<tr>
 			<td><input type="hidden" name="id" value="<%=co.getId()%>"><br>
 				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="deletedata"><input type="submit" value="Delete"></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" value="Cancel">
+				&nbsp;&nbsp;&nbsp;&nbsp;</FORM>
+				<a href="url"><input type="submit" value="Cancel"></a>
 			</td>
 		</tr>
 		
-	</FORM>
+	
 	</table>
 </BODY>
 </HTML>
