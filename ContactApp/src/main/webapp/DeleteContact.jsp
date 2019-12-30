@@ -18,26 +18,7 @@
 					<input type="hidden" name="id" value="<%=(c.getContactId())%>">
 					<input type="submit" value="deletes"/>
 				</form>
-				<%
-				String s=(String)session.getAttribute("c");
-				int x=Integer.parseInt(s);
-				if(x==10)
-				{
-				%>
-				<form action= "getContact" method="get">
-					<input type="hidden" name="crud" value="2"/>
-					<input type="hidden" name="id" value="<%=(c.getContactId())%>"/>
-					<input type="submit" value="Cancel"/>
-				</form>
-				<%
-				}
-				if(x==11)
-				{
-				%>
-				<a href="home"><br><input type="submit" value="Cancel"/></a>
-				<%
-				}
-				%>
+				<button onclick="window.history.back()">cancel</button>
 			</td>
 		</tr>
 </body>

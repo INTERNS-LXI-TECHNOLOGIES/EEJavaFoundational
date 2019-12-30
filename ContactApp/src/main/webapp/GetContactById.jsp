@@ -56,7 +56,8 @@ Contact con=(Contact) request.getAttribute("getContactById");
 <tr>
 	<center>
 	<br>
-	<a href="DeleteContact.jsp"><input type="submit" id="b3" value="Delete Contact"></a></center>
+	<a href="DeleteContact.jsp"><input type="submit" id="b3" value="Delete Contact">
+	</a></center>
 </tr>
 </table>
 </body>

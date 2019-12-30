@@ -71,22 +71,18 @@ for(int i=0;i<c.size();i++)
 			<img src="user-icon-jpg-13.jpg" width="20%" height="30%"> 
 		<input type="submit" id="b1" value="<%=(c.get(i).getFirstName())%>&nbsp;<%=(c.get(i).getLastName())%>"/>
 		<input type="hidden" name="crud" value="2"/>
-		<input type="hidden" name="choice" value="10"/>
-	
 </form>
 	</td>
 		<td>
 			<form action= "getContact" method="get">
 				<input type="hidden" name="id" value="<%=(c.get(i).getId())%>"/>
 				<input type="submit" id="b3" value="Delete">
-				<input type="hidden" name="choice" value="11"/>
 				<input type="hidden" name="crud" value="4"/>
 			</form>
 		
 			<form action= "getContact" method="get">
 				<input type="hidden" name="id" value="<%=(c.get(i).getId())%>"/>
 				<input type="submit" id="b3" value="Edit">
-				<input type="hidden" name="choice" value="12"/>
 				<input type="hidden" name="crud" value="3"/>
 			</form>
 		</td>
