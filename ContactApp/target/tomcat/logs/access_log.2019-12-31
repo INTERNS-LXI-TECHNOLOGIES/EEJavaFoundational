@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [31/Dec/2019:12:41:26 +0530] "GET /ContactApp/Search?searchname=ashiq HTTP/1.1" 200 995 http-bio-8080-exec-2 1514
+0:0:0:0:0:0:0:1 - - [31/Dec/2019:12:41:50 +0530] "GET /ContactApp/Add.jsp HTTP/1.1" 200 430 http-bio-8080-exec-3 181
+0:0:0:0:0:0:0:1 - - [31/Dec/2019:12:41:58 +0530] "GET /ContactApp/Add?firstname=gokhul&lastname=ali&number=99765435 HTTP/1.1" 200 3468 http-bio-8080-exec-6 261
+0:0:0:0:0:0:0:1 - - [31/Dec/2019:12:42:03 +0530] "GET /ContactApp/Search?searchname=ali HTTP/1.1" 200 1297 http-bio-8080-exec-7 6
+0:0:0:0:0:0:0:1 - - [31/Dec/2019:12:42:50 +0530] "GET /ContactApp/Update.jsp?id=21 HTTP/1.1" 200 482 http-bio-8080-exec-9 89

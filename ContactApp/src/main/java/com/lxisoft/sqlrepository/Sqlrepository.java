@@ -121,7 +121,7 @@ public class Sqlrepository implements Repository
 		try
 		{
 			Statement s = con.createStatement();
-			 rs = s.executeQuery("select * from contact where firstname LIKE '%"+name+"'");
+			 rs = s.executeQuery("select * from contact where concat(firstname,' ',lastname) LIKE '%"+name+"%'");
 			while(rs.next())
 			{
 				Contact contact = new Contact();
