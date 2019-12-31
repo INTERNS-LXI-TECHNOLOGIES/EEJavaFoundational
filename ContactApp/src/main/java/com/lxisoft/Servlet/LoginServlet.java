@@ -21,10 +21,12 @@ public class LoginServlet extends HttpServlet
 		{
 
 			boolean login= repo.loginValidate(name,pass);
-			
+			HttpSession session=request.getSession();
+			session.setAttribute("username",name);
+			session.setAttribute("password",pass);
 			if(login) 
 			{
-            out.println(name+pass+login);
+            	
 				response.sendRedirect("viewall");
 			}
 			else
