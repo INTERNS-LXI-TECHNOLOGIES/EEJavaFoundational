@@ -11,6 +11,7 @@ com\lxisoft\servlet\AddServ.class
 com\lxisoft\models\NameComparator.class
 com\lxisoft\servlet\SortServ.class
 com\lxisoft\servlet\SearchServ.class
+com\lxisoft\servlet\LoginServ.class
 com\lxisoft\servlet\DeleteServ.class
 com\lxisoft\servlet\Serv.class
 com\lxisoft\repository\MysqlRepository.class

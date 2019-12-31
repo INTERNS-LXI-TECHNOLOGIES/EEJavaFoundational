@@ -7,7 +7,7 @@ import java.io.*;
 public class LogRepository
 {
 	List<UserLogin> login=new ArrayList<UserLogin>();
-	UserLogin uLogin=new UserLogin();
+	UserLogin uLogin;
 	ResultSet rs=null;
 	PreparedStatement stmt=null;
 	Connection conn=null;
@@ -20,6 +20,10 @@ public class LogRepository
 		{
 			System.out.println("not connected");	
 		}
+	}
+	public LogRepository()
+	{
+		uLogin=new UserLogin();
 	}
 
 	public void connectionDB()
@@ -39,7 +43,7 @@ public class LogRepository
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("insert into contactlist(User_Name,PassWord)values(?,?)");
+	 		stmt=conn.prepareStatement("insert into login(User_Name,PassWord)values(?,?)");
 	 		stmt.setString(1,uLogin.getUname());
 	 		stmt.setString(2,uLogin.getPwd());
 	 		stmt.executeUpdate();
@@ -51,4 +55,27 @@ public class LogRepository
  			System.out.println("Insert Failed"+e);
  		}
  	}
+
+ 	public List<UserLogin> getAllContact()
+	{
+		try
+		{
+			login.clear();
+			Statement smt=conn.createStatement(); 
+			rs=smt.executeQuery("select * from login");
+			while(rs.next())
+			{
+				UserLogin uLogin=new UserLogin();
+				uLogin.setUname(rs.getString("uname"));
+				uLogin.setPwd(rs.getString("pwd"));	
+				login.add(uLogin);
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+			System.out.println("list empty!!!!");
+		}
+		return login; 
+	}
 }

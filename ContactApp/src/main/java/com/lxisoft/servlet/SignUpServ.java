@@ -8,7 +8,7 @@ import com.lxisoft.repository.*;
 import com.lxisoft.models.*;
 public class SignUpServ extends HttpServlet
 {
-	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		UserLogin uLogin=new UserLogin();
 		LogRepository lRepo=new LogRepository();
@@ -17,8 +17,8 @@ public class SignUpServ extends HttpServlet
 		uLogin.setUname(uname);
 		uLogin.setPwd(pwd);
 		lRepo.insertLogin(uLogin);
-		request.setAttribute("contacts",uLogin);
-		RequestDispatcher rd=request.getRequestDispatcher("Save.jsp");
+		request.setAttribute("contactlist",uLogin);
+		RequestDispatcher rd=request.getRequestDispatcher("url");
 		rd.forward(request,response);
 	}
 }

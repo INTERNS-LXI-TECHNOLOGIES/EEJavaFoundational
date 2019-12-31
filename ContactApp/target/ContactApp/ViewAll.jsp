@@ -31,6 +31,7 @@
 	</tr>
 	</form>
 	<%
+	<%UserLogin uLog=(UserLogin) session.getAttribute("user");
 	List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
 	for(ContactModel cm:contactsList)
 	{%>
