@@ -26,7 +26,7 @@
 			<%
 			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");
 			    String name=(String)session.getAttribute("name"); %>
-			    <h4>welcome <% out.println(name); %></h4>
+			  <center>  <h4>welcome <% out.println(name); %></h4> </center>
 				<% if(contactList.size()==0)
 				{%>
 					 <script>
@@ -58,8 +58,8 @@
 				<%
 			} %>
 		</table></br>
-		<center><button type="button" onClick="window.location.href='View'">Refresh</button></center>
-		<% out.println("No of contacts"+contactList.size());%>
+		<center><button type="button" onClick="window.location.href='View'">Refresh</button>
+		<% out.println("No of contacts"+""+contactList.size());%></center>
 
 		</body>
 </html>
