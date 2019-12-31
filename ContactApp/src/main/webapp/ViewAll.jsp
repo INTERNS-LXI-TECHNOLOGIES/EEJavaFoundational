@@ -46,7 +46,8 @@
     <input type="submit" name="submit" value="submit"/>
   </select>
 </form>
-	<%List<ContactModel> c=(List<ContactModel>) request.getAttribute("allContact");%>
+	<%
+	List<ContactModel> c=(List<ContactModel>) request.getAttribute("allContact");%>
 	<form action= "search" method="get">
 	<table align="center" border="1" width="20%" height="5%" >
 		<tr>
@@ -63,7 +64,6 @@
 for(int i=0;i<c.size();i++)
 {
 %>
-	
 		<form action= "getContact" method="get">
 		<input type="hidden" name="id" value="<%=(c.get(i).getId())%>"/>
 	<tr>
@@ -74,6 +74,25 @@ for(int i=0;i<c.size();i++)
 </form>
 	</td>
 		<td>
+			<%
+			User u=(User) session.getAttribute("user");
+			String n=(u.getUserName());
+			String p=(u.getPassword());
+			if((n.equals("null")))
+			{
+			%>
+			<form action= "Login.jsp">
+				<input type="submit" id="b3" value="Delete">
+			</form>
+		
+			<form action= "Login.jsp">
+				<input type="submit" id="b3" value="Edit">
+			</form>
+			<%
+			}
+			else
+			{
+			%>
 			<form action= "getContact" method="get">
 				<input type="hidden" name="id" value="<%=(c.get(i).getId())%>"/>
 				<input type="submit" id="b3" value="Delete">
@@ -85,6 +104,9 @@ for(int i=0;i<c.size();i++)
 				<input type="submit" id="b3" value="Edit">
 				<input type="hidden" name="crud" value="3"/>
 			</form>
+			<%
+			}
+			%>
 		</td>
 	</tr>
 <%

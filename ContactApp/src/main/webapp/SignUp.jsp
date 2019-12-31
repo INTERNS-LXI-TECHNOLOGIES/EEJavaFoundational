@@ -7,7 +7,7 @@
 <table align="center" border="5" width="25%" height="25%">
 		<caption><h2><center>Sign Up</center></h2></caption>
 	
-		<form action="sign" method="post">
+		<form action="sign" method="get">
 			<tr>
 			<br><br><td>User Name:<input type="text" name="user name"/><br>			
 				<br>Password:<input type="password" name="password"/><br>
