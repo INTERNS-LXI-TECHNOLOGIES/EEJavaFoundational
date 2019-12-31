@@ -202,9 +202,8 @@ public class DbRepository implements Repository
 		try
 		{
 			Statement s=connection.createStatement();
-			ResultSet rs=s.executeQuery("select * from users where username="+username+" and password="+password);
+			ResultSet rs=s.executeQuery("select * from users where USER='"+username+"' and PASS='"+password+"'");
 			isTrue=rs.next();
-			System.out.println("statusss "+isTrue);
 		}
 		catch(SQLException e)
 		{
