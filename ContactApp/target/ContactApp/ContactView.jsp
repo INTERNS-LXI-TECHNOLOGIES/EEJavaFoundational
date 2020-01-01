@@ -25,9 +25,8 @@
 			<center> <button  type="button" onClick="window.location.href = 'DeleteAll';">DeleteAllContacts</button></center>
 			<%
 			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");
-			    String name=(String)session.getAttribute("name"); %>
-			  <center>  <h4>welcome <% out.println(name); %></h4> </center>
-				<% if(contactList.size()==0)
+			  
+				 if(contactList.size()==0)
 				{%>
 					 <script>
 						msg()

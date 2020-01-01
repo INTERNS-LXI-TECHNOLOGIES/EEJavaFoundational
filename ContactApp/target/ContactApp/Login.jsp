@@ -7,12 +7,12 @@
 			<h3 align="center">User Login </h3>
 				</br>
 					<div>
-						<form action="login" method="GET"><center>
-							<input type="text"  name="username" placeholder= "username"></br></br> 
-							<input type="password"  name="password" placeholder= "password"></br></br> 
+						<form action="j_security_check" method="GET"><center>
+							<input type="text"  name="username" placeholder= "j_username"></br></br> 
+							<input type="password"  name="password" placeholder= "j_password"></br></br> 
 							<input type="submit" value="Login">
 							<input type="reset" value="reset"></br></br>
-							<a href="ContactView.jsp">skip</a></center>
+							<a href="View">skip</a></center>
 						</form>
 					</div>
 		</body>
