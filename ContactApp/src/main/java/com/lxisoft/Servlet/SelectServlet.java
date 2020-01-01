@@ -35,7 +35,7 @@ public class SelectServlet extends HttpServlet
 	            switch(type)
 	            {
 	            	case "delete":response.sendRedirect("delete");break;
-	                case "edit":  response.sendRedirect("/edit.jsp");break;
+	                case "edit":  response.sendRedirect("/ContactApp/edit.jsp");break;
 	                default:
 	            }
         		PrintWriter out=response.getWriter();

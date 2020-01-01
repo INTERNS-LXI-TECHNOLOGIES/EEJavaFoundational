@@ -72,9 +72,10 @@
             <artifactId>tomcat7-maven-plugin</artifactId>
             <version>2.2</version>
             <configuration>
-                <url>http://localhost:8080/</url>
+                <url>http://localhost:8080/manager/text</url>
+                <update>true</update>
+                <path>/ContactApp</path>
                 <server>TomcatServer</server>
-                <path>/</path>
             </configuration>
         </plugin>
 

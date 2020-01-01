@@ -47,7 +47,7 @@ contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 		<td><img src="contact.png" width="50" height="50"></td>
 		<td><font color=" grey" size="65"><%out.println(a.getId());%></font></td>
 		<td><a href="search?user=<%=a.getFullName()%>"><font color=" green" size="65"><%out.println(a.getFirstName());%></font></td></a>
-		<td><a href="select?type=edit&name=<%=a.getFirstName()%>">edit</a></td>
+		<td><a href="select?type=edit&name=<%=a.getFullName()%>">edit</a></td>
 		<td><a href="select?name=<%=a.getFullName()%>&type=delete">delete</a></td>
 		
 		
