@@ -196,19 +196,23 @@ public class DbRepository implements Repository
 		return sortList;
 	}
 
-	public boolean validate(String username,String password)
-	{
-		boolean isTrue=false;
-		try
-		{
-			Statement s=connection.createStatement();
-			ResultSet rs=s.executeQuery("select * from users where USER='"+username+"' and PASS='"+password+"'");
-			isTrue=rs.next();
-		}
-		catch(SQLException e)
-		{
-			System.out.println(e);
-		}	
-		return isTrue;
-	}
+	
 }
+
+
+
+// public boolean validate(String username,String password)
+// 	{
+// 		boolean isTrue=false;
+// 		try
+// 		{
+// 			Statement s=connection.createStatement();
+// 			ResultSet rs=s.executeQuery("select * from users where username='"+username+"' and password='"+password+"'");
+// 			isTrue=rs.next();
+// 		}
+// 		catch(SQLException e)
+// 		{
+// 			System.out.println(e);
+// 		}	
+// 		return isTrue;
+// 	}

@@ -72,4 +72,27 @@
    <url-pattern>/login</url-pattern>
 </servlet-mapping>
 
+
+<display-name>java security</display-name>
+   <security-constraint>
+      <web-resource-collection>
+         <web-resource-name>secured</web-resource-name>
+         <url-pattern>/protected/*</url-pattern>
+      </web-resource-collection>
+      <auth-constraint>
+         <role-name>user</role-name>
+      </auth-constraint>
+   </security-constraint>
+
+   <security-role>
+      <role-name>user</role-name>
+   </security-role>
+   <login-config>
+      <auth-method>FORM</auth-method>
+      <form-login-config>
+         <form-login-page>/showAll</form-login-page>
+         <form-error-page>/jsp/Login.jsp</form-error-page>
+      </form-login-config>
+   </login-config>
+
 </web-app> 

@@ -1,6 +1,5 @@
 com\lxisoft\model\EditModel.class
 com\lxisoft\controller\DeleteServlet.class
-com\lxisoft\controller\LoginServlet.class
 com\lxisoft\controller\SaveServlet.class
 com\lxisoft\repository\Repository.class
 com\lxisoft\domain\Contact.class
