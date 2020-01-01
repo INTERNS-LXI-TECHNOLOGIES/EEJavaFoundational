@@ -1,17 +1,13 @@
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\model\ContactModel.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\AddContactServlet.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\ShowAllContactServlet.java
-G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\domain\User.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\model\ContactListModel.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\repository\MysqlRepository.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\model\SortByName.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\SearchContactServlet.java
-G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\LoginServlet.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\GetContactByIdServlet.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\domain\Contact.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\EditContactServlet.java
-G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\repository\UserRepository.java
-G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\SignUpServlet.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\model\SortByNumber.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\DeleteContactServlet.java
 G:\git\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlet\SortContactServlet.java

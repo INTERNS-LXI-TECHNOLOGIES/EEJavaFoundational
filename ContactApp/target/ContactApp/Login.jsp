@@ -20,19 +20,13 @@
 	<table align="center" border="5" width="25%" height="25%">
 		<caption><h3><center>Login Form</center></h3></caption>
 	
-		<form action="login" method="get">
+		<form method="POST" action ="j_security_check">
 			<tr>
-				<br><br><td>User Name:<input type="text" name="user name"/><br>			
-				<br>Password:<input type="password" name="password"/><br>
+				<br><br><td>User Name:<input type="text" name="j_username"/><br>			
+				<br>Password:<input type="password" name="j_password"/><br>
 				<br><input type="submit" value="Login"/><br>
 		</form>
-		<br><a href="SignUp.jsp">sign up</a>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<%User u=new User();
-		u.setUserName("null");
-		u.setPassword("null");
-		session.setAttribute("user",u);
-		%>
 		<a href="home">skip>>>>>>>></a>
 		</tr>
 </body>

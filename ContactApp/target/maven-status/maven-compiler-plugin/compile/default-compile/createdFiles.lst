@@ -1,14 +1,10 @@
-com\lxisoft\repository\UserRepository.class
 com\lxisoft\servlet\EditContactServlet.class
-com\lxisoft\servlet\LoginServlet.class
 com\lxisoft\model\SortByNumber.class
 com\lxisoft\servlet\SearchContactServlet.class
 com\lxisoft\model\ContactListModel.class
 com\lxisoft\model\SortByName.class
 com\lxisoft\servlet\AddContactServlet.class
-com\lxisoft\servlet\SignUpServlet.class
 com\lxisoft\domain\Contact.class
-com\lxisoft\domain\User.class
 com\lxisoft\servlet\GetContactByIdServlet.class
 com\lxisoft\model\SortById.class
 com\lxisoft\servlet\ShowAllContactServlet.class
