@@ -85,9 +85,6 @@ for(int i=0;i<c.size();i++)
 				<input type="submit" id="b3" value="Edit">
 				<input type="hidden" name="crud" value="3"/>
 			</form>
-			<%
-			}
-			%>
 		</td>
 	</tr>
 <%
