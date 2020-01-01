@@ -77,7 +77,7 @@
    <security-constraint>
       <web-resource-collection>
          <web-resource-name>secured</web-resource-name>
-         <url-pattern>/protected/*</url-pattern>
+         <url-pattern>/showAll</url-pattern>
       </web-resource-collection>
       <auth-constraint>
          <role-name>user</role-name>
@@ -88,11 +88,11 @@
       <role-name>user</role-name>
    </security-role>
    <login-config>
-      <auth-method>FORM</auth-method>
-      <form-login-config>
-         <form-login-page>/showAll</form-login-page>
-         <form-error-page>/jsp/Login.jsp</form-error-page>
-      </form-login-config>
+      <auth-method>BASIC</auth-method>
+      <!-- <form-login-config>
+         <form-login-page>/jsp/Login.jsp</form-login-page>
+         <form-error-page>/jsp/Fail.jsp</form-error-page>
+      </form-login-config> -->
    </login-config>
 
 </web-app> 

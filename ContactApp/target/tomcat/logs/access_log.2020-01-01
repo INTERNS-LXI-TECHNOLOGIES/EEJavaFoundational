@@ -1,6 +1,0 @@
-0:0:0:0:0:0:0:1 - - [01/Jan/2020:12:42:58 +0530] "GET /ContactApp/jsp/Login.jsp HTTP/1.1" 200 843 http-bio-8080-exec-2 982
-0:0:0:0:0:0:0:1 - - [01/Jan/2020:12:43:01 +0530] "GET /ContactApp/jsp/j_security_check?j_username=&j_password=&login=Submit HTTP/1.1" 200 843 http-bio-8080-exec-3 12
-0:0:0:0:0:0:0:1 - - [01/Jan/2020:12:43:03 +0530] "GET /ContactApp/jsp/j_security_check?j_username=&j_password=&login=Submit HTTP/1.1" 200 843 http-bio-8080-exec-4 5
-0:0:0:0:0:0:0:1 - - [01/Jan/2020:12:43:05 +0530] "GET /ContactApp/jsp/j_security_check?j_username=&j_password=&login=Submit HTTP/1.1" 200 843 http-bio-8080-exec-5 4
-0:0:0:0:0:0:0:1 - - [01/Jan/2020:12:43:11 +0530] "GET /ContactApp/jsp/Login.jsp HTTP/1.1" 200 843 http-bio-8080-exec-8 1
-0:0:0:0:0:0:0:1 - - [01/Jan/2020:12:43:17 +0530] "GET /ContactApp/jsp/j_security_check?j_username=ashiq&j_password=ashiq&login=Submit HTTP/1.1" 200 843 http-bio-8080-exec-10 3
