@@ -65,9 +65,8 @@ public class LogRepository
 			rs=smt.executeQuery("select * from login");
 			while(rs.next())
 			{
-				UserLogin uLogin=new UserLogin();
-				uLogin.setUname(rs.getString("uname"));
-				uLogin.setPwd(rs.getString("pwd"));	
+				uLogin.setUname(rs.getString("User_Name"));
+				uLogin.setPwd(rs.getString("PassWord"));	
 				login.add(uLogin);
 			}
 		}

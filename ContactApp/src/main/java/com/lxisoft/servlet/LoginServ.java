@@ -24,8 +24,6 @@ public class LoginServ extends HttpServlet
 			String p=login.get(i).getPwd(); 
 			if((u.equals(uname))&&(p.equals(pwd)))
 			{
-				HttpSession session=request.getSession();
-				session.setAttribute("user",uLog);
 				rd=request.getRequestDispatcher("url");
 				rd.forward(request,response);
 			}
@@ -34,7 +32,6 @@ public class LoginServ extends HttpServlet
 				rd=request.getRequestDispatcher("Login.jsp");
 				rd.include(request,response);
 			}
-		}
-        
+		} 
 	}
 }
