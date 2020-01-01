@@ -198,21 +198,3 @@ public class DbRepository implements Repository
 
 	
 }
-
-
-
-// public boolean validate(String username,String password)
-// 	{
-// 		boolean isTrue=false;
-// 		try
-// 		{
-// 			Statement s=connection.createStatement();
-// 			ResultSet rs=s.executeQuery("select * from users where username='"+username+"' and password='"+password+"'");
-// 			isTrue=rs.next();
-// 		}
-// 		catch(SQLException e)
-// 		{
-// 			System.out.println(e);
-// 		}	
-// 		return isTrue;
-// 	}

@@ -63,16 +63,6 @@
    <url-pattern>/selectContact</url-pattern>
 </servlet-mapping>
 
-<servlet>
-   <servlet-name>selecting</servlet-name>
-   <servlet-class>com.lxisoft.controller.LoginServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-   <servlet-name>selecting</servlet-name>
-   <url-pattern>/login</url-pattern>
-</servlet-mapping>
-
-
 <display-name>java security</display-name>
    <security-constraint>
       <web-resource-collection>
