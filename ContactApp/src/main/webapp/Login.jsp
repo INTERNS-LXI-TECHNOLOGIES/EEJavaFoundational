@@ -8,8 +8,8 @@
 				</br>
 					<div>
 						<form action="j_security_check" method="GET"><center>
-							<input type="text"  name="username" placeholder= "j_username"></br></br> 
-							<input type="password"  name="password" placeholder= "j_password"></br></br> 
+							<input type="text"  name="j_username" placeholder= "username"></br></br> 
+							<input type="password"  name="j_password" placeholder= "password"></br></br> 
 							<input type="submit" value="Login">
 							<input type="reset" value="reset"></br></br>
 							<a href="View">skip</a></center>
