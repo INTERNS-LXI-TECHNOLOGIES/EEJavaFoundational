@@ -4,7 +4,7 @@
 <BODY>
 <TABLE bgcolor=#ff0040 align=center BORDER="10px" width="25%">
 <TR>
-	<TD><H1><CENTER><a href="Login.jsp">CONTACT APP</a></H1></TD>
+	<TD><H1><CENTER><a href="url">CONTACT APP</a></H1></TD>
 </TR>
 </TABLE>
 </BODY>

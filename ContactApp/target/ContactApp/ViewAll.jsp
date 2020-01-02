@@ -30,8 +30,7 @@
 	</th>
 	</tr>
 	</form>
-	<%
-	List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
+	<%List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
 	for(ContactModel cm:contactsList)
 	{%>
 		<form action="select" method="get">
