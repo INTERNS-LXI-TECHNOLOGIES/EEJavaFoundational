@@ -85,20 +85,11 @@
       <url-pattern>/sort</url-pattern>
  </servlet-mapping>
 
-<servlet>
-      <servlet-name>Login</servlet-name>
-      <servlet-class>com.lxisoft.Servlet.LoginServlet</servlet-class>
-</servlet>
-
-<servlet-mapping>
-      <servlet-name>Login</servlet-name>
-      <url-pattern>/login</url-pattern>
- </servlet-mapping>
 
  <security-constraint>
       <web-resource-collection>
          <web-resource-name>login</web-resource-name>
-         <url-pattern>/index.jsp</url-pattern>
+         <url-pattern>/viewall</url-pattern>
          <http-method>GET</http-method>
          <http-method>POST</http-method>
       </web-resource-collection>
@@ -116,7 +107,12 @@
    </security-role>
    
    <login-config>
-      <auth-method>BASIC</auth-method>
+      <auth-method>FORM</auth-method>
+      <realm-name>login</realm-name>
+      <form-login-config>
+         <form-login-page>/login.jsp</form-login-page>
+         <form-error-page>/index.jsp</form-error-page>
+      </form-login-config>
    </login-config>
 
 </web-app>
