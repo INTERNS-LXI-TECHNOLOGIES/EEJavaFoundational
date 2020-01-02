@@ -40,6 +40,7 @@
 		<option value="" selected="selected">options</option>
 		 <option value="sort?sortType=f">Firstname sort</option>
 		 <option value="sort?sortType=l">Lastname sort</option>
+		 <option value="<%=request.getContextPath()%>/jsp/Logout.jsp">logout</option>
 	</select>
 
 	<form action="search" style="text-align-last: center; padding:4px" method="get">

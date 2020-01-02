@@ -22,7 +22,7 @@
 		</table>
 			
 		</form>
-		<a href="<%=request.getContextPath()%>/showAll" style="color: black">skip for now</a>
+		
 	</div>
 </body>
 </html>
