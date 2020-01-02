@@ -20,7 +20,7 @@
 	}
 	#b1
 	{
-		margin-left: 150px;
+		margin-left: 200px;
 	}
 	#b2
 	{
@@ -42,22 +42,8 @@
 <body style="background-color: grey">
 	<table align="center" border="5" width="25%" height="25%">
 	<a href="home"><input type="button" id="b2" value="<---"></a>
-	<%
-	User u=(User) session.getAttribute("user");
-	String n=(u.getUserName());
-	String p=(u.getPassword());
-	if((n.equals("null")))
-	{
-	%>
-		<a href="Login.jsp"><input type="submit" id="b1" value="Edit"></a>
-	<%
-	}
-	else
-	{
-	%>
 	<a href="EditContact.jsp"><input type="submit" id="b1" value="Edit"></a><br><br><br>
 <%
-}
 Contact con=(Contact) request.getAttribute("getContactById");
 
 %>
@@ -70,21 +56,8 @@ Contact con=(Contact) request.getAttribute("getContactById");
 <tr>
 	<center>
 	<br>
-	<%
-	if((n.equals("null")))
-	{
-	%>
-		<a href="Login.jsp"><input type="submit" id="b3" value="Delete Contact"></a>
-	<%
-	}
-	else
-	{
-	%>
 	<a href="DeleteContact.jsp"><input type="submit" id="b3" value="Delete Contact">
 	</a></center>
-	<%
-	}
-	%>
 </tr>
 </table>
 </body>
