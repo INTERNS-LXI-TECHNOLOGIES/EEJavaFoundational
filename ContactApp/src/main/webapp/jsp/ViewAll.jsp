@@ -32,6 +32,8 @@
 			vertical-align: middle;
 		}
 	</style>
+
+  
 	<div>
 		<button id="b2" onclick="window.location.href='index.jsp'">close(X)</button>
 	</div>
@@ -76,14 +78,17 @@ for(Contact contact:contactList)
 	<img src="WEB-INF/classes/images/person.jpg" width="50" height="50">  <%=contact.getFName()%>&nbsp;<%=contact.getLName()%></a>
 	</h2>
 	</td>
-	<td>
-	<button onclick="window.location.href='<%=request.getContextPath()%>/selectContact?selectId=<%=contact.getId()%>&type=e'">Edit</button>
-	</td>
-	<td>
-	<button onclick="window.location.href='<%=request.getContextPath()%>/selectContact?selectId=<%=contact.getId()%>&type=d'">Delete</button>
-	</td>
-	</tr>
+	<%if (request.isUserInRole("admin"))
+	{	 %>
+		<td>
+		<button onclick="window.location.href='<%=request.getContextPath()%>/selectContact?selectId=<%=contact.getId()%>&type=e'">Edit</button>
+		</td>
+		<td>
+		<button onclick="window.location.href='<%=request.getContextPath()%>/selectContact?selectId=<%=contact.getId()%>&type=d'">Delete</button>
+		</td>
+		</tr>
  	<%
+ 	}
 }
 %>
 </table>
