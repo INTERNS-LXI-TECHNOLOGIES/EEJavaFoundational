@@ -11,7 +11,7 @@
 			&nbsp;&nbsp;<input type="text" name="j_username" placeholder="UserName"><br>
 			<br>&nbsp;&nbsp;<input type="password" name="j_password" placeholder="PassWord"><br>
 			<br>&nbsp;&nbsp;<input type="submit" value="Login">&nbsp;&nbsp;&nbsp;&nbsp;
-			&nbsp;&nbsp;&nbsp;&nbsp;<a href="ViewAll.jsp"><input type="submit" value="Skip"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;<a href="url"><input type="submit" value="Skip"></a>&nbsp;&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;&nbsp;<a href="SignUp.jsp"><input type="submit" value="Sign Up"></a>
 			</td>
 		</tr>
