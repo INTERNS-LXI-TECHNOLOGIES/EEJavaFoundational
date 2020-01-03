@@ -10,7 +10,19 @@
 			<center>
 				 <h3> CONTACT APPLICATION </h3>
 			</center>
-			<a href="ContactAdd.jsp" ><img src="images/add.png" height="40px"; width="40px";></a></center>
+			<% if (request.isUserInRole("manager"))  { %>
+			<a href="ContactAdd.jsp" ><img src="images/add.png" height="40px"; width="40px";></a> 
+			<% }
+			else { %>
+			<button type="button" onclick="Access_denied()"><img src="images/add.png" height="40px"; width="40px";></a> 
+			<% } %></button>
+			<script>
+						function Access_denied(){
+						alert("Access denied!!!");
+						// window.location="ContactAdd.jsp"
+						}
+			</script>
+			
 			<!-- <button  class ="butt" align="left" type="button" onClick="window.location.href = 'ContactAdd.jsp';">+</button> -->
 			<form action="select" method="GET"><center>
 			<input type="text" name="user" placeholder= "Enter Name">
@@ -22,7 +34,12 @@
   			</select>
   			<input type="submit" value="sort"> 
   			</center></form>
+  			<% if (request.isUserInRole("manager"))  { %>
 			<center> <button  type="button" onClick="window.location.href = 'DeleteAll';">DeleteAllContacts</button></center>
+			<% }
+			else { %>
+			<center> <button  type="button" onclick="Access_denied()">DeleteAllContacts</button></center>
+			<% } %>
 			<%
 			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");
 			  

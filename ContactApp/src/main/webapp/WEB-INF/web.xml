@@ -32,6 +32,10 @@
       <servlet-name>CSort</servlet-name>
       <servlet-class>com.lxisoft.servlets.SortServlet</servlet-class>
 </servlet>
+<servlet>
+      <servlet-name>CSkip_page</servlet-name>
+      <servlet-class>com.lxisoft.servlets.ViewAllServlet</servlet-class>
+</servlet>
 <!-- <servlet>
       <servlet-name>userlogin</servlet-name>
       <servlet-class>com.lxisoft.servlets.LoginServlet</servlet-class>
@@ -69,6 +73,10 @@
 		<servlet-name>CSort</servlet-name>
 		<url-pattern>/sort</url-pattern>
 </servlet-mapping>
+<servlet-mapping>
+		<servlet-name>CSkip_page</servlet-name>
+		<url-pattern>/Skip</url-pattern>
+</servlet-mapping>
 <!-- <servlet-mapping>
 		<servlet-name>userlogin</servlet-name>
 		<url-pattern>/login</url-pattern>
@@ -86,21 +94,23 @@
          <description>
             Let only admin use this app
          </description>
-
+         <role-name>manager</role-name>
          <role-name>user</role-name>
       </auth-constraint>
    </security-constraint>
-
+  <security-role>
+      <role-name>manager</role-name>
+   </security-role>
     <security-role>
       <role-name>user</role-name>
    </security-role>
-   
+
    <login-config>
       <auth-method>FORM</auth-method>
       <!-- <realm-name>login</realm-name> -->
       <form-login-config>
          <form-login-page>/Login.jsp</form-login-page>
-         <form-error-page>/ContactEdit.jsp</form-error-page>
+         <form-error-page>/Error.jsp</form-error-page>
       </form-login-config>
    </login-config>
 </web-app>

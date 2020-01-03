@@ -12,7 +12,7 @@
 							<input type="password"  name="j_password" placeholder= "password"></br></br> 
 							<input type="submit" value="Login">
 							<input type="reset" value="reset"></br></br>
-							<a href="View">skip</a></center>
+							<a href="Skip">skip</a></center>
 						</form>
 					</div>
 		</body>
