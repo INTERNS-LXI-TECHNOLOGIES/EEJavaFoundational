@@ -20,7 +20,7 @@
 	}
 	#b1
 	{
-		margin-left: 100px;
+		margin-left: 200px;
 	}
 	#b2
 	{
