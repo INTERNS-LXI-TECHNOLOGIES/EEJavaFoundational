@@ -10,6 +10,16 @@
       <url-pattern>/viewall</url-pattern>
  </servlet-mapping>
 
+<servlet>
+      <servlet-name>skip</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.ViewServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>skip</servlet-name>
+      <url-pattern>/skip</url-pattern>
+ </servlet-mapping>
+
 
 <servlet>
       <servlet-name>newContact</servlet-name>
@@ -111,7 +121,7 @@
       <realm-name>login</realm-name>
       <form-login-config>
          <form-login-page>/login.jsp</form-login-page>
-         <form-error-page>/index.jsp</form-error-page>
+         <form-error-page>/error.jsp</form-error-page>
       </form-login-config>
    </login-config>
 
