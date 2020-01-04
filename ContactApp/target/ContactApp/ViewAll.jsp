@@ -36,7 +36,10 @@
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body style="background-color: white">
+	<%if(request.isUserInRole("admin"))
+	{%>
 	<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="+" /></a>
+	<%}%>
 	<form action= "sort" method="get">
 	<select name="sort">
     
@@ -47,7 +50,8 @@
   </select>
 </form>
 	<%
-	List<ContactModel> c=(List<ContactModel>) request.getAttribute("allContact");%>
+	List<ContactModel> c=(List<ContactModel>) request.getAttribute("allContact");
+	%>
 	<form action= "search" method="get">
 	<table align="center" border="1" width="20%" height="5%" >
 		<tr>
@@ -74,6 +78,8 @@ for(int i=0;i<c.size();i++)
 </form>
 	</td>
 		<td>
+			<%if(request.isUserInRole("admin"))
+			{%>
 			<form action= "getContact" method="get">
 				<input type="hidden" name="id" value="<%=(c.get(i).getId())%>"/>
 				<input type="submit" id="b3" value="Delete">
@@ -85,6 +91,7 @@ for(int i=0;i<c.size();i++)
 				<input type="submit" id="b3" value="Edit">
 				<input type="hidden" name="crud" value="3"/>
 			</form>
+			<%}%>
 		</td>
 	</tr>
 <%

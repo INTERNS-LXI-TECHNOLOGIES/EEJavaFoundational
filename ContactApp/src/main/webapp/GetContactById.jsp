@@ -42,8 +42,10 @@
 <body style="background-color: grey">
 	<table align="center" border="5" width="25%" height="25%">
 	<a href="home"><input type="button" id="b2" value="<---"></a>
+	<%if(request.isUserInRole("admin"))
+{%>
 	<a href="EditContact.jsp"><input type="submit" id="b1" value="Edit"></a><br><br><br>
-<%
+	<%}
 Contact con=(Contact) request.getAttribute("getContactById");
 
 %>
@@ -53,6 +55,8 @@ Contact con=(Contact) request.getAttribute("getContactById");
 <center><%=(con.getContactLastName())%></center>
 <center><%=(con.getContactNumber())%></center>
 </font>
+<%if(request.isUserInRole("admin"))
+{%>
 <tr>
 	<center>
 	<br>
@@ -60,5 +64,8 @@ Contact con=(Contact) request.getAttribute("getContactById");
 	</a></center>
 </tr>
 </table>
+
+	
+	<%}%>
 </body>
 </html>
