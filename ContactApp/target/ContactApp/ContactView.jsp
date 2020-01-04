@@ -22,8 +22,6 @@
 						// window.location="ContactAdd.jsp"
 						}
 			</script>
-			
-			<!-- <button  class ="butt" align="left" type="button" onClick="window.location.href = 'ContactAdd.jsp';">+</button> -->
 			<form action="select" method="GET"><center>
 			<input type="text" name="user" placeholder= "Enter Name">
 			<button> search here </button></center></form>
@@ -56,23 +54,39 @@
 				<table align="center" border="10px" width="30%">
 				<tr><th colspan="3"><strong>NAME</strong></th></tr>
 				<% for(ContactModel contactmodel:contactList)
-				{ 
-					%>
+				{ %>
+					
 					<tr>
-					<td>
 						<!-- <img src="images/person.png" height="50px";width="50px";> -->
-					<button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getFullName()%>';"><%=contactmodel.getFullName()%>
-					</button></td>
+					<% if (request.isUserInRole("manager"))  { %>	
+						<td><button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getFullName()%>';"><%=contactmodel.getFullName()%>
+						</button></td>
+					<% }
+					else { %>
+						<td>
+						<button class="button" type="button" onclick="Access_denied()"><%=contactmodel.getFullName()%>
+						</button></td>
+					<% } %>
 
-					<td>
-					<button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getId()%>';">Edit</button></td>
+					<% if (request.isUserInRole("manager"))  { %>	
+						<td><button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getId()%>';">Edit</button></td>
+					<% }
+					else { %>
+						<td>
+						<button class="button" type="button" onclick="Access_denied()">Edit</button></td>
+					<% } %>
 
-					<td>
-					<button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getFullName()%>';">Delete</button></td>
+
+					<% if (request.isUserInRole("manager"))  { %>	
+						<td><button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getFullName()%>';">Delete</button></td>
+					<% }
+					else { %>
+							<td>
+							<button class="button" type="button" onclick="Access_denied()">Delete</button></td>
+						<% } %>
+
 					</tr>
-
-				<%
-			} %>
+				<% } %>
 		</table></br>
 		<center><button type="button" onClick="window.location.href='View'">Refresh</button>
 		<% out.println("No of contacts"+""+contactList.size());%></center>
