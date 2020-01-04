@@ -7,9 +7,11 @@
 			<%@ page import="com.lxisoft.models.*"%>
 			<%@ page import="com.lxisoft.Domain.*"%>
 			<%@ page import="java.util.*"%>
-			<center>
-				 <h3> CONTACT APPLICATION </h3>
-			</center>
+			<center> <h3> CONTACT APPLICATION </h3> <br/><br/></center>
+			<%if(request.getUserPrincipal()!=null) { %>
+				<center>	welcome <%=request.getUserPrincipal().getName()%> </center> <% }
+			 else { %> <center> welcome guest  <% } %> </center>
+
 			<% if (request.isUserInRole("manager"))  { %>
 			<a href="ContactAdd.jsp" ><img src="images/add.png" height="40px"; width="40px";></a> 
 			<% }
@@ -37,7 +39,7 @@
 			<% }
 			else { %>
 			<center> <button  type="button" onclick="Access_denied()">DeleteAllContacts</button></center>
-			<% } %>
+			<% } %><br/><br/>
 			<%
 			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");
 			  
@@ -55,7 +57,7 @@
 				<tr><th colspan="3"><strong>NAME</strong></th></tr>
 				<% for(ContactModel contactmodel:contactList)
 				{ %>
-					
+
 					<tr>
 						<!-- <img src="images/person.png" height="50px";width="50px";> -->
 					<% if (request.isUserInRole("manager"))  { %>	
