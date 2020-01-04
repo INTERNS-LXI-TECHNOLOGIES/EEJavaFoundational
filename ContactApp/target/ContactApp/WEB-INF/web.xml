@@ -66,7 +66,7 @@
 <security-constraint>
     <web-resource-collection>
         <web-resource-name>contact</web-resource-name>
-        <url-pattern>/home</url-pattern>
+        <url-pattern>/index.jsp</url-pattern>
         <http-method>GET</http-method>
         <http-method>POST</http-method>
     </web-resource-collection>

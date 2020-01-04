@@ -4,6 +4,7 @@
 	<title>error page</title>
 </head>
 <body>
-	<a href="Login.jsp">Login again</a>
+	<strong>Error: UserName or Password is incorrect</strong>
+	<center><h1><a href="Login.jsp">Login again</a></h1></center>
 </body>
 </html>
