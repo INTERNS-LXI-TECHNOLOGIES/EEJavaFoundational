@@ -43,13 +43,11 @@
 		if(contact.getId().equals(selectId))
 			selectModel.setContact(contact);
 	}
-	// ServletContext ctx;
-	// InputStream configStream = ctx.getResourceAsStream("/WEB-INF/config.properties");
 	%>
 
 	<div align="center">
 		<h2 style="margin: 47px;">
-			<img src="<%=request.getContextPath()%>/classes/images/person.jpg" width="135" height="135">
+			<img src="<%=request.getContextPath()%>/person.jpg" width="135" height="135">
 		</h2>
 	</div>
 	<div align="center">

@@ -75,10 +75,10 @@ for(Contact contact:contactList)
 	<tr>
 	<td>
 	<h2><a style="margin-left: 30px;" href="<%=request.getContextPath()%>/jsp/Select.jsp?selectId=<%=contact.getId()%>">
-	<img src="WEB-INF/classes/images/person.jpg" width="50" height="50">  <%=contact.getFName()%>&nbsp;<%=contact.getLName()%></a>
+	<img src="person.jpg" width="50" height="50">  <%=contact.getFName()%>&nbsp;<%=contact.getLName()%></a>
 	</h2>
 	</td>
-	<%if (request.isUserInRole("user"))
+	<%if (request.isUserInRole("admin"))
 	{	 %>
 		<td>
 		<button onclick="window.location.href='<%=request.getContextPath()%>/selectContact?selectId=<%=contact.getId()%>&type=e'">Edit</button>
