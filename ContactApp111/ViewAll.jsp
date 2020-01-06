@@ -6,9 +6,6 @@
 <title>CONTACTS </title>
 <head>
 
-<h5>jose</h7>
-
-
 
 </head>
 <h1><center>CONTACT LIST</center></h1>
@@ -40,7 +37,10 @@ tr:nth-child(even) {
 </style>
 
 <a href="Add.jsp"><h1><center>ADD<center></h1></a>
-	<a href="Add.jsp"><h1><center>SEARCH<center></h1></a>
+	<form action = "Search" method = "post">
+	  Name   : <input type="text" name="name"><br>
+		  <input type="submit" value="SEARCH"></form>
+	
 
 <%
 ArrayList<Contact> c=(ArrayList<Contact>)request.getAttribute("contact");
