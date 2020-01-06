@@ -26,14 +26,21 @@ else if (request.getUserPrincipal()==null){ %>
 <% }
 else{ %>
 <!-- <embed src="song.mp4"> </embed> -->
-<button onclick="denied()" >+</button></a>
+<button onclick="denied();play();" >+</button></a>
 <% } %> </center>
  
 <script>
 	function denied()
 	{
 		alert("access denied");
-		
+		// <audio controls autoplay>  
+  // <source src="song.mp3" type="audio/mpeg"></audio>  
+	}
+	function play()
+	{
+		var beep=new Audio();
+		beep.src="song.mp3";
+		beep.play();
 	}
 </script>
  <center>
