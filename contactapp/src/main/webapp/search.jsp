@@ -33,6 +33,8 @@
                 <td><%=c.getId()%></td> 
                 <td><%=c.getName()%></td> 
                 <td><%=c.getNumber()%></td> 
+                <td><a href="Edit">edit</a></td> 
+                <td><a href="Delete">delete</a></td> 
             </tr> 
  <%}%>
       </table>

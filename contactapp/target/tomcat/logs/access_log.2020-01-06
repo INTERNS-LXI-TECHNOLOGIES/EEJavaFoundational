@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [06/Jan/2020:16:52:30 +0530] "GET /contactapp/Contacts.jsp HTTP/1.1" 200 2013 http-bio-8080-exec-3 1874
+0:0:0:0:0:0:0:1 - - [06/Jan/2020:16:52:33 +0530] "GET /contactapp/view HTTP/1.1" 302 - http-bio-8080-exec-5 518
+0:0:0:0:0:0:0:1 - - [06/Jan/2020:16:52:33 +0530] "GET /contactapp/Contacts.jsp HTTP/1.1" 200 5717 http-bio-8080-exec-6 2
+0:0:0:0:0:0:0:1 - - [06/Jan/2020:16:52:35 +0530] "GET /contactapp/Edit?id=5 HTTP/1.1" 200 363 http-bio-8080-exec-7 315
+0:0:0:0:0:0:0:1 - - [06/Jan/2020:16:52:47 +0530] "POST /contactapp/Edit HTTP/1.1" 500 1713 http-bio-8080-exec-9 109

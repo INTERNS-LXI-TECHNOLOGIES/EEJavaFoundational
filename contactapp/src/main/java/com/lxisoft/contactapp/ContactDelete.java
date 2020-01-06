@@ -7,20 +7,22 @@ import java.util.*;
 import com.lxisoft.contactapp.contactrepo.*;
 import com.lxisoft.contactapp.model.*;
 public class ContactDelete extends HttpServlet{
-public void doPost(HttpServletRequest request, HttpServletResponse response)
+public void doGet(HttpServletRequest request, HttpServletResponse response)
 throws ServletException, IOException {
  
  		response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        String n = request.getParameter("Name");
+        String n = request.getParameter("idd");
+        int a=Integer.parseInt(n);
 
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contacts","root","root");
 		Statement s=con.createStatement();
-		s.executeUpdate("delete from contactlist where NAME ='"+n+"'");	
-		RequestDispatcher rd = request.getRequestDispatcher("Contacts.jsp"); 
-		rd.forward(request,response);
+		s.executeUpdate("delete from contactlist where ID ='"+a+"'");
+		response.sendRedirect("Contacts.jsp");	
+		//RequestDispatcher rd = request.getRequestDispatcher("Contacts.jsp"); 
+		//rd.forward(request,response);
        }
     catch(Exception ee){
 		System.out.println(ee);}

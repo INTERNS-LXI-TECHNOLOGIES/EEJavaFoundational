@@ -9,7 +9,6 @@ public class ContactControl extends HttpServlet{
 	Repository repo=new DbRepository();
 	Contact contact=new Contact();
 	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException, IOException{
-		System.out.println("hai");
 	HttpSession session=req.getSession();
 		List<Contact> conlist=new ArrayList<Contact>();
 		conlist=repo.getAll();

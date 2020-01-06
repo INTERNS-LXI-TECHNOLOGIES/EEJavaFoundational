@@ -60,6 +60,32 @@ public Contact searchList(String name){
 		System.out.println("****Exception*****"+ee);} 
 		return contact;
    }
+
+
+ public Contact searchById(int id){
+	Contact contact=new Contact();
+	try{
+		Class.forName("com.mysql.jdbc.Driver");
+		con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contacts","root","root");
+		Statement s=con.createStatement();
+		ResultSet rs=s.executeQuery("select * from contactlist where(ID ='"+id+"')");
+		contact.setId(rs.getInt("ID"));
+		contact.setName(rs.getString("NAME"));
+		contact.setNumber(rs.getString("NUMBER"));
+        }
+    catch(Exception ee){
+		System.out.println("****Exception*****"+ee);} 
+		return contact;
+   }
+
+
+
+
+
+
+
+
+
 public void editList(Contact contac,String[] temp){
 	ArrayList<Contact> colist=this.getAll();
 	try{

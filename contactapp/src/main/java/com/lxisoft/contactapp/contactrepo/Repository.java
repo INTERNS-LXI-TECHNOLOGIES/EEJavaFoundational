@@ -9,6 +9,7 @@ public void setContact(Contact contact);
 public ArrayList<Contact>  getAll();
 public void editList(Contact c,String[] t);
 public Contact searchList(String name);
+public Contact searchById(int id);
 public void deleteList(String cn);
 public void clearList();
 
