@@ -44,11 +44,12 @@
 	<a href="home"><input type="button" id="b2" value="<---"></a>
 	<%if(request.isUserInRole("admin"))
 {%>
-	<a href="EditContact.jsp"><input type="submit" id="b1" value="Edit"></a><br><br><br>
+	
 	<%}
 Contact con=(Contact) request.getAttribute("getContactById");
 
 %>
+<a href="editContact"><input type="submit" id="b1" value="Edit"></a><br><br><br>
 <font size="15">
 <center><img src="user-icon-jpg-12.jpg" width="10%" height="10%"> 
 <center><%=(con.getContactFirstName())%></center>
@@ -60,8 +61,9 @@ Contact con=(Contact) request.getAttribute("getContactById");
 <tr>
 	<center>
 	<br>
-	<a href="DeleteContact.jsp"><input type="submit" id="b3" value="Delete Contact">
-	</a></center>
+	<form action= "delete" method="post">
+	<input type="submit" id="b3" value="Delete Contact">
+	</form></center>
 </tr>
 </table>
 

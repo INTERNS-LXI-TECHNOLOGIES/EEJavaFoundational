@@ -7,6 +7,11 @@ import com.lxisoft.repository.*;
 import com.lxisoft.servlet.*;
 public class EditContactServlet extends HttpServlet
 {
+	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	{
+		RequestDispatcher rd=request.getRequestDispatcher("EditContact.jsp");
+		rd.forward(request,response);
+	}
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		String id=request.getParameter("id");

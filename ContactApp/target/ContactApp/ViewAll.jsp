@@ -2,6 +2,7 @@
 <%@page import="com.lxisoft.model.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
+<%@page import="java.util.Locale"%>
 <html>
 <title>CONTACTS </title>
 <head>
@@ -36,7 +37,9 @@
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body style="background-color: white">
-	<%if(request.isUserInRole("admin"))
+	
+    <%
+	if(request.isUserInRole("admin"))
 	{%>
 	<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="+" /></a>
 	<%}%>

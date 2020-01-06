@@ -6,6 +6,11 @@ import com.lxisoft.domain.*;
 import com.lxisoft.repository.*;
 public class DeleteContactServlet extends HttpServlet
 {
+	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	{
+		RequestDispatcher rd=request.getRequestDispatcher("DeleteContact.jsp");
+		rd.forward(request,response);
+	}
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		String id=request.getParameter("id");
