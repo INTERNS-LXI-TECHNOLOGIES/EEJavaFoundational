@@ -2,12 +2,16 @@
 		<head>
 			<title> VIEW CONTACT </title>
 			  <link rel="stylesheet" type="text/css" href="styles.css">
+			   <script>
+						var beep=new Audio();
+						beep.src="sound2.wav";
+				</script>
 		</head>
 		<body> 
 			<%@ page import="com.lxisoft.models.*"%>
 			<%@ page import="com.lxisoft.Domain.*"%>
 			<%@ page import="java.util.*"%>
-			<center> <h3> CONTACT APPLICATION </h3> <br/><br/></center>
+			<center> <h3> CONTACTS</h3> <br/><br/></center>
 			<%if(request.getUserPrincipal()!=null) { %>
 				<center>	welcome <%=request.getUserPrincipal().getName()%> </center> <% }
 			 else { %> <center> welcome guest  <% } %> </center>
@@ -16,8 +20,9 @@
 			<a href="ContactAdd.jsp" ><img src="images/add.png" height="40px"; width="40px";></a> 
 			<% }
 			else { %>
-			<button type="button" onclick="Access_denied()"><img src="images/add.png" height="40px"; width="40px";></a> 
-			<% } %></button>
+			<nav>
+			<button type="button" onclick="beep.play(); Access_denied();"><img src="images/add.png" height="40px"; width="40px";>
+			<% } %></button></nav>
 			<script>
 						function Access_denied(){
 						alert("Access denied!!!");
@@ -39,7 +44,7 @@
 			<% }
 			else { %>
 			<center> <button  type="button" onclick="Access_denied()">DeleteAllContacts</button></center>
-			<% } %>
+			<% } %><br/><br/>
 			<%
 			    ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");
 			  
