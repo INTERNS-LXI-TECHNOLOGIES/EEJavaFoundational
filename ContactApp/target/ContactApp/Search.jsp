@@ -25,7 +25,7 @@
 				<th style="font-family: fantasy;font size: 5px">FIRSTNAME</th>
 				<th style="font-family: fantasy;font size: 5px">LASTNAME</th>
 				<th style="font-family: fantasy;font size: 5px">NUMBER</th>
-				<% if (request.isUserInRole("manager")) { %>				
+				<% if (request.isUserInRole("admin")) { %>				
 				<th style="font-family: fantasy;font size: 5px">OPTIONS</th>
 				  <% } %>
 			</tr>
@@ -40,7 +40,7 @@
 			<td><%out.println(i.getLastname());%></td>
 			<td><%out.println(i.getNumber());%></td>
 			<center>
-				<% if (request.isUserInRole("manager")) { %>
+				<% if (request.isUserInRole("admin")) { %>
 			   <td><a href="Update.jsp?id=<%=i.getId()%>">EDIT&nbsp; </a>
 	         <a href="Delete.jsp?id=<%=i.getId()%>">&nbsp;DELETE </a></td>
              <% } %>
