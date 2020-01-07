@@ -14,9 +14,36 @@
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body>
-  <a href="Create.jsp" class="btn-floating btn-sm btn-secondary"><i class="fas fa-star"></i></a>
+  
+
+ <!--  <br><a href="Create.jsp" class="btn-floating btn-sm btn-secondary"><i class="fas fa-star"></i></a></br> -->
+ <!-- <br><a href="Create.jsp" type="button" class="btn btn-cyan px-3" data-toggle="popover-hover" data-content="Create New"><i class="fas fa-pluse" aria-hidden="true"></i></a></br> -->
+
+
+
+       <br><p>
+        <a href="Create.jsp" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Create 
+        </a>
+      </p></br>
+
+
+
+  <br><div class="input-group md-form form-sm form-2 pl-0">
+     <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+        <div class="input-group-append">
+             <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
+                   aria-hidden="true"></i></span>
+  </div>
+</div></br>
+ 
+
+
+
+
   <table class="table table-striped">
-<!--   <table align="center" border= "5" width="30%" border color= "yellow" bgcolor="blue"> -->
+  <body class="navy-blue-skin">
+
     <tr>
       <th>ID</th>
       <th>NAME</th>
@@ -24,29 +51,8 @@
       <th> </th>
       <th> </th>
     </tr>
-
-
-<!-- <style>
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-}
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-</style> -->
-<!-- <button type="button" href="view" class="btn btn-primary btn-rounded">Primary</button>
- --><br><a href="view">all</a></br>
-<!-- <a href="Create.jsp"><h1><center>ADD<center></h1></a> -->
-
-
-       <!--  <%Contact contact=new Contact();%> -->
+<br><a href="view">all</a></br>
+<!--  <%Contact contact=new Contact();%> -->
         <%ArrayList<Contact> colist = (ArrayList<Contact>)session.getAttribute("data");%>
         <%if(colist!=null){%>
             <%for(Contact c:colist){%> 

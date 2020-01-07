@@ -14,9 +14,9 @@ public class ContactEdit extends HttpServlet{
 throws ServletException, IOException {
 	response.setContentType("text/html");
 	String id=request.getParameter("id");
-	int a=Integer.parseInt(id);
+	//int a=Integer.parseInt(id);
 	//contact=repo.searchById(a);
-	//request.setAttribute("contact",contact);
+	request.setAttribute("id",id);
 	RequestDispatcher rd = request.getRequestDispatcher("Edit.jsp"); 
 	rd.forward(request,response);
 
