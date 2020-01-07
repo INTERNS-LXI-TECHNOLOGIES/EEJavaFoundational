@@ -41,8 +41,14 @@
 	</tr>		
 </table>
 <center>
-	<br><a href="Update.jsp?id=<%=temp%>"> EDIT </a> <br><br>
-	<a href="Delete.jsp?id=<%=temp%>"> DELETE </a>
+
+	<% if (request.isUserInRole("admin")) 
+	{ %>
+		   	<br><a href="Update.jsp?id=<%=temp%>"> EDIT </a> <br><br>
+			<a href="Delete.jsp?id=<%=temp%>"> DELETE </a>
+    <%
+     } %>
+	
 </center>
 </body>
 </html>

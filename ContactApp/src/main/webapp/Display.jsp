@@ -26,6 +26,7 @@
 		<input type="submit" value="search"><br><br>
 		</center>
 	</form>	
+
 <table align="center" style="border-collapse: collapse;">
 	        <tr>
 				<th style="font-family: fantasy;font size: 10px">NAME</th>
@@ -44,8 +45,15 @@
 					&temp3=<%=i.getNumber()%>">
 					<input type="button" name="submit" value="<%=i.getFirstname()%> &nbsp;<%=i.getLastname()%>">
 				</a><br>
-					<a href="Update.jsp?id=<%=i.getId()%>"> EDIT &nbsp; </a> 
-	                    <a href="Delete.jsp?id=<%=i.getId()%>"> &nbsp;DELETE </a>	
+
+	<% if (request.isUserInRole("admin")) 
+	{ %>
+   			<a href="Update.jsp?id=<%=i.getId()%>"> EDIT &nbsp; </a> 
+	        <a href="Delete.jsp?id=<%=i.getId()%>"> &nbsp;DELETE </a>	
+    <%
+     } %>
+
+					
 			</td>
 			
 			</tr>

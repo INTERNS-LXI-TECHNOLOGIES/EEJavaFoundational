@@ -49,8 +49,6 @@ public class Sqlrepository implements Repository
 	    {
 	    	System.out.println(e);
 	    }
-		
-		
 	}
 	public ArrayList <Contact> read()
 	{

@@ -12,12 +12,17 @@
          <description>
             Let only Abhijith use this app
          </description>
-         <role-name>manager</role-name>
+         <role-name>admin</role-name>
+         <role-name>user</role-name>
       </auth-constraint>
    </security-constraint>
    
    <security-role>
-      <role-name>manager</role-name>
+     <role-name>admin</role-name>  
+   </security-role>
+    
+   <security-role>
+     <role-name>user</role-name>
    </security-role>
    
    <login-config>
