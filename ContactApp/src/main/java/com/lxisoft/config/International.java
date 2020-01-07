@@ -10,18 +10,19 @@ public class International
 		// Locale.setDefault(new Locale("en", "IN"));
 		// ResourceBundle bundle = ResourceBundle.getBundle("contacts",Locale.getDefault());
 		// System.out.println("Message in 111" + Locale.getDefault() + ": " + bundle.getString("contacts"));
-
-		Locale.setDefault(new Locale("en","QN"));
-		ResourceBundle bundle = ResourceBundle.getBundle("text");
-		System.out.println(Locale.getDefault()+" Message in 222" + Locale.QN + ": " + bundle.getString("contacts"));
-
 		Locale.setDefault(new Locale(lang,country));
 		ResourceBundle bundle = ResourceBundle.getBundle("text");
-		System.out.println(Locale.getDefault()+" Message in 222" + Locale.country + ": " + bundle.getString("contacts"));
+		String key=bundle.getString("contacts");
+		System.out.println(" Message in 222" + Locale.getDefault() + ": " + bundle.getString("contacts"));
 
-		Locale.setDefault(new Locale(lang,country));
-		ResourceBundle bundle = ResourceBundle.getBundle("text");
-		System.out.println(Locale.getDefault()+" Message in 222" + Locale.country + ": " + bundle.getString("contacts"));
-		return null;
+		// Locale.setDefault(new Locale("en","QN"));
+		// bundle = ResourceBundle.getBundle("text");
+		// System.out.println(Locale.getDefault()+" Message in 222" + Locale.getDefault() + ": " + bundle.getString("contacts"));
+
+		// Locale.setDefault(new Locale("en","IN"));
+		// bundle = ResourceBundle.getBundle("text");
+		// System.out.println(Locale.getDefault()+" Message in 222" + Locale.getDefault() + ": " + bundle.getString("contacts"));
+
+		return key;
 	}
 }
