@@ -30,14 +30,18 @@
 	</th>
 	</tr>
 	</form>
+	
+	
 	<%List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
 	for(ContactModel cm:contactsList)
 	{%>
+		
 		<form action="select" method="get">
 		<tr><input type="hidden" name="id" value="<%=cm.getId()%>">
 		<input type="hidden" name="operations" value="1"> 
     	<td><input type="submit" value="<%=cm.getFName()%> <%=cm.getLName()%>"></td></form>
-
+		<%
+		if (request.isUserInRole("admin")) {%>
     	<form action="select" method="get">
     	<input type="hidden" name="id" value="<%=cm.getId()%>">
     	<input type="hidden" name="operations" value="2">
@@ -49,8 +53,8 @@
         <td><input type="submit" value="Edit"></td></form>
     </tr>
     <%
+	}
 	}%>
-	
 	</table>
 </body>
 </html>

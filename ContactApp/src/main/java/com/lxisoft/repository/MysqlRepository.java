@@ -63,7 +63,7 @@ public Contact findContactById(String d)
  	{
  		try
  		{ 
- 			String cr="CREATE TABLE contactlist(ID int,Name varchar(25),Number varchar(25))";
+ 			String cr="CREATE TABLE IF NOT EXISTS contactlist(ID int auto increment not null,First_Name varchar(25),Last_Name varchar(25),Number varchar(25))";
 			stmt.execute();
  		}
  		catch(SQLException e)

@@ -77,8 +77,8 @@
       <version>2.2</version>
       <configuration>
       <url>http://localhost:8080/manager/text</url>
-      <username>admin</username>
-      <password>password</password>
+      <username>tomcat</username>
+      <password>tomcat</password>
       <path>/ContactApp</path>
       </configuration>
     </plugin>
