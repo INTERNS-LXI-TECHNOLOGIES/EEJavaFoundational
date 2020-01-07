@@ -2,7 +2,7 @@
 <%@page import="com.lxisoft.model.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
-<%@page import="java.util.Locale"%>
+
 <html>
 <title>CONTACTS </title>
 <head>
@@ -39,8 +39,11 @@
 <body style="background-color: white">
 	
     <%
+    ResourceBundle bundle = ResourceBundle.getBundle("Message", Locale.US);  
+	
 	if(request.isUserInRole("admin"))
 	{%>
+	<%=(bundle.getString("submit"))%>
 	<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="+" /></a>
 	<%}%>
 	<form action= "sort" method="get">
