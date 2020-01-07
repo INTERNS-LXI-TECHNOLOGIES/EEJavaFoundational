@@ -43,13 +43,11 @@
 		if(contact.getId().equals(selectId))
 			selectModel.setContact(contact);
 	}
-	// ServletContext ctx;
-	// InputStream configStream = ctx.getResourceAsStream("/WEB-INF/config.properties");
 	%>
 
 	<div align="center">
 		<h2 style="margin: 47px;">
-			<img src="<%=request.getContextPath()%>/classes/images/person.jpg" width="135" height="135">
+			<img src="<%=request.getContextPath()%>/person.jpg" width="135" height="135">
 		</h2>
 	</div>
 	<div align="center">
@@ -59,21 +57,23 @@
 		<h1>Number: <%=selectModel.getContact().getNumber()%></h1> 
 	</div>
 	<%
-	session.setAttribute("selectModel",selectModel);
+	session.setAttribute("selectModel",selectModel);%>
+
+	<div align="center">
+		<%
 	if (request.isUserInRole("admin"))
 	{	 %>
-		<div align="center">
 			<form action="<%=request.getContextPath()%>/deleteContact">
-			    <input type="submit" id="b1" value="delete" onclick="return confirm('Are you sure you want to delete?')" />
+			 <input type="submit" id="b1" value="delete" onclick="return confirm('Are you sure you want to delete?')" />
 			</form><br>
 
 			<button id="b2" onclick="window.location.href='<%=request.getContextPath()%>/jsp/Edit.jsp'">Edit</button><br><br><br><br><br><br><br>
 			
-			<button id="b3" onclick="goBack()">Go Back</button>
-		</div>
 	<%
 	}
 	%>
+	<button id="b3" onclick="goBack()">Go Back</button>
+		</div>
 	<script type="text/javascript">
 	function goBack() {
   	window.history.back();
