@@ -1,11 +1,16 @@
 <%@page import="com.lxisoft.Domain.*"%>
+<%@page import="com.lxisoft.Repository.*"%>
 
 <html>
 <head>
 	<title>EDIT CONTACT</title>
 	<body>
 		<%
-		Contact c=(Contact)session.getAttribute("contact");
+		String id=request.getParameter("id");
+		DataRepository drr = new DataRepository();
+		Contact c = drr.findById(id);
+
+
 		%>
 		<table align="center" border= "5" width="30%" border color= "red" bgcolor="yellow">
 			     <form action= "update" method="post">

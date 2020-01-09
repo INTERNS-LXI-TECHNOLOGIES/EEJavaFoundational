@@ -28,7 +28,7 @@ public class DataRepository
           }catch(Exception e){ System.out.println(e);}  
           return contactsList;
   }
-  public Contact findById(int id)
+  public Contact findById(String id)
   {       Contact c=null;
    try{
        Class.forName("com.mysql.jdbc.Driver");  
@@ -47,6 +47,26 @@ public class DataRepository
           }catch(Exception e){ System.out.println(e);}  
           return c;
   }
+  public Contact findByName(String name)
+  { Contact c = null;
+    try{
+       Class.forName("com.mysql.jdbc.Driver");  
+       Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");   
+       Statement stmt=con.createStatement();  
+       ResultSet rs=stmt.executeQuery("select * from 'contactlist' where 'name' regex " +name);
+        while(rs.next())  
+          {
+            c = new Contact();
+            c.setId(rs.getInt("ID"));
+            c.setName(rs.getString("NAME"));
+            c.setNumber(rs.getString("NUMBER"));
+          }
+           con.close();  
+       }catch(Exception e){}
+       return c;
+  }
+
+
 
   public Contact add(Contact c)
    {

@@ -6,9 +6,6 @@
 <title>CONTACTS </title>
 <head>
 
-<h5>jose</h7>
-
-
 
 </head>
 <h1><center>CONTACT LIST</center></h1>
@@ -40,6 +37,11 @@ tr:nth-child(even) {
 </style>
 
 <a href="Add.jsp"><h1><center>ADD<center></h1></a>
+	<form action = "Search" method = "post">
+	  Name   : <input type="text" name="name"><br>
+		  <input type="submit" value="SEARCH">
+		</form>
+	
 
 <%
 ArrayList<Contact> c=(ArrayList<Contact>)request.getAttribute("contact");
@@ -51,14 +53,14 @@ for(int i=0;i<c.size();i++)
 		 <td><%=(c.get(i).getName())%> </td>
 		  <td><%=(c.get(i).getNumber())%> </td>
 		  <%
-		  	Contact co=new Contact();
-		  	co=c.get(i);
-		  	session.setAttribute("contact",co);
+		  
 		    String urldel = "Delete?id=" + c.get(i).getId();
 		  %>
-		  <td><form action="Edit.jsp">
+		  <td>
+		  	<form action="Edit.jsp">
 		  	<input type="hidden" name="id" value="<%=(c.get(i).getId())%>">
-		  	<input type="submit" name="EDIT" value="EDIT"></form>
+		  	<input type="submit" name="EDIT" value="EDIT">
+		    </form>
 		  <td><a href="<%=urldel%>"><h4>DELETE</h4></a>
 	</tr>
 <%
@@ -67,6 +69,3 @@ for(int i=0;i<c.size();i++)
 </table>
 </body>
 </html>
-
-
-************

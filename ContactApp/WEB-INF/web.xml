@@ -8,25 +8,22 @@
 
     <servlet-mapping>
     <servlet-name>addcontact</servlet-name>
-    <url-pattern>/add</url-pattern>
+    <url-pattern>/add </url-pattern>
   </servlet-mapping>
-    <servlet-mapping>
-    <servlet-name>viewall</servlet-name>
-    <url-pattern>/start</url-pattern>
-  </servlet-mapping>
-
-
-  <servlet>
-    <servlet-name>viewall</servlet-name>
-    <servlet-class>com.lxisoft.Servlet.AllContacts</servlet-class>
-  </servlet>
-
-
 
   <servlet>
     <servlet-name>addcontact</servlet-name>
     <servlet-class>com.lxisoft.Servlet.Add</servlet-class>
   </servlet>
+  
+    <servlet-mapping>
+    <servlet-name>viewall</servlet-name>
+    <url-pattern>/start</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>viewall</servlet-name>
+    <servlet-class>com.lxisoft.Servlet.AllContacts</servlet-class>
+  </servlet>
+  
 
- 
-</web-app>    
+</web-app>
