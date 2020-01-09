@@ -18,11 +18,15 @@
     <tr>
     	<td><center><%=(con.getContactNo())%></center></td>
     </tr>
-    <tr>
-        <td><a href="Edit.jsp"><input type="submit" value="Edit"></a></td>
-        <td><a href="Delete.jsp"><input type="submit" value="Delete"></a></td>
-        <td><a href="url"><input type="submit" value="Back"></td>
-    </tr>
+    <%if (request.isUserInRole("admin"))
+      {%>
+            <tr>
+            <td><a href="Edit.jsp"><input type="submit" value="Edit"></a></td>
+            <td><a href="Delete.jsp"><input type="submit" value="Delete"></a></td>
+            <td><a href="url"><input type="submit" value="Back"></td>
+            </tr>
+    <%
+    }%>
 </table>
 </body>
 </html>
