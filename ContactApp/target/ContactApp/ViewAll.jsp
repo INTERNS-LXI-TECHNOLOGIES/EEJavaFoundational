@@ -1,5 +1,6 @@
 <%@page import="com.lxisoft.domain.*"%>
 <%@page import="com.lxisoft.model.*"%>
+<%@page import="com.lxisoft.config.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
 
@@ -37,13 +38,10 @@
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body style="background-color: white">
-	
+	<a href="Welcome.jsp">welcom</a>
     <%
-    ResourceBundle bundle = ResourceBundle.getBundle("Message", Locale.US);  
-	
 	if(request.isUserInRole("admin"))
 	{%>
-	<%=(bundle.getString("submit"))%>
 	<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="+" /></a>
 	<%}%>
 	<form action= "sort" method="get">

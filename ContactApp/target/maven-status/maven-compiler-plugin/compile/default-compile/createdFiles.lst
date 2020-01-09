@@ -1,4 +1,5 @@
 com\lxisoft\servlet\EditContactServlet.class
+com\lxisoft\config\Localizer.class
 com\lxisoft\model\SortByNumber.class
 com\lxisoft\servlet\SearchContactServlet.class
 com\lxisoft\model\ContactListModel.class

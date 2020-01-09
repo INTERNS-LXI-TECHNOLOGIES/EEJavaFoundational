@@ -1,3 +1,5 @@
+<%@page import="com.lxisoft.config.*"%>
+<%@page import="java.util.*"%>
 <html>
 <head>
 <title>CONTACT</title>
