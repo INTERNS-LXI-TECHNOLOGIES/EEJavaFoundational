@@ -15,10 +15,10 @@
 <%@page import = "com.lxisoft.model.*,java.util.*"%>
 <form action="Update" method="get">
 	<% Contact contact = new Contact(); %>
-   
+    <%String firstname=(String)session.getAttribute("firstname");%>
 	<center>
 		
-	ENTER FIRSTNAME : <input type="text" name="firstname" value="<%String firstname= (String)session.getAttribute("firstname");out.print(firstname) ;%>"><br><br>
+	ENTER FIRSTNAME : <input type="text" name="firstname" value="<%out.print(firstname);%>"><br><br>
 
 	ENTER LASTNAME : <input type="text" name="lastname" value=" "><br><br>
 	ENTER NUMBER : <input type="text" name="number" value=" "><br><br>

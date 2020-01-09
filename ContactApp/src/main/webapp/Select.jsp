@@ -33,9 +33,8 @@
     String temp2 =request.getParameter("temp2");
     String temp3 =request.getParameter("temp3");
     %>
-    <% session.setAttribute("firstname","temp1");
-
-     %>
+   
+    
 	<tr>
 		<td><% out.println(temp);%></td>
 		<td><% out.println(temp1);%></td>

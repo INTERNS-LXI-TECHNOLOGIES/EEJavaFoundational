@@ -13,6 +13,7 @@
 	<title>
 	Display 	
 	</title>
+
 </head>
 <body button style ="background: lightgreen">
 
@@ -43,6 +44,7 @@
 					&temp1=<%=i.getFirstname()%>
 					&temp2=<%=i.getLastname()%>
 					&temp3=<%=i.getNumber()%>">
+					 <% session.setAttribute("firstname","temp1=<%=i.getFirstname()%>");%>
 					<input type="button" name="submit" value="<%=i.getFirstname()%> &nbsp;<%=i.getLastname()%>">
 				</a><br>
 
