@@ -1,11 +1,26 @@
 <html>
 <title> CONTACT APP</title>
 <head>
+	<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 	<link rel="stylesheet" type="text/css" href="styles.css"><CENTER><font color="red" size="32"><b> CONTACT APP </b></font></CENTER></head>
 <body>
 <%@ page import="com.lxisoft.Domain.*" %>
 <%@ page import="com.lxisoft.Models.*" %>
 <%@ page import="java.util.*" %>
+
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page isELIgnored="false"%>
+ 
+<fmt:setLocale value="${param.lang}" />
+<fmt:setBundle basename="messages" />
+ 
+<html lang="${param.lang}">
+
+
+
 
 <% String userName=null;
 if(request.getUserPrincipal()!=null){
@@ -13,10 +28,10 @@ userName= request.getUserPrincipal().getName();
 
 }%>
 <% if (userName!=null){ %>
-<center>welcome <%=userName %></center>
+<center><fmt:message key="label.welcome" /> <%=userName %></center>
 <% }
 else if (request.getUserPrincipal()==null){ %>
-<center>welcome guest</center>
+<center><fmt:message key="label.welcome" /> Guest</center>
 <% } %>
 
 
@@ -26,16 +41,11 @@ else if (request.getUserPrincipal()==null){ %>
 <% }
 else{ %>
 <!-- <embed src="song.mp4"> </embed> -->
-<button onclick="denied();play();" >+</button></a>
+<button onclick="play();denied();" >+</button></a>
 <% } %> </center>
  
 <script>
-	function denied()
-	{
-		alert("access denied");
-		// <audio controls autoplay>  
-  // <source src="song.mp3" type="audio/mpeg"></audio>  
-	}
+	
 	function play()
 	{
 		var beep=new Audio();
@@ -43,17 +53,25 @@ else{ %>
 		beep.play();
 	}
 </script>
+<script>
+	function denied()
+	{
+		alert("access denied");
+		// <audio controls autoplay>  
+  // <source src="song.mp3" type="audio/mpeg"></audio>  
+	}
+</script>
  <center>
 <form action="search" method="GET"  align="center">
 	<font color="white"> search a contact: </font><br><input  type="text"  align="center" name="user">
-	<button name="search" type="submit">search</button></form>
+	<button name="search" type="submit"><fmt:message key="label.search" /></button></form>
 
 </center>
 <% if(request.isUserInRole("admin")){  %>
-<center><button  onclick="window.location.href='deleteAll';" >delete All Contact</button> <br></center>
+<center><button  onclick="window.location.href='deleteAll';" ><fmt:message key="label.delete" /></button> <br></center>
 <% }
 else { %>
-<center><button  onclick="denied()" >delete All Contact</button> <br></center>
+<center><button  onclick="play();denied();" ><fmt:message key="label.delete" /></button> <br></center>
 	<% } %>
 <center>
 <form action="sort">
@@ -65,7 +83,14 @@ else { %>
 	</select>
 	<input type="submit" value="sort">
 </form></center>
+<br>
+
+<br>
 <center><button onclick="window.location.href='viewall';">refresh</button></center>
+<center>
+<a href="?lang=eng">english</a>
+<a href="?lang=ml">മലയാളം</a>
+</center>
 <% ArrayList<ViewListModel>contacts=new ArrayList<ViewListModel>();
 contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 
@@ -88,12 +113,12 @@ contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 		<td><font color=" grey" size="65"><%out.println(a.getId());%></font></td>
 		<td><a href="search?user=<%=a.getFullName()%>"><font color=" green" size="65"><%out.println(a.getFirstName());%></font></td></a>
 		<%  if(request.isUserInRole("admin")){ %>
-		<td><a href="select?type=edit&name=<%=a.getFullName()%>">edit</a></td>
-		<td><a href="select?name=<%=a.getFullName()%>&type=delete">delete</a></td>
+		<td><a href="select?type=edit&name=<%=a.getFullName()%>"><fmt:message key="label.edit" /></a></td>
+		<td><a href="select?name=<%=a.getFullName()%>&type=delete"><fmt:message key="label.del" /></a></td>
 		<% }
 		else { %>
-		<td><button onclick="denied()">edit</button></td>
-		<td><button onclick="denied()">delete</button></td>
+		<td><button onclick="play();denied();"><fmt:message key="label.edit" /></button></td>
+		<td><button onclick="play();denied();"><fmt:message key="label.del" /></button></td>
 		<% } %>
 		
 	</tr>
