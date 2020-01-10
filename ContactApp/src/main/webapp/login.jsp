@@ -9,6 +9,5 @@
 	<input type="password" name="j_password" placeholder="Enter password">
 	<input type="submit" value="Login" name="submit">
 </form>
-<a href="skip">guest login</a>
 </body>
 </html>
