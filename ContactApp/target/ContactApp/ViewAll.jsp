@@ -3,6 +3,12 @@
 <%@page import="com.lxisoft.config.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page isELIgnored="false" %>
+<fmt:setLocale value="ml"/>
+<fmt:setBundle basename="messages"/>
 
 <html>
 <title>CONTACTS </title>
@@ -38,19 +44,23 @@
 </head>
 <h1><center>CONTACT LIST</center></h1>
 <body style="background-color: white">
-	<a href="Welcome.jsp">welcom</a>
+	<select name="language">
+    <option value="1">malayalam</option>
+    <option value="2">english</option>
+  </select>
     <%
 	if(request.isUserInRole("admin"))
 	{%>
-	<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="+" /></a>
+	<fmt:message key="label.add" var="addTranslation" />
+	<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="${addTranslation}" /></a>
 	<%}%>
 	<form action= "sort" method="get">
 	<select name="sort">
-    
+    	<fmt:message key="label.submit" var="submitTranslation" />
     <option value="1">Sort contact by name</option>
     <option value="2">Sort contact by number</option>
     <option value="3">Sort contact by id</option>
-    <input type="submit" name="submit" value="submit"/>
+    <input type="submit" name="submit" value="${submitTranslation}"/>
   </select>
 </form>
 	<%
@@ -60,7 +70,8 @@
 	<table align="center" border="1" width="20%" height="5%" >
 		<tr>
 			<td><input type="text" name="name" placeholder="Search in <%=c.size()%> contacts"/>
-			<a href="search"><input type="submit" value="submit"></a></td>
+		
+			<a href="search"><input type="submit" value="${submitTranslation}"></a></td>
 		</tr>
 	</table>
 </form>
