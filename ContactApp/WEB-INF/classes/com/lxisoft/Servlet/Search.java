@@ -14,7 +14,6 @@ public class Search extends HttpServlet
 		DataRepository drr = new DataRepository();
 		String name=request.getParameter("name");
          Contact c = drr.findByName(name);
-
          request.setAttribute("search",c);
 		 RequestDispatcher rs=request.getRequestDispatcher("search.jsp");
 	 	 rs.forward(request,response);

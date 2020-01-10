@@ -14,10 +14,10 @@ public class Add extends HttpServlet
 	 c.setNumber(request.getParameter("number"));
 	 DataRepository drr=new DataRepository();
 	 Contact co=drr.add(c); 
+
 	 request.setAttribute("contact",co);
 	 RequestDispatcher rs=request.getRequestDispatcher("Contact.jsp");
 	 rs.forward(request,response);
-	 // response.sendRedirect("start");
 
   }
 
