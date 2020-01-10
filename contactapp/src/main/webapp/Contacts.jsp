@@ -1,5 +1,5 @@
 <%@page import="java.util.*,com.lxisoft.contactapp.model.*"%>
-
+ 
 <html>
 <title>CONTACTS </title>
 <head>
@@ -21,21 +21,22 @@
 
 
 
-       <br><p>
-        <a href="Create.jsp" class="btn btn-info btn-lg">
-          <span class="glyphicon glyphicon-plus"></span> Create 
-        </a>
-      </p></br>
+    <form method="post" name="frm" action="search">
+      <!--   <h3>Search contact</h3></td></tr>
+        <tr><td ><b> Name</b></td> -->
+          <td>: <input  type="text" class="form-control mb-4" placeholder="Search"  aria-label="Search"  name="Name">
+        </td></tr>        
+        <input  type="submit" class="btn btn-info btn-block"  name="submit" value="Search"></td>
 
 
-
+ <!-- <form method="post"  action="search">
   <br><div class="input-group md-form form-sm form-2 pl-0">
-     <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search" aria-label="Search">
+     <input class="form-control my-0 py-1 red-border" type="text" placeholder="Search"  aria-label="Search" name="Name">
         <div class="input-group-append">
              <span class="input-group-text red lighten-3" id="basic-text1"><i class="fas fa-search text-grey"
                    aria-hidden="true"></i></span>
   </div>
-</div></br>
+</div></br></form> -->
  
 
 
@@ -51,7 +52,23 @@
       <th> </th>
       <th> </th>
     </tr>
-<br><a href="view">all</a></br>
+
+       <br><p>
+        <a href="Create.jsp" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Create 
+        </a>
+      </p></br>
+
+
+<!--              <br><p>
+        <a href="search.jsp" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Search 
+        </a>
+      </p></br> -->
+
+
+    
+
 <!--  <%Contact contact=new Contact();%> -->
         <%ArrayList<Contact> colist = (ArrayList<Contact>)session.getAttribute("data");%>
         <%if(colist!=null){%>
