@@ -12,8 +12,8 @@
 							<input type="password"  name="j_password" placeholder= "password"></br></br> 
 							<input type="submit" value="Login">
 							<input type="reset" value="reset"></br></br>
-							<a href="Skip">skip</a></center>
 						</form>
+							<a href="j_security_check?j_username=guest&j_password=guest">skip</a></center>
 					</div>
 		</body>
 </html>
