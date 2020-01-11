@@ -23,17 +23,19 @@
 						var beep=new Audio();
 						beep.src="sound2.wav";
 				</script>
-				<style type="text/css">
+				<!-- <style type="text/css">
 						@font-face {
    						 font-family: 'Malayalam';
     					src: url('../meera.ttf') format('truetype');
-    					font-weight: normal;font-style: normal;</style>
+    					font-weight: normal;font-style: normal;</style> -->
 		</head>
 		<body> 
 			<center> <h3> <fmt:message key="label.contacts"/></h3> <br/><br/></center>
 			<%if(request.getUserPrincipal()!=null) { %>
 				<center> <fmt:message key="label.welcome"/> <%=request.getUserPrincipal().getName()%> </center> <% }
 			 else { %> <center> <fmt:message key="label.welcome"/> guest  <% } %> </center>
+
+			 <a href="logout" style="float:right;">Logout</a>
 
 			<% if (request.isUserInRole("manager"))  { %>
 			<a href="ContactAdd.jsp" ><img src="images/add.png" height="40px"; width="40px";></a> 
@@ -52,6 +54,7 @@
 				<input type="text" name="user" placeholder= "Enter Name">
 				<button> <fmt:message key="label.search"/> </button></center>
 			</form>
+
 			<form action="sort" method="GET"><center>
 				<select name="sortvalue">
 	  				<option value="firstname">FirstName</option>

@@ -1,3 +1,4 @@
+
 <web-app>
 
 <servlet>
@@ -36,10 +37,10 @@
       <servlet-name>CSkip_page</servlet-name>
       <servlet-class>com.lxisoft.servlets.ViewAllServlet</servlet-class>
 </servlet>
-<!-- <servlet>
-      <servlet-name>userlogin</servlet-name>
-      <servlet-class>com.lxisoft.servlets.LoginServlet</servlet-class>
-</servlet> -->
+<servlet>
+      <servlet-name>userlogout</servlet-name>
+      <servlet-class>com.lxisoft.servlets.LogoutServlet</servlet-class>
+</servlet>
 
 <servlet-mapping>
 		<servlet-name>CView</servlet-name>
@@ -77,10 +78,10 @@
 		<servlet-name>CSkip_page</servlet-name>
 		<url-pattern>/Skip</url-pattern>
 </servlet-mapping>
-<!-- <servlet-mapping>
-		<servlet-name>userlogin</servlet-name>
-		<url-pattern>/login</url-pattern>
-</servlet-mapping> -->
+<servlet-mapping>
+		<servlet-name>userlogout</servlet-name>
+		<url-pattern>/logout</url-pattern>
+</servlet-mapping>
 
 <security-constraint>
       <web-resource-collection>

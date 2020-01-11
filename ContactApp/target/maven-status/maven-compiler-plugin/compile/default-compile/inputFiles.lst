@@ -5,7 +5,7 @@ E:\Java projects\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\models\
 E:\Java projects\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\DeleteServlet.java
 E:\Java projects\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\repository\Repository.java
 E:\Java projects\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\repository\MySqlRepo.java
-E:\Java projects\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\LoginServlet.java
+E:\Java projects\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\LogoutServlet.java
 E:\Java projects\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\SelectServlet.java
 E:\Java projects\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\EditServlet.java
 E:\Java projects\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\servlets\SortServlet.java
