@@ -19,9 +19,15 @@
 			<%
 			}%>
 				<input type="text" name="n" placeholder="Search">
-				<a href="searchdata"><input type="submit" value="OK"></a></td>
+				<a href="searchdata"><input type="submit" value="OK"></a></td></form>
+				<td><select name="language">
+			<option value="1" selected>English</option>
+			<option value="2">Malayalam</option>
+		</select>
+		<input type="submit" value="OK"></a>
+			</td>
 		</tr>
-	</form>
+	
 	<tr>
 		<!-- <th>ID</th> -->
 		<th><b>Name</b></th>

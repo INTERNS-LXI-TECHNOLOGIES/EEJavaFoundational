@@ -7,6 +7,7 @@ com\lxisoft\domain\Contact.class
 com\lxisoft\models\ContactModel.class
 com\lxisoft\repository\LogRepository.class
 com\lxisoft\servlet\AddServ.class
+com\lxisoft\servlet\ResourceBundle.class
 com\lxisoft\models\NameComparator.class
 com\lxisoft\servlet\SortServ.class
 com\lxisoft\servlet\SearchServ.class
