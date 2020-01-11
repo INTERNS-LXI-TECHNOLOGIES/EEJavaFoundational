@@ -1,6 +1,10 @@
 <html>
 <title> CONTACT APP</title>
 <head>
+	<script>
+		var beep=new Audio();
+		beep.src="song.mp3";
+	</script>
 	<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 	<link rel="stylesheet" type="text/css" href="styles.css"><CENTER><font color="red" size="32"><b> CONTACT APP </b></font></CENTER></head>
@@ -29,30 +33,25 @@ userName= request.getUserPrincipal().getName();
 }%>
 <% if (userName!=null){ %>
 <center><fmt:message key="label.welcome" /> <%=userName %></center>
-<% }
+<c:set var="log" scope="application" value="login"/>
+<% session.setAttribute("login",userName);
+ }
 else if (request.getUserPrincipal()==null){ %>
 <center><fmt:message key="label.welcome" /> Guest</center>
-<% } %>
+<% } 
+out.println(session.getAttribute("login")+" login");%>
 
-
+<c:out value="${log}"/>
 
 <center><% if(request.isUserInRole("admin")){ %>
 <a href="addnew.jsp" style="color: green; text-align: center;"><button >+</button></a>
 <% }
 else{ %>
 <!-- <embed src="song.mp4"> </embed> -->
-<button onclick="play();denied();" >+</button></a>
+<button onclick="beep.play();denied();" >+</button></a>
 <% } %> </center>
  
-<script>
-	
-	function play()
-	{
-		var beep=new Audio();
-		beep.src="song.mp3";
-		beep.play();
-	}
-</script>
+
 <script>
 	function denied()
 	{
@@ -86,7 +85,11 @@ else { %>
 <br>
 
 <br>
-<center><button onclick="window.location.href='viewall';">refresh</button></center>
+<center>
+	<button onclick="window.location.href='viewall';">refresh</button>
+	<button onclick="window.location.href='logout';">logout</button>
+</center>
+
 <center>
 <a href="?lang=eng">english</a>
 <a href="?lang=ml">മലയാളം</a>

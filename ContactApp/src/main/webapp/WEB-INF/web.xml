@@ -84,6 +84,7 @@
       <servlet-name>select</servlet-name>
       <url-pattern>/select</url-pattern>
  </servlet-mapping>
+ logout
 
 <servlet>
       <servlet-name>sort</servlet-name>
@@ -93,6 +94,15 @@
 <servlet-mapping>
       <servlet-name>sort</servlet-name>
       <url-pattern>/sort</url-pattern>
+ </servlet-mapping>
+ <servlet>
+      <servlet-name>logout</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.LogoutServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>logout</servlet-name>
+      <url-pattern>/logout</url-pattern>
  </servlet-mapping>
 
 
@@ -106,7 +116,7 @@
       
       <auth-constraint>
          <description>
-            Let only managers use this app
+            Let  use this app
          </description>
          <role-name>*</role-name>
       </auth-constraint>

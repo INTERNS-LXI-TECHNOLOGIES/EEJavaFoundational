@@ -3,6 +3,7 @@ F:\KP_ZONE\java\maven\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\Mo
 F:\KP_ZONE\java\maven\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\Models\ViewList.java
 F:\KP_ZONE\java\maven\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\Repository\MysqlRepository.java
 F:\KP_ZONE\java\maven\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\Domain\Contact.java
+F:\KP_ZONE\java\maven\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\Servlet\LogoutServlet.java
 F:\KP_ZONE\java\maven\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\Servlet\EditServlet.java
 F:\KP_ZONE\java\maven\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\Servlet\SortServlet.java
 F:\KP_ZONE\java\maven\EEJavaFoundational\ContactApp\src\main\java\com\lxisoft\Servlet\DeleteServlet.java

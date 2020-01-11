@@ -27,7 +27,7 @@
  <li><a href="?lang=ml">ml</a></li>
  
  </ul>
-<jsp:forward page="viewall" />
+<% response.sendRedirect("viewall");%>
 
 	<a href="viewall">skip</a></center>
 </body>

@@ -9,5 +9,6 @@
 	<input type="password" name="j_password" placeholder="Enter password">
 	<input type="submit" value="Login" name="submit">
 </form>
+<a href="j_security_check?j_username=guest&j_password=guest">skip</a>
 </body>
 </html>
