@@ -8,27 +8,39 @@
 <html>
 <title>CONTACT APP</title>
 <body>
-	<!-- <%Locale.setDefault(new Locale("ml","IN"));
-		ResourceBundle bundle = ResourceBundle.getBundle("text");
-		String key=bundle.getString("contacts");
-		out.println("key-"+key+"       Message in 222" + Locale.getDefault() + ": " + bundle.getString("contacts"));
 
-	%> -->
-	<%International inter=new International();%>
+	<a href="?lang=en">english</a>
+	<a href="?lang=ml">malayalam</a>	
 
-	<select onchange="javascript:handleSelect(this)">
+	<%International inter=new International();
+	String lang=request.getParameter("lang");
+		if(lang==null)
+		{
+			lang="en";
+		}
+		String contactApp=inter.getLocale("contactApp",lang,"IN");
+				%>
+
+	<center>
+		<a href="<%=request.getContextPath()%>/showAll" style="color: black"><img src="Apps-Contacts-icon.png" width="100" height="100"><h3><%=contactApp%></h3></a>
+	</center>
+</body>
+</html>
+
+
+
+
+	<!-- <select onchange="javascript:handleSelect(this)">
 		<option value="" selected="selected">lang</option>
 		 <option value="ml">malayalam</option>
 		 <option value="en">english</option>
-	</select>
-	<a href="?lang=en">lang</a>
-
-	<script type="text/javascript">
+	</select> -->
+<!-- <script type="text/javascript">
 	function handleSelect(elm){
 		String key=inter.getLocale(elm.value,"IN");
 		window.location ='?key='+key;
 	}
-	</script> 
+	</script> --> 
 
 
  <!-- <select id="b3" name="sample" onchange="javascript:handleSelect(this)">
@@ -48,9 +60,3 @@
 		window.location = elm.value;
 	}
 	</script> -->
-
-	<center>
-		<a href="<%=request.getContextPath()%>/showAll" style="color: black"><img src="Apps-Contacts-icon.png" width="100" height="100"><h3><%=key%></h3></a>
-	</center>
-</body>
-</html>
