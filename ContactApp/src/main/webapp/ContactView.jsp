@@ -1,13 +1,13 @@
 <%@ page import="com.lxisoft.models.*"%>
 <%@ page import="com.lxisoft.Domain.*"%>
 <%@ page import="java.util.*"%>
+<%@ page import="java.util.ResourceBundle"%>
 
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<META name="GENERATOR" content="IBM WebSphere Studio">
-<META http-equiv="Content-Style-Type" content="text/css">
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- <META http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
+
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
@@ -23,11 +23,6 @@
 						var beep=new Audio();
 						beep.src="sound2.wav";
 				</script>
-				<!-- <style type="text/css">
-						@font-face {
-   						 font-family: 'Malayalam';
-    					src: url('../meera.ttf') format('truetype');
-    					font-weight: normal;font-style: normal;</style> -->
 		</head>
 		<body> 
 			<center> <h3> <fmt:message key="label.contacts"/></h3> <br/><br/></center>
@@ -35,7 +30,7 @@
 				<center> <fmt:message key="label.welcome"/> <%=request.getUserPrincipal().getName()%> </center> <% }
 			 else { %> <center> <fmt:message key="label.welcome"/> guest  <% } %> </center>
 
-			 <a href="logout" style="float:right;">Logout</a>
+			 <a href="logout" style="float:right;"><fmt:message key="label.logout"/></a>
 
 			<% if (request.isUserInRole("manager"))  { %>
 			<a href="ContactAdd.jsp" ><img src="images/add.png" height="40px"; width="40px";></a> 
@@ -51,14 +46,14 @@
 						}
 			</script>
 			<form action="select" method="GET"><center>
-				<input type="text" name="user" placeholder= "Enter Name">
+				<input type="text" name="user" placeholder= "<fmt:message key='label.Entername'/>">
 				<button> <fmt:message key="label.search"/> </button></center>
 			</form>
 
 			<form action="sort" method="GET"><center>
 				<select name="sortvalue">
-	  				<option value="firstname">FirstName</option>
-	  				<option value="lastname">LastName</option>
+	  				<option value="firstname"><fmt:message key="label.fName"/></option>
+	  				<option value="lastname"><fmt:message key="label.lName"/></option>
 	  			</select>
 	  			<input type="submit" value="<fmt:message key='label.sort'/>"></center>
 
@@ -121,7 +116,7 @@
 		</table></br>
 
 
-		<center><a href="?lang=en">English</a> &nbsp; <a href="?lang=ml">മലയാളം</a> &nbsp;<a href="?lang=hi">Hindi</a> &nbsp; <a href="?lang=fr">French</a><br/><br/></center>
+		<center><a href="?lang=en">English</a> &nbsp; <a href="?lang=ml">മലയാളം</a> &nbsp;<a href="?lang=hi">हिंदी</a> &nbsp; <a href="?lang=fr">française</a><br/><br/></center>
 
 		<center><button type="button" onClick="window.location.href='View'"><fmt:message key="label.refresh"/></button>
 		<% out.println("<fmt:message key='label.cnct'/>"+""+contactList.size());%></center>

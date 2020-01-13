@@ -16,13 +16,14 @@ public class LogoutServlet extends HttpServlet
       	  HttpSession session=request.getSession();
           session.invalidate();
           PrintWriter out=response.getWriter();
-         // response.sendRedirect("Login2.jsp");  
-         // HttpSession nsession = request.getSession(false);
-          if(session!=null) {
-             out.println("active");
-          }
-          else
-            out.println("Session is not active");
+          // session.setMaxInactiveInterval(30*60); 
+          session=request.getSession(false);
+         response.sendRedirect("View");  
+          // if(session!=null) {
+          //    out.println(session);
+          // }
+          // else
+          //   out.println("Session is not active");
 
           
       
