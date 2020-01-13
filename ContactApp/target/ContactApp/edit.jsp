@@ -18,8 +18,6 @@
 	<input type="submit" name="submit"></center>
 </form>
 <center><button onclick="window.location.href='viewall';">back</button> </center>
-<% out.println(session.getAttribute("login")+" login");%>
-<c:out value="${log}"/>
 
 
 

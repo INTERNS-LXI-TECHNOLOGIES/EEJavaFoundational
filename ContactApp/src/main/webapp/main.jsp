@@ -1,17 +1,17 @@
+<%@ page import="com.lxisoft.Domain.*" %>
+<%@ page import="com.lxisoft.Models.*" %>
+<%@ page import="java.util.*" %>
+	<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
 <html>
 <title> CONTACT APP</title>
 <head>
+	<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
 	<script>
 		var beep=new Audio();
 		beep.src="song.mp3";
 	</script>
-	<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
-	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<link rel="stylesheet" type="text/css" href="styles.css"><CENTER><font color="red" size="32"><b> CONTACT APP </b></font></CENTER></head>
+<link rel="stylesheet" type="text/css" href="styles.css"><CENTER><font color="red" size="32"><b> CONTACT APP </b></font></CENTER></head>
 <body>
-<%@ page import="com.lxisoft.Domain.*" %>
-<%@ page import="com.lxisoft.Models.*" %>
-<%@ page import="java.util.*" %>
 
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -38,10 +38,8 @@ userName= request.getUserPrincipal().getName();
  }
 else if (request.getUserPrincipal()==null){ %>
 <center><fmt:message key="label.welcome" /> Guest</center>
-<% } 
-out.println(session.getAttribute("login")+" login");%>
+<% }  %>
 
-<c:out value="${log}"/>
 
 <center><% if(request.isUserInRole("admin")){ %>
 <a href="addnew.jsp" style="color: green; text-align: center;"><button >+</button></a>
