@@ -45,7 +45,10 @@
          <tr bgcolor="00ffff"> -->
 
 
-
+      <%Contact c=(Contact)request.getAttribute("con");
+         if(c!=null)
+          {
+         %>
 
          <table class="table table-striped"> 
           <tr>
@@ -53,10 +56,7 @@
           <th><b> Name</b></th> 
           <th><b> Number</b></th> 
          </tr> 
-         <%Contact c=(Contact)request.getAttribute("con");
-         if(c!=null)
-          {
-         %>
+
             <tr> 
                       <td><%=c.getId()%></td> 
                       <td><%=c.getName()%></td> 
@@ -97,12 +97,21 @@
   </div>
 </div>
 <!-- Central Modal Medium Success-->
+
                     
-                    </td>
+                  <!--   </td>
                          
                       </tr>
+        <a href="view" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-plus"></span> Back 
+                      </table> -->
  <%}%>
-      </table>
-    </form>
+<!--  <% else{%>
+ <p class="text-primary">Contact Not Found</p>
+  <br><a href="view" class="btn btn-info btn-lg">
+     <span class="glyphicon glyphicon-plus"></span> Back 
+              </table></br> 
+      
+    </form>-->
   </body>
 </html>
