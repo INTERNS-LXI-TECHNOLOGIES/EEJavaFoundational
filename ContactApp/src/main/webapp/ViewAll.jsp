@@ -22,7 +22,7 @@
 				<a href="searchdata"><input type="submit" value="OK"></a></td></form>
 				<td><select name="language">
 			<option value="1" selected>English</option>
-			<option value="2">Malayalam</option>
+			<option value="2">മലയാളം</option>
 		</select>
 		<input type="submit" value="OK"></a>
 			</td>
