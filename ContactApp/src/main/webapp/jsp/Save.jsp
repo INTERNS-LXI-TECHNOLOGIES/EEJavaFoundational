@@ -50,7 +50,7 @@
 			<button id="b1" type="submit" >save</button><br><br>		
 		</form>
 		<center>
-			<button id="b2"  onclick="window.location.href='showAll'">Back</button>
+			<button id="b2"  onclick="window.location.href='<%=request.getContextPath()%>/showAll'">Back</button>
 		</center>
 	</div>
 

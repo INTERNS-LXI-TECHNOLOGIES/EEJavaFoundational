@@ -33,7 +33,12 @@
 		}
 	</style>
 
-  
+  <%
+	String lang=(String)session.getAttribute("lang");
+	International inter=new International();
+	String lang=request.getParameter("lang");
+	// out.println("lang7777  "+lang);
+  %>
 	<div>
 		<button id="b2" onclick="window.location.href='index.jsp'">close(X)</button>
 	</div>
