@@ -3,16 +3,18 @@
 <%@page import="com.lxisoft.config.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<fmt:requestEncoding value = "UTF-8" />
 <fmt:setLocale value="ml"/>
 <fmt:setBundle basename="messages"/>
 
 <html>
-<title>CONTACTS </title>
-<head>
+<title>CONTACTS മലയാളം</title>
+
 	<style>
 	#b1
 	{
@@ -42,7 +44,7 @@
 	}
 </style>
 </head>
-<h1><center>CONTACT LIST</center></h1>
+<h1><center>CONTACT LIST മലയാളം</center></h1>
 <body style="background-color: white">
 	<select name="language">
     <option value="1">malayalam</option>
