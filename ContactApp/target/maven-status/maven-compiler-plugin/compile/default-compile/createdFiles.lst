@@ -4,6 +4,7 @@ com\lxisoft\controller\SaveServlet.class
 com\lxisoft\config\International.class
 com\lxisoft\repository\Repository.class
 com\lxisoft\domain\Contact.class
+com\lxisoft\config\International$UTF8Control.class
 com\lxisoft\model\DeleteModel.class
 com\lxisoft\controller\FirstSelectServlet.class
 com\lxisoft\model\ViewByIdModel.class

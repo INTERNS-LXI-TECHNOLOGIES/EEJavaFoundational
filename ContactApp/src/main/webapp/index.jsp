@@ -1,3 +1,4 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.lxisoft.controller.*"%>
 <%@page import="com.lxisoft.config.*"%>
 <%@page import="com.lxisoft.domain.*"%>
@@ -8,6 +9,7 @@
 <html>
 <title>CONTACT APP</title>
 <body>
+കോൺടാക്ട്  ആപ്പ്
 
 	<a href="?lang=en">english</a>
 	<a href="?lang=ml">malayalam</a>	
