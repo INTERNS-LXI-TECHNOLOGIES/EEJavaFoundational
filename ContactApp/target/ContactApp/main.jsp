@@ -1,8 +1,8 @@
 <%@ page import="com.lxisoft.Domain.*" %>
 <%@ page import="com.lxisoft.Models.*" %>
 <%@ page import="java.util.*" %>
-	<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-<html>
+	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
 <title> CONTACT APP</title>
 <head>
 	<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
