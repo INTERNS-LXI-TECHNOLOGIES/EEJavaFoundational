@@ -9,6 +9,7 @@ com\lxisoft\servlets\LogoutServlet.class
 com\lxisoft\Domain\Contact.class
 com\lxisoft\servlets\AddServlet.class
 com\lxisoft\servlets\DeleteServlet.class
+com\lxisoft\servlets\LanguageSelectorServlet.class
 com\lxisoft\servlets\SearchServlet.class
 com\lxisoft\servlets\DeleteAllServlet.class
 com\lxisoft\repository\MySqlRepo.class

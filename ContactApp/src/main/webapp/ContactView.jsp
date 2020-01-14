@@ -2,7 +2,7 @@
 <%@ page import="com.lxisoft.Domain.*"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.util.ResourceBundle"%>
-
+<!-- <%@ page import="javax.servlet.jsp.jstl.core.Config"%> -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <!-- <META http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->

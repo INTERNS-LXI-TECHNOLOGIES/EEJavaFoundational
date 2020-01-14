@@ -1,12 +1,11 @@
 <%@ page import="com.lxisoft.models.*"%>
 <%@ page import="com.lxisoft.Domain.*"%>
 <%@ page import="java.util.*"%>
-<%@ page import="java.util.*"%>
 <%@ page import="java.util.ResourceBundle"%>
-
+<!-- <%@ page import="javax.servlet.jsp.jstl.core.Config"%> -->
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
-<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- <META http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 
 <!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
