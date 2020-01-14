@@ -2,7 +2,15 @@
 <html>
 <head>
 	<style>
+.button{
+			  background-color: #FF0000;
+			  color: white;
+			  text-align: center;
+			  text-decoration: none;
+			  display: inline-block;
+			  cursor: pointer;
 
+       }
 	table th,td 
 	{	width: 5px;
 		border:2px solid black;
@@ -41,8 +49,9 @@
 			<td><%out.println(i.getNumber());%></td>
 			<center>
 				<% if (request.isUserInRole("admin")) { %>
-			   <td><a href="Update.jsp?id=<%=i.getId()%>">EDIT&nbsp; </a>
-	         <a href="Delete.jsp?id=<%=i.getId()%>">&nbsp;DELETE </a></td>
+			   <td><button class="button" onclick=" window.location.href='Update.jsp?id=<%=i.getId()%>'">edit&nbsp;
+	          <button class="button" onclick="window.location.href= 'Delete.jsp?id=<%=i.getId()%>'">delete&nbsp;
+	          </td>
              <% } %>
 			</center>
 				

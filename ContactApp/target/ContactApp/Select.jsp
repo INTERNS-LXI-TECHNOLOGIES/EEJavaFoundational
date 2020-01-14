@@ -34,7 +34,7 @@
     String temp3 =request.getParameter("temp3");
     %>
    
-    
+
 	<tr>
 		<td><% out.println(temp);%></td>
 		<td><% out.println(temp1);%></td>
@@ -46,8 +46,8 @@
 
 	<% if (request.isUserInRole("admin")) 
 	{ %>
-		   	<br><a href="Update.jsp?id=<%=temp%>"> EDIT </a> <br><br>
-			<a href="Delete.jsp?id=<%=temp%>"> DELETE </a>
+		   	<br><a href="Update.jsp?id=<%=temp%>"><input type="button" name="" value="EDIT">  </a> <br><br>
+			<a href="Delete.jsp?id=<%=temp%>"><input type="button" name="" value=" DELETE">  </a>
     <%
      } %>
 	
