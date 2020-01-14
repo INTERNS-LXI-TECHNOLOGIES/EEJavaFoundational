@@ -2,6 +2,13 @@
 <%@page import="com.lxisoft.models.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ page isELIgnored="false" %>
+<%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,8 +28,9 @@
 				<input type="text" name="n" placeholder="Search">
 				<a href="searchdata"><input type="submit" value="OK"></a></td></form>
 				<td><select name="language">
-			<option value="1" selected>English</option>
+			<option value="1">English</option>
 			<option value="2">മലയാളം</option>
+			<option value="3" selected>Language</option>
 		</select>
 		<input type="submit" value="OK"></a>
 			</td>
