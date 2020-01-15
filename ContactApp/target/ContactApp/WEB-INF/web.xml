@@ -87,4 +87,14 @@
         <url-pattern>/Search</url-pattern>
     </servlet-mapping>
 
+<servlet>
+        <servlet-name>Setlang</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Setlang</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Setlang</servlet-name>
+        <url-pattern>/Setlang</url-pattern>
+    </servlet-mapping>
+
     </web-app>

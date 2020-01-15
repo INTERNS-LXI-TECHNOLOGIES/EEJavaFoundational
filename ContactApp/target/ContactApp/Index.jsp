@@ -25,10 +25,11 @@
         </h2>
        
  <ul>
- <li><a href="?lang=en">eng</a></li>
- <li><a href="?lang=fr">française</a></li>
- <li><a href="?lang=hd">हिंदी</a></li>
-  <li><a href="?lang=ml">മലയാളം</a></li>
+
+ <li><a href="Setlang?lang=en">eng</a></li>
+ <li><a href="Setlang?lang=fr">française</a></li>
+ <li><a href="Setlang?lang=hd">हिंदी</a></li>
+  <li><a href="Setlang?lang=ml">മലയാളം</a></li>
 
  </ul>
 
