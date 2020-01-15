@@ -1,11 +1,17 @@
 <%@page import="com.lxisoft.controller.*"%>
 <%@page import="com.lxisoft.domain.*"%>
+<%@page import="com.lxisoft.config.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.lxisoft.model.*"%>
 <%@page import="com.lxisoft.repository.*"%>
 <%@page import="java.util.*"%>
+  <%
+	String lang=(String)session.getAttribute("lang");
+	International inter=new International();
+  %>
 <html>
-<title>SAVE</title>
-<center style="color: blue"><h1><b>Save</b><h1></center>
+<title><%=inter.getLocale("save",lang,"IN")%></title>
+<center style="color: blue"><h1><b><%=inter.getLocale("save",lang,"IN")%></b><h1></center>
 <body style="background-color:#E6EC73;">
 	<style>
 		form{
@@ -39,20 +45,25 @@
 	</style>
 
 	<div>
-		<button id="b3" onclick="window.location.href='index.jsp'">close(X)</button>
+		<button id="b3" onclick="window.location.href='index.jsp'"><%out.println(inter.getLocale("close",lang,"IN"));%>(X)</button>
 	</div>
 
 	<div >
 		<form action="<%=request.getContextPath()%>/addContact" method="post">
-			First Name:<input type="type" name="firstName" placeholder="enter first name to save"><br><br>
-			Last Name:<input type="type" name="lastName" placeholder="enter last name to save"><br><br>
-			Number:<input type="type" name="number" placeholder="enter name to save"><br><br>
-			<button id="b1" type="submit" >save</button><br><br>		
+			<%=inter.getLocale("firstname",lang,"IN")%>:<input type="type" name="firstName" placeholder="enter first name to save"><br><br>
+			<%=inter.getLocale("lastname",lang,"IN")%>:<input type="type" name="lastName" placeholder="enter last name to save"><br><br>
+			<%=inter.getLocale("number",lang,"IN")%>:<input type="type" name="number" placeholder="enter name to save"><br><br>
+			<button id="b1" type="submit" ><%=inter.getLocale("save",lang,"IN")%></button><br><br>		
 		</form>
 		<center>
-			<button id="b2"  onclick="window.location.href='<%=request.getContextPath()%>/showAll'">Back</button>
+			<button id="b2"   onclick="onclick=goBack()"><%out.println(inter.getLocale("back",lang,"IN"));%></button>
 		</center>
 	</div>
+		<script type="text/javascript">
+	function goBack() {
+  	window.history.back();
+	}
+</script>
 
 </body>
 </html>

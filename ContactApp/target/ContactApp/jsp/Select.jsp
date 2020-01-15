@@ -1,13 +1,19 @@
 <%@page import="com.lxisoft.controller.*"%>
 <%@page import="com.lxisoft.domain.*"%>
+<%@page import="com.lxisoft.config.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="com.lxisoft.model.*"%>
 <%@page import="com.lxisoft.repository.*"%>
 <%@page import="java.util.*"%>
 
+  <%
+	String lang=(String)session.getAttribute("lang");
+	International inter=new International();
+  %>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CONTACT SELECTED</title>
+	<title><%out.println(inter.getLocale("select",lang,"IN"));%>(X)</title>
 </head>
 <body style="background-color:#E6EC73;">
 	<style type="text/css">
@@ -29,7 +35,7 @@
 		}
 	</style>
 	<div>
-		<button id="b4" onclick="window.location.href='<%=request.getContextPath()%>/index.jsp'">close(X)</button>
+		<button id="b4" onclick="window.location.href='<%=request.getContextPath()%>/index.jsp'"><%out.println(inter.getLocale("close",lang,"IN"));%>(X)</button>
 	</div>
 
 	<%
@@ -51,10 +57,10 @@
 		</h2>
 	</div>
 	<div align="center">
-		<h1>Id: <%=selectModel.getContact().getId()%></h1>
-		<h1>Firt Name: <%=selectModel.getContact().getFName()%></h1>
-		<h1>Last Name: <%=selectModel.getContact().getLName()%></h1>
-		<h1>Number: <%=selectModel.getContact().getNumber()%></h1> 
+		<h1><%=inter.getLocale("id",lang,"IN")%>: <%=selectModel.getContact().getId()%></h1>
+		<h1><%=inter.getLocale("firstname",lang,"IN")%>: <%=selectModel.getContact().getFName()%></h1>
+		<h1><%=inter.getLocale("lastname",lang,"IN")%>: <%=selectModel.getContact().getLName()%></h1>
+		<h1><%=inter.getLocale("number",lang,"IN")%>: <%=selectModel.getContact().getNumber()%></h1> 
 	</div>
 	<%
 	session.setAttribute("selectModel",selectModel);%>
@@ -67,12 +73,12 @@
 			 <input type="submit" id="b1" value="delete" onclick="return confirm('Are you sure you want to delete?')" />
 			</form><br>
 
-			<button id="b2" onclick="window.location.href='<%=request.getContextPath()%>/jsp/Edit.jsp'">Edit</button><br><br><br><br><br><br><br>
+			<button id="b2" onclick="window.location.href='<%=request.getContextPath()%>/jsp/Edit.jsp'"><%=inter.getLocale("edit",lang,"IN")%></button><br><br><br><br><br><br><br>
 			
 	<%
 	}
 	%>
-	<button id="b3" onclick="goBack()">Go Back</button>
+	<button id="b3" onclick="goBack()"><%=inter.getLocale("back",lang,"IN")%></button>
 		</div>
 	<script type="text/javascript">
 	function goBack() {
