@@ -9,15 +9,30 @@ import com.lxisoft.Models.*;
 import com.lxisoft.Domain.*;
 
 
-public class LogoutServlet extends HttpServlet
+public class LangServlet extends HttpServlet
 {
 	static MysqlRepository repo=new MysqlRepository();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+		PrintWriter out=response.getWriter();
+		String name=request.getParameter("lang");
 		HttpSession session=request.getSession();
-		response.setCharacterEncoding("UTF-8");
-            response.setContentType("text/html; charset=utf-8");
-		session.invalidate();
-		response.sendRedirect("viewall");
+		try
+		{
+			if (name=="en") 
+			{
+				session.setAttribute("lang","en");	
+			}
+			else
+			{
+				session.setAttribute("lang","ml");	
+
+			}
+			response.sendRedirect("viewall?lang=name");	
+          	
+        }catch(Exception e)
+		{
+
+		}
 	}
 }

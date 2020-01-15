@@ -24,6 +24,8 @@ public class EditServlet extends HttpServlet
 		String number=(String) request.getParameter("newNo");
 		c.setNo(number);
 		// PrintWriter out=response.getWriter();
+		response.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html; charset=utf-8");
 		repo.editContact(c,1);
 		response.sendRedirect("viewall");
 		// out.println((Contact) session.getAttribute("users"));

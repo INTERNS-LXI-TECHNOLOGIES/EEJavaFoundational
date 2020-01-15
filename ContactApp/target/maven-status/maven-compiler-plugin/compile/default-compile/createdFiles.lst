@@ -1,5 +1,6 @@
 com\lxisoft\Repository\Repository.class
 com\lxisoft\Models\SortByNumber.class
+com\lxisoft\Servlet\LangServlet.class
 com\lxisoft\Servlet\SortServlet.class
 com\lxisoft\Servlet\LogoutServlet.class
 com\lxisoft\Servlet\DeleteServlet.class

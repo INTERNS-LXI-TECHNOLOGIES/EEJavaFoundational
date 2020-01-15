@@ -20,6 +20,26 @@
       <url-pattern>/skip</url-pattern>
  </servlet-mapping>
 
+ <servlet>
+      <servlet-name>logout</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.LogoutServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>logout</servlet-name>
+      <url-pattern>/logout</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+      <servlet-name>lang</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.LangServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>lang</servlet-name>
+      <url-pattern>/lang</url-pattern>
+ </servlet-mapping>
+
 
 <servlet>
       <servlet-name>newContact</servlet-name>
@@ -84,7 +104,6 @@
       <servlet-name>select</servlet-name>
       <url-pattern>/select</url-pattern>
  </servlet-mapping>
- logout
 
 <servlet>
       <servlet-name>sort</servlet-name>
@@ -94,15 +113,6 @@
 <servlet-mapping>
       <servlet-name>sort</servlet-name>
       <url-pattern>/sort</url-pattern>
- </servlet-mapping>
- <servlet>
-      <servlet-name>logout</servlet-name>
-      <servlet-class>com.lxisoft.Servlet.LogoutServlet</servlet-class>
-</servlet>
-
-<servlet-mapping>
-      <servlet-name>logout</servlet-name>
-      <url-pattern>/logout</url-pattern>
  </servlet-mapping>
 
 
@@ -116,7 +126,7 @@
       
       <auth-constraint>
          <description>
-            Let  use this app
+            Let only managers use this app
          </description>
          <role-name>*</role-name>
       </auth-constraint>

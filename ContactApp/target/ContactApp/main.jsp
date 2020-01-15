@@ -1,17 +1,14 @@
+<html>
+<title> CONTACT APP</title>
+<head>
+
+	<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+	<link rel="stylesheet" type="text/css" href="styles.css"><CENTER><font color="red" size="32"><b> CONTACT APP </b></font></CENTER></head>
+<body>
 <%@ page import="com.lxisoft.Domain.*" %>
 <%@ page import="com.lxisoft.Models.*" %>
 <%@ page import="java.util.*" %>
-	<%@ page language="java" contentType="text/html; charset=ISO-8859-1"  pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
-<title> CONTACT APP</title>
-<head>
-	<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> -->
-	<script>
-		var beep=new Audio();
-		beep.src="song.mp3";
-	</script>
-<link rel="stylesheet" type="text/css" href="styles.css"><CENTER><font color="red" size="32"><b> CONTACT APP </b></font></CENTER></head>
-<body>
 
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -33,12 +30,11 @@ userName= request.getUserPrincipal().getName();
 }%>
 <% if (userName!=null){ %>
 <center><fmt:message key="label.welcome" /> <%=userName %></center>
-<c:set var="log" scope="application" value="login"/>
-<% session.setAttribute("login",userName);
- }
+<% }
 else if (request.getUserPrincipal()==null){ %>
 <center><fmt:message key="label.welcome" /> Guest</center>
-<% }  %>
+<% } %>
+
 
 
 <center><% if(request.isUserInRole("admin")){ %>
@@ -46,10 +42,18 @@ else if (request.getUserPrincipal()==null){ %>
 <% }
 else{ %>
 <!-- <embed src="song.mp4"> </embed> -->
-<button onclick="beep.play();denied();" >+</button></a>
+<button onclick="play();denied();" >+</button></a>
 <% } %> </center>
  
-
+<script>
+	
+	function play()
+	{
+		var beep=new Audio();
+		beep.src="song.mp3";
+		beep.play();
+	}
+</script>
 <script>
 	function denied()
 	{
@@ -68,7 +72,7 @@ else{ %>
 <center><button  onclick="window.location.href='deleteAll';" ><fmt:message key="label.delete" /></button> <br></center>
 <% }
 else { %>
-<center><button  onclick="beep.play();denied();" ><fmt:message key="label.delete" /></button> <br></center>
+<center><button  onclick="play();denied();" ><fmt:message key="label.delete" /></button> <br></center>
 	<% } %>
 <center>
 <form action="sort">
@@ -87,10 +91,11 @@ else { %>
 	<button onclick="window.location.href='viewall';">refresh</button>
 	<button onclick="window.location.href='logout';">logout</button>
 </center>
-
 <center>
-<a href="?lang=eng">english</a>
-<a href="?lang=ml">മലയാളം</a>
+<a href="lang?lang=eng">english</a>
+<a href="lang?lang=ml">മലയാളം</a>
+	<button onclick="lan();">english</button>
+	<button onclick="lang();">മലയാളം</button>
 </center>
 <% ArrayList<ViewListModel>contacts=new ArrayList<ViewListModel>();
 contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
@@ -118,8 +123,8 @@ contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 		<td><a href="select?name=<%=a.getFullName()%>&type=delete"><fmt:message key="label.del" /></a></td>
 		<% }
 		else { %>
-		<td><button onclick="beep.play();denied();"><fmt:message key="label.edit" /></button></td>
-		<td><button onclick="beep.play();denied();"><fmt:message key="label.del" /></button></td>
+		<td><button onclick="play();denied();"><fmt:message key="label.edit" /></button></td>
+		<td><button onclick="play();denied();"><fmt:message key="label.del" /></button></td>
 		<% } %>
 		
 	</tr>

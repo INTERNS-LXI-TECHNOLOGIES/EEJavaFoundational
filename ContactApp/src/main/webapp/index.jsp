@@ -11,23 +11,7 @@
 <fmt:setBundle basename="messages" />
  
 <html lang="${param.lang}">
-<h2>
-            <fmt:message key="label.chooseRequestLocale" />
-        </h2>
- <p>
-            <fmt:message key="label.requestLocaleContent" />
-        </p>
- <p>
-            <fmt:message key="label.changeLang" />
-        </p>
-
-<fmt:message key="label.welcome" />
-<ul>
-<li><a href="?lang=en">en</a></li>
- <li><a href="?lang=ml">ml</a></li>
- 
- </ul>
-<% response.sendRedirect("viewall");%>
+<% response.sendRedirect("viewall"); %>
 
 	<a href="viewall">skip</a></center>
 </body>
