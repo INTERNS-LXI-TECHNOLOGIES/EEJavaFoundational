@@ -12,10 +12,8 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page isELIgnored="false" %>
 
-<fmt:setLocale value="${param.lang}" />
-<fmt:setBundle basename="messages"/>
 
-<html lang="${param.lang}">
+<html >
 		<head>
 			<title> VIEW CONTACT </title>
 			  <link rel="stylesheet" type="text/css" href="styles.css">
@@ -25,6 +23,9 @@
 				</script>
 		</head>
 		<body> 
+			<% String locale=(String)session.getAttribute("currentlocale"); %>
+			<fmt:setLocale value="${currentlocale}" />
+            <fmt:setBundle basename="messages"/>
 			<center> <h3> <fmt:message key="label.contacts"/></h3> <br/><br/></center>
 			<%if(request.getUserPrincipal()!=null) { %>
 				<center> <fmt:message key="label.welcome"/> <%=request.getUserPrincipal().getName()%> </center> <% }
@@ -116,7 +117,8 @@
 		</table></br>
 
 
-		<center><a href="?lang=en">English</a> &nbsp; <a href="?lang=ml">മലയാളം</a> &nbsp;<a href="?lang=hi">हिंदी</a> &nbsp; <a href="?lang=fr">française</a><br/><br/></center>
+		<center><a href="lang?lang=en">English</a> &nbsp; <a href="lang?lang=ml">മലയാളം</a> &nbsp;<a href="lang?lang=hi">हिंदी</a> &nbsp; <a href="lang?lang=fr">française</a><br/><br/></center>
+		
 
 		<center><button type="button" onClick="window.location.href='View'"><fmt:message key="label.refresh"/></button>
 		<% out.println("<fmt:message key='label.cnct'/>"+""+contactList.size());%></center>
