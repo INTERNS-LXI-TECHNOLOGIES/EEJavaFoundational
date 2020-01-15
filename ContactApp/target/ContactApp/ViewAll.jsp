@@ -1,5 +1,6 @@
 <%@page import="com.lxisoft.domain.*"%>
 <%@page import="com.lxisoft.models.*"%>
+<%@page import="com.lxisoft.config.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
 
@@ -16,7 +17,6 @@
 </head>
 <body>
 	<H1><CENTER>CONTACT LIST</CENTER></H1>
-	
 	<table bgcolor="#ccccff" align=center border="1px" width="30%">
 		<form action="searchdata" method="get">
 		<tr>
@@ -27,13 +27,13 @@
 			}%>
 				<input type="text" name="n" placeholder="Search">
 				<a href="searchdata"><input type="submit" value="OK"></a></td></form>
-				<td><select name="language">
+				<!-- <td><select name="language">
 			<option value="1">English</option>
 			<option value="2">മലയാളം</option>
 			<option value="3" selected>Language</option>
 		</select>
 		<input type="submit" value="OK"></a>
-			</td>
+			</td> -->
 		</tr>
 	
 	<tr>
@@ -59,10 +59,11 @@
     	<td><input type="submit" value="<%=cm.getFName()%> <%=cm.getLName()%>"></td></form>
 		<%if (request.isUserInRole("admin"))
 		{%>
+			<%Internationalization international=new Internationalization();%>
 	    	<form action="select" method="get">
 	    	<input type="hidden" name="id" value="<%=cm.getId()%>">
 	    	<input type="hidden" name="operations" value="2">
-	        <td><input type="submit" value="Delete"></td></form>
+	        <td<input type="submit" value="Delete"></td></form>
 
 	        <form action="select" method="get">
 	        <input type="hidden" name="id" value="<%=cm.getId()%>">

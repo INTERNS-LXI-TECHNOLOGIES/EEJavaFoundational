@@ -1,6 +1,7 @@
 com\lxisoft\servlet\EditServ.class
 com\lxisoft\models\NoComparator.class
 com\lxisoft\models\ContactListModel.class
+com\lxisoft\config\Internationalization.class
 com\lxisoft\servlet\SelectByIdServ.class
 com\lxisoft\models\UserLogin.class
 com\lxisoft\domain\Contact.class
@@ -11,6 +12,7 @@ com\lxisoft\servlet\ResourceBundle.class
 com\lxisoft\models\NameComparator.class
 com\lxisoft\servlet\SortServ.class
 com\lxisoft\servlet\SearchServ.class
+com\lxisoft\config\Internationalization$UTF8Control.class
 com\lxisoft\servlet\LoginServ.class
 com\lxisoft\servlet\DeleteServ.class
 com\lxisoft\servlet\Serv.class
