@@ -4,9 +4,20 @@
 </head>
 <h2><center>LOG IN</center></h2>
 <body>
-	<form action = "add" method = "get">
-		USERNAME :<input type = "text" username="username"><br>
-		PASSWORD :<input type = "text" password="password"></br>
-		<input type="submit" value="SAVE">
+		<form method="POST" action="j_security_check">
+		<table>
+			<tr>
+				<td>Name:</td>
+				<td><input type="text" name="j_username" /></td>
+			</tr>
+			<tr>
+				<td>Password:</td>
+				<td><input type="password" name="j_password"/ ></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Go" /></td>
+			</tr>
+		</table>
+		</form>
 </body>
-</html>
+</html>		
