@@ -19,8 +19,7 @@
 	String lang= international.localization(language,"IN","CONTACTAPP");%>
 	<TD><H1><CENTER><a href="url"><%=lang%></a></H1></TD>
 </TR>
-<tr>
-	 
+<tr> 
 	<TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?language=mal">മലയാളം</a></TD>
 </tr>
