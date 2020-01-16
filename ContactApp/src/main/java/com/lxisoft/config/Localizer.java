@@ -42,10 +42,11 @@ public class Localizer
 }
 	public String getWord(String w,String lang,String country)
 	{
-	// Locale l=new Locale(lang,country);
-    Locale.setDefault(new Locale(lang,country));
+	
+        Locale.setDefault(new Locale(lang,"IN"));
 	ResourceBundle r=ResourceBundle.getBundle("messages",new UTF8Control());
 	String s=r.getString(w);
+    System.out.println(s);
 	return s;
 	}
 }

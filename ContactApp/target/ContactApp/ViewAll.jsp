@@ -3,15 +3,15 @@
 <%@page import="com.lxisoft.config.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!-- <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ page isELIgnored="false" %>
+<%@ page isELIgnored="false" %> -->
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <fmt:requestEncoding value = "UTF-8" />
 <fmt:setLocale value="ml"/>
-<fmt:setBundle basename="messages"/>
+<fmt:setBundle basename="messages"/> -->
 
 <html>
 <title>CONTACTS മലയാളം</title>
@@ -50,12 +50,10 @@
     <%
 	if(request.isUserInRole("admin"))
 	{%>
-	<fmt:message key="label.add" var="addTranslation" />
-	<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="submit" /></a>
+	<a href="AddContact.jsp"><input type="submit" id="b2"name="submit" value="+" /></a>
 	<%}%>
 	<form action= "sort" method="get">
 	<select name="sort">
-    	<fmt:message key="label.submit" var="submitTranslation" />
     <option value="1">Sort contact by name</option>
     <option value="2">Sort contact by number</option>
     <option value="3">Sort contact by id</option>
