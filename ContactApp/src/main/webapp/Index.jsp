@@ -14,10 +14,10 @@ if(lang==null)
 {
  lang="en";
 }
+session.setAttribute("langu",lang);
 Localizer lo=new Localizer();
-String a=lo.getWord("contactapp",lang,"IN");
 %>
-<a href="home"><h1><center><%=a%></center></h1></a>
+<a href="home"><h1><center><%=(lo.getWord("contactapp",lang,"IN"))%></center></h1></a>
 <img src="contactapp.jpg" width="10%" height="10%"> 
 </body>
 </head>

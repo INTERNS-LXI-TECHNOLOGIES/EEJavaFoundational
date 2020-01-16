@@ -91,7 +91,7 @@
    <login-config>
       <auth-method>FORM</auth-method>
       <form-login-config>
-        <form-login-page>/Login.jsp</form-login-page>
+        <form-login-page>/LoginForm.jsp</form-login-page>
         <form-error-page>/Error.jsp</form-error-page>
         </form-login-config>  
    </login-config>
