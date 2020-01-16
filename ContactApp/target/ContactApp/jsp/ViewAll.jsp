@@ -87,7 +87,7 @@ for(Contact contact:contactList)
 	<%if (request.isUserInRole("admin"))
 	{	 %>
 		<td>
-		<button onclick="window.location.href='=request.getContextPath()%>/selectContact?selectId=<%=contact.getId()%>&type=e'"><%=inter.getLocale("edit",lang,"IN")%></button>
+		<button onclick="window.location.href='<%=request.getContextPath()%>/selectContact?selectId=<%=contact.getId()%>&type=e'"><%=inter.getLocale("edit",lang,"IN")%></button>
 		</td>
 		<td>
 		<button onclick="window.location.href='<%=request.getContextPath()%>/selectContact?selectId=<%=contact.getId()%>&type=d'"><%=inter.getLocale("delete",lang,"IN")%></button>
