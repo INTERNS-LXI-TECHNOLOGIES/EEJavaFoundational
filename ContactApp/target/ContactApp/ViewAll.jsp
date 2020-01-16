@@ -49,7 +49,8 @@
 	</tr>
 	</form>
 	
-	<%List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
+	<%String language=(String) session.getAttribute("languageM");
+	List<ContactModel>contactsList=(List<ContactModel>) request.getAttribute("contactlist");
 	for(ContactModel cm:contactsList)
 	{%>
 	
@@ -63,7 +64,7 @@
 	    	<form action="select" method="get">
 	    	<input type="hidden" name="id" value="<%=cm.getId()%>">
 	    	<input type="hidden" name="operations" value="2">
-	        <td<input type="submit" value="Delete"></td></form>
+	        <td><%international.localization(language,"IN","Delete");%><input type="submit" value="Delete"></td></form>
 
 	        <form action="select" method="get">
 	        <input type="hidden" name="id" value="<%=cm.getId()%>">

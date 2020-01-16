@@ -43,9 +43,8 @@ public class Internationalization
     }
     public String localization(String language,String country,String word)
     {
-
-        Locale.setDefault(new Locale("language", "country"));
-        ResourceBundle bundle = ResourceBundle.getBundle("text", new UTF8Control());
-        return bundle.getString(word);
+        Locale.setDefault(new Locale(language,country));
+        ResourceBundle rb = ResourceBundle.getBundle("text", new UTF8Control());
+        return rb.getString(word);
     }
 }
