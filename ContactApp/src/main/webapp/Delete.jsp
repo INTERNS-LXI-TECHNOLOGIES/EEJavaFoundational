@@ -18,13 +18,22 @@
 		 <h1>
 		 Are you sure?  <br>
 		</h1>
-	 <input type="submit" value="YES">
-	 
+		<button onclick="window.location.href='Display'">YES</button>	 
 	</center>
+	</form>
+<center><br>
 	
-<form><center><br>
-	<button onclick="window.location.href='Display'">NO</button>
+		<button onclick="goBack()">NO</button>
+		<script>
+		function goBack()
+		 {
+		   window.history.back();
+		}
+		</script>
 </center>
 	
 </body>
 </html>
+
+
+
