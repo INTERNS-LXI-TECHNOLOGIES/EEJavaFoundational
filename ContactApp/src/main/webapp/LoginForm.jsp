@@ -81,7 +81,7 @@ img.avatar {
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn"><%=(lo.getWord("cancel",lang,"IN"))%></button>
+    <button onclick="window.history.back()"class="cancelbtn"><%=(lo.getWord("cancel",lang,"IN"))%></button>
   </div>
 </form>
 
