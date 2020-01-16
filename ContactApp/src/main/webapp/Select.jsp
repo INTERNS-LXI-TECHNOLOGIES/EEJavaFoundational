@@ -1,5 +1,13 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page isELIgnored="false"%>
+<fmt:setLocale value="${locallang}" />
+<fmt:setBundle basename="Messages" />
+ 
 <!DOCTYPE html>
-<html>
+<html lang="${param.lang}">
+
 <head>
 	<style>
 		table th,td 
@@ -18,13 +26,15 @@
 <%@page import = "com.lxisoft.repository.*"%>
 <%@page import = "com.lxisoft.sqlrepository.*"%>
 <%@page import = "com.lxisoft.model.*,java.util.*"%>
+
+<%String lang=(String)session.getAttribute("locallang");%>
 <br><br>
 <table align="center" style="border-collapse: collapse;">
 	        <tr>
-				<th style="font-family: fantasy;font size: 5px">ID</th>
-				<th style="font-family: fantasy;font size: 5px">FIRSTNAME</th>
-				<th style="font-family: fantasy;font size: 5px">LASTNAME</th>
-				<th style="font-family: fantasy;font size: 5px">NUMBER</th>
+				<th style="font-family: fantasy;font size: 5px"><fmt:message key="label.id" /></th>
+				<th style="font-family: fantasy;font size: 5px"><fmt:message key="label.firstname" /></th>
+				<th style="font-family: fantasy;font size: 5px"><fmt:message key="label.lastname" /></th>
+				<th style="font-family: fantasy;font size: 5px"><fmt:message key="label.number" /></th>
 			</tr>
 
   <%

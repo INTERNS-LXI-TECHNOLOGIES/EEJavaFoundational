@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ page isELIgnored="false"%>
-<fmt:setLocale value="${param.lang}" />
+<fmt:setLocale value="${locallang}" />
 <fmt:setBundle basename="Messages" />
 
 <!DOCTYPE html>
@@ -89,4 +89,7 @@
 <a style="font-family:fantasy; font size: 70px;"  href="Add.jsp" >  <fmt:message key="label.addcontacts" /></a>	
 </center>
 </body>
+<footer>
+	<a href="Logout.jsp"> LOGOUT </a>
+</footer>
 </html>
