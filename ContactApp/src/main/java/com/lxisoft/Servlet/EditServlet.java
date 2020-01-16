@@ -14,6 +14,7 @@ public class EditServlet extends HttpServlet
 	static MysqlRepository repo=new MysqlRepository();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+		
 		HttpSession session=request.getSession();
 		Contact c=new Contact();
 		c=(Contact) session.getAttribute("users");

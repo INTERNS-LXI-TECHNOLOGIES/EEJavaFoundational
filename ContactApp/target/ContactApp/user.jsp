@@ -9,6 +9,15 @@
 <%@ page import="java.util.*" %>
 
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page isELIgnored="false"%>
+
+<fmt:setLocale value="${lang}"/>
+<fmt:setBundle basename="messages" />
+ 
+<html lang="${lang}">
+
 <% Contact contact=(Contact) session.getAttribute("users"); %>
  
 <script>
@@ -24,13 +33,13 @@
 		<td><%=contact.getFullName() %> </td>
 		<td><%=contact.getNo() %> </td>
 		<% if(request.isUserInRole("admin")){ %>
-		<td><a href="edit.jsp">edit</td>
-		<td><a href="delete">delete</td>
+		<td><a href="edit.jsp"><fmt:message key="label.edit" /></td>
+		<td><a href="delete"><fmt:message key="label.del" /></td>
 		<% } else { %>	
-		<td><button onclick="denied()">edit</button></td>
-		<td><button onclick="denied()">delete</button></td>
+		<td><button onclick="denied()"><fmt:message key="label.edit" /></button></td>
+		<td><button onclick="denied()"><fmt:message key="label.del" /></button></td>
 		<% } %>
-		<td><a href="viewall">back</td>
+		<td><a href="viewall"><fmt:message key="label.back" /></td>
 	</tr>
 
 

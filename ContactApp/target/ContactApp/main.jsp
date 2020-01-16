@@ -1,24 +1,24 @@
 <html>
-<title> CONTACT APP</title>
+		<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+		<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+		<%@ page isELIgnored="false"%>
+
+		<fmt:setLocale value="${lang}"/>
+		<fmt:setBundle basename="messages" />
+		 
+<title> <fmt:message key="label.contacts" /></title>
 <head>
 
 	<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<link rel="stylesheet" type="text/css" href="styles.css"><CENTER><font color="red" size="32"><b> CONTACT APP </b></font></CENTER></head>
+	<link rel="stylesheet" type="text/css" href="styles.css"><CENTER><font color="red" size="32"><b>  <fmt:message key="label.contacts" /></b></font></CENTER></head>
 <body>
 <%@ page import="com.lxisoft.Domain.*" %>
 <%@ page import="com.lxisoft.Models.*" %>
 <%@ page import="java.util.*" %>
 
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<%@ page isELIgnored="false"%>
- 
-<fmt:setLocale value="${param.lang}" />
-<fmt:setBundle basename="messages" />
- 
-<html lang="${param.lang}">
+<html lang="${lang}">
 
 
 
@@ -57,14 +57,14 @@ else{ %>
 <script>
 	function denied()
 	{
-		alert("access denied");
+		alert(<fmt:message key="label.AccessDenied" />);
 		// <audio controls autoplay>  
   // <source src="song.mp3" type="audio/mpeg"></audio>  
 	}
 </script>
  <center>
 <form action="search" method="GET"  align="center">
-	<font color="white"> search a contact: </font><br><input  type="text"  align="center" name="user">
+	<input  type="text"  align="center" name="user" placeholder="<fmt:message key='label.Entername' />">
 	<button name="search" type="submit"><fmt:message key="label.search" /></button></form>
 
 </center>
@@ -77,8 +77,8 @@ else { %>
 <center>
 <form action="sort">
 	<select name="sort">
-		<option value="first">first name</option>
-		<option value="last">last name</option>
+		<option value="first"><fmt:message key="label.fName" /></option>
+		<option value="last"><fmt:message key="label.lName" /></option>
 		<option value="id">id</option>
 		
 	</select>
@@ -88,14 +88,13 @@ else { %>
 
 <br>
 <center>
-	<button onclick="window.location.href='viewall';">refresh</button>
-	<button onclick="window.location.href='logout';">logout</button>
+	<button onclick="window.location.href='viewall';"><fmt:message key="label.refresh" /></button>
+	<button onclick="window.location.href='logout';"><fmt:message key="label.logout" /></button>
 </center>
 <center>
-<a href="lang?lang=eng">english</a>
+<a href="lang?lang=en">ENGLISH</a>
 <a href="lang?lang=ml">മലയാളം</a>
-	<button onclick="lan();">english</button>
-	<button onclick="lang();">മലയാളം</button>
+	
 </center>
 <% ArrayList<ViewListModel>contacts=new ArrayList<ViewListModel>();
 contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
@@ -123,7 +122,7 @@ contacts=(ArrayList<ViewListModel>)session.getAttribute("contacts"); %>
 		<td><a href="select?name=<%=a.getFullName()%>&type=delete"><fmt:message key="label.del" /></a></td>
 		<% }
 		else { %>
-		<td><button onclick="play();denied();"><fmt:message key="label.edit" /></button></td>
+		<td><button onclick="play();denied();">c</button></td>
 		<td><button onclick="play();denied();"><fmt:message key="label.del" /></button></td>
 		<% } %>
 		

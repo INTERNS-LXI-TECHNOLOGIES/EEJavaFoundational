@@ -18,9 +18,9 @@ public class MysqlRepository implements Repository
 	{
 		try
 		{
+			connection(true);
 			contacts=getAllContacts();
 			setId();
-			connection(true);
 			// System.out.println("static block mysql");
 		}catch(Exception p)
 		{

@@ -11,28 +11,16 @@ import com.lxisoft.Domain.*;
 
 public class LangServlet extends HttpServlet
 {
-	static MysqlRepository repo=new MysqlRepository();
+	
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+		response.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html; charset=utf-8");
 		PrintWriter out=response.getWriter();
 		String name=request.getParameter("lang");
 		HttpSession session=request.getSession();
-		try
-		{
-			if (name=="en") 
-			{
-				session.setAttribute("lang","en");	
-			}
-			else
-			{
-				session.setAttribute("lang","ml");	
-
-			}
-			response.sendRedirect("viewall?lang=name");	
-          	
-        }catch(Exception e)
-		{
-
-		}
+		session.setAttribute("lang",name);
+		response.sendRedirect("viewall");
+		
 	}
 }

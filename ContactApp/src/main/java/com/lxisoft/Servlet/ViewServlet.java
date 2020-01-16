@@ -16,6 +16,8 @@ public class ViewServlet extends HttpServlet
 	// }
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+      response.setCharacterEncoding("UTF-8");
+            response.setContentType("text/html; charset=utf-8");
    		
    		MysqlRepository repo= new MysqlRepository();
          try {

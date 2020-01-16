@@ -24,3 +24,6 @@ table {
   background: #69F706;
   border-radius: 50%;
 }
+.button:hover{
+  background-color: green;
+}

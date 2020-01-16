@@ -18,6 +18,7 @@
  
 <% Contact contact=(Contact) session.getAttribute("users"); %>
 <% lang=(String) session.getAttribute("lang"); 
+out.println(lang);
 	if(lang=="ml")
 	{
 		%>
@@ -35,14 +36,14 @@ else
 
 
 <form action="edit"><center>
-	<input type="name" name="newFirstName" value="<%=contact.getFirstName()%>" placeholder="NEW FIRST NAME"><br><br>
-	<input type="name" name="newLastName" value="<%=contact.getLastName()%>" placeholder="NEW LAST NAME"><br><br>
-	<input type="number" name="newNo" value="<%=contact.getNo()%>"placeholder="NEW NUMBER"><br><br>
+	<input type="name" name="newFirstName" value="<%=contact.getFirstName()%>"><br><br>
+	<input type="name" name="newLastName" value="<%=contact.getLastName()%>" ><br><br>
+	<input type="number" name="newNo" value="<%=contact.getNo()%>"><br><br>
 	
-	<input type="submit" name="submit"></center>
+	<input type="submit" name="<fmt:message key='label.submit'/>"></center>
 </form>
 <center><button onclick="window.location.href='viewall';"><fmt:message key="label.back" /></button> </center>
- <% out.println(session.getAttribute("lang")); %>
+
 
 
 
