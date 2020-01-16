@@ -12,33 +12,33 @@
 		<html >
 		<head>
 			 <link rel="stylesheet" type="text/css" href="styles.css">
-			<title> ADD CONTACT </title>
+			<fmt:setLocale value="${currentlocale}" />
+			<fmt:setBundle basename="messages"/>
+			<title> <fmt:message key="label.AddContacts"/> </title>
 		</head>
 		<body > 
 			<!-- <% String locale=(String)session.getAttribute("currentlocale"); %> -->
-			<fmt:setLocale value="${currentlocale}" />
-			<fmt:setBundle basename="messages"/>
 			<center>
-				 <h3> TO ADD CONTACT </h3>
+				 <h3><fmt:message key="label.AddContacts"/> </h3>
 			</center>
 			</br></br> <a href="logout" style="float:right;"><fmt:message key="label.logout"/></a>
 			<% Contact contact =(Contact)request.getAttribute("contacts"); 
 			if(contact!=null) 
 			{ %>
-				<button align="left" type="button" onClick="window.location.href = 'View';">Back</button>
+				<button align="left" type="button" onClick="window.location.href = 'View';"><fmt:message key='label.back'/></button>
 				<form action="Add" method="">
 					<center>
-						<input type="text"  name="fname" placeholder= "<fmt:message key='label.Entername'/>"></br></br> 
-						<input type="text"  name="lname" placeholder= "enter last name"></br></br> 
-						<input type="text"  name="num" placeholder= "phone number"></br></br>
-						<input type="submit" value="save">
-						<input type="reset" value="reset">
-						<% out.println(locale); %>
+						<input type="text"  name="fname" placeholder= "<fmt:message key='label.fName'/>"></br></br> 
+						<input type="text"  name="lname" placeholder= "<fmt:message key='label.lName'/>"></br></br> 
+						<input type="text"  name="num" placeholder= "<fmt:message key='label.phno'/>"></br></br>
+						<input type="submit" value="<fmt:message key='label.save'/>">
+						<input type="reset" value="<fmt:message key='label.reset'/>">
+						
 					</center>
 					<script>
 						msg()
 						function msg(){
-						alert(" same contact Name found choose another");}
+						alert(" <fmt:message key='label.Cexist'/>");}
 					</script>
 		<% } 
 		  else
@@ -46,12 +46,12 @@
 				<button align="left" type="button" onClick="window.location.href = 'View';">Back</button>
 				<form action="Add" method="">
 					<center>
-						<input type="text"  name="fname" placeholder="<fmt:message key='label.Entername'/>"></br></br> 
-						<input type="text"  name="lname" placeholder= "enter last name"></br></br> 
-						<input type="text"  name="num" placeholder= "phone number"></br></br>
-						<input type="submit" value="save">
-						<input type="reset" value="reset">
-						<% out.println(locale); %>
+						<input type="text"  name="fname" placeholder="<fmt:message key='label.fName'/>"></br></br> 
+						<input type="text"  name="lname" placeholder= "<fmt:message key='label.lName'/>"></br></br> 
+						<input type="text"  name="num" placeholder= "<fmt:message key='label.phno'/>"></br></br>
+						<input type="submit" value="<fmt:message key='label.save'/>">
+						<input type="reset" value="<fmt:message key='label.reset'/>">
+						
 					</center>
 		<% } %>
 		</body>

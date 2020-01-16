@@ -18,7 +18,7 @@ public class LogoutServlet extends HttpServlet
           PrintWriter out=response.getWriter();
           // session.setMaxInactiveInterval(30*60); 
           session=request.getSession(false);
-         response.sendRedirect("View");  
+          response.sendRedirect("View");  
           // if(session!=null) {
           //    out.println(session);
           // }

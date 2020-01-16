@@ -37,9 +37,10 @@ public class DeleteServlet extends HttpServlet
    //            }
    //            ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
    //             session.setAttribute("contactmodel",contacts);
-              RequestDispatcher rd=request.getRequestDispatcher("View");
-              rd.forward(request,response);
-		// response.sendRedirect("View");
+              // RequestDispatcher rd=request.getRequestDispatcher("View");
+              // rd.forward(request,response);
+		response.setCharacterEncoding("UTF-8");
+		response.sendRedirect("View");
 		}catch(Exception e)
 		{
 			e.printStackTrace();

@@ -13,7 +13,7 @@
   color: black;
 }
 body {
-  background-color: #fff;
+  background-color: #d9e6f2;
   font-family: sans-serif, verdana;
 }
 table {
@@ -22,6 +22,6 @@ table {
   border: 1px solid black;
   text-align: center;
 }
-tr:hover {background-color:#f5f5f5;}
+
 
 }

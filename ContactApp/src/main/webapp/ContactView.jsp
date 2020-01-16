@@ -15,7 +15,10 @@
 
 <html >
 		<head>
-			<title> VIEW CONTACT </title>
+			<% String locale=(String)session.getAttribute("currentlocale"); %>
+			<fmt:setLocale value="${currentlocale}" />
+            <fmt:setBundle basename="messages"/>
+			<title> <fmt:message key="label.contacts"/> </title>
 			  <link rel="stylesheet" type="text/css" href="styles.css">
 			   <script>
 						var beep=new Audio();
@@ -23,9 +26,6 @@
 				</script>
 		</head>
 		<body> 
-			<% String locale=(String)session.getAttribute("currentlocale"); %>
-			<fmt:setLocale value="${currentlocale}" />
-            <fmt:setBundle basename="messages"/>
 			<center> <h3> <fmt:message key="label.contacts"/></h3> <br/><br/></center>
 			<%if(request.getUserPrincipal()!=null) { %>
 				<center> <fmt:message key="label.welcome"/> <%=request.getUserPrincipal().getName()%> </center> <% }
@@ -42,7 +42,7 @@
 			<% } %></button></nav>
 			<script>
 						function Access_denied(){
-						alert("Access denied!!!");
+						alert("<fmt:message key="label.AccessDenied"/>!!!");
 						// window.location="ContactAdd.jsp"
 						}
 			</script>
@@ -69,14 +69,14 @@
 			<%ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");
 			  
 				 if(contactList.size()==0)
-				{%>
-					 <script>
+				{%> <script>
 						msg()
 						function msg(){
-						alert(" No contacts to show");
+						alert("<fmt:message key="label.Nocontactstoshow"/>");
 						// window.location="ContactAdd.jsp"
 						}
 					</script>
+					
 				<%} %>
 				<table align="center" border="10px" width="30%">
 				<tr><th colspan="3"><strong>NAME</strong></th></tr>
@@ -84,17 +84,8 @@
 				{ %>
 
 					<tr>
-						<!-- <img src="images/person.png" height="50px";width="50px";> -->
-					<% if (request.isUserInRole("manager"))  { %>	
 						<td><button class="button" type="button" onClick="window.location.href ='select?user=<%=contactmodel.getFullName()%>';"><%=contactmodel.getFullName()%>
 						</button></td>
-					<% }
-					else { %>
-						<td>
-						<button class="button" type="button" onclick="Access_denied()"><%=contactmodel.getFullName()%>
-						</button></td>
-					<% } %>
-
 					<% if (request.isUserInRole("manager"))  { %>	
 						<td><button class="button" type="button" onClick="window.location.href='selectContact?select=<%=contactmodel.getId()%>';"><fmt:message key="label.edit"/></button></td>
 					<% }
@@ -117,7 +108,7 @@
 		</table></br>
 
 
-		<center><a href="lang?lang=en">English</a> &nbsp; <a href="lang?lang=ml">മലയാളം</a> &nbsp;<a href="lang?lang=hi">हिंदी</a> &nbsp; <a href="lang?lang=fr">française</a><br/><br/></center>
+		<center><a href="lang?lang=en"><fmt:message key='label.en'/></a> &nbsp; <a href="lang?lang=ml"><fmt:message key='label.ml'/></a><br/><br/></center>
 		
 
 		<center><button type="button" onClick="window.location.href='View'"><fmt:message key="label.refresh"/></button>
