@@ -7,9 +7,12 @@
 <!DOCTYPE html>
 <html>
 <body style="background-color:#E6EC73;">
-	<title>Login</title>
+	<title>Login Failed</title>
 </head>
 <body>
-	failed
+	<div align="center">
+		<b>LOGIN FAILED</b><br><br><br>
+		<a href="<%=request.getContextPath()%>/jsp/Login.jsp">try logging in again</a>
+	</div>
 </body>
 </html>

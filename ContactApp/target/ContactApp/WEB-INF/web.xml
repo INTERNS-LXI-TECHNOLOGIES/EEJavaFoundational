@@ -80,11 +80,11 @@
       <role-name>admin</role-name>
    </security-role>
    <login-config>
-      <auth-method>BASIC</auth-method>
-      <!-- <form-login-config>
+      <auth-method>FORM</auth-method>
+      <form-login-config>
          <form-login-page>/jsp/Login.jsp</form-login-page>
          <form-error-page>/jsp/Fail.jsp</form-error-page>
-      </form-login-config> -->
+      </form-login-config>
    </login-config>
 
 </web-app> 

@@ -1,16 +1,12 @@
-<%@page import="com.lxisoft.controller.*"%>
-<%@page import="com.lxisoft.domain.*"%>
-<%@page import="com.lxisoft.model.*"%>
-<%@page import="com.lxisoft.repository.*"%>
-<%@page import="java.util.*"%>
-
+<!DOCTYPE html>
 <html>
 <head>
-<title>Logout</title>
+	<title></title>
 </head>
 <body>
-<p>You have been successfully logout</p>
 <% session.invalidate(); 
-response.SendRedirect();%>
-<!-- <a href="<%=request.getContextPath()%>/showAll" style="color: black">skip for now</a> --></body>
+String root= pageContext.getRequest().getServletContext().getContextPath();
+response.sendRedirect(root+"/index.jsp");%>
+
+</body>
 </html>

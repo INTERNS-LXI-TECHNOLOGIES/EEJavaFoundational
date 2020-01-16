@@ -6,11 +6,11 @@
 <%@page import="java.util.*"%>
 <%@page import="com.lxisoft.config.*"%>
 
+<html>
   <%
 	String lang=(String)session.getAttribute("lang");
 	International inter=new International();
   %>
-<html>
 <title><%out.println(inter.getLocale("contacts",lang,"IN"));%></title>
 <body style="background-color:#E6EC73;">
 	<style>
