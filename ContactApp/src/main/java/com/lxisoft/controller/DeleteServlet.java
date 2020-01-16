@@ -16,7 +16,6 @@ public class DeleteServlet extends HttpServlet
 		DeleteModel deleteModel=new DeleteModel(); 
 		HttpSession session=request.getSession();
 		SelectModel selectModel=(SelectModel) session.getAttribute("selectModel");
-		System.out.println("deleeteeeee servlet=="+selectModel.getContact().getId());
 		deleteModel.setContact(selectModel.getContact());
 		
 		repository.delete(deleteModel.getContact());

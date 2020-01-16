@@ -16,8 +16,6 @@ public class EditServlet extends HttpServlet
 		EditModel editModel=new EditModel();
 		HttpSession session=request.getSession();
 		SelectModel selectModel=(SelectModel) session.getAttribute("selectModel");
-
-		System.out.println("sncsjkn edit servlet=="+selectModel.getContact().getId());
 		editModel.setContact(selectModel.getContact());
 		String[] newValue=new String[3];
 		newValue[0]=(String) request.getParameter("firstName");
