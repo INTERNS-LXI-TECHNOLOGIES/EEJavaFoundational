@@ -27,11 +27,7 @@ public class Sqlrepository implements Repository
         	System.out.println(e);
         }                             
 	}
-	/**
-	@param contact;
-	@param isTrue;
-		
-	*/
+	
 	public void write(Contact contact, boolean isTrue)
 	{
 		

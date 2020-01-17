@@ -36,19 +36,29 @@
 <%@page import = "com.lxisoft.sqlrepository.*"%>
 <%@page import = "com.lxisoft.model.*,java.util.*"%><br><br>
 
- <%String lang=(String)session.getAttribute("locallang");%>
-
-<table align="center" style="border-collapse: collapse;">
+ <%String lang=(String)session.getAttribute("locallang");
+ ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("searchList");
+if(contactList.size()==0)
+    { %>
+     <center>
+     <p><b>NO CONTACTS TO DISPLAY</p></b><br>
+     <a href="Display"> press here to Go back</a>    	
+     </center>
+   <% } 
+  else 
+{ %>
+	<table align="center" style="border-collapse: collapse;">
 	        <tr>
 				<th style="font-family: fantasy;font size: 5px"><fmt:message key="label.id" /></th>
 				<th style="font-family: fantasy;font size: 5px"><fmt:message key="label.firstname" /></th>
 				<th style="font-family: fantasy;font size: 5px"><fmt:message key="label.lastname" /></th>
 				<th style="font-family: fantasy;font size: 5px"><fmt:message key="label.number" /></th>
-				<% if (request.isUserInRole("admin")) { %>				
+				<% if (request.isUserInRole("admin")) 
+				{ %>				
 				<th style="font-family: fantasy;font size: 5px"><fmt:message key="label.options" /></th>
-				  <% } %>
+				<% } %>
 			</tr>
-<% ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("searchList");
+<%}
 	for(Contact i: contactList)
 		{ %>
 			<b>
