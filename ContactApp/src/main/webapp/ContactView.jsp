@@ -26,7 +26,8 @@
 				</script>
 		</head>
 		<body> 
-			<center> <h3> <fmt:message key="label.contacts"/></h3> <br/><br/></center>
+			<center> <h3> <fmt:message key="label.contacts"/></h3></center>
+			<a href="lang?lang=en"><fmt:message key='label.en'/></a> &nbsp; <a href="lang?lang=ml">മലയാളം</a><br/><br/>
 			<%if(request.getUserPrincipal()!=null) { %>
 				<center> <fmt:message key="label.welcome"/> <%=request.getUserPrincipal().getName()%> </center> <% }
 			 else { %> <center> <fmt:message key="label.welcome"/> guest  <% } %> </center>
@@ -106,11 +107,7 @@
 					</tr>
 				<% } %>
 		</table></br>
-
-
-		<center><a href="lang?lang=en"><fmt:message key='label.en'/></a> &nbsp; <a href="lang?lang=ml"><fmt:message key='label.ml'/></a><br/><br/></center>
 		
-
 		<center><button type="button" onClick="window.location.href='View'"><fmt:message key="label.refresh"/></button>
 		<% out.println("<fmt:message key='label.cnct'/>"+""+contactList.size());%></center>
 

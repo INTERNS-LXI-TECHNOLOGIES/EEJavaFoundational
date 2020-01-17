@@ -9,16 +9,16 @@
 	<%@ page isELIgnored="false" %>
 <html>
 		<head>
+			<fmt:setLocale value="${currentlocale}" />
+			<fmt:setBundle basename="messages"/>
 			<title> <fmt:message key="label.details"/> </title>
 			  <link rel="stylesheet" type="text/css" href="styles.css">
 		</head>
 		<body > 
-			<fmt:setLocale value="${currentlocale}" />
-			<fmt:setBundle basename="messages"/>
 
 			<% Contact contact= (Contact)session.getAttribute("currentcontact"); %>
 			</br></br> <a href="logout" style="float:right;"><fmt:message key="label.logout"/></a>
-			<h1><%=contact.getFullName()%></h1>
+			<!-- <h1><%=contact.getFullName()%></h1> -->
 			<table align="center" border="10px" width="20%">
 				<script>
 						function Access_denied(){

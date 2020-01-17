@@ -38,7 +38,7 @@ public class SelectServlet extends HttpServlet
 					if(select.equalsIgnoreCase(contact.getFullName()))
 					{
 		 				session.setAttribute("currentcontact",contact);
-		 				request.getRequestDispatcher("delete").forward(request,response);	
+		 				response.sendRedirect("delete");	
 		 			}
 				}
 			}catch(Exception excep)

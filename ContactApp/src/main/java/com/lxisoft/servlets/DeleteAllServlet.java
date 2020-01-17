@@ -16,25 +16,8 @@ public class DeleteAllServlet extends HttpServlet
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException, IOException
     {
 		try {
-         
-         repo.clearRepository();
-        // ArrayList<Contact> contactList=repo.getAllContacts();
-        //     ContactsListModel contactlistmodel=new ContactsListModel();
-        //     if(contactList!=null)
-        //     { 
-        //       for(int i=0;i<contactList.size();i++)
-        //       {
-        //         ContactModel contactmodel=new ContactModel();
-        //         contactmodel.setId(contactList.get(i).getId());
-        //         contactmodel.setName(contactList.get(i).getName());
-        //         contactlistmodel.setAllContacts(contactmodel);
-        //       }
-        //     }
-        //       ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
-        //       HttpSession session=request.getSession();
-        //        session.setAttribute("contactmodel",contacts);
-            RequestDispatcher rd=request.getRequestDispatcher("View");
-           rd.forward(request,response);
+             repo.clearRepository();
+             response.sendRedirect("View");
            }catch(Exception e)
           {
             e.printStackTrace();

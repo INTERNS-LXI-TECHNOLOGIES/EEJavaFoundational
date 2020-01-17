@@ -209,7 +209,7 @@ public class MySqlRepo implements Repository
 		}
 		return contacts;
 	}
-	public void updateRepo(int i,Contact contact)throws SQLException
+	public void updateRepo(Contact contact)throws SQLException
 	{
 		try
 		{
@@ -217,7 +217,7 @@ public class MySqlRepo implements Repository
 			stmt.setString(1,contact.getFirstName());
 			stmt.setString(2,contact.getLastName());
 			stmt.setString(3,contact.getNo());
-			stmt.setInt(4,contacts.get(i).getId());
+			stmt.setInt(4,contact.getId());
 			stmt.executeUpdate();
 			System.out.println("contact updated");
 		}catch(SQLException e)
@@ -225,12 +225,12 @@ public class MySqlRepo implements Repository
 			e.printStackTrace();
 		}
 	}
-	public void deleteContact(int i)throws SQLException
+	public void deleteContact(Contact contact)throws SQLException
 	{
 		try
 		{
 			stmt=con.prepareStatement("delete from Contactlist where id=?");
-			stmt.setInt(1,contacts.get(i).getId());
+			stmt.setInt(1,contact.getId());
 			stmt.executeUpdate();
 		}catch(SQLException e)
 		{

@@ -19,54 +19,17 @@ public class EditServlet extends HttpServlet
 		HttpSession session=request.getSession(); 
 		Contact contact= (Contact)session.getAttribute("currentcontact");
 		 try{
-			 int i=getId(contact.getFullName());
-			  contact.setId(i);
+			 // int i=getId(contact.getFullName());
+			  // contact.setId(i);
               contact.setFirstName(request.getParameter("fname"));
               contact.setLastName(request.getParameter("lname"));
               contact.setNo(request.getParameter("num"));
-              repo.updateRepo(i,contact);
-              // ArrayList<Contact> contactList=repo.getAllContacts();
-              // ContactsListModel contactlistmodel=new ContactsListModel();
-              // if(contactList!=null)
-              // { 
-              //   for(int j=0;j<contactList.size();j++)
-              //   {
-              //     ContactModel contactmodel=new ContactModel();
-              //     contactmodel.setId(contactList.get(j).getId());
-              //     contactmodel.setName(contactList.get(j).getName());
-              //     contactlistmodel.setAllContacts(contactmodel);
-              //   }
-              // }
-              // ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
-              //  session.setAttribute("contactmodel",contacts);
-              RequestDispatcher rd=request.getRequestDispatcher("View");
-              rd.forward(request,response);
-		      // response.sendRedirect("View");
+              repo.updateRepo(contact);
+		      response.sendRedirect("View");
           }catch(Exception e)
           {
           	e.printStackTrace();
           }
-	}
-	public int getId(String name)
-	{
-		int id=0;
-		
-		try
-		{
-		ArrayList<Contact> contactList=repo.getAllContacts();
-		for(int i=0;i<contactList.size();i++)
-		{
-			if(name.equals(contactList.get(i).getFullName()))
-			{
-				id=i;
-			}
-		}
-		}catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
-		
-		return id;
 	}
 			 
 }

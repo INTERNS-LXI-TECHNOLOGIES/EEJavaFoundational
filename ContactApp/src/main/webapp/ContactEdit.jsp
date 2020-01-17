@@ -28,7 +28,7 @@
 					<input type="text"  name="lname" value="<%=contact.getLastName()%>" ></br></br> 
 					<input type="text"  name="num" value="<%=contact.getNo()%>" ></br></br>
 					<input type="submit" value="<fmt:message key='label.save'/>">
-					<input type="reset" value="<fmt:message key='label.reset'/>">
+					
 					<button align="left" type="button" onClick="window.location.href ='View';"><fmt:message key='label.back'/></button>
 				</center>
 		</body>
