@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Contxct</title>
+	<title>Contact login</title>
 </head>
 <body>
 <form action="j_security_check" method="POST"><center>

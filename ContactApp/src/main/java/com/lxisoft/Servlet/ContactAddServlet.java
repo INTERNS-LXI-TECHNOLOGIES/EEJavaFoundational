@@ -7,12 +7,18 @@ import com.lxisoft.Repository.*;
 import com.lxisoft.Models.*;
 
 import com.lxisoft.Domain.*;
-
+/**
+*class to add a contact
+*/
 
 public class ContactAddServlet extends HttpServlet
 {
 
         static MysqlRepository repo=new MysqlRepository();
+
+        /**
+        *
+        */
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
       response.setCharacterEncoding("UTF-8");
@@ -34,7 +40,6 @@ public class ContactAddServlet extends HttpServlet
          
             }
          }
-         // session.setAttribute("newcontact",new Contact());
          if(exist==false)
             {
                String name=contact.getFullName();
@@ -67,6 +72,6 @@ public class ContactAddServlet extends HttpServlet
          {
 System.out.println("exception "+e);
          }
-      	// out.println("<h1>" + request.getParameter("name")+ "</h1>");
+      	
 	}
 }
