@@ -7,6 +7,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <head>
 <html>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style>
 	#b1
 	{
@@ -89,12 +91,22 @@ for(int i=0;i<c.size();i++)
 		<td>
 			<%if(request.isUserInRole("admin"))
 			{%>
-			<form action= "getContact" method="get">
-				<input type="hidden" name="id" value="<%=(c.get(i).getId())%>"/>
-				<input type="submit" id="b3" value="<%=(lo.getWord("delete",lang,"IN"))%>">
-				<input type="hidden" name="crud" value="4"/>
-			</form>
-		
+			<div class="w3-container">
+			<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><%=(lo.getWord("delete",lang,"IN"))%></button>
+			<div id="id01" class="w3-modal">
+			    <div class="w3-modal-content">
+			      <div class="w3-container">
+			        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+			        <p><%=(lo.getWord("theselectedcontactwillberemoved",lang,"IN"))%></p>
+			        <form action="delete" method ="get">
+						<input type="hidden" name="id" value="<%=(c.get(i).getId())%>">
+						<input type="submit" value="<%=(lo.getWord("deletecontact",lang,"IN"))%>"/>
+					</form>
+					<a href="home"><%=(lo.getWord("cancel",lang,"IN"))%></a>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 			<form action= "getContact" method="get">
 				<input type="hidden" name="id" value="<%=(c.get(i).getId())%>"/>
 				<input type="submit" id="b3" value="<%=(lo.getWord("edit",lang,"IN"))%>">

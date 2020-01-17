@@ -72,7 +72,7 @@ img.avatar {
 
   <div class="container">
     <label for="uname"><b><%=(lo.getWord("username",lang,"IN"))%></b></label>
-    <input type="text" name="j_username" required="jdkdj">
+    <input type="text" name="j_username" required>
 
     <label for="psw"><b><%=(lo.getWord("password",lang,"IN"))%></b></label>
     <input type="password" name="j_password" required>

@@ -6,19 +6,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<style>
-	table,th,td{
-		border: 1px solid black;
-		border-collapse: collapse;
-	}
-	th,td{
-		padding: 15px;
-	}
-	table{
-		width: 25%;
-		background-color: #f1f1c1;
-
-	}
 	#b1
 	{
 		margin-left: 200px;
@@ -46,8 +36,7 @@
 %>
 <title><%=(lo.getWord("contact",lang,"IN"))%></title>
 <body style="background-color: grey">
-	<table align="center" border="5" width="25%" height="25%">
-	<a href="home"><input type="button" id="b2" value="<%=(lo.getWord("back",lang,"IN"))%>"></a>
+<a href="home"><input type="button" id="b2" value="<--"></a>
 	<%if(request.isUserInRole("admin"))
 {%>
 	
@@ -64,16 +53,22 @@ Contact con=(Contact) request.getAttribute("getContactById");
 </font>
 <%if(request.isUserInRole("admin"))
 {%>
-<tr>
-	<center>
-	<br>
-	<form action= "delete" method="post">
-	<input type="submit" id="b3" value="<%=(lo.getWord("deletecontact",lang,"IN"))%>">
-	</form></center>
-</tr>
-</table>
-
-	
-	<%}%>
+<div class="w3-container">
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black"><%=(lo.getWord("deletecontact",lang,"IN"))%></button>
+<div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <p><%=(lo.getWord("theselectedcontactwillberemoved",lang,"IN"))%></p>
+        <form action="delete" method ="get">
+			<input type="hidden" name="id" value="<%=(con.getContactId())%>">
+			<input type="submit" value="<%=(lo.getWord("deletecontact",lang,"IN"))%>"/>
+		</form>
+		<button onclick="window.history.back()"><%=(lo.getWord("cancel",lang,"IN"))%></button>
+      </div>
+    </div>
+  </div>
+</div>
+<%}%>
 </body>
 </html>
