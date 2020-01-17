@@ -118,6 +118,9 @@ for(int i=0;i<c.size();i++)
 <%
 }
 %>
+<form action="Logout" method="post">
+    <input type="submit" value="Logout">
+</form>
 </table>
 </body>
 </html>

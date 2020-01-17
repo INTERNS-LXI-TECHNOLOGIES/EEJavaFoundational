@@ -4,8 +4,6 @@
 <head>
 <title>CONTACT APP</title>
 <body>
-
-
 <a href="?lang=en">English</a>
 <a href="?lang=ml">Malayalam</a>
 <%

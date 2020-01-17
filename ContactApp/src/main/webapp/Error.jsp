@@ -5,6 +5,6 @@
 </head>
 <body>
 	<strong>Error: UserName or Password is incorrect</strong>
-	<center><h1><a href="Login.jsp">Login again</a></h1></center>
+	<center><h1><a href="LoginForm.jsp">Login again</a></h1></center>
 </body>
 </html>
