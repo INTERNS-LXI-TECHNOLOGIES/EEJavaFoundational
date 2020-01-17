@@ -20,9 +20,9 @@
 				String save=international.localization(language,"IN","Save");
 				String cancel=international.localization(language,"IN","Cancel");%>
 				<tr>
-					<td><br><input type="text" name="fname" placeholder=<%=fname%>><br>
-					<br><input type="text" name="lname" placeholder=<%=lname%>><br>
-					<br><input type="text" name="contactNo" placeholder=<%=number%>><br>
+					<td><br><input type="text" name="fname" required="" placeholder=<%=fname%>><br>
+					<br><input type="text" name="lname" required="" placeholder=<%=lname%>><br>
+					<br><input type="text" name="contactNo" required="" placeholder=<%=number%>><br>
 					<br><a href="adddata"><input type="submit" value=<%=save%>></a>
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					</form>

@@ -6,7 +6,9 @@ import javax.servlet.http.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.domain.*;
 import com.lxisoft.models.*;
-
+/**
+ * class for read data from database
+ */
 public class Serv extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException

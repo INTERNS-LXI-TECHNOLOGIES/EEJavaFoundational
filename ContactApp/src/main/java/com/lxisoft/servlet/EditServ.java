@@ -6,6 +6,9 @@ import javax.servlet.http.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.domain.*;
 import com.lxisoft.models.*;
+/**
+ * class for edit a contact
+ */
 public class EditServ extends HttpServlet
 {
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException

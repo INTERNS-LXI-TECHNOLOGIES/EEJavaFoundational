@@ -6,6 +6,9 @@ import javax.servlet.http.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.domain.*;
 import com.lxisoft.models.*;
+/**
+ * class for select a contact by id
+ */
 public class SelectByIdServ extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException

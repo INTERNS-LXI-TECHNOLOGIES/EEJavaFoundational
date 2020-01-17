@@ -19,12 +19,12 @@
 			<td><h1 align="center"><u>Login Page</u></h1>
 			&nbsp;&nbsp;<input type="text" name="j_username" placeholder=<%=userName%>><br>
 			<br>&nbsp;&nbsp;<input type="password" name="j_password" placeholder=<%=password%>><br>
-			<br>&nbsp;&nbsp;<input type="submit" value=<%=login%>>&nbsp;&nbsp;&nbsp;
+			<br>&nbsp;&nbsp;<input type="submit" value=<%=login%>>&nbsp;&nbsp;&nbsp;</form>
 			&nbsp;&nbsp;&nbsp;<a href="url"><input type="submit" value=<%=skip%>></a>&nbsp;&nbsp;&nbsp;
 			&nbsp;&nbsp;&nbsp;<a href="SignUp.jsp"><input type="submit" value=<%=signup%>></a>
 			</td>
 		</tr>
-	</form>
+	
 </table>
 </body>
 </html>

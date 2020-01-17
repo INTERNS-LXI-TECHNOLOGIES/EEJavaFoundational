@@ -6,6 +6,9 @@ import javax.servlet.http.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.domain.*;
 import com.lxisoft.models.*;
+/**
+ * class for delete a contact
+ */
 public class DeleteServ extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException

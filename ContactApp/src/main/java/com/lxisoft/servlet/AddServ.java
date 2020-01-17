@@ -5,7 +5,10 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.domain.*;
-// import com.lxisoft.models.*;
+/**
+ * class for add new contact
+ */
+	
 public class AddServ extends HttpServlet
 {
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
