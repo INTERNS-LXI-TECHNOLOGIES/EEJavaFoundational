@@ -6,9 +6,14 @@ import java.net.*;
 import java.net.URLConnection;
 import java.io.*;
 import java.util.*;
-
+/**
+ *International class
+ */
 public class International
 {
+    /**
+     *inner class UTF8Control to include UTF-8 in ResourceBundle
+     */
 	public class UTF8Control extends Control {
     public ResourceBundle newBundle (String baseName, Locale locale, String format, ClassLoader loader, boolean reload)
     				throws IllegalAccessException, InstantiationException, IOException
@@ -41,7 +46,13 @@ public class International
         return bundle;
     }
 	}
-
+    /**
+     *method to get locale
+     *@param word locale word
+     *@param lang language selected
+     *@param country country selected
+     *@return converted word
+     */
 	public  String getLocale(String word,String lang,String country)
 	{
 		Locale.setDefault(new Locale(lang,country));

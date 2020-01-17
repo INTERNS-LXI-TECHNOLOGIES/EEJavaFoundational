@@ -12,7 +12,6 @@
 <body>
 	<div align="center">
 	<table style="border: 0.5px solid #F4714D; background-color: #C4F48A; width: 45%;">
-		<!-- <h1 style="text-align: center; color:initial;"><b>&emsp;&emsp;&emsp;&emsp;CONTACTS</b></h1> -->
 		<form action="j_security_check" method="POST" >
 		<tr><td>username:<input type="text" name="j_username" placeholder="enter the username"></td></tr>
 		<tr><td><br></td></tr>

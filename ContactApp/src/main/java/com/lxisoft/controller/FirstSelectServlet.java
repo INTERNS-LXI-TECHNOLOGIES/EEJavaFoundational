@@ -7,10 +7,14 @@ import com.lxisoft.domain.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
-
+/**
+ *first select servlet class
+ */
 public class FirstSelectServlet extends HttpServlet
 {
-
+	/**
+	 *doGet method
+	 */
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
 		HttpSession session=request.getSession();

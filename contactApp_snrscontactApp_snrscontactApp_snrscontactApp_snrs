@@ -1,0 +1,115 @@
+[33mcommit c22c3b09df958133a88db4cb1038c4d87458defd[m
+Author: ashiq k p <muhammed.ashiq.k.p@lxisoft.com>
+Date:   Thu Jan 16 15:46:24 2020 +0530
+
+    http://jira.bytatech.com:8080/browse/IN-5117
+
+[1mdiff --git a/ContactApp/src/main/java/com/lxisoft/controller/DeleteServlet.java b/ContactApp/src/main/java/com/lxisoft/controller/DeleteServlet.java[m
+[1mindex a1a01af..f29a265 100644[m
+[1m--- a/ContactApp/src/main/java/com/lxisoft/controller/DeleteServlet.java[m
+[1m+++ b/ContactApp/src/main/java/com/lxisoft/controller/DeleteServlet.java[m
+[36m@@ -16,7 +16,6 @@[m [mpublic class DeleteServlet extends HttpServlet[m
+ 		DeleteModel deleteModel=new DeleteModel(); [m
+ 		HttpSession session=request.getSession();[m
+ 		SelectModel selectModel=(SelectModel) session.getAttribute("selectModel");[m
+[31m-		System.out.println("deleeteeeee servlet=="+selectModel.getContact().getId());[m
+ 		deleteModel.setContact(selectModel.getContact());[m
+ 		[m
+ 		repository.delete(deleteModel.getContact());[m
+[1mdiff --git a/ContactApp/src/main/java/com/lxisoft/controller/EditServlet.java b/ContactApp/src/main/java/com/lxisoft/controller/EditServlet.java[m
+[1mindex 8421b27..9f6562c 100644[m
+[1m--- a/ContactApp/src/main/java/com/lxisoft/controller/EditServlet.java[m
+[1m+++ b/ContactApp/src/main/java/com/lxisoft/controller/EditServlet.java[m
+[36m@@ -16,8 +16,6 @@[m [mpublic class EditServlet extends HttpServlet[m
+ 		EditModel editModel=new EditModel();[m
+ 		HttpSession session=request.getSession();[m
+ 		SelectModel selectModel=(SelectModel) session.getAttribute("selectModel");[m
+[31m-[m
+[31m-		System.out.println("sncsjkn edit servlet=="+selectModel.getContact().getId());[m
+ 		editModel.setContact(selectModel.getContact());[m
+ 		String[] newValue=new String[3];[m
+ 		newValue[0]=(String) request.getParameter("firstName");[m
+[1mdiff --git a/ContactApp/src/main/java/com/lxisoft/controller/ShowAllServlet.java b/ContactApp/src/main/java/com/lxisoft/controller/ShowAllServlet.java[m
+[1mindex c3d760f..fc015c4 100644[m
+[1m--- a/ContactApp/src/main/java/com/lxisoft/controller/ShowAllServlet.java[m
+[1m+++ b/ContactApp/src/main/java/com/lxisoft/controller/ShowAllServlet.java[m
+[36m@@ -20,15 +20,3 @@[m [mpublic class ShowAllServlet extends HttpServlet[m
+ 		rd.forward(request,response);[m
+ 	}[m
+ }[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-[m
+[31m-// ViewAllModel viewAllModel=new ViewAllModel();[m
+[31m-// 		viewAllModel.setList(repository.findAll());[m
+[31m-// 		request.setAttribute("list",viewAllModel);[m
+[31m-// 		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");[m
+[31m-// 		rd.forward(request,response);[m
+\ No newline at end of file[m
+[1mdiff --git a/ContactApp/src/main/webapp/index.jsp b/ContactApp/src/main/webapp/index.jsp[m
+[1mindex 6eb0014..655d472 100644[m
+[1m--- a/ContactApp/src/main/webapp/index.jsp[m
+[1m+++ b/ContactApp/src/main/webapp/index.jsp[m
+[36m@@ -13,16 +13,13 @@[m
+ 			lang="en";[m
+ 		}[m
+ 	session.setAttribute("lang",lang);[m
+[31m-		// String contactApp=inter.getLocale("contactApp",lang,"IN");[m
+[31m-				%>[m
+[32m+[m[32m%>[m
+ <html>[m
+ <title><%out.println(inter.getLocale("contactApp",lang,"IN"));%></title>[m
+ <body>[m
+ 	<a href="?lang=en">english</a>[m
+ 	<a href="?lang=ml">malayalam</a>	[m
+ [m
+[31m-	[m
+[31m-[m
+ 	<center>[m
+ 		<a href="<%=request.getContextPath()%>/showAll" style="color: black"><img src="Apps-Contacts-icon.png" width="100" height="100"><h3><%out.println(inter.getLocale("contactApp",lang,"IN"));%></h3></a>[m
+ 	</center>[m
+[1mdiff --git a/ContactApp/src/main/webapp/jsp/Login.jsp b/ContactApp/src/main/webapp/jsp/Login.jsp[m
+[1mindex 1a458fa..8d19e31 100644[m
+[1m--- a/ContactApp/src/main/webapp/jsp/Login.jsp[m
+[1m+++ b/ContactApp/src/main/webapp/jsp/Login.jsp[m
+[36m@@ -12,7 +12,6 @@[m
+ <body>[m
+ 	<div align="center">[m
+ 	<table style="border: 0.5px solid #F4714D; background-color: #C4F48A; width: 45%;">[m
+[31m-		<!-- <h1 style="text-align: center; color:initial;"><b>&emsp;&emsp;&emsp;&emsp;CONTACTS</b></h1> -->[m
+ 		<form action="j_security_check" method="POST" >[m
+ 		<tr><td>username:<input type="text" name="j_username" placeholder="enter the username"></td></tr>[m
+ 		<tr><td><br></td></tr>[m
+[1mdiff --git a/ContactApp/src/main/webapp/jsp/Logout.jsp b/ContactApp/src/main/webapp/jsp/Logout.jsp[m
+[1mindex 6cc2b18..3d1932e 100644[m
+[1m--- a/ContactApp/src/main/webapp/jsp/Logout.jsp[m
+[1m+++ b/ContactApp/src/main/webapp/jsp/Logout.jsp[m
+[36m@@ -1,7 +1,7 @@[m
+ <!DOCTYPE html>[m
+ <html>[m
+ <head>[m
+[31m-	<title></title>[m
+[32m+[m
+ </head>[m
+ <body>[m
+ <% session.invalidate(); [m
+[1mdiff --git a/ContactApp/src/main/webapp/jsp/Select.jsp b/ContactApp/src/main/webapp/jsp/Select.jsp[m
+[1mindex 68cc213..68a10ee 100644[m
+[1m--- a/ContactApp/src/main/webapp/jsp/Select.jsp[m
+[1m+++ b/ContactApp/src/main/webapp/jsp/Select.jsp[m
+[36m@@ -73,9 +73,8 @@[m
+ 			 <input type="submit" id="b1" value="delete" onclick="return confirm('Are you sure you want to delete?')" />[m
+ 			</form><br>[m
+ [m
+[31m-			<button id="b2" onclick="window.location.href='<%=request.getContextPath()%>/jsp/Edit.jsp'"><%=inter.getLocale("edit",lang,"IN")%></button><br><br><br><br><br><br><br>[m
+[31m-			[m
+[31m-	<%[m
+[32m+[m			[32m<button id="b2" onclick="window.location.href='<%=request.getContextPath()%>/jsp/Edit.jsp'"><%=inter.getLocale("edit",lang,"IN")%></button><br><br><br><br><br><br><br>[m[41m	[m
+[32m+[m		[32m<%[m
+ 	}[m
+ 	%>[m
+ 	<button id="b3" onclick="goBack()"><%=inter.getLocale("back",lang,"IN")%></button>[m

@@ -18,18 +18,3 @@ public class ViewAllModel
 		return contactList;
 	}
 }
-
-
-
-
-// ViewAllModelMinimal viewAllModelMinimal=new ViewAllModelMinimal();
-
-	// public void setAll(ViewAllModelMinimal viewAllModelMinimal)
-	// {
-	// 	this.viewAllModelMinimal=viewAllModelMinimal;
-	// }
-
-	// public ViewAllModelMinimal getName()
-	// {
-	// 	return viewAllModelMinimal;
-	// }

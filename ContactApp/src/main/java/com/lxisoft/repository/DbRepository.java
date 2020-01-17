@@ -5,7 +5,9 @@ import com.lxisoft.domain.*;
 import java.util.*;
 import com.lxisoft.repository.*;
 import java.sql.*;
-
+/**
+ *Data base repository class
+ */
 public class DbRepository implements Repository
 {
 	Connection connection;
@@ -16,7 +18,9 @@ public class DbRepository implements Repository
 	{		
 		makeConnection();
 	}
-
+	/**
+	 *make connection method
+	 */
 	public void makeConnection()
 	{
 		try
@@ -29,7 +33,10 @@ public class DbRepository implements Repository
 			System.out.println(e);
 		}	
 	}
-
+	/**
+	 *find all contacts method
+	 *@return contact arraylist
+	 */
 	public ArrayList<Contact> findAll()
 	{
 		ArrayList<Contact> contactList=new ArrayList<Contact>();
@@ -59,7 +66,10 @@ public class DbRepository implements Repository
 		}	
 		return contactList;
 	}
-
+	/**
+	 *save method
+	 *@param contact contact to save
+	 */
 	public void save(Contact contact) 
 	{
 		int id=index();
@@ -77,7 +87,10 @@ public class DbRepository implements Repository
 			System.out.println(e);
 		}	
 	}
-
+	/**
+	 *intex method for finding final index
+	 *@return last index 
+	 */
 	public int index()
 	{
 		ArrayList<Contact> contactList=findAll();
@@ -90,7 +103,10 @@ public class DbRepository implements Repository
 		}
 		return n;
 	}
-
+	/**
+	 *delete method
+	 *@param contact contact to delete
+	 */
 	public void delete(Contact contact)
 	{
 		try
@@ -104,7 +120,11 @@ public class DbRepository implements Repository
 			System.out.println(e);
 		}	
 	}
-	
+	/**
+	 *edit method
+	 *@param editModel contact to edit
+	 *@param tempEdit new contact detail
+	 */
 	public void edit(EditModel editModel,String[] tempEdit)
 	{
 		try
@@ -122,7 +142,9 @@ public class DbRepository implements Repository
 			System.out.println(e);
 		}	
 	}
-
+	/**
+	 *clear db method
+	 */
 	public void clear()
 	{
 		try
@@ -135,7 +157,11 @@ public class DbRepository implements Repository
 			System.out.println(e);
 		}	
 	}
-
+	/**
+	 *search contact method
+	 *@param searchName contact to search
+	 *@return searched contact list
+	 */
 	public ArrayList<Contact> search(String searchName)
 	{
 		ArrayList<Contact> searchList=new ArrayList<Contact>();
@@ -161,7 +187,11 @@ public class DbRepository implements Repository
 		}	
 		return searchList;
 	}
-
+	/**
+	 *search contact method
+	 *@param type sortring type
+	 *@return sorted contact list
+	 */
 	public ArrayList<Contact> sort(String type)
 	{
 		ArrayList<Contact> sortList=new ArrayList<Contact>();

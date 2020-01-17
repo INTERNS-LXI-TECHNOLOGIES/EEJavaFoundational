@@ -6,11 +6,15 @@ import com.lxisoft.domain.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
-
+/**
+ *show all servlet class
+ */
 public class ShowAllServlet extends HttpServlet
 {
 	Repository repository=new DbRepository();
-
+	/**
+	 *doGet method
+	 */
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
 		ArrayList<Contact> contactList=new ArrayList<Contact>();

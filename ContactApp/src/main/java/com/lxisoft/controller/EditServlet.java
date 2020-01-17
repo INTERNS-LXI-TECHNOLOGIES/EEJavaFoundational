@@ -6,11 +6,15 @@ import com.lxisoft.domain.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.io.*;
-
+/**
+ *edit servlet class
+ */
 public class EditServlet extends HttpServlet
 {
 	Repository repository=new DbRepository();
-
+	/**
+	 *dopost method
+	 */
 	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
 		EditModel editModel=new EditModel();
