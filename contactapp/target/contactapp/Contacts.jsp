@@ -78,6 +78,8 @@
                       <td><%=c.getId()%></td> 
                       <td><%=c.getName()%></td> 
                       <td><%=c.getNumber()%></td>
+
+                        <% if(request.isUserInRole("admin")) {%>
                      <!--  <% session.setAttribute("contact",c);%> -->
                       <td><a type="button" class="btn btn-outline-info btn-rounded waves-effect" href="Edit?id=<%=c.getId()%>">edits</a></td> 
                       <td><a type="button" class="btn btn-outline-danger btn-rounded waves-effect" data-toggle="modal" data-target="#centralModalSuccess">Delete</a>
@@ -120,6 +122,7 @@
                       </tr> 
                  <%}%> 
              <%}%>
+          <%}%>
         </table> 
 <!-- JQuery -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
