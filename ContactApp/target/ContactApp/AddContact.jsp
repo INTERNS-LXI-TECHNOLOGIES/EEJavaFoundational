@@ -1,6 +1,7 @@
+<%@page import="com.lxisoft.domain.*,com.lxisoft.config.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <html>
 <head>
-<title>ADD CONTACT</title>
 <style>
 	table,th,td{
 		border: 1px solid black;
@@ -21,23 +22,28 @@
 	}
 </style>
 <body>
+	<%
+	  Localizer lo=new Localizer();
+	  String lang=(String)session.getAttribute("langu");
+	%>
+	<title><%=(lo.getWord("addcontact",lang,"IN"))%></title>
 	<table align="center" border="5" width="25%" height="25%">
-		<caption><h1><center>NEW CONTACT</center></h1></caption>
+		<caption><h1><center><%=(lo.getWord("newcontact",lang,"IN"))%></center></h1></caption>
 	
 		<form action= "add" method="post">
 			<tr>
-				<td>First Name:<input type="text" name="first name"/></td>
+				<td><%=(lo.getWord("firstname",lang,"IN"))%><input type="text" name="first name"/></td>
 			</tr>
 			<tr>
-				<td>Last Name:<input type="text" name="last name"/></td>
+				<td><%=(lo.getWord("lastname",lang,"IN"))%><input type="text" name="last name"/></td>
 			</tr>
 			<tr>
-				<td>Number:<input type="text" name="number"/></td>
+				<td><%=(lo.getWord("number",lang,"IN"))%><input type="text" name="number"/></td>
 			</tr>			
 			<tr>
-				<td><a href="add"><input type="submit" value="Save"/></a>
+				<td><a href="add"><input type="submit" value="<%=(lo.getWord("save",lang,"IN"))%>"/></a>
 		</form>
-				<a href="home"><input type="submit" value="Cancel"/></a></td>
+				<a href="home"><input type="submit" value="<%=(lo.getWord("cancel",lang,"IN"))%>"/></a></td>
 			</tr>
 
 </body>

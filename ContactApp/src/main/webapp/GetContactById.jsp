@@ -1,10 +1,11 @@
 <%@page import="com.lxisoft.domain.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
+<%@page import="com.lxisoft.domain.*,com.lxisoft.config.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>getContact</title>
 	<style>
 	table,th,td{
 		border: 1px solid black;
@@ -39,9 +40,14 @@
 	}
 </style>
 </head>
+<%
+  Localizer lo=new Localizer();
+  String lang=(String)session.getAttribute("langu");
+%>
+<title><%=(lo.getWord("contact",lang,"IN"))%></title>
 <body style="background-color: grey">
 	<table align="center" border="5" width="25%" height="25%">
-	<a href="home"><input type="button" id="b2" value="<---"></a>
+	<a href="home"><input type="button" id="b2" value="<%=(lo.getWord("back",lang,"IN"))%>"></a>
 	<%if(request.isUserInRole("admin"))
 {%>
 	
@@ -49,7 +55,7 @@
 Contact con=(Contact) request.getAttribute("getContactById");
 
 %>
-<a href="editContact"><input type="submit" id="b1" value="Edit"></a><br><br><br>
+<a href="editContact"><input type="submit" id="b1" value="<%=(lo.getWord("edit",lang,"IN"))%>"></a><br><br><br>
 <font size="15">
 <center><img src="user-icon-jpg-12.jpg" width="10%" height="10%"> 
 <center><%=(con.getContactFirstName())%></center>
@@ -62,7 +68,7 @@ Contact con=(Contact) request.getAttribute("getContactById");
 	<center>
 	<br>
 	<form action= "delete" method="post">
-	<input type="submit" id="b3" value="Delete Contact">
+	<input type="submit" id="b3" value="<%=(lo.getWord("deletecontact",lang,"IN"))%>">
 	</form></center>
 </tr>
 </table>

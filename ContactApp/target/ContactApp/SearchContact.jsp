@@ -1,6 +1,8 @@
 <%@page import="com.lxisoft.domain.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.io.*"%>
+<%@page import="com.lxisoft.domain.*,com.lxisoft.config.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,11 +17,15 @@
 	    width: 100;
 	}
 </style>
-	<title>Search result</title>
+<%
+  Localizer lo=new Localizer();
+  String lang=(String)session.getAttribute("langu");
+%>
+	<title><%=(lo.getWord("searchresult",lang,"IN"))%></title>
 </head>
 <body style="background-color: grey">
 <table  align="center" width="40%"  border color= "blue" bgcolor="#3CBC8D">
-	<caption><h1><center>Search</center></h1></caption>
+	<caption><h1><center><%=(lo.getWord("searchresult",lang,"IN"))%></center></h1></caption>
 	<%List<Contact>contact=(List<Contact>) request.getAttribute("search");
 	for(int i=0;i<contact.size();i++){%>
 	<tr>

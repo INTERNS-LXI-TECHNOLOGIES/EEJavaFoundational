@@ -7,8 +7,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <head>
 <html>
-<title>CONTACTS</title>
-
 	<style>
 	#b1
 	{
@@ -37,11 +35,13 @@
 	    width: 50%;
 	}
 </style>
-</head>
 <%
   Localizer lo=new Localizer();
   String lang=(String)session.getAttribute("langu");
 %>
+<title><%=(lo.getWord("contacts",lang,"IN"))%></title>
+</head>
+
 <h1><center><%=(lo.getWord("contactlist",lang,"IN"))%></center></h1>
 <body style="background-color: white">
     <%
@@ -51,10 +51,10 @@
 	<%}%>
 	<form action= "sort" method="get">
 	<select name="sort">
-    <option value="1"><%=(lo.getWord("sortcontactbyname",lang,"IN"))%></option>
-    <option value="2"><%=(lo.getWord("sortcontactbynumber",lang,"IN"))%></option>
-    <option value="3"><%=(lo.getWord("sortcontactbyid",lang,"IN"))%></option>
-    <input type="submit" name="submit" value="<%=(lo.getWord("submit",lang,"IN"))%>"/>
+    <option value="1"><%=(lo.getWord("byname",lang,"IN"))%></option>
+    <option value="2"><%=(lo.getWord("bynumber",lang,"IN"))%></option>
+    <option value="3"><%=(lo.getWord("byid",lang,"IN"))%></option>
+    <input type="submit" name="submit" value="<%=(lo.getWord("sort",lang,"IN"))%>"/>
   </select>
 </form>
 	<%
@@ -63,7 +63,7 @@
 	<form action= "search" method="get">
 	<table align="center" border="1" width="10%" height="5%" >
 		<tr>
-			<td><input type="text" name="name" placeholder="<%=(lo.getWord("searchincontact",lang,"IN"))%>"/>
+			<td><input type="text" name="name" placeholder="<%=(lo.getWord("search",lang,"IN"))%>"/>
 		
 			<a href="search"><input type="submit" value="<%=(lo.getWord("submit",lang,"IN"))%>"></a></td>
 		</tr>
