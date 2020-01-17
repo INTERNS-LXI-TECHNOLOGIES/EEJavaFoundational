@@ -15,8 +15,8 @@
 	{
 		language="en";
 	}
-	
-	String lang= international.localization(language,"IN","CONTACTAPP");%>
+	String lang= international.localization(language,"IN","CONTACTAPP");
+	session.setAttribute("language",language);%>
 	<TD><H1><CENTER><a href="url"><%=lang%></a></H1></TD>
 </TR>
 <tr> 
