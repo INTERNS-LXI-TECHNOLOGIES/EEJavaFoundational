@@ -36,16 +36,21 @@
       <role-name>tomcat</role-name>
     </auth-constraint>
 
-    <user-data-constraint>
-      <!-- transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE -->
+ <!--  <user-data-constraint>
+       transport-guarantee can be CONFIDENTIAL, INTEGRAL, or NONE 
       <transport-guarantee>CONFIDENTIAL</transport-guarantee>
-    </user-data-constraint>
+    </user-data-constraint> -->
   </security-constraint>
+  
+  <security-role>
+    <role-name>role1</role-name>
+  </security-role>
+
 
   <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-      <form-login-page>/login.html</form-login-page>
+      <form-login-page>/login.jsp</form-login-page>
       <form-error-page>/login-failed.html</form-error-page>
     </form-login-config>
   </login-config>
