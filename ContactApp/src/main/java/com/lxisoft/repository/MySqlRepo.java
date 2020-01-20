@@ -106,7 +106,7 @@ public class MySqlRepo implements Repository
 	{
 		try
 		{
-			String create_Table="create table Contactlist(ID int(3),FIRSTNAME varchar(50),LASTNAME varchar(50),NUMBER varchar(10))";
+			String create_Table="create table Contactlist(ID int(3),FIRSTNAME varchar(50) default 'c',LASTNAME varchar(50) default 'c',NUMBER varchar(10) default '000')";
 			stmt=con.prepareStatement(create_Table);
 			stmt.execute();
 			System.out.println("table created successfully");
@@ -183,6 +183,31 @@ public class MySqlRepo implements Repository
 			System.out.println("Exception"+e);
 		}
 		return id;	
+	}
+	public ArrayList<Contact> getAllContacts(int start,int total)throws SQLException
+	{
+		try
+		{
+		// dB_Connection(true);
+		contacts.clear();
+		stmt=con.prepareStatement("use contacts");
+		// PreparedStatement stm=con.prepareStatement("use contacts");
+
+			rs = stmt.executeQuery("select * from Contactlist limit "+(start-1)+","+total);
+			while(rs.next()) 
+			{ 
+				Contact	contact=new Contact();
+				contact.setId(rs.getInt("ID"));
+				contact.setFirstName(rs.getString("FIRSTNAME"));
+				contact.setLastName(rs.getString("LASTNAME"));
+				contact.setNo(rs.getString("NUMBER"));
+				contacts.add(contact);
+			}	
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return contacts;
 	}
 	public ArrayList<Contact> getAllContacts()throws SQLException
 	{

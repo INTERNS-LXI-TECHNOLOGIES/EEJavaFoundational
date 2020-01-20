@@ -40,7 +40,7 @@ public class DeleteServlet extends HttpServlet
               // RequestDispatcher rd=request.getRequestDispatcher("View");
               // rd.forward(request,response);
 		response.setCharacterEncoding("UTF-8");
-		response.sendRedirect("View");
+		response.sendRedirect("View?page=1");
 		}catch(Exception e)
 		{
 			e.printStackTrace();

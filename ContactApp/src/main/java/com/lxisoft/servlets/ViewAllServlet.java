@@ -14,7 +14,16 @@ public class ViewAllServlet extends HttpServlet
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
     {
       try{
-            ArrayList<Contact> contactList=repo.getAllContacts();
+            String spageid=request.getParameter("page");  
+            int pageid=Integer.parseInt(spageid);  
+            int total=5;  
+            if(pageid==1){ }  
+            else{  
+                  pageid=pageid-1;  
+                  pageid=pageid*total+1;  
+            }
+
+            ArrayList<Contact> contactList=repo.getAllContacts(pageid,total);
             ContactsListModel contactlistmodel=new ContactsListModel();
             if(contactList!=null)
             { 
@@ -29,8 +38,10 @@ public class ViewAllServlet extends HttpServlet
               }
             }
             ArrayList<ContactModel> contacts=contactlistmodel.getAllContacts();
+
             HttpSession session=request.getSession();
             session.setAttribute("contactmodel",contacts);
+            session.setAttribute("page",spageid);
             RequestDispatcher rd=request.getRequestDispatcher("ContactView.jsp");
         	  rd.forward(request,response);
                  // response.sendRedirect("jsp\\ContactView.jsp");

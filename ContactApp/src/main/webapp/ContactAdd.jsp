@@ -22,19 +22,25 @@
 				 <h3><fmt:message key="label.AddContacts"/> </h3>
 			</center>
 			</br></br> <a href="logout" style="float:right;"><fmt:message key="label.logout"/></a>
+
 			<% Contact contact =(Contact)request.getAttribute("contacts"); 
 			if(contact!=null) 
 			{ %>
 				<button align="left" type="button" onClick="window.location.href = 'View';"><fmt:message key='label.back'/></button>
-				<form action="Add" method="">
+				<form action="Add" name="form1" method="GET" onSubmit=" return validateForm()">
 					<center>
-						<input type="text"  name="fname" placeholder= "<fmt:message key='label.fName'/>"></br></br> 
-						<input type="text"  name="lname" placeholder= "<fmt:message key='label.lName'/>"></br></br> 
-						<input type="text"  name="num" placeholder= "<fmt:message key='label.phno'/>"></br></br>
+						<input type="text"  name="fname" placeholder= "<fmt:message key='label.fName'/>">
+						<font color="red">*</font> </br></br> 
+						<input type="text"  name="lname" placeholder= "<fmt:message key='label.lName'/>">
+						<font color="red">*</font></br></br> 
+						<input type="number"  name="num" placeholder= "<fmt:message key='label.phno'/>">
+						<font color="red">*</font></br></br>
 						<input type="submit" value="<fmt:message key='label.save'/>">
+						<!-- <button onclick="validateForm() "><fmt:message key='label.save'/>"></button> -->
 						<input type="reset" value="<fmt:message key='label.reset'/>">
 						
 					</center>
+				</form>
 					<script>
 						msg()
 						function msg(){
@@ -43,16 +49,42 @@
 		<% } 
 		  else
 			{ %>
-				<button align="left" type="button" onClick="window.location.href = 'View';">Back</button>
-				<form action="Add" method="">
+				<!-- <button align="left" type="button" onClick="window.location.href = 'View';">Back</button> -->
+				<a href="View" ><img src="images/back.png" height="40px"; width="40px";></a> 
+				<form  name="form1" action="Add" method="GET" onsubmit="return validateForm()">
 					<center>
-						<input type="text"  name="fname" placeholder="<fmt:message key='label.fName'/>"></br></br> 
-						<input type="text"  name="lname" placeholder= "<fmt:message key='label.lName'/>"></br></br> 
-						<input type="text"  name="num" placeholder= "<fmt:message key='label.phno'/>"></br></br>
+						<input type="text"  name="fname" placeholder="<fmt:message key='label.fName'/>">
+					<font color="red">*</font> </br></br> 
+						<input type="text"  name="lname" placeholder= "<fmt:message key='label.lName'/>">
+					<font color="red">*</font> </br></br> 
+						<input type="text" id="num1" name="num" placeholder= "<fmt:message key='label.phno'/>">
+					<font color="red">*</font> </br></br> 
+					<!-- <button onclick="validateForm() "><fmt:message key='label.save'/></button> -->
 						<input type="submit" value="<fmt:message key='label.save'/>">
 						<input type="reset" value="<fmt:message key='label.reset'/>">
 						
-					</center>
+					</center></form>
 		<% } %>
+			<script>	
+				function validateForm() 
+				{
+	 				var fn = document.form1.fname.value;
+	 				var ln=	document.form1.lname.value;
+	 				var ph=document.form1.num.value;
+	  				if (fn == "" ||ln== "" || ph== " ") 
+	  				{ 
+	  					alert("it can't be blank you must fill it!");
+	  					return false;
+	  				}
+	    			 // x = document.getElementById("num1").value;
+					if (isNaN(ph) || ph.toString().length != 10)
+					{ 
+					 alert("invalid phno"); 
+					  return false;
+					}
+	   					
+  				}
+  			</script>
+			
 		</body>
 </html>

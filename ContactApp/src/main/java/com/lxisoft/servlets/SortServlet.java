@@ -22,7 +22,7 @@ public class SortServlet extends HttpServlet
 					case "firstname":repo.sortContactByFirstName();break;
 					case "lastname":repo.sortContactByLastName();break;
 				}
-				response.sendRedirect("View");
+				response.sendRedirect("View?page=1");
 			}catch(Exception excep)
 			{
 				excep.printStackTrace();

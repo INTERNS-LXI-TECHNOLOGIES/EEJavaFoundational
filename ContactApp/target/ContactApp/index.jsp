@@ -15,7 +15,7 @@
 			<fmt:setBundle basename="messages"/>
 			<h3 align="center">CONTACT APPLICATION</h3>
 				</br>
-					<center><a href="View" ><img src="images/contacts.png" height="150px"; width="140px";></a>
+					<center><a href="View?page=1" ><img src="images/contacts.png" height="150px"; width="140px";></a>
 					</center>	
 		</body>
 </html>

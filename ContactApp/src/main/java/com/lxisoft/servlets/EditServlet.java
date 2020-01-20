@@ -25,7 +25,7 @@ public class EditServlet extends HttpServlet
               contact.setLastName(request.getParameter("lname"));
               contact.setNo(request.getParameter("num"));
               repo.updateRepo(contact);
-		      response.sendRedirect("View");
+		      response.sendRedirect("View?page=1");
           }catch(Exception e)
           {
           	e.printStackTrace();

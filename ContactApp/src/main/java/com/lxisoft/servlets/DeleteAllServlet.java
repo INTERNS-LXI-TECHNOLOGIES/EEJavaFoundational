@@ -17,7 +17,7 @@ public class DeleteAllServlet extends HttpServlet
     {
 		try {
              repo.clearRepository();
-             response.sendRedirect("View");
+             response.sendRedirect("View?page=1");
            }catch(Exception e)
           {
             e.printStackTrace();

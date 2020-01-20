@@ -13,6 +13,7 @@ public interface Repository
 	// public boolean checkTableExists();
 	// public void checkDBExists();
 	public int getId();
+	public ArrayList<Contact> getAllContacts(int start,int total)throws SQLException;
 	public ArrayList<Contact> getAllContacts()throws SQLException;
 	public void addContactDetails(Contact contact)throws SQLException;
 	public void insertContactDetails(Contact contact,boolean tbexists)throws SQLException;

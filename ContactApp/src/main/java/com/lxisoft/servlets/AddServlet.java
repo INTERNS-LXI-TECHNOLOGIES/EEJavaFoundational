@@ -23,19 +23,19 @@ public class AddServlet extends HttpServlet
                   {
                    if(contact.getFullName().equals(contactList.get(i).getFullName()))
                     {
-                     // System.out.println("hi...equal");
+                      //System.out.println("hi...equal");
                       exists=true;
                     }
                   }
                   if(exists)
                   {
                     request.setAttribute("contacts",contact);
-                    RequestDispatcher rd=request.getRequestDispatcher("jsp\\ContactAdd.jsp");
+                    RequestDispatcher rd=request.getRequestDispatcher("ContactAdd.jsp");
                     rd.forward(request,response);
                   }
                   else{
                         repo.addContactDetails(contact);
-                        response.sendRedirect("View");
+                        response.sendRedirect("View?page=1");
                       }
               
          }catch(SQLException n)

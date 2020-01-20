@@ -26,6 +26,8 @@
 				</script>
 		</head>
 		<body> 
+			<% String pageid=(String)session.getAttribute("page"); %>
+			<h4> Page:<%=pageid %> </h4>  
 			<center> <h3> <fmt:message key="label.contacts"/></h3></center>
 			<a href="lang?lang=en"><fmt:message key='label.en'/></a> &nbsp; <a href="lang?lang=ml">മലയാളം</a><br/><br/>
 			<%if(request.getUserPrincipal()!=null) { %>
@@ -35,7 +37,7 @@
 			 <a href="logout" style="float:right;"><fmt:message key="label.logout"/></a>
 
 			<% if (request.isUserInRole("manager"))  { %>
-			<a href="ContactAdd.jsp" ><img src="images/add.png" height="40px"; width="40px";></a> 
+			<a href="ContactAdd.jsp" ><img src="images/add1.png" height="40px"; width="40px";></a> 
 			<% }
 			else { %>
 			<nav>
@@ -67,7 +69,7 @@
 				<center> <button  type="button" onclick="Access_denied()"><fmt:message key="label.deleteall"/></button></center>
 			<% } %><br/><br/>
 			
-			<%ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");
+			<% 	ArrayList<ContactModel> contactList=( ArrayList<ContactModel>)session.getAttribute("contactmodel");
 			  
 				 if(contactList.size()==0)
 				{%> <script>
@@ -108,8 +110,10 @@
 				<% } %>
 		</table></br>
 		
-		<center><button type="button" onClick="window.location.href='View'"><fmt:message key="label.refresh"/></button>
-		<% out.println("<fmt:message key='label.cnct'/>"+""+contactList.size());%></center>
-
+		<center><button type="button" onClick="window.location.href='View?page=1'"><fmt:message key="label.refresh"/></button></br>
+		<!-- <% out.println("<fmt:message key='label.cnct'/>"+""+contactList.size());%> -->
+		<a href="View?page=1">1</a>  
+		<a href="View?page=2">2</a>  
+		<a href="View?page=3">3</a>  </center>
 		</body>
 </html>
