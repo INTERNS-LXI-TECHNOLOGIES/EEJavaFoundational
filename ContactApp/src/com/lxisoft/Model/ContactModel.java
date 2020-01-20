@@ -1,4 +1,6 @@
 package com.lxisoft.Model;
+import java.util.*;
+import com.lxisoft.Model.ContactModel;
 public class ContactModel
 {
 	private String contactName;
@@ -29,12 +31,12 @@ public class ContactModel
 	{
 		return phoneNumber;
 	}
-	public void setContacList(Contact contacts)
+	public void setContacts(ContactModel contacts)
 	{
-		this.contactList.add(contacts);
+		this.contacts.add(contacts);
 	}
 	public ArrayList<ContactModel> getContacts()
 	{
-		return this.contactList;
+		return this.contacts;
 	}	
 }

@@ -31,7 +31,7 @@ public class ContactControl
 			switch(c)
 			{
 				case 1:view.addContact();check=true;break;
-				case 2:break;
+				case 2:view.displayContact();check=true;break;
 			}
 		}while(check);
 	}
