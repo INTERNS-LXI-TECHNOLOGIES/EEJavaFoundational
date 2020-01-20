@@ -1,16 +1,50 @@
 package com.lxisoft.Control;
+import com.lxisoft.View.ContactView;
+import java.util.Scanner;
 public class ContactControl
 {
-	public void selectAllContact()
+	ContactView view=new ContactView();
+	public void menu()
 	{
-
+		boolean test=false;
+		do
+		{
+			test=false;
+			int m=view.selectYourChoice();
+			switch (m)
+			{
+				case 1:	addNewContact();	test=true;break;
+				case 2: 	test=true;break;				
+				
+				case 3: System.exit(0); break;	
+			}
+		}while(test);			
+	
 	}
-	public void createNewContact()
+	public void addNewContact()
 	{
-
+		boolean check=false;
+		do
+		{
+			check=false;
+			int c=view.contactDetails();
+			switch(c)
+			{
+				case 1:view.addContact();check=true;break;
+				case 2:break;
+			}
+		}while(check);
 	}
-	public void updateContact()
-	{
+	// public void selectAllContact()
+	// {
+
+	// }
+	// public void createNewContact()
+	// {
+
+	// }
+	// public void updateContact()
+	// {
 		
-	}
+	// }
 }

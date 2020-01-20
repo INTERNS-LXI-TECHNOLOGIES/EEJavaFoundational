@@ -4,6 +4,7 @@ public class ContactModel
 	private String contactName;
 	private int id;
 	private long phoneNumber;
+	private ArrayList<ContactModel> contacts=new ArrayList<ContactModel>();
 	public void setName(String name)
 	{
 		this.contactName=contactName;
@@ -28,5 +29,12 @@ public class ContactModel
 	{
 		return phoneNumber;
 	}
-
+	public void setContacList(Contact contacts)
+	{
+		this.contactList.add(contacts);
+	}
+	public ArrayList<ContactModel> getContacts()
+	{
+		return this.contactList;
+	}	
 }
