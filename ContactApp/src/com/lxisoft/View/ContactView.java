@@ -2,6 +2,7 @@ package com.lxisoft.View;
 import java.util.*;
 import com.lxisoft.Model.ContactModel;
 import com.lxisoft.View.ContactView;
+import com.lxisoft.Repository.FileRepository;
 public class ContactView
 {
 	static Scanner sc = new Scanner(System.in);	
@@ -19,7 +20,7 @@ public class ContactView
 		int a = sc.nextInt();
 		return a;
 	}	
-	public void addContact(ArrayList<ContactModel> contacts)
+	public void addContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
 	{		
 		ContactModel contact = new ContactModel(); 
 		System.out.println("Contact id");
@@ -28,16 +29,19 @@ public class ContactView
 		contact.setName(sc.next());
 		System.out.println("Phone number");
 		contact.setPhoneNumber(sc.nextLong());
-		contacts.add(contact);			        	
+		contacts.add(contact);	
+		filerepo.writeToFile(contacts,filerepo);		        	
 	}
-	public void displayAllContact(ArrayList<ContactModel> contacts)
+	public void displayAllContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
 	{
+		filerepo.readFromFile();
 		System.out.println("Contact Details");
 		for(int i=0; i<contacts.size(); i++)
 		{			
 			System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
 		}
 	}
+
 }
 
 		
