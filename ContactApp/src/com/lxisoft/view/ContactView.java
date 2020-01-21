@@ -1,57 +1,39 @@
 package com.lxisoft.view;
+import com.lxisoft.controller.ContactControler;
+import com.lxisoft.model.ContactModel;
+import java.util.*;
 public class ContactView
 {
 	public static Scanner scanner = new Scanner(System.in);
 	private ContactControler controler ;
 	public static void main(String[] args)
 	{
-		ContactView view = new ContactView();
-		view.displayOrAddContact(); 
+		// ContactView view = new ContactView();
+		// view.displayOrAddContact(); 
+		ContactControler controler = new ContactControler();
+		controler.displayOrAddContact(); 
 	}
-	public void displayOrAddContact()
+	public int selectOption()
 	{
-		controler = new ContactControler(); 
-		boolean isTrue = false;
-		do
-		{
-			isTrue = false;
-			System.out.println("Press ==> 1.Display All Contact 2.Add New Contact");
-			int select = scanner.nextInt();
-			switch(select)
-			{
-				case 1:
-					this.displayAllContacts()
-					isTrue = true;
-					break;
-				case 2:
-					this.addNewContacts(controler.contacts);
-					isTrue = true;
-					break;
-				default :
-					System.out.println("Select options From Above")
-					break;
-			}
-		}while(isTrue);
+		System.out.println("!!! My Contact App !!!");
+		System.out.println("Press ==> 1.Display All Contact 2.Add New Contact");
+		int select = scanner.nextInt();
+		return select;
 	}
-	public void addNewContacts(ArrayList<ContactModel> contacts)
+	public void createNewContact(int iD,String name,Long phoneNumber)
+	{	
+		System.out.println("Enter contactID");
+		iD = scanner.nextInt();
+		System.out.println("Enter Contact Name");
+		name = scanner.next();
+		System.out.println("Enter Contact Number");
+		phoneNumber = scanner.nextLong();
+	}
+	public void displayAllContacts(ArrayList<ContactModel> contacts)
 	{
-		contacts.add(new ContactModel());
 		for(int i=0;i<contacts.size();i++)
 		{
-			if(contacts.get(i).getId()==null)
-			{
-				System.out.println("Enter contactID");
-				contacts.get(i).setId(scanner.nextInt());
-				System.out.println("Enter Contact Name");
-				contacts.get(i).setName(scanner.next());
-				System.out.println("Enter Contact Number");
-				contacts.get(i).setPhoneNumber(scanner.nextLong());
-				break;
-			}
+			System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
 		}
-	}
-	public void displayAllContacts()
-	{
-
 	}
 }

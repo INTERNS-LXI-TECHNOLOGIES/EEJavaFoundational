@@ -1,5 +1,4 @@
 package com.lxisoft.model;
-package com.lxisoft.model;
 public class ContactModel
 {
 	private String name;
@@ -14,7 +13,7 @@ public class ContactModel
 	{
 		return name;
 	}
-	public void setiD(int iD)
+	public void setId(int iD)
 	{
 		this.iD = iD;
 	}
@@ -26,7 +25,7 @@ public class ContactModel
 	{
 		this.phoneNumber=phoneNumber;
 	}
-	public void getPhoneNumber()
+	public Long getPhoneNumber()
 	{
 		return phoneNumber;
 	}
