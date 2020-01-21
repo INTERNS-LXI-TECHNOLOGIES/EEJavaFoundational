@@ -1,3 +1,4 @@
+ <%@age import="java.util.*"%> 
 <html>
 <head>
    <!-- Font Awesome -->
@@ -7,13 +8,20 @@
 <!-- Material Design Bootstrap -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.10.1/css/mdb.min.css" rel="stylesheet">
 </head>
+   <% String lan="ml";
+      String country="IN";
+
+      Locale l=new Locale(lan,country);
+      ResourceBundle res=ResourceBundle.getBundle("lan_ml_IN",l);
+   
+
    <body bgcolor = "#ffffff">
       
        <form class="text-center border border-light p-5" method = "POST" action ="j_security_check">
          <table border = "0">
             <p class="h4 mb-4">Login</p>
             <tr>
-               <td>Login</td>
+               <td>User Name</td>
                <br><td><input type = "text" class="form-control mb-4" name="j_username"></td></br>
             </tr>
             <tr>

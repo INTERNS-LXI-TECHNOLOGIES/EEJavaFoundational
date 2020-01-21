@@ -1,5 +1,5 @@
 <%@page import="java.util.*,com.lxisoft.contactapp.model.*"%>
- 
+ <%@age import="java.util.*"%> 
 <html>
 <title>CONTACTS </title>
 <head>
