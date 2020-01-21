@@ -3,7 +3,6 @@ package com.lxisoft.model;
 public class ContactModel
 {
 	private String name;
-	private String lastName;
 	private int iD;
 	private Long phoneNumber;
 
@@ -14,14 +13,6 @@ public class ContactModel
 	public String getName()
 	{
 		return name;
-	}
-	public void setLastName(String lastName)
-	{
-		this.lastName = lastName;
-	}
-	public String getLastName()
-	{
-		return lastName;
 	}
 	public void setiD(int iD)
 	{
