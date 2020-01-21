@@ -6,34 +6,45 @@ public class ContactView
 {
 	public static Scanner scanner = new Scanner(System.in);
 	private ContactControler controler ;
-	public static void main(String[] args)
-	{
-		// ContactView view = new ContactView();
-		// view.displayOrAddContact(); 
-		ContactControler controler = new ContactControler();
-		controler.displayOrAddContact(); 
-	}
 	public int selectOption()
 	{
 		System.out.println("!!! My Contact App !!!");
-		System.out.println("Press ==> 1.Display All Contact 2.Add New Contact");
+		System.out.println("Press ==> 1.Display All Contact  2.Add New Contact");
 		int select = scanner.nextInt();
 		return select;
 	}
-	public void createNewContact(int iD,String name,Long phoneNumber)
+	public void wrongSelection()
+	{
+		System.out.println("Select Options From Above !!!");
+	}
+	public String[] createNewContact()
 	{	
+		String[] data = new String[3];
 		System.out.println("Enter contactID");
-		iD = scanner.nextInt();
+		data[0] = scanner.next();
 		System.out.println("Enter Contact Name");
-		name = scanner.next();
+		data[1] = scanner.next();
 		System.out.println("Enter Contact Number");
-		phoneNumber = scanner.nextLong();
+		data[2] = scanner.next();
+		return data;
 	}
 	public void displayAllContacts(ArrayList<ContactModel> contacts)
 	{
+		System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Contact Number");
 		for(int i=0;i<contacts.size();i++)
 		{
 			System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
 		}
+	}
+	public boolean addMoreContact()
+	{
+		boolean isTrue = false;
+		System.out.println("Press ==> 1.Add More Contact 2.Back");
+		int x = scanner.nextInt();
+		if(x==1)
+		{
+			isTrue = true;
+		}
+		return isTrue;
 	}
 }

@@ -1,11 +1,12 @@
 package com.lxisoft.controller;
 import com.lxisoft.view.ContactView;
 import com.lxisoft.model.ContactModel;
+import com.lxisoft.FileRepository.FileRepository;
 import java.util.*;
 public class ContactControler
 {
 	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
-	//FileRepository fileReppo = new FileRepository();
+	FileRepository fileReppo = new FileRepository();
 	ContactView view = new ContactView();
 	// public void selectAllContact()
 	// {
@@ -29,25 +30,24 @@ public class ContactControler
 					isTrue = true;
 					break;
 				default :
-					System.out.println("Select options From Above");
+					view.wrongSelection();
 					break;
 			}
 		}while(isTrue);
 	}
 	public void addNewContact()
 	{
-		int iD=0;String name="";Long phoneNumber=0l;
 		contacts.add(new ContactModel());
-		view.createNewContact(iD,name,phoneNumber);
+		String[] data = view.createNewContact();
 		for(int i=0;i<contacts.size();i++)
 		{
 			if((contacts.get(i).getId())==0)
 			{
-				contacts.get(i).setId(iD);
-				contacts.get(i).setName(name);
-				contacts.get(i).setPhoneNumber(phoneNumber);
+				contacts.get(i).setId(Integer.parseInt(data[0]));
+				contacts.get(i).setName(data[1]);
+				contacts.get(i).setPhoneNumber(Long.parseLong(data[2]));
 			}
 		}
-		view.displayAllContacts(contacts);
+		fileReppo.writeToFile(contacts);
 	}
 }
