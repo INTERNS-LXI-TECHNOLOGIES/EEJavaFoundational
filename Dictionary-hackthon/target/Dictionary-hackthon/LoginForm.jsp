@@ -19,7 +19,7 @@
 		<h3><center>Login Form</center></h3>
 		<form method = "get" action ="j_security_check">
       	<center> User Name:  <input type = "text" name="j_username"><br><br></center>
-        <center> Password:   <input type = "password" name="j_password"></center>
+        <center> Password:   <input type = "password" name="j_password"><br><br></center>
         <center><input type = "submit" value = "Login!"></center>
       </form>
 </body>
