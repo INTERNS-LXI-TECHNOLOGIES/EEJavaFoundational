@@ -1,0 +1,100 @@
+<web-app>
+
+    <security-constraint>
+      <web-resource-collection>
+         <web-resource-name>SecuredContacts</web-resource-name>
+         <url-pattern>/Display</url-pattern>
+         <http-method>GET</http-method>
+         <http-method>POST</http-method>
+      </web-resource-collection>
+      
+      <auth-constraint>
+         <description>
+            Let only Abhijith use this app
+         </description>
+         <role-name>admin</role-name>
+         <role-name>user</role-name>
+      </auth-constraint>
+   </security-constraint>
+   
+   <security-role>
+     <role-name>admin</role-name>  
+   </security-role>
+    
+   <security-role>
+     <role-name>user</role-name>
+   </security-role>
+   
+   <login-config>
+      <auth-method>FORM</auth-method>
+       <form-login-config>
+            <form-login-page>/Login.jsp</form-login-page>
+            <form-error-page>/Error.jsp</form-error-page>
+        </form-login-config>
+   </login-config>
+
+
+<servlet>
+        <servlet-name>display</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Display</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>display</servlet-name>
+        <url-pattern>/Display</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+        <servlet-name>add</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Add</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/Add</url-pattern>
+    </servlet-mapping>
+<servlet>
+        <servlet-name>select</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Select</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>select</servlet-name>
+        <url-pattern>/Select</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Update</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/Update</url-pattern>
+    </servlet-mapping>
+    
+     <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Delete</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>search</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Search</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/Search</url-pattern>
+    </servlet-mapping>
+
+<servlet>
+        <servlet-name>Setlang</servlet-name>
+        <servlet-class>com.lxisoft.servlet.Setlang</servlet-class>
+    </servlet>
+    
+    <servlet-mapping>
+        <servlet-name>Setlang</servlet-name>
+        <url-pattern>/Setlang</url-pattern>
+    </servlet-mapping>
+
+    </web-app>
