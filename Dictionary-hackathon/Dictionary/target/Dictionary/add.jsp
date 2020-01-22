@@ -4,10 +4,10 @@
 	<title>add word</title>
 </head>
 <body>
-<form action="add">
-	<input type="text" name="word">
-	<input type="text" name="meaning">
-	<input type="submit" name="submit">
+<form action="add"><center>
+	<input type="text" name="word" placeholder="word"></br></br>
+	<input type="text" name="meaning" placeholder="meaning"></br></br>
+	<input type="submit" name="submit"></center>
 </form>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <%@ page import="com.lxisoft.Domain.*" %>
 <%@ page import="java.util.*" %>
 
-<center><b>OXFORD DICTIONARY</b></center><br><b><br></b>
+<center><b><h1>OXFORD DICTIONARY</h1></b></center><br><b><br></b>
 <% String userName=null;
 if(request.getUserPrincipal()!=null){
 userName= request.getUserPrincipal().getName();
@@ -15,8 +15,8 @@ userName= request.getUserPrincipal().getName();
 }%>
 <% if (userName=="admin"){ %>
 
-<a href="add.jsp">add to dictionary</a><br>
-<a href="logout.jsp">logout</a>
+<center><a href="add.jsp">add to dictionary</a><br>
+<a href="logout.jsp">logout</a></center>
 <% }
 if(request.getUserPrincipal()==null){ %>
 <a href="logout.jsp">login</a>
