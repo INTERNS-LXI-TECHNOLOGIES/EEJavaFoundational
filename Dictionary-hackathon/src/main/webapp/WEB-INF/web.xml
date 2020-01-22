@@ -10,7 +10,7 @@
       
       <auth-constraint>
          <description>
-            Let only Abhijith use this app
+           
          </description>
          <role-name>admin</role-name>
          <role-name>user</role-name>
