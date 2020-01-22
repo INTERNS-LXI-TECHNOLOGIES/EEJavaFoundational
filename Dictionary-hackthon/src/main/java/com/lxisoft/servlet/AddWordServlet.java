@@ -9,8 +9,7 @@ import com.lxisoft.repository.*;
  */
 public class AddWordServlet extends HttpServlet
 {
-	
-	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		WordUnit wu=new WordUnit();
 		wu.setWord(request.getParameter("word"));
@@ -18,7 +17,7 @@ public class AddWordServlet extends HttpServlet
 		MysqlRepository dbrepo=new MysqlRepository();
 		WordUnit w=dbrepo.saveWord(wu);
 		request.setAttribute("getWord",w);
-		RequestDispatcher rd=request.getRequestDispatcher("GetWord.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("admin");
 		rd.forward(request,response);
 	}
 }

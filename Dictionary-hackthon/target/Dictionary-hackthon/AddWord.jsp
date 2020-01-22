@@ -24,7 +24,7 @@
 	<table align="center" border="5" width="25%" height="25%">
 		<caption><h1><center>NEW WORD</center></h1></caption>
 
-		<form action= "add" method="post">
+		<form action= "add" method="get">
 			<tr>
 				<td>Word&nbsp;&nbsp;:<input type="text" name="word"/></td>
 			</tr>
