@@ -16,7 +16,7 @@
             <p>password: <input type="password" size="20" name="j_password"/></p>
             <p>  <input type="submit" value="Submit"/></p>
         </form>
-        	<button class="button" onclick=" window.location.href='Display.jsp'"> Guest View
+        	<button class="button" onclick=" window.location.href='index.jsp'"> Guest View
         </center>       
 </body>
 </html>
