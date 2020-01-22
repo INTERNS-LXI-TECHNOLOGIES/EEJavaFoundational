@@ -1,0 +1,148 @@
+<web-app>
+
+<servlet>
+      <servlet-name>view</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.ViewServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>view</servlet-name>
+      <url-pattern>/viewall</url-pattern>
+ </servlet-mapping>
+
+<servlet>
+      <servlet-name>skip</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.ViewServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>skip</servlet-name>
+      <url-pattern>/skip</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+      <servlet-name>logout</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.LogoutServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>logout</servlet-name>
+      <url-pattern>/logout</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+      <servlet-name>lang</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.LangServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>lang</servlet-name>
+      <url-pattern>/lang</url-pattern>
+ </servlet-mapping>
+
+
+<servlet>
+      <servlet-name>newContact</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.ContactAddServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>newContact</servlet-name>
+      <url-pattern>/createNewContact</url-pattern>
+ </servlet-mapping>
+
+
+<servlet>
+      <servlet-name>deleteContacts</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.DeleteAllServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>deleteContacts</servlet-name>
+      <url-pattern>/deleteAll</url-pattern>
+ </servlet-mapping>
+
+
+ <servlet>
+      <servlet-name>search</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.SearchServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>search</servlet-name>
+      <url-pattern>/search</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+      <servlet-name>edit</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.EditServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>edit</servlet-name>
+      <url-pattern>/edit</url-pattern>
+ </servlet-mapping>
+
+ <servlet>
+      <servlet-name>delete</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.DeleteServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>delete</servlet-name>
+      <url-pattern>/delete</url-pattern>
+ </servlet-mapping>
+
+ 
+
+ <servlet>
+      <servlet-name>select</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.SelectServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>select</servlet-name>
+      <url-pattern>/select</url-pattern>
+ </servlet-mapping>
+
+<servlet>
+      <servlet-name>sort</servlet-name>
+      <servlet-class>com.lxisoft.Servlet.SortServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+      <servlet-name>sort</servlet-name>
+      <url-pattern>/sort</url-pattern>
+ </servlet-mapping>
+
+
+ <security-constraint>
+      <web-resource-collection>
+         <web-resource-name>login</web-resource-name>
+         <url-pattern>/viewall</url-pattern>
+         <http-method>GET</http-method>
+         <http-method>POST</http-method>
+      </web-resource-collection>
+      
+      <auth-constraint>
+         <description>
+            Let only managers use this app
+         </description>
+         <role-name>*</role-name>
+      </auth-constraint>
+   </security-constraint>
+   
+   <security-role>
+      <role-name>*</role-name>
+   </security-role>
+   
+   <login-config>
+      <auth-method>FORM</auth-method>
+      <realm-name>login</realm-name>
+      <form-login-config>
+         <form-login-page>/login.jsp</form-login-page>
+         <form-error-page>/error.jsp</form-error-page>
+      </form-login-config>
+   </login-config>
+
+</web-app>
