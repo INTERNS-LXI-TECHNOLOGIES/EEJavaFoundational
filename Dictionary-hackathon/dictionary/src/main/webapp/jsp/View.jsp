@@ -8,7 +8,6 @@
 
 <body>
 view page
-<%Mysql mysql=new Mysql();
-out.println(mysql.read());%>
+
 </body>
 </html>

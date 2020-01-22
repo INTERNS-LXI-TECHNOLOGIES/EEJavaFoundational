@@ -1,7 +1,7 @@
 package com.lxisoft.repository;
 import java.sql.*;
 import com.lxisoft.domain.*;
-import java.Util.*;
+import java.util.*;
 
 public class Mysql
 {
@@ -28,18 +28,19 @@ public class Mysql
 		}	
 	}
 
-	public String readAll()
+	public ArrayList<Word> readAll()
 	{
+		ArrayList<Word> wordList=new ArrayList<Word>();
 		try
 		{
 			// s.executeUpdate("INSERT INTO word(element,meaning) VALUES('a','a')");
 			ResultSet rs=s.executeUpdate("SELECT * FROM word");
-			ArrayList<Word> wordList=new ArrayList<Word>();
 			while(rs.next())
 			{
 				Word word=new Word();
 				word.setElement(rs.getString(2));
 				word.setMeaning(rs.getString(3));
+				wordList.add(word);
 				System.out.println(rs.getString(2)+"   mean "+rs.getString(3));
 			}
 		}
@@ -47,7 +48,7 @@ public class Mysql
 		{
 			System.out.println(e);
 		}
-		return "yes";
+		return wordList;
 	}
 
 }

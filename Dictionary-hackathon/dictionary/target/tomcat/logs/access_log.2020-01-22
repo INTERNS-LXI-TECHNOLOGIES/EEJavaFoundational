@@ -1,3 +1,0 @@
-0:0:0:0:0:0:0:1 - - [22/Jan/2020:11:46:56 +0530] "GET /dictionary/jsp/View.jsp HTTP/1.1" 200 112 http-bio-8080-exec-2 1715
-0:0:0:0:0:0:0:1 - - [22/Jan/2020:11:47:06 +0530] "GET /dictionary/jsp/View.jsp HTTP/1.1" 200 112 http-bio-8080-exec-3 542
-0:0:0:0:0:0:0:1 - - [22/Jan/2020:11:49:52 +0530] "GET /dictionary/jsp/View.jsp HTTP/1.1" 200 112 http-bio-8080-exec-7 194

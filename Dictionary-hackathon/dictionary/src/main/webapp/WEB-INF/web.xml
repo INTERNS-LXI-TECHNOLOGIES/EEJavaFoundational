@@ -4,4 +4,15 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+<servlet>
+   <servlet-name>view</servlet-name>
+   <servlet-class>com.lxisoft.servlet.ViewServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>view</servlet-name>
+   <url-pattern>/view</url-pattern>
+</servlet-mapping>
+
 </web-app>
+
