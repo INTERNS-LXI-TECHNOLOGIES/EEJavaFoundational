@@ -11,7 +11,12 @@ import java.io.File;
 public class FileRepository
 {
 	File file = new File("E:\\contact.csv");
-	public void writeToFile(ArrayList<ContactModel> contacts,FileRepository filerepo)
+	public boolean fileExist(File file)
+	{
+		boolean isCheck=file.exists();
+		return isCheck;
+	}
+	public void writeToFile(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
@@ -44,12 +49,12 @@ public class FileRepository
 				contact.setId(Integer.parseInt(s[0]));
 				contact.setName(s[1]);
 				contact.setPhoneNumber(Long.parseLong(s[2]));
-				System.out.println(s[0] + (s[1]) + (s[2]));				}
+				//System.out.println(s[0] + (s[1]) + (s[2]));		
+			}
 		}
 		catch(Exception e)
 		{
-			System.out.println("Error"+e);
-			e.printStackTrace();
+			System.out.println("No Contact Found");
 		}
 	}	
 }

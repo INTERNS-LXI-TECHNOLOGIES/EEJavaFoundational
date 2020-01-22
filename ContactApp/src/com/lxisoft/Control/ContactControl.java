@@ -34,23 +34,31 @@ public class ContactControl
 			int c=view.contactDetails();
 			switch(c)
 			{
-				case 1:view.addContact(contacts,filerepo);check=true;break;
+				case 1:createNewContact();check=true;break;
 				case 2:view.displayAllContact(contacts,filerepo);check=true;break;
 			}
 		}while(check);
 	}
-	// public void addToArraylist()
-	// {
-		
-	// }
+	public void createNewContact()
+	{
+		contacts.add(new ContactModel());
+		String[] d=view.addContact();
+		for(int i=0;i<contacts.size();i++)
+		{
+			if(contacts.get(i).getId()==0)
+			{
+				contacts.get(i).setId(Integer.parseInt(d[0]));
+				contacts.get(i).setName(d[1]);
+				contacts.get(i).setPhoneNumber(Long.parseLong(d[2]));
+			}
+		}
+		filerepo.writeToFile(contacts);	
+	}
 	// public void selectAllContact()
 	// {
 
 	// }
-	// public void createNewContact()
-	// {
-
-	// }
+	
 	// public void updateContact()
 	// {
 		

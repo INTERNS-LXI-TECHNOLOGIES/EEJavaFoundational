@@ -20,7 +20,18 @@ public class ContactView
 		int a = sc.nextInt();
 		return a;
 	}	
-	public void addContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
+	public String[] addContact()
+	{		
+		String[] s=new String[3]; 
+		System.out.println("Contact id");
+		s[0]=sc.next();
+		System.out.println("Enter contact name");
+		s[1]=sc.next();
+		System.out.println("Phone number");
+		s[2]=sc.next();	
+		return s;			        	
+	}
+	/*public void addContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
 	{		
 		ContactModel contact = new ContactModel(); 
 		System.out.println("Contact id");
@@ -31,7 +42,7 @@ public class ContactView
 		contact.setPhoneNumber(sc.nextLong());
 		contacts.add(contact);	
 		filerepo.writeToFile(contacts,filerepo);		        	
-	}
+	}*/
 	public void displayAllContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
 	{
 		filerepo.readFromFile();
@@ -41,7 +52,6 @@ public class ContactView
 			System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
 		}
 	}
-
 }
 
 		
