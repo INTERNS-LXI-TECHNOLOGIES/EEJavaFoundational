@@ -1,0 +1,70 @@
+
+<<web-app>
+<servlet>
+      <servlet-name>name</servlet-name>
+      <servlet-class>com.lxisoft.servlet.Serv</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>name</servlet-name>
+        <url-pattern>/url</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+      <servlet-name>add</servlet-name>
+      <servlet-class>com.lxisoft.servlet.AddServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/adddata</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+      <servlet-name>selectt</servlet-name>
+      <servlet-class>com.lxisoft.servlet.SelectByIdServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>selectt</servlet-name>
+        <url-pattern>/select</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+      <servlet-name>edited</servlet-name>
+      <servlet-class>com.lxisoft.servlet.EditServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>edited</servlet-name>
+        <url-pattern>/edit</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+      <servlet-name>delete</servlet-name>
+      <servlet-class>com.lxisoft.servlet.DeleteServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/deletedata</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+      <servlet-name>search</servlet-name>
+      <servlet-class>com.lxisoft.servlet.SearchServ</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>search</servlet-name>
+        <url-pattern>/searchdata</url-pattern>
+    </servlet-mapping>
+
+
+
+</web-app>
