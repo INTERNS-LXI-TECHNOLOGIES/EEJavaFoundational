@@ -24,6 +24,7 @@ import com.lxisoft.Domain.*;
  	 	{
  	 		Class.forName("com.mysql.jdbc.Driver");
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/dictionary","root","root");
+			// stm.executeUpdate("CREATE DATABASE "+dataBase)
 			
  	 	}catch(Exception e)
  	 	{
@@ -48,13 +49,18 @@ import com.lxisoft.Domain.*;
  	 	words.clear();
  	 	try
  	 	{
-	 	 	rs=stmt.executeQuery("select * from dict");
-			while(rs.next())
+ 	 		Class.forName("com.mysql.jdbc.Driver");
+			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/dictionary","root","root");
+			
+ 	 		PreparedStatement st=con.prepareStatement("use dict");
+	 	 	ResultSet r=st.executeQuery("select * from dict");
+			while(r.next())
 			{
- 	 			System.out.println(rs.getString("word") +rs.getString(" meaning"));
+ 	 		System.out.println("eeeeeee");
+ 	 		
 				Word one=new Word();
-				one.setWord(rs.getString("word"));
-				one.setMeaning(rs.getString("meaning"));
+				one.setWord(r.getString("word"));
+				one.setMeaning(r.getString("meaning"));
 				words.add(one);
 			}
 

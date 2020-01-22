@@ -8,13 +8,33 @@
 <%@ page import="java.util.*" %>
 
 <center><b>OXFORD DICTIONARY</b></center><br><b><br></b>
-<a href="add">add to dictionary</a>
-<% ArrayList<Word> words=(ArrayList<Word> ) session.getAttribute("words"); 
+<% String userName=null;
+if(request.getUserPrincipal()!=null){
+userName= request.getUserPrincipal().getName();
+
+}%>
+<% if (userName=="admin"){ %>
+
+<a href="add.jsp">add to dictionary</a><br>
+<a href="logout.jsp">logout</a>
+<% }
+if(request.getUserPrincipal()==null){ %>
+<a href="logout.jsp">login</a>
+<% } %>
+<% ArrayList<Word> words=(ArrayList<Word> ) session.getAttribute("words"); %>
+<table>
+	<tr><th>Word</th><b><b></b></b><th>meaning</th></tr>
+
+	<%
 for(Word a: words)
 {
-	out.println("a");
+%>
+<tr><td><% out.println(a.getWord()); %> </td>	<b><b></b></b>
+	<td><% out.println(a.getMeaning()); %> </td></tr>	
+<%
 }
 	%>
+</table>
 
 </body>
 </html>

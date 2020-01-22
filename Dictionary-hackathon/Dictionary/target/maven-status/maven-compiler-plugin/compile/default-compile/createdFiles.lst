@@ -1,3 +1,4 @@
 com\lxisoft\Domain\Word.class
+com\lxisoft\Servlet\AddServlet.class
 com\lxisoft\Repository\MysqlRepo.class
 com\lxisoft\Servlet\ViewServlet.class

@@ -6,17 +6,16 @@ import javax.servlet.http.*;
 import com.lxisoft.Repository.*;
 import com.lxisoft.Domain.*;
 
-public class ViewServlet extends HttpServlet
+public class AddServlet extends HttpServlet
 {
 	MysqlRepo repo=new MysqlRepo();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
-		ArrayList<Word> words=repo.getWords();
-		
 		HttpSession session=request.getSession();
-		session.setAttribute("words",words);
-
-		response.sendRedirect("dictionary.jsp");
+		String word=(String) request.getParameter("word");
+		String meaning=(String) request.getParameter("meaning");
+		repo.addWord(word,meaning);
+		response.sendRedirect("viewall");
 	// PrintWriter out=response.getWriter();
  //        		out.println(words.size()+"...");
 	}

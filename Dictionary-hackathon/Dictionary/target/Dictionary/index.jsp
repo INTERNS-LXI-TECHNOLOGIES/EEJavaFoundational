@@ -6,6 +6,6 @@
 <body>
 <center><b>OXFORD DICTIONARY</b></center><br><b><br></b>
 
-<% response.sendRedirect("viewall"); %> 
+<jsp:forward page="viewall" /> 
 </body>
 </html>
