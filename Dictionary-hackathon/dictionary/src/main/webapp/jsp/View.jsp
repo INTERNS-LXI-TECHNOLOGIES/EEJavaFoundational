@@ -1,5 +1,7 @@
 <%@page import="com.lxisoft.domain.*"%>
 <%@page import="com.lxisoft.repository.*"%>
+
+<%@page import="com.lxisoft.domain.*"%>
 <%@page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
@@ -8,14 +10,20 @@
 </head>
 
 <body>
-<h1>words</h1><br>
-<h2>word		meaning</h2>
+<h1>welcome!</h1>
+<br>
+<h2>word----------------meaning</h2>
+<table>
 <%
-ArrayList<Word> wordList=request.getAttribute("wordList");
-for(Word word:wordList)
+ArrayList<Word> wordList=(ArrayList<Word>) request.getAttribute("wordList");
+for(Word w:wordList)
 {
-	out.println(word.getElement()	+"-"+	word.getMeaning());
-}
+	%><tr><td>
+	<%out.println(w.getElement()+"---------------------------"+w.getMeaning());%>
+	</td></tr>
+<%}
 %>
+</table>
+
 </body>
 </html>

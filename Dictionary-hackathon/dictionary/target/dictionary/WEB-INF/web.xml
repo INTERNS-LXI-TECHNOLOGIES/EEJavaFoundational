@@ -14,5 +14,40 @@
    <url-pattern>/view</url-pattern>
 </servlet-mapping>
 
+<servlet>
+   <servlet-name>save</servlet-name>
+   <servlet-class>com.lxisoft.servlet.SaveServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>save</servlet-name>
+   <url-pattern>/save</url-pattern>
+</servlet-mapping>
+
+<servlet>
+   <servlet-name>admin</servlet-name>
+   <servlet-class>com.lxisoft.servlet.AdminServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+   <servlet-name>admin</servlet-name>
+   <url-pattern>/admin</url-pattern>
+</servlet-mapping>
+
+<display-name>java security</display-name>
+   <security-constraint>
+      <web-resource-collection>
+         <web-resource-name>secured</web-resource-name>
+         <url-pattern>/admin</url-pattern>
+      </web-resource-collection>
+      <auth-constraint>
+         <role-name>admin</role-name>
+      </auth-constraint>
+   </security-constraint>
+	<security-role>
+      <role-name>admin</role-name>
+   		</security-role>
+   		<login-config>
+      <auth-method>BASIC</auth-method>
+   </login-config>
+
 </web-app>
 

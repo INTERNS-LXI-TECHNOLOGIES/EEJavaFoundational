@@ -50,4 +50,16 @@ public class Mysql
 		return wordList;
 	}
 
+	public void add(Word word)
+	{
+		try
+		{
+			s.executeUpdate("INSERT INTO word(element,meaning) VALUES ('"+word.getElement()+"','"+word.getMeaning()+"')");
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+	}
+
 }

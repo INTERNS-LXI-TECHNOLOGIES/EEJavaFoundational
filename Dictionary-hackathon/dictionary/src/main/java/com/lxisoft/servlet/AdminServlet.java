@@ -1,3 +1,4 @@
+
 package com.lxisoft.servlet;
 import java.util.*;
 import java.io.*;
@@ -6,7 +7,7 @@ import com.lxisoft.domain.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 
-public class ViewServlet extends HttpServlet
+public class AdminServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
@@ -15,7 +16,7 @@ public class ViewServlet extends HttpServlet
 		request.setAttribute("wordList",wordList);
 		// response.sendRedirect("jsp/View.jsp");
 
-		RequestDispatcher rd=request.getRequestDispatcher("jsp/View.jsp");
+		RequestDispatcher rd=request.getRequestDispatcher("jsp/Admin.jsp");
 		rd.forward(request,response);
 	}
 }

@@ -1,3 +1,5 @@
-com\lxisoft\domain\Word.class
-com\lxisoft\servlet\ViewServlet.class
+com\lxisoft\servlet\SaveServlet.class
 com\lxisoft\repository\Mysql.class
+com\lxisoft\domain\Word.class
+com\lxisoft\servlet\AdminServlet.class
+com\lxisoft\servlet\ViewServlet.class
