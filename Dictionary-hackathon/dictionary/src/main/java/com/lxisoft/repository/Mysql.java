@@ -34,14 +34,14 @@ public class Mysql
 		try
 		{
 			// s.executeUpdate("INSERT INTO word(element,meaning) VALUES('a','a')");
-			ResultSet rs=s.executeUpdate("SELECT * FROM word");
+			ResultSet rs=s.executeQuery("SELECT * FROM word");
 			while(rs.next())
 			{
 				Word word=new Word();
-				word.setElement(rs.getString(2));
-				word.setMeaning(rs.getString(3));
+				word.setElement(rs.getString("element"));
+				word.setMeaning(rs.getString("meaning"));
 				wordList.add(word);
-				System.out.println(rs.getString(2)+"   mean "+rs.getString(3));
+				System.out.println(rs.getString("element")+"   mean "+rs.getString("meaning"));
 			}
 		}
 		catch(SQLException e)
