@@ -1,0 +1,7 @@
+com\lxisoft\model\WordListModel.class
+com\lxisoft\domain\Word.class
+com\lxisoft\repository\SqlRepository.class
+com\lxisoft\servlet\ReadServlet.class
+com\lxisoft\model\WordModel.class
+com\lxisoft\servlet\AddServlet.class
+com\lxisoft\servlet\SelectByIdServlet.class
