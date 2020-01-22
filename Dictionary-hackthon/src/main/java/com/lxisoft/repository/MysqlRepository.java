@@ -86,13 +86,13 @@ public class MysqlRepository
 	 *
 	 *@param word wordunit contain word and meaning
 	 */
-	public WordUnit saveWord(WordUnit w)
+	public WordUnit saveWord(WordUnit wu)
 	{
 		try
 		{
 			ps=con.prepareStatement("insert into WordList(WORD,MEANING) values(?,?)");
-			ps.setString(1,w.getWord());
-			ps.setString(2,w.getMeaning());
+			ps.setString(1,wu.getWord());
+			ps.setString(2,wu.getMeaning());
 			int x=ps.executeUpdate();
 			System.out.println(""+x);
 		}
@@ -100,7 +100,7 @@ public class MysqlRepository
 		{
 			e.printStackTrace();
 		}
-		return w;
+		return wu;
 	}
 
 }

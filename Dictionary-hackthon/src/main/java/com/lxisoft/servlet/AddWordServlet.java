@@ -17,8 +17,8 @@ public class AddWordServlet extends HttpServlet
 		wu.setMeaning(request.getParameter("meaning"));
 		MysqlRepository dbrepo=new MysqlRepository();
 		WordUnit w=dbrepo.saveWord(wu);
-		// request.setAttribute("getContactById",c);
-		// RequestDispatcher rd=request.getRequestDispatcher("GetContactById.jsp");
-		// rd.forward(request,response);
+		request.setAttribute("getWord",w);
+		RequestDispatcher rd=request.getRequestDispatcher("GetWord.jsp");
+		rd.forward(request,response);
 	}
 }

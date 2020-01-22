@@ -12,5 +12,13 @@
 	<servlet-name>show</servlet-name>
 	<url-pattern>/home</url-pattern>
 </servlet-mapping>
+<servlet>
+	<servlet-name>add word</servlet-name>
+	<servlet-class>com.lxisoft.servlet.AddWordServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>add word</servlet-name>
+	<url-pattern>/add</url-pattern>
+</servlet-mapping>
 </web-app>
 
