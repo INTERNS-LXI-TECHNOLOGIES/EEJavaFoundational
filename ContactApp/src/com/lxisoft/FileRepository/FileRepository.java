@@ -4,12 +4,11 @@ import java.util.*;
 import java.io.*;
 public class FileRepository
 {
+	public File contactFile = new File("D:\\Program Files\\workspace\\EEProjects\\EEJavaFoundational\\ContactApp\\src\\com\\lxisoft\\File\\ContactsFile.csv");
 	public File createNewFile()
 	{
-		File contactFile = new File("D:\\Program Files\\workspace\\EEProjects\\EEJavaFoundational\\ContactApp\\src\\com\\lxisoft\\File\\ContactsFile.csv");
 		try
 		{
-			
 			boolean ifExists = contactFile.exists();
 			if(!ifExists)
 			{
@@ -21,6 +20,11 @@ public class FileRepository
 			e.printStackTrace();
 		}
 		return contactFile;
+	}
+	public boolean fileExists(File file)
+	{
+		boolean isTrue = file.exists();
+		return isTrue;
 	}
 	public void writeToFile(ArrayList<ContactModel> contacts)
 	{
@@ -42,7 +46,7 @@ public class FileRepository
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<ContactModel> readFromFile(ArrayList<ContactModel> contacts,File file)
+	public ArrayList<ContactModel> readFromFile(ArrayList<ContactModel> contacts,File file) throws Exception
 	{
 		try
 		{
@@ -67,7 +71,7 @@ public class FileRepository
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+			throw e; 
 		}
 		return contacts;
 	}

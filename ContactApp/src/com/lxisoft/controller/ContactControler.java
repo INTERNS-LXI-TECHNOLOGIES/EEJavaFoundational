@@ -3,17 +3,15 @@ import com.lxisoft.view.ContactView;
 import com.lxisoft.model.ContactModel;
 import com.lxisoft.FileRepository.FileRepository;
 import java.util.*;
+import java.io.*;
 public class ContactControler
 {
 	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
 	FileRepository fileReppo = new FileRepository();
 	ContactView view = new ContactView();
-	// public void selectAllContact()
-	// {
-		
-	// }
 	public void displayOrAddContact()
 	{
+		view.myAppName();
 		boolean isTrue = false;
 		do
 		{
@@ -22,7 +20,7 @@ public class ContactControler
 			switch(select)
 			{
 				case 1:
-					view.displayAllContacts(contacts);
+					this.selectAllContact();
 					isTrue = true;
 					break;
 				case 2:
@@ -49,5 +47,30 @@ public class ContactControler
 			}
 		}
 		fileReppo.writeToFile(contacts);
+	}
+	public void selectAllContact()
+	{
+		try
+		{
+			contacts.clear();
+			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			view.displayAllContacts(contacts);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			view.fileNotFound();
+		}
+	}
+	public void selectContact()
+	{
+		try
+		{
+
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
