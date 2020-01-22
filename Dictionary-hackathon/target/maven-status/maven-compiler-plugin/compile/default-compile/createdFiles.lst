@@ -1,0 +1,7 @@
+com\lxisoft\model\WordList.class
+com\lxisoft\servlets\WordServlet.class
+com\lxisoft\Repository\MySqlRepository.class
+com\lxisoft\model\DictionaryModel.class
+com\lxisoft\Domain\W_Dictionary.class
+com\lxisoft\servlets\SelectServlet.class
+com\lxisoft\servlets\ViewServlet.class
