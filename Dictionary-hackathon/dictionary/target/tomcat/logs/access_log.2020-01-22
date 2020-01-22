@@ -1,0 +1,2 @@
+0:0:0:0:0:0:0:1 - - [22/Jan/2020:10:30:58 +0530] "GET /dictionary/jsp/View.jsp HTTP/1.1" 200 101 http-bio-8080-exec-2 794
+0:0:0:0:0:0:0:1 - - [22/Jan/2020:10:30:58 +0530] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-3 0
