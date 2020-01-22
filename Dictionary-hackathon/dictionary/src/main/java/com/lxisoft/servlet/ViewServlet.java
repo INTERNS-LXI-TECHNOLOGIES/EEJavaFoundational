@@ -11,5 +11,9 @@ public class ViewServlet extends HttpServlet
 	{
 		Mysql mysql=new Mysql();
 		ArrayList<Word> wordList=mysql.readAll();
+		for(Word w:wordList)
+		{
+			System.out.println(w.getElement()+"   m-"+w.getMeaning());
+		}
 	}
 }

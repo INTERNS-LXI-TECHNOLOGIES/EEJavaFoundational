@@ -41,7 +41,6 @@ public class Mysql
 				word.setElement(rs.getString("element"));
 				word.setMeaning(rs.getString("meaning"));
 				wordList.add(word);
-				System.out.println(rs.getString("element")+"   mean "+rs.getString("meaning"));
 			}
 		}
 		catch(SQLException e)
