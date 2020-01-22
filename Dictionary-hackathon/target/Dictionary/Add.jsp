@@ -15,9 +15,7 @@
 						
 						<input type="text"  name="meaning" placeholder= "meaning">
 						
-						<input type="submit" value="Add">
-						
-						
+						<input type="submit" value="Add">	
 						
 					</center>
 				</form>

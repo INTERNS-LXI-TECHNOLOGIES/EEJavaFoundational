@@ -13,7 +13,7 @@
 				</br>
 					<center>
 						<table align="center" border="10px" width="30%">
-						<tr><th colspan="3"><strong>Reserved words</strong></th><th>meaning</th></tr>
+						<tr><th ><strong>Reserved words</strong></th><th>meaning</th></tr>
 
 						<tr>
 						<td><%=word.getWord()%>

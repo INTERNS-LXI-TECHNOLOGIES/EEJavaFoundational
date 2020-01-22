@@ -11,8 +11,9 @@
 				</br>
 					<center>
 							<% if (request.isUserInRole("admin"))  { %>
-							<center> <button  type="button" onClick="window.location.href = 'Add';">Add</button></center>
+							<center> <button  type="button" onClick="window.location.href = 'Add.jsp';">Add</button></center>
 							<% } %>
+						</br></br>
 						<table align="center" border="10px" width="30%">
 						<tr><th colspan="3"><strong>Reserved words</strong></th></tr>
 						<% for(DictionaryModel model:wordslist)

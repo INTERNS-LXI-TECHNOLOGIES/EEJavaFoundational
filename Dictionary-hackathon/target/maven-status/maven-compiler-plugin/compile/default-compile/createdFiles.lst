@@ -2,6 +2,7 @@ com\lxisoft\model\WordList.class
 com\lxisoft\servlets\WordServlet.class
 com\lxisoft\Repository\MySqlRepository.class
 com\lxisoft\servlets\AddServlet.class
+com\lxisoft\Domain\Dictionary.class
 com\lxisoft\model\DictionaryModel.class
 com\lxisoft\Domain\W_Dictionary.class
 com\lxisoft\servlets\SelectServlet.class
