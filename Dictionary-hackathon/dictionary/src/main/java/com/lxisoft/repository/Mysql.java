@@ -50,4 +50,9 @@ public class Mysql
 		return wordList;
 	}
 
+	public void add(Word word)
+	{
+		
+	}
+
 }
