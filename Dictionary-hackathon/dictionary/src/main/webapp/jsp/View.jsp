@@ -1,3 +1,5 @@
+<%@page import="com.lxisoft.domain.*"%>
+<%@page import="com.lxisoft.repository.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,5 +8,7 @@
 
 <body>
 view page
+<%Mysql mysql=new Mysql();
+out.println(mysql.read());%>
 </body>
 </html>

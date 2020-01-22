@@ -1,6 +1,7 @@
 package com.lxisoft.repository;
 import java.sql.*;
 import com.lxisoft.domain.*;
+import java.Util.*;
 
 public class Mysql
 {
@@ -15,9 +16,11 @@ public class Mysql
 	public void makeConnection()
 	{
 		try
-		{			
+		{	
 			Class.forName("com.mysql.jdbc.Driver"); 
 			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/dictionary","root","root");
+			s=connection.createStatement();		
+			s.executeUpdate("CREATE TABLE IF NOT EXISTS word(id INT PRIMARY KEY AUTO_INCREMENT,element VARCHAR(30),meaning VARCHAR(30))");
 		}
 		catch(ClassNotFoundException|SQLException e)
 		{
@@ -25,11 +28,26 @@ public class Mysql
 		}	
 	}
 
-	public void read()
+	public String readAll()
 	{
-		s=connection.createStatement();
-		s.excecuteQuery("CREATE TABLE IF NOT EXISTS word(INT id PRIMARY KEY,VARCHAR(30) element,VARCHAR(30) meaning)");
-		s.excecuteUpdate();
+		try
+		{
+			// s.executeUpdate("INSERT INTO word(element,meaning) VALUES('a','a')");
+			ResultSet rs=s.executeUpdate("SELECT * FROM word");
+			ArrayList<Word> wordList=new ArrayList<Word>();
+			while(rs.next())
+			{
+				Word word=new Word();
+				word.setElement(rs.getString(2));
+				word.setMeaning(rs.getString(3));
+				System.out.println(rs.getString(2)+"   mean "+rs.getString(3));
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+		return "yes";
 	}
 
 }
