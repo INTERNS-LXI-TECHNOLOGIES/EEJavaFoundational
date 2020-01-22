@@ -18,11 +18,6 @@
 			  cursor: pointer;
 
        }
-	table th,td 
-	{	width: 2px;
-		border:2px solid black;
-
-	}
 </style> 
 	<h1 align="center"> DICTIONARY </h1>
 	<title>
@@ -30,11 +25,17 @@
 	</title>
 
 </head>
-<body button style ="background: lightgreen">
+<body>
 
 <%@page import = "com.lxisoft.servet.*"%>
 <%@page import = "com.lxisoft.sqlrepository.*"%>
 <%@page import = "com.lxisoft.model.*,java.util.*"%>
+<form action="Search" method="get">
+		<center>
+		 <input type="text" name="search">
+		<input type="submit" value="search"><br><br>
+		</center>
+	</form>	
 
 <table align="center" style="border-collapse: collapse;">
 	        <tr>
@@ -50,7 +51,7 @@
 
 			<tr style=" font-style:oblique;  ">
 			<td>
-				<a href="Select.jsp?temp=<%=i.getMeaning()%>">
+				<a href="Select.jsp?word=<%=i.getWord()%>&meaning=<%=i.getMeaning()%>">
 					
 					<input type="button" name="submit" value="<%=i.getWord()%>">
 				</a><br>
@@ -71,6 +72,6 @@
 </center>
 </body>
 <footer>
-
+	<a href="Logout.jsp">LOGOUT </a>
 </footer>
 </html>
