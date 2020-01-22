@@ -9,8 +9,8 @@ public class View
 		System.out.println("1 : Display Contact \n2 : Create Contact \n3 : Select Contact");
 		int select=scr.nextInt();
 		Controller controller=new Controller();
-		controller=null;
-		switch(select)
+/*		controller=null;
+*/		switch(select)
 		{
 			case 1:
 					controller.displayContacts();

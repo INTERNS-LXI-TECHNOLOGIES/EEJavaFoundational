@@ -1,13 +1,14 @@
-package com.lxisoft.Filerepository;
+package com.lxisoft.filerepository;
 import java.util.Scanner;
 import java.io.BufferedReader;
+import com.lxisoft.contact.Contact;
 import java.io.*;
 import java.util.*;
 public class Filerepository
 {
-	public void writeFile()
+	public void writeFile(Contact contact)
 	{
-		String csvFile="/home/sanfar/Desktop/Contact App/Src/com/lxisoft/filerepository/Contact.csv";
+		String csvFile="/home/sanfar/Desktop/Contact app 2/Src/com/lxisoft/filerepository/Contact.csv";
         String line = "";   
         FileWriter fr = null;
         BufferedWriter br = null;
@@ -17,13 +18,16 @@ public class Filerepository
         String name=scr.next();
         System.out.println("write number :");
         long number=scr.nextLong();*/
-        Model model=new Model();
-        String[]details=model.getDetails();
+        
+
+        String name=contact.getName();
+        String number=contact.getNumber();
         try{
             fr = new FileWriter(csvFile,true);
             br = new BufferedWriter(fr);
-            br.write(details[0]+","+details[1]);    
-        }catch (IOException e) 
+            br.write(name+","+number);    
+        }
+        catch (IOException e) 
         {
             e.printStackTrace();
         }
@@ -40,7 +44,7 @@ public class Filerepository
             }   
         }
     }
-	public void readFile()
+	/*public void readFile()
 	{
 		String[] data=new String[10];
         String line = "";
@@ -67,5 +71,5 @@ public class Filerepository
         }
         int randVar=(int)(Math.random()*4);
         return data[randVar];     
-	}
+	}*/
 }
