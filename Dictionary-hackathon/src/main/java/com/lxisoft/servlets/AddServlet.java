@@ -3,8 +3,8 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import com.lxisoft.Domain.*;
-import com.lxisoft.models.*;
-import com.lxisoft.repository.*;
+import com.lxisoft.model.*;
+import com.lxisoft.Repository.*;
 import java.util.*;
 import java.sql.*;
 
@@ -18,11 +18,11 @@ public class AddServlet extends HttpServlet
               newword.setWord(request.getParameter("word"));
               newword.setMeaning(request.getParameter("meaning"));
               ArrayList<W_Dictionary> dictionary=repo.getAllWords();
-              repo.addContactDetails(newword);
+              repo.insertDetails(newword);
               response.sendRedirect("view");
 
               
-         }catch(SQLException n)
+         }catch(Exception n)
          {
            n.printStackTrace();
          }
