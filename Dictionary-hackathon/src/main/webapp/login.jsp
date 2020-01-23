@@ -14,7 +14,7 @@
 							<input type="submit" value="Login">
 							<input type="reset" value="reset"></br></br>
 						</form>
-				
+						<a href="j_security_check?j_username=guest&j_password=guest">skip</a></center>
 					</div>
 		</body>
 </html>

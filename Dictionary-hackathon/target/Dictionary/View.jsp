@@ -10,6 +10,7 @@
 			<h3 align="center">Dictionary</h3>
 				</br>
 					<center>
+						 <a href="logout" style="float:right;">logout</a>
 							<% if (request.isUserInRole("admin"))  { %>
 							<center> <button  type="button" onClick="window.location.href = 'Add.jsp';">Add</button></center>
 							<% } %>
