@@ -12,7 +12,7 @@ public class ContactView
 	}
 	public int selectOption()
 	{
-		System.out.println("Press ==> 1.Display All Contact  2.Add New Contact");
+		System.out.println("Press ==> 1.Contacts  2.Add New Contact");
 		int select = scanner.nextInt();
 		return select;
 	}
@@ -24,17 +24,21 @@ public class ContactView
 	{
 		System.out.println("No Contacts Found...!!!!");
 	}
-	public int selectContactForOperation()
+	public int contactOperations()
 	{
-		System.out.println("Press==> 1.Select a Contact to View");
+		System.out.println("Press==> 1.View Contact 2.Back 3.Exit");
 		int select = scanner.nextInt();
 		return select;
 	}
 	public int crudeOperations()
 	{
-		System.out.println("Press==> 1.Edit 2.Delete 3.View 4.Back");
+		System.out.println("Press==> 1.Edit 2.Delete 3.Back 4.Exit");
 		int select = scanner.nextInt();
 		return select;
+	}
+	public void selectContactForView()
+	{
+
 	}
 	public void viewContact(ContactModel contact)
 	{
@@ -52,6 +56,12 @@ public class ContactView
 		System.out.println("Enter Contact Number");
 		data[2] = scanner.next();
 		return data;
+	}
+	public int selectContact()
+	{
+		System.out.print("Select a Contact : ");
+		int select = scanner.nextInt();
+		return select;
 	}
 	public int  editContact()
 	{

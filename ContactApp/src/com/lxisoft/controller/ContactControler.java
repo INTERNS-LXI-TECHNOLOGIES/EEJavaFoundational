@@ -20,7 +20,8 @@ public class ContactControler
 			switch(select)
 			{
 				case 1:
-					this.selectAllContact();
+					this.contacts();
+					//this.selectAllContact();
 					isTrue = true;
 					break;
 				case 2:
@@ -29,9 +30,49 @@ public class ContactControler
 					break;
 				default :
 					view.wrongSelection();
+					isTrue = true;
 					break;
 			}
 		}while(isTrue);
+	}
+	public void contacts()
+	{
+		try
+		{
+			contacts.clear();
+			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			view.displayAllContacts(contacts);
+			boolean isTrue = false;
+			do
+			{
+				isTrue = false;
+				int select = view.contactOperations();
+				switch(select)
+				{
+					case 1 :
+						int selectedContact = view.selectContact();
+						view.viewContact(contacts.get(selectedContact-1));
+						this.crudeOperation(contacts.get(selectedContact-1));
+//call crude Operations....
+						isTrue = true;
+						break;
+					case 2 :
+						break;
+					case 3 :
+						System.exit(0);
+						break;
+					default :
+						view.wrongSelection();
+						isTrue = true;
+						break;
+				}
+			}while(isTrue);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			view.fileNotFound();
+		}
 	}
 	public void addNewContact()
 	{
@@ -52,33 +93,12 @@ public class ContactControler
 	{
 		try
 		{
-			// boolean isTrue = false;
-			// do
-			// {
-			// 	isTrue = false;
-				contacts.clear();
-				contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
-				view.displayAllContacts(contacts);
-				int select = view.selectContactForOperation();
-				view.viewContact(contacts.get(select-1));
-				this.crudeOperation(contacts.get(select-1));
-				//int operation = view.crudeOperations();
-
-			// 	switch(select)
-			// 	{
-			// 		case 1 :
-			// 			this.crudeOperation();
-			// 			isTrue = true;
-			// 			break;
-			// 		case 2 :
-			// 			//isTrue = false;
-			// 			break;
-			// 		default :
-			// 			view.wrongSelection();
-			// 			break;
-			// 	}
-			// }while(isTrue);
-
+			contacts.clear();
+			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			view.displayAllContacts(contacts);
+			int select = view.contactOperations();
+			view.viewContact(contacts.get(select-1));
+			this.crudeOperation(contacts.get(select-1));
 		}
 		catch(Exception e)
 		{
@@ -88,6 +108,7 @@ public class ContactControler
 	}
 	public void crudeOperation(ContactModel contact)
 	{
+	// refactor this method....
 		boolean isTrue = false;
 		do
 		{
@@ -104,11 +125,13 @@ public class ContactControler
 					//isTrue = true;
 					break;
 				case 3 :
-					view.displayAllContacts(contacts);
-					isTrue = true;
+					break;
+				case 4 :
+					System.exit(0);
 					break;
 				default :
 					view.wrongSelection();
+					isTrue = true;
 					break;
 			}
 
@@ -120,22 +143,25 @@ public class ContactControler
 		do
 		{
 			isTrue = false;
+			//int selectedContact = view.selectContact();
+			//view.viewContact(contact);
 			int select = view.editContact();
 			switch(select)
 			{
 				case 1:
 					this.editName(contact);
-					//view.enterName(contact);
+// Sort ArryList....
+					//Collections.sort(contacts);
+					fileReppo.writeToFile(contacts);
 					break;
 				case 2:
 					this.editPhoneNumber(contact);
+					fileReppo.writeToFile(contacts);
 					break;
 				default :
 					view.wrongSelection();
 					break;
 			}
-		//////// continue...
-
 		}while(isTrue);
 		
 	}
@@ -143,11 +169,13 @@ public class ContactControler
 	{
 		String name = view.enterName();
 		contact.setName(name);
+		//contacts.add(contact);
 	}
 	public void editPhoneNumber(ContactModel contact)
 	{
 		Long phoneNumber = view.enterPhoneNumber();
 		contact.setPhoneNumber(phoneNumber);
+		//contacts.add(contact);
 	}
 	public void deleteContact()
 	{
