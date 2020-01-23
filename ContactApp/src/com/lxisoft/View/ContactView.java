@@ -9,7 +9,7 @@ public class ContactView
 	public int selectYourChoice()
 	{
 		System.out.println("Contact App");
-		System.out.println("\n1.Contact Details \n2.Create new Contact");
+		System.out.println("\n1.Contacts \n2.Create new Contact");
 		int i = sc.nextInt();
 		return i;
 	}
@@ -45,12 +45,30 @@ public class ContactView
 	}*/
 	public void displayAllContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
 	{
-		filerepo.readFromFile();
-		System.out.println("Contact Details");
-		for(int i=0; i<contacts.size(); i++)
-		{			
-			System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
+		try
+		{
+			filerepo.readFromFile();
+			System.out.println("Contact Details");
+			for(int i=0; i<contacts.size(); i++)
+			{			
+				System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
+			}
 		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
+	}
+	public int editContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
+	{
+		displayAllContact(contacts,filerepo);
+		System.out.println("Which contact you want to edit");
+		int s=sc.nextInt();
+		return s;
+	}
+	public void editContactDetail()
+	{
+		System.out.println("What you want to edit");
 	}
 }
 

@@ -25,7 +25,7 @@ public class ContactControl
 			}
 		}while(test);			
 	}
-	public void addNewContact()
+	public void addNewContact() 
 	{
 		boolean check=false;
 		do
@@ -36,6 +36,7 @@ public class ContactControl
 			{
 				case 1:createNewContact();check=true;break;
 				case 2:view.displayAllContact(contacts,filerepo);check=true;break;
+				case 3:view.editContact(contacts,filerepo);check=true;break;
 			}
 		}while(check);
 	}
@@ -53,6 +54,17 @@ public class ContactControl
 			}
 		}
 		filerepo.writeToFile(contacts);	
+	}
+	public void editNewContact()
+	{
+		int c=view.editContact(contacts,filerepo);
+		for(int j=0;j<contacts.size();j++)
+		{
+			if((contacts.get(j).getId())==c)
+		 	{
+		 		view.editContactDetail();		 		
+		 	}
+		}	
 	}
 	// public void selectAllContact()
 	// {

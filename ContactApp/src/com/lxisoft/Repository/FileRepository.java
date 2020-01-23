@@ -7,10 +7,10 @@ import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.util.ArrayList; 
-import java.io.File;
+import java.io.*;
 public class FileRepository
 {
-	File file = new File("E:\\contact.csv");
+	File file = new File("D:\\gitcontact\\EEJavaFoundational\\ContactApp\\src\\com\\lxisoft\\Repository\\contact.csv");
 	public boolean fileExist(File file)
 	{
 		boolean isCheck=file.exists();
@@ -35,10 +35,8 @@ public class FileRepository
 			e.printStackTrace();
 		}
 	}	
-	public void readFromFile()
+	public void readFromFile() throws Exception , IOException
 	{
-		try
-		{
 			FileReader fr = new FileReader(file);
 			BufferedReader br = new BufferedReader(fr);
 			String str;
@@ -49,13 +47,15 @@ public class FileRepository
 				contact.setId(Integer.parseInt(s[0]));
 				contact.setName(s[1]);
 				contact.setPhoneNumber(Long.parseLong(s[2]));
-				//System.out.println(s[0] + (s[1]) + (s[2]));		
-			}
-		}
-		catch(Exception e)
-		{
-			System.out.println("No Contact Found");
-		}
+			}		
+		// try
+		// {
+		
+		// }
+		// catch(Exception e)
+		// {
+		// 	throw new Exception("No contacts Found");
+		// }
 	}	
 }
 
