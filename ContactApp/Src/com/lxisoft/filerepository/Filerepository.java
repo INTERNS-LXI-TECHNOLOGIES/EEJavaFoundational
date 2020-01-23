@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import com.lxisoft.contact.Contact;
 import java.io.*;
 import java.util.*;
+import java.util.*;
 public class Filerepository
 {
 	public void writeFile(Contact contact)
@@ -13,19 +14,13 @@ public class Filerepository
         FileWriter fr = null;
         BufferedWriter br = null;
         Scanner scr=new Scanner(System.in);
-        /*System.out.println("write new contact");
-        System.out.println("write name :");
-        String name=scr.next();
-        System.out.println("write number :");
-        long number=scr.nextLong();*/
-        
-
+       
         String name=contact.getName();
         String number=contact.getNumber();
         try{
             fr = new FileWriter(csvFile,true);
             br = new BufferedWriter(fr);
-            br.write(name+","+number);    
+            br.write(name+","+number+"\n");    
         }
         catch (IOException e) 
         {
@@ -44,21 +39,28 @@ public class Filerepository
             }   
         }
     }
-	/*public void readFile()
+	public ArrayList<Contact> readFile()
 	{
-		String[] data=new String[10];
+        ArrayList<Contact> data = new ArrayList<Contact>(); 
+		//String[] data=new String[10];
         String line = "";
        try{
-	       	   String csvFile = "../Contact App/com/lxisoft/fileoperation/Contacts.csv";
+	       	   String csvFile = "/home/sanfar/Desktop/Contact app 2/Src/com/lxisoft/filerepository/Contact.csv";
     	       BufferedReader br = new BufferedReader(new FileReader(csvFile));
     	       int i=0;
 	           while ((line = br.readLine()) != null)
 	           { 
-    	           String[] datas= line.split(","); 
-                   if(actordia.equals(datas[0]))
+    	          String[] datas= line.split(",",2); 
+                  data.add(new Contact());
+                   for(int j=0;j<data.size();j++)
                    {
-    	               data[i++]=datas[1];
-                   }
+                    if(data.get(j).getName()==null)
+                    {
+                        data.get(j).setName(datas[0]);
+                        data.get(j).setNumber(datas[1]);
+                    }
+                     //  data.add(datas[j]);
+                   } 
 	           }
            }
     		catch (FileNotFoundException e)
@@ -69,7 +71,7 @@ public class Filerepository
         {
             e.printStackTrace();
         }
-        int randVar=(int)(Math.random()*4);
-        return data[randVar];     
-	}*/
+        
+        return data;     
+	}
 }

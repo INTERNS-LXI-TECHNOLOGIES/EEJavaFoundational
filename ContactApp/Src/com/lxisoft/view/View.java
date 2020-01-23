@@ -6,7 +6,7 @@ public class View
 	public void display()
 	{
 		Scanner scr=new Scanner(System.in);
-		System.out.println("1 : Display Contact \n2 : Create Contact \n3 : Select Contact");
+		System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact");
 		int select=scr.nextInt();
 		Controller controller=new Controller();
 /*		controller=null;
