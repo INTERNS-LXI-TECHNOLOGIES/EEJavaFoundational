@@ -13,7 +13,7 @@ if(request.getUserPrincipal()!=null){
 userName= request.getUserPrincipal().getName();
 
 }%>
-<% if (userName=="admin"){ %>
+<% if (request.isUserInRole("admin")){ %>
 
 <center><a href="add.jsp">add to dictionary</a><br>
 <a href="logout.jsp">logout</a></center>

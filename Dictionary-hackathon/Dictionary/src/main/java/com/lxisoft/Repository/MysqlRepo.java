@@ -56,7 +56,7 @@ import com.lxisoft.Domain.*;
 	 	 	ResultSet r=st.executeQuery("select * from dict");
 			while(r.next())
 			{
- 	 		System.out.println("eeeeeee");
+ 	 		// System.out.println("eeeeeee");
  	 		
 				Word one=new Word();
 				one.setWord(r.getString("word"));
