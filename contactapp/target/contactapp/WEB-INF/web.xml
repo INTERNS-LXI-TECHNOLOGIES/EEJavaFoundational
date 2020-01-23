@@ -1,0 +1,87 @@
+ 
+
+<web-app>
+  
+    <servlet>
+        <servlet-name>allcontact</servlet-name>
+        <servlet-class>com.lxisoft.contactapp.ContactControl</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>allcontact</servlet-name>
+        <url-pattern>/view</url-pattern>
+    </servlet-mapping>
+
+        <servlet>
+        <servlet-name>create</servlet-name>
+        <servlet-class>com.lxisoft.contactapp.ContactAdd</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>create</servlet-name>
+        <url-pattern>/createnew</url-pattern>
+    </servlet-mapping>
+   
+           <servlet>
+        <servlet-name>read</servlet-name>
+        <servlet-class>com.lxisoft.contactapp.Contactsearch</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>read</servlet-name>
+        <url-pattern>/search</url-pattern>
+    </servlet-mapping>
+
+               <servlet>
+        <servlet-name>update</servlet-name>
+        <servlet-class>com.lxisoft.contactapp.ContactEdit</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>update</servlet-name>
+        <url-pattern>/Edit</url-pattern>
+    </servlet-mapping>
+
+
+                   <servlet>
+        <servlet-name>delete</servlet-name>
+        <servlet-class>com.lxisoft.contactapp.ContactDelete</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>delete</servlet-name>
+        <url-pattern>/Delete</url-pattern>
+    </servlet-mapping>
+
+
+       <security-constraint>
+      <web-resource-collection>
+         <web-resource-name>SecuredBookSite</web-resource-name>
+         <url-pattern>/view</url-pattern>
+         <http-method>GET</http-method>
+         <http-method>POST</http-method>
+      </web-resource-collection>
+      
+      <auth-constraint>
+         <description>
+            Let only managers use this app
+         </description>
+         <role-name>manager</role-name>
+      </auth-constraint>
+   </security-constraint>
+   
+   <security-role>
+      <role-name>manager</role-name>
+   </security-role>
+   
+      <login-config>
+      <auth-method>FORM</auth-method>
+      <form-login-config>
+         <form-login-page>/Login.jsp</form-login-page>
+         <form-error-page>/error.jsp</form-error-page>
+      </form-login-config>
+   </login-config>
+
+
+</web-app>
+ 
