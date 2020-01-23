@@ -35,27 +35,26 @@ public class FileRepository
 			e.printStackTrace();
 		}
 	}	
-	public void readFromFile() throws Exception , IOException
+	public ArrayList<ContactModel> readFromFile(ArrayList<ContactModel> contacts) throws Exception , IOException
 	{
-			FileReader fr = new FileReader(file);
-			BufferedReader br = new BufferedReader(fr);
-			String str;
-			while((str=br.readLine())!=null)
-			{	
-				String[] s = str.split(",",3);	
-				ContactModel contact = new ContactModel();
-				contact.setId(Integer.parseInt(s[0]));
-				contact.setName(s[1]);
-				contact.setPhoneNumber(Long.parseLong(s[2]));
-			}		
-		// try
-		// {
-		
-		// }
-		// catch(Exception e)
-		// {
-		// 	throw new Exception("No contacts Found");
-		// }
+		FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		String str;
+		while((str=br.readLine())!=null)
+		{	
+			String[] s = str.split(",",3);	
+			contacts.add(new ContactModel());
+			for(int i=0;i<contacts.size();i++)
+			{
+				if(contacts.get(i).getName()==null)
+				{
+					contacts.get(i).setId(Integer.parseInt(s[0]));
+					contacts.get(i).setName(s[1]);
+					contacts.get(i).setPhoneNumber(Long.parseLong(s[2]));
+				}
+			}	
+		}
+		return contacts;			
 	}	
 }
 

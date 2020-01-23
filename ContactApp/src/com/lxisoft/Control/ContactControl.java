@@ -12,38 +12,52 @@ public class ContactControl
 	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
 	public void contactMenu()
 	{
-		boolean test=false;
+		boolean isTest=false;
 		do
 		{
-			test=false;
+			isTest=false;
 			int m=view.selectYourChoice();
 			switch (m)
 			{
-				case 1:	addNewContact();test=true;break;
-				case 2: test=true;break;				
+				case 1:	selectAllContact();isTest=true;break;
+				case 2: isTest=true;break;				
 				case 3: System.exit(0); break;	
 			}
-		}while(test);			
-	}
+		}while(isTest);			
+	}	
+	public void selectAllContact()
+	{
+		try
+		{
+			contacts.clear();
+			contacts=filerepo.readFromFile(contacts);
+			view.displayAllContact(contacts);	
+			addNewContact();
+		}
+		catch(Exception e)
+		{
+			System.out.println("No Contacts Found");
+		}
+	}	
 	public void addNewContact() 
 	{
-		boolean check=false;
+		boolean isCheck=false;
 		do
 		{
-			check=false;
+			isCheck=false;
 			int c=view.contactDetails();
 			switch(c)
 			{
-				case 1:createNewContact();check=true;break;
-				case 2:view.displayAllContact(contacts,filerepo);check=true;break;
-				case 3:view.editContact(contacts,filerepo);check=true;break;
+				case 1:createNewContact();isCheck=true;break;
+				case 2:;isCheck=true;break;
+				case 3:view.editContact(contacts,filerepo);isCheck=true;break;
 			}
-		}while(check);
+		}while(isCheck);
 	}
 	public void createNewContact()
 	{
 		contacts.add(new ContactModel());
-		String[] d=view.addContact();
+		String[] d=view.addContactDetails();
 		for(int i=0;i<contacts.size();i++)
 		{
 			if(contacts.get(i).getId()==0)
@@ -66,11 +80,7 @@ public class ContactControl
 		 	}
 		}	
 	}
-	// public void selectAllContact()
-	// {
-
-	// }
-	
+	// 
 	// public void updateContact()
 	// {
 		

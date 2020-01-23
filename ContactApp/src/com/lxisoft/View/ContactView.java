@@ -15,12 +15,12 @@ public class ContactView
 	}
 	public int contactDetails()
 	{
-		System.out.println("Select Your Choice");
+		System.out.println("Choose a option");
 		System.out.println("\n1.Add \n2.View \n3.Edit \n4.Delete");
 		int a = sc.nextInt();
 		return a;
 	}	
-	public String[] addContact()
+	public String[] addContactDetails()
 	{		
 		String[] s=new String[3]; 
 		System.out.println("Contact id");
@@ -31,23 +31,10 @@ public class ContactView
 		s[2]=sc.next();	
 		return s;			        	
 	}
-	/*public void addContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
-	{		
-		ContactModel contact = new ContactModel(); 
-		System.out.println("Contact id");
-		contact.setId(sc.nextInt());
-		System.out.println("Enter contact name");
-		contact.setName(sc.next());
-		System.out.println("Phone number");
-		contact.setPhoneNumber(sc.nextLong());
-		contacts.add(contact);	
-		filerepo.writeToFile(contacts,filerepo);		        	
-	}*/
-	public void displayAllContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
+	public void displayAllContact(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
-			filerepo.readFromFile();
 			System.out.println("Contact Details");
 			for(int i=0; i<contacts.size(); i++)
 			{			
@@ -61,7 +48,6 @@ public class ContactView
 	}
 	public int editContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
 	{
-		displayAllContact(contacts,filerepo);
 		System.out.println("Which contact you want to edit");
 		int s=sc.nextInt();
 		return s;
