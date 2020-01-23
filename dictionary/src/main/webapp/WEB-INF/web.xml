@@ -1,0 +1,18 @@
+ 
+
+<web-app>
+  
+    <servlet>
+        <servlet-name>allcontact</servlet-name>
+        <servlet-class>com.lxisoft.Controldic</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>allcontact</servlet-name>
+        <url-pattern>/view</url-pattern>
+    </servlet-mapping>
+
+        
+
+</web-app>
+ 

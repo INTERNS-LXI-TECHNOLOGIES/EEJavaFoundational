@@ -18,6 +18,7 @@ public void setMean(String m){
 	this.mean=m;
 }
 
-public String getWord(){
+public String getMean(){
 	return mean;
+}
 }

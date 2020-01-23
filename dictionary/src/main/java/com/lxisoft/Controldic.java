@@ -2,10 +2,13 @@ package com.lxisoft.dictionary;
 import com.lxisoft.dictionary.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
+import java.io.*;
 import java.util.*;
-public class Controldic extends Httpservlet{
+import java.sql.*;
+public class Controldic extends HttpServlet{
 public void doPost(HttpServletRequest request, HttpServletResponse response)
-throws ServletException, IOException {
+            throws ServletException, IOException {
+ 
 	        String w = request.getParameter("word");
 	        List<String> words=new ArrayList<String>();
 	        ModelWords model=new ModelWords();
@@ -19,12 +22,14 @@ throws ServletException, IOException {
 		model.setWord(rs.getString("word"));
 		model.setMean(rs.getString("mean"));
 		request.setAttribute("mode",model);
+		RequestDispatcher rd = request.getRequestDispatcher("Viewdic.jsp"); 
+		rd.forward(request,response);
 
        } 
 
     catch(Exception ee){
-    	request.setAttribute("con",null);
-		RequestDispatcher rd = request.getRequestDispatcher("search.jsp"); 
+    	request.setAttribute("mode",null);
+		RequestDispatcher rd = request.getRequestDispatcher("Viewdic.jsp"); 
 		rd.forward(request,response);
 		System.out.println("****Exception*****"+ee);} 
 		
