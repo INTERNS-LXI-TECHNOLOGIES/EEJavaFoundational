@@ -48,31 +48,24 @@ public class FileRepository
 	}
 	public ArrayList<ContactModel> readFromFile(ArrayList<ContactModel> contacts,File file) throws Exception
 	{
-		try
+		FileReader fr = new FileReader(file);
+		BufferedReader br = new BufferedReader(fr);
+		String data;
+		while((data = br.readLine())!=null)
 		{
-			FileReader fr = new FileReader(file);
-			BufferedReader br = new BufferedReader(fr);
-			String data;
-			while((data = br.readLine())!=null)
+			String[] str = data.split(",",3);
+			contacts.add(new ContactModel());
+			for(int i=0;i<contacts.size();i++)
 			{
-				String[] str = data.split(",",3);
-				contacts.add(new ContactModel());
-				for(int i=0;i<contacts.size();i++)
+				if(contacts.get(i).getName()==null)
 				{
-					if(contacts.get(i).getName()==null)
-					{
-						contacts.get(i).setId(Integer.parseInt(str[0]));
-						contacts.get(i).setName(str[1]);
-						contacts.get(i).setPhoneNumber(Long.parseLong(str[2]));
-					}
+					contacts.get(i).setId(Integer.parseInt(str[0]));
+					contacts.get(i).setName(str[1]);
+					contacts.get(i).setPhoneNumber(Long.parseLong(str[2]));
 				}
 			}
-			br.close();
 		}
-		catch(Exception e)
-		{
-			throw e; 
-		}
+		br.close();
 		return contacts;
 	}
 }

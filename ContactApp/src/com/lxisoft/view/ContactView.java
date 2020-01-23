@@ -24,8 +24,25 @@ public class ContactView
 	{
 		System.out.println("No Contacts Found...!!!!");
 	}
+	public int selectContactForOperation()
+	{
+		System.out.println("Press==> 1.Select a Contact to View");
+		int select = scanner.nextInt();
+		return select;
+	}
+	public int crudeOperations()
+	{
+		System.out.println("Press==> 1.Edit 2.Delete 3.View 4.Back");
+		int select = scanner.nextInt();
+		return select;
+	}
+	public void viewContact(ContactModel contact)
+	{
+		System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
+		System.out.printf("%-20.30s %-20.30s %-20.30s%n",contact.getId(),contact.getName(),contact.getPhoneNumber());	
+	}
 	public String[] createNewContact()
-	{	
+	{
 		String[] data = new String[3];
 		System.out.println("Enter contactID");
 		data[0] = scanner.next();
@@ -36,9 +53,26 @@ public class ContactView
 		data[2] = scanner.next();
 		return data;
 	}
-	public void selectContact()
+	public int  editContact()
 	{
-		//System.out.pr
+		System.out.println("Press==> 1.Edit Name 2.Edit Phone Number 3.Back");
+		int select = scanner.nextInt();
+		return select;
+	}
+	public String enterName()
+	{
+		System.out.println("Enter Name");
+		String name = scanner.nextLine();
+		name = scanner.nextLine();
+		System.out.println("Name Updated...!!!");
+		return name;
+	}
+	public Long enterPhoneNumber()
+	{
+		System.out.println("Enter PhoneNumber");
+		Long phone = scanner.nextLong();
+		System.out.println("Number Updated...!!!");
+		return phone;
 	}
 	public void displayAllContacts(ArrayList<ContactModel> contacts)
 	{
