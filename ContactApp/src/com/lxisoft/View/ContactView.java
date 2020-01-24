@@ -16,10 +16,16 @@ public class ContactView
 	public int contactDetails()
 	{
 		System.out.println("Choose a option");
-		System.out.println("\n1.Add \n2.View \n3.Edit \n4.Delete \n5.Back To Main Menu");
+		System.out.println("\n1.Edit \n2.View\n3.Delete \n4.Back To Main Menu");
 		int a = sc.nextInt();
 		return a;
 	}	
+	public int addToContact()
+	{
+		System.out.println("\n1.Add");
+		int p=sc.nextInt();
+		return p;
+	}
 	public String[] addContactDetails()
 	{		
 		String[] s=new String[3]; 
@@ -36,12 +42,10 @@ public class ContactView
 		try
 		{
 			System.out.println("Contact Details");
-			//System.out.println("yaaaaaaaaaaaaaaaaaaaaaaaahuuuuuuuuuuuuuuuuuuuuuuuuuuu");
-			//System.out.println("Size : "+contacts.size());
 			for(int i=0; i<contacts.size(); i++)
 			{			
 
-				System.out.printf("%-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName());
+				System.out.printf("%-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
 			}
 		}
 		catch(Exception e)
@@ -51,9 +55,6 @@ public class ContactView
 	}
 	public void viewAllContact()
 	{
-		// System.out.println("Contacts are");
-		// System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
-		// System.out.printf("%-20.30s %-20.30s %-20.30s%n",contact.getId(),contact.getName(),contact.getPhoneNumber());
 		
 	}
 	public int editContact(ArrayList<ContactModel> contacts)
@@ -62,10 +63,24 @@ public class ContactView
 		int s=sc.nextInt();
 		return s;
 	}
-	public void editContactDetail()
+	public int editContactDetail()
 	{
 		System.out.println("What you want to edit");
 		System.out.println("\n1.Name \n2.PhoneNumbere ");
+		int e=sc.nextInt();
+		return e;
+	}
+	public String editName()
+	{
+		System.out.println("Enter your name");
+		String s=sc.next();
+		return s;
+	}
+	public Long editPhoneNumber()
+	{
+		System.out.println("Enter phone number");
+		Long p=sc.nextLong();
+		return p;
 	}
 }
 
