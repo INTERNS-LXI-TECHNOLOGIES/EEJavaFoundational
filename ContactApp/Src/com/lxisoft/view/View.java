@@ -5,6 +5,7 @@ public class View
 {
 	public void display()
 	{
+		
 		Scanner scr=new Scanner(System.in);
 		System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact");
 		int select=scr.nextInt();
@@ -21,6 +22,9 @@ public class View
 			case 3:
 					controller.selectContact();
 					break;	
+			case 4:
+					controller.editContact();
+					break;
 		}
 	}
 	

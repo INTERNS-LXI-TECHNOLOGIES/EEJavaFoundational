@@ -59,7 +59,6 @@ public class Filerepository
                         data.get(j).setName(datas[0]);
                         data.get(j).setNumber(datas[1]);
                     }
-                     //  data.add(datas[j]);
                    } 
 	           }
            }
@@ -74,4 +73,40 @@ public class Filerepository
         
         return data;     
 	}
+    public String[] readContact(ArrayList<String> names)
+    {
+      //  ArrayList<Contact> data = new ArrayList<Contact>(); 
+       
+        String line = "";
+        String[] data=new String[10];
+       try{
+         
+               String csvFile = "/home/sanfar/Desktop/Contact app 2/Src/com/lxisoft/filerepository/Contact.csv";
+               BufferedReader br = new BufferedReader(new FileReader(csvFile));
+               int i=0;
+               while ((line = br.readLine()) != null)
+               { 
+                  //String[] datas= line.split(",",2); 
+                  
+                   
+                                     
+                   String[] datas= line.split(","); 
+                   if(names.get(i).equals(datas[0]))
+                   {
+                       data[i++]=datas;
+                   }
+                
+               }
+           }
+            catch (FileNotFoundException e)
+            {
+                e.printStackTrace();
+            }
+        catch (IOException e) 
+        {
+            e.printStackTrace();
+        }
+        
+        return data;    
+    }
 }

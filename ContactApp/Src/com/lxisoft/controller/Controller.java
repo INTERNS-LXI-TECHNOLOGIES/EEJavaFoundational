@@ -8,6 +8,7 @@ import java.util.*;
 public class Controller
 {
 	Filerepository filerepository=new Filerepository();
+	ArrayList<String> names = new ArrayList<String>(); 
 	public void activities()
 	{
 		View view=new View();
@@ -24,7 +25,7 @@ public class Controller
 			i++;
 		}
 	}
-	public void createNewContact()
+	public String createNewContact()
 	{
 		Contact contact=new Contact();
 		
@@ -36,6 +37,9 @@ public class Controller
         contact.setName(name);
         contact.setNumber(number);
         filerepository.writeFile(contact);
+        names.add(name);
+        //selectContact(name);
+        return names;
 	}
 	public void selectContact()
 	{
@@ -44,12 +48,15 @@ public class Controller
 		int i=1;
 		for ( Contact s : details)
 		{
-			System.out.print(i+" : "+s.getName());
-			System.out.println(s.getNumber());
+			System.out.print(i+" : "+s.getName()+"\n");
+			
 			i++;
 		}
 		System.out.println("Select Contact");
 		int num=scr.nextInt();
+		filerepository.readContact(names);
+
+		
 	}
 	
 
