@@ -21,7 +21,6 @@ public class ContactControler
 			{
 				case 1:
 					this.contacts();
-					//this.selectAllContact();
 					isTrue = true;
 					break;
 				case 2:
@@ -52,11 +51,12 @@ public class ContactControler
 					case 1 :
 						int selectedContact = view.selectContact();
 						view.viewContact(contacts.get(selectedContact-1));
-						this.crudeOperation(contacts.get(selectedContact-1));
-//call crude Operations....
-						isTrue = true;
+						this.crudeOperation(contacts.get(selectedContact-1),selectedContact-1);
+//need this Index value....
+						//isTrue = true;
 						break;
 					case 2 :
+						isTrue = false;
 						break;
 					case 3 :
 						System.exit(0);
@@ -76,6 +76,10 @@ public class ContactControler
 	}
 	public void addNewContact()
 	{
+		//need to refactored.....
+		//check the arraylist is empty..
+		//if empty... add new object..
+		// if not... add Object...
 		contacts.add(new ContactModel());
 		String[] data = view.createNewContact();
 		for(int i=0;i<contacts.size();i++)
@@ -89,24 +93,7 @@ public class ContactControler
 		}
 		fileReppo.writeToFile(contacts);
 	}
-	public void selectAllContact()
-	{
-		try
-		{
-			contacts.clear();
-			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
-			view.displayAllContacts(contacts);
-			int select = view.contactOperations();
-			view.viewContact(contacts.get(select-1));
-			this.crudeOperation(contacts.get(select-1));
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			view.fileNotFound();
-		}
-	}
-	public void crudeOperation(ContactModel contact)
+	public void crudeOperation(ContactModel contact,int selectedContact)
 	{
 	// refactor this method....
 		boolean isTrue = false;
@@ -118,13 +105,12 @@ public class ContactControler
 			{
 				case 1 :
 					this.editContact(contact);
-					//isTrue = true;
 					break;
 				case 2 :
-					this.deleteContact();
-					//isTrue = true;
+					this.deleteContact(selectedContact);
 					break;
 				case 3 :
+					isTrue = false;
 					break;
 				case 4 :
 					System.exit(0);
@@ -143,53 +129,37 @@ public class ContactControler
 		do
 		{
 			isTrue = false;
-			//int selectedContact = view.selectContact();
-			//view.viewContact(contact);
 			int select = view.editContact();
 			switch(select)
 			{
 				case 1:
 					this.editName(contact);
-// Sort ArryList....
-					//Collections.sort(contacts);
-					fileReppo.writeToFile(contacts);
 					break;
 				case 2:
 					this.editPhoneNumber(contact);
-					fileReppo.writeToFile(contacts);
 					break;
 				default :
 					view.wrongSelection();
 					break;
 			}
 		}while(isTrue);
-		
 	}
 	public void editName(ContactModel contact)
 	{
 		String name = view.enterName();
 		contact.setName(name);
-		//contacts.add(contact);
+		fileReppo.writeToFile(contacts);
 	}
 	public void editPhoneNumber(ContactModel contact)
 	{
 		Long phoneNumber = view.enterPhoneNumber();
 		contact.setPhoneNumber(phoneNumber);
-		//contacts.add(contact);
+		fileReppo.writeToFile(contacts);
 	}
-	public void deleteContact()
+	public void deleteContact(int selectedContact)
 	{
-
-	}
-	public void selectContact()
-	{
-		try
-		{
-
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
+		contacts.remove(selectedContact);
+		view.contactDeleteMessage();
+		fileReppo.writeToFile(contacts);
 	}
 }

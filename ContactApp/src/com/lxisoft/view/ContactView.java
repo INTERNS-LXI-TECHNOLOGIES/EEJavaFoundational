@@ -36,9 +36,9 @@ public class ContactView
 		int select = scanner.nextInt();
 		return select;
 	}
-	public void selectContactForView()
+	public void contactDeleteMessage()
 	{
-
+		System.out.println("Contact Deleted...!!!");
 	}
 	public void viewContact(ContactModel contact)
 	{
