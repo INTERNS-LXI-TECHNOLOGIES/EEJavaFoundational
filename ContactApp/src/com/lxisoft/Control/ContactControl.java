@@ -31,12 +31,14 @@ public class ContactControl
 		{
 			contacts.clear();
 			contacts=filerepo.readFromFile(contacts);
+			
 			view.displayAllContact(contacts);	
 			addNewContact();
 		}
 		catch(Exception e)
 		{
 			System.out.println("No Contacts Found");
+			addNewContact();
 		}
 	}	
 	public void addNewContact() 
@@ -49,8 +51,10 @@ public class ContactControl
 			switch(c)
 			{
 				case 1:createNewContact();isCheck=true;break;
-				case 2:;isCheck=true;break;
-				case 3:view.editContact(contacts,filerepo);isCheck=true;break;
+				case 2:view.displayAllContact(contacts);isCheck=true;break;
+				case 3:view.editContact(contacts);isCheck=true;break;
+				case 4:   break;
+				case 5:backToMenu();isCheck=true;break;
 			}
 		}while(isCheck);
 	}
@@ -71,7 +75,7 @@ public class ContactControl
 	}
 	public void editNewContact()
 	{
-		int c=view.editContact(contacts,filerepo);
+		int c=view.editContact(contacts);
 		for(int j=0;j<contacts.size();j++)
 		{
 			if((contacts.get(j).getId())==c)
@@ -79,6 +83,10 @@ public class ContactControl
 		 		view.editContactDetail();		 		
 		 	}
 		}	
+	}
+	public void backToMenu()
+	{
+		view.selectYourChoice();
 	}
 	// 
 	// public void updateContact()

@@ -54,7 +54,7 @@ public class FileRepository
 				}
 			}	
 		}
-		return contacts;			
+		return contacts;
 	}	
 }
 

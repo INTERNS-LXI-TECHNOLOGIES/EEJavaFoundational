@@ -16,7 +16,7 @@ public class ContactView
 	public int contactDetails()
 	{
 		System.out.println("Choose a option");
-		System.out.println("\n1.Add \n2.View \n3.Edit \n4.Delete");
+		System.out.println("\n1.Add \n2.View \n3.Edit \n4.Delete \n5.Back To Main Menu");
 		int a = sc.nextInt();
 		return a;
 	}	
@@ -36,9 +36,12 @@ public class ContactView
 		try
 		{
 			System.out.println("Contact Details");
+			//System.out.println("yaaaaaaaaaaaaaaaaaaaaaaaahuuuuuuuuuuuuuuuuuuuuuuuuuuu");
+			//System.out.println("Size : "+contacts.size());
 			for(int i=0; i<contacts.size(); i++)
 			{			
-				System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
+
+				System.out.printf("%-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName());
 			}
 		}
 		catch(Exception e)
@@ -46,7 +49,14 @@ public class ContactView
 			System.out.println(e.getMessage());
 		}
 	}
-	public int editContact(ArrayList<ContactModel> contacts,FileRepository filerepo)
+	public void viewAllContact()
+	{
+		// System.out.println("Contacts are");
+		// System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
+		// System.out.printf("%-20.30s %-20.30s %-20.30s%n",contact.getId(),contact.getName(),contact.getPhoneNumber());
+		
+	}
+	public int editContact(ArrayList<ContactModel> contacts)
 	{
 		System.out.println("Which contact you want to edit");
 		int s=sc.nextInt();
@@ -55,6 +65,7 @@ public class ContactView
 	public void editContactDetail()
 	{
 		System.out.println("What you want to edit");
+		System.out.println("\n1.Name \n2.PhoneNumbere ");
 	}
 }
 
