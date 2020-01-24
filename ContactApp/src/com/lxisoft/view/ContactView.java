@@ -40,6 +40,10 @@ public class ContactView
 	{
 		System.out.println("Contact Deleted...!!!");
 	}
+	public void contactAddedMessage()
+	{
+		System.out.println("New Contact Added...!!!");
+	}
 	public void viewContact(ContactModel contact)
 	{
 		System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
@@ -86,10 +90,13 @@ public class ContactView
 	}
 	public void displayAllContacts(ArrayList<ContactModel> contacts)
 	{
-		System.out.printf("%-20.30s %-20.30s%n","Contact ID","Contact Name");
+		int j = 1;
+		Collections.sort(contacts);
+		System.out.printf("%-20.30s %-20.30s %-20.30s%n","Sl-NO","Contact ID","Contact Name");
 		for(int i=0;i<contacts.size();i++)
 		{
-			System.out.printf("%-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName());
+			System.out.printf("%-20.30s %-20.30s %-20.30s%n",j,contacts.get(i).getId(),contacts.get(i).getName());
+			j++;
 		}
 	}
 	public boolean addMoreContact()

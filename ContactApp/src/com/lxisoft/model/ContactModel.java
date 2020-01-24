@@ -1,10 +1,18 @@
 package com.lxisoft.model;
-public class ContactModel
+import java.util.Collections;
+public class ContactModel implements Comparable<ContactModel>
 {
 	private String name;
 	private int iD;
 	private Long phoneNumber;
+	private ContactModel contact;
 
+
+	public int compareTo(ContactModel contact)
+	{
+		//contact.name= "";
+		return this.contact.name.compareTo(contact.name);
+	}
 	public void setName(String name)
 	{
 		this.name = name;

@@ -52,8 +52,6 @@ public class ContactControler
 						int selectedContact = view.selectContact();
 						view.viewContact(contacts.get(selectedContact-1));
 						this.crudeOperation(contacts.get(selectedContact-1),selectedContact-1);
-//need this Index value....
-						//isTrue = true;
 						break;
 					case 2 :
 						isTrue = false;
@@ -92,6 +90,7 @@ public class ContactControler
 			}
 		}
 		fileReppo.writeToFile(contacts);
+		view.contactAddedMessage();
 	}
 	public void crudeOperation(ContactModel contact,int selectedContact)
 	{
