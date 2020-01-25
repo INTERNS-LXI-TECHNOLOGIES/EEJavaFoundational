@@ -24,7 +24,8 @@ public class FileRepository
 			BufferedWriter bw = new BufferedWriter(fw);
 			for(int i=0; i<contacts.size(); i++)
 			{
-				bw.write(contacts.get(i).getId()+","+contacts.get(i).getName()+","+contacts.get(i).getPhoneNumber());  		
+				bw.write(contacts.get(i).getId()+","+contacts.get(i).getName()+","+contacts.get(i).getPhoneNumber());  
+				bw.newLine();		
 			}
 			bw.flush();
 			bw.close();
@@ -55,7 +56,7 @@ public class FileRepository
 			}	
 		}
 		return contacts;
-		}	
+	}	
 }
 
 	

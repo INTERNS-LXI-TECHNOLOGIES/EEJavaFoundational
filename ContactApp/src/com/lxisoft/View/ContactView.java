@@ -20,6 +20,14 @@ public class ContactView
 		int a = sc.nextInt();
 		return a;
 	}	
+	public void invalidOption()
+	{
+		System.out.println("Invalid option");
+	}
+	public void noContactFound()
+	{
+		System.out.println("No Contact Found");
+	}
 	public int addToContact()
 	{
 		System.out.println("\n1.Add");
@@ -66,7 +74,7 @@ public class ContactView
 	public int editContactDetail()
 	{
 		System.out.println("What you want to edit");
-		System.out.println("\n1.Name \n2.PhoneNumbere ");
+		System.out.println("\n1.Name \n2.PhoneNumber");
 		int e=sc.nextInt();
 		return e;
 	}
@@ -81,6 +89,10 @@ public class ContactView
 		System.out.println("Enter phone number");
 		Long p=sc.nextLong();
 		return p;
+	}
+	public void deleteContact()
+	{
+
 	}
 }
 

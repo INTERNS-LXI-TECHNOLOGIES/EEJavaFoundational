@@ -24,6 +24,7 @@ public class ContactControl
 					case 1:	selectAllContact();isTest=true;break;
 					case 2: addNewContact();isTest=true;break;				
 					case 3: System.exit(0); break;	
+					default: view.invalidOption();break;
 				}
 			}while(isTest);
 		}
@@ -43,8 +44,7 @@ public class ContactControl
 		}
 		catch(Exception e)
 		{
-			System.out.println("No Contacts Found");
-							
+			view.noContactFound();							
 		}
 	}	
 	public void editDelete() 
@@ -60,6 +60,7 @@ public class ContactControl
 				case 2:view.displayAllContact(contacts);isCheck=true;break;
 				case 3: break;
 				case 4: break;
+				default:view.invalidOption(); break;
 			}
 		}while(isCheck);
 	}
@@ -90,8 +91,9 @@ public class ContactControl
 			view.editContactDetail();
 			switch(i)
 			{
-				case 1: editNameDetail(contacts.get(i-1));isTrue=true;break;
-				case 2: editPhoneNumberDetail(contacts.get(i-1));isTrue=true;break;
+				case 1: editNameDetail(contacts.get(i-1));break;
+				case 2: editPhoneNumberDetail(contacts.get(i-1));break;
+				default:view.invalidOption();break;
 			}
 		}while(isTrue);
 	}		
@@ -112,4 +114,8 @@ public class ContactControl
 	{
 		view.selectYourChoice();
 	}	
+	public void deleteContacts()
+	{
+		contacts.remove();
+	}
 }
