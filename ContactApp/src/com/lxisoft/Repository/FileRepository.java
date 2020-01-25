@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.io.*;
 public class FileRepository
 {
-	File file = new File("D:\\gitcontact\\EEJavaFoundational\\ContactApp\\src\\com\\lxisoft\\Repository\\contact.csv");
+	public File file = new File("D:\\gitcontact\\EEJavaFoundational\\ContactApp\\src\\com\\lxisoft\\Repository\\contact.csv");
 	public boolean fileExist(File file)
 	{
 		boolean isCheck=file.exists();
@@ -55,7 +55,7 @@ public class FileRepository
 			}	
 		}
 		return contacts;
-	}	
+		}	
 }
 
 	

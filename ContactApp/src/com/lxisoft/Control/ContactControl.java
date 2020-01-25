@@ -22,7 +22,7 @@ public class ContactControl
 				switch (m)
 				{
 					case 1:	selectAllContact();isTest=true;break;
-					case 2: createNewContact();isTest=true;break;				
+					case 2: addNewContact();isTest=true;break;				
 					case 3: System.exit(0); break;	
 				}
 			}while(isTest);
@@ -38,14 +38,13 @@ public class ContactControl
 		{
 			contacts.clear();
 			contacts=filerepo.readFromFile(contacts);
-			view.displayAllContact(contacts);	
-			//editDelete(contact);
+			view.displayAllContact(contacts);
+			editDelete(); 	
 		}
 		catch(Exception e)
 		{
 			System.out.println("No Contacts Found");
-			e.printStackTrace();
-			//editDelete(contact);
+							
 		}
 	}	
 	public void editDelete() 
@@ -57,18 +56,18 @@ public class ContactControl
 			int c=view.contactDetails();
 			switch(c)
 			{
-				case 1:editNewContact();isCheck=true;break;
+				case 1:editNewContact();break;
 				case 2:view.displayAllContact(contacts);isCheck=true;break;
-				case 3:   break;
-				case 4:backToMenu();isCheck=true;break;
+				case 3: break;
+				case 4: break;
 			}
 		}while(isCheck);
 	}
-	public void createNewContact()
+	public void addNewContact()
 	{
-		contacts.add(new ContactModel());
-		int s=view.addToContact();
+		//int s=view.addToContact();
 		String[] d=view.addContactDetails();
+		contacts.add(new ContactModel());
 		for(int i=0;i<contacts.size();i++)
 		{
 			if(contacts.get(i).getId()==0)
@@ -80,44 +79,16 @@ public class ContactControl
 		}
 		filerepo.writeToFile(contacts);	
 	}			
-	// public void editNewContact()
-	// {
-	// 	boolean isTrue=false;
-	// 	do
-	// 	{
-	// 		isTrue=false;
-	// 		int i=view.editContact(contacts);
-	// 		switch(i)
-	// 		{
-	// 			case 1: view.editContactDetail();isTrue=true;break;
-	// 		}
-	// 	}while(isTrue);
-	// }		
-	// public void editNameDetail(ContactModel contact)
-	// {
-	// 	String a=view.editName();
-	// 	contact.setName(a);
-	// 	filerepo.writeToFile(contacts);
-	// }
-	// public void editPhoneNumberDetail(ContactModel contact)
-	// {
-	// 	Long i=view.editPhoneNumber();
-	// 	contact.setPhoneNumber(i);
-	// 	filerepo.writeToFile(contacts);
-	// }
-	// public void backToMenu()
-	// {
-	// 	view.selectYourChoice();
-	// }	
 	public void editNewContact()
 	{
 		boolean isTrue=false;
 		do
 		{
 			isTrue=false;
+			view.displayAllContact(contacts);
 			int i=view.editContact(contacts);
-			int k=view.editContactDetail();
-			switch(k)
+			view.editContactDetail();
+			switch(i)
 			{
 				case 1: editNameDetail(contacts.get(i-1));isTrue=true;break;
 				case 2: editPhoneNumberDetail(contacts.get(i-1));isTrue=true;break;

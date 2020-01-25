@@ -9,7 +9,7 @@ public class ContactView
 	public int selectYourChoice()
 	{
 		System.out.println("Contact App");
-		System.out.println("\n1.Contacts \n2.Create new Contact");
+		System.out.println("\n1.Contacts \n2.Create new Contact \n3.Exit");
 		int i = sc.nextInt();
 		return i;
 	}
@@ -45,7 +45,7 @@ public class ContactView
 			for(int i=0; i<contacts.size(); i++)
 			{			
 
-				System.out.printf("%-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
+				System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
 			}
 		}
 		catch(Exception e)
