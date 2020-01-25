@@ -68,7 +68,7 @@ public class ContactControler
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+			//e.printStackTrace();
 			view.fileNotFound();
 		}
 	}
@@ -78,8 +78,9 @@ public class ContactControler
 		//check the arraylist is empty..
 		//if empty... add new object..
 		// if not... add Object...
-		contacts.add(new ContactModel());
+		
 		String[] data = view.createNewContact();
+		contacts.add(new ContactModel());
 		for(int i=0;i<contacts.size();i++)
 		{
 			if((contacts.get(i).getId())==0)

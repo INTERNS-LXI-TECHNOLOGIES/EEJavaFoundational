@@ -5,13 +5,10 @@ public class ContactModel implements Comparable<ContactModel>
 	private String name;
 	private int iD;
 	private Long phoneNumber;
-	private ContactModel contact;
-
-
+	
 	public int compareTo(ContactModel contact)
 	{
-		//contact.name= "";
-		return this.contact.name.compareTo(contact.name);
+		return this.name.compareTo (contact.name);
 	}
 	public void setName(String name)
 	{
