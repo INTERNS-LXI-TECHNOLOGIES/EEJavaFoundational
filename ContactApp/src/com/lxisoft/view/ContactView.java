@@ -25,4 +25,8 @@ public class ContactView
 		details.add(sc.next());
 		return details;
 	}
+	public void defaultText()
+	{
+		System.out.println("please enter the correct choice ");
+	}
 }

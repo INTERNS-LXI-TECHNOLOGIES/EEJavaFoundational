@@ -18,18 +18,18 @@ public class ContactControl
 			case 1:s= view.addContacts();
 				   getDetails(s);
 				   break;
-			case 2: System.out.println("please enter the correct choice");
+			case 2: displayContact();
 					break;
-			default: System.out.println("please enter the correct choice");
+			default: view.defaultText();
 		}
 	}
 	public void readFromFile(File fileCopy)
 	{
 		ArrayList<ContactModel> reader= file.fromFile(fileCopy);
-		for(int i=0;i<fileCopy.length();i++)
-		{
-			System.out.println(reader.get(i).getId()+","+reader.get(i).getName()+","+reader.get(i).getMob());
-		}
+		// for(int i=0;i<reader.size();i++)
+		// {
+		// 	System.out.println(reader.get(i).getId()+". "+reader.get(i).getName()+" : "+reader.get(i).getMob());
+		// }
 
 
 	}
@@ -51,5 +51,12 @@ public class ContactControl
 	{
 		File fileCopy=file.toFile(s);
 		readFromFile(fileCopy);
+	}
+	public void displayContact()
+	{
+		if(toFile.exists())
+		{
+			
+		}
 	}
 }

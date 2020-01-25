@@ -35,9 +35,9 @@ public class FileRepository
 		while((s=br.readLine())!=null)
 		{	
 			String[]str=s.split(",",3);
-			for(int i=0;i<fileCopy.length();i++)
-			{System.out.println("fileCopy.length()"+fileCopy.length());
 				reader.add(new ContactModel());
+				for(int i=0;i<reader.size();i++)
+				{
 				if(reader.get(i).getName()==null)
 					{
 						reader.get(i).setId(Integer.parseInt(str[0]));
