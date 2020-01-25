@@ -7,20 +7,21 @@ import java.util.*;
 import java.util.*;
 public class Filerepository
 {
-	public void writeFile(Contact contact)
+	public void writeFile(ArrayList<Contact> contact)
 	{
+       // ArrayList<String> contacts = new ArrayList<String>(); 
 		String csvFile="/home/sanfar/Desktop/Contact app 2/Src/com/lxisoft/filerepository/Contact.csv";
         String line = "";   
         FileWriter fr = null;
         BufferedWriter br = null;
-        Scanner scr=new Scanner(System.in);
        
         String name=contact.getName();
         String number=contact.getNumber();
         try{
             fr = new FileWriter(csvFile,true);
             br = new BufferedWriter(fr);
-            br.write(name+","+number+"\n");    
+            br.write(name+","+number);
+            br.newLine();    
         }
         catch (IOException e) 
         {
@@ -73,7 +74,7 @@ public class Filerepository
         
         return data;     
 	}
-    public String[] readContact(ArrayList<String> names)
+    public String[] readContact(String names)
     {
       //  ArrayList<Contact> data = new ArrayList<Contact>(); 
        
@@ -83,7 +84,7 @@ public class Filerepository
          
                String csvFile = "/home/sanfar/Desktop/Contact app 2/Src/com/lxisoft/filerepository/Contact.csv";
                BufferedReader br = new BufferedReader(new FileReader(csvFile));
-               int i=0;
+               int i=0;int j=1;
                while ((line = br.readLine()) != null)
                { 
                   //String[] datas= line.split(",",2); 
@@ -91,10 +92,13 @@ public class Filerepository
                    
                                      
                    String[] datas= line.split(","); 
-                   if(names.get(i).equals(datas[0]))
+                   if(names.equals(datas[i]))
                    {
-                       data[i++]=datas;
+                       data=datas;
+                       System.out.println(j+" : "+datas[0]+" : "+datas[1]);
                    }
+                   
+                   i++;
                 
                }
            }

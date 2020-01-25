@@ -9,6 +9,7 @@ public class Controller
 {
 	Filerepository filerepository=new Filerepository();
 	ArrayList<String> names = new ArrayList<String>(); 
+	ArrayList<Contact> Contacts = new ArrayList<Contact>(); 
 	public void activities()
 	{
 		View view=new View();
@@ -25,21 +26,20 @@ public class Controller
 			i++;
 		}
 	}
-	public String createNewContact()
+	public void createNewContact()
 	{
 		Contact contact=new Contact();
 		
 		Scanner scr=new Scanner(System.in);
-        System.out.println("write name :");
+        System.out.print("write name :");
         String name=scr.next();
-        System.out.println("write number :");
+        System.out.print("write number :");
         String number=scr.next();
         contact.setName(name);
         contact.setNumber(number);
         filerepository.writeFile(contact);
-        names.add(name);
-        //selectContact(name);
-        return names;
+       
+        
 	}
 	public void selectContact()
 	{
@@ -49,13 +49,18 @@ public class Controller
 		for ( Contact s : details)
 		{
 			System.out.print(i+" : "+s.getName()+"\n");
-			
+			names.add(s.getName());
 			i++;
 		}
 		System.out.println("Select Contact");
 		int num=scr.nextInt();
-		filerepository.readContact(names);
+			//System.out.println(names.get(--num));
+		filerepository.readContact(names.get(--num));
 
+		
+	}
+	public void editContact()
+	{
 		
 	}
 	
