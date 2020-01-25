@@ -1,0 +1,4 @@
+com\lxisoft\model\WordUnit.class
+com\lxisoft\repository\MysqlRepository.class
+com\lxisoft\servlet\AddWordServlet.class
+com\lxisoft\servlet\ShowAllWordServlet.class

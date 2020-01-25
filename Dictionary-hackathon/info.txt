@@ -1,9 +1,0 @@
-Oxford university asked you for a English-English(English-Malayalam will be an optional feaature) dictionary software. The dictionary should contain atleast 10 words and their meaning.
-By accessing through 'your url'/admin, user can log in as admin to add new words to the dictionary.
-
-Requirements:
-
-Use mysql as the database
-Use jsp and servlets for UI and access mysql database
-Maven project will be the ideal choice
-Configure users in database or users.xml file of tomcat
