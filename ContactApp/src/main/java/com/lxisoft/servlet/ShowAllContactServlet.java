@@ -6,6 +6,9 @@ import java.util.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.model.*;
 import com.lxisoft.domain.*;
+/**
+ *class: servlet for getting all contacts
+ */
 public class ShowAllContactServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException

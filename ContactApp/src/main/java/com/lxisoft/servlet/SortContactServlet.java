@@ -7,6 +7,9 @@ import com.lxisoft.domain.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.servlet.*;
 import com.lxisoft.model.*;
+/**
+ *class: servlet for sorting contacts
+ */
 public class SortContactServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
