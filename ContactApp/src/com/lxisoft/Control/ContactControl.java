@@ -58,8 +58,7 @@ public class ContactControl
 			{
 				case 1:editNewContact();break;
 				case 2:view.displayAllContact(contacts);isCheck=true;break;
-				case 3: break;
-				case 4: break;
+				case 3:deleteContacts();break;
 				default:view.invalidOption(); break;
 			}
 		}while(isCheck);
@@ -116,6 +115,7 @@ public class ContactControl
 	}	
 	public void deleteContacts()
 	{
-		contacts.remove();
+		contacts.remove(view.deleteContact());
+		filerepo.writeToFile(contacts);
 	}
 }

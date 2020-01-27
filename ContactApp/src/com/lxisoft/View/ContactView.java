@@ -50,9 +50,9 @@ public class ContactView
 		try
 		{
 			System.out.println("Contact Details");
+			Collections.sort(contacts);
 			for(int i=0; i<contacts.size(); i++)
-			{			
-
+			{	
 				System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
 			}
 		}
@@ -90,9 +90,11 @@ public class ContactView
 		Long p=sc.nextLong();
 		return p;
 	}
-	public void deleteContact()
+	public int deleteContact()
 	{
-
+		System.out.println("Which contact want to delete");
+		int e=sc.nextInt();
+		return e-1;
 	}
 }
 
