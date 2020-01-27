@@ -5,11 +5,14 @@ import com.lxisoft.domain.*;
 import java.util.*;
 import com.lxisoft.repository.*;
 import java.sql.*;
+import org.apache.log4j.Logger;
+
 /**
  *Data base repository class
  */
 public class DbRepository implements Repository
 {
+	static Logger log = Logger.getLogger(DbRepository.class);
 	Connection connection;
 	PreparedStatement ps;
 	PreparedStatement pd;
@@ -27,9 +30,12 @@ public class DbRepository implements Repository
 		{			
 			Class.forName("com.mysql.jdbc.Driver"); 
 			connection=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");
+			log.debug("jdbc driver connection");
+      		log.info("sql connected");
 		}
 		catch(ClassNotFoundException|SQLException e)
 		{
+			log.warn("sql exception"+e);
 			System.out.println(e);
 		}	
 	}
@@ -47,7 +53,7 @@ public class DbRepository implements Repository
 			s.executeUpdate("create table if not exists contactList (ID int,FIRST_NAME varchar(25),LAST_NAME varchar(25),NUMBER varchar(15))");
 			ps=connection.prepareStatement("insert into contactList (ID,FIRST_NAME,LAST_NAME,NUMBER) values(?,?,?,?)");
 			ResultSet rs=ps.executeQuery("select * from contactList");
-
+			log.debug("contactList is taken from database");
 			while(rs.next())
 			{
 				Contact contact=new Contact();
@@ -63,6 +69,7 @@ public class DbRepository implements Repository
 		catch(SQLException e)
 		{
 			System.out.println(e);
+			log.warn("sql exception"+e);
 		}	
 		return contactList;
 	}
@@ -84,6 +91,7 @@ public class DbRepository implements Repository
 		}
 		catch(SQLException e)
 		{
+			log.warn("sql exception"+e);
 			System.out.println(e);
 		}	
 	}
@@ -117,6 +125,7 @@ public class DbRepository implements Repository
 		}
 		catch(SQLException e)
 		{
+			log.warn("sql exception"+e);
 			System.out.println(e);
 		}	
 	}
@@ -130,7 +139,6 @@ public class DbRepository implements Repository
 		try
 		{
 			pu=connection.prepareStatement("update contactList set FIRST_NAME=?,LAST_NAME=?,NUMBER=? where ID=?");
-			System.out.println("updating conatact "+editModel.getContact().getFName()+" "+editModel.getContact().getLName());
 			pu.setString(1,tempEdit[0]);
 			pu.setString(2,tempEdit[1]);
 			pu.setString(3,tempEdit[2]);
@@ -139,6 +147,7 @@ public class DbRepository implements Repository
 		}
 		catch(SQLException e)
 		{
+			log.warn("sql exception"+e);
 			System.out.println(e);
 		}	
 	}
@@ -154,6 +163,7 @@ public class DbRepository implements Repository
 		}
 		catch(SQLException e)
 		{
+			log.warn("sql exception"+e);
 			System.out.println(e);
 		}	
 	}
@@ -183,6 +193,7 @@ public class DbRepository implements Repository
 		}
 		catch(SQLException e)
 		{
+			log.warn("sql exception"+e);
 			System.out.println(e);
 		}	
 		return searchList;
@@ -221,6 +232,7 @@ public class DbRepository implements Repository
 		}
 		catch(SQLException e)
 		{
+			log.warn("sql exception"+e);
 			System.out.println(e);
 		}	
 		return sortList;
