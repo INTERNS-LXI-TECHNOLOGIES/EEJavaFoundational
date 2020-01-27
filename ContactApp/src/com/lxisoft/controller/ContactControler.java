@@ -27,6 +27,13 @@ public class ContactControler
 					this.addNewContact();
 					isTrue = true;
 					break;
+				case 3:
+					this.searchContact();
+					isTrue = true;
+					break;
+				case 4:
+					System.exit(0);
+					break;
 				default :
 					view.wrongSelection();
 					isTrue = true;
@@ -38,8 +45,8 @@ public class ContactControler
 	{
 		try
 		{
-			//contacts.clear();
-			//contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			contacts.clear();
+			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
 			view.displayAllContacts(contacts);
 			boolean isTrue = false;
 			do
@@ -74,33 +81,43 @@ public class ContactControler
 	}
 	public void addNewContact()
 	{
-		//need to refactored.....
-		//check the arraylist is empty..
-		//if empty... add new object..
-		// if not... add Object...
+		contacts.clear();
+		String[] data = view.createNewContact();
+		contacts.add(new ContactModel());
+		for(int i=0;i<contacts.size();i++)
+		{
+			if((contacts.get(i).getId())==0)
+			{
+				contacts.get(i).setId(Integer.parseInt(data[0]));
+				contacts.get(i).setName(data[1]);
+				contacts.get(i).setPhoneNumber(Long.parseLong(data[2]));
+			}
+		}
+			fileReppo.writeToFileWithoutOverriding(contacts);
+			view.contactAddedMessage();
+	}
+	public void searchContact()
+	{
 		try
 		{
+			String name = view.contactSearch();
 			contacts.clear();
-			//contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
-			String[] data = view.createNewContact();
-			contacts.add(new ContactModel());
+			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
 			for(int i=0;i<contacts.size();i++)
 			{
-				if((contacts.get(i).getId())==0)
+				if(name.equals(contacts.get(i).getName()))
 				{
-					contacts.get(i).setId(Integer.parseInt(data[0]));
-					contacts.get(i).setName(data[1]);
-					contacts.get(i).setPhoneNumber(Long.parseLong(data[2]));
+					///// not completed...
+					//System.out.println("Contact Found");
+					view.viewContact(contacts.get(i));
 				}
 			}
-				fileReppo.writeToFileWithoutOverriding(contacts);
-				view.contactAddedMessage();
 		}
 		catch(Exception e)
 		{
-
+			e.printStackTrace();
+			view.fileNotFound();
 		}
-		
 	}
 	public void crudeOperation(ContactModel contact,int selectedContact)
 	{

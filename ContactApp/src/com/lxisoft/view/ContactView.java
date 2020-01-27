@@ -12,7 +12,7 @@ public class ContactView
 	}
 	public int selectOption()
 	{
-		System.out.println("Press ==> 1.Contacts  2.Add New Contact");
+		System.out.println("Press ==> 1.Contacts / 2.Add New Contact / 3.Search Contact / 4.Exit");
 		int select = scanner.nextInt();
 		return select;
 	}
@@ -88,6 +88,17 @@ public class ContactView
 		System.out.println("Number Updated...!!!");
 		return phone;
 	}
+	public String contactSearch()
+	{
+		System.out.print("Enter Contact Name For Search : ");
+		String name = scanner.nextLine();
+		name = scanner.nextLine();
+		return name;
+	}
+	public void noContactFoundMessage()
+	{
+		System.out.println("No Contacts Matched...!!!");
+	}
 	public void displayAllContacts(ArrayList<ContactModel> contacts)
 	{
 		int j = 1;
@@ -98,16 +109,5 @@ public class ContactView
 			System.out.printf("%-20.30s %-20.30s %-20.30s%n",j,contacts.get(i).getId(),contacts.get(i).getName());
 			j++;
 		}
-	}
-	public boolean addMoreContact()
-	{
-		boolean isTrue = false;
-		System.out.println("Press ==> 1.Add More Contact 2.Back");
-		int x = scanner.nextInt();
-		if(x==1)
-		{
-			isTrue = true;
-		}
-		return isTrue;
 	}
 }
