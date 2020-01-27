@@ -38,8 +38,8 @@ public class ContactControler
 	{
 		try
 		{
-			contacts.clear();
-			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			//contacts.clear();
+			//contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
 			view.displayAllContacts(contacts);
 			boolean isTrue = false;
 			do
@@ -78,20 +78,29 @@ public class ContactControler
 		//check the arraylist is empty..
 		//if empty... add new object..
 		// if not... add Object...
-		
-		String[] data = view.createNewContact();
-		contacts.add(new ContactModel());
-		for(int i=0;i<contacts.size();i++)
+		try
 		{
-			if((contacts.get(i).getId())==0)
+			contacts.clear();
+			//contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			String[] data = view.createNewContact();
+			contacts.add(new ContactModel());
+			for(int i=0;i<contacts.size();i++)
 			{
-				contacts.get(i).setId(Integer.parseInt(data[0]));
-				contacts.get(i).setName(data[1]);
-				contacts.get(i).setPhoneNumber(Long.parseLong(data[2]));
+				if((contacts.get(i).getId())==0)
+				{
+					contacts.get(i).setId(Integer.parseInt(data[0]));
+					contacts.get(i).setName(data[1]);
+					contacts.get(i).setPhoneNumber(Long.parseLong(data[2]));
+				}
 			}
+				fileReppo.writeToFileWithoutOverriding(contacts);
+				view.contactAddedMessage();
 		}
-		fileReppo.writeToFile(contacts);
-		view.contactAddedMessage();
+		catch(Exception e)
+		{
+
+		}
+		
 	}
 	public void crudeOperation(ContactModel contact,int selectedContact)
 	{

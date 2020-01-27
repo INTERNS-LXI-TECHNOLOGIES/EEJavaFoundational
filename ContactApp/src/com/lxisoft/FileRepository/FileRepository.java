@@ -46,6 +46,26 @@ public class FileRepository
 			e.printStackTrace();
 		}
 	}
+	public void writeToFileWithoutOverriding(ArrayList<ContactModel> contacts)
+	{
+		try
+		{
+			File contactFile = this.createNewFile();
+			FileWriter fw = new FileWriter(contactFile,true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			for(int i=0;i<contacts.size();i++)
+			{
+				bw.write(Integer.toString(contacts.get(i).getId())+","+contacts.get(i).getName()+","+Long.toString(contacts.get(i).getPhoneNumber()));
+				bw.newLine();
+			}
+			bw.flush();
+			bw.close();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 	public ArrayList<ContactModel> readFromFile(ArrayList<ContactModel> contacts,File file) throws Exception
 	{
 		FileReader fr = new FileReader(file);
