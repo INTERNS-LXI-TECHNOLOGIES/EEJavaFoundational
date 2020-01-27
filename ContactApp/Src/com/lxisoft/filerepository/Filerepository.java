@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.*;
 public class Filerepository
 {
-	public void writeFile(ArrayList<Contact> contact)
+	public void writeFile(Contact contact)
 	{
        // ArrayList<String> contacts = new ArrayList<String>(); 
 		String csvFile="/home/sanfar/Desktop/Contact app 2/Src/com/lxisoft/filerepository/Contact.csv";
@@ -74,12 +74,12 @@ public class Filerepository
         
         return data;     
 	}
-    public String[] readContact(String names)
+   /* public ArrayList<String> readContact(String names)
     {
-      //  ArrayList<Contact> data = new ArrayList<Contact>(); 
+      ArrayList<String> data = new ArrayList<String>(); 
        
         String line = "";
-        String[] data=new String[10];
+        //String[] data=new String[10];
        try{
          
                String csvFile = "/home/sanfar/Desktop/Contact app 2/Src/com/lxisoft/filerepository/Contact.csv";
@@ -87,17 +87,13 @@ public class Filerepository
                int i=0;int j=1;
                while ((line = br.readLine()) != null)
                { 
-                  //String[] datas= line.split(",",2); 
-                  
-                   
-                                     
-                   String[] datas= line.split(","); 
+                  String[] datas= line.split(",",2);                  
+                   //String[] datas= line.split(","); 
                    if(names.equals(datas[i]))
                    {
-                       data=datas;
+                       data.add(datas[i]);
                        System.out.println(j+" : "+datas[0]+" : "+datas[1]);
                    }
-                   
                    i++;
                 
                }
@@ -112,5 +108,5 @@ public class Filerepository
         }
         
         return data;    
-    }
+    }*/
 }

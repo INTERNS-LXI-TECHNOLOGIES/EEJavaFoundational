@@ -9,6 +9,7 @@ public class Controller
 {
 	Filerepository filerepository=new Filerepository();
 	ArrayList<String> names = new ArrayList<String>(); 
+	ArrayList<String> number = new ArrayList<String>(); 
 	ArrayList<Contact> Contacts = new ArrayList<Contact>(); 
 	public void activities()
 	{
@@ -29,7 +30,6 @@ public class Controller
 	public void createNewContact()
 	{
 		Contact contact=new Contact();
-		
 		Scanner scr=new Scanner(System.in);
         System.out.print("write name :");
         String name=scr.next();
@@ -43,25 +43,43 @@ public class Controller
 	}
 	public void selectContact()
 	{
-				Scanner scr=new Scanner(System.in);
+		Scanner scr=new Scanner(System.in);
 		ArrayList<Contact> details=filerepository.readFile();
 		int i=1;
 		for ( Contact s : details)
 		{
 			System.out.print(i+" : "+s.getName()+"\n");
 			names.add(s.getName());
+			number.add(s.getNumber());
 			i++;
 		}
 		System.out.println("Select Contact");
 		int num=scr.nextInt();
-			//System.out.println(names.get(--num));
-		filerepository.readContact(names.get(--num));
+		System.out.println(names.get(num-1)+" : "+number.get(num-1));
+		
 
 		
 	}
 	public void editContact()
 	{
-		
+		Scanner scr=new Scanner(System.in);
+		ArrayList<Contact> details=filerepository.readFile();
+		int i=1;
+		for ( Contact s : details)
+		{
+			System.out.print(i+" : "+s.getName()+"\n");
+			names.add(s.getName());
+			number.add(s.getNumber());
+			i++;
+		}
+		System.out.println("Select Contact");
+		int num=scr.nextInt();
+		System.out.println(names.get(num-1)+" : "+number.get(num-1));
+		System.out.println("Enter number : ");
+		String number=scr.next();
+		number.set(num-1,number);
+		filerepository.writeFile(contact);
+
 	}
 	
 
