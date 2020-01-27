@@ -36,6 +36,26 @@ public class FileRepository
 			e.printStackTrace();
 		}
 	}	
+	public void appendFile(ArrayList<ContactModel> contacts)
+	{
+		try
+		{
+			FileWriter fw = new FileWriter(file,true);
+			BufferedWriter bw = new BufferedWriter(fw);
+			for(int i=0; i<contacts.size(); i++)
+			{
+				bw.write(contacts.get(i).getId()+","+contacts.get(i).getName()+","+contacts.get(i).getPhoneNumber());  
+				bw.newLine();		
+			}
+			bw.flush();
+			bw.close();
+		}
+		catch(Exception e)
+		{
+			System.out.println(e+"Error eeeeeee");
+			e.printStackTrace();
+		}
+	}	
 	public ArrayList<ContactModel> readFromFile(ArrayList<ContactModel> contacts) throws Exception , IOException
 	{
 		FileReader fr = new FileReader(file);

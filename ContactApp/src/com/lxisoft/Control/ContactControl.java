@@ -59,13 +59,13 @@ public class ContactControl
 				case 1:editNewContact();break;
 				case 2:view.displayAllContact(contacts);isCheck=true;break;
 				case 3:deleteContacts();break;
+				case 4:searchContacts();break;
 				default:view.invalidOption(); break;
 			}
 		}while(isCheck);
 	}
 	public void addNewContact()
 	{
-		//int s=view.addToContact();
 		String[] d=view.addContactDetails();
 		contacts.add(new ContactModel());
 		for(int i=0;i<contacts.size();i++)
@@ -77,7 +77,7 @@ public class ContactControl
 				contacts.get(i).setPhoneNumber(Long.parseLong(d[2]));
 			}
 		}
-		filerepo.writeToFile(contacts);	
+		filerepo.appendFile(contacts);	
 	}			
 	public void editNewContact()
 	{
@@ -118,4 +118,8 @@ public class ContactControl
 		contacts.remove(view.deleteContact());
 		filerepo.writeToFile(contacts);
 	}
+	public void searchContacts()
+	{
+		view.searchContact();
+	} 
 }

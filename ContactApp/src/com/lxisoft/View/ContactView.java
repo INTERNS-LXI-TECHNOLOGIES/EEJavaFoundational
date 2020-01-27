@@ -16,7 +16,7 @@ public class ContactView
 	public int contactDetails()
 	{
 		System.out.println("Choose a option");
-		System.out.println("\n1.Edit \n2.View\n3.Delete \n4.Back To Main Menu");
+		System.out.println("\n1.Edit \n2.View\n3.Delete \n4.Search \n5.Back To Main Menu");
 		int a = sc.nextInt();
 		return a;
 	}	
@@ -95,6 +95,12 @@ public class ContactView
 		System.out.println("Which contact want to delete");
 		int e=sc.nextInt();
 		return e-1;
+	}
+	public String searchContact()
+	{
+		System.out.println("Select a contact");
+		String c=sc.next();
+		return c;
 	}
 }
 
