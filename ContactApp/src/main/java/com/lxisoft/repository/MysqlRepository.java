@@ -3,11 +3,13 @@ import java.sql.*;
 import java.util.*;
 import com.lxisoft.domain.Contact;
 import com.lxisoft.model.*;
+import org.apache.log4j.Logger;
 /**
  *class: repository for mysql operation
  */
 public class MysqlRepository
 {
+	final static Logger logger = Logger.getLogger(MysqlRepository.class);
 	List <Contact> contactList=new ArrayList<Contact>();
 	Connection con=null;
 	PreparedStatement ps=null;
@@ -92,6 +94,7 @@ public class MysqlRepository
 	public int getContactId()
 	{
 		int id=1;
+
 		try
 		{
 			Statement s=con.createStatement();
@@ -141,6 +144,12 @@ public class MysqlRepository
 	 */
 	public Contact findContactById(int n)
 	{
+		logger.warn("This is warn : " + n);
+		if(logger.isDebugEnabled()){
+			logger.debug("This is debug : " +n);
+		}
+		
+		logger.error("This is error : " + n);
 		
 		contactList=findAllContact();
 		Contact contact=new Contact();
