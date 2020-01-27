@@ -101,16 +101,20 @@ public class ContactControler
 		try
 		{
 			String name = view.contactSearch();
+			boolean isTrue = false;
 			contacts.clear();
 			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
 			for(int i=0;i<contacts.size();i++)
 			{
 				if(name.equals(contacts.get(i).getName()))
 				{
-					///// not completed...
-					//System.out.println("Contact Found");
 					view.viewContact(contacts.get(i));
+					isTrue =true;
 				}
+			}
+			if(!isTrue)
+			{
+				view.noContactFoundMessage();
 			}
 		}
 		catch(Exception e)
