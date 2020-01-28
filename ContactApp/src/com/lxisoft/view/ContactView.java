@@ -49,17 +49,16 @@ public class ContactView
 		System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
 		System.out.printf("%-20.30s %-20.30s %-20.30s%n",contact.getId(),contact.getName(),contact.getPhoneNumber());	
 	}
-	public String[] createNewContact()
+	public ContactModel createNewContact(ContactModel contact)
 	{
-		String[] data = new String[3];
 		System.out.println("Enter contactID");
-		data[0] = scanner.next();
+		contact.setId(scanner.nextInt());
 		System.out.println("Enter Contact Name");
-		data[1] = scanner.nextLine();
-		data[1] = scanner.nextLine();
+		contact.setName(scanner.nextLine());
+		contact.setName(scanner.nextLine());
 		System.out.println("Enter Contact Number");
-		data[2] = scanner.next();
-		return data;
+		contact.setPhoneNumber(scanner.nextLong());
+		return contact;
 	}
 	public int selectContact()
 	{
@@ -73,20 +72,20 @@ public class ContactView
 		int select = scanner.nextInt();
 		return select;
 	}
-	public String enterName()
+	public ContactModel enterName(ContactModel contact)
 	{
 		System.out.println("Enter Name");
-		String name = scanner.nextLine();
-		name = scanner.nextLine();
+		contact.setName(scanner.nextLine());
+		contact.setName(scanner.nextLine());
 		System.out.println("Name Updated...!!!");
-		return name;
+		return contact;
 	}
-	public Long enterPhoneNumber()
+	public ContactModel enterPhoneNumber(ContactModel contact)
 	{
 		System.out.println("Enter PhoneNumber");
-		Long phone = scanner.nextLong();
+		contact.setPhoneNumber(scanner.nextLong());
 		System.out.println("Number Updated...!!!");
-		return phone;
+		return contact;
 	}
 	public String contactSearch()
 	{

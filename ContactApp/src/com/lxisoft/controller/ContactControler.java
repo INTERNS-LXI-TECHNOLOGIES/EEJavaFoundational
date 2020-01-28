@@ -28,7 +28,8 @@ public class ContactControler
 					isTrue = true;
 					break;
 				case 3:
-					this.searchContact();
+					//this.searchContact();
+					this.searchContactsUsingSingleCharecter();
 					isTrue = true;
 					break;
 				case 4:
@@ -82,15 +83,12 @@ public class ContactControler
 	public void addNewContact()
 	{
 		contacts.clear();
-		String[] data = view.createNewContact();
 		contacts.add(new ContactModel());
 		for(int i=0;i<contacts.size();i++)
 		{
 			if((contacts.get(i).getId())==0)
 			{
-				contacts.get(i).setId(Integer.parseInt(data[0]));
-				contacts.get(i).setName(data[1]);
-				contacts.get(i).setPhoneNumber(Long.parseLong(data[2]));
+				view.createNewContact(contacts.get(i));
 			}
 		}
 			fileReppo.writeToFileWithoutOverriding(contacts);
@@ -101,6 +99,7 @@ public class ContactControler
 		try
 		{
 			String name = view.contactSearch();
+			this.contactSearching();
 			boolean isTrue = false;
 			contacts.clear();
 			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
@@ -123,9 +122,43 @@ public class ContactControler
 			view.fileNotFound();
 		}
 	}
+	public void searchContactsUsingSingleCharecter()
+	{
+		try
+		{
+			boolean isTrue = false;
+			String name = view.contactSearch();
+			String[] splitName = name.split("");
+			this.contactSearching();
+			contacts.clear();
+			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
+			for(ContactModel test : contacts)
+			{
+				String splitObjectName = test.getName();
+				String[] splitCheck = splitObjectName.split("");
+				if(splitName[0].equals(splitCheck[0]))
+				{
+					//if(splitName[1].equals(splitCheck[1]))
+					//{
+					System.out.printf("%-20.30s %-20.30s %-20.30s%n",test.getId(),test.getName(),test.getPhoneNumber());
+					isTrue = true;
+					//}
+				}
+			}
+			if(!isTrue)
+			{
+				view.noContactFoundMessage();
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+			view.fileNotFound();
+		}
+	}
 	public void crudeOperation(ContactModel contact,int selectedContact)
 	{
-	// refactor this method....
 		boolean isTrue = false;
 		do
 		{
@@ -176,14 +209,12 @@ public class ContactControler
 	}
 	public void editName(ContactModel contact)
 	{
-		String name = view.enterName();
-		contact.setName(name);
+		contact = view.enterName(contact);
 		fileReppo.writeToFile(contacts);
 	}
 	public void editPhoneNumber(ContactModel contact)
 	{
-		Long phoneNumber = view.enterPhoneNumber();
-		contact.setPhoneNumber(phoneNumber);
+		contact = view.enterPhoneNumber(contact);
 		fileReppo.writeToFile(contacts);
 	}
 	public void deleteContact(int selectedContact)
@@ -191,5 +222,22 @@ public class ContactControler
 		contacts.remove(selectedContact);
 		view.contactDeleteMessage();
 		fileReppo.writeToFile(contacts);
+	}
+	public void contactSearching()
+	{
+		try
+		{
+			System.out.print("Searching ");
+			for(int i=0;i<3;i++)
+			{
+				System.out.print(".");
+				Thread.sleep(600l);
+			}
+			System.out.println("");
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
