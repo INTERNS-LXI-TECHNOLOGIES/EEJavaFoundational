@@ -9,7 +9,7 @@ public class ContactView
 	public int selectYourChoice()
 	{
 		System.out.println("Contact App");
-		System.out.println("\n1.Contacts \n2.Create new Contact \n3.Exit");
+		System.out.println("\n1.Contacts \n2.Create new Contact \n 3.Search \n4.Exit");
 		int i = sc.nextInt();
 		return i;
 	}
@@ -33,17 +33,16 @@ public class ContactView
 		System.out.println("\n1.Add");
 		int p=sc.nextInt();
 		return p;
-	}
-	public String[] addContactDetails()
+	}	
+	public ContactModel addContactDetails(ContactModel contact)
 	{		
-		String[] s=new String[3]; 
 		System.out.println("Contact id");
-		s[0]=sc.next();
+		contact.setId(sc.nextInt());
 		System.out.println("Enter contact name");
-		s[1]=sc.next();
+		contact.setName(sc.next()); 
 		System.out.println("Phone number");
-		s[2]=sc.next();	
-		return s;			        	
+		contact.setPhoneNumber(sc.nextLong());
+		return contact;		        	
 	}
 	public void displayAllContact(ArrayList<ContactModel> contacts)
 	{
@@ -60,10 +59,6 @@ public class ContactView
 		{
 			System.out.println(e.getMessage());
 		}
-	}
-	public void viewAllContact()
-	{
-		
 	}
 	public int editContact(ArrayList<ContactModel> contacts)
 	{
@@ -106,7 +101,13 @@ public class ContactView
 	{
 		System.out.println("Contact exist");
 	}
-	
+	public String searchElement()
+	{
+		System.out.println("Enter your search");
+		String m=sc.next();
+		return m;
+	}
+
 }
 
 		

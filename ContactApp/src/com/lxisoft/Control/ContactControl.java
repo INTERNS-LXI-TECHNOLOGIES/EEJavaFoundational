@@ -22,8 +22,9 @@ public class ContactControl
 				switch (m)
 				{
 					case 1:	selectAllContact();isTest=true;break;
-					case 2: addNewContact();isTest=true;break;				
-					case 3: System.exit(0); break;	
+					case 2: addNewContact();isTest=true;break;	
+					case 3:searchElements();break;			
+					case 4: System.exit(0); break;	
 					default: view.invalidOption();break;
 				}
 			}while(isTest);
@@ -66,16 +67,13 @@ public class ContactControl
 	}
 	public void addNewContact()
 	{
-		String[] d=view.addContactDetails();
 		contacts.clear();
 		contacts.add(new ContactModel());
 		for(int i=0;i<contacts.size();i++)
 		{
 			if(contacts.get(i).getId()==0)
 			{
-				contacts.get(i).setId(Integer.parseInt(d[0]));
-				contacts.get(i).setName(d[1]);
-				contacts.get(i).setPhoneNumber(Long.parseLong(d[2]));
+				view.addContactDetails(contacts.get(i));
 			}
 		}
 		filerepo.appendFile(contacts);	
@@ -140,9 +138,17 @@ public class ContactControl
 		catch (Exception e)
 		{
 			System.out.println(e);
-		}
-	    
-	
+		}	
 	} 
+	public void searchElements()
+	{
+		String s=view.searchElement();
+		//String[] a=s.split(2);
+		for(int i=0;i<contacts.size();i++)
+		{
+			System.out.println(contacts.get(i).getName());	
+		}
+
+	}
 	
 }
