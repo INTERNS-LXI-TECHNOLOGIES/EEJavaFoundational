@@ -44,9 +44,9 @@ public class Localizer
 	{
 	
         Locale.setDefault(new Locale(lang,"IN"));
-	ResourceBundle r=ResourceBundle.getBundle("messages",new UTF8Control());
-	String s=r.getString(w);
-    System.out.println(s);
-	return s;
+    	ResourceBundle r=ResourceBundle.getBundle("messages",new UTF8Control());
+    	String s=r.getString(w);
+        System.out.println(s);
+    	return s;
 	}
 }

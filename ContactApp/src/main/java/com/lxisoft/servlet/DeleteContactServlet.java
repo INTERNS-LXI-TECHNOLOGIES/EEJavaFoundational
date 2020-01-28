@@ -4,6 +4,9 @@ import javax.servlet.http.*;
 import java.io.*;
 import com.lxisoft.domain.*;
 import com.lxisoft.repository.*;
+/**
+ *class: servlet for deleting contact
+ */
 public class DeleteContactServlet extends HttpServlet
 {
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException

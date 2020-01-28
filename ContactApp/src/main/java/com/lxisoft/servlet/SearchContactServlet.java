@@ -5,6 +5,9 @@ import java.io.*;
 import java.util.*;
 import com.lxisoft.domain.*;
 import com.lxisoft.repository.*;
+/**
+ *class: servlet for searching contact
+ */
 public class SearchContactServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException

@@ -5,6 +5,9 @@ import java.io.*;
 import java.util.*;
 import com.lxisoft.domain.*;
 import com.lxisoft.repository.*;
+/**
+ *class: servlet for logout 
+ */
 public class LogoutServlet extends HttpServlet
 {
 	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
