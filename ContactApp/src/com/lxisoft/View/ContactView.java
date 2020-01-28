@@ -98,10 +98,15 @@ public class ContactView
 	}
 	public String searchContact()
 	{
-		System.out.println("Select a contact");
+		System.out.println("Enter a name");
 		String c=sc.next();
 		return c;
 	}
+	public void contactExist()
+	{
+		System.out.println("Contact exist");
+	}
+	
 }
 
 		

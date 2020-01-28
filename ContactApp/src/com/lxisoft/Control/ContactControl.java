@@ -67,6 +67,7 @@ public class ContactControl
 	public void addNewContact()
 	{
 		String[] d=view.addContactDetails();
+		contacts.clear();
 		contacts.add(new ContactModel());
 		for(int i=0;i<contacts.size();i++)
 		{
@@ -120,6 +121,28 @@ public class ContactControl
 	}
 	public void searchContacts()
 	{
-		view.searchContact();
+		try
+		{
+			String n=view.searchContact();
+			contacts.clear();
+			contacts=filerepo.readFromFile(contacts);
+			for(int i=0;i<contacts.size();i++)
+			{
+				if(n.equals(contacts.get(i).getName()))
+				{
+					view.contactExist();
+					System.out.println(contacts.get(i).getName());		
+					System.out.println(contacts.get(i).getPhoneNumber());
+				}
+				
+			}
+		}
+		catch (Exception e)
+		{
+			System.out.println(e);
+		}
+	    
+	
 	} 
+	
 }
