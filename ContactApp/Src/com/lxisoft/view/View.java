@@ -46,5 +46,8 @@ public void displayContacts()
 		details.setNumber(number);
 		return num;
 	}
+	public void deleteContact()
+	{
+	}
 	
 }

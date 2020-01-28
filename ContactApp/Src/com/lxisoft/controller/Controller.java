@@ -95,6 +95,8 @@ public class Controller
 		filerepository.writeFile(details);
 
 	}
-	
+	public void deleteContact()
+	{
+	}
 
 }
