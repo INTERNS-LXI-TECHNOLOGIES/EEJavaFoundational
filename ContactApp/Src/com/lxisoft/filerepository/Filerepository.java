@@ -7,7 +7,7 @@ import java.util.*;
 import java.util.*;
 public class Filerepository
 {
-	public void writeFile(Contact contact)
+	public void writeFile(ArrayList<Contact> contacts)
 	{
        // ArrayList<String> contacts = new ArrayList<String>(); 
 		String csvFile="/home/sanfar/Desktop/Contact app 2/Src/com/lxisoft/filerepository/Contact.csv";
@@ -15,13 +15,17 @@ public class Filerepository
         FileWriter fr = null;
         BufferedWriter br = null;
        
-        String name=contact.getName();
-        String number=contact.getNumber();
+       
         try{
-            fr = new FileWriter(csvFile,true);
+
+            fr = new FileWriter(csvFile,false);
             br = new BufferedWriter(fr);
-            br.write(name+","+number);
-            br.newLine();    
+            for(int i=0;i<contacts.size();i++)
+            {
+                br.write(contacts.get(i).getName()+","+contacts.get(i).getNumber());
+                br.newLine();    
+            }
+             
         }
         catch (IOException e) 
         {

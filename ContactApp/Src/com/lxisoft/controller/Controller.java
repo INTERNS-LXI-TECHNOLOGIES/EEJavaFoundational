@@ -8,13 +8,34 @@ import java.util.*;
 public class Controller
 {
 	Filerepository filerepository=new Filerepository();
-	ArrayList<String> names = new ArrayList<String>(); 
-	ArrayList<String> number = new ArrayList<String>(); 
-	ArrayList<Contact> Contacts = new ArrayList<Contact>(); 
-	public void activities()
+	ArrayList<Contact> contacts = new ArrayList<Contact>(); 
+	
+	Contact contact=new Contact();
+	View view=new View();
+	//int a = this.activities();
+	public int activities()
 	{
-		View view=new View();
-		view.display();
+		Scanner scr=new Scanner(System.in);
+		System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact \n4 : Edit contact");
+		int select=scr.nextInt();
+		Controller controller=new Controller();
+/*		controller=null;
+*/		switch(select)
+		{
+			case 1:
+					displayContacts();
+					break;
+			case 2:
+					createNewContact();
+					break;
+			case 3:
+					selectContact();
+					break;	
+			case 4:
+					editContact();
+					break;
+		}
+		return 0;
 	}
 	public void displayContacts()
 	{
@@ -29,56 +50,49 @@ public class Controller
 	}
 	public void createNewContact()
 	{
-		Contact contact=new Contact();
-		Scanner scr=new Scanner(System.in);
-        System.out.print("write name :");
-        String name=scr.next();
-        System.out.print("write number :");
-        String number=scr.next();
-        contact.setName(name);
-        contact.setNumber(number);
-        filerepository.writeFile(contact);
-       
+		
+		
+		String[]data=view.createNewContact();
+		contacts.add(new Contact());
+		for(int i=0;i<contacts.size();i++)
+		{
+			if(contacts.get(i).getName()==null)
+			{
+				contacts.get(i).setName(data[0]);
+        		contacts.get(i).setNumber(data[1]);
+			}
+			
+		}
+		
+        filerepository.writeFile(contacts);
         
 	}
 	public void selectContact()
 	{
-		Scanner scr=new Scanner(System.in);
 		ArrayList<Contact> details=filerepository.readFile();
 		int i=1;
-		for ( Contact s : details)
+		for(int j=0;j<details.size();j++)
 		{
-			System.out.print(i+" : "+s.getName()+"\n");
-			names.add(s.getName());
-			number.add(s.getNumber());
+			System.out.print(i+" : "+details.get(j).getName()+" : "+details.get(j).getNumber()+"\n");
 			i++;
 		}
-		System.out.println("Select Contact");
-		int num=scr.nextInt();
-		System.out.println(names.get(num-1)+" : "+number.get(num-1));
-		
+		int num=view.selectContact();
+			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
 
-		
 	}
 	public void editContact()
 	{
-		Scanner scr=new Scanner(System.in);
 		ArrayList<Contact> details=filerepository.readFile();
 		int i=1;
-		for ( Contact s : details)
+		for(int k=0;k<details.size();k++)
 		{
-			System.out.print(i+" : "+s.getName()+"\n");
-			names.add(s.getName());
-			number.add(s.getNumber());
+			System.out.print(i+" : "+details.get(k).getName()+" : "+details.get(k).getNumber()+"\n");
 			i++;
 		}
-		System.out.println("Select Contact");
-		int num=scr.nextInt();
-		System.out.println(names.get(num-1)+" : "+number.get(num-1));
-		System.out.println("Enter number : ");
-		String number=scr.next();
-		number.set(num-1,number);
-		filerepository.writeFile(contact);
+		int num=view.selectContact();
+			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
+			view. editContact(details.get(num-1));
+		filerepository.writeFile(details);
 
 	}
 	

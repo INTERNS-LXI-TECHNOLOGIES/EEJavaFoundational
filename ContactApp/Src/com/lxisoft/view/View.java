@@ -1,31 +1,50 @@
 package com.lxisoft.view;
 import java.util.Scanner;
 import com.lxisoft.controller.*;
+import com.lxisoft.contact.Contact;
+import com.lxisoft.filerepository.Filerepository;
+
+import java.util.*;
 public class View
 {
-	public void display()
+	Filerepository filerepository=new Filerepository();
+	Scanner scr=new Scanner(System.in);
+public void displayContacts()
 	{
-		
-		Scanner scr=new Scanner(System.in);
-		System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact");
-		int select=scr.nextInt();
-		Controller controller=new Controller();
-/*		controller=null;
-*/		switch(select)
+		ArrayList<Contact> details=filerepository.readFile();
+		int i=1;
+		for ( Contact s : details)
 		{
-			case 1:
-					controller.displayContacts();
-					break;
-			case 2:
-					controller.createNewContact();
-					break;
-			case 3:
-					controller.selectContact();
-					break;	
-			case 4:
-					controller.editContact();
-					break;
+			System.out.print(i+" : "+s.getName());
+			System.out.println(s.getNumber());
+			i++;
 		}
+	}
+	public String[] createNewContact()
+	{
+		String[]data=new String[2];
+        System.out.print("write name :");
+        data[0]=scr.next();
+        System.out.print("write number :");
+        data[1]=scr.next();
+        return data;
+       
+        
+	}
+	public int selectContact()
+	{
+		System.out.println("Select Contact");
+		int num=scr.nextInt();
+		return num;
+	}
+	public int editContact(Contact details)
+	{
+		System.out.println("Select Contact");
+		int num=scr.nextInt();
+		System.out.println("enter number");
+		String number=scr.next();
+		details.setNumber(number);
+		return num;
 	}
 	
 }
