@@ -1,4 +1,4 @@
-package com.lxisoft.FileRepository;
+package com.lxisoft.Repository;
 import com.lxisoft.model.ContactModel;
 import java.util.*;
 import java.io.*;

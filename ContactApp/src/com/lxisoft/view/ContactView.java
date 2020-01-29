@@ -49,6 +49,14 @@ public class ContactView
 		System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
 		System.out.printf("%-20.30s %-20.30s %-20.30s%n",contact.getId(),contact.getName(),contact.getPhoneNumber());	
 	}
+	public void contactHeading()
+	{
+		System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
+	}
+	public void contactData(ContactModel contact)
+	{
+		System.out.printf("%-20.30s %-20.30s %-20.30s%n",contact.getId(),contact.getName(),contact.getPhoneNumber());	
+	}
 	public ContactModel createNewContact(ContactModel contact)
 	{
 		System.out.println("Enter contactID");

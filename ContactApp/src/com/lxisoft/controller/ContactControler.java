@@ -1,8 +1,9 @@
 package com.lxisoft.controller;
 import com.lxisoft.view.ContactView;
 import com.lxisoft.model.ContactModel;
-import com.lxisoft.FileRepository.FileRepository;
-import java.util.regex.*;  
+import com.lxisoft.Repository.FileRepository;
+import com.lxisoft.Repository.SqlRepository;
+import java.util.regex.*;
 import java.util.*;
 import java.io.*;
 public class ContactControler
@@ -29,8 +30,7 @@ public class ContactControler
 					isTrue = true;
 					break;
 				case 3:
-					//this.searchContact();
-					this.searchContactsUsingSingleCharecter();
+					this.searchContact();
 					isTrue = true;
 					break;
 				case 4:
@@ -99,56 +99,22 @@ public class ContactControler
 	{
 		try
 		{
-			String name = view.contactSearch();
-			this.contactSearching();
 			boolean isTrue = false;
-			contacts.clear();
-			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
-			for(int i=0;i<contacts.size();i++)
-			{
-				if(name.equals(contacts.get(i).getName()))
-				{
-					view.viewContact(contacts.get(i));
-					isTrue =true;
-				}
-			}
-			if(!isTrue)
-			{
-				view.noContactFoundMessage();
-			}
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-			view.fileNotFound();
-		}
-	}
-	public void searchContactsUsingSingleCharecter()
-	{
-		try
-		{
-			boolean isTrue = false;
-			
 			String name = view.contactSearch();
-			int n = name.length();
 			Pattern p = Pattern.compile(name);
-			//String[] splitName = name.split("");
 			this.contactSearching();
 			contacts.clear();
 			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
-			System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
+			view.contactHeading();
 			for(ContactModel test : contacts)
 			{
-				String splitObjectName = test.getName();
-				String[] test1 = splitObjectName.split("",n);
-				System.out.println("Split Name : "+test1[0]);
-				// represents single character  
+				String splitObjectName = test.getName(); 
 				Matcher m = p.matcher(splitObjectName);
-				//boolean b = m.matches();
-				System.out.println("Boolean : "+m.matches());
-				if(m.matches())
+				boolean isMatch = m.find();
+				if(isMatch)
 				{
-					System.out.printf("%-20.30s %-20.30s %-20.30s%n",test.getId(),test.getName(),test.getPhoneNumber());
+					view.contactData(test);
+					isTrue = true;
 				}
 			}
 			if(!isTrue)
