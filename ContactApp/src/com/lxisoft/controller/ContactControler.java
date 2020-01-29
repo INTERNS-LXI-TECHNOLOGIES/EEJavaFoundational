@@ -2,6 +2,7 @@ package com.lxisoft.controller;
 import com.lxisoft.view.ContactView;
 import com.lxisoft.model.ContactModel;
 import com.lxisoft.FileRepository.FileRepository;
+import java.util.regex.*;  
 import java.util.*;
 import java.io.*;
 public class ContactControler
@@ -127,8 +128,11 @@ public class ContactControler
 		try
 		{
 			boolean isTrue = false;
+			
 			String name = view.contactSearch();
-			String[] splitName = name.split("");
+			int n = name.length();
+			Pattern p = Pattern.compile(name);
+			//String[] splitName = name.split("");
 			this.contactSearching();
 			contacts.clear();
 			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
@@ -136,14 +140,15 @@ public class ContactControler
 			for(ContactModel test : contacts)
 			{
 				String splitObjectName = test.getName();
-				String[] splitCheck = splitObjectName.split("");
-				if(splitName[0].equals(splitCheck[0]))
+				String[] test1 = splitObjectName.split("",n);
+				System.out.println("Split Name : "+test1[0]);
+				// represents single character  
+				Matcher m = p.matcher(splitObjectName);
+				//boolean b = m.matches();
+				System.out.println("Boolean : "+m.matches());
+				if(m.matches())
 				{
-					//if(splitName[1].equals(splitCheck[1]))
-					//{
 					System.out.printf("%-20.30s %-20.30s %-20.30s%n",test.getId(),test.getName(),test.getPhoneNumber());
-					isTrue = true;
-					//}
 				}
 			}
 			if(!isTrue)
@@ -154,7 +159,6 @@ public class ContactControler
 		catch(Exception e)
 		{
 			e.printStackTrace();
-			view.fileNotFound();
 		}
 	}
 	public void crudeOperation(ContactModel contact,int selectedContact)
@@ -230,8 +234,9 @@ public class ContactControler
 			System.out.print("Searching ");
 			for(int i=0;i<3;i++)
 			{
-				System.out.print(".");
 				Thread.sleep(600l);
+				System.out.print(".");
+
 			}
 			System.out.println("");
 		}
