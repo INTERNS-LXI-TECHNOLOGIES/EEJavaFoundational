@@ -9,14 +9,14 @@ public class ContactView
 	public int selectYourChoice()
 	{
 		System.out.println("Contact App");
-		System.out.println("\n1.Contacts \n2.Create new Contact \n 3.Search \n4.Exit");
+		System.out.println("\n1.Contacts \n2.Create new Contact \n3.Search \n4.Exit");
 		int i = sc.nextInt();
 		return i;
 	}
 	public int contactDetails()
 	{
 		System.out.println("Choose a option");
-		System.out.println("\n1.Edit \n2.View\n3.Delete \n4.Search \n5.Back To Main Menu");
+		System.out.println("\n1.Edit \n2.View \n3.Delete \n4.Search \n5.Back To Main Menu");
 		int a = sc.nextInt();
 		return a;
 	}	
@@ -27,6 +27,10 @@ public class ContactView
 	public void noContactFound()
 	{
 		System.out.println("No Contact Found");
+	}
+	public void fileNotFound()
+	{
+		System.out.println("File not found");
 	}
 	public int addToContact()
 	{
