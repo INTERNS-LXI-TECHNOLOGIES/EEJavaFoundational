@@ -126,7 +126,7 @@ public class ContactControl
 			contacts=filerepo.readFromFile(contacts);
 			for(int i=0;i<contacts.size();i++)
 			{
-				if(n.equals(contacts.get(i).getName()))
+				if(n.equals(contacts.get(i).getName())) 
 				{
 					view.contactExist();
 					System.out.println(contacts.get(i).getName());		
@@ -143,21 +143,28 @@ public class ContactControl
 	{
 		try
 		{
-			String a=view.searchElement();
-			String[] s=a.split("");		
+			String name=view.searchElement();
+			String[] s=name.split("");	
+			contacts.clear();	
 			contacts = filerepo.readFromFile(contacts);
-			for(int i=0;i<contacts.size();i++)
+			System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
+			for(ContactModel t : contacts)
 			{	
-				if(a.equals(contacts.get(i).getName()))
+				String a =t.getName();
+				String[] sc =a.split("");
+				if(s[0].equals(sc[0]))
 				{
-					System.out.printf("\n"+contacts.get(i).getName());
+					System.out.printf("%-20.30s %-20.30s %-20.30s%n",t.getId(),t.getName(),t.getPhoneNumber());
 				}
+				
 			}		
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();			
+			e.printStackTrace();	
+			view.fileNotFound();		
+		
 		}
 	} 
-	
+			
 }
