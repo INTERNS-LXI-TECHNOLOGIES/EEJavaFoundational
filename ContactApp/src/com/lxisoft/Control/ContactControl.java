@@ -2,13 +2,17 @@ package com.lxisoft.Control;
 import com.lxisoft.View.ContactView;
 import com.lxisoft.Model.ContactModel;
 import com.lxisoft.Repository.FileRepository;
+import com.lxisoft.Repository.SqlRepository;
 import java.util.Scanner;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 public class ContactControl
 {
 	ContactView view = new ContactView();
 	ContactModel model = new ContactModel();
 	FileRepository filerepo = new FileRepository();
+	SqlRepository sqlrepo = new SqlRepository();
 	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
 	public void contactMenu()
 	{
@@ -77,6 +81,7 @@ public class ContactControl
 			}
 		}
 		filerepo.appendFile(contacts);	
+		sqlrepo.createTable();
 	}			
 	public void editNewContact()
 	{
@@ -139,10 +144,11 @@ public class ContactControl
 			System.out.println(e);
 		}	
 	} 
-	public void searchElements()
+	/*public void searchElements()
 	{
 		try
 		{
+			boolean isTest = false;
 			String name=view.searchElement();
 			String[] s=name.split("");	
 			contacts.clear();	
@@ -155,16 +161,52 @@ public class ContactControl
 				if(s[0].equals(sc[0]))
 				{
 					System.out.printf("%-20.30s %-20.30s %-20.30s%n",t.getId(),t.getName(),t.getPhoneNumber());
+					isTest=true;
 				}
 				
-			}		
+			}	
+			if(!isTest)
+			{
+				view.fileNotFound();
+			}	
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();	
-			view.fileNotFound();		
+			e.printStackTrace();		
+		
+		}
+	} */
+	public void searchElements()
+	{
+		try
+		{
+			boolean isTest = false;
+			String name=view.searchElement();
+			contacts.clear();
+			Pattern p=Pattern.compile(name);			
+			contacts = filerepo.readFromFile(contacts);
+			System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
+			for(ContactModel t : contacts)
+			{	
+				String n=t.getName();
+				Matcher m=p.matcher(n);	
+				if(m.find())
+				{
+					System.out.printf("%-20.30s %-20.30s %-20.30s%n",t.getId(),t.getName(),t.getPhoneNumber());
+					isTest=true;
+				}
+				
+			}	
+			if(!isTest)
+			{
+				view.fileNotFound();
+			}	
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();		
 		
 		}
 	} 
-			
+	  			
 }
