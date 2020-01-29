@@ -44,10 +44,14 @@ public void displayContacts()
 		System.out.println("enter number");
 		String number=scr.next();
 		details.setNumber(number);
+		
 		return num;
 	}
-	public void deleteContact()
+	public int deleteContact()
 	{
+		System.out.println("Select Contact");
+		int num=scr.nextInt();
+		return num;
 	}
 	
 }

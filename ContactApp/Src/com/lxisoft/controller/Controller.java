@@ -16,7 +16,7 @@ public class Controller
 	public int activities()
 	{
 		Scanner scr=new Scanner(System.in);
-		System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact \n4 : Edit contact");
+		System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact \n4 : Edit contact \n5 : Delete Contact");
 		int select=scr.nextInt();
 		Controller controller=new Controller();
 /*		controller=null;
@@ -34,6 +34,9 @@ public class Controller
 			case 4:
 					editContact();
 					break;
+			case 5:
+					deleteContact();
+					break;		
 		}
 		return 0;
 	}
@@ -89,14 +92,29 @@ public class Controller
 			System.out.print(i+" : "+details.get(k).getName()+" : "+details.get(k).getNumber()+"\n");
 			i++;
 		}
-		int num=view.selectContact();
+			int num=view.selectContact();
 			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
+		for(int j=0;j<details.size();j++)
+		{
+			details.remove(j);
+		}
 			view. editContact(details.get(num-1));
-		filerepository.writeFile(details);
+			filerepository.writeFile(details);
 
 	}
 	public void deleteContact()
 	{
+		ArrayList<Contact> details=filerepository.readFile();
+		int i=1;
+		for(int k=0;k<details.size();k++)
+		{
+			System.out.print(i+" : "+details.get(k).getName()+" : "+details.get(k).getNumber()+"\n");
+			i++;
+		}
+			int num=view.selectContact();
+			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
+			details.remove(num-1);
+			filerepository.writeFile(details);
 	}
 
 }
