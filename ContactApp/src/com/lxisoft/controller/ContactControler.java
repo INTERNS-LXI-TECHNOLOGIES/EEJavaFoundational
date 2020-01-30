@@ -49,7 +49,8 @@ public class ContactControler
 		try
 		{
 			contacts.clear();
-			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			//contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			contacts = sqlReppo.readFromDatabase(contacts);
 			view.displayAllContacts(contacts);
 			boolean isTrue = false;
 			do
