@@ -80,8 +80,9 @@ public class ContactControl
 				view.addContactDetails(contacts.get(i));
 			}
 		}
-		filerepo.appendFile(contacts);	
-		sqlrepo.createTable();
+		filerepo.appendFile(contacts);
+		sqlrepo.createTable();	
+		sqlrepo.insertQuery(contacts);
 	}			
 	public void editNewContact()
 	{
@@ -144,6 +145,7 @@ public class ContactControl
 			System.out.println(e);
 		}	
 	} 
+	//Search using letters by string and split
 	/*public void searchElements()
 	{
 		try
