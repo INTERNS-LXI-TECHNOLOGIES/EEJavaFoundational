@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.io.*;
 public class FileRepository
 {
+	public File newFile = new File("D:\\lxi\\java\\my Git\\EEJavaProjects\\EEJavaFoundational\\ContactApp\\src\\com\\lxisoft\\file\\ToFile.csv");
 	public File toFile(ArrayList<ContactModel> s)
 	{
-		File file = new File("D:\\lxi\\java\\my Git\\EEJavaProjects\\EEJavaFoundational\\ContactApp\\src\\com\\lxisoft\\file\\ToFile.csv");
 		try{
-		FileWriter fw= new FileWriter(file,true);
+		FileWriter fw= new FileWriter(newFile,true);
 		BufferedWriter bw=new BufferedWriter(fw);
 		for(int i=0;i<s.size();i++)
 		{
@@ -22,7 +22,7 @@ public class FileRepository
 	{
 		e.printStackTrace();
 	}
-	return file;
+	return newFile;
 	}
 
 	public ArrayList<ContactModel> fromFile(File fileCopy)

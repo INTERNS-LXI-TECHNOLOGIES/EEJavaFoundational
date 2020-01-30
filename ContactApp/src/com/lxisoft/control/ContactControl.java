@@ -11,6 +11,8 @@ public class ContactControl
 	FileRepository file= new FileRepository(); 
 	public void controlView()
 	{	
+		int x=0;
+		do{
 		ArrayList<String>s=new ArrayList<String>();
 		int c =view.display();
 		switch(c)
@@ -20,18 +22,16 @@ public class ContactControl
 				   break;
 			case 2: displayContact();
 					break;
-			default: view.defaultText();
+			case 3: edit();
+					break;
+			default: view.defaultText1();
 		}
+		x=view.defaultText3();
+		}while(x==1);
 	}
 	public void readFromFile(File fileCopy)
 	{
 		ArrayList<ContactModel> reader= file.fromFile(fileCopy);
-		// for(int i=0;i<reader.size();i++)
-		// {
-		// 	System.out.println(reader.get(i).getId()+". "+reader.get(i).getName()+" : "+reader.get(i).getMob());
-		// }
-
-
 	}
 	public void getDetails(ArrayList<String> s)
 	{
@@ -54,9 +54,21 @@ public class ContactControl
 	}
 	public void displayContact()
 	{
-		if(toFile.exists())
+		 if(file.newFile.exists())
 		{
-			
+			 ArrayList<ContactModel> d=file.fromFile(file.newFile);
+			view.displayContacts(d);
 		}
+		else
+		{
+			view.defaultText2();
+		}
+	}
+	public void edit()
+	{
+		displayContact();
+		int a=view.selectName();
+		//view.editContact(modelArray.get(a-1));
+	 	System.out.println("modelArray size"+modelArray.size());
 	}
 }
