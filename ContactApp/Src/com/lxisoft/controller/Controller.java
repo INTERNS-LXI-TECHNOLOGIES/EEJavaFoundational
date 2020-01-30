@@ -85,7 +85,7 @@ public class Controller
 		}
 		int num=view.selectContact();
 			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
-			System,out,println("Edit Contact");
+			//System,out,println("Edit Contact");
 
 
 	}
@@ -120,6 +120,26 @@ public class Controller
 			Boolean value=false;
 			filerepository.writeFile(details,value);
 	}
-	
+	public void searchContact()
+	{
+		ArrayList<Contact> details=filerepository.readFile();
+		int i=1;
+		for(int j=0;j<details.size();j++)
+		{
+			System.out.print(i+" : "+details.get(j).getName()+" : "+details.get(j).getNumber()+"\n");
+			i++;
+		}
+		String name=view.searchContact();
+		for (int m=0;m< details.size();m++ ) 
+		{
+			if(name.equals(details.get(m).getName()))
+			{
+				System.out.println(details.get(m).getName()+" : "+details.get(m).getNumber());
+			}
+		}
+		
+
+
+	}
 
 }

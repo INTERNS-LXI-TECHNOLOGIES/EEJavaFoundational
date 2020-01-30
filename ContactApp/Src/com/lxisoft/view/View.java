@@ -53,5 +53,12 @@ public void displayContacts()
 		int num=scr.nextInt();
 		return num;
 	}
+	public String searchContact()
+	{
+
+		System.out.println("enter name");
+		String name=scr.next();
+		return name;
+	}
 	
 }
