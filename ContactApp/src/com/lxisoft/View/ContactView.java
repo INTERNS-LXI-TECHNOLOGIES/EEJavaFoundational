@@ -40,8 +40,8 @@ public class ContactView
 	}	
 	public ContactModel addContactDetails(ContactModel contact)
 	{		
-		System.out.println("Contact id");
-		contact.setId(sc.nextInt());
+		// System.out.println("Contact id");
+		// contact.setId(sc.nextInt());
 		System.out.println("Enter contact name");
 		contact.setName(sc.next()); 
 		System.out.println("Phone number");
@@ -56,7 +56,7 @@ public class ContactView
 			Collections.sort(contacts);
 			for(int i=0; i<contacts.size(); i++)
 			{	
-				System.out.printf("%-20.30s %-20.30s %-20.30s%n",contacts.get(i).getId(),contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
+				System.out.printf("%-20.30s %-20.30s%n",contacts.get(i).getName(),contacts.get(i).getPhoneNumber());
 			}
 		}
 		catch(Exception e)

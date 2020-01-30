@@ -43,6 +43,7 @@ public class ContactControl
 		try
 		{
 			contacts.clear();
+			sqlrepo.showTable();
 			contacts=filerepo.readFromFile(contacts);
 			view.displayAllContact(contacts);
 			editDelete(); 	
