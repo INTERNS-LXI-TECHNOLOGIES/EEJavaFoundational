@@ -10,6 +10,7 @@ public class ContactControler
 {
 	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
 	FileRepository fileReppo = new FileRepository();
+	SqlRepository sqlReppo = new SqlRepository();
 	ContactView view = new ContactView();
 	public void displayOrAddContact()
 	{
@@ -93,6 +94,7 @@ public class ContactControler
 			}
 		}
 			fileReppo.writeToFileWithoutOverriding(contacts);
+			sqlReppo.insertDataIntoTable(contacts);
 			view.contactAddedMessage();
 	}
 	public void searchContact()
