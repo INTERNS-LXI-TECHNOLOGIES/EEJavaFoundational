@@ -8,7 +8,7 @@ public class FileRepository
 	public File toFile(ArrayList<ContactModel> s)
 	{
 		try{
-		FileWriter fw= new FileWriter(newFile,true);
+		FileWriter fw= new FileWriter(newFile,false);
 		BufferedWriter bw=new BufferedWriter(fw);
 		for(int i=0;i<s.size();i++)
 		{

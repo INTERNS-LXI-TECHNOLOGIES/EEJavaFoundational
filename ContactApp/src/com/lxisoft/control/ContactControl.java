@@ -22,8 +22,6 @@ public class ContactControl
 				   break;
 			case 2: displayContact();
 					break;
-			case 3: edit();
-					break;
 			default: view.defaultText1();
 		}
 		x=view.defaultText3();
@@ -38,14 +36,15 @@ public class ContactControl
 			modelArray.add(new ContactModel());
 			for(int i=0;i<modelArray.size();i++)
 			{
-			// String name=s.get(0);
-			// long mob= Long.parseLong(s.get(1));
-			// int id= Integer.parseInt(s.get(2));
+				if(modelArray.get(i).getName()==null)
+			{		
 			 modelArray.get(i).setName(s.get(0));
 			modelArray.get(i).setMob(Long.parseLong(s.get(1)));
 			modelArray.get(i).setId(Integer.parseInt(s.get(2)));
-			writeToFile(modelArray);
 			}
+			}
+			writeToFile(modelArray);
+
 	}
 	public void writeToFile(ArrayList<ContactModel> s)
 	{
@@ -56,8 +55,10 @@ public class ContactControl
 	{
 		 if(file.newFile.exists())
 		{
-			 ArrayList<ContactModel> d=file.fromFile(file.newFile);
-			view.displayContacts(d);
+			 modelArray.clear();
+			 modelArray=file.fromFile(file.newFile);
+			int c= view.displayContacts(modelArray);
+			editOrDelete(c);
 		}
 		else
 		{
@@ -66,9 +67,35 @@ public class ContactControl
 	}
 	public void edit()
 	{
-		displayContact();
 		int a=view.selectName();
-		//view.editContact(modelArray.get(a-1));
-	 	System.out.println("modelArray size"+modelArray.size());
+		int c=view.editContact(modelArray.get(a-1));
+		if(c==1)
+		{
+			String s=view.editName();
+			 modelArray.get(a-1).setName(s);
+		}
+		if(c==2)
+		{
+			long l=view.editMob();
+			 modelArray.get(a-1).setMob(l);
+		}
+		if(c==3)
+		{
+			int i=view.editId();
+			modelArray.get(a-1).setId(i);
+		}
+		writeToFile(modelArray);
+	}
+	public void editOrDelete(int c)
+	{int x=0;
+	do{
+		switch(c)
+		{
+			case 1: edit();
+					break;
+			default: view.defaultText1();
+		}
+		x=view.defaultText4();
+		}while(x==1);
 	}
 }
