@@ -5,7 +5,7 @@ import java.sql.*;
 import com.lxisoft.Control.ContactControl;
 import com.lxisoft.Model.ContactModel;
 import com.lxisoft.View.ContactView;
-public class SqlRepository
+public class SqlRepository implements Repository
 {
 	Connection con = null;
 	PreparedStatement ps = null;
@@ -47,7 +47,7 @@ public class SqlRepository
 		{
 			dataBaseConnectionEstablish();
 			String sql;
-			sql = ("insert into contacts(contactname,phonenumber) values(?,?)");
+			sql = "insert into contacts(contactname,phonenumber) values(?,?)";
 			ps = con.prepareStatement(sql);
 			for(int i=0;i<contacts.size();i++)
 			{
@@ -69,18 +69,22 @@ public class SqlRepository
 			System.out.println("Sql Repository");
 			dataBaseConnectionEstablish();
 			String sql;
-			sql = ("select * from contacts");
+			sql = "select * from contacts";
 			ps = con.prepareStatement(sql);
 			rs = ps.executeQuery(sql);
-			System.out.printf("%-20.30s %-20.30s %-20.30s%n","ID","Name","Number");
+			//System.out.printf("%-20.30s %-20.30s %-20.30s%n","ID","Name","Number");
 			while(rs.next())
 			{
-				/*for(int i=0;i<contacts.size();i++)
+				contacts.add(new ContactModel());
+				for(int i=0;i<contacts.size();i++)
 				{
-					contacts.get(i).setId(rs.getInt(1));
-					contacts.get(i).setString(rs.getName(2));
-					contacts.get(i).setLong(rs.getPhoneNumber(3));
-				}*/	
+					if(contacts.get(i).getName()==null)
+					{
+						contacts.get(i).setId(rs.getInt(1));
+						contacts.get(i).setName(rs.getString(2));
+						contacts.get(i).setPhoneNumber(rs.getLong(3));
+					}
+				}	
 			}
 		}
 		catch(SQLException e)
@@ -93,7 +97,6 @@ public class SqlRepository
 	{
 		try
 		{
-			//System.out.println("fhgfdhgfhgdfhdf");
 			dataBaseConnectionEstablish();
 			String sql;
 			sql="delete from contacts where Id=6";
@@ -105,13 +108,13 @@ public class SqlRepository
 			System.out.println("dddddddddd");
 		}
 	}
-	/*public void updateQuery()
+	public void updateQuery()
 	{
 		try
 		{
 			dataBaseConnectionEstablish();
 			String sql;
-			sql = ("update contact set contactname='am' where id=1");
+			sql = "update contact set contactname='am' where id=1";
 			ps = con.prepareStatement(sql);
 			ps.execute();	
 		}
@@ -125,7 +128,7 @@ public class SqlRepository
 		try
 		{
 			dataBaseConnectionEstablish();
-			String sql = ("truncate table contact");
+			String sql = "truncate table contact";
 			ps = con.prepareStatement(sql);
 			ps.execute();
 		}
@@ -133,6 +136,6 @@ public class SqlRepository
 		{
 			System.out.println("ssssssss");
 		}
-	}*/
+	}
 	
 }	

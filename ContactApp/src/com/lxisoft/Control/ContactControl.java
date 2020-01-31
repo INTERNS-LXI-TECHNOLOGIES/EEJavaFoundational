@@ -29,7 +29,7 @@ public class ContactControl
 					case 2: addNewContact();isTest=true;break;	
 					case 3: searchElements();isTest=true;break;			
 					case 4: System.exit(0); break;	
-					default: view.invalidOption();break;
+					default:;break;
 				}
 			}while(isTest);
 		}
@@ -43,10 +43,9 @@ public class ContactControl
 		try
 		{
 			contacts.clear();
-			sqlrepo.readFromTable(contacts);
+			contacts = sqlrepo.readFromTable(contacts);
 			//contacts=filerepo.readFromFile(contacts);
-			//view.displayAllContact(contacts);
-			System.out.println("beeeeeeeeeeeeeeeeeeee.....");
+			view.displayAllContact(contacts);
 			editDelete(); 	
 		}
 		catch(Exception e)
@@ -66,7 +65,7 @@ public class ContactControl
 			{
 				case 1:editNewContact();break;
 				case 2:view.displayAllContact(contacts);isCheck=true;break;
-				case 3:System.out.println("haaaaaaaaaaaaaaaaa.......");deleteContacts();break;
+				case 3:deleteContacts();break;
 				case 4:searchContacts();break;
 				default:view.invalidOption(); break;
 			}
@@ -123,7 +122,6 @@ public class ContactControl
 	}	
 	public void deleteContacts()
 	{
-		System.out.println("Vannuuuuuu.....");
 		//contacts.remove(view.deleteContact());
 		sqlrepo.deleteQuery();
 		//filerepo.writeToFile(contacts);
@@ -151,39 +149,6 @@ public class ContactControl
 			System.out.println(e);
 		}	
 	} 
-	//Search using letters by string and split
-	/*public void searchElements()
-	{
-		try
-		{
-			boolean isTest = false;
-			String name=view.searchElement();
-			String[] s=name.split("");	
-			contacts.clear();	
-			contacts = filerepo.readFromFile(contacts);
-			System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
-			for(ContactModel t : contacts)
-			{	
-				String a =t.getName();
-				String[] sc =a.split("");
-				if(s[0].equals(sc[0]))
-				{
-					System.out.printf("%-20.30s %-20.30s %-20.30s%n",t.getId(),t.getName(),t.getPhoneNumber());
-					isTest=true;
-				}
-				
-			}	
-			if(!isTest)
-			{
-				view.fileNotFound();
-			}	
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();		
-		
-		}
-	} */
 	public void searchElements()
 	{
 		try

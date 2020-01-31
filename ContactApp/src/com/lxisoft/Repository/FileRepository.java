@@ -8,7 +8,7 @@ import java.io.FileWriter;
 import java.io.BufferedWriter;
 import java.util.ArrayList; 
 import java.io.*;
-public class FileRepository
+public class FileRepository implements Repository
 {
 	public File file = new File("D:\\gitcontact\\EEJavaFoundational\\ContactApp\\src\\com\\lxisoft\\Repository\\contact.csv");
 	public boolean fileExist(File file)
