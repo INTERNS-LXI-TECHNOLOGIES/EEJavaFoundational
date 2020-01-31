@@ -140,6 +140,7 @@ public class ContactControler
 			switch(select)
 			{
 				case 1 :
+					//sqlReppo.updateContact(contact);
 					this.editContact(contact);
 					break;
 				case 2 :
@@ -157,7 +158,6 @@ public class ContactControler
 					isTrue = true;
 					break;
 			}
-
 		}while(isTrue);
 	}
 	public void editContact(ContactModel contact)
@@ -170,10 +170,14 @@ public class ContactControler
 			switch(select)
 			{
 				case 1:
-					this.editName(contact);
+					contact = view.enterName(contact);
+					sqlReppo.updateContactName(contact);
+					//this.editName(contact);
 					break;
 				case 2:
-					this.editPhoneNumber(contact);
+					contact = view.enterPhoneNumber(contact);
+					sqlReppo.updateContactNumber(contact);
+					//this.editPhoneNumber(contact);
 					break;
 				default :
 					view.wrongSelection();
