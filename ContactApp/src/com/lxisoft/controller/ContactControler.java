@@ -8,10 +8,10 @@ import java.util.*;
 import java.io.*;
 public class ContactControler
 {
-	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
-	FileRepository fileReppo = new FileRepository();
-	SqlRepository sqlReppo = new SqlRepository();
-	ContactView view = new ContactView();
+	private ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
+	private FileRepository fileReppo = new FileRepository();
+	private SqlRepository sqlReppo = SqlRepository.getInstance();
+	private ContactView view = new ContactView();
 	public void displayOrAddContact()
 	{
 		view.myAppName();
@@ -111,7 +111,7 @@ public class ContactControler
 			view.contactHeading();
 			for(ContactModel test : contacts)
 			{
-				String splitObjectName = test.getName(); 
+				String splitObjectName = test.getName();
 				Matcher m = p.matcher(splitObjectName);
 				boolean isMatch = m.find();
 				if(isMatch)
@@ -143,7 +143,8 @@ public class ContactControler
 					this.editContact(contact);
 					break;
 				case 2 :
-					this.deleteContact(selectedContact);
+					//this.deleteContact(selectedContact);
+					sqlReppo.deleteContact(contact);
 					break;
 				case 3 :
 					isTrue = false;

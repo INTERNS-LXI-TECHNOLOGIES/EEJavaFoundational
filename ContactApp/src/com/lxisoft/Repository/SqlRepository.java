@@ -5,10 +5,11 @@ import java.io.*;
 import com.lxisoft.model.ContactModel;
 public class SqlRepository
 {
-	private static Connection con = null;
-	private static PreparedStatement ps = null;
-	private static ResultSet rs = null;
-	public void databaseConnectionEstablishment()
+	private static SqlRepository sqlReppo = null;
+	private Connection con = null;
+	private PreparedStatement ps = null;
+	private ResultSet rs = null;
+	private SqlRepository()
 	{
 		if(con == null)
 		{
@@ -21,17 +22,23 @@ public class SqlRepository
 			{
 				e.printStackTrace();
 			}
-		}
+		}	
+	}
+	public static SqlRepository getInstance()
+	{
+		if(sqlReppo == null)
+			sqlReppo = new SqlRepository();
+
+		return sqlReppo;
 	}
 	public void createTable()
 	{
 		try
 		{
-			this.databaseConnectionEstablishment();
+			//this.databaseConnectionEstablishment();
 			String qry = "CREATE TABLE IF NOT EXISTS Contacts(Id int NOT NULL UNIQUE AUTO_INCREMENT,ContactName varchar(20),PhoneNumber VARCHAR(15))";
 			ps = con.prepareStatement(qry);
 			ps.execute();
-			//con.close();
 		}
 		catch(SQLException e)
 		{
@@ -42,7 +49,7 @@ public class SqlRepository
 	{
 		try
 		{
-			this.databaseConnectionEstablishment();
+			//this.databaseConnectionEstablishment();
 			this.createTable();
 			String qry = "INSERT INTO Contacts(ContactName,PhoneNumber) values(?,?)";
 			ps = con.prepareStatement(qry);
@@ -52,7 +59,6 @@ public class SqlRepository
 				ps.setString(2,Long.toString((contacts.get(i)).getPhoneNumber()));
 				ps.execute();
 			}
-			//con.close();
 		}
 		catch(Exception e)
 		{
@@ -63,7 +69,7 @@ public class SqlRepository
 	{
 		try
 		{
-			this.databaseConnectionEstablishment();
+			//this.databaseConnectionEstablishment();
 			String qry = "select * from Contacts";
 			ps = con.prepareStatement(qry);
 			rs = ps.executeQuery(qry);
@@ -91,8 +97,21 @@ public class SqlRepository
 	{
 		try
 		{
-			//int id = contact.getId();
-			//String qry = ""; 
+			int id = contact.getId();
+			String qry = "DELETE FROM Contacts where Id = "+id;
+			ps = con.prepareStatement(qry);
+			ps.execute(); 
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public void updateContact(ContactModel contact)
+	{
+		try
+		{
+
 		}
 		catch(Exception e)
 		{

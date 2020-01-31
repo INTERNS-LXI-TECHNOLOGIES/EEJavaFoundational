@@ -5,7 +5,6 @@ import java.util.*;
 public class ContactView
 {
 	public static Scanner scanner = new Scanner(System.in);
-	private ContactControler controler ;
 	public void myAppName()
 	{
 		System.out.println("              !!! My Contact App !!!");
