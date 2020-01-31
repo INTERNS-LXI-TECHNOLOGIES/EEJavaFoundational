@@ -9,16 +9,17 @@ public class Controller
 {
 	Filerepository filerepository=new Filerepository();
 	ArrayList<Contact> contacts = new ArrayList<Contact>(); 
-	
+	Scanner scr=new Scanner(System.in);
 	Contact contact=new Contact();
+	ArrayList<Contact> details= new ArrayList<Contact>();
 	View view=new View();
 	//int a = this.activities();
 	public int activities()
 	{
 		Scanner scr=new Scanner(System.in);
-		System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact \n4 : Edit contact \n5 : Delete Contact \n6 : search contact");
+		System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact \n4 : search contact");
 		int select=scr.nextInt();
-		Controller controller=new Controller();
+		//Controller controller=new Controller();
 /*		controller=null;
 */		switch(select)
 		{
@@ -32,12 +33,6 @@ public class Controller
 					selectContact();
 					break;	
 			case 4:
-					editContact();
-					break;
-			case 5:
-					deleteContact();
-					break;	
-			case 6:
 					searchContact();
 					break;		
 		}
@@ -45,14 +40,8 @@ public class Controller
 	}
 	public void displayContacts()
 	{
-		ArrayList<Contact> details=filerepository.readFile();
-		int i=1;
-		for ( Contact s : details)
-		{
-			System.out.print(i+" : "+s.getName());
-			System.out.println(s.getNumber());
-			i++;
-		}
+		details=filerepository.readFile();
+		view.displayContacts(details);
 	}
 	public void createNewContact()
 	{
@@ -76,46 +65,37 @@ public class Controller
 	}
 	public void selectContact()
 	{
-		ArrayList<Contact> details=filerepository.readFile();
-		int i=1;
-		for(int j=0;j<details.size();j++)
-		{
-			System.out.print(i+" : "+details.get(j).getName()+" : "+details.get(j).getNumber()+"\n");
-			i++;
-		}
-		int num=view.selectContact();
-			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
-			//System,out,println("Edit Contact");
+		
+		view.selectContact(details);
+		int num=view.selectContact(details);	
+				switch(num)
+				{
+					case 1:
+							editContact();
+							break;
+					case 2:
+							deleteContact();
+							break;
+				}
+			
+			
+				
 
 
 	}
 	public void editContact()
 	{
 		ArrayList<Contact> details=filerepository.readFile();
-		int i=1;
-		for(int k=0;k<details.size();k++)
-		{
-			System.out.print(i+" : "+details.get(k).getName()+" : "+details.get(k).getNumber()+"\n");
-			i++;
-		}
-		int num=view.selectContact();
-			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
-			view. editContact(details.get(num-1));
-			Boolean value=false;
+		
+		view. editContact(details);
+		Boolean value=false;
 		filerepository.writeFile(details,value);
 
 	}
 	public void deleteContact()
 	{
 		ArrayList<Contact> details=filerepository.readFile();
-		int i=1;
-		for(int k=0;k<details.size();k++)
-		{
-			System.out.print(i+" : "+details.get(k).getName()+" : "+details.get(k).getNumber()+"\n");
-			i++;
-		}
-			int num=view.selectContact();
-			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
+		int num=view.deleteContact(details);
 			details.remove(num-1);
 			Boolean value=false;
 			filerepository.writeFile(details,value);
