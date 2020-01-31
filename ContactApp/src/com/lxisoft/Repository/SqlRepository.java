@@ -33,8 +33,7 @@ public class SqlRepository
 			String qry;
 			qry="create table if not exists contacts(Id int primary key auto_increment,contactname varchar(25),phonenumber varchar(15))";
 			ps = con.prepareStatement(qry);
-			ps.execute();
-			    
+			ps.execute();			    
 		}
 		catch (SQLException e)
 		{		
@@ -63,10 +62,11 @@ public class SqlRepository
 			e.printStackTrace();
 		}		
 	}	
-	public void readFromTable()
+	public ArrayList<ContactModel> readFromTable(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
+			System.out.println("Sql Repository");
 			dataBaseConnectionEstablish();
 			String sql;
 			sql = ("select * from contacts");
@@ -75,28 +75,35 @@ public class SqlRepository
 			System.out.printf("%-20.30s %-20.30s %-20.30s%n","ID","Name","Number");
 			while(rs.next())
 			{
-				System.out.printf("%-20.30s %-20.30s %-20.30s%n",rs.getInt(1),rs.getString(2),rs.getLong(3));
+				/*for(int i=0;i<contacts.size();i++)
+				{
+					contacts.get(i).setId(rs.getInt(1));
+					contacts.get(i).setString(rs.getName(2));
+					contacts.get(i).setLong(rs.getPhoneNumber(3));
+				}*/	
 			}
 		}
 		catch(SQLException e)
 		{
 			System.out.println("fffffffffffff");
 		}	
+		return contacts;
 	}
 	public void deleteQuery()
 	{
 		try
 		{
+			//System.out.println("fhgfdhgfhgdfhdf");
 			dataBaseConnectionEstablish();
 			String sql;
-			sql=("delete from contacts where id= ");
+			sql="delete from contacts where Id=6";
 			ps=con.prepareStatement(sql);
-			rs=ps.executeQuery(sql);
+			ps.execute();
 		}
 		catch(SQLException e)
 		{
 			System.out.println("dddddddddd");
-		}		
+		}
 	}
 	/*public void updateQuery()
 	{
@@ -126,35 +133,6 @@ public class SqlRepository
 		{
 			System.out.println("ssssssss");
 		}
-	}
-	
-	/*public ArrayList<ContactModel> readFromDatabase(ArrayList<ContactModel> contacts)
-	{
-		try
-		{
-			this.databaseConnectionEstablishment();
-			String qry = "select * from Contacts";
-			ps = con.prepareStatement(qry);
-			rs = ps.executeQuery(qry);
-			while(rs.next())
-			{
-				contacts.add(new ContactModel());
-				for(int i=0;i<contacts.size();i++)
-				{
-					if(contacts.get(i).getName()==null)
-					{
-						contacts.get(i).setId(rs.getInt(1));
-						contacts.get(i).setName(rs.getString(2));
-						contacts.get(i).setPhoneNumber(Long.parseLong(rs.getString(3)));
-					}
-				}
-			}
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return contacts;
 	}*/
 	
 }	
