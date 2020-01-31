@@ -17,7 +17,7 @@ public class SqlRepository
 			try
 			{				
 				Class.forName("com.mysql.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Contacts","root","root");										
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ContactApp","root","root");										
 			}
 			catch (Exception e)
 			{
@@ -31,7 +31,7 @@ public class SqlRepository
 		{
 			dataBaseConnectionEstablish();
 			String qry;
-			qry="create table if not exists contact(Id int primary key auto_increment,contactname varchar(25),phonenumber varchar(15))";
+			qry="create table if not exists contacts(Id int primary key auto_increment,contactname varchar(25),phonenumber varchar(15))";
 			ps = con.prepareStatement(qry);
 			ps.execute();
 			    
@@ -42,22 +42,20 @@ public class SqlRepository
 			e.printStackTrace();
 		}		
 	}
-	public void insertQuery(ArrayList<ContactModel> contacts)
+	public void insertDataToTable(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
 			dataBaseConnectionEstablish();
 			String sql;
-			sql = ("insert into contact(contactname,phonenumber) values(?,?)");
+			sql = ("insert into contacts(contactname,phonenumber) values(?,?)");
 			ps = con.prepareStatement(sql);
 			for(int i=0;i<contacts.size();i++)
 			{
-				//ps.setInt(1,contacts.get(i).getId());
 				ps.setString(1,contacts.get(i).getName());
 				ps.setLong(2,contacts.get(i).getPhoneNumber());
 				ps.executeUpdate();
-			}
-			
+			}			
 		}
 		catch (SQLException e)
 		{
@@ -65,7 +63,42 @@ public class SqlRepository
 			e.printStackTrace();
 		}		
 	}	
-	public void updateQuery()
+	public void readFromTable()
+	{
+		try
+		{
+			dataBaseConnectionEstablish();
+			String sql;
+			sql = ("select * from contacts");
+			ps = con.prepareStatement(sql);
+			rs = ps.executeQuery(sql);
+			System.out.printf("%-20.30s %-20.30s %-20.30s%n","ID","Name","Number");
+			while(rs.next())
+			{
+				System.out.printf("%-20.30s %-20.30s %-20.30s%n",rs.getInt(1),rs.getString(2),rs.getLong(3));
+			}
+		}
+		catch(SQLException e)
+		{
+			System.out.println("fffffffffffff");
+		}	
+	}
+	public void deleteQuery()
+	{
+		try
+		{
+			dataBaseConnectionEstablish();
+			String sql;
+			sql=("delete from contacts where id= ");
+			ps=con.prepareStatement(sql);
+			rs=ps.executeQuery(sql);
+		}
+		catch(SQLException e)
+		{
+			System.out.println("dddddddddd");
+		}		
+	}
+	/*public void updateQuery()
 	{
 		try
 		{
@@ -93,26 +126,35 @@ public class SqlRepository
 		{
 			System.out.println("ssssssss");
 		}
-
 	}
-	public void showTable()
+	
+	/*public ArrayList<ContactModel> readFromDatabase(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
-			dataBaseConnectionEstablish();
-			String sql;
-			sql = ("select * from contact");
-			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery(sql);
-			System.out.printf("%-20.30s %-20.30s %-20.30s%n","ID","Name","Number");
+			this.databaseConnectionEstablishment();
+			String qry = "select * from Contacts";
+			ps = con.prepareStatement(qry);
+			rs = ps.executeQuery(qry);
 			while(rs.next())
 			{
-				System.out.printf("%-20.30s %-20.30s %-20.30s%n",rs.getInt(1),rs.getString(2),rs.getLong(3));
+				contacts.add(new ContactModel());
+				for(int i=0;i<contacts.size();i++)
+				{
+					if(contacts.get(i).getName()==null)
+					{
+						contacts.get(i).setId(rs.getInt(1));
+						contacts.get(i).setName(rs.getString(2));
+						contacts.get(i).setPhoneNumber(Long.parseLong(rs.getString(3)));
+					}
+				}
 			}
 		}
-		catch(SQLException e)
+		catch(Exception e)
 		{
-			System.out.println("fffffffffffff");
-		}	
-	}
+			e.printStackTrace();
+		}
+		return contacts;
+	}*/
+	
 }	

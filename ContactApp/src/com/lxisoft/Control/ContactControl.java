@@ -43,7 +43,7 @@ public class ContactControl
 		try
 		{
 			contacts.clear();
-			sqlrepo.showTable();
+			sqlrepo.readFromTable();
 			contacts=filerepo.readFromFile(contacts);
 			view.displayAllContact(contacts);
 			editDelete(); 	
@@ -83,7 +83,7 @@ public class ContactControl
 		}
 		filerepo.appendFile(contacts);
 		sqlrepo.createTable();	
-		sqlrepo.insertQuery(contacts);
+		sqlrepo.insertDataToTable(contacts);
 	}			
 	public void editNewContact()
 	{
@@ -121,8 +121,10 @@ public class ContactControl
 	}	
 	public void deleteContacts()
 	{
+		sqlrepo.deleteQuery();
 		contacts.remove(view.deleteContact());
 		filerepo.writeToFile(contacts);
+
 	}
 	public void searchContacts()
 	{
@@ -197,8 +199,7 @@ public class ContactControl
 				{
 					System.out.printf("%-20.30s %-20.30s %-20.30s%n",t.getId(),t.getName(),t.getPhoneNumber());
 					isTest=true;
-				}
-				
+				}				
 			}	
 			if(!isTest)
 			{
@@ -210,7 +211,5 @@ public class ContactControl
 			e.printStackTrace();		
 		
 		}
-	} 
-			
-	
+	} 	
 }
