@@ -62,7 +62,7 @@ public class ContactControler
 					case 1 :
 						int selectedContact = view.selectContact();
 						view.viewContact(contacts.get(selectedContact-1));
-						this.crudeOperation(contacts.get(selectedContact-1),selectedContact-1);
+						this.crudeOperation(contacts.get(selectedContact-1));
 						break;
 					case 2 :
 						isTrue = false;
@@ -130,7 +130,7 @@ public class ContactControler
 			e.printStackTrace();
 		}
 	}
-	public void crudeOperation(ContactModel contact,int selectedContact)
+	public void crudeOperation(ContactModel contact)
 	{
 		boolean isTrue = false;
 		do
@@ -140,12 +140,10 @@ public class ContactControler
 			switch(select)
 			{
 				case 1 :
-					//sqlReppo.updateContact(contact);
 					this.editContact(contact);
 					break;
 				case 2 :
-					//this.deleteContact(selectedContact);
-					sqlReppo.deleteContact(contact);
+					this.deleteContact(contact);
 					break;
 				case 3 :
 					isTrue = false;
@@ -195,10 +193,12 @@ public class ContactControler
 		contact = view.enterPhoneNumber(contact);
 		fileReppo.writeToFile(contacts);
 	}
-	public void deleteContact(int selectedContact)
+	public void deleteContact(ContactModel contact)
 	{
-		contacts.remove(selectedContact);
+		int index = contacts.indexOf(contact);
+		contacts.remove(index);
 		view.contactDeleteMessage();
+		sqlReppo.deleteContact(contact);
 		fileReppo.writeToFile(contacts);
 	}
 	public void contactSearching()

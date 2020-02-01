@@ -107,33 +107,33 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 	}
-	public void updateContact(ContactModel contact)
-	{
-		try
-		{
-			int id = contact.getId();
-			int selectedcontact = 0;
-			String qry=null;
-			switch(selectedcontact)
-			{
-				case 1:
-					qry = "UPDATE contacts set ContactName = fhfgh where Id ="+id;
-					break;
-				case 2:
-					qry = "UPDATE contaccts set phoneNumber = 7657657 where Id ="+id;
-					break;
-				default :
-					System.out.println("Select Options From Above");
-					break;
-			}
-			ps = con.prepareStatement(qry);
-			ps.execute();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-	}
+	// public void updateContact(ContactModel contact)
+	// {
+	// 	try
+	// 	{
+	// 		int id = contact.getId();
+	// 		int selectedcontact = 0;
+	// 		String qry=null;
+	// 		switch(selectedcontact)
+	// 		{
+	// 			case 1:
+	// 				qry = "UPDATE contacts set ContactName = fhfgh where Id ="+id;
+	// 				break;
+	// 			case 2:
+	// 				qry = "UPDATE contaccts set phoneNumber = 7657657 where Id ="+id;
+	// 				break;
+	// 			default :
+	// 				System.out.println("Select Options From Above");
+	// 				break;
+	// 		}
+	// 		ps = con.prepareStatement(qry);
+	// 		ps.execute();
+	// 	}
+	// 	catch(Exception e)
+	// 	{
+	// 		e.printStackTrace();
+	// 	}
+	// }
 	public void updateContactName(ContactModel contact)
 	{
 		try
