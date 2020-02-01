@@ -41,7 +41,7 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}		
 	}
-	public void insertDataToTable(ArrayList<ContactModel> contacts)
+	public void  writeToFile(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
@@ -99,7 +99,7 @@ public class SqlRepository implements Repository
 		{
 			dataBaseConnectionEstablish();
 			String sql;
-			//sql="delete from contacts where Id=6";
+			sql="delete from contacts where Id=6";
 			ps=con.prepareStatement(sql);
 			ps.execute();
 		}
@@ -142,4 +142,4 @@ public class SqlRepository implements Repository
 
 	}
 	
-}	
+}	pl.
