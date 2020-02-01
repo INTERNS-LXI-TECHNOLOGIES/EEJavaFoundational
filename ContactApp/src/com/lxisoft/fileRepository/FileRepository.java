@@ -5,13 +5,14 @@ import java.io.*;
 public class FileRepository
 {
 	public File newFile = new File("D:\\lxi\\java\\my Git\\EEJavaProjects\\EEJavaFoundational\\ContactApp\\src\\com\\lxisoft\\file\\ToFile.csv");
-	public File toFile(ArrayList<ContactModel> s)
+	public File toFile(ArrayList<ContactModel> s,boolean a)
 	{
 		try{
-		FileWriter fw= new FileWriter(newFile,false);
+		FileWriter fw= new FileWriter(newFile,a);
 		BufferedWriter bw=new BufferedWriter(fw);
 		for(int i=0;i<s.size();i++)
 		{
+			System.out.println("Name : "+s.get(i).getName());
 			bw.write(s.get(i).getId()+","+s.get(i).getName()+","+s.get(i).getMob());
 			bw.newLine();
 		}

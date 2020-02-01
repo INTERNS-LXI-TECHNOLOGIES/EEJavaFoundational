@@ -32,6 +32,12 @@ public class ContactView
 		int a=sc.nextInt();
 		return a;
 	}
+	public int selectDelete()
+	{
+		System.out.println(" select the contact that to be deleted");
+		int a=sc.nextInt();
+		return a;
+	}
 	public void defaultText1()
 	{
 		System.out.println("please enter the correct choice ");
@@ -52,12 +58,15 @@ public class ContactView
 		int x=sc.nextInt();
 		return x;
 	}
-	public int displayContacts( ArrayList<ContactModel> reader)
+	public void displayContacts(ArrayList<ContactModel> reader)
 	{
 		for(int i=0;i<reader.size();i++)
 		{
 			System.out.println(i+1+"."+reader.get(i).getName()+" : "+reader.get(i).getMob()+"(ID :"+reader.get(i).getId()+")");
 		}
+	}
+	public int editOrDelete()
+	{
 		System.out.println("1. Edit   2.Delete");
 		System.out.println("Select your choice ");
 		int c= sc.nextInt();
@@ -71,23 +80,23 @@ public class ContactView
 		int c=sc.nextInt();
 		return c;
 	}
-	public String editName()
+	public ContactModel editName(ContactModel contact)
 	{
 		System.out.println(" enter the name : ");
-		String name= sc.nextLine();
-		sc.nextLine();
-		return name;
+		contact.setName(sc.nextLine());
+		contact.setName(sc.nextLine());
+		return contact;
 	}
-	public long editMob()
+	public ContactModel editMob(ContactModel contact)
 	{
 		System.out.println("enter the mobile number : ");
-		long mob=sc.nextLong();
-		return mob;
+		contact.setMob(sc.nextLong());
+		return contact;
 	}
-	public int editId()
+	public ContactModel editId(ContactModel contact)
 	{
 		System.out.println("enter the Id : ");
-		int id=sc.nextInt();
-		return id;
+		contact.setId(sc.nextInt());
+		return contact;
 	}
 }

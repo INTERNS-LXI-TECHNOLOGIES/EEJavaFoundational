@@ -29,7 +29,8 @@ public class ContactControl
 	}
 	public void readFromFile(File fileCopy)
 	{
-		ArrayList<ContactModel> reader= file.fromFile(fileCopy);
+		modelArray.clear();
+		modelArray = file.fromFile(fileCopy);
 	}
 	public void getDetails(ArrayList<String> s)
 	{
@@ -43,12 +44,12 @@ public class ContactControl
 			modelArray.get(i).setId(Integer.parseInt(s.get(2)));
 			}
 			}
-			writeToFile(modelArray);
+			writeToFile(modelArray,true);
 
 	}
-	public void writeToFile(ArrayList<ContactModel> s)
+	public void writeToFile(ArrayList<ContactModel> s,boolean a)
 	{
-		File fileCopy=file.toFile(s);
+		File fileCopy=file.toFile(s,a);
 		readFromFile(fileCopy);
 	}
 	public void displayContact()
@@ -57,41 +58,48 @@ public class ContactControl
 		{
 			 modelArray.clear();
 			 modelArray=file.fromFile(file.newFile);
-			int c= view.displayContacts(modelArray);
-			editOrDelete(c);
+			view.displayContacts(modelArray);
+			int c = view.selectName();
+			editOrDelete(modelArray.get(c-1));
 		}
 		else
 		{
 			view.defaultText2();
 		}
 	}
-	public void edit()
+	public void edit(ContactModel contact)
 	{
-		int a=view.selectName();
-		int c=view.editContact(modelArray.get(a-1));
+		//int a=view.selectName();
+		int c=view.editContact(contact);
 		if(c==1)
 		{
-			String s=view.editName();
-			 modelArray.get(a-1).setName(s);
+			 contact = view.editName(contact);
 		}
 		if(c==2)
 		{
-			long l=view.editMob();
-			 modelArray.get(a-1).setMob(l);
+			contact =view.editMob(contact);
 		}
 		if(c==3)
 		{
-			int i=view.editId();
-			modelArray.get(a-1).setId(i);
+			contact = view.editId(contact);
 		}
-		writeToFile(modelArray);
+		writeToFile(modelArray,false);
 	}
-	public void editOrDelete(int c)
+	public void delete()
+	{
+		int c=view.selectDelete();
+		modelArray.remove(c-1);
+		writeToFile(modelArray,false);
+	}
+	public void editOrDelete(ContactModel contact)
 	{int x=0;
 	do{
+		int c = view.editOrDelete();
 		switch(c)
 		{
-			case 1: edit();
+			case 1: edit(contact);
+					break;
+			case 2: delete();
 					break;
 			default: view.defaultText1();
 		}
