@@ -32,20 +32,21 @@ public void displayContacts(ArrayList<Contact> details)
        
         
 	}
-	public int selectContact(ArrayList<Contact> details)
+	public int[] selectContact(ArrayList<Contact> details)
 	{
 			
-			System.out.println("Select Contact");
-			int num=scr.nextInt();
-		
-			int choose=0;
+			int select=0;
 			int i=1;
+			int[] choose=new int[2];
 			for(int j=0;j<details.size();j++)
 			{
 				System.out.print(i+" : "+details.get(j).getName()+" : "+details.get(j).getNumber()+"\n");
 				i++;
 			}
 			
+			System.out.println("Select Contact");
+			int num=scr.nextInt();
+			choose[0]=num;
 			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
 
 			System.out.println("you want any custmize in contacts ? y/n");
@@ -54,9 +55,9 @@ public void displayContacts(ArrayList<Contact> details)
 			{
 				
 				System.out.println("1 : Edit Contact \n2 : Delete Contact ");
-				choose=scr.nextInt();
+				select=scr.nextInt();
 				
-
+				choose[1]=select;
 			}
 			else if(c=='n')
 			{
@@ -66,24 +67,13 @@ public void displayContacts(ArrayList<Contact> details)
 			{
 				System.out.println("Wrong entry please choose correct entry");
 			}
-			
-		return choose;
-	}
-	public ArrayList<Contact> editContact(ArrayList<Contact> details)
-	{
-		System.out.println("Select Contact");
-		int num=scr.nextInt();
-
-		int i=1;
-		for(int k=0;k<details.size();k++)
-		{
-			System.out.print(i+" : "+details.get(k).getName()+" : "+details.get(k).getNumber()+"\n");
-			i++;
-		}
+		return choose;	
 		
-			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
-			
-
+	}
+	public ArrayList<Contact> editContact(ArrayList<Contact> details,int num)
+	{
+		
+		System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
 		System.out.println("enter number");
 		String number=scr.next();
 		
@@ -91,18 +81,11 @@ public void displayContacts(ArrayList<Contact> details)
 
 		return details;
 	}
-	public int deleteContact(ArrayList<Contact> details)
+	public int deleteContact(ArrayList<Contact> details,int num)
 	{
 		System.out.println("Select Contact");
-		
-		int i=1;
-		for(int k=0;k<details.size();k++)
-		{
-			System.out.print(i+" : "+details.get(k).getName()+" : "+details.get(k).getNumber()+"\n");
-			i++;
-		}
-			int num=scr.nextInt();
-			System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
+	
+		System.out.println(details.get(num-1).getName()+" : "+details.get(num-1).getNumber());
 			
 		return num;
 	}

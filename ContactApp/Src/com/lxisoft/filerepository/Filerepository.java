@@ -5,6 +5,7 @@ import com.lxisoft.contact.Contact;
 import java.io.*;
 import java.util.*;
 import java.util.*;
+import java.util.*;
 public class Filerepository
 {
 	public void writeFile(ArrayList<Contact> contacts,Boolean value)
@@ -24,7 +25,7 @@ public class Filerepository
                 br.write(contacts.get(i).getName()+","+contacts.get(i).getNumber());
                 br.newLine();    
             }
-             
+             Collections.sort(contacts);
         }
         catch (IOException e) 
         {

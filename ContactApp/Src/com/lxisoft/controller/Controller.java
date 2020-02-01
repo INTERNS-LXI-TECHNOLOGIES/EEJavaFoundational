@@ -5,6 +5,7 @@ import com.lxisoft.contact.Contact;
 import com.lxisoft.filerepository.Filerepository;
 import java.util.*;
 import java.util.*;
+import java.util.*;
 public class Controller
 {
 	Filerepository filerepository=new Filerepository();
@@ -36,11 +37,13 @@ public class Controller
 					searchContact();
 					break;		
 		}
+
 		return 0;
 	}
 	public void displayContacts()
 	{
 		details=filerepository.readFile();
+		Collection.sort(details);
 		view.displayContacts(details);
 	}
 	public void createNewContact()
@@ -65,38 +68,34 @@ public class Controller
 	}
 	public void selectContact()
 	{
-		
-		view.selectContact(details);
-		int num=view.selectContact(details);	
-				switch(num)
+		details=filerepository.readFile();
+		//view.selectContact(details);
+		int num[]=view.selectContact(details);
+
+				switch(num[0])
 				{
 					case 1:
-							editContact();
+							editContact(num[1]);
 							break;
 					case 2:
-							deleteContact();
+							deleteContact(num[1]);
 							break;
 				}
-			
-			
-				
-
-
 	}
-	public void editContact()
+	public void editContact(int num)
 	{
-		ArrayList<Contact> details=filerepository.readFile();
+		details=filerepository.readFile();
 		
-		view. editContact(details);
+		view.editContact(details,num);
 		Boolean value=false;
 		filerepository.writeFile(details,value);
 
 	}
-	public void deleteContact()
+	public void deleteContact(int num)
 	{
-		ArrayList<Contact> details=filerepository.readFile();
-		int num=view.deleteContact(details);
-			details.remove(num-1);
+		details=filerepository.readFile();
+		int number=view.deleteContact(details,num);
+			details.remove(number-1);
 			Boolean value=false;
 			filerepository.writeFile(details,value);
 	}
