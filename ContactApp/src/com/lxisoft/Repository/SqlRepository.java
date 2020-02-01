@@ -17,7 +17,7 @@ public class SqlRepository implements Repository
 			try
 			{				
 				Class.forName("com.mysql.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/ContactApp","root","root");										
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Contacts","root","root");										
 			}
 			catch (Exception e)
 			{
@@ -99,7 +99,7 @@ public class SqlRepository implements Repository
 		{
 			dataBaseConnectionEstablish();
 			String sql;
-			sql="delete from contacts where Id=6";
+			//sql="delete from contacts where Id=6";
 			ps=con.prepareStatement(sql);
 			ps.execute();
 		}
@@ -114,7 +114,7 @@ public class SqlRepository implements Repository
 		{
 			dataBaseConnectionEstablish();
 			String sql;
-			sql = "update contact set contactname='am' where id=1";
+			//sql = "update contact set contactname='am' where id=1";
 			ps = con.prepareStatement(sql);
 			ps.execute();	
 		}
@@ -136,6 +136,10 @@ public class SqlRepository implements Repository
 		{
 			System.out.println("ssssssss");
 		}
+	}
+	public void searchContact()
+	{
+
 	}
 	
 }	

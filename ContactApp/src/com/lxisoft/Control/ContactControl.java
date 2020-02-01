@@ -51,7 +51,6 @@ public class ContactControl
 		catch(Exception e)
 		{
 			view.noContactFound();
-			//e.printStackTrace();							
 		}
 	}	
 	public void editDelete() 
@@ -67,7 +66,7 @@ public class ContactControl
 				case 2:view.displayAllContact(contacts);isCheck=true;break;
 				case 3:deleteContacts();break;
 				case 4:searchContacts();break;
-				default:view.invalidOption(); break;
+				default: break;
 			}
 		}while(isCheck);
 	}
@@ -97,6 +96,7 @@ public class ContactControl
 			view.editContactDetail();
 			switch(i)
 			{
+
 				case 1: editNameDetail(contacts.get(i-1));break;
 				case 2: editPhoneNumberDetail(contacts.get(i-1));break;
 				default:view.invalidOption();break;
