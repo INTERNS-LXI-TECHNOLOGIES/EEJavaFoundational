@@ -12,7 +12,6 @@ public class FileRepository
 		BufferedWriter bw=new BufferedWriter(fw);
 		for(int i=0;i<s.size();i++)
 		{
-			System.out.println("Name : "+s.get(i).getName());
 			bw.write(s.get(i).getId()+","+s.get(i).getName()+","+s.get(i).getMob());
 			bw.newLine();
 		}

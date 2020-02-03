@@ -83,6 +83,10 @@ public class ContactControl
 		{
 			contact = view.editId(contact);
 		}
+		if(c==4)
+		{
+			view.editOrDelete();
+		}
 		writeToFile(modelArray,false);
 	}
 	public void delete()
@@ -92,18 +96,23 @@ public class ContactControl
 		writeToFile(modelArray,false);
 	}
 	public void editOrDelete(ContactModel contact)
-	{int x=0;
+	{boolean x=false;
 	do{
+		x=false;
 		int c = view.editOrDelete();
 		switch(c)
 		{
 			case 1: edit(contact);
+					x=true;
 					break;
 			case 2: delete();
 					break;
+			case 3 :
+					break;
 			default: view.defaultText1();
+					x=true;
 		}
-		x=view.defaultText4();
-		}while(x==1);
+		//x=view.defaultText4();
+		}while(x);
 	}
 }

@@ -1,5 +1,5 @@
 package com.lxisoft.model;
-public class ContactModel
+public class ContactModel implements Comparable<ContactModel>
 {
 	private String name;
 	private long mob;
@@ -27,5 +27,9 @@ public class ContactModel
 	public int getId()
 	{
 		return id;
+	}
+	public int compareTo(ContactModel model)
+	{
+		return this.name.compareTo(model.getName());
 	}
 }

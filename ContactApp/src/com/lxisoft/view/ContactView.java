@@ -1,6 +1,7 @@
 package com.lxisoft.view;
 import com.lxisoft.model.*;
 import java.util.Scanner;
+import java.util.Collections;
 import java.util.ArrayList;
 public class ContactView
 {
@@ -60,6 +61,7 @@ public class ContactView
 	}
 	public void displayContacts(ArrayList<ContactModel> reader)
 	{
+		Collections.sort(reader);
 		for(int i=0;i<reader.size();i++)
 		{
 			System.out.println(i+1+"."+reader.get(i).getName()+" : "+reader.get(i).getMob()+"(ID :"+reader.get(i).getId()+")");
@@ -67,7 +69,7 @@ public class ContactView
 	}
 	public int editOrDelete()
 	{
-		System.out.println("1. Edit   2.Delete");
+		System.out.println("1. Edit   2.Delete 3.back");
 		System.out.println("Select your choice ");
 		int c= sc.nextInt();
 		return c;
@@ -76,7 +78,7 @@ public class ContactView
 	{
 		System.out.println("name : "+contact.getName()+"\nphone : "+contact.getMob()+"\nID : "+contact.getId());
 		System.out.println(" which one you want to edit");
-		System.out.println("1. Name 2.Mobile 3. Id");
+		System.out.println("1. Name 2.Mobile 3. Id 4. back");
 		int c=sc.nextInt();
 		return c;
 	}
