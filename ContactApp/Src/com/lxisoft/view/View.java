@@ -19,7 +19,7 @@ public void displayContacts(ArrayList<Contact> details)
 			System.out.println(s.getNumber());
 			i++;
 		}
-
+		System.out.println("\n");
 	}
 	public String[] createNewContact()
 	{
@@ -51,20 +51,21 @@ public void displayContacts(ArrayList<Contact> details)
 
 			System.out.println("you want any custmize in contacts ? y/n");
 			char c = scr.next().charAt(0);
-			if(c=='y')
+			switch(c)
 			{
-				
+			case 'y':	
 				System.out.println("1 : Edit Contact \n2 : Delete Contact ");
 				select=scr.nextInt();
 				
 				choose[1]=select;
-			}
-			else if(c=='n')
-			{
-				
-			}
-			else 
-			{
+				break;
+			
+			case 'n':
+				choose[1]=0;
+				break;
+			
+			default :
+			
 				System.out.println("Wrong entry please choose correct entry");
 			}
 		return choose;	
@@ -96,5 +97,10 @@ public void displayContacts(ArrayList<Contact> details)
 		String name=scr.next();
 		return name;
 	}
+	/*public int activities()
+	{
+		System.out.println("you  ? y/n");
+		char decision = scr.next().charAt(0);
+	}*/
 	
 }

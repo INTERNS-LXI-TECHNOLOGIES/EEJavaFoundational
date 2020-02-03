@@ -17,34 +17,40 @@ public class Controller
 	//int a = this.activities();
 	public int activities()
 	{
-		Scanner scr=new Scanner(System.in);
-		System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact \n4 : search contact");
-		int select=scr.nextInt();
-		//Controller controller=new Controller();
-/*		controller=null;
-*/		switch(select)
-		{
-			case 1:
-					displayContacts();
-					break;
-			case 2:
-					createNewContact();
-					break;
-			case 3:
-					selectContact();
-					break;	
-			case 4:
-					searchContact();
-					break;		
-		}
-
+		
+		
+			Scanner scr=new Scanner(System.in);
+			System.out.println("1 : Display Contacts \n2 : Create Contact \n3 : Select Contact \n4 : search contact \n5 : Exit");
+			int select=scr.nextInt();
+			//Controller controller=new Controller();
+	/*		controller=null;
+	*/		switch(select)
+			{
+				case 1:
+						displayContacts();
+						break;
+				case 2:
+						createNewContact();
+						break;
+				case 3:
+						selectContact();
+						break;	
+				case 4:
+						searchContact();
+						break;	
+							
+			}
+			
+	
 		return 0;
 	}
 	public void displayContacts()
 	{
 		details=filerepository.readFile();
-		Collection.sort(details);
+		Collections.sort(details);
 		view.displayContacts(details);
+
+		activities();
 	}
 	public void createNewContact()
 	{
@@ -61,16 +67,18 @@ public class Controller
 			}
 			
 		}
+
 		Boolean value=true;
 		
         filerepository.writeFile(contacts,value);
-        
+        activities();
 	}
 	public void selectContact()
 	{
 		details=filerepository.readFile();
-		//view.selectContact(details);
+		Collections.sort(details);
 		int num[]=view.selectContact(details);
+
 
 				switch(num[0])
 				{
@@ -81,6 +89,7 @@ public class Controller
 							deleteContact(num[1]);
 							break;
 				}
+				activities();
 	}
 	public void editContact(int num)
 	{
@@ -89,7 +98,7 @@ public class Controller
 		view.editContact(details,num);
 		Boolean value=false;
 		filerepository.writeFile(details,value);
-
+		activities();
 	}
 	public void deleteContact(int num)
 	{
@@ -98,6 +107,7 @@ public class Controller
 			details.remove(number-1);
 			Boolean value=false;
 			filerepository.writeFile(details,value);
+			activities();
 	}
 	public void searchContact()
 	{
@@ -116,7 +126,7 @@ public class Controller
 				System.out.println(details.get(m).getName()+" : "+details.get(m).getNumber());
 			}
 		}
-		
+		activities();
 
 
 	}

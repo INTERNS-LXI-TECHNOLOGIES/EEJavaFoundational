@@ -22,8 +22,8 @@ public class Contact implements Comparable<Contact>
 	{
 		return this.phone;
 	}
-	public String compareTo(Contact c) 
+	public int compareTo(Contact c) 
     { 
-        return this.name = c.name; 
+        return name.compareTo(c.getName());
     } 
 }

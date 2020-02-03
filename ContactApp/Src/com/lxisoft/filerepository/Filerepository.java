@@ -20,6 +20,7 @@ public class Filerepository
 
             fr = new FileWriter(csvFile,value);
             br = new BufferedWriter(fr);
+            Collections.sort(contacts);
             for(int i=0;i<contacts.size();i++)
             {
                 br.write(contacts.get(i).getName()+","+contacts.get(i).getNumber());
