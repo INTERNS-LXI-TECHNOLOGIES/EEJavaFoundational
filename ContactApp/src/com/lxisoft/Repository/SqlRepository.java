@@ -3,7 +3,8 @@ import java.sql.*;
 import java.util.*;
 import java.io.*;
 import com.lxisoft.model.ContactModel;
-public class SqlRepository
+import com.lxisoft.Repository.Repository;
+public class SqlRepository implements Repository
 {
 	private static SqlRepository sqlReppo = null;
 	private Connection con = null;
@@ -35,7 +36,6 @@ public class SqlRepository
 	{
 		try
 		{
-			//this.databaseConnectionEstablishment();
 			String qry = "CREATE TABLE IF NOT EXISTS Contacts(Id int NOT NULL UNIQUE AUTO_INCREMENT,ContactName varchar(20),PhoneNumber VARCHAR(15))";
 			ps = con.prepareStatement(qry);
 			ps.execute();
@@ -45,11 +45,10 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 	}
-	public void insertDataIntoTable(ArrayList<ContactModel> contacts)
+	public void writeContact(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
-			//this.databaseConnectionEstablishment();
 			this.createTable();
 			String qry = "INSERT INTO Contacts(ContactName,PhoneNumber) values(?,?)";
 			ps = con.prepareStatement(qry);
@@ -65,11 +64,10 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<ContactModel> readFromDatabase(ArrayList<ContactModel> contacts)
+	public ArrayList<ContactModel> readContact(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
-			//this.databaseConnectionEstablishment();
 			String qry = "select * from Contacts";
 			ps = con.prepareStatement(qry);
 			rs = ps.executeQuery(qry);
@@ -107,33 +105,6 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 	}
-	// public void updateContact(ContactModel contact)
-	// {
-	// 	try
-	// 	{
-	// 		int id = contact.getId();
-	// 		int selectedcontact = 0;
-	// 		String qry=null;
-	// 		switch(selectedcontact)
-	// 		{
-	// 			case 1:
-	// 				qry = "UPDATE contacts set ContactName = fhfgh where Id ="+id;
-	// 				break;
-	// 			case 2:
-	// 				qry = "UPDATE contaccts set phoneNumber = 7657657 where Id ="+id;
-	// 				break;
-	// 			default :
-	// 				System.out.println("Select Options From Above");
-	// 				break;
-	// 		}
-	// 		ps = con.prepareStatement(qry);
-	// 		ps.execute();
-	// 	}
-	// 	catch(Exception e)
-	// 	{
-	// 		e.printStackTrace();
-	// 	}
-	// }
 	public void updateContactName(ContactModel contact)
 	{
 		try
@@ -161,5 +132,32 @@ public class SqlRepository
 		{
 			e.printStackTrace();
 		}	
+	}
+	public ArrayList<ContactModel> searchContact(String searchName,ArrayList<ContactModel> contacts)
+	{
+		try
+		{
+			String qry = "SELECT * FROM contacts WHERE contactName LIKE '%"+searchName+"%'";
+			ps = con.prepareStatement(qry);
+			rs = ps.executeQuery(qry);
+			while(rs.next())
+			{
+				contacts.add(new ContactModel());
+				for(int i=0;i<contacts.size();i++)
+				{
+					if(contacts.get(i).getName()==null)
+					{
+						contacts.get(i).setId(rs.getInt(1));
+						contacts.get(i).setName(rs.getString(2));
+						contacts.get(i).setPhoneNumber(Long.parseLong(rs.getString(3)));
+					}
+				}
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return contacts;
 	}
 }

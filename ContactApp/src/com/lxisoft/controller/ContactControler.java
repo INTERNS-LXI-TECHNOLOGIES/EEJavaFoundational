@@ -50,7 +50,8 @@ public class ContactControler
 		{
 			contacts.clear();
 			//contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
-			contacts = sqlReppo.readFromDatabase(contacts);
+
+			contacts = sqlReppo.readContact(contacts);
 			view.displayAllContacts(contacts);
 			boolean isTrue = false;
 			do
@@ -95,35 +96,38 @@ public class ContactControler
 			}
 		}
 			fileReppo.writeToFileWithoutOverriding(contacts);
-			sqlReppo.insertDataIntoTable(contacts);
+			sqlReppo.writeContact(contacts);
 			view.contactAddedMessage();
 	}
 	public void searchContact()
 	{
 		try
 		{
-			boolean isTrue = false;
+			//boolean isTrue = false;
 			String name = view.contactSearch();
-			Pattern p = Pattern.compile(name);
-			this.contactSearching();
 			contacts.clear();
-			contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
+			contacts = sqlReppo.searchContact(name,contacts);
+			//Pattern p = Pattern.compile(name);
+			this.contactSearching();
+			//contacts.clear();
+			//contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
 			view.contactHeading();
-			for(ContactModel test : contacts)
-			{
-				String splitObjectName = test.getName();
-				Matcher m = p.matcher(splitObjectName);
-				boolean isMatch = m.find();
-				if(isMatch)
-				{
-					view.contactData(test);
-					isTrue = true;
-				}
-			}
-			if(!isTrue)
-			{
-				view.noContactFoundMessage();
-			}
+			view.displayAllContacts(contacts);
+			// for(ContactModel test : contacts)
+			// {
+			// 	String splitObjectName = test.getName();
+			// 	Matcher m = p.matcher(splitObjectName);
+			// 	boolean isMatch = m.find();
+			// 	if(isMatch)
+			// 	{
+			// 		view.contactData(test);
+			// 		isTrue = true;
+			// 	}
+			// }
+			// if(!isTrue)
+			// {
+			// 	view.noContactFoundMessage();
+			// }
 		}
 		catch(Exception e)
 		{
