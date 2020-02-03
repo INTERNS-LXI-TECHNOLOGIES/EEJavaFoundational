@@ -13,6 +13,12 @@ public class ContactView
 		int i = sc.nextInt();
 		return i;
 	}
+	public int selectAContact()
+	{
+		System.out.println("Select a contact");
+		int a=sc.nextInt();
+		return a;
+	}
 	public int contactDetails()
 	{
 		System.out.println("Choose a option");
@@ -110,6 +116,16 @@ public class ContactView
 		System.out.println("Enter your search");
 		String m=sc.next();
 		return m;
+	}
+	public void displayAContact(ContactModel contact)
+	{
+		System.out.println("Contact is");
+		System.out.println(contact.getId());
+		System.out.println(contact.getName());
+		System.out.println(contact.getPhoneNumber());
+
+
+		
 	}
 
 }

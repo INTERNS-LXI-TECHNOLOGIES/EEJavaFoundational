@@ -41,7 +41,7 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}		
 	}
-	public void  writeToFile(ArrayList<ContactModel> contacts)
+	public void  writeToDatabase(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
@@ -93,13 +93,14 @@ public class SqlRepository implements Repository
 		}	
 		return contacts;
 	}
-	public void deleteQuery()
+	/*public void deleteQuery(ContactModel contact)
 	{
 		try
 		{
 			dataBaseConnectionEstablish();
+			int id = contact.getId();
 			String sql;
-			sql="delete from contacts where Id=6";
+			sql="delete from contacts where Id="+id;
 			ps=con.prepareStatement(sql);
 			ps.execute();
 		}
@@ -107,14 +108,14 @@ public class SqlRepository implements Repository
 		{
 			System.out.println("dddddddddd");
 		}
-	}
+	}*/
 	public void updateQuery()
 	{
 		try
 		{
 			dataBaseConnectionEstablish();
 			String sql;
-			//sql = "update contact set contactname='am' where id=1";
+			sql = "update contact set contactname='am' where id=1";
 			ps = con.prepareStatement(sql);
 			ps.execute();	
 		}
@@ -142,4 +143,4 @@ public class SqlRepository implements Repository
 
 	}
 	
-}	pl.
+}	

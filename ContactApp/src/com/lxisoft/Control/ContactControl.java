@@ -42,34 +42,38 @@ public class ContactControl
 	{
 		try
 		{
-			contacts.clear();
+			contacts.clear();						  
 			contacts = sqlrepo.readFromTable(contacts);
 			//contacts=filerepo.readFromFile(contacts);
 			view.displayAllContact(contacts);
+			
 			editDelete(); 	
 		}
 		catch(Exception e)
 		{
 			view.noContactFound();
 		}
-	}	
+	}
 	public void editDelete() 
 	{
 		boolean isCheck=false;
 		do
 		{
 			isCheck=false;
+			int a=view.selectAContact();
+			view.displayAContact(contacts.get(a-1));
 			int c=view.contactDetails();
 			switch(c)
 			{
 				case 1:editNewContact();break;
 				case 2:view.displayAllContact(contacts);isCheck=true;break;
-				case 3:deleteContacts();break;
+				case 3://deleteContacts();break;
 				case 4:searchContacts();break;
 				default: break;
 			}
 		}while(isCheck);
 	}
+
 	public void addNewContact()
 	{
 		contacts.clear();
@@ -83,7 +87,7 @@ public class ContactControl
 		}
 		filerepo.appendFile(contacts);
 		sqlrepo.createTable();	
-		sqlrepo.insertDataToTable(contacts);
+		sqlrepo.writeToDatabase(contacts);
 	}			
 	public void editNewContact()
 	{
@@ -120,10 +124,12 @@ public class ContactControl
 	{
 		view.selectYourChoice();
 	}	
-	public void deleteContacts()
+	public void deleteContacts(ContactModel contact)
 	{
-		//contacts.remove(view.deleteContact());
-		sqlrepo.deleteQuery();
+		/*contacts.remove(view.deleteContact());
+		int index = contacts.index(contact);
+		sqlrepo.deleteQuery(contact);
+		contacts.remove(index);*/
 		//filerepo.writeToFile(contacts);
 
 	}
