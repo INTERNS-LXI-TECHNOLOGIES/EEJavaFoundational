@@ -1,6 +1,6 @@
 package com.lxisoft.Repository;
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
 import java.io.*;
 import com.lxisoft.model.ContactModel;
 import com.lxisoft.Repository.Repository;
@@ -45,7 +45,7 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}
 	}
-	public void writeContact(ArrayList<ContactModel> contacts)
+	public void insertContact(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
@@ -64,30 +64,23 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}
 	}
-	public ArrayList<ContactModel> readContact(ArrayList<ContactModel> contacts)
+	public ArrayList<ContactModel> readContact(ArrayList<ContactModel> contacts) throws Exception
 	{
-		try
+		String qry = "select * from Contacts";
+		ps = con.prepareStatement(qry);
+		rs = ps.executeQuery(qry);
+		while(rs.next())
 		{
-			String qry = "select * from Contacts";
-			ps = con.prepareStatement(qry);
-			rs = ps.executeQuery(qry);
-			while(rs.next())
+			contacts.add(new ContactModel());
+			for(int i=0;i<contacts.size();i++)
 			{
-				contacts.add(new ContactModel());
-				for(int i=0;i<contacts.size();i++)
+				if(contacts.get(i).getName()==null)
 				{
-					if(contacts.get(i).getName()==null)
-					{
-						contacts.get(i).setId(rs.getInt(1));
-						contacts.get(i).setName(rs.getString(2));
-						contacts.get(i).setPhoneNumber(Long.parseLong(rs.getString(3)));
-					}
+					contacts.get(i).setId(rs.getInt(1));
+					contacts.get(i).setName(rs.getString(2));
+					contacts.get(i).setPhoneNumber(Long.parseLong(rs.getString(3)));
 				}
 			}
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
 		}
 		return contacts;
 	}
@@ -133,30 +126,24 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}	
 	}
-	public ArrayList<ContactModel> searchContact(String searchName,ArrayList<ContactModel> contacts)
+	public ArrayList<ContactModel> searchContact(String searchName,ArrayList<ContactModel> contacts) throws Exception
 	{
-		try
+		
+		String qry = "SELECT * FROM contacts WHERE contactName LIKE '%"+searchName+"%'";
+		ps = con.prepareStatement(qry);
+		rs = ps.executeQuery(qry);
+		while(rs.next())
 		{
-			String qry = "SELECT * FROM contacts WHERE contactName LIKE '%"+searchName+"%'";
-			ps = con.prepareStatement(qry);
-			rs = ps.executeQuery(qry);
-			while(rs.next())
+			contacts.add(new ContactModel());
+			for(int i=0;i<contacts.size();i++)
 			{
-				contacts.add(new ContactModel());
-				for(int i=0;i<contacts.size();i++)
+				if(contacts.get(i).getName()==null)
 				{
-					if(contacts.get(i).getName()==null)
-					{
-						contacts.get(i).setId(rs.getInt(1));
-						contacts.get(i).setName(rs.getString(2));
-						contacts.get(i).setPhoneNumber(Long.parseLong(rs.getString(3)));
-					}
+					contacts.get(i).setId(rs.getInt(1));
+					contacts.get(i).setName(rs.getString(2));
+					contacts.get(i).setPhoneNumber(Long.parseLong(rs.getString(3)));
 				}
 			}
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
 		}
 		return contacts;
 	}

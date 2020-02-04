@@ -9,7 +9,6 @@ import java.io.*;
 public class ContactControler
 {
 	private ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
-	private FileRepository fileReppo = new FileRepository();
 	private SqlRepository sqlReppo = SqlRepository.getInstance();
 	private ContactView view = new ContactView();
 	public void displayOrAddContact()
@@ -49,13 +48,11 @@ public class ContactControler
 		try
 		{
 			contacts.clear();
-			//contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
-
 			contacts = sqlReppo.readContact(contacts);
-			view.displayAllContacts(contacts);
 			boolean isTrue = false;
 			do
 			{
+				view.displayAllContacts(contacts);
 				isTrue = false;
 				int select = view.contactOperations();
 				switch(select)
@@ -64,9 +61,9 @@ public class ContactControler
 						int selectedContact = view.selectContact();
 						view.viewContact(contacts.get(selectedContact-1));
 						this.crudeOperation(contacts.get(selectedContact-1));
+						isTrue = true;
 						break;
 					case 2 :
-						isTrue = false;
 						break;
 					case 3 :
 						System.exit(0);
@@ -95,8 +92,7 @@ public class ContactControler
 				view.createNewContact(contacts.get(i));
 			}
 		}
-			fileReppo.writeToFileWithoutOverriding(contacts);
-			sqlReppo.writeContact(contacts);
+			sqlReppo.insertContact(contacts);
 			view.contactAddedMessage();
 	}
 	public void searchContact()
@@ -111,7 +107,7 @@ public class ContactControler
 			this.contactSearching();
 			//contacts.clear();
 			//contacts = fileReppo.readFromFile(contacts,fileReppo.contactFile);
-			view.contactHeading();
+			//view.contactHeading();
 			view.displayAllContacts(contacts);
 			// for(ContactModel test : contacts)
 			// {
@@ -131,7 +127,8 @@ public class ContactControler
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
+			//e.printStackTrace();
+			view.fileNotFound();
 		}
 	}
 	public void crudeOperation(ContactModel contact)
@@ -150,7 +147,6 @@ public class ContactControler
 					this.deleteContact(contact);
 					break;
 				case 3 :
-					isTrue = false;
 					break;
 				case 4 :
 					System.exit(0);
@@ -172,14 +168,10 @@ public class ContactControler
 			switch(select)
 			{
 				case 1:
-					contact = view.enterName(contact);
-					sqlReppo.updateContactName(contact);
-					//this.editName(contact);
+					this.editName(contact);
 					break;
 				case 2:
-					contact = view.enterPhoneNumber(contact);
-					sqlReppo.updateContactNumber(contact);
-					//this.editPhoneNumber(contact);
+					this.editPhoneNumber(contact);
 					break;
 				default :
 					view.wrongSelection();
@@ -190,12 +182,12 @@ public class ContactControler
 	public void editName(ContactModel contact)
 	{
 		contact = view.enterName(contact);
-		fileReppo.writeToFile(contacts);
+		sqlReppo.updateContactName(contact);
 	}
 	public void editPhoneNumber(ContactModel contact)
 	{
 		contact = view.enterPhoneNumber(contact);
-		fileReppo.writeToFile(contacts);
+		sqlReppo.updateContactNumber(contact);
 	}
 	public void deleteContact(ContactModel contact)
 	{
@@ -203,7 +195,6 @@ public class ContactControler
 		contacts.remove(index);
 		view.contactDeleteMessage();
 		sqlReppo.deleteContact(contact);
-		fileReppo.writeToFile(contacts);
 	}
 	public void contactSearching()
 	{
@@ -212,7 +203,7 @@ public class ContactControler
 			System.out.print("Searching ");
 			for(int i=0;i<3;i++)
 			{
-				Thread.sleep(600l);
+				Thread.sleep(400l);
 				System.out.print(".");
 
 			}
