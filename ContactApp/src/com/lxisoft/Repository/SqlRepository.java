@@ -155,5 +155,18 @@ public class SqlRepository implements Repository
 			System.out.println("ssssssss");
 		}
 	}
-	
+	public void searchQuery()
+	{
+		try
+		{
+			String sql = "select * from contacts where contactName like '%";
+			ps = con.prepareStatement(sql);
+			ps.execute(sql);
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}	
 }	

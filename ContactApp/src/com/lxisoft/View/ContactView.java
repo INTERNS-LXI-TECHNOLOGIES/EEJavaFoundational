@@ -26,18 +26,6 @@ public class ContactView
 		int a = sc.nextInt();
 		return a;
 	}	
-	public void invalidOption()
-	{
-		System.out.println("Invalid option");
-	}
-	public void noContactFound()
-	{
-		System.out.println("No Contact Found");
-	}
-	public void fileNotFound()
-	{
-		System.out.println("File not found");
-	}
 	public int addToContact()
 	{
 		System.out.println("\n1.Add");
@@ -46,8 +34,8 @@ public class ContactView
 	}	
 	public ContactModel addContactDetails(ContactModel contact)
 	{		
-		// System.out.println("Contact id");
-		// contact.setId(sc.nextInt());
+		/* System.out.println("Contact id");
+		 contact.setId(sc.nextInt());*/
 		System.out.println("Enter contact name");
 		contact.setName(sc.next()); 
 		System.out.println("Phone number");
@@ -70,6 +58,7 @@ public class ContactView
 			System.out.println(e.getMessage());
 		}
 	}
+	
 	public int editContact(ContactModel contact)
 	{
 		System.out.println("Which contact you want to edit");
@@ -117,6 +106,18 @@ public class ContactView
 		System.out.println(contact.getId());
 		System.out.println(contact.getName());
 		System.out.println(contact.getPhoneNumber());		
+	}
+	public void invalidOption()
+	{
+		System.out.println("Invalid option");
+	}
+	public void noContactFound()
+	{
+		System.out.println("No Contact Found");
+	}
+	public void fileNotFound()
+	{
+		System.out.println("File not found");
 	}
 
 }

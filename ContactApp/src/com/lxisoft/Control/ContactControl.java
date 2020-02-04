@@ -11,7 +11,7 @@ public class ContactControl
 {
 	ContactView view = new ContactView();
 	ContactModel model = new ContactModel();
-	FileRepository filerepo = new FileRepository();
+	//FileRepository filerepo = new FileRepository();
 	SqlRepository sqlrepo = new SqlRepository();
 	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
 	public void contactMenu()
@@ -29,7 +29,7 @@ public class ContactControl
 					case 2: addNewContact();isTest=true;break;	
 					case 3: searchElements();isTest=true;break;			
 					case 4: System.exit(0); break;	
-					default:;break;
+					default: break;
 				}
 			}while(isTest);
 		}
@@ -78,16 +78,14 @@ public class ContactControl
 		do
 		{
 			isTrue=false;
-			view.displayAllContact(contacts);
-			int i=view.editContact(contact);
-			view.editContactDetail();
+		//	view.displayAllContact(contacts);
+			//int i=view.editContact(contact);
+			int i = view.editContactDetail();
 			switch(i)
 			{
 
-				case 1: //editNameDetail(contact);
-				sqlrepo.updateContactName(contact);break;
-				case 2:// editPhoneNumberDetail(contact);
-				sqlrepo.updateContactNumber(contact);break;
+				case 1: editNameDetail(contact);break;
+				case 2: editPhoneNumberDetail(contact);break;
 				default:view.invalidOption();break;
 			}
 		}while(isTrue);
@@ -111,22 +109,22 @@ public class ContactControl
 				view.addContactDetails(contacts.get(i));
 			}
 		}
-		filerepo.appendFile(contacts);
+		/*filerepo.appendFile(contacts);*/
 		sqlrepo.createTable();	
 		sqlrepo.writeToDatabase(contacts);
-	}			
-	
-	
+	}		
 	public void editNameDetail(ContactModel contact)
 	{
 		
 		contact=view.editName(contact);
-		filerepo.writeToDatabase(contacts);
+		sqlrepo.updateContactName(contact);
+		//filerepo.writeToDatabase(contacts);
 	}
 	public void editPhoneNumberDetail(ContactModel contact)
 	{
 		contact=view.editPhoneNumber(contact);
-		filerepo.writeToDatabase(contacts);
+		sqlrepo.updateContactNumber(contact);
+		//filerepo.writeToDatabase(contacts);
 	}
 	public void backToMenu()
 	{
@@ -140,7 +138,7 @@ public class ContactControl
 			String name=view.searchElement();
 			contacts.clear();
 			Pattern p=Pattern.compile(name);			
-			contacts = filerepo.readFromDatabase(contacts);
+		/*	contacts = filerepo.readFromDatabase(contacts);*/
 			System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
 			for(ContactModel t : contacts)
 			{	
