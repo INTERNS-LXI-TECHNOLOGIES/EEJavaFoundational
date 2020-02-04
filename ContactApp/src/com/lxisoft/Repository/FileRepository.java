@@ -16,7 +16,7 @@ public class FileRepository implements Repository
 		boolean isCheck=file.exists();
 		return isCheck;
 	}
-	public void writeToFile(ArrayList<ContactModel> contacts)
+	public void writeToDatabase(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
@@ -56,7 +56,7 @@ public class FileRepository implements Repository
 			e.printStackTrace();
 		}
 	}	
-	public ArrayList<ContactModel> readFromFile(ArrayList<ContactModel> contacts) throws Exception , IOException
+	public ArrayList<ContactModel> readFromDatabase(ArrayList<ContactModel> contacts) throws Exception , IOException
 	{
 		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);

@@ -62,7 +62,7 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}		
 	}	
-	public ArrayList<ContactModel> readFromTable(ArrayList<ContactModel> contacts)
+	public ArrayList<ContactModel> readFromDatabase(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
@@ -93,7 +93,7 @@ public class SqlRepository implements Repository
 		}	
 		return contacts;
 	}
-	/*public void deleteQuery(ContactModel contact)
+	public void deleteQuery(ContactModel contact)
 	{
 		try
 		{
@@ -108,22 +108,39 @@ public class SqlRepository implements Repository
 		{
 			System.out.println("dddddddddd");
 		}
-	}*/
-	public void updateQuery()
+	}
+	public void updateContactName(ContactModel contact)
 	{
 		try
 		{
 			dataBaseConnectionEstablish();
+			int id= contact.getId();
 			String sql;
-			sql = "update contact set contactname='am' where id=1";
+			sql = "update contacts set contactname='"+contact.getName()+"' where id="+id;
 			ps = con.prepareStatement(sql);
 			ps.execute();	
+			
 		}
 		catch(SQLException e)
 		{
 			System.out.println(e);
 		}
 	}	
+	public void updateContactNumber(ContactModel contact)
+	{
+		try
+		{
+			dataBaseConnectionEstablish();
+			int id = contact.getId();
+			String sql = "update contacts set phonenumber = '"+contact.getPhoneNumber()+"' where Id ="+id;
+			ps = con.prepareStatement(sql);
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}	
+	}
 	public void clearTable()
 	{
 		try
@@ -137,10 +154,6 @@ public class SqlRepository implements Repository
 		{
 			System.out.println("ssssssss");
 		}
-	}
-	public void searchContact()
-	{
-
 	}
 	
 }	

@@ -22,7 +22,7 @@ public class ContactView
 	public int contactDetails()
 	{
 		System.out.println("Choose a option");
-		System.out.println("\n1.Edit \n2.View \n3.Delete \n4.Search \n5.Back To Main Menu");
+		System.out.println("\n1.Edit \n2.View \n3.Delete \n4.Back To Main Menu");
 		int a = sc.nextInt();
 		return a;
 	}	
@@ -70,7 +70,7 @@ public class ContactView
 			System.out.println(e.getMessage());
 		}
 	}
-	public int editContact(ArrayList<ContactModel> contacts)
+	public int editContact(ContactModel contact)
 	{
 		System.out.println("Which contact you want to edit");
 		int s=sc.nextInt();
@@ -83,30 +83,24 @@ public class ContactView
 		int e=sc.nextInt();
 		return e;
 	}
-	public String editName()
+	public ContactModel editName(ContactModel contact)
 	{
 		System.out.println("Enter your name");
-		String s=sc.next();
-		return s;
+		contact.setName(sc.next());
+		return contact;
 	}
-	public Long editPhoneNumber()
+	public ContactModel editPhoneNumber(ContactModel contact)
 	{
 		System.out.println("Enter phone number");
-		Long p=sc.nextLong();
-		return p;
+		contact.setPhoneNumber(sc.nextLong());
+		return contact;
 	}
 	public int deleteContact()
 	{
 		System.out.println("Which contact want to delete");
 		int e=sc.nextInt();
 		return e-1;
-	}
-	public String searchContact()
-	{
-		System.out.println("Enter a name");
-		String c=sc.next();
-		return c;
-	}
+	}	
 	public void contactExist()
 	{
 		System.out.println("Contact exist");
@@ -122,10 +116,7 @@ public class ContactView
 		System.out.println("Contact is");
 		System.out.println(contact.getId());
 		System.out.println(contact.getName());
-		System.out.println(contact.getPhoneNumber());
-
-
-		
+		System.out.println(contact.getPhoneNumber());		
 	}
 
 }

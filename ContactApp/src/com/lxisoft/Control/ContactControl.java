@@ -43,37 +43,63 @@ public class ContactControl
 		try
 		{
 			contacts.clear();						  
-			contacts = sqlrepo.readFromTable(contacts);
-			//contacts=filerepo.readFromFile(contacts);
-			view.displayAllContact(contacts);
-			
-			editDelete(); 	
+			contacts = sqlrepo.readFromDatabase(contacts);
+			//contacts=filerepo.readFromDatabase(contacts);
+			view.displayAllContact(contacts);			
+			int a=view.selectAContact();
+			crudeOperation(contacts.get(a-1)); 	
+
 		}
 		catch(Exception e)
 		{
 			view.noContactFound();
 		}
 	}
-	public void editDelete() 
+	public void crudeOperation(ContactModel contact) 
 	{
 		boolean isCheck=false;
 		do
 		{
-			isCheck=false;
-			int a=view.selectAContact();
-			view.displayAContact(contacts.get(a-1));
+			isCheck=false;			
+			view.displayAContact(contact);
 			int c=view.contactDetails();
 			switch(c)
 			{
-				case 1:editNewContact();break;
+				case 1:editNewContact(contact);break;
 				case 2:view.displayAllContact(contacts);isCheck=true;break;
-				case 3://deleteContacts();break;
-				case 4:searchContacts();break;
+				case 3:deleteContacts(contact);break;
 				default: break;
 			}
 		}while(isCheck);
 	}
+	public void editNewContact(ContactModel contact)
+	{
+		boolean isTrue=false;
+		do
+		{
+			isTrue=false;
+			view.displayAllContact(contacts);
+			int i=view.editContact(contact);
+			view.editContactDetail();
+			switch(i)
+			{
 
+				case 1: //editNameDetail(contact);
+				sqlrepo.updateContactName(contact);break;
+				case 2:// editPhoneNumberDetail(contact);
+				sqlrepo.updateContactNumber(contact);break;
+				default:view.invalidOption();break;
+			}
+		}while(isTrue);
+	}		
+	public void deleteContacts(ContactModel contact)
+	{
+		
+		int index = contacts.indexOf(contact);
+		sqlrepo.deleteQuery(contact);		
+		contacts.remove(view.deleteContact());
+		//filerepo.writeToFile(contacts);
+	}	
 	public void addNewContact()
 	{
 		contacts.clear();
@@ -89,72 +115,23 @@ public class ContactControl
 		sqlrepo.createTable();	
 		sqlrepo.writeToDatabase(contacts);
 	}			
-	public void editNewContact()
-	{
-		boolean isTrue=false;
-		do
-		{
-			isTrue=false;
-			view.displayAllContact(contacts);
-			int i=view.editContact(contacts);
-			view.editContactDetail();
-			switch(i)
-			{
-
-				case 1: editNameDetail(contacts.get(i-1));break;
-				case 2: editPhoneNumberDetail(contacts.get(i-1));break;
-				default:view.invalidOption();break;
-			}
-		}while(isTrue);
-	}		
+	
 	
 	public void editNameDetail(ContactModel contact)
 	{
-		String a=view.editName();
-		contact.setName(a);
-		filerepo.writeToFile(contacts);
+		
+		contact=view.editName(contact);
+		filerepo.writeToDatabase(contacts);
 	}
 	public void editPhoneNumberDetail(ContactModel contact)
 	{
-		Long i=view.editPhoneNumber();
-		contact.setPhoneNumber(i);
-		filerepo.writeToFile(contacts);
+		contact=view.editPhoneNumber(contact);
+		filerepo.writeToDatabase(contacts);
 	}
 	public void backToMenu()
 	{
 		view.selectYourChoice();
 	}	
-	public void deleteContacts(ContactModel contact)
-	{
-		/*contacts.remove(view.deleteContact());
-		int index = contacts.index(contact);
-		sqlrepo.deleteQuery(contact);
-		contacts.remove(index);*/
-		//filerepo.writeToFile(contacts);
-
-	}
-	public void searchContacts()
-	{
-		try
-		{
-			String n=view.searchContact();
-			contacts.clear();
-			contacts=filerepo.readFromFile(contacts);
-			for(int i=0;i<contacts.size();i++)
-			{
-				if(n.equals(contacts.get(i).getName())) 
-				{
-					view.contactExist();
-					System.out.println(contacts.get(i).getName());		
-					System.out.println(contacts.get(i).getPhoneNumber());
-				}				
-			}
-		}
-		catch (Exception e)
-		{
-			System.out.println(e);
-		}	
-	} 
 	public void searchElements()
 	{
 		try
@@ -163,7 +140,7 @@ public class ContactControl
 			String name=view.searchElement();
 			contacts.clear();
 			Pattern p=Pattern.compile(name);			
-			contacts = filerepo.readFromFile(contacts);
+			contacts = filerepo.readFromDatabase(contacts);
 			System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
 			for(ContactModel t : contacts)
 			{	
