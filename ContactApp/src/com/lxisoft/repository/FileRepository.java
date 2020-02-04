@@ -1,4 +1,4 @@
-package com.lxisoft.fileRepository;
+package com.lxisoft.repository;
 import com.lxisoft.model.*;
 import java.util.ArrayList;
 import java.io.*;

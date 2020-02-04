@@ -2,13 +2,14 @@ package com.lxisoft.control;
 import com.lxisoft.model.*;
 import com.lxisoft.view.*;
 import java.io.*;
-import com.lxisoft.fileRepository.*;
+import com.lxisoft.repository.*;
 import java.util.ArrayList;
 public class ContactControl
 {
 	ArrayList<ContactModel>modelArray=new ArrayList<ContactModel>();
 	ContactView view =new ContactView();
 	FileRepository file= new FileRepository(); 
+	SqlRepository sql=new SqlRepository();
 	public void controlView()
 	{	
 		int x=0;
@@ -54,6 +55,7 @@ public class ContactControl
 	}
 	public void displayContact()
 	{
+		sql.createTable();
 		 if(file.newFile.exists())
 		{
 			 modelArray.clear();
@@ -69,24 +71,25 @@ public class ContactControl
 	}
 	public void edit(ContactModel contact)
 	{
-		//int a=view.selectName();
+		boolean x=false;
+		do{
+			x=false;
 		int c=view.editContact(contact);
-		if(c==1)
+		switch(c)
 		{
-			 contact = view.editName(contact);
-		}
-		if(c==2)
-		{
-			contact =view.editMob(contact);
-		}
-		if(c==3)
-		{
-			contact = view.editId(contact);
-		}
-		if(c==4)
-		{
-			view.editOrDelete();
-		}
+			case 1: contact = view.editName(contact);
+					x=true;
+					break;
+			case 2: contact =view.editMob(contact);
+					x=true;
+					break;
+			case 3: contact = view.editId(contact);
+					x=true;
+					break;
+			case 4: 
+					break;
+			default:  view.defaultText1();
+		}}while(x);
 		writeToFile(modelArray,false);
 	}
 	public void delete()
