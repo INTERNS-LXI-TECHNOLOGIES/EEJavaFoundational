@@ -88,6 +88,9 @@ public class Controller
 					case 2:
 							deleteContact(num[1]);
 							break;
+					case 3:
+							
+							break;
 				}
 				activities();
 	}

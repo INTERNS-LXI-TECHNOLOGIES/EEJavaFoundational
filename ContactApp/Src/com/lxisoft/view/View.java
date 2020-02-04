@@ -37,7 +37,7 @@ public void displayContacts(ArrayList<Contact> details)
 			
 			int select=0;
 			int i=1;
-			int[] choose=new int[2];
+			int[] choose=new int[3];
 			for(int j=0;j<details.size();j++)
 			{
 				System.out.print(i+" : "+details.get(j).getName()+" : "+details.get(j).getNumber()+"\n");
@@ -61,12 +61,15 @@ public void displayContacts(ArrayList<Contact> details)
 				break;
 			
 			case 'n':
-				choose[1]=0;
+				choose[0]=3;
 				break;
 			
 			default :
 			
 				System.out.println("Wrong entry please choose correct entry");
+
+				break;
+
 			}
 		return choose;	
 		
