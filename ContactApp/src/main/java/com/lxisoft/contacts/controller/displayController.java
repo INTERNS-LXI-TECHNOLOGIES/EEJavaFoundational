@@ -21,7 +21,7 @@ public class displayController
 	@Autowired
     repoController repo;
 	ArrayList<Contact> words;
-	@RequestMapping("/add")
+	@RequestMapping("/viewall")
 	public ModelAndView display(HttpServletRequest request,HttpServletResponse response)
 	{
 		words=repo.getWords();
@@ -30,6 +30,13 @@ public class displayController
 		mv.setViewName("Dis.jsp");
 		String j="dfghj";
 		mv.addObject("arraylist",words);
+		return mv;
+	}
+	@RequestMapping("/addnew")
+	public ModelAndView add()
+	{
+		ModelAndView mv=new ModelAndView();
+		mv.setViewName("addnew.jsp");
 		return mv;
 	}
 }

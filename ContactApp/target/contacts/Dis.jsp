@@ -43,11 +43,10 @@ else if (request.getUserPrincipal()==null){ %>
 
 
 <center><% if(request.isUserInRole("admin")){ %>
-<a href="addnew.jsp" style="color: green; text-align: center;"><button >+</button></a>
+<a href="addnew" style="color: green; text-align: center;"><button >+</button></a>
 <% }
 else{ %>
-<!-- <embed src="song.mp4"> </embed> -->
-<button onclick="play();denied();" >+</button></a>
+<button onclick="denied()" >+</button></a>
 <% } %> </center>
  
 <script>
@@ -77,7 +76,7 @@ else{ %>
 <center><button  onclick="window.location.href='deleteAll';" ><fmt:message key="label.delete" /></button> <br></center>
 <% }
 else { %>
-<center><button  onclick="play();denied();" ><fmt:message key="label.delete" /></button> <br></center>
+<center><button  onclick="denied()" ><fmt:message key="label.delete" /></button> <br></center>
 	<% } %>
 <center>
 <form action="sort">
@@ -128,8 +127,8 @@ contacts=(ArrayList <Contact>)request.getAttribute("arraylist"); %>
 		<td><a href="select?name=<%=a.getFullName()%>&type=delete"><fmt:message key="label.del" /></a></td>
 		<% }
 		else { %>
-		<td><button onclick="play();denied();">c</button></td>
-		<td><button onclick="play();denied();"><fmt:message key="label.del" /></button></td>
+		<td><button onclick="denied()">c</button></td>
+		<td><button onclick="denied()"><fmt:message key="label.del" /></button></td>
 		<% } %>
 		
 	</tr>
