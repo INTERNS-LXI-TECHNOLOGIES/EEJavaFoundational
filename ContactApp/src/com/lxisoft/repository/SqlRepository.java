@@ -28,11 +28,28 @@ public class SqlRepository
 		{
 			databaseConnectionEstablish();
 		String qry;
-		qry="create table contacts(id int,name varchar(25),mob varchar(15))";
+		qry="create table if not exists contacts(id int not null unique auto_increment,name varchar(25),mob varchar(15))";
 		ps=con.prepareStatement(qry);
 		ps.execute();
 	}
 	catch(SQLException e)
+	{
+		e.printStackTrace();
+	}
+}
+public void insertInto(ContactModel contacts)
+{
+	try
+	{
+		createTable();
+		String qry;
+		qry="insert into contacts(name,mob)values(?,?)";
+		ps=con.prepareStatement(qry);
+		ps.setString(1,contacts.getName());
+		ps.setString(2,String.valueOf(contacts.getMob()));
+		ps.execute();
+	}
+	catch(Exception e)
 	{
 		e.printStackTrace();
 	}

@@ -16,16 +16,14 @@ public class ContactView
 		int choice1 =sc.nextInt();
 		return choice1;
 	}
-	public ArrayList<String> addContacts()
+	public ContactModel addContacts(ContactModel contact)
 	{
-		ArrayList<String>details=new ArrayList<String>();
 		System.out.println("enter the name :");
-		details.add(sc.next());
+		contact.setName(sc.nextLine());
+		contact.setName(sc.nextLine());
 		System.out.println("enter the phone number : ");
-		details.add(sc.next());
-		System.out.println("enter the id :");
-		details.add(sc.next());
-		return details;
+		contact.setMob(sc.nextLong());
+		return contact;
 	}
 	public int selectName()
 	{

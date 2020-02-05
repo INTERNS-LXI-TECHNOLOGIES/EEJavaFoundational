@@ -3,7 +3,6 @@ public class ContactModel implements Comparable<ContactModel>
 {
 	private String name;
 	private long mob;
-	private int id;
 	public void setName(String name)
 	{
 		this.name=name;
@@ -19,14 +18,6 @@ public class ContactModel implements Comparable<ContactModel>
 	public long getMob()
 	{
 		return mob;
-	}
-	public void setId(int id)
-	{
-		this.id=id;
-	}
-	public int getId()
-	{
-		return id;
 	}
 	public int compareTo(ContactModel model)
 	{

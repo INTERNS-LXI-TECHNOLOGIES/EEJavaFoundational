@@ -18,8 +18,8 @@ public class ContactControl
 		int c =view.display();
 		switch(c)
 		{
-			case 1:s= view.addContacts();
-				   getDetails(s);
+			case 1:addContacts();
+				   //getDetails(s);
 				   break;
 			case 2: displayContact();
 					break;
@@ -27,6 +27,12 @@ public class ContactControl
 		}
 		x=view.defaultText3();
 		}while(x==1);
+	}
+	public void addContacts()
+	{
+		ContactModel contact=new ContactModel();	
+		contact=view.addContacts(contact);
+		sql.insertInto(contact);
 	}
 	public void readFromFile(File fileCopy)
 	{
@@ -55,7 +61,6 @@ public class ContactControl
 	}
 	public void displayContact()
 	{
-		sql.createTable();
 		 if(file.newFile.exists())
 		{
 			 modelArray.clear();
