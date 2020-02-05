@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"com.lxisoft.view","l":"ContactView"}]

@@ -10,6 +10,9 @@ public class SqlRepository implements Repository
 	private Connection con = null;
 	private PreparedStatement ps = null;
 	private ResultSet rs = null;
+	/**
+	* Constructor for Database Connection.
+	*/
 	private SqlRepository()
 	{
 		if(con == null)
@@ -25,6 +28,11 @@ public class SqlRepository implements Repository
 			}
 		}	
 	}
+	/**
+	* Get instance of SqlRepository.
+	* Can create single Instance of this class.
+	* @return instance.
+	*/
 	public static SqlRepository getInstance()
 	{
 		if(sqlReppo == null)
@@ -32,6 +40,9 @@ public class SqlRepository implements Repository
 
 		return sqlReppo;
 	}
+	/**
+	* CREATE TABLE IF NOT EXISTS.
+	*/
 	public void createTable()
 	{
 		try
@@ -45,6 +56,10 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}
 	}
+	/**
+	* INSERT DATA INTO TABLE.
+	* @param contacts ArrayList for insert Data.  
+	*/
 	public void insertContact(ArrayList<ContactModel> contacts)
 	{
 		try
@@ -64,6 +79,11 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}
 	}
+	/**
+	* READ DATA FROM TABLE.
+	* @param contacts ArrayList for Read Data.
+	* @return Data contained contacts ArrayList.  
+	*/
 	public ArrayList<ContactModel> readContact(ArrayList<ContactModel> contacts) throws Exception
 	{
 		String qry = "select * from Contacts";
@@ -84,6 +104,10 @@ public class SqlRepository implements Repository
 		}
 		return contacts;
 	}
+	/**
+	* DELETE DATA FROM TABLE.
+	* @param contact for delete.
+	*/
 	public void deleteContact(ContactModel contact)
 	{
 		try
@@ -98,6 +122,10 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}
 	}
+	/**
+	* UPDATE CONTACT NAME FROM TABLE.
+	* @param contact for update.
+	*/
 	public void updateContactName(ContactModel contact)
 	{
 		try
@@ -112,6 +140,10 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}
 	}
+	/**
+	* UPDATE CONTACT NUMBER FROM TABLE.
+	* @param contact for update.
+	*/
 	public void updateContactNumber(ContactModel contact)
 	{
 		try
@@ -126,6 +158,12 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}	
 	}
+	/**
+	* SEARCH CONTACT.
+	* @param searchName for search.
+	* @param contacts ArrayList contain set of Data's.
+	* @return contacts ArrayList if any contacts matched. 
+	*/
 	public ArrayList<ContactModel> searchContact(String searchName,ArrayList<ContactModel> contacts) throws Exception
 	{
 		
