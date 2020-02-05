@@ -171,13 +171,14 @@ public class ContactControl
 	*/
 	public void searchElements()
 	{
+	//sqlrepo.searchQuery();/*
 		try
 		{
 			boolean isTest = false;
 			String name=view.searchElement();
 			contacts.clear();
 			Pattern p=Pattern.compile(name);			
-		/*	contacts = filerepo.readFromDatabase(contacts);*/
+			//contacts = filerepo.readFromDatabase(contacts);
 			System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
 			for(ContactModel t : contacts)
 			{	

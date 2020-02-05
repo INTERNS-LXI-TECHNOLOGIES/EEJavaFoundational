@@ -39,8 +39,7 @@ public class SqlRepository implements Repository
 		try 
 		{
 			dataBaseConnectionEstablish();
-			String qry;
-			qry="create table if not exists contacts(Id int primary key auto_increment,contactname varchar(25),phonenumber varchar(15))";
+			String qry="create table if not exists contacts(Id int primary key auto_increment,contactname varchar(25),phonenumber varchar(15))";
 			ps = con.prepareStatement(qry);
 			ps.execute();			    
 		}
@@ -59,9 +58,8 @@ public class SqlRepository implements Repository
 		try
 		{
 			dataBaseConnectionEstablish();
-			String sql;
-			sql = "insert into contacts(contactname,phonenumber) values(?,?)";
-			ps = con.prepareStatement(sql);
+			String qry= "insert into contacts(contactname,phonenumber) values(?,?)";
+			ps = con.prepareStatement(qry);
 			for(int i=0;i<contacts.size();i++)
 			{
 				ps.setString(1,contacts.get(i).getName());
@@ -86,10 +84,9 @@ public class SqlRepository implements Repository
 		{
 			System.out.println("Sql Repository");
 			dataBaseConnectionEstablish();
-			String sql;
-			sql = "select * from contacts";
-			ps = con.prepareStatement(sql);
-			rs = ps.executeQuery(sql);
+			String qry = "select * from contacts";
+			ps = con.prepareStatement(qry);
+			rs = ps.executeQuery(qry);
 			//System.out.printf("%-20.30s %-20.30s %-20.30s%n","ID","Name","Number");
 			while(rs.next())
 			{
@@ -121,9 +118,8 @@ public class SqlRepository implements Repository
 		{
 			dataBaseConnectionEstablish();
 			int id = contact.getId();
-			String sql;
-			sql="delete from contacts where Id="+id;
-			ps=con.prepareStatement(sql);
+			String qry="delete from contacts where Id="+id;
+			ps=con.prepareStatement(qry);
 			ps.execute();
 		}
 		catch(SQLException e)
@@ -141,9 +137,8 @@ public class SqlRepository implements Repository
 		{
 			dataBaseConnectionEstablish();
 			int id= contact.getId();
-			String sql;
-			sql = "update contacts set contactname='"+contact.getName()+"' where id="+id;
-			ps = con.prepareStatement(sql);
+			String qry= "update contacts set contactname='"+contact.getName()+"' where id="+id;
+			ps = con.prepareStatement(qry);
 			ps.execute();	
 			
 		}
@@ -162,8 +157,8 @@ public class SqlRepository implements Repository
 		{
 			dataBaseConnectionEstablish();
 			int id = contact.getId();
-			String sql = "update contacts set phonenumber = '"+contact.getPhoneNumber()+"' where Id ="+id;
-			ps = con.prepareStatement(sql);
+			String qry = "update contacts set phonenumber = '"+contact.getPhoneNumber()+"' where Id ="+id;
+			ps = con.prepareStatement(qry);
 			ps.execute();
 		}
 		catch(Exception e)
@@ -179,8 +174,8 @@ public class SqlRepository implements Repository
 		try
 		{
 			dataBaseConnectionEstablish();
-			String sql = "truncate table contact";
-			ps = con.prepareStatement(sql);
+			String qry = "truncate table contact";
+			ps = con.prepareStatement(qry);
 			ps.execute();
 		}
 		catch(SQLException e)
@@ -191,13 +186,14 @@ public class SqlRepository implements Repository
 	/**
 		* This method to search contact 
 	*/
-	public void searchQuery()
+	public void searchQuery(ArrayList<ContactModel> contacts)
 	{
 		try
 		{
-			String sql = "select * from contacts where contactName like '%";
-			ps = con.prepareStatement(sql);
-			ps.execute(sql);
+			dataBaseConnectionEstablish();
+			String qry = "select * from contacts where contactName like '%'+ +'%'";
+			ps = con.prepareStatement(qry);
+			ps.execute();
 			
 		}
 		catch(Exception e)
@@ -206,3 +202,6 @@ public class SqlRepository implements Repository
 		}
 	}	
 }	
+
+
+	
