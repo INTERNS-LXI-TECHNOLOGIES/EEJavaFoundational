@@ -5,11 +5,17 @@ import java.sql.*;
 import com.lxisoft.Control.ContactControl;
 import com.lxisoft.Model.ContactModel;
 import com.lxisoft.View.ContactView;
+/**
+	* This is a SqlRepository class used connect with database  
+*/
 public class SqlRepository implements Repository
 {
 	Connection con = null;
 	PreparedStatement ps = null;
 	ResultSet rs=null;
+	/**
+		* This method for connecting database
+	*/
 	public void dataBaseConnectionEstablish()
 	{
 		if (con == null)
@@ -25,6 +31,9 @@ public class SqlRepository implements Repository
 			}	
 		}	
 	}
+	/**
+		* This method to create table skeleton of table
+	*/
 	public void createTable()
 	{
 		try 
@@ -41,6 +50,10 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}		
 	}
+	/**
+		* This method to insert data to table 
+		* @param contacts to get datas from arraylist 
+	*/
 	public void  writeToDatabase(ArrayList<ContactModel> contacts)
 	{
 		try
@@ -61,7 +74,12 @@ public class SqlRepository implements Repository
 			System.out.println("qqqqqqqqq"+e);
 			e.printStackTrace();
 		}		
-	}	
+	}
+
+	/**
+        * This method for display datas from the table 
+		* @return contacts to display data
+		* @param contacts display data */	
 	public ArrayList<ContactModel> readFromDatabase(ArrayList<ContactModel> contacts)
 	{
 		try
@@ -93,6 +111,10 @@ public class SqlRepository implements Repository
 		}	
 		return contacts;
 	}
+	/**
+		* This method for delete a row 
+		* @param contact to get a contact
+	*/
 	public void deleteQuery(ContactModel contact)
 	{
 		try
@@ -109,6 +131,10 @@ public class SqlRepository implements Repository
 			System.out.println("dddddddddd");
 		}
 	}
+	/**
+		* This method to update contact name
+		* @param contact to update contact name
+	*/
 	public void updateContactName(ContactModel contact)
 	{
 		try
@@ -125,7 +151,11 @@ public class SqlRepository implements Repository
 		{
 			System.out.println(e);
 		}
-	}	
+	}
+	/**
+		* This method to update contact number
+		* @param contact to update contact number
+	*/	
 	public void updateContactNumber(ContactModel contact)
 	{
 		try
@@ -141,6 +171,9 @@ public class SqlRepository implements Repository
 			e.printStackTrace();
 		}	
 	}
+	/**
+		* This method to clear table data
+	*/
 	public void clearTable()
 	{
 		try
@@ -155,6 +188,9 @@ public class SqlRepository implements Repository
 			System.out.println("ssssssss");
 		}
 	}
+	/**
+		* This method to search contact 
+	*/
 	public void searchQuery()
 	{
 		try

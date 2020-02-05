@@ -1,6 +1,9 @@
 package com.lxisoft.Model;
 import java.util.*;
 import com.lxisoft.Model.ContactModel;
+/**
+	* This is Model class it's like a mould
+*/
 public class ContactModel implements Comparable <ContactModel>
 {
 	private String contactName;

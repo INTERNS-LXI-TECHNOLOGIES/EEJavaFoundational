@@ -7,13 +7,20 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+/**
+	* This is a Control class here all control logics
+*/
 public class ContactControl
 {
+
 	ContactView view = new ContactView();
 	ContactModel model = new ContactModel();
 	//FileRepository filerepo = new FileRepository();
 	SqlRepository sqlrepo = new SqlRepository();
 	ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
+	/**
+		* This method for selecting options when entering the app
+	*/
 	public void contactMenu()
 	{
 		try
@@ -25,7 +32,7 @@ public class ContactControl
 				int m=view.selectYourChoice();
 				switch (m)
 				{
-					case 1:	selectAllContact();isTest=true;break;
+					case 1:	contact();isTest=true;break;
 					case 2: addNewContact();isTest=true;break;	
 					case 3: searchElements();isTest=true;break;			
 					case 4: System.exit(0); break;	
@@ -37,8 +44,11 @@ public class ContactControl
 		{
 			System.out.println(e);
 		}			
-	}	
-	public void selectAllContact()
+	}
+	/**
+		This method to select a contact 
+	*/	
+	public void contact()
 	{
 		try
 		{
@@ -47,7 +57,7 @@ public class ContactControl
 			//contacts=filerepo.readFromDatabase(contacts);
 			view.displayAllContact(contacts);			
 			int a=view.selectAContact();
-			crudeOperation(contacts.get(a-1)); 	
+			crudOperation(contacts.get(a-1)); 	
 
 		}
 		catch(Exception e)
@@ -55,7 +65,11 @@ public class ContactControl
 			view.noContactFound();
 		}
 	}
-	public void crudeOperation(ContactModel contact) 
+	/**
+		* This method is use for crud operation
+		* @param contact variable for crud 
+	*/
+	public void crudOperation(ContactModel contact) 
 	{
 		boolean isCheck=false;
 		do
@@ -72,6 +86,10 @@ public class ContactControl
 			}
 		}while(isCheck);
 	}
+	/**
+		*This method to edit a contact
+		*@param contact variable to edit contact
+	*/
 	public void editNewContact(ContactModel contact)
 	{
 		boolean isTrue=false;
@@ -89,7 +107,11 @@ public class ContactControl
 				default:view.invalidOption();break;
 			}
 		}while(isTrue);
-	}		
+	}	
+	/**
+		* This method to delete a contact
+		* @param contact variable to delete a contact
+	*/	
 	public void deleteContacts(ContactModel contact)
 	{
 		
@@ -98,6 +120,9 @@ public class ContactControl
 		contacts.remove(view.deleteContact());
 		//filerepo.writeToFile(contacts);
 	}	
+	/**
+		* This method to add new contact
+	*/
 	public void addNewContact()
 	{
 		contacts.clear();
@@ -112,7 +137,11 @@ public class ContactControl
 		/*filerepo.appendFile(contacts);*/
 		sqlrepo.createTable();	
 		sqlrepo.writeToDatabase(contacts);
-	}		
+	}	
+	/**
+	 	* This method to edit contact name
+	 	* @param contact variable to edit a contact name 
+	*/	
 	public void editNameDetail(ContactModel contact)
 	{
 		
@@ -120,16 +149,26 @@ public class ContactControl
 		sqlrepo.updateContactName(contact);
 		//filerepo.writeToDatabase(contacts);
 	}
+	/**
+		* This method to edit contact number 
+		* @param contact variable to edit contact number
+	*/
 	public void editPhoneNumberDetail(ContactModel contact)
 	{
 		contact=view.editPhoneNumber(contact);
 		sqlrepo.updateContactNumber(contact);
 		//filerepo.writeToDatabase(contacts);
 	}
+	/**
+		*This method to back to menu
+	*/
 	public void backToMenu()
 	{
 		view.selectYourChoice();
 	}	
+	/**
+	 	*This method to search contacts
+	*/
 	public void searchElements()
 	{
 		try
