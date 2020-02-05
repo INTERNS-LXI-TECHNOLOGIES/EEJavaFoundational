@@ -1,6 +1,8 @@
 package com.lxisoft.Repository;
 import java.util.ArrayList;
 import com.lxisoft.model.ContactModel;
+/**
+*/
 public interface Repository
 {
 	public void insertContact(ArrayList<ContactModel> contacts);

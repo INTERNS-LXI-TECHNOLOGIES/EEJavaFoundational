@@ -82,7 +82,7 @@ public class SqlRepository implements Repository
 	/**
 	* READ DATA FROM TABLE.
 	* @param contacts ArrayList for Read Data.
-	* @return Data contained contacts ArrayList.  
+	* @return contacts Data contained contacts ArrayList.
 	*/
 	public ArrayList<ContactModel> readContact(ArrayList<ContactModel> contacts) throws Exception
 	{

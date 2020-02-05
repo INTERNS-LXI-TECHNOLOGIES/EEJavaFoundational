@@ -2,47 +2,80 @@ package com.lxisoft.view;
 import com.lxisoft.controller.ContactControler;
 import com.lxisoft.model.ContactModel;
 import java.util.*;
+/**
+* View the output
+*/
 public class ContactView
 {
 	public static Scanner scanner = new Scanner(System.in);
+	/**
+	* Give a name for my ContactApp
+	*/
 	public void myAppName()
 	{
 		System.out.println("              !!! My Contact App !!!");
 	}
+	/**
+	* select Option
+	*/
 	public int selectOption()
 	{
 		System.out.println("Press ==> 1.Contacts / 2.Add New Contact / 3.Search Contact / 4.Exit");
 		int select = scanner.nextInt();
 		return select;
 	}
+	/**
+	* Sop for Wrong Seletion
+	*/
 	public void wrongSelection()
 	{
 		System.out.println("Select Options From Above !!!");
 	}
+	/**
+	* SOP for table not found
+	*/
 	public void fileNotFound()
 	{
 		System.out.println("No Contacts Found...!!!!");
 	}
+	/**
+	* Select option for view a contact
+	* @return variable of selected option
+	*/
 	public int contactOperations()
 	{
 		System.out.println("Press==> 1.View Contact 2.Back 3.Exit");
 		int select = scanner.nextInt();
 		return select;
 	}
+	/**
+	* Select Options for CRUD Operations
+	* @return variable of selected option
+	*/
 	public int crudeOperations()
 	{
 		System.out.println("Press==> 1.Edit 2.Delete 3.Back 4.Exit");
 		int select = scanner.nextInt();
 		return select;
 	}
+	/**
+	* Contact delete Message
+	*/
 	public void contactDeleteMessage()
 	{
 		System.out.println("Contact Deleted...!!!");
 	}
+	/**
+	* Contact Added Message
+	*/
 	public void contactAddedMessage()
 	{
 		System.out.println("New Contact Added...!!!");
 	}
+	/**
+	* View a COntact
+	* @param contact for display contact.
+	*/
 	public void viewContact(ContactModel contact)
 	{
 		System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
@@ -56,6 +89,10 @@ public class ContactView
 	{
 		System.out.printf("%-20.30s %-20.30s %-20.30s%n",contact.getId(),contact.getName(),contact.getPhoneNumber());	
 	}
+	/**
+	* Create New Contact.
+	* @param contact for create new Contact.
+	*/
 	public ContactModel createNewContact(ContactModel contact)
 	{
 		System.out.println("Enter contactID");
