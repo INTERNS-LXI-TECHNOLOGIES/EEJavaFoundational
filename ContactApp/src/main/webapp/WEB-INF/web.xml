@@ -19,7 +19,7 @@
 	<security-constraint>
       <web-resource-collection>
          <web-resource-name>login</web-resource-name>
-         <url-pattern>/viewall</url-pattern>
+         <url-pattern>/view</url-pattern>
          <http-method>GET</http-method>
          <http-method>POST</http-method>
       </web-resource-collection>

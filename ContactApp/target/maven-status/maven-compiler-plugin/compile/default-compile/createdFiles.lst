@@ -1,3 +1,5 @@
 com\lxisoft\contacts\controller\repoController.class
 com\lxisoft\contacts\domain\Contact.class
+com\lxisoft\contacts\model\ViewList.class
+com\lxisoft\contacts\model\ViewListModel.class
 com\lxisoft\contacts\controller\displayController.class

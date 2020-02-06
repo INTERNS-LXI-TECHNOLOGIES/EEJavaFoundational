@@ -40,10 +40,10 @@ else if (request.getUserPrincipal()==null){ %>
 <center><fmt:message key="label.welcome" /> Guest</center>
 <% } %>
 
-
+addnew<a href="addnew" style="color: green; text-align: center;"><button >+</button></a>
 
 <center><% if(request.isUserInRole("admin")){ %>
-<a href="addnew" style="color: green; text-align: center;"><button >+</button></a>
+<!--<a href="addnew" style="color: green; text-align: center;"><button >+</button></a> -->
 <% }
 else{ %>
 <button onclick="denied()" >+</button></a>
