@@ -34,7 +34,7 @@ public class SqlRepository implements Repository
 	/**
 		* This method to create table skeleton of table
 	*/
-	public void createTable()
+	public void createContactTable()
 	{
 		try 
 		{
@@ -82,7 +82,6 @@ public class SqlRepository implements Repository
 	{
 		try
 		{
-			System.out.println("Sql Repository");
 			dataBaseConnectionEstablish();
 			String qry = "select * from contacts";
 			ps = con.prepareStatement(qry);
@@ -112,7 +111,7 @@ public class SqlRepository implements Repository
 		* This method for delete a row 
 		* @param contact to get a contact
 	*/
-	public void deleteQuery(ContactModel contact)
+	public void deleteContact(ContactModel contact)
 	{
 		try
 		{
@@ -126,7 +125,7 @@ public class SqlRepository implements Repository
 		{
 			System.out.println("dddddddddd");
 		}
-	}
+	}	
 	/**
 		* This method to update contact name
 		* @param contact to update contact name
@@ -165,23 +164,6 @@ public class SqlRepository implements Repository
 		{
 			e.printStackTrace();
 		}	
-	}
-	/**
-		* This method to clear table data
-	*/
-	public void clearTable()
-	{
-		try
-		{
-			dataBaseConnectionEstablish();
-			String qry = "truncate table contact";
-			ps = con.prepareStatement(qry);
-			ps.execute();
-		}
-		catch(SQLException e)
-		{
-			System.out.println("ssssssss");
-		}
 	}
 	/**
 		* This method to search contact 

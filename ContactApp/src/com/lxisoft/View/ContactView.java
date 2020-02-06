@@ -15,7 +15,7 @@ public class ContactView
 	*/
 	public int selectYourChoice()
 	{
-		System.out.println("Contact App");
+		System.out.println("\n\t      Contact App");
 		System.out.println("\n1.Contacts \n2.Create new Contact \n3.Search \n4.Exit");
 		int i = sc.nextInt();
 		return i;
@@ -37,7 +37,7 @@ public class ContactView
 	public int contactDetails()
 	{
 		System.out.println("Choose a option");
-		System.out.println("\n1.Edit \n2.View \n3.Delete \n4.Back To Main Menu");
+		System.out.println("\n1.Edit \n2.Delete \n3.Back");
 		int a = sc.nextInt();
 		return a;
 	}	
@@ -61,7 +61,8 @@ public class ContactView
 		/* System.out.println("Contact id");
 		 contact.setId(sc.nextInt());*/
 		System.out.println("Enter contact name");
-		contact.setName(sc.next()); 
+		contact.setName(sc.nextLine());
+		contact.setName(sc.nextLine()); 
 		System.out.println("Phone number");
 		contact.setPhoneNumber(sc.nextLong());
 		return contact;		        	
@@ -74,7 +75,8 @@ public class ContactView
 	{
 		try
 		{
-			System.out.println("Contact Details");
+			System.out.println("\n  Contacts are...\n");
+			System.out.printf("%-20.30s %-20.30s%n","Contact Name","Phone Number");
 			Collections.sort(contacts);
 			for(int i=0; i<contacts.size(); i++)
 			{	
@@ -116,7 +118,8 @@ public class ContactView
 	public ContactModel editName(ContactModel contact)
 	{
 		System.out.println("Enter your name");
-		contact.setName(sc.next());
+		contact.setName(sc.nextLine());
+		contact.setName(sc.nextLine());
 		return contact;
 	}
 	/**	
@@ -188,6 +191,13 @@ public class ContactView
 	public void fileNotFound()
 	{
 		System.out.println("File not found");
+	}
+	/**
+		* This method to display delete message
+	*/
+	public void deleteMessage()
+	{
+		System.out.println("Contact Deleted");
 	}
 
 }

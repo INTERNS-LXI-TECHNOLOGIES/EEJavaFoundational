@@ -80,8 +80,8 @@ public class ContactControl
 			switch(c)
 			{
 				case 1:editNewContact(contact);break;
-				case 2:view.displayAllContact(contacts);isCheck=true;break;
-				case 3:deleteContacts(contact);break;
+			//	case 2:view.displayAllContact(contacts);isCheck=true;break;
+				case 2:deleteContacts(contact);break;
 				default: break;
 			}
 		}while(isCheck);
@@ -113,11 +113,12 @@ public class ContactControl
 		* @param contact variable to delete a contact
 	*/	
 	public void deleteContacts(ContactModel contact)
-	{
-		
+	{			
 		int index = contacts.indexOf(contact);
-		sqlrepo.deleteQuery(contact);		
-		contacts.remove(view.deleteContact());
+		contacts.remove(index);
+		view.deleteMessage();
+		sqlrepo.deleteContact(contact);
+		//contacts.remove(view.deleteContact());
 		//filerepo.writeToFile(contacts);
 	}	
 	/**
@@ -135,7 +136,7 @@ public class ContactControl
 			}
 		}
 		/*filerepo.appendFile(contacts);*/
-		sqlrepo.createTable();	
+		sqlrepo.createContactTable();	
 		sqlrepo.writeToDatabase(contacts);
 	}	
 	/**
@@ -171,7 +172,6 @@ public class ContactControl
 	*/
 	public void searchElements()
 	{
-	//sqlrepo.searchQuery();/*
 		try
 		{
 			boolean isTest = false;
@@ -179,6 +179,7 @@ public class ContactControl
 			contacts.clear();
 			Pattern p=Pattern.compile(name);			
 			//contacts = filerepo.readFromDatabase(contacts);
+			contacts= sqlrepo.readFromDatabase(contacts);
 			System.out.printf("%-20.30s %-20.30s %-20.30s%n","Contact ID","Contact Name","Phone Number");
 			for(ContactModel t : contacts)
 			{	
