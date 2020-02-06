@@ -23,11 +23,13 @@ public void displayContacts(ArrayList<Contact> details)
 	}
 	public String[] createNewContact()
 	{
-		String[]data=new String[2];
-        System.out.print("write name :");
+		String[]data=new String[3];
+		System.out.print("Enter id :");
         data[0]=scr.next();
-        System.out.print("write number :");
+        System.out.print("write name :");
         data[1]=scr.next();
+        System.out.print("write number :");
+        data[2]=scr.next();
         return data;
        
         

@@ -2,12 +2,14 @@ package com.lxisoft.controller;
 import java.util.Scanner;
 import com.lxisoft.view.*;
 import com.lxisoft.contact.Contact;
+import com.lxisoft.repository.*;
 import com.lxisoft.filerepository.Filerepository;
 import java.util.*;
 import java.util.*;
 import java.util.*;
 public class Controller
 {
+	Sqlrepository sqlrepository=new Sqlrepository();
 	Filerepository filerepository=new Filerepository();
 	ArrayList<Contact> contacts = new ArrayList<Contact>(); 
 	Scanner scr=new Scanner(System.in);
@@ -55,22 +57,28 @@ public class Controller
 	public void createNewContact()
 	{
 		
-		
-		String[]data=view.createNewContact();
 		contacts.add(new Contact());
-		for(int i=0;i<contacts.size();i++)
+		for (int i=0;i<contacts.size();i++) 
+		{
+			Contact con=contacts.get(i);
+		}
+		view.createNewContact(con);
+		
+		
+		/*for(int i=0;i<contacts.size();i++)
 		{
 			if(contacts.get(i).getName()==null)
 			{
-				contacts.get(i).setName(data[0]);
-        		contacts.get(i).setNumber(data[1]);
+				contacts.get(i).setId(data[0]);
+				contacts.get(i).setName(data[1]);
+        		contacts.get(i).setNumber(data[2]);
 			}
 			
-		}
+		}*/
 
 		Boolean value=true;
 		
-        filerepository.writeFile(contacts,value);
+        sqlrepository.createContact(contacts);
         activities();
 	}
 	public void selectContact()

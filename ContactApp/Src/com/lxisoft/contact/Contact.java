@@ -3,9 +3,17 @@ import java.util.*;
 public class Contact implements Comparable<Contact> 
 {
 	private String name;
-	private int id;
+	private String id;
 	private String phone;
 	//	String[] details=new String[2];
+	public void setId(String id)
+	{
+		this.id=id;
+	}
+	public String getId()
+	{
+		return this.id;
+	}
 	public void setName(String name)
 	{
 		this.name=name;

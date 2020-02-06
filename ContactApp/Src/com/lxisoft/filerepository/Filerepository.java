@@ -23,7 +23,7 @@ public class Filerepository
             Collections.sort(contacts);
             for(int i=0;i<contacts.size();i++)
             {
-                br.write(contacts.get(i).getName()+","+contacts.get(i).getNumber());
+                br.write(contacts.get(i).getId()+","+contacts.get(i).getName()+","+contacts.get(i).getNumber());
                 br.newLine();    
             }
              Collections.sort(contacts);
