@@ -12,6 +12,7 @@ public class ContactView
 		System.out.println("************");
 		System.out.println("1.Add contact");
 		System.out.println("2.Display contacts");
+		System.out.println("3.search contact");
 		System.out.println("select your choice : ");
 		int choice1 =sc.nextInt();
 		return choice1;
@@ -25,9 +26,15 @@ public class ContactView
 		contact.setMob(sc.nextLong());
 		return contact;
 	}
+	public String searchContact()
+	{
+		System.out.println("search name : ");
+		String search=sc.next();
+		return search;
+	}
 	public int selectName()
 	{
-		System.out.println("select the name that to be edited :");
+		System.out.println("select the name:");
 		int a=sc.nextInt();
 		return a;
 	}
@@ -72,11 +79,15 @@ public class ContactView
 		int c= sc.nextInt();
 		return c;
 	}
-	public int editContact(ContactModel contact)
+	public void displayOneContact(ContactModel contact)
 	{
 		System.out.println("name : "+contact.getName()+"\nphone : "+contact.getMob()+"\nID : "+contact.getId());
+		
+	}
+	public int editContact()
+	{
 		System.out.println(" which one you want to edit");
-		System.out.println("1. Name 2.Mobile 3. Id 4. back");
+		System.out.println("1. Name 2.Mobile 3. back");
 		int c=sc.nextInt();
 		return c;
 	}
