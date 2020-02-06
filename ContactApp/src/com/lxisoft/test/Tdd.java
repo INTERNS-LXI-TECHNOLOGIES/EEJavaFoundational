@@ -6,11 +6,11 @@ import com.lxisoft.controller.ContactControler;
 public class Tdd
 {
 	/**
-	* @param args[]
+	* @param args[] command line Arrgument
 	*/
 	public static void main(String[] args)
 	{
 		ContactControler controler = new ContactControler();
-		controler.displayOrAddContact(); 
+		controler.contactApp(); 
 	}
 }

@@ -11,7 +11,10 @@ public class ContactControler
 	private ArrayList<ContactModel> contacts = new ArrayList<ContactModel>();
 	private SqlRepository sqlReppo = SqlRepository.getInstance();
 	private ContactView view = new ContactView();
-	public void displayOrAddContact()
+/**
+*  Stating the ContactApp..
+*/
+	public void contactApp()
 	{
 		view.myAppName();
 		boolean isTrue = false;
@@ -22,7 +25,7 @@ public class ContactControler
 			switch(select)
 			{
 				case 1:
-					this.contacts();
+					this.contactManagement();
 					isTrue = true;
 					break;
 				case 2:
@@ -43,7 +46,10 @@ public class ContactControler
 			}
 		}while(isTrue);
 	}
-	public void contacts()
+	/**
+	* Manage Contacts.
+	*/
+	public void contactManagement()
 	{
 		try
 		{
@@ -81,6 +87,9 @@ public class ContactControler
 			view.fileNotFound();
 		}
 	}
+	/**
+	* Create New Contact.
+	*/
 	public void addNewContact()
 	{
 		contacts.clear();
@@ -95,6 +104,9 @@ public class ContactControler
 			sqlReppo.insertContact(contacts);
 			view.contactAddedMessage();
 	}
+	/**
+	* Search a Contact.
+	*/
 	public void searchContact()
 	{
 		try
@@ -131,6 +143,9 @@ public class ContactControler
 			view.fileNotFound();
 		}
 	}
+	/**
+	* CRUD Operations.
+	*/
 	public void crudeOperation(ContactModel contact)
 	{
 		boolean isTrue = false;
@@ -158,6 +173,10 @@ public class ContactControler
 			}
 		}while(isTrue);
 	}
+	/**
+	* For Edit a Contact.
+	* @param contact that need to be edited.
+	*/
 	public void editContact(ContactModel contact)
 	{
 		boolean isTrue = false;
@@ -179,16 +198,28 @@ public class ContactControler
 			}
 		}while(isTrue);
 	}
+	/**
+	* For Edit Name.
+	* @param contact that need to be edited.
+	*/
 	public void editName(ContactModel contact)
 	{
 		contact = view.enterName(contact);
 		sqlReppo.updateContactName(contact);
 	}
+	/**
+	* For Edit PhoneNumber.
+	* @param contact that need to be edited.
+	*/
 	public void editPhoneNumber(ContactModel contact)
 	{
 		contact = view.enterPhoneNumber(contact);
 		sqlReppo.updateContactNumber(contact);
 	}
+	/**
+	* For Delete a Contact.
+	* @param contact that need to be Deleted.
+	*/
 	public void deleteContact(ContactModel contact)
 	{
 		int index = contacts.indexOf(contact);
@@ -196,6 +227,9 @@ public class ContactControler
 		view.contactDeleteMessage();
 		sqlReppo.deleteContact(contact);
 	}
+	/**
+	* For Searching message.
+	*/
 	public void contactSearching()
 	{
 		try

@@ -3,7 +3,7 @@ import com.lxisoft.controller.ContactControler;
 import com.lxisoft.model.ContactModel;
 import java.util.*;
 /**
-* View the output
+* Display The Output.
 */
 public class ContactView
 {
@@ -95,8 +95,8 @@ public class ContactView
 	*/
 	public ContactModel createNewContact(ContactModel contact)
 	{
-		System.out.println("Enter contactID");
-		contact.setId(scanner.nextInt());
+		// System.out.println("Enter contactID");
+		// contact.setId(scanner.nextInt());
 		System.out.println("Enter Contact Name");
 		contact.setName(scanner.nextLine());
 		contact.setName(scanner.nextLine());
@@ -104,18 +104,31 @@ public class ContactView
 		contact.setPhoneNumber(scanner.nextLong());
 		return contact;
 	}
+	/**
+	* For select a Contact
+	* @return index value
+	*/
 	public int selectContact()
 	{
 		System.out.print("Select a Contact : ");
 		int select = scanner.nextInt();
 		return select;
 	}
+	/**
+	* select option for edit a contact
+	* @return selected option
+	*/
 	public int  editContact()
 	{
 		System.out.println("Press==> 1.Edit Name 2.Edit Phone Number 3.Back");
 		int select = scanner.nextInt();
 		return select;
 	}
+	/**
+	* Edit Contact name.
+	* @param contact for edit.
+	* @return updated Contact.
+	*/
 	public ContactModel enterName(ContactModel contact)
 	{
 		System.out.println("Enter Name");
@@ -124,6 +137,11 @@ public class ContactView
 		System.out.println("Name Updated...!!!");
 		return contact;
 	}
+	/**
+	* Edit PhoneNumber
+	* @param contact for edit.
+	* @return updated Contact.
+	*/
 	public ContactModel enterPhoneNumber(ContactModel contact)
 	{
 		System.out.println("Enter PhoneNumber");
@@ -131,6 +149,10 @@ public class ContactView
 		System.out.println("Number Updated...!!!");
 		return contact;
 	}
+	/**
+	* For Search a Contact.
+	* @return name for search.
+	*/
 	public String contactSearch()
 	{
 		System.out.print("Enter Contact Name For Search : ");
@@ -138,10 +160,17 @@ public class ContactView
 		name = scanner.nextLine();
 		return name;
 	}
+	/**
+	* No contacts Found Message.
+	*/
 	public void noContactFoundMessage()
 	{
 		System.out.println("No Contacts Matched...!!!");
 	}
+	/**
+	* For display Contacts.
+	* @param contacts data contained ArrayList.
+	*/
 	public void displayAllContacts(ArrayList<ContactModel> contacts)
 	{
 		int j = 1;
