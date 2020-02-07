@@ -28,6 +28,11 @@ public class repoController
  	 	{
  	 		Class.forName("com.mysql.jdbc.Driver");
 			con=DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","root");
+			Connection con=null;
+			PreparedStatement stmt=null;
+			ResultSet rs=null;
+			setId();
+//			ArrayList<Contact> contacts=new ArrayList<Contact>();
 			// stm.executeUpdate("CREATE DATABASE "+dataBase)
 			
  	 	}catch(Exception e)
@@ -40,6 +45,7 @@ public class repoController
 		{
 			try
 			{
+				setConnection();
 				// stmt=con.prepareStatement("use tab");
 				// setId();
 			// System.out.println("erroro"+contact.getName());
@@ -77,6 +83,7 @@ public class repoController
 			contacts.clear();
 			try
 			{
+				setConnection();
 				stmt=con.prepareStatement("use tab");
 				rs=stmt.executeQuery("select * from tab");
 				while(rs.next())
@@ -88,6 +95,7 @@ public class repoController
 					contact.setNo(rs.getString("NUMBER"));
 					contacts.add(contact);
 				}
+				con.close();
 			}
 			catch(Exception p)
 			{
@@ -101,6 +109,7 @@ public class repoController
 		{
 			try
 			{
+				setConnection();
 				stmt=con.prepareStatement("update tab set firstname=?, lastname=?, number=? where id=?");
 				stmt.setString(1,contact.getFirstName());
 				stmt.setString(2,contact.getLastName());
@@ -108,6 +117,7 @@ public class repoController
 				stmt.setInt(4,contact.getId());
 				stmt.executeUpdate();
 				// System.out.println("contact added");
+				con.close();
 			}catch(Exception p)
 			{
 				System.out.println(p);
@@ -139,10 +149,12 @@ public class repoController
 		{
 			try
 			{
+				setConnection();
 				contacts=getAllContacts();
 				stmt=con.prepareStatement("delete from tab where id=?");
 				stmt.setInt(1,c.getId());
 				stmt.executeUpdate();
+				con.close();
 			}catch(Exception p)
 			{
 				System.out.println(p);
@@ -152,9 +164,11 @@ public class repoController
 		{
 			try
 			{
+				setConnection();
 				id=0;
 				stmt=con.prepareStatement("truncate table tab");
 				stmt.executeUpdate();
+				con.close();
 			}catch(Exception p)
 			{
 				System.out.println(p);
@@ -164,6 +178,7 @@ public class repoController
 		{
 	  		try
 			{
+	  			setConnection();
 				contacts.clear();
 				rs=stmt.executeQuery("select * from tab order by firstname");
 				while(rs.next())
@@ -177,6 +192,7 @@ public class repoController
 				}
 				clearAllContacts();
 				resetDataBase();
+				con.close();
 			}catch(Exception e)
 			// System.out.println("     "+a.getName());			
 			{
@@ -189,6 +205,7 @@ public class repoController
 	  	{
 	  		try
 			{
+	  			setConnection();
 				contacts.clear();
 				rs=stmt.executeQuery("select * from tab order by lastname");
 				while(rs.next())
@@ -201,7 +218,8 @@ public class repoController
 					contacts.add(contact);
 				}
 				clearAllContacts();
-				resetDataBase();	
+				resetDataBase();
+				con.close();
 			}catch(Exception e)
 			// System.out.println("     "+a.getName());			
 			{
@@ -215,6 +233,7 @@ public class repoController
 	  	{
 	  		try
 			{
+	  			setConnection();
 				contacts.clear();
 				rs=stmt.executeQuery("select * from tab order by id");
 				while(rs.next())
@@ -228,6 +247,7 @@ public class repoController
 				}
 				clearAllContacts();
 				resetDataBase();
+				con.close();
 			}catch(Exception e)
 			{
 
@@ -239,6 +259,7 @@ public class repoController
 	  	{
 	  		try
 			{
+	  			setConnection();
 				contacts.clear();
 				rs=stmt.executeQuery("select * from tab order by number");
 				while(rs.next())
@@ -252,6 +273,7 @@ public class repoController
 				}
 				clearAllContacts();
 				resetDataBase();
+				con.close();
 			}catch(Exception e)
 			{
 
@@ -262,12 +284,14 @@ public class repoController
 		{
 			try
 			{
+				setConnection();
 			// for(Contact a: contacts)
 				for (int i=0;i<contacts.size();i++) 
 				{
 					// System.out.println(contacts.size()+"=size "+i+"i  "+contacts.get(i).getName());			
 					writeNewContact(contacts.get(i),false);
 				}
+				con.close();
 			}catch(Exception e)
 			{
 
@@ -275,7 +299,7 @@ public class repoController
 		}
 		public boolean loginValidate(String username, String password)throws Exception
 		{
-			
+			setConnection();
 			boolean login=false;
 			String name=null;
 			String pass=null;
@@ -293,6 +317,7 @@ public class repoController
 					login=true;
 				}
 			}
+			con.close();
 			return login;
 		}
 	  		

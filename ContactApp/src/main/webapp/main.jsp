@@ -15,9 +15,10 @@
 
 	<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<link rel="stylesheet" type="text/css" href="styles.css"><CENTER><font color="red" size="32"><b>  <fmt:message key="label.contacts" /></b></font></CENTER></head>
+	<link rel="stylesheet" type="text/css" href="<c:url value="/resources/styles.css" />"><CENTER><font color="red" size="32"><b>  <fmt:message key="label.contacts" /></b></font></CENTER></head>
 <body>
 <%@ page import="com.lxisoft.contacts.domain.*" %>
+<%@ page import="com.lxisoft.contacts.model.*" %>
 
 
 <%@ page import="java.util.*" %>
@@ -40,10 +41,10 @@ else if (request.getUserPrincipal()==null){ %>
 <center><fmt:message key="label.welcome" /> Guest</center>
 <% } %>
 
-addnew<a href="addnew" style="color: green; text-align: center;"><button >+</button></a>
+
 
 <center><% if(request.isUserInRole("admin")){ %>
-<!--<a href="addnew" style="color: green; text-align: center;"><button >+</button></a> -->
+<a href="addnew" style="color: green; text-align: center;"><button >+</button></a>
 <% }
 else{ %>
 <button onclick="denied()" >+</button></a>
@@ -101,8 +102,8 @@ else { %>
 	
 </center>
 <%ArrayList<String> s=new ArrayList<String>(); 
-ArrayList<Contact> contacts=new ArrayList <Contact>();
-contacts=(ArrayList <Contact>)request.getAttribute("listView"); %>
+ArrayList<ViewListModel> contacts=new ArrayList <ViewListModel>();
+contacts=(ArrayList <ViewListModel>)request.getAttribute("contacts"); %>
 
 <% 	if(contacts.size()==0  ){ %>
 <%	 out.println("<b><h1><CENTER>"+"no contact to show"+"</CENTER></h1></b>"); %> 
@@ -116,10 +117,10 @@ contacts=(ArrayList <Contact>)request.getAttribute("listView"); %>
 	<p><tr><th></th><th><h3>ID</h3></th>
 		<th><h3>NAME</h3></th></p></tr>
 
-	 <%  for (Contact a: contacts){%>
+	 <%  for (ViewListModel a: contacts){%>
 
 	<tr>
-		<td><img src="contact.png" width="50" height="50"></td>
+		<td><img src="<c:url value="/resources/contact.png" />" width="50" height="50"  ></td>
 		<td><font color=" grey" size="65"><%out.println(a.getId());%></font></td>
 		<td><a href="search?user=<%=a.getFullName()%>"><font color=" green" size="65"><%out.println(a.getFirstName());%></font></td></a>
 		<%  if(request.isUserInRole("admin")){ %>
@@ -127,7 +128,7 @@ contacts=(ArrayList <Contact>)request.getAttribute("listView"); %>
 		<td><a href="select?name=<%=a.getFullName()%>&type=delete"><fmt:message key="label.del" /></a></td>
 		<% }
 		else { %>
-		<td><button onclick="denied()">c</button></td>
+		<td><button onclick="denied()"><fmt:message key="label.edit" /></button></td>
 		<td><button onclick="denied()"><fmt:message key="label.del" /></button></td>
 		<% } %>
 		

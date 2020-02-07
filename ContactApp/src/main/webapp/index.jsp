@@ -1,6 +1,6 @@
 <html>
 <body>
 <h2>Hello World!</h2>
-<a href="viewall">dfg</a>
+<a href="viewall">enter the app</a>
 </body>
 </html>

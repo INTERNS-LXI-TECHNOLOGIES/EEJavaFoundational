@@ -61,7 +61,7 @@
 	</script>
 
 
-		<center>	<img src="smiley.gif" alt="Smiley face" width="42" height="42" ></center>
+		<center>	<img src="<c:url value="/resources/smiley.gif" />" alt="Smiley face" width="42" height="42" ></center>
 			<form name="form" action="createNewContact" onsubmit="return validateform()" method="get"><br><center>
 			<input type="text" name="firstname" placeholder="<fmt:message key='label.fName' />"><font color="red">*</font><br><br>
 			<input type="text" name="lastname" placeholder="<fmt:message key='label.lName' />"><font color="red">*</font><br><br>
