@@ -113,19 +113,9 @@ public class displayController
 			HttpSession session=request.getSession();
 			Contact contact=(Contact) session.getAttribute("users");
 			repo.deleteContact(contact);
-			ArrayList<Contact> contacts=repo.getAllContacts();
-			// HttpSession session=request.getSession();
-			ViewList view=new ViewList();
-			ArrayList<ViewListModel> listView=null;
-			view.clearArray();
-			for(int i=0;i<contacts.size();i++)
-			{
-				view.setContact(contacts.get(i));
-			}
-			listView=view.getAllContacts();
-			session.setAttribute("contacts",listView);
-//			request.getRequestDispatcher("main.jsp").forward(request, response);
-			mv.setViewName("main.jsp");
+			
+
+			mv.setViewName("viewall");
 			// PrintWriter out = response.getWriter();
 			// out.println("<h1>" +"asdfffff"+ "</h1>");
      
@@ -136,6 +126,37 @@ public class displayController
 		
 		return mv;
 	}
+	@RequestMapping("/sort")
+	public ModelAndView sort(HttpServletRequest request, HttpServletResponse response)
+	{
+		ModelAndView mv=new ModelAndView();
+		
+		response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=utf-8");
+    try {
+
+    		
+    		String type=(String)request.getParameter("sort");
+    		switch(type)
+    		{
+    		case "first" : repo.sortByFirstName();break;
+    		case "last" : repo.sortByLastName();break;
+    		case "id" : repo.sortById();break;
+    		}
+//    		response.sendRedirect("viewall");
+    		
+//    		PrintWriter out=response.getWriter();
+//    		out.println(type);
+    		mv.setViewName("viewall");
+
+    	}catch(Exception e)
+    	{
+
+    	}
+		
+		return mv;
+	}
+	
 	@RequestMapping("/deleteAll")
 	public ModelAndView deleteall(HttpServletRequest request, HttpServletResponse response)
 	{
@@ -187,7 +208,7 @@ public class displayController
             }
             switch(type)
             {
-            	case "delete":mv.setViewName("delete");break;
+            	case "delete":mv.setViewName("delete");;break;
                 case "edit":  mv.setViewName("edit.jsp");break;
                 default:
             }
@@ -273,10 +294,10 @@ public class displayController
            }
            else
            {
-              session.setAttribute("contacts",new ArrayList<ViewListModel>());
+//              session.setAttribute("contacts",new ArrayList<ViewListModel>());
 //              request.getRequestDispatcher("main.jsp").forward(request, response);
 
-//              mv.addObject("contacts",new ArrayList<ViewListModel>());
+              mv.addObject("contacts",new ArrayList<ViewListModel>());
               mv.setViewName("main.jsp");
               
            }

@@ -150,7 +150,6 @@ public class repoController
 			try
 			{
 				setConnection();
-				contacts=getAllContacts();
 				stmt=con.prepareStatement("delete from tab where id=?");
 				stmt.setInt(1,c.getId());
 				stmt.executeUpdate();
@@ -295,31 +294,7 @@ public class repoController
 			}catch(Exception e)
 			{
 
-			}setId();
-		}
-		public boolean loginValidate(String username, String password)throws Exception
-		{
-			setConnection();
-			boolean login=false;
-			String name=null;
-			String pass=null;
-				System.out.println(name+pass);
-				PreparedStatement st=con.prepareStatement("select * from log");
-				ResultSet r=st.executeQuery();
-
-			while(r.next())
-			{
-				name=r.getString("USERNAME");
-				pass=r.getString("PASSWORD");
-				System.out.println(name+pass);
-				if(username.equals(name) && password.equals(pass))
-				{
-					login=true;
-				}
 			}
-			con.close();
-			return login;
 		}
-	  		
-
+		
 }
