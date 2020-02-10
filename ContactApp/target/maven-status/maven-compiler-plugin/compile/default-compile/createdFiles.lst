@@ -1,5 +1,7 @@
 com\lxisoft\contacts\controller\repoController.class
 com\lxisoft\contacts\domain\Contact.class
+com\lxisoft\contacts\model\StockBo.class
 com\lxisoft\contacts\model\ViewList.class
 com\lxisoft\contacts\model\ViewListModel.class
 com\lxisoft\contacts\controller\displayController.class
+com\lxisoft\contacts\model\Stock.class

@@ -3,7 +3,7 @@ package com.lxisoft.contacts.controller;
 
 
 import java.util.ArrayList;
-import org.hibernate.Session;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -341,10 +341,6 @@ public class displayController
         else
         {
            request.setAttribute("newcontacts",new Contact());
-          Session
-           save(contact);
-           
-           
            repo.writeNewContact(contact,true);
            contacts=repo.getAllContacts();
 
