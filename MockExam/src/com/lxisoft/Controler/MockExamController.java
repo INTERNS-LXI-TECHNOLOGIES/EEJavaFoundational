@@ -7,6 +7,8 @@ import javax.servlet.ServletResponse;
 import java.io.IOException;
 public class MockExamController extends HttpServlet
 {
+	private ArrayList<MockExamModel> model = new ArrayList<MockExamModel>();
+	private SqlRepository sqlReppo = SqlRepository.getInstance();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
 		try

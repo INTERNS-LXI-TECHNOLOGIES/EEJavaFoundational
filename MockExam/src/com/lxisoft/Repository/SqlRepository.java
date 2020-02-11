@@ -34,6 +34,29 @@ public class SqlRepository
 	}
 	public ArrayList<MockExamModel> readFromDatabase(ArrayList<MockExamModel> model)
 	{
-		
+		try
+		{
+			String qry = "select questions.Id,questions.Question,answers.Answer from questions inner join answers on questions.Id = Answers.Id;";
+			ps = con.prepareStatement();
+			rs = ps.execute();
+			while(rs.next())
+			{
+				model.add(new MockExamModel());
+				for(int i=0;i<model.size();i++)
+				{
+					if(model.get(i).getId()==null)
+					{
+						model.get(i).setId(rs.getInt(1));
+						model.get(i).getQuestion().setQuestion(rs.getString(2));
+						model.get(i).getAnswer().setAnswer(rs.getString(3));
+					}
+				}
+			}
+			return model;
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
