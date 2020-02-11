@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<%@page package="com.lxisoft.view"%>
+<html>
+<head>
+<% Quiz q=new Quiz();
+session.setAttribute("quiz",q); %>
+</head>
+<body>
+<button>
+<a href="create.html"> GO TO CREATION PAGE </button>
+</body>
+</html>
+	
