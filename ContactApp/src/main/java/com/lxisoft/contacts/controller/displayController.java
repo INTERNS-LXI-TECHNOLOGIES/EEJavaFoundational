@@ -341,9 +341,9 @@ public class displayController
         else
         {
            request.setAttribute("newcontacts",new Contact());
-          Session
-           save(contact);
-           
+//          Session
+//           save(contact);
+//           
            
            repo.writeNewContact(contact,true);
            contacts=repo.getAllContacts();
