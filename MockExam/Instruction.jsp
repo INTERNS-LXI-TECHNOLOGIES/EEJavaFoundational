@@ -10,7 +10,7 @@
 				3.wertywujsdjdfsudgfuysterysegfhjsgdhghgwyegwejyewuigfgshdgys
 				4.sjddhsuihuwiyrwehrjdhfjkehruiyreuwirurry
 			</p>
-			<button name="button" type="button" onclick="window.location.href='question.jsp';">Accept</button>
+			<button name="button" type="button" onclick="window.location.href='Question.jsp';">Accept</button>
 			</center>
 	</body>
 </head>

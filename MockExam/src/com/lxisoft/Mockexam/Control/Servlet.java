@@ -1,3 +1,5 @@
+package com.lxisoft.Control;
+import com.lxisoft.Control.Servlet;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

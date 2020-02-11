@@ -1,3 +1,5 @@
+package com.lxisoft.Model;
+import com.lxisoft.Model.Model;
 public class Model
 {
 	private int qNo;
