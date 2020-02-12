@@ -12,7 +12,7 @@
   	.button{
   		background-color: #4CAF50;
   	}
-  	padding{
+  	div{
   		padding-top: 50px;
   		padding-right: 30px;
   		padding-left: 80px;
@@ -23,11 +23,12 @@
 <body>
 	
 	<div class="jumbotron text-center">
+		<a href="Add.jsp"><h3>+</h3></a>
 		<h1 align="center">MOCK-EXAM</h1>
 	</div>
 	
 		<h3 align="center"><u>INSTRUCTIONS</u></h3>
-		<padding>
+		<div>
 		<h5>1.Please read and understand the Test instructions so that you will be able to easily navigate through the Test</h5>
 		<h5>2. Once you click on the 'Start exam ' button the actual test time will begin.</h5>
 		<h5>3. On the Upper right-hand side you will see the count-down timer for the Test</h5>
@@ -39,9 +40,9 @@
 		<h5>9. You can move between the Test sections to attempt the test section of your choice.</h5>
 		<h5>10. The questions can be answered in any order. Each question carries 1 mark.</h5>
 		<h5>11. Each question will have 4-5 alternatives, out of which only one will be the correct answer.</h5>
-		<h5>12. There is no negative marking.</h5><br>
-		<h5>13. Once you have answered all the questions please click on the 'Done' button</h5><br></padding>
-		<br><center><b><input type="button" class="button" value="Start Exam"></b></center>
+		<h5>12. There is no negative marking.</h5>
+		<h5>13. Once you have answered all the questions please click on the 'Done' button</h5></div>
+		<a href="admin"><center><b><input type="button" class="button" value="Start Exam"></b></center></a>
 
 </body>
 </html>
