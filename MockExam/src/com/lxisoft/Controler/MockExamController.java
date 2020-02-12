@@ -1,10 +1,17 @@
 package com.lxisoft.Controler;
-import javax.servlet.*;
-import javax.servlet.http.*;
-import javax.Httpservlet.ServletException;
-import javax.Httpservlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import java.io.IOException;
+import javax.servlet.http.*;  
+import javax.servlet.*;  
+import java.io.*; 
+// import javax.servlet.*;
+// import javax.servlet.http.*;
+//import javax.HttpServlet.ServletException;
+// import javax.servlet.ServletException.
+// import javax.HttpServlet.ServletRequest;
+// import javax.servlet.ServletResponse;
+// import java.io.IOException;
+import java.util.ArrayList;
+import com.lxisoft.Model.MockExamModel;
+import com.lxisoft.Repository.SqlRepository;
 public class MockExamController extends HttpServlet
 {
 	private ArrayList<MockExamModel> model = new ArrayList<MockExamModel>();
@@ -13,10 +20,10 @@ public class MockExamController extends HttpServlet
 	{
 		try
 		{
-		PrintWriter out = response.getWriter();
-		out.println("Welcome");
-		response.sendRedirect("welcome.jsp");
-		out.close();
+		// PrintWriter out = response.getWriter();
+		// out.println("Welcome");
+		// response.sendRedirect("welcome.jsp");
+		// out.close();
 		}
 		catch(Exception e)
 		{

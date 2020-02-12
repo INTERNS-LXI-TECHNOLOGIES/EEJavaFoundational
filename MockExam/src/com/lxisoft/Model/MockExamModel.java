@@ -1,3 +1,6 @@
+package com.lxisoft.Model;
+import com.lxisoft.Model.Question;
+import com.lxisoft.Model.Answer;
 public class MockExamModel
 {
 	private int iD;

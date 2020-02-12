@@ -1,17 +1,22 @@
 package com.lxisoft.Controler;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import java.io.IOException;
+import javax.servlet.http.*;  
+import javax.servlet.*;
+import java.io.*; 
+import java.util.ArrayList;
+import com.lxisoft.Model.MockExamModel;
+import com.lxisoft.Repository.SqlRepository;
 public class MockExamController extends HttpServlet
 {
-	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
+	private ArrayList<MockExamModel> model = new ArrayList<MockExamModel>();
+	private SqlRepository sqlReppo = SqlRepository.getInstance();
+	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException
 	{
 		try
 		{
-		PrintWriter out = response.getWriter();
-		out.println("Welcome");
-		response.sendRedirect("welcome.jsp");
+		// PrintWriter out = response.getWriter();
+		// out.println("Welcome");
+		// response.sendRedirect("welcome.jsp");
+		// out.close();
 		}
 		catch(Exception e)
 		{

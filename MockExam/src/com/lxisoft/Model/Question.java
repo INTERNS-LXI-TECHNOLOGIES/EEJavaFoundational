@@ -1,3 +1,4 @@
+package com.lxisoft.Model;
 public class Question
 {
 	private String question;
