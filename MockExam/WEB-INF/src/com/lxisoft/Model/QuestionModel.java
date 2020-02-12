@@ -1,6 +1,6 @@
 package com.lxisoft.Model;
-import com.lxisoft.Model.Model;
-public class Model
+import com.lxisoft.Model.QuestionModel;
+public class QuestionModel
 {
 	private int qNo;
 	private String question;
@@ -20,6 +20,5 @@ public class Model
 	{
 		return qNo;
 	}
-
 
 }
