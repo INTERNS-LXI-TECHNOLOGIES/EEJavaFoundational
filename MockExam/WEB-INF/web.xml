@@ -1,13 +1,10 @@
 <web-app>
   <servlet>
     <servlet-name>Servlet</servlet-name>
-    <servlet-class>com.lxisoft.Control.Servlet</servlet-class>
+    <servlet-class>com.lxisoft.Control.QuestionServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Servlet</servlet-name>
     <url-pattern>/Question</url-pattern>
   </servlet-mapping>
-   <welcome-file-list>
-   	<welcome-page>Question.jsp</welcome-page>
-   </welcome-file-list>
-</web-app>
+  </web-app>

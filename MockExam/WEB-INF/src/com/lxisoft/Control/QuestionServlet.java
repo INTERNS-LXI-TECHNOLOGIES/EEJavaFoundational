@@ -1,31 +1,25 @@
 package com.lxisoft.Control;
 import com.lxisoft.Control.Servlet;
 import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
+import javax.servlet.http.*;
 import java.io.*;
 import java.util.*;
 import com.lxisoft.Repository.*;
 import com.lxisoft.Model.*;
 public class QuestionServlet extends HttpServlet
 {
+    ArrayList<Question> questions=new ArrayList<Question>
     public  void doPost(ServletRequest request, ServletResponse response)throws ServletException, IOException
     {
-    	try
-        {
-           
-            RequestDispatcher rd=request.getRequestDispatcher("Question.jsp");
-            rd.forward(request,response);
-                       
-        }
-        catch(Exception e)
-        {
-            System.out.println(e);
-        }        
+    	   SqlRepository sqlrepo = new SqlRepository(); 
+           Question q=new Question();
+           request.setAttribute(questions);
+           RequestDispatcher rd=request.getRequestDispatcher();
+           rd.forward(request,response);
+
                       
     }     
     
 }
+       
