@@ -1,0 +1,13 @@
+<web-app>  
+  
+<servlet>  
+<servlet-name>sl</servlet-name>  
+<servlet-class>com.lxisoft.control.Serverlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>sl</servlet-name>  
+<url-pattern>/check</url-pattern>  
+</servlet-mapping>  
+  
+</web-app>  

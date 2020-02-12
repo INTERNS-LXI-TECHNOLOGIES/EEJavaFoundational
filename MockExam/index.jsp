@@ -21,8 +21,9 @@
 }
 .button_css
 {
-	background-color: midnightblue;
-	color: white;
+	background-color:midnightblue ;
+	color:white ;
+  background-repeat:no-repeat;
 	width: 150px;
 	height: 40px;
 }
@@ -30,11 +31,13 @@
 <div class="container">
 <div class="center">
 <p align="center">
-<h1><font color="midnightblue">Welcome TO Your Mock Exam </font>
-</h1>
+<b><font size="7" color="midnightblue">Welcome TO Your Mock Exam </font>
+</b>
 <form>
-<input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page1.jsp';" value="START"/>
+<input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="START"/>
 </form>
+<a href="check">presssss</a>
+
 </p>
 </div>
 </div>
