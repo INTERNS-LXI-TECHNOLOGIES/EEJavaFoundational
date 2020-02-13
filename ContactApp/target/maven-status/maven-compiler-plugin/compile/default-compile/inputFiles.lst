@@ -1,5 +1,9 @@
 F:\KP_ZONE\java\Eclipse\workspace\contacts\src\main\java\com\lxisoft\contacts\controller\repoController.java
 F:\KP_ZONE\java\Eclipse\workspace\contacts\src\main\java\com\lxisoft\contacts\domain\Contact.java
+F:\KP_ZONE\java\Eclipse\workspace\contacts\src\main\java\com\lxisoft\contacts\model\ContactDaoImpl.java
+F:\KP_ZONE\java\Eclipse\workspace\contacts\src\main\java\com\lxisoft\contacts\model\ContactDao.java
+F:\KP_ZONE\java\Eclipse\workspace\contacts\src\main\java\com\lxisoft\contacts\service\ContactService.java
 F:\KP_ZONE\java\Eclipse\workspace\contacts\src\main\java\com\lxisoft\contacts\model\ViewList.java
 F:\KP_ZONE\java\Eclipse\workspace\contacts\src\main\java\com\lxisoft\contacts\model\ViewListModel.java
+F:\KP_ZONE\java\Eclipse\workspace\contacts\src\main\java\com\lxisoft\contacts\service\ContactServiceImpl.java
 F:\KP_ZONE\java\Eclipse\workspace\contacts\src\main\java\com\lxisoft\contacts\controller\displayController.java

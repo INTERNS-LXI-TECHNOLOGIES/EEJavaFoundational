@@ -1,9 +1,8 @@
 com\lxisoft\contacts\controller\repoController.class
 com\lxisoft\contacts\domain\Contact.class
-com\lxisoft\contacts\domain\ContactRepo.class
 com\lxisoft\contacts\service\ContactService.class
-com\lxisoft\contacts\model\ContactDao.class
 com\lxisoft\contacts\model\ViewList.class
+com\lxisoft\contacts\model\ContactDao.class
 com\lxisoft\contacts\model\ViewListModel.class
 com\lxisoft\contacts\service\ContactServiceImpl.class
 com\lxisoft\contacts\controller\displayController.class

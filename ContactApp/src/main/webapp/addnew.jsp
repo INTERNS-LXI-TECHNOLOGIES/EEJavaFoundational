@@ -6,7 +6,7 @@
 <body>
 	<%@ page language="java" contentType="text/html" pageEncoding="UTF-8"%>
 	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-	<%@ page import="com.lxisoft.Domain.*" %>
+	<%@ page import="com.lxisoft.domain.*" %>
 	<%@ page import="com.lxisoft.Models.*" %>
 	<%@ page import="java.util.*" %>
 	
