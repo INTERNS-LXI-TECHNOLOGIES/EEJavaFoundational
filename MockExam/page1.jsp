@@ -43,9 +43,10 @@
   <input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="NEXT"/>
 </form>
     <%
-      String name = (String)session.getAttribute("name");
-      out.println("sjksjkjskjkjksj" + name);
+      String name = (String)session.getAttribute("uname");
+      out.println("<h1>name is : </h1>" + name);
     %>
+    <h1><font >name</font></h1>
 </p>
 </div>
 </div>

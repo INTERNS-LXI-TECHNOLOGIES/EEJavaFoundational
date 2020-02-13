@@ -1,8 +1,9 @@
 package com.lxisoft.sqlRepository;
+import com.lxisoft.model.Model;
 import java.util.*;
 import java.io.*;
 import java.sql.*;
-public class sqlRepository
+public class SqlRepository
 {
 	Connection con=null;
 	PreparedStatement ps=null;
@@ -54,32 +55,34 @@ public void insertInto(String name)
 		e.printStackTrace();
 	}
 }
-public ArrayList<ContactModel> selectFrom(ArrayList<ContactModel> contacts)
+public ArrayList<Model> selectFrom(ArrayList<Model> model)
 {
 	try
 	{
 		databaseConnectionEstablish();
 		String qry;
-		qry="select name from contacts";
+		qry="select * from exam";
 		ps=con.prepareStatement(qry);
 		rs=ps.executeQuery(qry);
-		// while(rs.next())
-		// {
-		// 	contacts.add(new ContactModel());
-		// 	for(int i=0;i<contacts.size();i++)
-		// 	{	
-		// 		if(contacts.get(i).getName()==null)
-		// 		{
-		// 		contacts.get(i).setId(rs.getInt(1));
-		// 		contacts.get(i).setName(rs.getString(2));
-		// 		contacts.get(i).setMob(Long.parseLong(rs.getString(3)));
-		// 		}
-		// 	}
-		// }
+		while(rs.next())
+		{
+			model.add(new Model());
+			for(int i=0;i<model.size();i++)
+			{
+				if(model.get(i).getQn()==null)
+				{
+				model.get(i).setSlno(rs.getInt(1));
+				model.get(i).setQn(rs.getString(2));
+				model.get(i).setOpt1(rs.getString(3));
+				model.get(i).setOpt2(rs.getString(4));
+				}
+			}
+			
+		}
 	}
 	catch(Exception e)
 	{
 		e.printStackTrace();
-	}return contacts;
+	}return model;
 }
 }
