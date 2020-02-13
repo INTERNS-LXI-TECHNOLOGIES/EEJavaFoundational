@@ -1,11 +1,19 @@
 <html>
 <head>
-	<title>MOCK EXAM</title>
-	<body>
-	<h1><center><u>Mock Exam</u></center></h1>
-	<form>
- 	<center><button name="button" type="button" onclick="window.location.href='Instruction.jsp';">Start</button></center>
- 	</form>
-	</body>
+<body>
+<form action="login" method="post">
+   <table>
+   <tr>
+      <td><font face="verdana" size="2px">Name:</font></td>
+      <td><input type="text" name="userName"></td>
+   </tr>
+   <tr>
+      <td><font face="verdana" size="2px">Password:</font></td>
+      <td><input type="password" name="userPassword"></td>
+   </tr>
+   </table>
+      <input type="submit" value="Login">
+</form>
+</body>
 </head>
 </html>
