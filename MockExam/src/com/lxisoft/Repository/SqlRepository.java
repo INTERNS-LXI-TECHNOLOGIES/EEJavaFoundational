@@ -37,14 +37,14 @@ public class SqlRepository
 		try
 		{
 			String qry = "select questions.Id,questions.Question,answers.Answer from questions inner join answers on questions.Id = Answers.Id;";
-			ps = con.prepareStatement();
-			rs = ps.execute();
+			ps = con.prepareStatement(qry);
+			rs = ps.executeQuery(qry);
 			while(rs.next())
 			{
 				model.add(new MockExamModel());
 				for(int i=0;i<model.size();i++)
 				{
-					if(model.get(i).getId()==null)
+					if(model.get(i).getId()==0)
 					{
 						model.get(i).setId(rs.getInt(1));
 						model.get(i).getQuestion().setQuestion(rs.getString(2));
@@ -52,11 +52,11 @@ public class SqlRepository
 					}
 				}
 			}
-			return model;
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
+		return model;
 	}
 }
