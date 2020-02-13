@@ -7,7 +7,7 @@ import java.io.*;
 public class SqlRepository 
 {
 	List<Question>questionList=new ArrayList<Question>();
-	Question q;
+	// Question q;
 	ResultSet rs=null;
 	PreparedStatement stmt=null;
 	Connection conn=null;
@@ -22,10 +22,10 @@ public class SqlRepository
 		}
 	}
 
-	public SqlRepository()
-	{
-		q=new Question();
-	}
+	// public SqlRepository()
+	// {
+	// 	q=new Question();
+	// }
 
 	public void connectionDB()
 	{
@@ -44,11 +44,12 @@ public class SqlRepository
 	{
 		try
 		{
-			// questionList.clear();
 			Statement smt=conn.createStatement(); 
 			rs=smt.executeQuery("select * from question");
+			questionList.clear();
 			while(rs.next())
 			{
+				Question q=new Question();
 				q.setQno(String.valueOf(rs.getInt("Qno")));
 				q.setQuestion(rs.getString("Question"));
 				q.setOption1(rs.getString("Option1"));	
@@ -71,7 +72,7 @@ public class SqlRepository
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("insert into question(Question,Option1,Option2,Option3,Option4,Answer)values(?,?,?,?)");
+	 		stmt=conn.prepareStatement("insert into question(Question,Option1,Option2,Option3,Option4,Answer)values(?,?,?,?,?,?)");
 	 		stmt.setString(1,q.getQuestion());
 	 		stmt.setString(2,q.getOption1());
 	 		stmt.setString(3,q.getOption2());
