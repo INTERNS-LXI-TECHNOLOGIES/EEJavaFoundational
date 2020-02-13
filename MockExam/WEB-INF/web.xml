@@ -1,12 +1,13 @@
-<web-app>
-  <servlet>
-    <servlet-name>Servlet</servlet-name>
-    <servlet-class>com.lxisoft.Control.QuestionServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Servlet</servlet-name>
-    <url-pattern>/QuestionServlet</url-pattern>
-  </servlet-mapping>
-  </web-app>
-  <web-app>  
+<web-app>  
   
+<servlet>  
+<servlet-name>servlet</servlet-name>  
+<servlet-class>com.lxisoft.Control.QuestionServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>servlet</servlet-name>  
+<url-pattern>/Question</url-pattern>  
+</servlet-mapping>  
+  
+</web-app>  

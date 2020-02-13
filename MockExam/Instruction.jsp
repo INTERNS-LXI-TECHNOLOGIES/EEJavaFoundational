@@ -12,7 +12,10 @@
 		<h4>6. Each question carries 1 mark Each question will have 4 alternatives, out of which only one will be the correct answer.</h4>
 		<h4>7.If you answered all the questions please click on the 'Finish' button</h4><br>
 		</p>
-		<button name="button" type="button" onclick="window.location.href='Question';">Accept</button></center>
+
+		<form action="Question" method="get">
+		<input type="submit" value="Next">
+		</form>
 	</body>
 </head>
 </html>

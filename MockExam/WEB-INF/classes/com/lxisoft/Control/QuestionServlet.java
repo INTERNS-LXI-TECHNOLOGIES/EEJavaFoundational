@@ -7,17 +7,16 @@ import java.io.IOException;
 import java.io.PrintWriter;
 public class QuestionServlet extends HttpServlet
 {
-    public void doPost()throws ServletException, IOException
+    public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException  
     {
-       /* ArrayList<Question> questions=new ArrayList<Question>
-    	SqlRepository sqlrepo = new SqlRepository(); 
+       // ArrayList<Question> questions=new ArrayList<Question>();
+    	/*SqlRepository sqlrepo = new SqlRepository(); 
        	for(int i=0;i<questions.size();i++)
        	{
        		Question quest=new Question();
        	}		*/
-
-       //	out.println("deegghjj");
-
+        PrintWriter out=response.getWriter();
+        out.println("deegghjj");
     }     
 }
 

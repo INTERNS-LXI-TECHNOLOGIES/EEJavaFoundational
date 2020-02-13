@@ -1,11 +1,13 @@
 package com.lxisoft.Repository;
+import java.util.*;
+import java.io.*;
+import java.sql.*;
 import com.lxisoft.Repository.SqlRepository;
-import java.util.Scanner;
 public class SqlRepository
 {
 	Connection con = null;
 	PreparedStatement ps = null;
-	ResultSet rs=null;
+	//ResultSet rs=null;
 	public void dataBaseConnectionEstablish()
 	{
 		if (con == null)
@@ -21,7 +23,7 @@ public class SqlRepository
 			}	
 		}	
 	}
-	public void createTable()
+	/*public void createTable()
 	{
 		try
 		{
@@ -42,14 +44,14 @@ public class SqlRepository
  		try
  		{
  			databaseConnectionEstablish();
-			String qry;
-			qry==conn.prepareStatement"insert into mockexam(question,opt1,opt2,opt3,opt4,ans)values(?,?,?,?)";
-	 		ps.executeUpdate();
+			String qry="insert into mockexam(question,opt1,opt2,opt3,opt4,ans)values(?,?,?,?)";
+			qry=con.prepareStatement(qry);	
+			ps.executeUpdate();
 	 	}
  		catch(Exception e)
  		{
  			System.out.println(e);
  		}
- 	}
+ 	}*/
 }
 
