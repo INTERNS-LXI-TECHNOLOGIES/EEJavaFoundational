@@ -7,7 +7,7 @@ public class SqlRepository
 {
 	Connection con=null;
 	PreparedStatement ps=null;
-	ResultSet rs=null;
+	ResultSet rs=null; 
 	public void databaseConnectionEstablish()
 	{
 	
