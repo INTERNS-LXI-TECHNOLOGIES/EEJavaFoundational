@@ -17,7 +17,8 @@ public class SqlRepository
 			try
 			{
 				Class.forName("com.mysql.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mockexam","root","root");		
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MockExam","root","root");
+				System.out.println("con created");		
 			}
 			catch(Exception e)
 			{
@@ -36,7 +37,7 @@ public class SqlRepository
 	{
 		try
 		{
-			String qry = "select questions.Id,questions.Question,answers.Answer from questions inner join answers on questions.Id = Answers.Id;";
+			String qry = "select Questions.Id,Questions.Questions,Answers.Answers from Questions inner join Answers on Questions.Id = Answers.Id;";
 			ps = con.prepareStatement(qry);
 			rs = ps.executeQuery(qry);
 			while(rs.next())

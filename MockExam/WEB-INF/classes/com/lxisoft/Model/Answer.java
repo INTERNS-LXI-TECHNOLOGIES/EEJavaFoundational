@@ -6,7 +6,7 @@ public class Answer
 	{
 		this.answer = answer;
 	}
-	public String getQuestion()
+	public String getAnswer()
 	{
 		return this.answer;
 	}
