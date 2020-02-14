@@ -7,7 +7,7 @@
   
 <servlet-mapping>  
 <servlet-name>servlet</servlet-name>  
-<url-pattern>/Question</url-pattern>  
+<url-pattern>/QuestionServlet</url-pattern>  
 </servlet-mapping>  
   
 </web-app>  
