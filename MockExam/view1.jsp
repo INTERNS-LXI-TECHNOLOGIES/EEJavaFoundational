@@ -9,7 +9,6 @@
 	<h2><font color="white"><input type="radio" name="question">extending class</font></h2>
 <button>
 <a href=""> Next </button>
-<a href="check"> Next </button>
 </body>
 </html>
 

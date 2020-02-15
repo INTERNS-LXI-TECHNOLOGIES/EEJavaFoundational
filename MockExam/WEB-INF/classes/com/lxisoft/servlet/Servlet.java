@@ -8,7 +8,8 @@ public class Servlet extends HttpServlet
     throws ServletException,IOException  
     {  
         res.setContentType("text/html");
-        PrintWriter pw=res.getWriter();
-        System.out.println("hello");  
+        PrintWriter out=res.getWriter();
+       	out.println("hello");  
     }
 }
+

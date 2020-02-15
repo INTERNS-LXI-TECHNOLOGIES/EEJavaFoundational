@@ -1,7 +1,7 @@
 <web-app> 
     <servlet> 
          <servlet-name>Servlet</servlet-name> 
-         <servlet-class>com.lxisoft.servlet</servlet-class> 
+         <servlet-class>com.lxisoft.servlet.Servlet</servlet-class> 
     </servlet> 
     <servlet-mapping> 
          <servlet-name>Servlet</servlet-name> 

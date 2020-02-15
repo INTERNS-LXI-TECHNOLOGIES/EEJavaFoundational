@@ -11,7 +11,7 @@
 	<h3><font color="white">* Read questions carefully and select the answer given below</font></h3>
 	<h3><font color="white">* Any malpractice will lead to debar</font></h3>
 	<div align="center" class="button">
-	<a href="view1.jsp">Next</a>	
+		<a href="check"> Next </button>
 	</div>
 </header>
 </body>
