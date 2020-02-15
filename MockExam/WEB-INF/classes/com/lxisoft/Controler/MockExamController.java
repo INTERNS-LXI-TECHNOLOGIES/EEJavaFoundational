@@ -14,9 +14,11 @@ public class MockExamController extends HttpServlet
 	{
 		model.clear();
 		model = sqlReppo.readFromDatabase(model);
-		HttpSession session = request.getSession();
-		session.setAttribute("Array",model.get(i));
-		i++;
-		response.sendRedirect("welcome.jsp");
+		request.setAttribute("question",model);
+		request.getRequestDispatcher("welcome.jsp").forward(request, response);
+		//HttpSession session = request.getSession();
+		//session.setAttribute("Array",model.get(i));
+		//i++;
+		//response.sendRedirect("welcome.jsp");
   	}
 }
