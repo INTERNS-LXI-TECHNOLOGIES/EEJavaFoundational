@@ -1,8 +1,26 @@
 body {
     margin: 0;
     margin-top: 50px;
+    background-color: lightblue;
 }
-
+button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+}
+div {
+  text-align :right;
+  width: 1500px;
+  height:650px;
+  border: 10px solid green;
+  padding: 30px;
+  margin: 50px;
+}
 header {
     display: flex;
     position: fixed;
@@ -43,4 +61,13 @@ section {
 footer {
     text-align: center;
     padding: 50px;
+}
+p.one{
+    font-style: italic;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    border-style: solid;
+    border-color: red green blue yellow;
 }
