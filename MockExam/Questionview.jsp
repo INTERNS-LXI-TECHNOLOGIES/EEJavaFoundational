@@ -10,8 +10,7 @@
 	out.println("<h3>Question : "+emodels.get(0).getQuestion()+"</h3>");
 	%>
 	<!-- out.println("ArraySize : "+emodels.size());	
-	
-	/*
+/*
 	out.println("<h4>opt1 :"+emodels.get(0).getOpt1()+"</h4>");   
 	out.println("<h4>opt2 :"+emodels.get(0).getOpt2()+"</h4>"); 
 	out.println("<h4>opt3 :"+emodels.get(0).getOpt3()+"</h4>"); 

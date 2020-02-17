@@ -1,8 +1,7 @@
 package com.lxisoft.Model;
 import com.lxisoft.Model.ExamModel;
 public class ExamModel
-{
-	
+{ 	
 	private String opt1;
 	private String opt2;
 	private String opt3;
