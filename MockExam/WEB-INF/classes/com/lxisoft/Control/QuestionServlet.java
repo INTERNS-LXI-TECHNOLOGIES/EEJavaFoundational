@@ -17,9 +17,8 @@ public class QuestionServlet extends HttpServlet
          out.println("deegghjj");
          emodels = sqlrepo.readFromDatabase(emodels);
          out.println("ArraySize : "+emodels.size());
-        request.setAttribute("question",emodels);
-         request.getRequestDispatcher("Questionview.jsp").forward(request,response);
-               
+         request.setAttribute("question",emodels);
+         request.getRequestDispatcher("Questionview.jsp").forward(request,response);             
           
     }     
 }
