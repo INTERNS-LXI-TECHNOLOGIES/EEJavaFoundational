@@ -8,24 +8,31 @@ import com.lxisoft.models.*;
 
 public class ResultServlet extends HttpServlet
 {
+     int mar=0;
+     int k=0;
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		SqlRepository repository=new SqlRepository();
 		String option=request.getParameter("option");
+        String i=request.getParameter("i");
+        // int i = Integer.parseInt(g);
+        System.out.println(option);
 		List<Question> questionList=repository.getAllQuestion();
-    	List<Question> q=new ArrayList<Question>();
-        for(int i=0;i<questionList.size();i++)
+        HttpSession session=request.getSession();
+        for(int j=0;j<questionList.size();j++)
         {
-        	
-            if((questionList.get(i).getAnswer()).equals(option))
+            if((questionList.get(j).getQno()).equals(i))
             {
-            	
-                q.add(questionList.get(i));
-                
-            }
+                k=j;
+            } 
         }
-        request.setAttribute("questionlist",q);
-    	RequestDispatcher rd=request.getRequestDispatcher("Result.jsp");
-		rd.forward(request,response);
+        if((questionList.get(k).getAnswer()).equals(option))
+        {
+           mar++;
+        }
+        session.setAttribute("mark",mar);
+        response.sendRedirect("admin");
+  //   	RequestDispatcher rd=request.getRequestDispatcher("Result.jsp");
+		// rd.forward(request,response);
 	}
 }

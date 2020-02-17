@@ -5,27 +5,53 @@
 <html>
 <head>
 	<title>Questions</title>
+	<style>
+  	.button{
+  		background-color: #4CAF50;
+  	}
+  </style>
 </head>
 
 <body>
 	<H1><CENTER><u>Questions</u></CENTER></H1>
+	<table align=center border="1px" width="30%">
+		<tr><td>
 	<%
-	List<Question> questionList=(List<Question>) request.getAttribute("questionlist");
-	for(Question qn:questionList)
+	
+	List<Question> qn=(List<Question>) request.getAttribute("questionlist");
+	int j=(int)session.getAttribute("int");
+	int i=(j-1);
+	
+	if(i<qn.size())
 	{%>
-		<input type=number value="<%=qn.getQno()%>"><br>
-    	<input type="text" value="<%=qn.getQuestion()%>"><br>
-    	<input type="radio" id="<%=qn.getOption1()%>" name="colour" value="<%=qn.getOption1()%>">
-    	<label for="<%=qn.getOption1()%>"><%=qn.getOption1()%></label><br>
-    	<input type="radio" id="<%=qn.getOption2()%>" name="colour" value="<%=qn.getOption2()%>">
-    	<label for="<%=qn.getOption2()%>"><%=qn.getOption2()%></label><br>
-    	<input type="radio" id="<%=qn.getOption3()%>" name="colour" value="<%=qn.getOption3()%>">
-    	<label for="<%=qn.getOption3()%>"><%=qn.getOption3()%></label><br>
-    	<input type="radio" id="<%=qn.getOption4()%>" name="colour" value="<%=qn.getOption4()%>">
-    	<label for="<%=qn.getOption4()%>"><%=qn.getOption4()%></label><br>
-	<%
+		<form action="result" method="get">
+
+		<br><input type=number name="i" value="<%=qn.get(i).getQno()%>"/><br>
+    	<input type="text" value="<%=qn.get(i).getQuestion()%>"/><br>
+    	<input type="radio" id="<%=qn.get(i).getOption1()%>" name="option" value="<%=qn.get(i).getOption1()%>"/>
+    	<label for="<%=qn.get(i).getOption1()%>"><%=qn.get(i).getOption1()%></label><br>
+    	<input type="radio" id="<%=qn.get(i).getOption2()%>" name="option" value="<%=qn.get(i).getOption2()%>"/>
+    	<label for="<%=qn.get(i).getOption2()%>"><%=qn.get(i).getOption2()%></label><br>
+    	<input type="radio" id="<%=qn.get(i).getOption3()%>" name="option" value="<%=qn.get(i).getOption3()%>"/>
+    	<label for="<%=qn.get(i).getOption3()%>"><%=qn.get(i).getOption3()%></label><br>
+    	<input type="radio" id="<%=qn.get(i).getOption4()%>" name="option" value="<%=qn.get(i).getOption4()%>"/>
+    	<label for="<%=qn.get(i).getOption4()%>"><%=qn.get(i).getOption4()%></label><br>
+		<input type="submit" value="Submit"></form>
+		<a href="admin"><br><input type="button" class="button" value="Next"/><br></a>
+		
+	</td></tr>
+
+    </table>
+    <%
 	}
-	%>  	
-	<input type="button" class="button" value="Next">
+	else
+	{
+
+	%>
+	<a href="Result.jsp"><input type="button" class="button" value="Next"/></a>
+	 <%
+	}
+	%>
+
 </body>
 </html>
