@@ -58,6 +58,7 @@ public class SqlRepository
 	{
 		try
 		{
+			this.dataBaseConnectionEstablish();
 			String qry = "select * from mockexam";
 			ps = con.prepareStatement(qry);
 			rs = ps.executeQuery(qry);
