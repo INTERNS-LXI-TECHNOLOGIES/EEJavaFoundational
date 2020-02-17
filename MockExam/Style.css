@@ -12,12 +12,18 @@ button {
   display: inline-block;
   font-size: 20px;
 }
-div {
-  text-align :right;
+.container {
+  text-align :center;
   width: 97%;
   height: 97%;
   padding: 10px 10px;
 
+}
+
+.dimbly {
+        text-align: left;
+    width: 50%;
+    margin: auto;
 }
 header {
     display: flex;

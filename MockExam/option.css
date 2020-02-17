@@ -1,15 +1,22 @@
 button {
-  background-color: #4CAF50; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 20px;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    font-size: 20px;
+    margin: auto;
+    width: auto;
 }
 body {
     margin: 0;
-    margin-top: 50px;
+    padding-top: 100px;
     background-color: lightblue;
+}
+
+.fontbig {
+	font-style: italic;
+    font-size: xx-large;
 }

@@ -12,7 +12,7 @@ if(qcount != model.size()) {
 	
 
 out.println("<p><h1>Question No : "+model.get(qcount).getId()+"</h1></p>");
-out.println("<p><h2>Question : "+model.get(qcount).getQuestion().getQuestion()+"</h2></p>");
+out.println("<p><h2 class=\"fontbig\">Question : "+model.get(qcount).getQuestion().getQuestion()+"</h2></p>");
 %>
 <form align = "center" method="get" action="welcome.jsp">
 <h2>
@@ -28,9 +28,14 @@ out.println("<p><h2>Question : "+model.get(qcount).getQuestion().getQuestion()+"
 <%
 qcount++;
 %>
+
 	<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
-<button  type="submit">Next</button>
+<button align = "center" type="submit">Next</button>
 </form>
+<%
+String url="welcome.jsp?ques=" + (qcount-2);
+%>
+<a href=<%out.println(url);%>>back</a>
 <%} else {
  response.sendRedirect("Result.jsp");
 }
