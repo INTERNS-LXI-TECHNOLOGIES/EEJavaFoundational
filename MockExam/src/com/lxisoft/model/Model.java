@@ -4,20 +4,15 @@ public class Model
 {
 	int slno;
 	String qn;
-	String opt1;
-	String opt2;
+	String opt= new String[4];
 	String ans;
 	public void setQn(String str)
 	{
 		this.qn=str;
 	}
-	public void setOpt1(String str)
+	public void setOpt(String[] str)
 	{
-		this.opt1=str;
-	}
-	public void setOpt2(String str)
-	{
-		this.opt2=str;
+		this.opt[0]=str[];
 	}
 	public void setAns(String str)
 	{
@@ -31,9 +26,9 @@ public class Model
 	{
 		return qn;
 	}
-		public String getOpt1()
+		public String[] getOpt()
 	{
-		return opt1;
+		return opt[];
 	}
 	public String getOpt2()
 	{
