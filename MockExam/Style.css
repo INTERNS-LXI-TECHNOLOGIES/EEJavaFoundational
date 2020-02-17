@@ -1,6 +1,5 @@
 body {
     margin: 0;
-    margin-top: 50px;
     background-color: lightblue;
 }
 button {
@@ -15,11 +14,10 @@ button {
 }
 div {
   text-align :right;
-  width: 1500px;
-  height:650px;
-  border: 10px solid green;
-  padding: 30px;
-  margin: 50px;
+  width: 97%;
+  height: 97%;
+  padding: 10px 10px;
+
 }
 header {
     display: flex;

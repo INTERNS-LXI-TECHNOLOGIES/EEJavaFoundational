@@ -6,6 +6,8 @@ public class MockExamModel
 	private int iD;
 	private Question question = new Question();
 	private Answer answer = new Answer();
+	Option  options[];
+	Option selectedOption;
 
 	public void setId(int iD)
 	{
@@ -22,5 +24,9 @@ public class MockExamModel
 	public Answer getAnswer()
 	{
 		return this.answer;
+	}
+
+	setSelectedAnswer(i) {
+		this.selectedOption = this.option[i];
 	}
 }
