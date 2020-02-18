@@ -39,14 +39,22 @@
  <h2><font color="MidnightBlue"><li>you can ask as many papers from the invigilator as you wish</li></font></h2>
  <h2><font color="MidnightBlue"><li>any malpractice will lead to debar</li></font></h2>
 </ol>
-<form>
-  <input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="NEXT"/>
+<form method="get" action="check">
+  <input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="BACK"/>
+  <input type="submit" class="button_css"  value="NEXT" />
 </form>
-    <%
-      String name = (String)session.getAttribute("uname");
-      out.println("<h1>name is : </h1>" + name);
+     <%
+      // ArrayList<Model> model=new ArrayList<Model>();
+      //  model = (ArrayList<Model>)session.getAttribute("array");
+      // for(int i=0;i<model.size();i++)
+      //   {
+      //      out.println("<h2>array size : "+model.size()+"<h2>");
+      //    out.println("<h2>slno : "+model.get(i).getSlno()+"<h2>");
+      //    out.println("<h2>qn : "+model.get(i).getQn()+"<h2>");
+      //    out.println("<h2>opt 1 : "+model.get(i).getOpt1()+"<h2>");
+      //    out.println("<h2>opt 2 : "+model.get(i).getOpt2()+"<h2>");
+      //   }
     %>
-    <h1><font >name</font></h1>
 </p>
 </div>
 </div>

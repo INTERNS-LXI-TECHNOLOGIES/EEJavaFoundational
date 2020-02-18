@@ -4,19 +4,34 @@ public class Model
 {
 	int slno;
 	String qn;
-	String opt= new String[4];
-	String ans;
+	int ans;
+	String opt1;
+	String opt2;
+	String opt3;
+	String opt4;
 	public void setQn(String str)
 	{
 		this.qn=str;
 	}
-	public void setOpt(String[] str)
+	public void setOpt1(String opt)
 	{
-		this.opt[0]=str[];
+		this.opt1=opt;
 	}
-	public void setAns(String str)
+	public void setOpt2(String opt)
 	{
-		this.ans=str;
+		this.opt2=opt;
+	}
+	public void setOpt3(String opt)
+	{
+		this.opt3=opt;
+	}
+	public void setOpt4(String opt)
+	{
+		this.opt4=opt;
+	}
+	public void setAns(int a)
+	{
+		this.ans=a;
 	}
 	public void setSlno(int a)
 	{
@@ -26,15 +41,24 @@ public class Model
 	{
 		return qn;
 	}
-		public String[] getOpt()
+		public String getOpt1()
 	{
-		return opt[];
+		return opt1;
 	}
 	public String getOpt2()
 	{
 		return opt2;
 	}
-		public String getAns()
+	public String getOpt3()
+	{
+		return opt3;
+	}
+	public String getOpt4()
+	{
+		return opt4;
+	}
+
+		public int getAns()
 	{
 		return ans;
 	}

@@ -36,8 +36,6 @@
 <form>
 <input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="START"/>
 </form>
-<a href="check">presssss</a>
-
 </p>
 </div>
 </div>

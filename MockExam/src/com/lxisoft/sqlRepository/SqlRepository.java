@@ -75,6 +75,10 @@ public ArrayList<Model> selectFrom(ArrayList<Model> model)
 				model.get(i).setQn(rs.getString(2));
 				model.get(i).setOpt1(rs.getString(3));
 				model.get(i).setOpt2(rs.getString(4));
+				model.get(i).setOpt3(rs.getString(5));
+				model.get(i).setOpt4(rs.getString(6));
+				model.get(i).setAns(rs.getInt(7));
+
 				}
 			}
 			
