@@ -13,13 +13,14 @@ public class QuestionServlet extends HttpServlet
     public SqlRepository sqlrepo=new SqlRepository();
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException  
     {
-         PrintWriter out=response.getWriter();
-        // out.println("deegghjj");
-         emodels.clear();
-         emodels = sqlrepo.readFromDatabase(emodels);
-         out.println("ArraySize : "+emodels.size());
-         request.setAttribute("question",emodels);
-         request.getRequestDispatcher("Questionview.jsp").forward(request,response);        
+       
+        emodels.clear();
+        emodels = sqlrepo.readFromDatabase(emodels);
+        HttpSession sessions = request.getSession(true);
+        sessions.setAttribute("questions",emodels);
+        response.sendRedirect("Questionview.jsp?questionNo=0");
+        //request.getRequestDispatcher("Questionview.jsp").forward(request,response);
+        
     }     
 }
  

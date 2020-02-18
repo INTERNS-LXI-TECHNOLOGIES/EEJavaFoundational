@@ -15,9 +15,9 @@ public class ResultServlet extends HttpServlet
        /* String i=request.getParameter("i");
         // int i = Integer.parseInt(g);
         System.out.println(option);
-		List<Question> questionList=repository.getAllQuestion();
+		ArrayList<QuestionServlet> emodels=repository.getAllQuestion();
         HttpSession session=request.getSession();
-        for(int j=0;j<questionList.size();j++)
+        for(int j=0;j<emodels.size();j++)
         {
             if((questionList.get(j).getQno()).equals(i))
             {
