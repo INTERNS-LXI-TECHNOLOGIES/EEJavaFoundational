@@ -37,7 +37,7 @@ public class SqlRepository
 	{
 		try
 		{
-			String qry = "select Questions.Id,Questions.Questions,Answers.Answers from Questions inner join Answers on Questions.Id = Answers.Id;";
+			String qry = "select Questions.Id,Questions.Questions,Answers.Answers,Options.Option1,Options.Option2,Options.Option3 from Questions inner join Answers on Questions.Id = Answers.Id inner join Options on Answers.Id = Options.Id;";
 			ps = con.prepareStatement(qry);
 			rs = ps.executeQuery(qry);
 			while(rs.next())
@@ -50,6 +50,9 @@ public class SqlRepository
 						model.get(i).setId(rs.getInt(1));
 						model.get(i).getQuestion().setQuestion(rs.getString(2));
 						model.get(i).getAnswer().setAnswer(rs.getString(3));
+						model.get(i).getOption1().setOption(rs.getString(4));
+						model.get(i).getOption2().setOption(rs.getString(5));
+						model.get(i).getOption3().setOption(rs.getString(6));
 					}
 				}
 			}

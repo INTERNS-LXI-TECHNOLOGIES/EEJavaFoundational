@@ -16,23 +16,27 @@ out.println("<p><h2 class=\"fontbig\">Question : "+model.get(qcount).getQuestion
 %>
 <form align = "center" method="get" action="welcome.jsp">
 <h2>
-<input type ="radio" value="0" id = "Option1" name = "option"> 
-<label for = "Option1" > <%out.println(model.get(qcount).getAnswer().getAnswer());%> </label></input></h2>
-<h2><input type ="radio" value="1" id = "Option2" name = "option"> 
-<label for = "Option2"> <%out.println(model.get(qcount).getAnswer().getAnswer());%> </label></input></h2>
-<h2><input type ="radio" value="2" id = "Option3" name = "option"> 
-<label for = "Option3"> <%out.println(model.get(qcount).getAnswer().getAnswer());%> </label></input></h2>
-<h2><input type ="radio" value="3" id = "Option4" name = "option"> 
-<label for = "Option4"> <%out.println(model.get(qcount).getAnswer().getAnswer());%> </label></input></h2>
+<input type ="radio" value="1" id = "Option" name = "option"> 
+<label for = "Option" > <%out.println(model.get(qcount).getAnswer().getAnswer());%> </label></input></h2>
+<h2><input type ="radio" value="2" id = "Option" name = "option"> 
+<label for = "Option"> <%out.println(model.get(qcount).getOption1().getOption());%> </label></input></h2>
+<h2><input type ="radio" value="3" id = "Option" name = "option"> 
+<label for = "Option"> <%out.println(model.get(qcount).getOption2().getOption());%> </label></input></h2>
+<h2><input type ="radio" value="4" id = "Option" name = "option"> 
+<label for = "Option"> <%out.println(model.get(qcount).getOption3().getOption());%> </label></input></h2>
+
 </section>
 <%
+//model.get(qcount).getSelectedOption().setOption();
 qcount++;
 %>
 
-	<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
+<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
 <button align = "center" type="submit">Next</button>
 </form>
 <%
+//request.getParameter("Option");
+//out.println("Selected Option : "+option);
 String url="welcome.jsp?ques=" + (qcount-2);
 %>
 <a href=<%out.println(url);%>>back</a>

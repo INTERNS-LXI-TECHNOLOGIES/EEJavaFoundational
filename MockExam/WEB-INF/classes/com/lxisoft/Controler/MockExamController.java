@@ -12,6 +12,7 @@ public class MockExamController extends HttpServlet
 	private SqlRepository sqlReppo = SqlRepository.getInstance();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+		PrintWriter out = response.getWriter();
 		model.clear();
 		model = sqlReppo.readFromDatabase(model);
 		HttpSession sessions = request.getSession(true);
