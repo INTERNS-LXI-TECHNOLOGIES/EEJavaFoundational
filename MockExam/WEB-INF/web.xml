@@ -10,6 +10,17 @@
     <url-pattern>/Home</url-pattern>
   </servlet-mapping>
 
+
+  <servlet>
+    <servlet-name>OptionServlet</servlet-name>
+    <servlet-class>com.lxisoft.Controler.OptionServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>OptionServlet</servlet-name>
+    <url-pattern>/Option</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name>TestServlet</servlet-name>
     <jsp-file>/index.jsp</jsp-file>
