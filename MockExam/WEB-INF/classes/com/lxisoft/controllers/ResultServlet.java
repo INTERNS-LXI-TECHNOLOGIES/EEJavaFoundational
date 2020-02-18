@@ -15,7 +15,6 @@ public class ResultServlet extends HttpServlet
 		SqlRepository repository=new SqlRepository();
 		String option=request.getParameter("option");
         String i=request.getParameter("i");
-        // int i = Integer.parseInt(g);
         System.out.println(option);
 		List<Question> questionList=repository.getAllQuestion();
         HttpSession session=request.getSession();
@@ -32,7 +31,5 @@ public class ResultServlet extends HttpServlet
         }
         session.setAttribute("mark",mar);
         response.sendRedirect("admin");
-  //   	RequestDispatcher rd=request.getRequestDispatcher("Result.jsp");
-		// rd.forward(request,response);
 	}
 }

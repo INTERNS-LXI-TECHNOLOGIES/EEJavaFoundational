@@ -7,7 +7,7 @@ import java.io.*;
 public class SqlRepository 
 {
 	List<Question>questionList=new ArrayList<Question>();
-	// Question q;
+	 Question q;
 	ResultSet rs=null;
 	PreparedStatement stmt=null;
 	Connection conn=null;
@@ -22,10 +22,10 @@ public class SqlRepository
 		}
 	}
 
-	// public SqlRepository()
-	// {
-	// 	q=new Question();
-	// }
+	public SqlRepository()
+	{
+		q=new Question();
+	}
 
 	public void connectionDB()
 	{
@@ -39,6 +39,20 @@ public class SqlRepository
  	    	System.out.println("Database not connected");
  	    }
  	}
+
+ 	public Question findQuestionByQno(String d)
+	{
+		Question q=new Question();
+		List<Question>qstn=getAllQuestion();
+		for(int i=0;i<qstn.size();i++)
+		{
+			if((qstn.get(i).getQno()).equals(d))
+			{
+				q=qstn.get(i);
+			}
+		}
+		return q;
+	}
 
  	public List<Question> getAllQuestion()
 	{
@@ -87,5 +101,44 @@ public class SqlRepository
  			e.printStackTrace();
  			System.out.println("Insert Failed"+e);
  		}
+ 	}
+
+ 	public void deleteQuestion(String i)
+	{
+		try
+		{
+			stmt=conn.prepareStatement("delete from question where Qno=?");
+			stmt.setString(1,i);
+			stmt.execute();
+			System.out.println("Delete Successfully");
+		}
+		catch(SQLException e)
+		{
+			// e.printStackTrace();
+			System.out.println("Delete Failed"+e);
+		}
+	}
+
+	public Question updateQuestion(String d,Question q)
+ 	{
+ 		try
+ 		{
+	 		stmt=conn.prepareStatement("update question set Question= ? ,Option1= ?, Option2=?,Option3= ?,Option4= ?,Answer= ? where Qno=?");
+	 		stmt.setString(1, q.getQuestion());
+	 		stmt.setString(2, q.getOption1());
+	 		stmt.setString(3, q.getOption2());
+	 		stmt.setString(4, q.getOption3());
+	 		stmt.setString(5, q.getOption4());
+	 		stmt.setString(6, q.getAnswer());
+	 		stmt.setString(7, d);
+	 	    stmt.executeUpdate();
+	 	   
+	 		System.out.println("Successfully Updated");
+ 		}
+ 		catch(Exception e)
+ 		{
+ 			System.out.println("Updation Failed"+e);
+ 		}
+ 		return q;
  	}
 }
