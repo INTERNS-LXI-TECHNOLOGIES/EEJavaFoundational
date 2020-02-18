@@ -15,9 +15,11 @@ public class QuestionServlet extends HttpServlet
     {
          PrintWriter out=response.getWriter();
         // out.println("deegghjj");
+         emodels.clear();
          emodels = sqlrepo.readFromDatabase(emodels);
          out.println("ArraySize : "+emodels.size());
          request.setAttribute("question",emodels);
          request.getRequestDispatcher("Questionview.jsp").forward(request,response);        
     }     
 }
+ 

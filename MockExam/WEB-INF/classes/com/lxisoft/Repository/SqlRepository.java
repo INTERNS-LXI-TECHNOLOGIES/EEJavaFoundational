@@ -24,13 +24,13 @@ public class SqlRepository
 			}	
 		}	
 	}
-	public void createTable()
+	/*public void createTable()
 	{
 		try
 		{
 			this.dataBaseConnectionEstablish();
 			String qry;
-			qry="create table mockexam(id int,question varchar(250),opt1 varchar(25),opt2 varchar(25),opt3 varchar(25),opt4 varchar(25),ans varchar(25))";
+			qry="create table if not exists mockexam(Id int primary key auto_increment,question varchar(250),opt1 varchar(25),opt2 varchar(25),opt3 varchar(25),opt4 varchar(25),ans varchar(25))";
 			ps=con.prepareStatement(qry);
 			ps.execute();
 		}
@@ -53,7 +53,7 @@ public class SqlRepository
  		{
  			System.out.println(e);
  		}
- 	}
+ 	}*/
  	public ArrayList<ExamModel> readFromDatabase(ArrayList<ExamModel> emodels)
 	{
 		try
