@@ -10,7 +10,6 @@ import java.io.PrintWriter;
 public class Serverlet extends HttpServlet 
 { 
 	public ArrayList<Model> model=new ArrayList<Model>();
-  public ArrayList<Model> model1=new ArrayList<Model>();
 	public SqlRepository sql=new SqlRepository();
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
   {	 // response.setContentType("text/html");
