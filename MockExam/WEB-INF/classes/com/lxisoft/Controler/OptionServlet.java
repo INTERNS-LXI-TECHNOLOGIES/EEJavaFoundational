@@ -8,10 +8,11 @@ import com.lxisoft.Repository.SqlRepository;
 public class OptionServlet extends HttpServlet
 {
 	private ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
-	private SqlRepository sqlReppo = SqlRepository.getInstance();
+	//private SqlRepository sqlReppo = SqlRepository.getInstance();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
-		questions = sqlReppo.readFromDatabase(questions);
+		HttpSession session = request.getSession(true);
+		questions = (ArrayList<MockExamModel>)session.getAttribute("questions");
 		PrintWriter out = response.getWriter();
 		int selectedOption = Integer.parseInt(request.getParameter("option"));
 		for(int i=0;i<questions.size();i++)
@@ -49,7 +50,9 @@ public class OptionServlet extends HttpServlet
 				break;
 			}
 		}
-		request.setAttribute("Array",questions);
+		HttpSession sessions = request.getSession(true);
+		sessions.setAttribute("Array",questions);
+		//request.setAttribute("Array",questions);
 		request.getRequestDispatcher("welcome.jsp").forward(request, response);
 	}
 	public void doOperation(String option,PrintWriter out)

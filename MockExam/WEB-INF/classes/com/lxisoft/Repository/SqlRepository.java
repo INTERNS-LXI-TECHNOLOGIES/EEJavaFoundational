@@ -37,7 +37,8 @@ public class SqlRepository
 	{
 		try
 		{
-			String qry = "select Questions.Id,Questions.Questions,Answers.Answers,Options.Option1,Options.Option2,Options.Option3 from Questions inner join Answers on Questions.Id = Answers.Id inner join Options on Answers.Id = Options.Id;";
+			//String qry = "select Questions.Id,Questions.Questions,Answers.Answers,Options.Option1,Options.Option2,Options.Option3 from Questions inner join Answers on Questions.Id = Answers.Id inner join Options on Answers.Id = Options.Id;";
+			String qry = "Select * from MockExam";
 			ps = con.prepareStatement(qry);
 			rs = ps.executeQuery(qry);
 			while(rs.next())

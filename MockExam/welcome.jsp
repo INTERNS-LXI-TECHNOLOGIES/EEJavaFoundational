@@ -41,9 +41,14 @@ String url="welcome.jsp?ques=" + (qcount-2);
 %>
 <a href=<%out.println(url);%>>back</a>
 <%} else {
-ArrayList<MockExamModel> arrayModel =  (ArrayList<MockExamModel>)request.getAttribute("Array");
-	request.setAttribute("test",arrayModel);
- response.sendRedirect("Result.jsp");
+//ArrayList<MockExamModel> arrayModel = (ArrayList<MockExamModel>)session.getAttribute("Array");
+
+	//out.println("selected option : "+arrayModel.get(0).getSelectedOption().getOption());
+	//HttpSession sessions = request.getSession();
+		//sessions.setAttribute("resultarray",arrayModel);
+	//request.setAttribute("test",arrayModel);
+	//request.getRequestDispatcher("Result.jsp").forward(request, response);
+ response.sendRedirect("Result");
 }
 %>
 </body>
