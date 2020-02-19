@@ -10,19 +10,19 @@ public class SelectServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{	
-		SqlRepository repo=new SqlRepository();
+		String opt=request.getParameter("opt");
 		String qno=request.getParameter("qno");
-		String operation=request.getParameter("operation");
-		Question q=repo.findQuestionByQno(qno);
-		request.setAttribute("questions",q);
+		SqlRepository repository=new SqlRepository();
+		Question qn=repository.findQuestionByQno(qno);
+		request.setAttribute("questions",qn);
 		HttpSession session=request.getSession();
-		session.setAttribute("question",q);
+		session.setAttribute("question",qn);
 		RequestDispatcher rd=null;
 
-		switch(operation)
+		switch(opt)
 		{
-			case "1":rd=request.getRequestDispatcher("Delete.jsp");break;
-			case "2":rd=request.getRequestDispatcher("Edit.jsp");break;
+			case "a":rd=request.getRequestDispatcher("Delete.jsp");break;
+			case "b":rd=request.getRequestDispatcher("Edit.jsp");break;
 		}
 		rd.forward(request,response);
 	}

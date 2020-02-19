@@ -7,7 +7,7 @@ import java.io.*;
 public class SqlRepository 
 {
 	List<Question>questionList=new ArrayList<Question>();
-	 Question q;
+	Question q;
 	ResultSet rs=null;
 	PreparedStatement stmt=null;
 	Connection conn=null;
@@ -114,23 +114,22 @@ public class SqlRepository
 		}
 		catch(SQLException e)
 		{
-			// e.printStackTrace();
 			System.out.println("Delete Failed"+e);
 		}
 	}
 
-	public Question updateQuestion(String d,Question q)
+	public Question updateQuestion(String i,Question q)
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("update question set Question= ? ,Option1= ?, Option2=?,Option3= ?,Option4= ?,Answer= ? where Qno=?");
+	 		stmt=conn.prepareStatement("update question set Question=?,Option1=?,Option2=?,Option3=?,Option4=?,Answer=? where Qno=?");
 	 		stmt.setString(1, q.getQuestion());
 	 		stmt.setString(2, q.getOption1());
 	 		stmt.setString(3, q.getOption2());
 	 		stmt.setString(4, q.getOption3());
 	 		stmt.setString(5, q.getOption4());
 	 		stmt.setString(6, q.getAnswer());
-	 		stmt.setString(7, d);
+	 		stmt.setString(7, i);
 	 	    stmt.executeUpdate();
 	 	   
 	 		System.out.println("Successfully Updated");

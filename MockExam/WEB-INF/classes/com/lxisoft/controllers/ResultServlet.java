@@ -8,8 +8,8 @@ import com.lxisoft.models.*;
 
 public class ResultServlet extends HttpServlet
 {
-     int mar=0;
-     int k=0;
+    int mar=0;
+    int k=0;
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		SqlRepository repository=new SqlRepository();
