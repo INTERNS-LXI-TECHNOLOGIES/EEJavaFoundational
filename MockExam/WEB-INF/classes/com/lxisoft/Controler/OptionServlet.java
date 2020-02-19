@@ -53,7 +53,7 @@ public class OptionServlet extends HttpServlet
 		HttpSession sessions = request.getSession(true);
 		sessions.setAttribute("Array",questions);
 		//request.setAttribute("Array",questions);
-		request.getRequestDispatcher("welcome.jsp").forward(request, response);
+		request.getRequestDispatcher("Questions.jsp").forward(request, response);
 	}
 	public void doOperation(String option,PrintWriter out)
 	{

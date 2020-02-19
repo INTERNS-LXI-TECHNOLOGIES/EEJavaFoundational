@@ -37,7 +37,7 @@ qcount++;
 	<button align = "center" type="submit">Next</button></a>
 </form>
 <%
-String url="welcome.jsp?ques=" + (qcount-2);
+String url="Questions.jsp?ques=" + (qcount-2);
 %>
 <a href=<%out.println(url);%>>back</a>
 <%} else {
