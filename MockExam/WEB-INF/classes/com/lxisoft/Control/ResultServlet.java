@@ -12,7 +12,6 @@ public class ResultServlet extends HttpServlet
 {
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
-		out.println("Result is");		
-     
+		out.println("Result is");		     
 	}
 }

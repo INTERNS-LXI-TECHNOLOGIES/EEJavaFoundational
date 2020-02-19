@@ -2,7 +2,9 @@
 <title> MockExam </title>
 <body><center><h1> MockExam </h1></center>	
 <form>
-<center><button name="button" type="button" onclick="window.location.href='Instruction.jsp';">Start</button></center>
+<center>
+<input type="text" name="username" placeholder="username">	<br><br>
+<button name="button" type="button" onclick="window.location.href='Instruction.jsp';">Submit</button></center>
  </form> 
 </body>
 </head>

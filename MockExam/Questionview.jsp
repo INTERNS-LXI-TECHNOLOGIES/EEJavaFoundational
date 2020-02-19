@@ -6,15 +6,13 @@
 <p>
 <form align="center" method="get" >
 <%	
-	ArrayList<ExamModel> emodels = (ArrayList<ExamModel>)session.getAttribute("questions");
-	int count = Integer.parseInt(request.getParameter("questionNo"));
-	out.println(count);
-	if (emodels.size()!=count)
-	{		
-	
-	out.println("<h3>QustNo : "+emodels.get(count).getQuestionNumber()+"</h3>");
-	out.println("<h3>Question : "+emodels.get(count).getQuestion()+"</h3>");
-	
+	ArrayList<ExamModel> emodels = (ArrayList<ExamModel>) request.getAttribute("qstn");
+	int count=(int)session.getAttribute("questions");
+	int j=count-1;
+	if (count<emodels.size())
+	{			
+		out.println("<h3>QustNo : "+emodels.get(count).getQuestionNumber()+"</h3>");
+		out.println("<h3>Question : "+emodels.get(count).getQuestion()+"</h3>");	
 %>
 	<h2><input type ="radio" value="0" id = "Option1" name ="option"> 
 	<label for = "Option1"><%out.println(emodels.get(count).getOpt1());%> </label></input></h2> <br>
@@ -27,15 +25,18 @@
 	
 	<h2><input type ="radio" value="4" id = "Option4" name ="option"> 
 	<label for = "Option4"> <%out.println(emodels.get(count).getOpt4());%> </label></input></h2><br>
-	
+	<a href="Questionview.jsp"><input type="submit"class="button" value="Next"></a>	
+	</form>	
 <%
-count++;
-}
-
+	}
+	else
+	{
 %>
-	<input  name="button" type="button" onclick="window.location.href ='ResultServlet';" value="NEXT"/>
-		
-</form>
+	<button name="button" type="button" onclick="window.location.href='Result.jsp';">Submit</button>
+<%
+	}
+%>
 </p>
 </body>
 </html>
+
