@@ -4,10 +4,29 @@
 <servlet-name>servlet</servlet-name>  
 <servlet-class>com.lxisoft.Control.QuestionServlet</servlet-class>  
 </servlet>  
+
+<!-- <servlet>
+    <servlet-name>ResultServlet</servlet-name>
+    <servlet-class>com.lxisoft.Control</servlet-class>
+  </servlet> -->
   
 <servlet-mapping>  
 <servlet-name>servlet</servlet-name>  
 <url-pattern>/QuestionServlet</url-pattern>  
 </servlet-mapping>  
   
+ <!--  <servlet-mapping>
+    <servlet-name>servlet</servlet-name>
+    <url-pattern>/ResultServlet</url-pattern>
+  </servlet-mapping> -->
 </web-app>  
+
+  
+
+
+ 
+
+
+  
+
+ 

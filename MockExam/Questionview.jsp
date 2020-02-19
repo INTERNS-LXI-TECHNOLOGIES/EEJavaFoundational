@@ -8,14 +8,13 @@
 <%	
 	ArrayList<ExamModel> emodels = (ArrayList<ExamModel>)session.getAttribute("questions");
 	int count = Integer.parseInt(request.getParameter("questionNo"));
-	//out.println(count);
+	out.println(count);
 	if (emodels.size()!=count)
 	{		
 	
 	out.println("<h3>QustNo : "+emodels.get(count).getQuestionNumber()+"</h3>");
 	out.println("<h3>Question : "+emodels.get(count).getQuestion()+"</h3>");
 	
-
 %>
 	<h2><input type ="radio" value="0" id = "Option1" name ="option"> 
 	<label for = "Option1"><%out.println(emodels.get(count).getOpt1());%> </label></input></h2> <br>
@@ -30,14 +29,13 @@
 	<label for = "Option4"> <%out.println(emodels.get(count).getOpt4());%> </label></input></h2><br>
 	
 <%
-}
 count++;
+}
+
 %>
-	<input  name="button" type="button" onclick="window.location.href = 'Questionview.jsp';" value="NEXT"/>
+	<input  name="button" type="button" onclick="window.location.href ='ResultServlet';" value="NEXT"/>
 		
 </form>
 </p>
 </body>
 </html>
-
-	

@@ -23,11 +23,7 @@ public class SqlRepository
 				System.out.println("eeeeeeeeeeee "+e);
 			}	
 		}	
-	}
-	
-		/*String qry="create table if not exists mockexam(Id int primary key auto_increment,question varchar(250),opt1 varchar(25),opt2 varchar(25),opt3 varchar(25),opt4 varchar(25),ans varchar(25))";
-		String qry="insert into mockexam(question,opt1,opt2,opt3,opt4,ans)values(?,?,?,?)";
-		*/
+	}		
  	public ArrayList<ExamModel> readFromDatabase(ArrayList<ExamModel> emodels)
 	{
 		try
