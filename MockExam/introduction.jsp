@@ -11,7 +11,9 @@
 	<h3><font color="white">* Read questions carefully and select the answer given below</font></h3>
 	<h3><font color="white">* Any malpractice will lead to debar</font></h3>
 	<div align="center" class="button">
-		<a href="check"> Next </button>
+		<form method="get" action="check">
+			<input type="submit" name="Next" value="Next" />
+		</form>
 	</div>
 </header>
 </body>
