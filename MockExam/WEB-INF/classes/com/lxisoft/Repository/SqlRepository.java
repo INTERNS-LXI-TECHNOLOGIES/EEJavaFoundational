@@ -33,6 +33,17 @@ public class SqlRepository
 
 		return sqlReppo;
 	}
+	public void createTable()
+	{
+		try
+		{
+
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 	public ArrayList<MockExamModel> readFromDatabase(ArrayList<MockExamModel> model)
 	{
 		try
@@ -63,5 +74,24 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 		return model;
+	}
+	public void insertDataToDatabase(MockExamModel model)
+	{
+		try
+		{
+			this.createTable();
+			String qry = "insert into MockExam(Question,Answer,Option1,Option2,Option3)values(?,?,?,?,?)";
+			ps = con.prepareStatement(qry);
+			ps.setString(1,model.getQuestion().getQuestion());
+			ps.setString(2,model.getAnswer().getAnswer());
+			ps.setString(3,model.getOption1().getOption());
+			ps.setString(4,model.getOption2().getOption());
+			ps.setString(5,model.getOption3().getoption());
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 }

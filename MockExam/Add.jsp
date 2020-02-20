@@ -6,14 +6,18 @@
 	<div>
 		<h1></h1>
 		<font size="9">ENTER QUESTION</font><br>
-  <label for="fname">Question : </label>
-  <input type="text" id="fname" name="fname"><br>
-  <br>
-  <label for="lname">Answer : </label>
-  <input type="text" id="lname" name="lname"><br>
-  <h2><textarea id="w3mission" rows="2" cols="40">
-</textarea></h2>
-  <button formaction="View.jsp" class="button">SUBMIT</button>
+  <label for="question">Question : </label>
+  <input type="text" id="question" name="question"><br>
+  <label for="answer">Answer : </label>
+  <input type="text" id="answer" name="answer"><br>
+  <label for="option1">Option1 : </label>
+  <input type="text" id="option1" name="option1"><br>
+  <label for="option2">Option2 : </label>
+  <input type="text" id="lname" name="option2"><br>
+  <label for="option3">Option3 : </label>
+  <input type="text" id="lname" name="option3"><br>
+  <button formaction="Admin.jsp" class="button">BACK</button> <button formaction="View.jsp" class="button">SUBMIT
+  </button> <button type="reset" class="button">RESET</button>
 </div>
 </form>
 </body>

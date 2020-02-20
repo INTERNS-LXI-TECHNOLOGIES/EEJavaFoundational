@@ -2,7 +2,7 @@
 <head>
 <Title>MOCK EXAM</title>
 <link rel="stylesheet" href="Style.css"></link>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/>
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/> -->
 </head>
 <body class="animated infinite  delay-2s" style="border:15px solid Tomato;">
 <div class="container">
@@ -19,7 +19,8 @@
 	
 <form method="get" action="Home" value = "0">
 	<input type="hidden" name="ques" value="0"/>
-    <button  type="submit">Start Exam</button>
+    <button  type="submit">Start Exam</button> 
+    <button formaction="index.jsp" class="button">BACK</button> 
 </form>
 </div>
 </body>

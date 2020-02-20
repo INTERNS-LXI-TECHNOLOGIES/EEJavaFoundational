@@ -10,6 +10,7 @@
 <button type="submit" class="button">UPDATE</button>
 <button formaction="Admin.jsp" class="button">DELETE</button>
 <button formaction="Admin.jsp" class="button">SEARCH</button>
+<button formaction="index.jsp" class="button">BACK</button> 
 </form>
 </div>
 </body>
