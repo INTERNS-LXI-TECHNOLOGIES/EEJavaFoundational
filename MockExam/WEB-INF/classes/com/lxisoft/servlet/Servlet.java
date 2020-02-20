@@ -8,8 +8,7 @@ import com.lxisoft.sqlrepository.*;
 import com.lxisoft.model.*;
 public class Servlet extends HttpServlet
 {
-	ArrayList<String> questions = new ArrayList<String>(); 
-	Model model=new Model();
+	
 	Sqlrepository sqlrep=new Sqlrepository();
 	public void doGet(HttpServletRequest req,HttpServletResponse res)  
     throws ServletException,IOException  
@@ -21,6 +20,7 @@ public class Servlet extends HttpServlet
         ArrayList<Model> repo=sqlrep.readquestion();
         HttpSession session=req.getSession(); 
         session.setAttribute("array",repo);
+        //out.println("Id : "+repo.get(0).getId());
         res.sendRedirect("view1.jsp");
     }
    
