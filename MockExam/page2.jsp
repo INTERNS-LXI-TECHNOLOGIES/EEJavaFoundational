@@ -57,8 +57,7 @@
             <input type="hidden" name="questionNo" value= <%out.println(qcount);%>/>
             <input type="submit" class="button_css"   value="NEXT" />
           </form>
-<%
-      
+<%    
          } else {
         //request.setAttribute("mark",mark);
        String count  = session.getAttribute("count").toString();

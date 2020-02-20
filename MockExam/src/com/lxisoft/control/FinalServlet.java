@@ -8,13 +8,15 @@ import javax.servlet.http.*;
 import java.io.PrintWriter;
 
 public class FinalServlet extends HttpServlet 
-{ public static int count=0;
+{ public int count;
   int c1;
+  int c2;
    // public int c=0;
 	public ArrayList<Model> model=new ArrayList<Model>();
 	public SqlRepository sql=new SqlRepository();
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-  {	 // response.setContentType("text/html");
+  {	 
+  // c2 = 0;
   HttpSession session1=request.getSession(true);
       model=(ArrayList<Model>) session1.getAttribute("array");
       PrintWriter out = response.getWriter();
@@ -24,13 +26,23 @@ public class FinalServlet extends HttpServlet
      if(a==(model.get(c).getAns()))
      {
         count++;
+        c2++;
+     }
+     else
+     {
+      c2++;
      }
      c1+=count;
-     count=0;
+      count=0;
      c++;
-    HttpSession session=request.getSession(true); 
+       if(c2==model.size())
+       {
+        HttpSession session=request.getSession(true); 
        session.setAttribute("count",c1);
-    // request.setAttribute("count",c1);
+        c1=0;
+        c2=0;
+       }
+        
      String url="page2.jsp?questionNo="+c;
       response.sendRedirect(url);
     // out.println("count : "+c1);
