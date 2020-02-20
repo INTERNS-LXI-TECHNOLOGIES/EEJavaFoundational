@@ -8,7 +8,7 @@
 <div>
 <h1>MOCK EXAM</h1>
 <form>
-<button class="button">ADMIN</button> <button type="submit" formaction="Introduction.jsp" class="button">USER</button>
+<button formaction="Admin.jsp" class="button">ADMIN</button> <button type="submit" formaction="Introduction.jsp" class="button">USER</button>
 </form>
 </div>
 </body>
