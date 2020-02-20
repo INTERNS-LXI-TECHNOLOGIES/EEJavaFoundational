@@ -32,13 +32,13 @@
 	<form action="edit" method="post">
 	<input type="hidden" name="qno" value="<%=qn.getQno()%>"/>
 	<tr>		
-		<td><br><div><input type="text" name="question" placeholder=NewQuestion><br>
+		<td><div><input type="text" name="question" placeholder=NewQuestion><br>
 		<br><input type="text" name="option1" placeholder=NewOption1><br>
 		<br><input type="text" name="option2" placeholder=NewOption2><br>
 		<br><input type="text" name="option3" placeholder=NewOption3><br>
 		<br><input type="text" name="option4" placeholder=NewOption4><br>
 		<br><input type="text" name="answer" placeholder=NewAnswer><br>
-		<br><input type="submit" value=Save></a>
+		<br><a href="edit"><input type="submit" value=Save></a>
 	</form>
 	<a href="admin"><input type="submit" value=Cancel></a></div></td>
 	</tr>

@@ -13,28 +13,26 @@
 </head>
 <div class="jumbotron text-center"></div>
 <body>
-	<table align=center border="5px" width="100%" height="100%">
-    <%Question q=(Question) request.getAttribute("question"); %>
+    <% Question qn=(Question) request.getAttribute("question"); %>
 	<tr>
-    	<td><center><%=(q.getQuestion())%></center></td>  
+    	<td><center><%=qn.getQuestion()%></center></td>  
     </tr>
     <tr>
-        <td><center><%=(q.getOption1())%></center></td>  
+        <td><center><%=qn.getOption1()%></center></td>  
     </tr>
     <tr>
-        <td><center><%=(q.getOption2())%></center></td>  
+        <td><center><%=qn.getOption2()%></center></td>  
     </tr>
     <tr>
-        <td><center><%=(q.getOption3())%></center></td>  
+        <td><center><%=qn.getOption3()%></center></td>  
     </tr>
     <tr>
-        <td><center><%=(q.getOption4())%></center></td>  
+        <td><center><%=qn.getOption4()%></center></td>  
     </tr>
     <tr>
-        <td><center><%=(q.getAnswer())%></center></td>  
+        <td><center><%=qn.getAnswer()%></center></td>  
     </tr>
         <td><a href="admin"><input type="submit" value=Back></td>
     </tr>
-  </table>
 </body>
 </html>

@@ -24,6 +24,8 @@
 <body>
 <div class="jumbotron text-center">
 	<a href="Add.jsp"><h3>+</h3></a>
+  <input type="text" name="l" placeholder="Search" />
+  <a href="search"><input type="submit" value="ok"></a>
 	<h1 align="center">MOCK-EXAM</h1>
 </div>
 <h3 align="center"><u>INSTRUCTIONS</u></h3>

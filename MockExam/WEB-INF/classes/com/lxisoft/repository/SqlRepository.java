@@ -7,7 +7,7 @@ import java.io.*;
 public class SqlRepository 
 {
 	List<Question>questionList=new ArrayList<Question>();
-	Question q;
+	// Question q=new Question();
 	ResultSet rs=null;
 	PreparedStatement stmt=null;
 	Connection conn=null;
@@ -22,10 +22,10 @@ public class SqlRepository
 		}
 	}
 
-	public SqlRepository()
-	{
-		q=new Question();
-	}
+	// public SqlRepository()
+	// {
+	// 	q=new Question();
+	// }
 
 	public void connectionDB()
 	{
@@ -118,18 +118,20 @@ public class SqlRepository
 		}
 	}
 
-	public Question updateQuestion(String i,Question q)
+
+	public Question updateQuestions(Question q,String ii)
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("update question set Question=?,Option1=?,Option2=?,Option3=?,Option4=?,Answer=? where Qno=?");
+	 		stmt=conn.prepareStatement("update question set Question= ? ,Option1= ?,Option2= ?,Option3= ?,Option4= ?, Answer=? where Qno=?");
 	 		stmt.setString(1, q.getQuestion());
 	 		stmt.setString(2, q.getOption1());
 	 		stmt.setString(3, q.getOption2());
 	 		stmt.setString(4, q.getOption3());
 	 		stmt.setString(5, q.getOption4());
 	 		stmt.setString(6, q.getAnswer());
-	 		stmt.setString(7, i);
+	 		int i=Integer.parseInt(ii);
+	 		stmt.setInt(7, i);
 	 	    stmt.executeUpdate();
 	 	   
 	 		System.out.println("Successfully Updated");

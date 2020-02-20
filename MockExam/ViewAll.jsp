@@ -51,10 +51,11 @@
 		<form action="select" method="get">
     	<a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
     	<input type="hidden" name="opt" value="a">
-       	<input type="submit" class="button" value=Delete></a></form>
-       	<form action="select" method="get">
-		<a href="select"><input type="hidden" name="opt" value="b">
-        <input type="submit" class="button" value=Edit></a></form></div>	
+      <input type="submit" class="button" value=Delete></a></form>
+      <form action="select" method="get">
+		  <a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
+      <input type="hidden" name="opt" value="b">
+      <input type="submit" class="button" value=Edit></a></form></div>	
     </table>
     <%}
 	else

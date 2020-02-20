@@ -13,8 +13,7 @@
 	<h1 align=center>Delete Question</h1>
 </div>
 <body>
-	<%Question qn=(Question)session.getAttribute("question");
-	int i=0;%>
+	<%Question qn=(Question)session.getAttribute("question");%>
 	<table align=center border="5" width=100% height=100%>
 	<form action="delete" method="get">
 	<tr>

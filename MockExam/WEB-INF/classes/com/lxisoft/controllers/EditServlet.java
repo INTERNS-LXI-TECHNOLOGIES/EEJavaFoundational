@@ -8,24 +8,18 @@ import com.lxisoft.models.*;
 
 public class EditServlet extends HttpServlet
 {
-	public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+	public void doPost(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
 		Question q=new Question();
-		SqlRepository repo=new SqlRepository();
-		String question=request.getParameter("question");
-		String option1=request.getParameter("option1");
-		String option2=request.getParameter("option2");
-		String option3=request.getParameter("option3");
-		String option4=request.getParameter("option4");
-		String answer=request.getParameter("answer");
+		SqlRepository repository=new SqlRepository();
 		String qno=request.getParameter("qno");
-		q.setQuestion(question);
-		q.setOption1(option1);
-		q.setOption2(option2);
-		q.setOption3(option3);
-		q.setOption4(option4);
-		q.setAnswer(answer);
-		Question qn=repo.updateQuestion(qno,q);
+		q.setQuestion(request.getParameter("question"));
+		q.setOption1(request.getParameter("option1"));
+		q.setOption2(request.getParameter("option2"));
+		q.setOption3(request.getParameter("option3"));
+		q.setOption4(request.getParameter("option4"));
+		q.setAnswer(request.getParameter("answer"));
+		Question qn=repository.updateQuestions(q,qno);
 		request.setAttribute("questions",qn);
 		HttpSession session=request.getSession();
 		session.setAttribute("question",qn);
