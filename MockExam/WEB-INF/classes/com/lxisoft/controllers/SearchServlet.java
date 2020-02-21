@@ -10,7 +10,7 @@ public class SearchServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
     {
-        String l=request.getParameter("l");
+        String l=request.getParameter("letter");
     	SqlRepository repository=new SqlRepository();
     	List<Question> questionList=repository.getAllQuestion();
     	List<Question> q=new ArrayList<Question>();
