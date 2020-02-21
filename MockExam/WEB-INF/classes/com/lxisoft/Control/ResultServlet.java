@@ -16,9 +16,12 @@ public class ResultServlet extends HttpServlet
 	{
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
-        
-        
-		
+        if((option) equals(emodels.getAns()))
+        {
+            totalMark=totalMark+1;
+        }       	
+        RequestDispatcher rd=request.getRequestDispatcher("Result.jsp");
+        rd.forward(request,response);
 
 	}
 }
