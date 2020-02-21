@@ -9,6 +9,18 @@
 <servlet-name>servlet</servlet-name>  
 <url-pattern>/QuestionServlet</url-pattern>  
 </servlet-mapping>  
+
+
+<servlet>  
+<servlet-name>resultservlet</servlet-name>  
+<servlet-class>com.lxisoft.Control.ResultServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>resultservlet</servlet-name>  
+<url-pattern>/ResultServlet</url-pattern>  
+</servlet-mapping>
+
   
  
 </web-app>  

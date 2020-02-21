@@ -23,7 +23,6 @@ public class QuestionServlet extends HttpServlet
         sessions.setAttribute("questions",i);       
         RequestDispatcher rd=request.getRequestDispatcher("Questionview.jsp");
         rd.forward(request,response);
-
              
     }    
     

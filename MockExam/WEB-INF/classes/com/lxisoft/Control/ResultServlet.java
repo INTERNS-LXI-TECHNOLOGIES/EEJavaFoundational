@@ -10,8 +10,18 @@ import com.lxisoft.Control.*;
 
 public class ResultServlet extends HttpServlet
 {
+    int c;
+    int totalMark;
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
-		out.println("Result is");		     
+        PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();
+        
+        
+		
+
 	}
 }
+
+    
+        
