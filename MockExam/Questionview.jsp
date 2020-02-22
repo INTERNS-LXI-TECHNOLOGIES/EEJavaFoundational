@@ -11,9 +11,11 @@
 	int count=j-1;
 	if (count<emodels.size())
 	{			
-		out.println("<h3>QustNo : "+emodels.get(count).getQuestionNumber()+"</h3>");
 		out.println("<h3>Question : "+emodels.get(count).getQuestion()+"</h3>");	
 %>
+	<h2><input type="hidden" value="emodels.get(count).getQuestionNumber()" name="qstNo">
+	
+
 	<h2><input type ="radio" value="1" id = "Option1" name ="option"> 
 	<label for = "Option1"><%out.println(emodels.get(count).getOpt1());%> </label></input></h2> <br>
 		

@@ -9,6 +9,7 @@ import com.lxisoft.Model.ExamModel;
 import com.lxisoft.Repository.SqlRepository;
 public class QuestionServlet extends HttpServlet
 {
+   
     public ArrayList<ExamModel> emodels=new ArrayList<ExamModel>();
     public SqlRepository sqlrepo=new SqlRepository();
     int i=0;
@@ -26,6 +27,6 @@ public class QuestionServlet extends HttpServlet
              
     }    
     
-  }
+}
 
  

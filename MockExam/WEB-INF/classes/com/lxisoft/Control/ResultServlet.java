@@ -3,25 +3,42 @@ import java.io.*;
 import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import java.io.IOException;
-import java.io.PrintWriter;
 import com.lxisoft.Repository.*;
 import com.lxisoft.Control.*;
+import com.lxisoft.Model.*;
 
 public class ResultServlet extends HttpServlet
 {
-    int c;
-    int totalMark;
+    int c=0;
+    int totalMark=0;
+    ArrayList<ExamModel> emodels;
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
-        PrintWriter out = response.getWriter();
-        HttpSession session = request.getSession();
-        if((option) equals(emodels.getAns()))
+          
+        String option=request.getParameter("option");
+        String i=request.getParameter("qstNo");
+        SqlRepository sqlrepo=new SqlRepository();
+        emodels=sqlrepo.readFromDatabase(emodels);
+        HttpSession session=request.getSession();
+
+        System.out.println("check"+emodels.size());
+
+        System.out.println(option);
+       /* for(int j=0;j<emodels.size();j++)
         {
-            totalMark=totalMark+1;
-        }       	
-        RequestDispatcher rd=request.getRequestDispatcher("Result.jsp");
-        rd.forward(request,response);
+           
+           /* if((emodels.get(j).getQuestion()).equals(i))
+            {
+                c=j;
+            } */
+           /*  if(option.equals(emodels.get(j).getAnswer()))
+             {
+                System.out.println("sssssss");
+                    totalMark++;
+             }
+        }       */
+        session.setAttribute("mark",totalMark);
+        response.sendRedirect("QuestionServlet");  
 
 	}
 }

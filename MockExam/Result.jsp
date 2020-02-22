@@ -1,7 +1,16 @@
+<%@page import="com.lxisoft.Control.*"%>
+<%@page import="com.lxisoft.Model.*"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
 <html>
-<Head><h1>Result</h1></Head>
+<html>
+<head>
+	<title>Result</title>
+	<h1 align="center">Result</h1>
 <body>
-	<h3>Correct Answer</h3>
-	<h3>Total Mark</h3>
+<%int m=(int) session.getAttribute("mark");
+out.println(m);%>
+</body>
+</html>
 	</body>
 </html>
