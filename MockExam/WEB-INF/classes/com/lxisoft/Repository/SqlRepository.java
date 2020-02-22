@@ -24,7 +24,7 @@ public class SqlRepository
 			}	
 		}	
 	}		
- 	public ArrayList<ExamModel> readFromDatabase(ArrayList<ExamModel> emodels)
+ 	public ArrayList<ExamModel> readFromDatabase(ArrayList<ExamModel> models)
 	{
 		try
 		{
@@ -34,17 +34,17 @@ public class SqlRepository
 			rs = ps.executeQuery(qry);
 			while(rs.next())
 			{
-				emodels.add(new ExamModel());
-				for(int i=0;i<emodels.size();i++)
+				models.add(new ExamModel());
+				for(int i=0;i<models.size();i++)
 				{
-					if((emodels.get(i)).getQuestionNumber()==0)
+					if((models.get(i)).getQuestionNumber()==0)
 					{
-						emodels.get(i).setQuestionNumber(rs.getInt(1));
-						emodels.get(i).setQuestion(rs.getString(2));
-						emodels.get(i).setOpt1(rs.getString(3));
-						emodels.get(i).setOpt2(rs.getString(4));
-						emodels.get(i).setOpt3(rs.getString(5));
-						emodels.get(i).setOpt4(rs.getString(6));
+						models.get(i).setQuestionNumber(rs.getInt(1));
+						models.get(i).setQuestion(rs.getString(2));
+						models.get(i).setOpt1(rs.getString(3));
+						models.get(i).setOpt2(rs.getString(4));
+						models.get(i).setOpt3(rs.getString(5));
+						models.get(i).setOpt4(rs.getString(6));
 					}
 				}
 			}			
@@ -53,7 +53,7 @@ public class SqlRepository
 		{
 			e.printStackTrace();
 		}
-		return emodels;
+		return models;
 	}
 		
 }	

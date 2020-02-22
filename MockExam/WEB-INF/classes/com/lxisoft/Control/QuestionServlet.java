@@ -10,21 +10,23 @@ import com.lxisoft.Repository.SqlRepository;
 public class QuestionServlet extends HttpServlet
 {
    
-    public ArrayList<ExamModel> emodels=new ArrayList<ExamModel>();
+    public ArrayList<ExamModel> models=new ArrayList<ExamModel>();
     public SqlRepository sqlrepo=new SqlRepository();
     int i=0;
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException  
     {
         PrintWriter out = response.getWriter();
-        emodels.clear();
+        models.clear();
         i++;
-        emodels = sqlrepo.readFromDatabase(emodels);
+        models = sqlrepo.readFromDatabase(models);
         HttpSession sessions = request.getSession(true);
-        request.setAttribute("qstn",emodels);
-        sessions.setAttribute("questions",i);       
+        sessions.setAttribute("qstn",models);
+        request.setAttribute("questions",i);       
         RequestDispatcher rd=request.getRequestDispatcher("Questionview.jsp");
         rd.forward(request,response);
-             
+
+
+
     }    
     
 }

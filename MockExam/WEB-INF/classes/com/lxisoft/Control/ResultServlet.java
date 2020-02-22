@@ -9,36 +9,36 @@ import com.lxisoft.Model.*;
 
 public class ResultServlet extends HttpServlet
 {
-    int c=0;
-    int totalMark=0;
-    ArrayList<ExamModel> emodels;
-    public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
-	{
-          
+    int c;
+    int totalMark;
+    ArrayList<ExamModel> models;
+    public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
+    {
+        PrintWriter out = response.getWriter();
+        HttpSession session = request.getSession();
+        models = (ArrayList<ExamModel>)session.getAttribute("qstn");          
         String option=request.getParameter("option");
-        String i=request.getParameter("qstNo");
-        SqlRepository sqlrepo=new SqlRepository();
-        emodels=sqlrepo.readFromDatabase(emodels);
-        HttpSession session=request.getSession();
-
-        System.out.println("check"+emodels.size());
-
-        System.out.println(option);
-       /* for(int j=0;j<emodels.size();j++)
+        //String i=request.getParameter("qstNo");        
+        //models=sqlrepo.readFromDatabase(models);
+        System.out.println("jjggh"+models.size());
+        System.out.println("optionsss"+option);     
+       
+       /* for(int j=0;j<models.size();j++)
         {
            
-           /* if((emodels.get(j).getQuestion()).equals(i))
+           /* if((models.get(j).getQuestion()).equals(i))
             {
                 c=j;
             } */
-           /*  if(option.equals(emodels.get(j).getAnswer()))
+           /*  if(option.equals(models.get(j).getAnswer()))
              {
                 System.out.println("sssssss");
                     totalMark++;
              }
         }       */
-        session.setAttribute("mark",totalMark);
-        response.sendRedirect("QuestionServlet");  
+      /*  session.setAttribute("mark",totalMark);
+        response.sendRedirect("QuestionServlet");             
+*/
 
 	}
 }
