@@ -2,11 +2,12 @@
 <html>
 <head>
 	<title>Instructions</title>
-	<meta charset="utf-8">
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   	<style>
   	.button
   	{
@@ -21,13 +22,15 @@
   	}
   </style>
 </head>
-<body>
+<body background="lap.jpeg">
+  <!-- <div style="background-image: url('book.jpg');"> -->
 <div class="jumbotron text-center">
-	<a href="Add.jsp"><h3>+</h3></a>
-   <center><a href="search"><input type="text" name="letter" placeholder="Search" />
-   <input type="submit" value="ok"></a></center>
+	 <a href="Add.jsp"><h3>+</h3></a>
+   <a href="search"><input type="text" name="letter" placeholder="Search" />
+   <input type="submit" value="ok"></a>
 	<h1 align="center">MOCK-EXAM</h1>
 </div>
+<font color="white">
 <h3 align="center"><u>INSTRUCTIONS</u></h3>
 <div>
 <h5>1.Please read and understand the Test instructions so that you will be able to easily navigate through the Test</h5>
@@ -42,7 +45,7 @@
 <h5>10. The questions can be answered in any order. Each question carries 1 mark.</h5>
 <h5>11. Each question will have 4-5 alternatives, out of which only one will be the correct answer.</h5>
 <h5>12. There is no negative marking.</h5>
-<h5>13. Once you have answered all the questions please click on the 'Done' button</h5></div>
+<h5>13. Once you have answered all the questions please click on the 'Done' button</h5></div></font>
 <a href="admin"><center><b><input type="button" class="button" value="Start Exam"></b></center></a>
 </body>
 </html>
