@@ -27,7 +27,7 @@
 	<div class="jumbotron text-center">
 	<h1 align="center">Questions</h1>
 	</div>
-	<body background="book.jpg">
+	<body background="rr.jpeg">
 
 	<table align=center border="1px" width="100%" height="100%">
 	<%List<Question> qn=(List<Question>) request.getAttribute("questionlist");
