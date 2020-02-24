@@ -35,6 +35,7 @@
 </b>
 <form>
 <input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="START"/>
+<input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminUser.jsp';" value="Back"/>
 </form>
 </p>
 </div>
