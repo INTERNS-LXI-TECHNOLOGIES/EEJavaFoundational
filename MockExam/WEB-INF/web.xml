@@ -1,19 +1,10 @@
 <web-app> 
     <servlet> 
-         <servlet-name>Exam</servlet-name> 
-         <servlet-class>com.lxisoft.exam.Exam</servlet-class> 
+         <servlet-name>Servlet</servlet-name> 
+         <servlet-class>com.lxisoft.servlet.Servlet</servlet-class> 
     </servlet> 
     <servlet-mapping> 
-         <servlet-name>Exam</servlet-name> 
+         <servlet-name>Servlet</servlet-name> 
          <url-pattern>/check</url-pattern> 
-    </servlet-mapping> 
-
-    <servlet> 
-         <servlet-name>Validate</servlet-name> 
-         <servlet-class>com.lxisoft.validate.Validate</servlet-class> 
-    </servlet> 
-    <servlet-mapping> 
-         <servlet-name>Validate</servlet-name> 
-         <url-pattern>/go</url-pattern> 
     </servlet-mapping> 
 </web-app> 
