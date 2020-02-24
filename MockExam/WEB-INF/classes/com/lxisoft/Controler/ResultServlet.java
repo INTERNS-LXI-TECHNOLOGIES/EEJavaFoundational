@@ -17,24 +17,10 @@ public class ResultServlet extends HttpServlet
 		model = (ArrayList<MockExamModel>)session.getAttribute("Array");
 		for(int i=0;i<model.size();i++)
 		{
-			out.println("OutForCompare 1 : "+model.get(i).getAnswer().getAnswer());
-				out.println("OutForCompare 2 :"+model.get(i).getSelectedOption().getOption());
 			if(model.get(i).getAnswer().getAnswer().equals(model.get(i).getSelectedOption().getOption()))
 			{
-				out.println("Compare 1 : "+model.get(i).getAnswer().getAnswer());
-				out.println("Compare 2 :"+model.get(i).getSelectedOption().getOption());
 				count++;
 			}
-		}
-		out.println("Mark : "+count);
-
-		out.println("Size : "+model.size());
-		for(int i=0;i<model.size();i++)
-		{
-			out.println("Question : "+model.get(i).getQuestion().getQuestion());
-			out.println("Answer : "+model.get(i).getAnswer().getAnswer());
-			out.println("Selected Option : "+model.get(i).getSelectedOption().getOption());
-			out.println("***");
 		}
 		totalMark = count;
 		count = 0;

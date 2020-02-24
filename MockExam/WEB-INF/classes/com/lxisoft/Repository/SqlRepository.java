@@ -48,7 +48,6 @@ public class SqlRepository
 	{
 		try
 		{
-			//String qry = "select Questions.Id,Questions.Questions,Answers.Answers,Options.Option1,Options.Option2,Options.Option3 from Questions inner join Answers on Questions.Id = Answers.Id inner join Options on Answers.Id = Options.Id;";
 			String qry = "Select * from MockExam";
 			ps = con.prepareStatement(qry);
 			rs = ps.executeQuery(qry);
@@ -79,14 +78,14 @@ public class SqlRepository
 	{
 		try
 		{
-			this.createTable();
+			//this.createTable();
 			String qry = "insert into MockExam(Question,Answer,Option1,Option2,Option3)values(?,?,?,?,?)";
 			ps = con.prepareStatement(qry);
 			ps.setString(1,model.getQuestion().getQuestion());
 			ps.setString(2,model.getAnswer().getAnswer());
 			ps.setString(3,model.getOption1().getOption());
 			ps.setString(4,model.getOption2().getOption());
-			ps.setString(5,model.getOption3().getoption());
+			ps.setString(5,model.getOption3().getOption());
 			ps.execute();
 		}
 		catch(Exception e)

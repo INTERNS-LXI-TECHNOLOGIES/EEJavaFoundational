@@ -16,7 +16,7 @@
   <input type="text" id="lname" name="option2"><br>
   <label for="option3">Option3 : </label>
   <input type="text" id="lname" name="option3"><br>
-  <button formaction="Admin.jsp" class="button">BACK</button> <button formaction="View.jsp" class="button">SUBMIT
+  <button formaction="Admin.jsp" class="button">BACK</button> <button formaction="Add" class="button">SUBMIT
   </button> <button type="reset" class="button">RESET</button>
 </div>
 </form>
