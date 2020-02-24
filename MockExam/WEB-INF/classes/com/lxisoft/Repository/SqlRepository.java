@@ -23,7 +23,21 @@ public class SqlRepository
 				System.out.println("eeeeeeeeeeee "+e);
 			}	
 		}	
-	}		
+	}	
+/*	public void createTable()
+	{
+		try
+		{
+			dataBaseConnectionEstablish();
+			String qry="create table if not exists mockexam(id int not null unique auto_increment,question varchar(250),opt1 varchar(25),opt2 varchar(25),opt3 varchar(25),opt4 varchar(25),ans varchar(25))";
+			ps=con.prepareStatement(qry);
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			System.out.println("sssssss"+e);
+		}
+	}	*/
  	public ArrayList<ExamModel> readFromDatabase(ArrayList<ExamModel> models)
 	{
 		try
@@ -55,8 +69,47 @@ public class SqlRepository
 		}
 		return models;
 	}
-		
+	public void addQuestion(ArrayList<ExamModel> models)
+	{
+		try
+		{
+			dataBaseConnectionEstablish();
+			String qry="insert into mockexam(question,opt1,opt2,opt3,opt4,ans) values(?,?,?,?,?,?)";
+			ps=con.prepareStatement(qry);
+			for(int i=0;i<models.size();i++)
+			{
+				ps.setString(1,models.get(i).getQuestion());
+				ps.setString(2,models.get(i).getOpt1());
+				ps.setString(3,models.get(i).getOpt2());
+				ps.setString(4,models.get(i).getOpt3());
+				ps.setString(5,models.get(i).getOpt4());
+				ps.setString(6,models.get(i).getAnswer());
+				ps.executeUpdate();
+			}
+		}
+		catch(Exception e)
+		{
+			System.out.println("ddddddd"+e);
+		}
+	} 
+	public void editQuestion()
+	{
+		try
+		{
+			dataBaseConnectionEstablish();
+			String qry="update mockexam set question="+models.getQuestion()+" where qustionnumber=";
+			ps=con.prepareStatement(qry);
+			ps.execute();
+		}
+		catch(SQLException e)
+		{
+			System.out.println("eeeeeeeeeee"+e);
+		}
+	}
+			
 }	
 
 
-      
+
+
+

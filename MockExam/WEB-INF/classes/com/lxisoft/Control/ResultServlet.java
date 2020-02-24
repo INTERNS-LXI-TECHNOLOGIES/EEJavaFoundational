@@ -16,29 +16,29 @@ public class ResultServlet extends HttpServlet
     {
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
-        models = (ArrayList<ExamModel>)session.getAttribute("qstn");          
+        models= (ArrayList<ExamModel>) session.getAttribute("qstn");    
         String option=request.getParameter("option");
-        //String i=request.getParameter("qstNo");        
+            
         //models=sqlrepo.readFromDatabase(models);
-        System.out.println("jjggh"+models.size());
-        System.out.println("optionsss"+option);     
+        out.println("jjggh"+models.size());
+        out.println("optionsss"+option);     
        
-       /* for(int j=0;j<models.size();j++)
-        {
+        // for(int j=0;j<models.size();j++)
+        // {
            
-           /* if((models.get(j).getQuestion()).equals(i))
-            {
-                c=j;
-            } */
-           /*  if(option.equals(models.get(j).getAnswer()))
-             {
-                System.out.println("sssssss");
-                    totalMark++;
-             }
-        }       */
-      /*  session.setAttribute("mark",totalMark);
-        response.sendRedirect("QuestionServlet");             
-*/
+        //    if((models.get(j).getQuestion()).equals(i))
+        //     {
+        //         c=j;
+        //     } 
+        //     if(option.equals(models.get(j).getAnswer()))
+        //      {
+        //         System.out.println("sssssss");
+        //             totalMark++;
+        //      }
+        // }      
+       ///session.setAttribute("mark",totalMark);
+        //response.sendRedirect("Result.jsp");             
+
 
 	}
 }

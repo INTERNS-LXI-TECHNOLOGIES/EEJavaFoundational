@@ -4,7 +4,7 @@
 <servlet-name>servlet</servlet-name>  
 <servlet-class>com.lxisoft.Control.QuestionServlet</servlet-class>  
 </servlet>  
-  
+
 <servlet-mapping>  
 <servlet-name>servlet</servlet-name>  
 <url-pattern>/QuestionServlet</url-pattern>  
@@ -22,6 +22,15 @@
 </servlet-mapping>
 
   
+<servlet>  
+<servlet-name>addservlet</servlet-name>  
+<servlet-class>com.lxisoft.Control.AddQuestionServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>addservlet</servlet-name>  
+<url-pattern>/AddQuestionServlet</url-pattern>  
+</servlet-mapping>
  
 </web-app>  
 

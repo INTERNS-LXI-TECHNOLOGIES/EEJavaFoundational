@@ -6,7 +6,7 @@
 <p>
 <form align="center" method="get" >
 <%	
-	ArrayList<ExamModel> models = (ArrayList<ExamModel>) session.getAttribute("qstn");
+	ArrayList<ExamModel> models= (ArrayList<ExamModel>) session.getAttribute("qstn");
 	int j=(int)request.getAttribute("questions");
 	int count=j-1;
 	if (count<models.size())

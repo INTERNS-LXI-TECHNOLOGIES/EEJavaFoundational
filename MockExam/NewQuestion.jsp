@@ -5,12 +5,10 @@
 <html>
 <html>
 <head>
-	<title>Result</title>
-	<h1 align="center">Result</h1>
+	<h1 align="center">Question</h1>
 <body>
-<!-- <%int m=(int) session.getAttribute("mark");
-out.println(m);%>
- --></body>
+
+</body>
 </html>
 	</body>
 </html>

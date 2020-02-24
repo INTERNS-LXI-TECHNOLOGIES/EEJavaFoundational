@@ -25,8 +25,6 @@ public class QuestionServlet extends HttpServlet
         RequestDispatcher rd=request.getRequestDispatcher("Questionview.jsp");
         rd.forward(request,response);
 
-
-
     }    
     
 }
