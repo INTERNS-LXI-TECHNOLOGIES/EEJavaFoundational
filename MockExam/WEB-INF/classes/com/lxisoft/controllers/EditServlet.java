@@ -24,6 +24,7 @@ public class EditServlet extends HttpServlet
 		HttpSession session=request.getSession();
 		session.setAttribute("question",qn);
 		RequestDispatcher rd=request.getRequestDispatcher("View.jsp");
-		rd.forward(request,response);
+		response.sendRedirect("admin");
+		// rd.forward(request,response);
 	}
 }

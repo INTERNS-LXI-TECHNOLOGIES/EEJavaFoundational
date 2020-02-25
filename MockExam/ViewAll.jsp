@@ -49,9 +49,11 @@
     	<label for="<%=qn.get(i).getOption4()%>"><%=qn.get(i).getOption4()%></label><br>
 		<input type="submit"class="button" value="Next">
 		</form>
-    <input type="submit"class="button" value="Back">
+    <input type="submit"class="button" value="Back" onclick="history.back()">
 		<!-- <a href="admin"><input type="button" class="button" value="Next"/></a> -->
-		<form action="select" method="get">
+     <%if (request.isUserInRole("admin"))
+      {%>
+		  <form action="select" method="get">
     	<a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
     	<input type="hidden" name="opt" value="a">
       <input type="submit" class="button" value=Delete></a></form>
@@ -61,6 +63,7 @@
       <input type="submit" class="button" value=Edit></a></form></div>	
     
     <%}
+  }
 	else
 	{%>
 		<center><a href="Result.jsp"><input type="button" class="button" value="Submit"/></a></center>

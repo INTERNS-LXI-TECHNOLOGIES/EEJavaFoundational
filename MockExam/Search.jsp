@@ -5,18 +5,28 @@
 <html>
 <head>
 	<title>Search</title>
+    <style>
+        div
+    {
+        padding-top: 50px;
+        padding-right: 30px;
+        padding-left: 80px;
+        padding-bottom: 50px;
+    }
+    </style>
 </head>
 <body>
-<table>
+    <div>
+<table background="nn.jpeg" align="center" width="30%">
 	<%
     List<Question> q=(List<Question>) request.getAttribute("question");
     for(Question qn:q)
     {%>
     <tr>
         <td><%=qn.getQuestion()%></td>
-    </tr>
+    </tr><br>
     <%
     }%>
-</table>
+</table></div>
 </body>
 </html>

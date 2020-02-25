@@ -26,9 +26,12 @@
 <body background="lap.jpeg">
   <!-- <div style="background-image: url('book.jpg');"> -->
 <div class="jumbotron text-center">
+  <%if (request.isUserInRole("admin"))
+      {%>
   <center><a href="Add.jsp"><b><input type="button" class="button" value="+"></b></a><br>
-  <br><a href="search"><input type="text" name="letter" placeholder="Search" />
-  <input type="submit" value="ok"></a></center>
+    <form action="search" method="get">
+  <br><input type="text" name="letter" placeholder="Search" />
+    <input type="submit" value="ok"></center></form><%}%>
 	<h1 align="center">MOCK-EXAM</h1>
 </div>
 
