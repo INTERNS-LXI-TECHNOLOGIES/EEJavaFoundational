@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>sample project</title>
+	<title>question1</title>
 </head>
 <body bgcolor="FloralWhite">
 <style>
@@ -21,24 +21,30 @@
 }
 .button_css
 {
-	background-color:midnightblue ;
-	color:white ;
-  background-repeat:no-repeat;
+	background-color: midnightblue;
+	color: white;
 	width: 150px;
 	height: 40px;
+  border-radius: 12px;
+   display: inline-block;
+  font-size: 16px;
+  text-decoration: none;
 }
 </style>
 <div class="container">
 <div class="center">
-<p align="center">
-<b><font size="7" color="midnightblue">Welcome TO Your Mock Exam </font>
-</b>
-<form>
-<input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="START"/>
-<input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminUser.jsp';" value="Back"/>
-</form>
+<p>
+<center>
+  <h1><font color="midnightblue" size="7">MOCK EXAM</font></h1><br><br>
+
+  <input type="submit" class="button_css" name="USER" value="USER" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';">
+  <input type="submit" class="button_css" name="ADMIN" value="ADMIN" onclick="window.location.href = 'http://localhost:8080/mockExam/Login.jsp';">  
+</center>
+
 </p>
 </div>
 </div>
+</div>
+
 </body>
 </html>

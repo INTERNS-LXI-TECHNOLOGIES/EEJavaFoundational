@@ -41,7 +41,7 @@
 <center>
 Name<input type="text" name="username">
 </center>
-  <input type="button" class="button1_css" onclick="window.location.href = 'http://localhost:8080/mockExam/index.jsp';" value="Back"/>
+  <input type="button" class="button1_css" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';" value="Back"/>
    <input type="button" class="button1_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page1.jsp';"  value="NEXT" />
 </form>
 </p>

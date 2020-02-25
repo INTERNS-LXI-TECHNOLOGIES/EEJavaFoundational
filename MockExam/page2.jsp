@@ -60,7 +60,6 @@
 <%    
          } else {
         //request.setAttribute("mark",mark);
-       String count  = session.getAttribute("count").toString();
 
         response.sendRedirect("Result.jsp");
       } %>

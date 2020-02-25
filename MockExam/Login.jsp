@@ -37,7 +37,7 @@
 <center>
   <h2><b> UserName  <input type="text" name="name"></b></h2>
  <h2><b> Password  <input type="Password" name="Password"></b></h2>
-  <input type="submit" class="button_css" name="Login" value="Login" href="">
+<input type="submit" class="button_css" name="login" value="login" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminMenu.jsp';">
   <input type="submit" class="button_css" name="cancel" value="cancel" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminUser.jsp';">  
 
 </center>
