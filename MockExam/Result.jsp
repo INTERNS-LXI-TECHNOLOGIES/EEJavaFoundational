@@ -8,7 +8,7 @@
 	<title>Result</title>
 	<h1 align="center">Result</h1>
 <body>
-<%int m=(int) session.getAttribute("mark");
-out.println(m);
+<%int m=(int) session.getAttribute("Mark");
+out.println(m);%>
 </body>
 </html>

@@ -9,8 +9,8 @@ import com.lxisoft.Model.*;
 
 public class ResultServlet extends HttpServlet
 {
-    int c,b;
-    int totalMark;
+    int count=0;
+    int totalMark=0;
     ArrayList<ExamModel> models;
     public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
     {
@@ -19,36 +19,42 @@ public class ResultServlet extends HttpServlet
         HttpSession session = request.getSession();
         models= (ArrayList<ExamModel>) session.getAttribute("qstn");    
         int option =Integer.parseInt(request.getParameter("option"));
-        String questionNo = (String)request.getAttribute("questionNo");
-        //String abc = request.getParameter("value");
-        
-        /*out.println("jjggh : "+models.size());
-        out.println("optionsss : "+option);  
-        out.println("Question No : "+abc);*/
+       // String questionNo = (String)request.getAttribute("questionNo");
+        String questionNo = request.getParameter("value");
+       
         if(option == 1)
         {
-            b=option;    
-            for(int j=0;j<models.size();j++)
+            if((models.get(count).getAnswer()).equals(models.get(count).getOpt1()))
+            {
+                totalMark++;
+            }              
+        }
+        else if(option ==2)
+        {
+           if((models.get(count).getAnswer()).equals(models.get(count).getOpt2()))
+           {
+             totalMark++;
+           }
+        }
+        else if(option ==3)
+        {
+           if((models.get(count).getAnswer()).equals(models.get(count).getOpt3()))
             {
                
-               /*if((models.get(j).getQuestion()).equals(b))
-                {
-                    c=j;
-                } */
-                if((models.get(j).getAnswer()).equals(option))
-                {
-                   
-                        totalMark++;
-                }
-            }  
-        }
-        else
+               totalMark++;
+            }
+        }   
+        else if(option ==4)
         {
-
-        }    
-       ession.setAttribute("mark",totalMark);
-       response.sendRedirect("Result.jsp");             
-
+            if((models.get(count).getAnswer()).equals(models.get(count).getOpt4()))
+            {
+                totalMark++;
+            }
+        }     
+        HttpSession session1 = request.getSession(true);
+        session1.setAttribute("Mark",totalMark);
+        request.getRequestDispatcher("Questionview.jsp").forward(request,response);
+                 
 
 	}
 }

@@ -59,6 +59,7 @@ public class SqlRepository
 						models.get(i).setOpt2(rs.getString(4));
 						models.get(i).setOpt3(rs.getString(5));
 						models.get(i).setOpt4(rs.getString(6));
+						models.get(i).setAnswer(rs.getString(7));
 					}
 				}
 			}			

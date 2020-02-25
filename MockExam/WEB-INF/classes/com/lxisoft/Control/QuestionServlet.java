@@ -16,12 +16,10 @@ public class QuestionServlet extends HttpServlet
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException  
     {
         PrintWriter out = response.getWriter();
-        models.clear();
-        
+        models.clear();       
         models = sqlrepo.readFromDatabase(models);
         HttpSession sessions = request.getSession(true);
-        sessions.setAttribute("qstn",models);
-        //request.setAttribute("questions",i);       
+        sessions.setAttribute("qstn",models);        
         request.getRequestDispatcher("Questionview.jsp").forward(request,response);
     }    
     
