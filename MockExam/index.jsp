@@ -1,3 +1,6 @@
+<%@page import="com.lxisoft.Model.MockExamModel"%>
+<%@page import="com.lxisoft.Repository.SqlRepository"%>
+<%@page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <link rel="stylesheet" href="Login.css"></link>
 <html>
@@ -5,6 +8,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
+	<%
+	SqlRepository sqlReppo = SqlRepository.getInstance();
+	ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
+	questions = sqlReppo.readFromDatabase(questions);
+	session.setAttribute("questions",questions);
+	%>
 <div>
 <h1>MOCK EXAM</h1>
 <form>

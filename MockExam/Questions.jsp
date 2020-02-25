@@ -1,7 +1,7 @@
 <%@page import="com.lxisoft.Model.MockExamModel"%>
 <%@page import="java.util.ArrayList"%>
 <html>
-<link rel="stylesheet" href="option.css"></link>
+<link rel="stylesheet" href="Login.css"></link>
 <head><center><h1>!! EXAM STARTED !!</h1></center> </head>
 <body style="border:15px solid Tomato;">
 <section align = "center">
@@ -13,6 +13,7 @@ if(qcount != model.size())
 	out.println("<p><h1>Question No : "+model.get(qcount).getId()+"</h1></p>");
 	out.println("<p><h2 class=\"fontbig\">Question : "+model.get(qcount).getQuestion().getQuestion()+"</h2></p>");
 	%>
+	<div>
 	<form align = "center" method="get" action="Option">
 	<h2>
 	<input type ="radio" value="1" id = "Option1" name = "option"> 
@@ -30,8 +31,9 @@ if(qcount != model.size())
 	%>
 
 		<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
-		<button align = "center" type="submit">Next</button>
+		<button align = "center" class="button" type="submit">Next</button> <button align = "center" class="button" type="submit">Skip</button>
 	</form>
+	</div>
 	<%
 	String url="Questions.jsp?ques=" + (qcount-2);
 	%>

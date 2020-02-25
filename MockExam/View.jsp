@@ -1,12 +1,8 @@
 <%@page import="com.lxisoft.Model.MockExamModel"%>
-<%@page import="com.lxisoft.Repository.SqlRepository"%>
 <%@page import="java.util.ArrayList"%>
 <html>
 <%
-SqlRepository sqlReppo = SqlRepository.getInstance();
-ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
-questions = sqlReppo.readFromDatabase(questions);
-
+ArrayList<MockExamModel> questions = (ArrayList<MockExamModel>)session.getAttribute("questions");
 %>
 	<body>
 	<link rel="stylesheet" href="Login.css"></link>
@@ -32,7 +28,8 @@ questions = sqlReppo.readFromDatabase(questions);
     <td><%out.println(questions.get(i).getAnswer().getAnswer());%></td>
     <td><%out.println(questions.get(i).getOption1().getOption());%></td>
     <td><%out.println(questions.get(i).getOption2().getOption());%></td>
-    <td><%out.println(questions.get(i).getOption3().getOption());%></td>
+    <td><%out.println(questions.get(i).getOption3().getOption());%> </td>
+    <td><button formaction ="Update.jsp">UPDATE</button></td>
   </tr>
   <%
 	}
