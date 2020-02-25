@@ -30,7 +30,7 @@ if(qcount != model.size())
 	%>
 
 		<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
-		<button align = "center" type="submit">Next</button></a>
+		<button align = "center" type="submit">Next</button>
 	</form>
 	<%
 	String url="Questions.jsp?ques=" + (qcount-2);
