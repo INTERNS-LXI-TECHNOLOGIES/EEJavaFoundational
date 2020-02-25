@@ -37,8 +37,8 @@
 
 <form method="get" action="QuestionServlet" value="0">
 	<input type = "hidden" name = "count" value ="0">
-	<button type="submit"> Start </button>
-	<button formaction = "index.jsp" class = "button">Back<</button>
+	<button type="submit" class="button_css"> Start </button>
+	<button formaction = "index.jsp" class="button_css">Back</button>
 </form>
      
 </p>

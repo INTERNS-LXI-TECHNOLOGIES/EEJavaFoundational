@@ -1,26 +1,28 @@
-package com.lxisoft.Control;
-import java.io.*;
-import java.util.*;
-import javax.servlet.*;
+package com.lxisoft.Controler;
 import javax.servlet.http.*;
-import java.io.IOException;
-import java.io.PrintWriter;
-import com.lxisoft.Model.ExamModel;
+import javax.servlet.*;
+import java.io.*;
+import java.util.ArrayList;
+import com.lxisoft.Model.MockExamModel;
 import com.lxisoft.Repository.SqlRepository;
-public class AddQuestionServlet extends HttpServlet
+public class AddServlet  extends HttpServlet
 {
-	/*private ArrayList<ExamModel> models;
-	private SqlRepository sqlrepo;*/
-	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException  
-    {
-    	PrintWriter out = response.getWriter();
-       
-       /* models= (ArrayList<ExamModel>) session.getAttribute("qstn");
-        models.addQuestion();
-   */
-       // models=sqlrepo.addQuestion();
-        
-
-        out.println("asdfghj");
-   	} 
+  private ExamModel models ;
+  private SqlRepository sqlrepo ;
+  public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
+  {
+    PrintWriter out = response.getWriter();
+    sqlReppo = SqlRepository();
+    models = new ExamModel();
+    models.getQuestion().setQuestion(request.getParameter("question"));
+    models.getAnswer().setAnswer(request.getParameter("answer"));
+    models.getOption1().setOpt1(request.getParameter("option1"));
+    models.getOption2().setOpt2(request.getParameter("option2"));
+    models.getOption3().setOpt3(request.getParameter("option3"));
+    models.getOption4().setOpt3(request.getParameter("option4"));
+    sqlrepo.insertIntoDatabase(models);
+    
+    request.getRequestDispatcher("NewQuestion.jsp").forward(request,response);
+  }
+  
 }

@@ -7,10 +7,7 @@
 
 <%	
 	ArrayList<ExamModel> models= (ArrayList<ExamModel>) session.getAttribute("qstn");
-	int j=Integer.parseInt(request.getParameter("count"));
-	
-	out.println("j count : "+j);
-	out.println("Boolean : "+(j<models.size()));
+	int j=Integer.parseInt(request.getParameter("count"));	
 	
 	if (j != models.size())
 	{			

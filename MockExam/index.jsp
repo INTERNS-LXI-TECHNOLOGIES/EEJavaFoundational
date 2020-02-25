@@ -30,7 +30,8 @@
 <b><center><font size="7" color="MediumBlue">Mock Exam </font></center>
 </b>
 <form>
-<input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/MockExam/Instruction.jsp';" value="Submit"/>
+	<input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/MockExam/Admin.jsp';" value="Admin">
+<input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/MockExam/Instruction.jsp';" value="User"/>
 </form>
 </p>
 </div>

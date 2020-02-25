@@ -70,7 +70,7 @@ public class SqlRepository
 		}
 		return models;
 	}
-	public void addQuestion(ArrayList<ExamModel> models)
+	public void insertIntoDatabase(ArrayList<ExamModel> models)
 	{
 		try
 		{
