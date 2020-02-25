@@ -14,17 +14,22 @@ public class Validate extends HttpServlet
 	int count;
 	public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException  
 	{
-		ArrayList<Model>model=sql.readquestion();
+		ArrayList<Model>model=new ArrayList<Model>();
+		model=sql.readquestion();
 		PrintWriter out = res.getWriter();
 		String quest=req.getParameter("option");
-		out.println("option : "+quest);
+		//out.println("quest : "+quest);
+		HttpSession session=req.getSession();
 		for (int i=0;i<model.size();i++) 
 		{
 			if(quest.equals(model.get(i).getAnswer()))
 			{
 				count=count+1;
-				out.println("count : "+count);
+				
 			}
 		}	
+		res.sendRedirect("get");
+		//out.println("count"+count);
+		session.setAttribute("count",count);
 	}
 }

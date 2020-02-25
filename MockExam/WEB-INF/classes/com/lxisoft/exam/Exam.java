@@ -16,12 +16,29 @@ public class Exam extends HttpServlet
     {  
         res.setContentType("text/html");
         PrintWriter out=res.getWriter();
-        ArrayList<Model> repo=sqlrep.readquestion();
-        num++;
+        
+        ArrayList<Model> repo=new ArrayList<Model>();
+        repo.clear();
+        repo=sqlrep.readquestion();
+
+        
+       // out.println(repo);
+
         HttpSession session=req.getSession(); 
-        session.setAttribute("array",repo);
-        session.setAttribute("num",num);
-        res.sendRedirect("view1.jsp");   
+        if(num<repo.size())
+        {
+
+            session.setAttribute("array",repo);
+            session.setAttribute("num",num);
+            res.sendRedirect("view1.jsp"); 
+
+
+        }
+        else
+        {
+            res.sendRedirect("result.jsp");
+        }
+        num++;
         
     }
    

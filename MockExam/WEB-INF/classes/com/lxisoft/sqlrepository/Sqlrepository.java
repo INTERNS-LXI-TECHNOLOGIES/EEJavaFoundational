@@ -8,13 +8,15 @@ public class Sqlrepository
 	PreparedStatement ps=null;
 
 	ArrayList<Model> questions= new ArrayList<Model>();
+
 	public void connection()
 	{
+		
 	 try{
 			if (con==null)
 			{
 				Class.forName("com.mysql.jdbc.Driver");  
-				Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sanfar","root","root");
+				con=DriverManager.getConnection("jdbc:mysql://localhost:3306/sanfar","root","root");
 						
 			}
 		}catch(Exception e)
@@ -26,6 +28,7 @@ public class Sqlrepository
 
 	public ArrayList<Model> readquestion()
 	{
+		questions.clear();
 		try{
 			connection();
 			Statement st = con.createStatement();
@@ -40,8 +43,9 @@ public class Sqlrepository
 				model.setOption1(rs.getString("option1"));
 				model.setOption2(rs.getString("option2"));
 				model.setOption3(rs.getString("option3"));
+				questions.add(model);
 			}
-			questions.add(model);
+			
 		}
 		catch(Exception e)
 		{
