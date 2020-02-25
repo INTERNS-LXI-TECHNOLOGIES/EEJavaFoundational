@@ -12,19 +12,17 @@ public class QuestionServlet extends HttpServlet
    
     public ArrayList<ExamModel> models=new ArrayList<ExamModel>();
     public SqlRepository sqlrepo=new SqlRepository();
-    int i=0;
+
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException  
     {
         PrintWriter out = response.getWriter();
         models.clear();
-        i++;
+        
         models = sqlrepo.readFromDatabase(models);
         HttpSession sessions = request.getSession(true);
         sessions.setAttribute("qstn",models);
-        request.setAttribute("questions",i);       
-        RequestDispatcher rd=request.getRequestDispatcher("Questionview.jsp");
-        rd.forward(request,response);
-
+        //request.setAttribute("questions",i);       
+        request.getRequestDispatcher("Questionview.jsp").forward(request,response);
     }    
     
 }

@@ -4,38 +4,47 @@
 <head><center><h1>Questions</h></center></head>
 <body>
 <p>
-<form align="center" method="get" >
+
 <%	
 	ArrayList<ExamModel> models= (ArrayList<ExamModel>) session.getAttribute("qstn");
-	int j=(int)request.getAttribute("questions");
-	int count=j-1;
-	if (count<models.size())
-	{			
-		out.println("<h3>Question : "+models.get(count).getQuestion()+"</h3>");	
-%>
-	<h2><input type="hidden" value="modelss.get(count).getQuestionNumber()" name="qstNo">
+	int j=Integer.parseInt(request.getParameter("count"));
 	
-
+	out.println("j count : "+j);
+	out.println("Boolean : "+(j<models.size()));
+	
+	if (j != models.size())
+	{			
+		out.println("<h3>Question : "+models.get(j).getQuestion()+"</h3>");	
+%>
+<form align="center" method="get" action="ResultServlet" >
+	
+	<h2><input type="hidden" value="models.get(j).getQuestionNumber()" name="qstNo">
+	
+	<input type = "hidden" name="value" value=<%=j%> >
 	<h2><input type ="radio" value="1" id = "Option1" name ="option"> 
-	<label for = "Option1"><%out.println(models.get(count).getOpt1());%> </label></input></h2> <br>
+	<label for = "Option1"><%out.println(models.get(j).getOpt1());%> </label></input></h2> <br>
 		
 	<h2><input type ="radio" value="2" id = "Option2" name = "option"> 
-	<label for = "Option2"> <%out.println(models.get(count).getOpt2());%> </label></input></h2><br>
+	<label for = "Option2"> <%out.println(models.get(j).getOpt2());%> </label></input></h2><br>
 	
-	<h2><input type ="radio" value="3" id = "Option4" name ="option">
-	<label for = "Option3"> <%out.println(models.get(count).getOpt3());%> </label></input></h2> <br>	
+	<h2><input type ="radio" value="3" id = "Option3" name ="option">
+	<label for = "Option3"> <%out.println(models.get(j).getOpt3());%> </label></input></h2> <br>	
 	
 	<h2><input type ="radio" value="4" id = "Option4" name ="option"> 
-	<label for = "Option4"> <%out.println(models.get(count).getOpt4());%> </label></input></h2><br>
-	<a href="Questionview.jsp"><input type="submit"class="button" value="Next"></a>	
+	<label for = "Option4"> <%out.println(models.get(j).getOpt4());%> </label></input></h2><br>
+	<%
+	j++;
+	String x = String.valueOf(j);
+	request.setAttribute("questionNo",j); %>
+	<input type="hidden"class="button" name="count" value=<%out.println(j);%>>
+	<button type="submit">Next</button>
 	</form>	
 <%
 	}
 	else
 	{
-%>
-	<button name="button" type="button" onclick="window.location.href='ResultServlet';">Submit</button>
-<%
+
+		response.sendRedirect("Result.jsp");
 	}
 %>
 </p>

@@ -92,7 +92,7 @@ public class SqlRepository
 			System.out.println("ddddddd"+e);
 		}
 	} 
-	public void editQuestion()
+	/*public void editQuestion()
 	{
 		try
 		{
@@ -105,7 +105,7 @@ public class SqlRepository
 		{
 			System.out.println("eeeeeeeeeee"+e);
 		}
-	}
+	}*/
 			
 }	
 

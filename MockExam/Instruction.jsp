@@ -34,9 +34,11 @@
  <h2><font color="SlateBlue"><li>Only one Question will be displayed at a time click on "Next"button next question will get.</li></font></h2>
  <h2><font color="SlateBlue"><li>If you answered all the questions please click on the 'Submit' button.</li></font></h2>
 </ol>
-<form method="get" action="QuestionServlet">
-  <input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/MockExam/index.jsp';" value="BACK"/>
-  <input type="submit" class="button_css"  value="Next" />
+
+<form method="get" action="QuestionServlet" value="0">
+	<input type = "hidden" name = "count" value ="0">
+	<button type="submit"> Start </button>
+	<button formaction = "index.jsp" class = "button">Back<</button>
 </form>
      
 </p>
