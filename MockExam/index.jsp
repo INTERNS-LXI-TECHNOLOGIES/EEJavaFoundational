@@ -1,40 +1,32 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Instructions</title>
-<!-- <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script> -->
-  	<style>
-  	.button
-  	{
-  		background-color: #4CAF50;
-  	}
-  	div
-  	{
-  		padding-top: 50px;
-  		padding-right: 30px;
-  		padding-left: 80px;
-  		padding-bottom: 50px;
-  	}
+  <title>Instructions</title>
+	<style>
+	.button
+	{
+		background-color: #4CAF50;
+	}
+	div
+	{
+		padding-top: 50px;
+		padding-right: 30px;
+		padding-left: 80px;
+		padding-bottom: 50px;
+	}
   </style>
 </head>
 <font color="white">
 <body background="lap.jpeg">
-  <!-- <div style="background-image: url('book.jpg');"> -->
-<div class="jumbotron text-center">
+<div>
   <%if (request.isUserInRole("admin"))
-      {%>
-  <center><a href="Add.jsp"><b><input type="button" class="button" value="+"></b></a><br>
+    {%>
+    <center><a href="Add.jsp"><b><input type="button" class="button" value="+"></b></a><br>
     <form action="search" method="get">
-  <br><input type="text" name="letter" placeholder="Search" />
+    <br><input type="text" name="letter" placeholder="Search" />
     <input type="submit" value="ok"></center></form><%}%>
-	<h1 align="center">MOCK-EXAM</h1>
+	  <h1 align="center">MOCK-EXAM</h1>
 </div>
-
 <h2 align="center"><u>INSTRUCTIONS</u></h2>
 <div>
 <h4>1.Please read and understand the Test instructions so that you will be able to easily navigate through the Test</h4>

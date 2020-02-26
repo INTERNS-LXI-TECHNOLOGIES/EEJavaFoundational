@@ -18,7 +18,6 @@ public class SelectServlet extends HttpServlet
 		HttpSession session=request.getSession();
 		session.setAttribute("question",qn);
 		RequestDispatcher rd=null;
-
 		switch(opt)
 		{
 			case "a":rd=request.getRequestDispatcher("Delete.jsp");break;

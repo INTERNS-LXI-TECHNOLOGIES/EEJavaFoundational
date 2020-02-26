@@ -22,22 +22,21 @@
   			padding-left: 80px;
   			padding-bottom: 50px;
   		}
-  	</style>
+  </style>
 </head>
-	<div class="jumbotron text-center">
-	<h1 align="center">Questions</h1>
-	</div>
-	<body background="rr.jpeg">
-
-	<table align=center border="1px" width="100%" height="100%">
+<div class="jumbotron text-center">
+<h1 align="center">Questions</h1>
+</div>
+<body background="rr.jpeg">
+<table align=center border="1px" width="100%" height="100%">
 	<%List<Question> qn=(List<Question>) request.getAttribute("questionlist");
-	int j=(int)session.getAttribute("int");
+	int j=(int)session.getAttribute("cc");
 	int i=(j-1);
 	if(i<qn.size())
 	{%>
-		<div>
-		<form action="result" method="get">
-		<br><input type=hidden name="i" value="<%=qn.get(i).getQno()%>"/><br>
+	   <div>
+		  <form action="result" method="get">
+		  <br><input type=hidden name="i" value="<%=qn.get(i).getQno()%>"/><br>
     	<input type="text" value="<%=qn.get(i).getQuestion()%>"/><br>
     	<input type="radio" id="<%=qn.get(i).getOption1()%>" name="option" value="<%=qn.get(i).getOption1()%>"/>
     	<label for="<%=qn.get(i).getOption1()%>"><%=qn.get(i).getOption1()%></label><br>
@@ -47,27 +46,26 @@
     	<label for="<%=qn.get(i).getOption3()%>"><%=qn.get(i).getOption3()%></label><br>
     	<input type="radio" id="<%=qn.get(i).getOption4()%>" name="option" value="<%=qn.get(i).getOption4()%>"/>
     	<label for="<%=qn.get(i).getOption4()%>"><%=qn.get(i).getOption4()%></label><br>
-		<input type="submit"class="button" value="Next">
-		</form>
-    <input type="submit"class="button" value="Back" onclick="history.back()">
-		<!-- <a href="admin"><input type="button" class="button" value="Next"/></a> -->
-     <%if (request.isUserInRole("admin"))
+		  <input type="submit"class="button" value="Next">
+		  </form>
+      <input type="submit"class="button" value="Back" onclick="history.back()">
+		  <!-- <a href="admin"><input type="button" class="button" value="Next"/></a> -->
+      <%if (request.isUserInRole("admin"))
       {%>
-		  <form action="select" method="get">
-    	<a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
-    	<input type="hidden" name="opt" value="a">
-      <input type="submit" class="button" value=Delete></a></form>
-      <form action="select" method="get">
-		  <a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
-      <input type="hidden" name="opt" value="b">
-      <input type="submit" class="button" value=Edit></a></form></div>	
-    
+		    <form action="select" method="get">
+    	  <a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
+    	  <input type="hidden" name="opt" value="a">
+        <input type="submit" class="button" value=Delete></a></form>
+        <form action="select" method="get">
+		    <a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
+        <input type="hidden" name="opt" value="b">
+        <input type="submit" class="button" value=Edit></a></form></div>	
     <%}
   }
 	else
 	{%>
 		<center><a href="Result.jsp"><input type="button" class="button" value="Submit"/></a></center>
     </table>
-	<%}%>
+<%}%>
 </body>
 </html>

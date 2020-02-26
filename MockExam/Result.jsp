@@ -16,24 +16,25 @@
   	}
   </style>
 </head>
-<div>
-<font color="white">
-	<h1 align="center"><u>Result</u></h1>
+<div><font color="white">
+<h1 align="center"><u>Result</u></h1>
 <body background="imge.jpg">
-<h1 align=center><%int m=(int) session.getAttribute("mark");
-out.println("Mark:"+m);
-%><br>
-<br>
-<%
-if(m>=5)
-{
-	out.println("PASSED");
-}
-else
-{
-	out.println("FAILED");	
-}
-%></h1>
-</font></div>
+<h1 align=center>
+  <%int m=(int) session.getAttribute("mark");
+  out.println("Mark:"+m);
+  %><br>
+  <br>
+  <%
+  if(m>=5)
+  {
+	 out.println("PASSED");
+  }
+  else
+  {
+	 out.println("FAILED");	
+  }%>
+</h1>
+</font>
+</div>
 </body>
 </html>

@@ -7,7 +7,6 @@ import java.io.*;
 public class SqlRepository 
 {
 	List<Question>questionList=new ArrayList<Question>();
-	// Question q=new Question();
 	ResultSet rs=null;
 	PreparedStatement stmt=null;
 	Connection conn=null;
@@ -21,11 +20,6 @@ public class SqlRepository
 			System.out.println("not connected");	
 		}
 	}
-
-	// public SqlRepository()
-	// {
-	// 	q=new Question();
-	// }
 
 	public void connectionDB()
 	{
@@ -117,7 +111,6 @@ public class SqlRepository
 			System.out.println("Delete Failed"+e);
 		}
 	}
-
 
 	public Question updateQuestions(Question q,String ii)
  	{

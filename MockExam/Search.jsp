@@ -6,7 +6,7 @@
 <head>
 	<title>Search</title>
     <style>
-        div
+    div
     {
         padding-top: 50px;
         padding-right: 30px;
@@ -16,17 +16,14 @@
     </style>
 </head>
 <body>
-    <div>
-<table background="nn.jpeg" align="center" width="30%">
-	<%
-    List<Question> q=(List<Question>) request.getAttribute("question");
+    <div><table background="nn.jpeg" align="center" width="30%">
+    <%List<Question> q=(List<Question>) request.getAttribute("question");
     for(Question qn:q)
     {%>
-    <tr>
+        <tr>
         <td><%=qn.getQuestion()%></td>
-    </tr><br>
-    <%
-    }%>
+        </tr><br>
+    <%}%>
 </table></div>
 </body>
 </html>
