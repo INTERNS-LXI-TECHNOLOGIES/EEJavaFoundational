@@ -7,8 +7,7 @@
 
 <%	
 	ArrayList<ExamModel> models= (ArrayList<ExamModel>) session.getAttribute("qstn");
-	int j=Integer.parseInt(request.getParameter("count"));	
-	
+	int j=Integer.parseInt(request.getParameter("count"));		
 	if (j != models.size())
 	{			
 		out.println("<h3>Question : "+models.get(j).getQuestion()+"</h3>");	

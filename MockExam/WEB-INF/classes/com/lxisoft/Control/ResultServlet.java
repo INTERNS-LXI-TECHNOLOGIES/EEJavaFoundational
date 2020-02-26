@@ -21,7 +21,6 @@ public class ResultServlet extends HttpServlet
         int option =Integer.parseInt(request.getParameter("option"));
        // String questionNo = (String)request.getAttribute("questionNo");
         String questionNo = request.getParameter("value");
-       
         if(option == 1)
         {
             if((models.get(count).getAnswer()).equals(models.get(count).getOpt1()))
