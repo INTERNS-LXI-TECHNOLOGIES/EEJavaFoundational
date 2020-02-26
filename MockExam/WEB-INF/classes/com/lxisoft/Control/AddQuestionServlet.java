@@ -13,8 +13,8 @@ public class AddQuestionServlet  extends HttpServlet
   public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
   {
     PrintWriter out = response.getWriter();
-    SqlRepository sqlrepo = new SqlRepository();
-    ExamModel models = new ExamModel();
+    SqlRepository sqlrepo=new SqlRepository();
+    ExamModel models=new ExamModel();
     models.setQuestion(request.getParameter("question"));    
     models.setOpt1(request.getParameter("option1"));
     models.setOpt2(request.getParameter("option2"));
@@ -23,6 +23,6 @@ public class AddQuestionServlet  extends HttpServlet
     models.setAnswer(request.getParameter("answer"));
     sqlrepo.insertIntoDatabase(models); 
     HttpSession session = request.getSession(true);
-    request.getRequestDispatcher("NewQuestion.jsp").forward(request,response);
+    request.getRequestDispatcher("Admin.jsp").forward(request,response);
   }  
 }

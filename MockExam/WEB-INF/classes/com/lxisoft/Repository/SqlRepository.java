@@ -70,29 +70,26 @@ public class SqlRepository
 		}
 		return models;
 	}
-	public void insertIntoDatabase(ArrayList<ExamModel> models)
+	public void insertIntoDatabase(ExamModel models)
 	{
 		try
 		{
 			dataBaseConnectionEstablish();
-			String qry="insert into mockexam(question,opt1,opt2,opt3,opt4,ans) values(?,?,?,?,?,?)";
-			ps=con.prepareStatement(qry);
-			for(int i=0;i<models.size();i++)
-			{
-				ps.setString(1,models.get(i).getQuestion());
-				ps.setString(2,models.get(i).getOpt1());
-				ps.setString(3,models.get(i).getOpt2());
-				ps.setString(4,models.get(i).getOpt3());
-				ps.setString(5,models.get(i).getOpt4());
-				ps.setString(6,models.get(i).getAnswer());
-				ps.executeUpdate();
-			}
+			String qry = "insert into mockexam(question,opt1,opt2,opt3,opt4,ans) values(?,?,?,?,?,?)";
+			ps = con.prepareStatement(qry);
+			ps.setString(1,models.getQuestion());
+			ps.setString(2,models.getOpt1());
+			ps.setString(3,models.getOpt2());
+			ps.setString(4,models.getOpt3());
+			ps.setString(5,models.getOpt4());
+			ps.setString(6,models.getAnswer());
+			ps.executeUpdate();
 		}
 		catch(Exception e)
 		{
 			System.out.println("ddddddd"+e);
 		}
-	} 
+	}
 	/*public void editQuestion()
 	{
 		try
