@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="Style.css"></link>
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/> -->
 </head>
-<body class="animated infinite  delay-2s" style="border:15px solid Tomato;">
+<body>
 <div class="container">
 	<center><h1 style="font-size:50px;"> Welcome To Mock Exam </h1></center>
 	<div class="dimbly">

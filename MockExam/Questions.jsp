@@ -1,9 +1,9 @@
 <%@page import="com.lxisoft.Model.MockExamModel"%>
 <%@page import="java.util.ArrayList"%>
 <html>
-<link rel="stylesheet" href="Login.css"></link>
+<link rel="stylesheet" href="option.css"></link>
 <head><center><h1>!! EXAM STARTED !!</h1></center> </head>
-<body style="border:15px solid Tomato;">
+<body>
 <section align = "center">
 <% 
 ArrayList<MockExamModel> model = (ArrayList<MockExamModel>)session.getAttribute("questions");
@@ -28,14 +28,17 @@ if(qcount != model.size())
 	</section>
 	<%
 	qcount++;
+	String url="Questions.jsp?ques=" + (qcount-2);
 	%>
 
 		<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
-		<button align = "center" class="button" type="submit">Next</button> <button align = "center" class="button" type="submit">Skip</button>
+		<div align = "center">
+		<button align = "center" class="button" type="submit">Next</button> <button align = "center" class="button" type="submit">Skip</button> <button align = "center" class="button" <a href=<%out.println(url);%></a>BACK</button>
+	</div>
 	</form>
 	</div>
 	<%
-	String url="Questions.jsp?ques=" + (qcount-2);
+	
 	%>
 	<a href=<%out.println(url);%>>back</a>
 <%} 

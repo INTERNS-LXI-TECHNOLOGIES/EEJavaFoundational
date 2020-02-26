@@ -1,6 +1,6 @@
 body {
-    margin: 0;
-    background-color: lightblue;
+    border: solid mediumseagreen;
+    /*background-color: lightblue;*/
 }
 .button {
   padding: 15px 25px;

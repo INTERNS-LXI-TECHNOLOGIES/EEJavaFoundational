@@ -29,7 +29,6 @@ ArrayList<MockExamModel> questions = (ArrayList<MockExamModel>)session.getAttrib
     <td><%out.println(questions.get(i).getOption1().getOption());%></td>
     <td><%out.println(questions.get(i).getOption2().getOption());%></td>
     <td><%out.println(questions.get(i).getOption3().getOption());%> </td>
-    <td><button formaction ="Update.jsp">UPDATE</button></td>
   </tr>
   <%
 	}

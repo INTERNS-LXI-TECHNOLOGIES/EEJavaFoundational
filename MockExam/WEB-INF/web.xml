@@ -42,6 +42,16 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>com.lxisoft.Controler.UpdateServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/Update</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>TestServlet</servlet-name>
     <jsp-file>/index.jsp</jsp-file>
   </servlet>

@@ -93,4 +93,8 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 	}
+	public void update(MockExamModel model)
+	{
+		
+	}
 }
