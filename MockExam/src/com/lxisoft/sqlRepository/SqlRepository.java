@@ -39,7 +39,7 @@ public class SqlRepository
 		e.printStackTrace();
 	}
 }
-public void insertInto(ArrayList<Model> model)
+public void insertInto(Model model)
 {
 	try
 	{
@@ -47,12 +47,12 @@ public void insertInto(ArrayList<Model> model)
 		String qry;
 		qry="insert into exam(qn,opt1,opt2,opt3,opt4,ans)values(?,?,?,?,?,?)";
 		ps=con.prepareStatement(qry);
-		ps.setString(1,model.get(0).getQn());
-		ps.setString(2,model.get(0).getOpt1());
-		ps.setString(3,model.get(0).getOpt2());
-		ps.setString(4,model.get(0).getOpt3());
-		ps.setString(5,model.get(0).getOpt4());
-		ps.setInt(6,model.get(0).getAns());
+		ps.setString(1,model.getQn());
+		ps.setString(2,model.getOpt1());
+		ps.setString(3,model.getOpt2());
+		ps.setString(4,model.getOpt3());
+		ps.setString(5,model.getOpt4());
+		ps.setInt(6,model.getAns());
 		ps.execute();
 	}
 	catch(Exception e)
@@ -93,5 +93,20 @@ public ArrayList<Model> selectFrom(ArrayList<Model> model)
 	{
 		e.printStackTrace();
 	}return model;
+}
+public void delete(String count)
+{
+	try
+	{
+	databaseConnectionEstablish();
+		String qry;
+		qry="delete from exam where slno="+count;
+		ps=con.prepareStatement(qry);
+		ps.execute();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
 }
 }

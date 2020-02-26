@@ -49,8 +49,8 @@ input[type=text] {
 <font size="5" color="midnightblue">Option 3 : </font> <input type="text" name="option3"><br>
 <font size="5" color="midnightblue">Option 4 : </font> <input type="text" name="option4"><br>
 <font size="5" color="midnightblue">Answer no : </font> <input type="text" name="ans"><br><br>
-<button formaction="AdminMenu.jsp" class="button_css" name="done" >DONE</button>
  <input type="submit" class="button_css" value="ADD" name="add">
+ <button  formaction="AdminMenu.jsp" class="button_css" name="back">BACK</button>
 </form>
 </div>
 </div>

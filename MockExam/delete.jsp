@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>question1</title>
+  <title>question1</title>
 </head>
 <body bgcolor="FloralWhite">
 <style>
@@ -23,10 +23,10 @@
 }
 .button_css
 {
-	background-color: midnightblue;
-	color: white;
-	width: 150px;
-	height: 40px;
+  background-color: midnightblue;
+  color: white;
+  width: 150px;
+  height: 40px;
   border-radius: 12px;
    display: inline-block;
   font-size: 16px;
@@ -44,7 +44,7 @@ input[type=text] {
 <p>
   
   <form>
-<font size="6" color="midnightblue"><i><b>Welcome to Display Page</b></i></font><br><br><br>
+<font size="6" color="midnightblue"><i><b>Welcome to Delete Page</b></i></font><br><br><br>
 <% ArrayList<Model> model=(ArrayList<Model>)session.getAttribute("disp");%>
   <table>
      <tr>
@@ -55,6 +55,7 @@ input[type=text] {
     <th><h2>Option 3</h2></th>
     <th><h2>Option 4</h2></th>
   </tr>
+  <form action="delete" method="get">
     <%for(int i=0;i<model.size();i++)
     {%> <tr>
       <td><h2><%out.println(model.get(i).getSlno());%></h2></td>
@@ -63,12 +64,13 @@ input[type=text] {
       <td><h2><%out.println(model.get(i).getOpt2());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt3());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt4());%></h2></td>
+      <%request.setAttribute("count",i);%>
+      <td><input type="submit" class="button_css" name="delete" value="delete"></td>
        </tr>
-
+       </form>
     <br>
    <% }
     %>
-   
   </table>
 <button formaction="AdminMenu.jsp" class="button_css" name="done" >DONE</button> 
 </form>

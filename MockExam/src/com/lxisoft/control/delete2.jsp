@@ -15,7 +15,7 @@
   margin: 0;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 30%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -30,21 +30,24 @@
   font-size: 16px;
   text-decoration: none;
 }
+input[type=text] {
+  width: 300%;
+  padding: 12px 20px;
+  border: 2px solid red;
+  border-radius: 4px;
+}
 </style>
 <div class="container">
 <div class="center">
 <p>
-<center>
-  <h2><b> UserName  <input type="text" name="name"></b></h2>
- <h2><b> Password  <input type="Password" name="Password"></b></h2>
-<input type="submit" class="button_css" name="login" value="login" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminMenu.jsp';">
-  <input type="submit" class="button_css" name="cancel" value="cancel" onclick="window.location.href = 'http://localhost:8080/mockExam/index.jsp';">  
+  <form>
+<h1><b><i>Question Successfully Deleted !!!</i></b></h1>
+<button formaction="AdminMenu.jsp" class="button_css" name="done" >DONE</button>
+</form>
+</div>
+</div>
+</div>
 
-</center>
 </p>
-</div>
-</div>
-</div>
-
 </body>
 </html>

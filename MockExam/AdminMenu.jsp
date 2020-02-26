@@ -43,8 +43,8 @@
   <br>
   <form>
   <input type="submit" formaction="Add.jsp" class="button_css" name="ADD" value="ADD" >
-  <input type="submit" class="button_css" name="DELETE" value="DELETE" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminUser.jsp';">  
-  <input type="submit" class="button_css" name="UPDATE" value="UPDATE" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminUser.jsp';">  
+  <input type="submit" formaction="delete.jsp" class="button_css" name="DELETE" value="DELETE" >
+  <input type="submit" formaction="update.jsp" class="button_css" name="UPDATE" value="UPDATE" >
   <input type="submit" formaction="display" class="button_css" name="DISPLAY" value="DISPLAY">
   <input type="submit" formaction="Login.jsp" class="button_css" name="BACK" value="BACK" >
 </form>
