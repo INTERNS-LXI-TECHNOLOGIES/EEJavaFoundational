@@ -12,12 +12,14 @@ public class UpdateServlet  extends HttpServlet
 	{
 		MockExamModel model = new MockExamModel();
 		PrintWriter out = response.getWriter();
-		out.println("Id : "+request.getParameter("Id"));
+		model.setId(Integer.parseInt(request.getParameter("Id")));
 		model.getQuestion().setQuestion(request.getParameter("question"));
 		model.getAnswer().setAnswer(request.getParameter("answer"));
 		model.getOption1().setOption(request.getParameter("option1"));
 		model.getOption2().setOption(request.getParameter("option2"));
 		model.getOption3().setOption(request.getParameter("option3"));
+		sqlReppo.update(model);
+		request.getRequestDispatcher("Admin.jsp").forward(request,response);
 
 
 	}

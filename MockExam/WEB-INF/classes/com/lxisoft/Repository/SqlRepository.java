@@ -95,6 +95,16 @@ public class SqlRepository
 	}
 	public void update(MockExamModel model)
 	{
-		
+		try
+		{
+			int id = model.getId();
+			String qry ="update MockExam Question = '"+model.getQuestion().getQuestion()+"',Answer = '"+model.getAnswer().getAnswer()+"',Option1 = '"+model.getOption1().getOption()+"',Option2 = '"+model.getOption2().getOption()+"',Option3 = '"+model.getOption3().getOption()+"' where Id = "+id;
+			ps = con.prepareStatement(qry);
+			ps.executeUpdate(qry);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
