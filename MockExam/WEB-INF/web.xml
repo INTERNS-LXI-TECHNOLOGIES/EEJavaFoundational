@@ -31,6 +31,16 @@
 <servlet-name>addservlet</servlet-name>  
 <url-pattern>/AddQuestionServlet</url-pattern>  
 </servlet-mapping>
+
+<servlet>  
+<servlet-name>updateservlet</servlet-name>  
+<servlet-class>com.lxisoft.Control.UpdateServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>updateservlet</servlet-name>  
+<url-pattern>/UpdateServlet</url-pattern>  
+</servlet-mapping>
  
  
 </web-app>  

@@ -90,20 +90,34 @@ public class SqlRepository
 			System.out.println("ddddddd"+e);
 		}
 	}
-	/*public void editQuestion()
+	public void editQuestion()
 	{
 		try
 		{
 			dataBaseConnectionEstablish();
-			String qry="update mockexam set question="+models.getQuestion()+" where qustionnumber=";
+			String qry="update mockexam set question=?,Option1=?,Option2=?,Option3=?,Option4=?,Answer=? where qustionnumber=";
 			ps=con.prepareStatement(qry);
-			ps.execute();
+			ps.executeUpdate();
 		}
 		catch(SQLException e)
 		{
 			System.out.println("eeeeeeeeeee"+e);
 		}
-	}*/
+	}
+	/*public void deleteQuestion()
+	{
+		try
+		{
+			dataBaseConnectionEstablish();
+			String qry="delete from mockexam where Id=";
+			ps=con.prepareStatement(qry);
+			ps.execute();
+		}
+		catch(SQLException e)
+		{
+			System.out.println("dddddddddd");
+		}
+	}	*/
 			
 }	
 
