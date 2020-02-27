@@ -51,6 +51,7 @@ public class SqlRepository
 				models.add(new ExamModel());
 				for(int i=0;i<models.size();i++)
 				{
+					
 					if((models.get(i)).getQuestionNumber()==0)
 					{
 						models.get(i).setQuestionNumber(rs.getInt(1));
@@ -112,6 +113,21 @@ public class SqlRepository
 			String qry="delete from mockexam where Id=";
 			ps=con.prepareStatement(qry);
 			ps.execute();
+			public void delete(String count)
+{
+  try
+  {
+  databaseConnectionEstablish();
+    String qry;
+    qry="delete from exam where slno="+count;
+    ps=con.prepareStatement(qry);
+    ps.execute();
+  }
+  catch(Exception e)
+  {
+    e.printStackTrace();
+  }
+}
 		}
 		catch(SQLException e)
 		{

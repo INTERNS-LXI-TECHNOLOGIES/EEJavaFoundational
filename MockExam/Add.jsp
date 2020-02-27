@@ -1,4 +1,4 @@
-<html>
+<html>									
 <body>
 <form>
 	<div>
@@ -17,7 +17,7 @@
   <label for="answer">Answer =</label>
   <input type="text" id="answer" name="answer"><br><br>
   <button formaction="Admin.jsp" class="button">BACK</button> 
-  <button formaction="AddQuestionServlet" class="button">SUBMIT</button>
+  <button formaction="AddServlet" class="button">SUBMIT</button>
   <button type="reset" class="button">RESET</button></center>
 </div>
 </form>
