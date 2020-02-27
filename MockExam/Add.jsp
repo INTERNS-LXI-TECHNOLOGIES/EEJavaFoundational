@@ -7,7 +7,7 @@
 		
 		<font size="9">ENTER QUESTION</font><br>
   <h1><label for="question">Question : </label>
-  <input type="text" id="question" name="question"><br>
+  <input type="text" id="question" placeholder="Enter Question" name="question"><br>
   <label for="answer">Answer : </label>
   <input type="text" id="answer" name="answer"><br>
   <label for="option1">Option1 : </label>

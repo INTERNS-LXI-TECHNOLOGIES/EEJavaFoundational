@@ -3,7 +3,6 @@
 <%@page import="java.util.ArrayList"%>
 <html>
 <%
-//ArrayList<MockExamModel> questions = (ArrayList<MockExamModel>)session.getAttribute("questions");
  ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
   SqlRepository sqlReppo = SqlRepository.getInstance();
   questions = sqlReppo.readFromDatabase(questions);
@@ -29,13 +28,13 @@
   {
   	%>
   <tr>
-  	<td><h3><%out.println(questions.get(i).getId());%></h3></td>
-    <td><h3><%out.println(questions.get(i).getQuestion().getQuestion());%></h3></td>
-    <td><h3><%out.println(questions.get(i).getAnswer().getAnswer());%></h3></td>
-    <td><h3><%out.println(questions.get(i).getOption1().getOption());%></h3></td>
-    <td><h3><%out.println(questions.get(i).getOption2().getOption());%></h3></td>
-    <td><h3><%out.println(questions.get(i).getOption3().getOption());%> </h3></td>
-    <td><button name ="Update" formaction ="UpdateQuestion.jsp" value =<%out.println(i);%>>UPDATE</button></td>
+  	<td><%out.println(questions.get(i).getId());%>
+    <td><%out.println(questions.get(i).getQuestion().getQuestion());%></td>
+    <td><%out.println(questions.get(i).getAnswer().getAnswer());%></td>
+    <td><%out.println(questions.get(i).getOption1().getOption());%></td>
+    <td><%out.println(questions.get(i).getOption2().getOption());%></td>
+    <td><%out.println(questions.get(i).getOption3().getOption());%> </td>
+    <td><button name ="Delete" formaction ="Delete" value =<%out.println(questions.get(i).getId());%>>DELETE</button></td>
   </tr>
   <%
 	}

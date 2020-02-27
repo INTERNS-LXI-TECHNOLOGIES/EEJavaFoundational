@@ -51,6 +51,16 @@
     <url-pattern>/Update</url-pattern>
   </servlet-mapping>
 
+ <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>com.lxisoft.Controler.DeleteServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/Delete</url-pattern>
+  </servlet-mapping>
+
   <servlet>
     <servlet-name>TestServlet</servlet-name>
     <jsp-file>/index.jsp</jsp-file>

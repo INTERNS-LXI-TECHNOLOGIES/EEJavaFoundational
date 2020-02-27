@@ -98,9 +98,28 @@ public class SqlRepository
 		try
 		{
 			int id = model.getId();
-			String qry ="update MockExam Question = '"+model.getQuestion().getQuestion()+"',Answer = '"+model.getAnswer().getAnswer()+"',Option1 = '"+model.getOption1().getOption()+"',Option2 = '"+model.getOption2().getOption()+"',Option3 = '"+model.getOption3().getOption()+"' where Id = "+id;
+			String qry ="update MockExam set Question = ?,Answer = ?,Option1 = ?,Option2 = ?,Option3 = ? where Id = ?";
 			ps = con.prepareStatement(qry);
-			ps.executeUpdate(qry);
+			ps.setString(1,model.getQuestion().getQuestion());
+			ps.setString(2,model.getAnswer().getAnswer());
+			ps.setString(3,model.getOption1().getOption());
+			ps.setString(4,model.getOption2().getOption());
+			ps.setString(5,model.getOption3().getOption());
+			ps.setInt(6,model.getId());
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public void delete(int iD)
+	{
+		try
+		{
+			String qry = "delete from MockExam where Id ="+iD;
+			ps = con.prepareStatement(qry);
+			ps.execute();
 		}
 		catch(Exception e)
 		{

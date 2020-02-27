@@ -1,8 +1,11 @@
 <%@page import="com.lxisoft.Model.MockExamModel"%>
+<%@page import="com.lxisoft.Repository.SqlRepository"%>
 <%@page import="java.util.ArrayList"%>
 <html>
 <%
-ArrayList<MockExamModel> questions = (ArrayList<MockExamModel>)session.getAttribute("questions");
+ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
+  SqlRepository sqlReppo = SqlRepository.getInstance();
+  questions = sqlReppo.readFromDatabase(questions);
 %>
 	<body>
 	<link rel="stylesheet" href="Login.css"></link>
@@ -13,6 +16,7 @@ ArrayList<MockExamModel> questions = (ArrayList<MockExamModel>)session.getAttrib
 		<h1>!! Questions !!</h1>
 		<table style="width:50%" align = "center">
   <tr>
+    <th>QuestionNo</th>
     <th>Question</th>
     <th>Option1</th>
     <th>Option2</th>
@@ -24,7 +28,8 @@ ArrayList<MockExamModel> questions = (ArrayList<MockExamModel>)session.getAttrib
   {
   	%>
   <tr>
-    <td><%out.println(i+1+"."+questions.get(i).getQuestion().getQuestion());%></td>
+    <td><%out.println(i+1);%></td>
+    <td><%out.println(questions.get(i).getQuestion().getQuestion());%></td>
     <td><%out.println(questions.get(i).getAnswer().getAnswer());%></td>
     <td><%out.println(questions.get(i).getOption1().getOption());%></td>
     <td><%out.println(questions.get(i).getOption2().getOption());%></td>
