@@ -19,6 +19,9 @@ public class EditServlet extends HttpServlet
 		q.setOption3(request.getParameter("option3"));
 		q.setOption4(request.getParameter("option4"));
 		q.setAnswer(request.getParameter("answer"));
+		q.setAnswer2(request.getParameter("answer2"));
+		// String[] answer = request.getParameterValues("option");
+		// q.setAnswer(answer);
 		Question qn=repository.updateQuestions(q,qno);
 		request.setAttribute("questions",qn);
 		HttpSession session=request.getSession();

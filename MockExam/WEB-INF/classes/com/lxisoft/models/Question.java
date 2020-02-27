@@ -10,6 +10,7 @@ public class Question
 	private String option3;
 	private String option4;
 	private String answer;
+	private String answer2;
 
 	public void setQno(String qno)
 	{
@@ -72,5 +73,14 @@ public class Question
 	public String getAnswer()
 	{
 		return answer;
+	}
+
+	public void setAnswer2(String answer2)
+	{
+		this.answer2=answer2;
+	}
+	public String getAnswer2()
+	{
+		return answer2;
 	}
 }

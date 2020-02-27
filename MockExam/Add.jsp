@@ -13,6 +13,7 @@
 		<br><input type="text" name="option3" required="" placeholder=option3><br>
 		<br><input type="text" name="option4" required="" placeholder=option4><br>
 		<br><input type="text" name="answer" required="" placeholder=answer><br>
+		<br><input type="text" name="answer2" required="" placeholder=answer2><br>
 		<br><input type="submit" value=Save></form>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<a href="admin"><input type="submit" value=Cancel></a></td>

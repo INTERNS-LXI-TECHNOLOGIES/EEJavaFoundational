@@ -65,6 +65,7 @@ public class SqlRepository
 				q.setOption3(rs.getString("Option3"));
 				q.setOption4(rs.getString("Option4"));
 				q.setAnswer(rs.getString("Answer"));
+				q.setAnswer2(rs.getString("Answer2"));
 				questionList.add(q);
 			}
 		}
@@ -80,13 +81,14 @@ public class SqlRepository
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("insert into question(Question,Option1,Option2,Option3,Option4,Answer)values(?,?,?,?,?,?)");
+	 		stmt=conn.prepareStatement("insert into question(Question,Option1,Option2,Option3,Option4,Answer,Answer2)values(?,?,?,?,?,?,?)");
 	 		stmt.setString(1,q.getQuestion());
 	 		stmt.setString(2,q.getOption1());
 	 		stmt.setString(3,q.getOption2());
 	 	    stmt.setString(4,q.getOption3());
 	 	    stmt.setString(5,q.getOption4());
 	 	    stmt.setString(6,q.getAnswer());
+	 	    stmt.setString(7,q.getAnswer2());
 	 		stmt.executeUpdate();
 	 		System.out.println("Successfully Inserted");
  		}
@@ -116,15 +118,16 @@ public class SqlRepository
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("update question set Question= ? ,Option1= ?,Option2= ?,Option3= ?,Option4= ?, Answer=? where Qno=?");
+	 		stmt=conn.prepareStatement("update question set Question= ? ,Option1= ?,Option2= ?,Option3= ?,Option4= ?, Answer= ?,Answer2= ? where Qno=?");
 	 		stmt.setString(1, q.getQuestion());
 	 		stmt.setString(2, q.getOption1());
 	 		stmt.setString(3, q.getOption2());
 	 		stmt.setString(4, q.getOption3());
 	 		stmt.setString(5, q.getOption4());
 	 		stmt.setString(6, q.getAnswer());
+	 		stmt.setString(7, q.getAnswer2());
 	 		int i=Integer.parseInt(ii);
-	 		stmt.setInt(7, i);
+	 		stmt.setInt(8, i);
 	 	    stmt.executeUpdate();
 	 	   
 	 		System.out.println("Successfully Updated");

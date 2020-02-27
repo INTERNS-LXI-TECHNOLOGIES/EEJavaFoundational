@@ -12,22 +12,17 @@ public class ResultServlet extends HttpServlet
     int k=0;
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
+
+        String[] option = request.getParameterValues("option");
 		SqlRepository repository=new SqlRepository();
-		String option=request.getParameter("option");
+		// String option=request.getParameter("option");
         String i=request.getParameter("i");
-        System.out.println(option);
+        
 		List<Question> questionList=repository.getAllQuestion();
         HttpSession session=request.getSession();
-        for(int j=0;j<questionList.size();j++)
+        for(String o:option)
         {
-            if((questionList.get(j).getQno()).equals(i))
-            {
-                k=j;
-            } 
-        }
-        if((questionList.get(k).getAnswer()).equals(option))
-        {
-           mar++;
+            System.out.println(o);
         }
         session.setAttribute("mark",mar);
         response.sendRedirect("admin");
