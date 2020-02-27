@@ -17,30 +17,24 @@ if(qcount != model.size())
 	<form align = "center" method="get" action="Option">
 	<h2>
 	<input type ="radio" value="1" id = "Option1" name = "option"> 
-	<label for = "Option1" > <%out.println(model.get(qcount).getAnswer().getAnswer());%> </label></input></h2>
+	<label for = "Option1" > <%out.println(model.get(qcount).getOption1().getOption());%>  </label></input></h2>
 	<h2><input type ="radio" value="2" id = "Option2" name = "option"> 
-	<label for = "Option2"> <%out.println(model.get(qcount).getOption1().getOption());%> </label></input></h2>
+	<label for = "Option2"> <%out.println(model.get(qcount).getOption2().getOption());%> </label></input></h2>
 	<h2><input type ="radio" value="3" id = "Option3" name = "option"> 
-	<label for = "Option3"> <%out.println(model.get(qcount).getOption2().getOption());%> </label></input></h2>
+	<label for = "Option3"> <%out.println(model.get(qcount).getOption3().getOption());%> </label></input></h2>
 	<h2><input type ="radio" value="4" id = "Option4" name = "option"> 
-	<label for = "Option4"> <%out.println(model.get(qcount).getOption3().getOption());%> </label></input></h2>
+	<label for = "Option4"> <%out.println(model.get(qcount).getOption4().getOption());%> </label></input></h2>
 
 	</section>
 	<%
 	qcount++;
-	String url="Questions.jsp?ques=" + (qcount-2);
 	%>
-
 		<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
 		<div align = "center">
-		<button align = "center" class="button" type="submit">Next</button> <button align = "center" class="button" type="submit">Skip</button> <button align = "center" class="button" <a href=<%out.println(url);%></a>BACK</button>
+		<button align = "center" class="button" type="submit">Next</button> <button align = "center" class="button" type="submit">Skip</button>
 	</div>
 	</form>
 	</div>
-	<%
-	
-	%>
-	<a href=<%out.println(url);%>>back</a>
 <%} 
 else 
 {

@@ -13,11 +13,12 @@ ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
 	<body>
 	<div>
 	<form>
-		<h1>!! Questions !!</h1>
-		<table style="width:50%" align = "center">
+		<h1>!! VIEW QUESTIONS !!</h1>
+		<table style="width:70%" align = "center">
   <tr>
     <th>QuestionNo</th>
     <th>Question</th>
+    <th>Answer</th>
     <th>Option1</th>
     <th>Option2</th>
     <th>Option3</th>
@@ -27,18 +28,19 @@ ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
   for(int i =0;i<questions.size();i++)
   {
   	%>
-  <tr>
-    <td><%out.println(i+1);%></td>
+  <tr align="center">
+    <td ><%out.println(i+1);%></td>
     <td><%out.println(questions.get(i).getQuestion().getQuestion());%></td>
     <td><%out.println(questions.get(i).getAnswer().getAnswer());%></td>
     <td><%out.println(questions.get(i).getOption1().getOption());%></td>
     <td><%out.println(questions.get(i).getOption2().getOption());%></td>
     <td><%out.println(questions.get(i).getOption3().getOption());%> </td>
+    <td><%out.println(questions.get(i).getOption4().getOption());%></td>
   </tr>
   <%
 	}
   %>
-</table>
+</table><br>
 	<button formaction="Admin.jsp" class="button">BACK</button> 
 	</form>
 	</div>

@@ -10,6 +10,7 @@ public class MockExamModel
 	private Options option1 = new Options();
 	private Options option2 = new Options();
 	private Options option3 = new Options();
+	private Options option4 = new Options();
 	private Options selectedOption = new Options();
 
 	public void setId(int iD)
@@ -39,6 +40,10 @@ public class MockExamModel
 	public Options getOption3()
 	{
 		return this.option3;
+	}
+	public Options getOption4()
+	{
+		return this.option4;
 	}
 	public Options getSelectedOption()
 	{

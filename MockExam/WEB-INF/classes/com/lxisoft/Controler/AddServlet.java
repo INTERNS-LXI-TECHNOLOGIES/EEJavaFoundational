@@ -19,6 +19,7 @@ public class AddServlet  extends HttpServlet
 		model.getOption1().setOption(request.getParameter("option1"));
 		model.getOption2().setOption(request.getParameter("option2"));
 		model.getOption3().setOption(request.getParameter("option3"));
+		model.getOption4().setOption(request.getParameter("option4"));
 		sqlReppo.insertDataToDatabase(model);
 		
 		request.getRequestDispatcher("Admin.jsp").forward(request,response);

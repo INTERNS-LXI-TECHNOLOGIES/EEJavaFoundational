@@ -14,33 +14,36 @@
 	<body>
 	<div>
 	<form>
-		<h1>!! Questions !!</h1>
-		<table style="width:50%" align = "center">
+		<h1>!!UPDATE QUESTIONS !!</h1>
+		<table style="width:70%" align = "center">
   <tr>
-  	<th>QuestionID</th>
+  	<th>QuestionNo</th>
     <th>Question</th>
+    <th>Answer</th>
     <th>Option1</th>
     <th>Option2</th>
     <th>Option3</th>
     <th>Option4</th>
+    <th>Update</th>
   </tr>
   <%
   for(int i =0;i<questions.size();i++)
   {
   	%>
-  <tr>
-  	<td><h3><%out.println(questions.get(i).getId());%></h3></td>
+  <tr align="center">
+  	<td><h3><%out.println(i+1);%></h3></td>
     <td><h3><%out.println(questions.get(i).getQuestion().getQuestion());%></h3></td>
     <td><h3><%out.println(questions.get(i).getAnswer().getAnswer());%></h3></td>
     <td><h3><%out.println(questions.get(i).getOption1().getOption());%></h3></td>
     <td><h3><%out.println(questions.get(i).getOption2().getOption());%></h3></td>
     <td><h3><%out.println(questions.get(i).getOption3().getOption());%> </h3></td>
+    <td><h3><%out.println(questions.get(i).getOption4().getOption());%> </h3></td>
     <td><button name ="Update" formaction ="UpdateQuestion.jsp" value =<%out.println(i);%>>UPDATE</button></td>
   </tr>
   <%
 	}
   %>
-</table>
+</table><br>
 	<button formaction="Admin.jsp" class="button">BACK</button> 
 	</form>
 	</div>

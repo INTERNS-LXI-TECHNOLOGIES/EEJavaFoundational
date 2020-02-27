@@ -31,11 +31,15 @@ div{
   height: 50px;
 }
 body {
-    height: 626px;
+    height: 606px;
     border: solid mediumseagreen;
-    padding-top: 100px;
+    padding-top: 266px;
 }
 .fontbig {
 	font-style: italic;
     font-size: xx-large;
+}
+table, th, td {
+  border: 1px solid mediumseagreen;
+  height: 50px;
 }

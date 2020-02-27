@@ -18,6 +18,7 @@ public class UpdateServlet  extends HttpServlet
 		model.getOption1().setOption(request.getParameter("option1"));
 		model.getOption2().setOption(request.getParameter("option2"));
 		model.getOption3().setOption(request.getParameter("option3"));
+		model.getOption4().setOption(request.getParameter("option4"));
 		sqlReppo.update(model);
 		request.getRequestDispatcher("Update.jsp").forward(request,response);
 

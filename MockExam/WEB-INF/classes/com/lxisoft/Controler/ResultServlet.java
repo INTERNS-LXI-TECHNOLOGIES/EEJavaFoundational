@@ -13,7 +13,7 @@ public class ResultServlet extends HttpServlet
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
 		PrintWriter out = response.getWriter();
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(true);
 		model = (ArrayList<MockExamModel>)session.getAttribute("Array");
 		for(int i=0;i<model.size();i++)
 		{
@@ -22,12 +22,9 @@ public class ResultServlet extends HttpServlet
 				count++;
 			}
 		}
-		totalMark = count;
+		totalMark += count;
 		count = 0;
 		request.setAttribute("totalMark",totalMark);
-		//HttpSession session1 = request.getSession();
-		//session1.setAttribute("totalMark",totalMark);
 		request.getRequestDispatcher("Result.jsp").forward(request,response);
-		// //out.println("Helloo");
 	}
 }

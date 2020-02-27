@@ -64,6 +64,7 @@ public class SqlRepository
 						model.get(i).getOption1().setOption(rs.getString(4));
 						model.get(i).getOption2().setOption(rs.getString(5));
 						model.get(i).getOption3().setOption(rs.getString(6));
+						model.get(i).getOption4().setOption(rs.getString(7));
 					}
 				}
 			}
@@ -79,13 +80,14 @@ public class SqlRepository
 		try
 		{
 			//this.createTable();
-			String qry = "insert into MockExam(Question,Answer,Option1,Option2,Option3)values(?,?,?,?,?)";
+			String qry = "insert into MockExam(Question,Answer,Option1,Option2,Option3,Option4)values(?,?,?,?,?,?)";
 			ps = con.prepareStatement(qry);
 			ps.setString(1,model.getQuestion().getQuestion());
 			ps.setString(2,model.getAnswer().getAnswer());
 			ps.setString(3,model.getOption1().getOption());
 			ps.setString(4,model.getOption2().getOption());
 			ps.setString(5,model.getOption3().getOption());
+			ps.setString(6,model.getOption4().getOption());
 			ps.execute();
 		}
 		catch(Exception e)
@@ -98,14 +100,15 @@ public class SqlRepository
 		try
 		{
 			int id = model.getId();
-			String qry ="update MockExam set Question = ?,Answer = ?,Option1 = ?,Option2 = ?,Option3 = ? where Id = ?";
+			String qry ="update MockExam set Question = ?,Answer = ?,Option1 = ?,Option2 = ?,Option3 = ?,Option4 = ? where Id = ?";
 			ps = con.prepareStatement(qry);
 			ps.setString(1,model.getQuestion().getQuestion());
 			ps.setString(2,model.getAnswer().getAnswer());
 			ps.setString(3,model.getOption1().getOption());
 			ps.setString(4,model.getOption2().getOption());
 			ps.setString(5,model.getOption3().getOption());
-			ps.setInt(6,model.getId());
+			ps.setString(6,model.getOption4().getOption());
+			ps.setInt(7,model.getId());
 			ps.execute();
 		}
 		catch(Exception e)
