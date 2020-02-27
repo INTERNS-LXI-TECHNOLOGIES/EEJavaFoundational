@@ -15,13 +15,11 @@ public class ViewServlet extends HttpServlet
   ArrayList<ExamModel> models=new ArrayList<ExamModel>();
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
   {  
-
       PrintWriter out = response.getWriter();
       HttpSession session=request.getSession(true);
       models.clear();
       models=sqlrepo.readFromDatabase(models);
       session.setAttribute("view",models);
       response.sendRedirect("View.jsp");
-      
   }
 }

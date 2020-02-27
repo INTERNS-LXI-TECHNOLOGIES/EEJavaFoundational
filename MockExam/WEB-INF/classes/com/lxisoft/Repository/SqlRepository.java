@@ -51,7 +51,7 @@ public class SqlRepository
 				models.add(new ExamModel());
 				for(int i=0;i<models.size();i++)
 				{
-					
+
 					if((models.get(i)).getQuestionNumber()==0)
 					{
 						models.get(i).setQuestionNumber(rs.getInt(1));
@@ -91,12 +91,13 @@ public class SqlRepository
 			System.out.println("ddddddd"+e);
 		}
 	}
-	public void editQuestion()
+	public void updateQuestion(ExamModel models)
 	{
 		try
 		{
 			dataBaseConnectionEstablish();
-			String qry="update mockexam set question=?,Option1=?,Option2=?,Option3=?,Option4=?,Answer=? where qustionnumber=";
+			int qNo = models.getQuestionNumber();
+			String qry="update mockexam set question=?,Option1=?,Option2=?,Option3=?,Option4=?,Answer=? where qustionnumber="+qNo;
 			ps=con.prepareStatement(qry);
 			ps.executeUpdate();
 		}
@@ -105,36 +106,35 @@ public class SqlRepository
 			System.out.println("eeeeeeeeeee"+e);
 		}
 	}
-	/*public void deleteQuestion()
+	/*public void update(MockExamModel model)
 	{
 		try
 		{
-			dataBaseConnectionEstablish();
-			String qry="delete from mockexam where Id=";
-			ps=con.prepareStatement(qry);
-			ps.execute();
-			public void delete(String count)
-{
-  try
-  {
-  databaseConnectionEstablish();
-    String qry;
-    qry="delete from exam where slno="+count;
-    ps=con.prepareStatement(qry);
-    ps.execute();
-  }
-  catch(Exception e)
-  {
-    e.printStackTrace();
-  }
-}
+			int id = model.getId();
+			String qry ="update MockExam Question = '"+model.getQuestion().getQuestion()+"',Answer = '"+model.getAnswer().getAnswer()+"',Option1 = '"+model.getOption1().getOption()+"',Option2 = '"+model.getOption2().getOption()+"',Option3 = '"+model.getOption3().getOption()+"' where Id = "+id;
+			ps = con.prepareStatement(qry);
+			ps.executeUpdate(qry);
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}*/
+	/*public void deleteQuestion()
+	{		
+		try
+		{
+			databaseConnectionEstablish();
+		    String qry;
+		    qry="delete from mockexam where id="+count;
+		    ps=con.prepareStatement(qry);
+		    ps.execute();
 		}
 		catch(SQLException e)
 		{
 			System.out.println("dddddddddd");
 		}
-	}	*/
-			
+	}			*/			
 }	
 
 
