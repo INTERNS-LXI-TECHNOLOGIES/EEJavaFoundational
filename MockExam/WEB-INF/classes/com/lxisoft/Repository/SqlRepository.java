@@ -114,11 +114,11 @@ public class SqlRepository
 		}
 	}
 	
-	/*public void delete(int iD)
+	public void deleteQuestion(int id)
 	{
 		try
 		{
-			String qry = "delete from MockExam where Id ="+iD;
+			String qry = "delete from mockexam where id ="+id;
 			ps = con.prepareStatement(qry);
 			ps.execute();
 		}
@@ -126,7 +126,7 @@ public class SqlRepository
 		{
 			e.printStackTrace();
 		}
-	}*/
+	}
 		
 }	
 

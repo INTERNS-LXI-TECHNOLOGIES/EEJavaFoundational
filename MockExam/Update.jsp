@@ -15,11 +15,11 @@
   <tr>
   	<th>QuestionNo</th>
     <th>Question</th>
-    <th>Answer</th>
     <th>Option1</th>
     <th>Option2</th>
     <th>Option3</th>
     <th>Option4</th>
+    <th>Answer</th>
     <th>Update</th>
   </tr>
   <%
