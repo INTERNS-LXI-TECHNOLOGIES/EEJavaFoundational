@@ -26,5 +26,15 @@
          <url-pattern>/go</url-pattern> 
     </servlet-mapping>
 
+     <servlet> 
+         <servlet-name>Validate</servlet-name> 
+         <servlet-class>com.lxisoft.validate.Validate</servlet-class> 
+    </servlet> 
+    <servlet-mapping> 
+         <servlet-name>Add</servlet-name> 
+         <url-pattern>/add</url-pattern> 
+    </servlet-mapping>
+
+
        
 </web-app>

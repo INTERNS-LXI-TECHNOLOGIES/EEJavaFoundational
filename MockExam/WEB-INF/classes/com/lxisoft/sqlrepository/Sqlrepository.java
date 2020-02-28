@@ -53,4 +53,8 @@ public class Sqlrepository
 		}
 		return questions;
 	}
+	public void addquestion()
+	{
+		
+	}
 }
