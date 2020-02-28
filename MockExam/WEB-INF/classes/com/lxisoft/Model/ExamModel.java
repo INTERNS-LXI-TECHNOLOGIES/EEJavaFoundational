@@ -17,11 +17,11 @@ public class ExamModel
 	{
 		return question;
 	}
-	public void setQuestionNumber(int qNo)
+	public void setId(int qNo)
 	{
 		this.qNo=qNo;
 	}
-	public int getQuestionNumber()
+	public int getId()
 	{
 		return qNo;
 	}

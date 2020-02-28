@@ -1,29 +1,27 @@
 package com.lxisoft.Control;
-import java.io.*;
-import java.util.*;
-import javax.servlet.*;
 import javax.servlet.http.*;
-import java.io.IOException;
-import java.io.PrintWriter;
+import javax.servlet.*;
+import java.io.*;
+import java.util.ArrayList;
 import com.lxisoft.Model.ExamModel;
 import com.lxisoft.Repository.SqlRepository;
-
 public class UpdateServlet  extends HttpServlet
 {
-	SqlRepository sqlrepo = new SqlRepository();
+	SqlRepository sqlrepo =new SqlRepository();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
-	{		
+	{
 		ExamModel models = new ExamModel();
 		PrintWriter out = response.getWriter();
-		models.setId(Integer.parseInt(request.getParameter("qNo")));
-		models.getQuestion().setQuestion(request.getParameter("question"));
-		models.getAnswer().setAnswer(request.getParameter("answer"));
-		models.getOption1().setOption(request.getParameter("option1"));
-		models.getOption2().setOption(request.getParameter("option2"));
-		models.getOption3().setOption(request.getParameter("option3"));
-		models.getOption4().setOption(request.getParameter("option4"));
+		models.setId(Integer.parseInt(request.getParameter("Id")));
+		models.setQuestion(request.getParameter("question"));
+		models.setOpt1(request.getParameter("option1"));
+		models.setOpt2(request.getParameter("option2"));
+		models.setOpt3(request.getParameter("option3"));
+		models.setOpt4(request.getParameter("option4"));
+		models.setAnswer(request.getParameter("answer"));
 		sqlrepo.updateQuestion(models);
-		request.getRequestDispatcher("Admin.jsp").forward(request,response);
+		request.getRequestDispatcher("Update.jsp").forward(request,response);
+
 
 	}
 }

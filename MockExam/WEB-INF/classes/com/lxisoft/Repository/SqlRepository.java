@@ -52,9 +52,9 @@ public class SqlRepository
 				for(int i=0;i<models.size();i++)
 				{
 
-					if((models.get(i)).getQuestionNumber()==0)
+					if((models.get(i)).getId()==0)
 					{
-						models.get(i).setQuestionNumber(rs.getInt(1));
+						models.get(i).setId(rs.getInt(1));
 						models.get(i).setQuestion(rs.getString(2));
 						models.get(i).setOpt1(rs.getString(3));
 						models.get(i).setOpt2(rs.getString(4));
@@ -96,45 +96,38 @@ public class SqlRepository
 		try
 		{
 			dataBaseConnectionEstablish();
-			int qNo = models.getQuestionNumber();
-			String qry="update mockexam set question=?,Option1=?,Option2=?,Option3=?,Option4=?,Answer=? where qustionnumber="+qNo;
+			int id=models.getId();
+			String qry="update mockexam set question=?,Option1=?,Option2=?,Option3=?,Option4=?,Answer=? where id=?";
 			ps=con.prepareStatement(qry);
-			ps.executeUpdate();
+			ps.setString(1,models.getQuestion());
+			ps.setString(2, models.getOpt1());
+	 		ps.setString(3, models.getOpt2());
+	 		ps.setString(4, models.getOpt3());
+	 		ps.setString(5, models.getOpt4());
+	 		ps.setString(6, models.getAnswer());
+	 		ps.setInt(7,models.getId());
+	 		ps.execute();
 		}
 		catch(SQLException e)
 		{
 			System.out.println("eeeeeeeeeee"+e);
 		}
 	}
-	/*public void update(MockExamModel model)
+	
+	/*public void delete(int iD)
 	{
 		try
 		{
-			int id = model.getId();
-			String qry ="update MockExam Question = '"+model.getQuestion().getQuestion()+"',Answer = '"+model.getAnswer().getAnswer()+"',Option1 = '"+model.getOption1().getOption()+"',Option2 = '"+model.getOption2().getOption()+"',Option3 = '"+model.getOption3().getOption()+"' where Id = "+id;
+			String qry = "delete from MockExam where Id ="+iD;
 			ps = con.prepareStatement(qry);
-			ps.executeUpdate(qry);
+			ps.execute();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 	}*/
-	/*public void deleteQuestion()
-	{		
-		try
-		{
-			databaseConnectionEstablish();
-		    String qry;
-		    qry="delete from mockexam where id="+count;
-		    ps=con.prepareStatement(qry);
-		    ps.execute();
-		}
-		catch(SQLException e)
-		{
-			System.out.println("dddddddddd");
-		}
-	}			*/			
+		
 }	
 
 

@@ -52,6 +52,17 @@
 <servlet-name>viewservlet</servlet-name>  
 <url-pattern>/ViewServlet</url-pattern>  
 </servlet-mapping>
+
+<servlet>  
+<servlet-name>deleteservlet</servlet-name>  
+<servlet-class>com.lxisoft.Control.DeleteServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>deleteservlet</servlet-name>  
+<url-pattern>/DeleteServlet</url-pattern>  
+</servlet-mapping>
+
  
  
 </web-app>  

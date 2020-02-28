@@ -1,31 +1,47 @@
-%@page import="com.lxisoft.Model.ExamModel"%>
+ <%@page import="com.lxisoft.Model.ExamModel"%>
+<%@page import="com.lxisoft.Repository.SqlRepository"%>
 <%@page import="java.util.ArrayList"%>
 <html>
 <%
-  ArrayList<ExamModel> models = (ArrayList<MockExamModel>)session.getAttribute("questions");
-  int i = Integer.parseInt(request.getParameter("Update"));
-  %>
-<form>
+	ArrayList<ExamModel> models = new ArrayList<ExamModel>();
+  	SqlRepository sqlrepo = new SqlRepository();
+  models = sqlrepo.readFromDatabase(models);
+%>
+	<body>
 	<div>
-		
-	<font size="9">UPDATE QUESTION</font><br>
-  <h1><label for="question">Question : </label>
-   
-   <input type = "hidden" name="Id" value = <%out.println(models.get(i).getQuestionNuber());%>>
-  <input type="text" id="question" name="question" value ="<%out.println(models.get(i).getQuestion().getQuestion());%> "><br>
-  <label for="answer">Answer : </label>
-  <input type="text" id="answer" name="answer" value = "<%out.println(models.get(i).getAnswer());%>"><br>
-  <label for="option1">Option1 : </label>
-  <input type="text" id="option1" name="option1" value = "<%out.println(models.get(i).getOpt1());%>" ><br>
-  <label for="option2">Option2 : </label>
-  <input type="text" id="lname" name="option2" value = "<%out.println(models.get(i).getOpt2());%>"><br>
-  <label for="option3">Option3 : </label>
-    <input type="text" id="lname" name="option3" value = "<%out.println(models.get(i).getOpt3());%>"></h1><br>
-  <label for="option3">Option3 : </label>
-  <input type="text" id="lname" name="option3" value = "<%out.println(models.get(i).getOpt4());%>"></h1><br>
-  <button formaction="Admin.jsp" class="button">BACK</button> <button formaction="Update" class="button">UPDATE
-  </button>
-</div>
-</form>
-</body>
+	<form>
+		<h1>UPDATE</h1>
+		<table style="width:70%" align = "center">
+  <tr>
+  	<th>QuestionNo</th>
+    <th>Question</th>
+    <th>Answer</th>
+    <th>Option1</th>
+    <th>Option2</th>
+    <th>Option3</th>
+    <th>Option4</th>
+    <th>Update</th>
+  </tr>
+  <%
+  for(int i =0;i<models.size();i++)
+  {
+  	%>
+  <tr align="center">
+  	<td><h3><%out.println(i+1);%></h3></td>
+  	<td><h3><%out.println(models.get(i).getQuestion());%></h3></td>
+    <td><h3><%out.println(models.get(i).getOpt1());%></h3></td>
+    <td><h3><%out.println(models.get(i).getOpt2());%></h3></td>
+    <td><h3><%out.println(models.get(i).getOpt3());%> </h3></td>
+    <td><h3><%out.println(models.get(i).getOpt4());%> </h3></td>
+    <td><h3><%out.println(models.get(i).getAnswer());%></h3></td>
+    <td><button name ="Update" formaction ="Updatequestion.jsp" value =<%out.println(i);%>UPDATE</button></td>
+  </tr>
+  <%
+	}
+  %>
+</table><br>
+	<button formaction="Admin.jsp" class="button">BACK</button> 
+	</form>
+	</div>
+	</body>
 </html>

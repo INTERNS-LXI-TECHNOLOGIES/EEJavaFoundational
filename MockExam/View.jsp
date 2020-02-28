@@ -22,7 +22,7 @@
     </tr>
     <%for(int i=0;i<models.size();i++)
     {%> <tr>
-      <td><h2><%out.println(models.get(i).getQuestionNumber());%></h2></td>
+      <td><h2><%out.println(models.get(i).getId());%></h2></td>
       <td><h2><%out.println(models.get(i).getQuestion());%></h2></td>
       <td><h2><%out.println(models.get(i).getOpt1());%></h2></td>
       <td><h2><%out.println(models.get(i).getOpt2());%></h2></td>

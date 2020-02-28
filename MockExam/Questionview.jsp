@@ -14,7 +14,7 @@
 %>
 <form align="center" method="get" action="ResultServlet" >
 	
-	<h2><input type="hidden" value="models.get(j).getQuestionNumber()" name="qstNo">
+	<h2><input type="hidden" value="models.get(j).getId()" name="qstNo">
 	
 	<input type = "hidden" name="value" value=<%=j%> >
 	<h2><input type ="radio" value="1" id = "Option1" name ="option"> 
