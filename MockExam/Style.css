@@ -1,6 +1,6 @@
 body {
     border: solid mediumseagreen;
-    /*background-color: lightblue;*/
+    padding: 75px;
 }
 .button {
   padding: 15px 25px;
@@ -25,14 +25,14 @@ body {
 .container {
   text-align :center;
   width: 97%;
-  height: 97%;
+  height: 83%;
   padding: 10px 10px;
 
 }
 
 .dimbly {
         text-align: left;
-    width: 50%;
+    width: 40%;
     margin: auto;
 }
 header {
@@ -84,4 +84,7 @@ p.one{
     margin-left: 80px;
     border-style: solid;
     border-color: red green blue yellow;
+}
+.inset {
+  border-style: inset;
 }

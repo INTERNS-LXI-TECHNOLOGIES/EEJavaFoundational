@@ -22,9 +22,8 @@ public class ResultServlet extends HttpServlet
 				count++;
 			}
 		}
-		totalMark += count;
-		count = 0;
-		request.setAttribute("totalMark",totalMark);
+		request.setAttribute("totalMark",count);
+		count =0;
 		request.getRequestDispatcher("Result.jsp").forward(request,response);
 	}
 }

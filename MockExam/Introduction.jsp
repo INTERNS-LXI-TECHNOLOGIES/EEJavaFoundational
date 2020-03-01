@@ -2,24 +2,27 @@
 <head>
 <Title>MOCK EXAM</title>
 <link rel="stylesheet" href="Style.css"></link>
-<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"/> -->
 </head>
 <body>
-<div class="container">
-	<center><h1 style="font-size:50px;"> Welcome To Mock Exam </h1></center>
-	<div class="dimbly">
+	<div align="center" style="background-color: mediumseagreen " class = "inset">
+		<h1 style="font-size:50px;"> WELCOME TO MOCK EXAM </h1>
+	</div>
+<div class = "inset" class="container" >
+	
+	<div class="dimbly" align="center">
 		<ul>
-			<li><h1>!! INSTRUCTIONS !!</h1></head><br></li>
-			<li><h1> * Exam has Total 10 Questions. </h1></li>
-			<li><h1> * Total Time For Exam 30 minute. </h1></li>
-			<li><h1> * No Negative Marks.</h1></li>
-			<li><h1> * Minumum 6 Right Answers For Pass.</h1></li>
+			<h1 style="font-size:40px;">!! INSTRUCTIONS !!</h1><br>
+			<li><h1>  Exam has Total 10 Questions. </h1></li>
+			<li><h1>  Total Time For Exam 30 minute. </h1></li>
+			<li><h1>  No Negative Marks.</h1></li>
+			<li><h1>  Minumum 6 Right Answers For Pass.</h1></li>
 		</ul>
 	</div>
-	
+	</div><br>
+	<div align = "center">	
 <form method="get" action="Home" value = "0">
 	<input type="hidden" name="ques" value="0"/>
-    <button class ="button">Start Exam</button> 
+    <button  class ="button">Start Exam</button> 
     <button formaction="index.jsp" class="button">BACK</button> 
 </form>
 </div>
