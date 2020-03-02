@@ -28,12 +28,15 @@ input[type=text] {
 }
 div{
 	text-align: center;
-  height: 50px;
+
+}
+.container {
+    margin:30px;
 }
 body {
-    height: 606px;
+    height: 670px;
     border: solid mediumseagreen;
-    padding-top: 266px;
+    padding-top: 200px;
 }
 .fontbig {
 	font-style: italic;
@@ -42,4 +45,7 @@ body {
 table, th, td {
   border: 1px solid mediumseagreen;
   height: 50px;
+}
+.inset {
+  border-style: inset;
 }

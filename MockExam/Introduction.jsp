@@ -7,7 +7,7 @@
 	<div align="center" style="background-color: mediumseagreen " class = "inset">
 		<h1 style="font-size:50px;"> WELCOME TO MOCK EXAM </h1>
 	</div>
-<div class = "inset" class="container" >
+<div class = "inset">
 	
 	<div class="dimbly" align="center">
 		<ul>
