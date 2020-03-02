@@ -69,7 +69,7 @@ table, th, td {
       <td><h2><%out.println(model.get(i).getOpt2());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt3());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt4());%></h2></td>
-      <td><button formaction="update2.jsp" class="button_css" name="update" value="<%i%>">update</td>
+      <td><button formaction="update2.jsp" class="button_css" name="update" value=<%out.println(i);%>>update</td>
        </tr>
 
     <br>

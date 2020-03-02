@@ -43,17 +43,17 @@ input[type=text] {
 <div class="center">
 <p>
  <% ArrayList<Model> model=(ArrayList<Model>)session.getAttribute("disp");
-    int obj=request.getParameter("")
+    int obj=Integer.parseInt(request.getParameter("update"));
   %> 
-  <form action="add" method="get">
+  <form action="update" method="get">
 <font size="6" color="midnightblue"><i><b>Welcome to update Page</b></i></font><br><br><br>
-<font size="5" color="midnightblue">Question : </font> <input type="text" name="question" placeholder="Question"><br>
-<font size="5" color="midnightblue">Option 1 : </font> <input type="text" name="option1" placeholder="option1"><br>
-<font size="5" color="midnightblue">Option 2 : </font> <input type="text" name="option2" placeholder="option2"><br>
-<font size="5" color="midnightblue">Option 3 : </font> <input type="text" name="option3" placeholder="option3"><br>
-<font size="5" color="midnightblue">Option 4 : </font> <input type="text" name="option4" placeholder="option4"><br>
-<font size="5" color="midnightblue">Answer no : </font> <input type="text" name="ans" placeholder="ans"><br><br>
- <input type="submit" class="button_css" value="ADD" name="add">
+<font size="5" color="midnightblue">Question : </font> <input type="text" name="Question" placeholder="<%out.println(model.get(obj).getQn());%>"><br>
+<font size="5" color="midnightblue">Option 1 : </font> <input type="text" name="Option1" placeholder="<%out.println(model.get(obj).getOpt1());%>"><br>
+<font size="5" color="midnightblue">Option 2 : </font> <input type="text" name="Option2" placeholder="<%out.println(model.get(obj).getOpt2());%>"><br>
+<font size="5" color="midnightblue">Option 3 : </font> <input type="text" name="Option3" placeholder="<%out.println(model.get(obj).getOpt3());%>"><br>
+<font size="5" color="midnightblue">Option 4 : </font> <input type="text" name="Option4" placeholder="<%out.println(model.get(obj).getOpt4());%>"><br>
+<font size="5" color="midnightblue">Answer no : </font> <input type="text" name="Ans" placeholder="<%out.println(model.get(obj).getAns());%>"><br><br>
+ <button class="button_css" value=<%out.println(obj);%> name="update">
  <button  formaction="AdminMenu.jsp" class="button_css" name="back">BACK</button>
 </form>
 </div>
