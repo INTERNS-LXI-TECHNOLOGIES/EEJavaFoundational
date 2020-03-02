@@ -25,10 +25,10 @@
   </style>
 </head>
 <div class="jumbotron text-center">
-<h1 align="center">Questions</h1>
+<h1 align="center"><u>Questions</u></h1>
 </div>
 <body background="rr.jpeg">
-<table align=center border="1px" width="100%" height="100%">
+<table align=center>
 	<%List<Question> qn=(List<Question>) request.getAttribute("questionlist");
 	int j=(int)session.getAttribute("cc");
 	int i=(j-1);

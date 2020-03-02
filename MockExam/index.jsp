@@ -9,10 +9,10 @@
 	}
 	div
 	{
-		padding-top: 50px;
+		padding-top: 40px;
 		padding-right: 30px;
 		padding-left: 80px;
-		padding-bottom: 50px;
+		padding-bottom: 20px;
 	}
   </style>
 </head>
@@ -27,8 +27,8 @@
     <input type="submit" value="ok"></center></form><%}%>
 	  <h1 align="center">MOCK-EXAM</h1>
 </div>
-<h2 align="center"><u>INSTRUCTIONS</u></h2>
 <div>
+<h2 align="center"><u>INSTRUCTIONS</u></h2>
 <h4>1.Please read and understand the Test instructions so that you will be able to easily navigate through the Test</h4>
 <h4>2. Once you click on the 'Start exam ' button the actual test time will begin.</h4>
 <h4>3. Only one Question will be displayed on the computer screen at a time. To move to the next question,click on "Next"button.</h4>

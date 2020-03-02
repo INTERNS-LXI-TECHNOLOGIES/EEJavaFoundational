@@ -75,12 +75,12 @@ public class Question
 		return answer;
 	}
 
-	public void setAnswer2(String answer2)
-	{
-		this.answer2=answer2;
-	}
-	public String getAnswer2()
-	{
-		return answer2;
-	}
+	// public void setAnswer2(String answer2)
+	// {
+	// 	this.answer2=answer2;
+	// }
+	// public String getAnswer2()
+	// {
+	// 	return answer2;
+	// }
 }

@@ -10,21 +10,26 @@ public class ResultServlet extends HttpServlet
 {
     int mar=0;
     int k=0;
-	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
-	{
-
-        String[] option = request.getParameterValues("option");
-		SqlRepository repository=new SqlRepository();
-		// String option=request.getParameter("option");
+    public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
+    {
+        SqlRepository repository=new SqlRepository();
+        String option=request.getParameter("option");
         String i=request.getParameter("i");
-        
-		List<Question> questionList=repository.getAllQuestion();
+        System.out.println(option);
+        List<Question> questionList=repository.getAllQuestion();
         HttpSession session=request.getSession();
-        for(String o:option)
+        for(int j=0;j<questionList.size();j++)
         {
-            System.out.println(o);
+            if((questionList.get(j).getQno()).equals(i))
+            {
+                k=j;
+            } 
+        }
+        if((questionList.get(k).getAnswer()).equals(option))
+        {
+           mar++;
         }
         session.setAttribute("mark",mar);
         response.sendRedirect("admin");
-	}
+    }
 }

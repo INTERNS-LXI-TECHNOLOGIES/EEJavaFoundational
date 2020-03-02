@@ -37,7 +37,7 @@
 		<br><input type="text" name="option3" value="<%=qn.getOption3()%>"><br>
 		<br><input type="text" name="option4" value="<%=qn.getOption4()%>"><br>
 		<br><input type="text" name="answer" value="<%=qn.getAnswer()%>"><br>
-    <br><input type="text" name="answer2" value="<%=qn.getAnswer2()%>"><br>
+    <!-- <br><input type="text" name="answer2" value="<%=qn.getAnswer2()%>"><br> -->
 		<br><a href="edit"><input type="submit" value=Save></a>
 	</form>
 	<a href="admin"><input type="submit" value=Cancel></a></div></td>
