@@ -35,8 +35,7 @@
       <td><button formaction ="DeleteServlet" name="Delete" value =<%out.println(models.get(i).getId());%>DELETE</button></h2></td>
     </tr>
     <%
-   // out.println("this id"+models.get(i).getId());
-    }
+     }
     %>
   </table><br>
   <button formaction="Admin.jsp" class="button">BACK</button> 

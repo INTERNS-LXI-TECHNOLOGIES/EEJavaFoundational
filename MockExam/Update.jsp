@@ -1,11 +1,11 @@
- <%@page import="com.lxisoft.Model.ExamModel"%>
+<%@page import="com.lxisoft.Model.ExamModel"%>
 <%@page import="com.lxisoft.Repository.SqlRepository"%>
 <%@page import="java.util.ArrayList"%>
 <html>
 <%
-	ArrayList<ExamModel> models = new ArrayList<ExamModel>();
-  	SqlRepository sqlrepo = new SqlRepository();
-  	models = sqlrepo.readFromDatabase(models);
+	ArrayList<ExamModel> models=new ArrayList<ExamModel>();
+  	SqlRepository sqlrepo=new SqlRepository();
+  	models=sqlrepo.readFromDatabase(models);
 %>
 	<body>
 	<div>
@@ -34,8 +34,7 @@
       <td><h2><%out.println(models.get(i).getOpt3());%></h2></td>
       <td><h2><%out.println(models.get(i).getOpt4());%></h2></td>
       <td><h2><%out.println(models.get(i).getAnswer());%></h2></td>
-      <td><button name ="Update" formaction ="Updatequestion.jsp" value=<%out.println(i);%>>UPDATE
-      </button></td>
+      <td><button name ="Update" formaction ="Updatequestion.jsp" value=<%out.println(i);%>>UPDATE</button></td>
   </tr>
   <%
 	}
