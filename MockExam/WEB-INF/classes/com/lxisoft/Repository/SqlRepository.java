@@ -51,7 +51,6 @@ public class SqlRepository
 				models.add(new ExamModel());
 				for(int i=0;i<models.size();i++)
 				{
-
 					if((models.get(i)).getId()==0)
 					{
 						models.get(i).setId(rs.getInt(1));
@@ -96,7 +95,6 @@ public class SqlRepository
 		try
 		{
 			dataBaseConnectionEstablish();
-			int id=models.getId();
 			String qry="update mockexam set question=?,Option1=?,Option2=?,Option3=?,Option4=?,Answer=? where id=?";
 			ps=con.prepareStatement(qry);
 			ps.setString(1,models.getQuestion());
@@ -112,13 +110,13 @@ public class SqlRepository
 		{
 			System.out.println("eeeeeeeeeee"+e);
 		}
-	}
-	
+	}	
 	public void deleteQuestion(int id)
 	{
 		try
 		{
-			String qry = "delete from mockexam where id ="+id;
+			this.dataBaseConnectionEstablish();
+			String qry = "delete from mockexam where Id ="+id;
 			ps = con.prepareStatement(qry);
 			ps.execute();
 		}

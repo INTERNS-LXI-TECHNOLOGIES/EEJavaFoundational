@@ -10,10 +10,9 @@
     <body>
     <div>
     <form>
-      <h1>DELETE</h1>
+     <center> <h1>DELETE</h1></center>
       <table style="width:70%" align = "center">
     <tr>
-      <th>QuestionNo</th>
       <th>Question</th>
       <th>Option1</th>
       <th>Option2</th>
@@ -23,20 +22,20 @@
       <th>Delete</th>
     </tr>
     <%
-    for(int i =0;i<models.size();i++)
+    for(int i=0;i<models.size();i++)
     {
       %>
     <tr align="center">
-      <td><%out.println(i+1);%>
-      <td><%out.println(models.get(i).getQuestion());%></td>
+     <td><h2> <%out.println(models.get(i).getQuestion());%></td>
       <td><%out.println(models.get(i).getOpt1());%></td>
       <td><%out.println(models.get(i).getOpt2());%></td>
-      <td><%out.println(models.get(i).getOpt3());%> </td>
-      <td><%out.println(models.get(i).getOpt4());%> </td>
+      <td><%out.println(models.get(i).getOpt3());%></td>
+      <td><%out.println(models.get(i).getOpt4());%></td>
        <td><%out.println(models.get(i).getAnswer());%></td>
-      <td><button formaction ="DeleteServlet" value =<%out.println(models.get(i).getId());%>DELETE</button></td>
+      <td><button formaction ="DeleteServlet" name="Delete" value =<%out.println(models.get(i).getId());%>DELETE</button></h2></td>
     </tr>
     <%
+   // out.println("this id"+models.get(i).getId());
     }
     %>
   </table><br>

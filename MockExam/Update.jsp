@@ -5,36 +5,37 @@
 <%
 	ArrayList<ExamModel> models = new ArrayList<ExamModel>();
   	SqlRepository sqlrepo = new SqlRepository();
-  models = sqlrepo.readFromDatabase(models);
+  	models = sqlrepo.readFromDatabase(models);
 %>
 	<body>
 	<div>
 	<form>
-		<h1>UPDATE</h1>
-		<table style="width:70%" align = "center">
+		<center><h1>UPDATE</h1></center>
+		<table style="width:70%" align ="center">
   <tr>
-  	<th>QuestionNo</th>
-    <th>Question</th>
-    <th>Option1</th>
-    <th>Option2</th>
-    <th>Option3</th>
-    <th>Option4</th>
-    <th>Answer</th>
-    <th>Update</th>
+  	<!-- <th><h2>Qno</h2></th> -->
+    <th><h2>Question</h2></th> 
+    <th><h2>Option 1</h2></th>
+    <th><h2>Option 2</h2></th>
+    <th><h2>Option 3</h2></th>
+    <th><h2>Option 4</h2></th>
+    <th><h2>Answer</h2></th>
+    <th><h2>Update</h2></th>
   </tr>
   <%
-  for(int i =0;i<models.size();i++)
+  for(int i=0;i<models.size();i++)
   {
   	%>
   <tr align="center">
-  	<td><h3><%out.println(i+1);%></h3></td>
-  	<td><h3><%out.println(models.get(i).getQuestion());%></h3></td>
-    <td><h3><%out.println(models.get(i).getOpt1());%></h3></td>
-    <td><h3><%out.println(models.get(i).getOpt2());%></h3></td>
-    <td><h3><%out.println(models.get(i).getOpt3());%> </h3></td>
-    <td><h3><%out.println(models.get(i).getOpt4());%> </h3></td>
-    <td><h3><%out.println(models.get(i).getAnswer());%></h3></td>
-    <td><button name ="Update" formaction ="Updatequestion.jsp" value =<%out.println(i);%>UPDATE</button></td>
+  	<!--   <td><h2><%out.println(models.get(i).getId());%></h2></td> -->
+      <td><h2><%out.println(models.get(i).getQuestion());%></h2></td>
+      <td><h2><%out.println(models.get(i).getOpt1());%></h2></td>
+      <td><h2><%out.println(models.get(i).getOpt2());%></h2></td>
+      <td><h2><%out.println(models.get(i).getOpt3());%></h2></td>
+      <td><h2><%out.println(models.get(i).getOpt4());%></h2></td>
+      <td><h2><%out.println(models.get(i).getAnswer());%></h2></td>
+      <td><button name ="Update" formaction ="Updatequestion.jsp" value=<%out.println(i);%>>UPDATE
+      </button></td>
   </tr>
   <%
 	}
