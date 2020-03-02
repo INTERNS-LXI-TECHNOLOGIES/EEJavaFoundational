@@ -14,9 +14,8 @@ public class DeleteServlet extends HttpServlet
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
   {	 
   	  PrintWriter out = response.getWriter();
-       String count = request.getAttribute("count").toString();
+       String count = request.getParameter("delete");
        sql.delete(count);
-       out.println("haiiii");
-      // response.sendRedirect("delete2.jsp");
+       response.sendRedirect("delete2.jsp");
 }
 }

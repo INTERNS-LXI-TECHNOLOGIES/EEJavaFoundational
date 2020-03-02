@@ -38,6 +38,10 @@ input[type=text] {
   border: 2px solid red;
   border-radius: 4px;
 }
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
 </style>
 <div class="container">
 <div class="center">
@@ -46,6 +50,7 @@ input[type=text] {
   <form>
 <font size="6" color="midnightblue"><i><b>Welcome to Update Page</b></i></font><br><br><br>
 <% ArrayList<Model> model=(ArrayList<Model>)session.getAttribute("disp");%>
+  <form>
   <table>
      <tr>
     <th><h2>slno</h2></th>
@@ -54,8 +59,8 @@ input[type=text] {
     <th><h2>Option 2</h2></th>
     <th><h2>Option 3</h2></th>
     <th><h2>Option 4</h2></th>
+    <th><h2>UPDATE</h2></th>
   </tr>
-    <form action=""></form>
     <%for(int i=0;i<model.size();i++)
     {%> <tr>
       <td><h2><%out.println(model.get(i).getSlno());%></h2></td>
@@ -64,8 +69,7 @@ input[type=text] {
       <td><h2><%out.println(model.get(i).getOpt2());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt3());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt4());%></h2></td>
-      <% request.setAttribute("count",i)%>
-      <td><input type="submit" class="button_css" name="delete" value="update"></td>
+      <td><button formaction="update2.jsp" class="button_css" name="update" value="<%i%>">update</td>
        </tr>
 
     <br>

@@ -42,10 +42,9 @@ input[type=text] {
 <div class="container">
 <div class="center">
 <p>
-  
-  <form>
 <font size="6" color="midnightblue"><i><b>Welcome to Delete Page</b></i></font><br><br><br>
 <% ArrayList<Model> model=(ArrayList<Model>)session.getAttribute("disp");%>
+ <form>
   <table>
      <tr>
     <th><h2>slno</h2></th>
@@ -54,24 +53,23 @@ input[type=text] {
     <th><h2>Option 2</h2></th>
     <th><h2>Option 3</h2></th>
     <th><h2>Option 4</h2></th>
-  </tr>
-  <form action="delete" method="get">
+  </tr> 
     <%for(int i=0;i<model.size();i++)
-    {%> <tr>
+    {%>
+     <tr> 
       <td><h2><%out.println(model.get(i).getSlno());%></h2></td>
       <td><h2><%out.println(model.get(i).getQn());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt1());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt2());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt3());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt4());%></h2></td>
-      <%request.setAttribute("count",i);%>
-      <td><input type="submit" class="button_css" name="delete" value="delete"></td>
-       </tr>
-       </form>
+<td><button formaction="delete" class="button_css" name="delete" value="<%out.println(model.get(i).getSlno());%>">delete</button></td>
+       <%}%>
+     </tr>
     <br>
-   <% }
-    %>
   </table>
+</form>
+<form>
 <button formaction="AdminMenu.jsp" class="button_css" name="done" >DONE</button> 
 </form>
 </div>

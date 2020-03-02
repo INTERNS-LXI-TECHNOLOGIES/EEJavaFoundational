@@ -1,3 +1,5 @@
+<%@ page import="com.lxisoft.model.Model"%>
+<%@ page import="java.util.ArrayList"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -40,9 +42,11 @@ input[type=text] {
 <div class="container">
 <div class="center">
 <p>
-  
+ <% ArrayList<Model> model=(ArrayList<Model>)session.getAttribute("disp");
+    int obj=request.getParameter("")
+  %> 
   <form action="add" method="get">
-<font size="6" color="midnightblue"><i><b>Welcome to Add Page</b></i></font><br><br><br>
+<font size="6" color="midnightblue"><i><b>Welcome to update Page</b></i></font><br><br><br>
 <font size="5" color="midnightblue">Question : </font> <input type="text" name="question" placeholder="Question"><br>
 <font size="5" color="midnightblue">Option 1 : </font> <input type="text" name="option1" placeholder="option1"><br>
 <font size="5" color="midnightblue">Option 2 : </font> <input type="text" name="option2" placeholder="option2"><br>
