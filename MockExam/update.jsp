@@ -1,5 +1,6 @@
 <%@ page import="com.lxisoft.model.Model"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="com.lxisoft.sqlRepository.SqlRepository"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,16 +22,42 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.button_css
-{
-  background-color: midnightblue;
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
   color: white;
-  width: 150px;
-  height: 40px;
-  border-radius: 12px;
-   display: inline-block;
-  font-size: 16px;
+  padding: 16px 32px;
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 12px;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
 }
 input[type=text] {
   width: 300%;
@@ -49,7 +76,10 @@ table, th, td {
   
   <form>
 <font size="6" color="midnightblue"><i><b>Welcome to Update Page</b></i></font><br><br><br>
-<% ArrayList<Model> model=(ArrayList<Model>)session.getAttribute("disp");%>
+<% ArrayList<Model> model=new ArrayList<Model>();
+SqlRepository sql=new SqlRepository();
+model=sql.selectFrom(model);
+  %>
   <form>
   <table>
      <tr>
@@ -63,13 +93,13 @@ table, th, td {
   </tr>
     <%for(int i=0;i<model.size();i++)
     {%> <tr>
-      <td><h2><%out.println(model.get(i).getSlno());%></h2></td>
+      <td><h2><%out.println(i+1);%></h2></td>
       <td><h2><%out.println(model.get(i).getQn());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt1());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt2());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt3());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt4());%></h2></td>
-      <td><button formaction="update2.jsp" class="button_css" name="update" value=<%out.println(i);%>>update</td>
+      <td><button formaction="update2.jsp" class="button button1" name="update" value=<%out.println(i);%>>update</td>
        </tr>
 
     <br>
@@ -77,7 +107,7 @@ table, th, td {
     %>
    
   </table>
-<button formaction="AdminMenu.jsp" class="button_css" name="done" >DONE</button> 
+<button formaction="AdminMenu.jsp" class="button button2" name="done" >DONE</button> 
 </form>
 </div>
 </div>

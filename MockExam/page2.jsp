@@ -21,12 +21,30 @@
   -ms-transform: translate(-30%, -30%);
   transform: translate(-20%, -20%);
 }
-.button_css
-{
-	background-color: midnightblue;
-	color: white;
-	width: 150px;
-	height: 40px;
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 
 </style>
@@ -55,7 +73,7 @@
           <h1><input type="radio" name="opt" value="4"/>
           <label for="4"><font color="midnightblue"><% out.println(model.get(qcount).getOpt4());%></label></font></h1>
             <input type="hidden" name="questionNo" value= <%out.println(qcount);%>/>
-            <input type="submit" class="button_css"   value="NEXT" />
+            <input type="submit" class="button button1"   value="NEXT" />
           </form>
 <%    
          } else {

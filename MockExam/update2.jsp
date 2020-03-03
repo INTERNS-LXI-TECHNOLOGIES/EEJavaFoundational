@@ -21,16 +21,30 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.button_css
-{
-	background-color: midnightblue;
-	color: white;
-	width: 150px;
-	height: 40px;
-  border-radius: 12px;
-   display: inline-block;
-  font-size: 16px;
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 input[type=text] {
   width: 300%;
@@ -53,8 +67,8 @@ input[type=text] {
 <font size="5" color="midnightblue">Option 3 : </font> <input type="text" name="Option3" placeholder="<%out.println(model.get(obj).getOpt3());%>"><br>
 <font size="5" color="midnightblue">Option 4 : </font> <input type="text" name="Option4" placeholder="<%out.println(model.get(obj).getOpt4());%>"><br>
 <font size="5" color="midnightblue">Answer no : </font> <input type="text" name="Ans" placeholder="<%out.println(model.get(obj).getAns());%>"><br><br>
- <button class="button_css" value=<%out.println(obj);%> name="update">
- <button  formaction="AdminMenu.jsp" class="button_css" name="back">BACK</button>
+ <button class="button_css"  name="update" value=<%out.println(obj);%>>UPDATE</button>
+ <button  formaction="AdminMenu.jsp" class="button button1" name="back">BACK</button>
 </form>
 </div>
 </div>

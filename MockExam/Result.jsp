@@ -21,10 +21,14 @@
 }
 .button_css
 {
-	background-color: midnightblue;
-	color: white;
-	width: 150px;
-	height: 40px;
+	background-color: #3cb371;
+  color: white;
+  width: 150px;
+  height: 40px;
+  border-radius: 12px;
+   display: inline-block;
+  font-size: 16px;
+  text-decoration: none;
 }
 
 </style>

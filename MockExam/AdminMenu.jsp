@@ -19,16 +19,75 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.button_css
-{
-	background-color: #3cb371;
-	color: white;
-	width: 150px;
-	height: 40px;
-  border-radius: 12px;
-   display: inline-block;
-  font-size: 16px;
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 12px;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+.button3 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #f44336;
+  border-radius: 12px;
+}
+
+.button3:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+.button4 {
+  background-color: white;
+  color: black;
+  border: 2px solid #e7e7e7;
+  border-radius: 12px;
+}
+
+.button4:hover {background-color: #e7e7e7;}
+
+.button5 {
+  background-color: white;
+  color: black;
+  border: 2px solid #555555;
+  border-radius: 12px;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
 }
 </style>
 <div class="container">
@@ -42,11 +101,11 @@
   <br>
   <br>
   <form>
-  <input type="submit" formaction="Add.jsp" class="button_css" name="ADD" value="ADD" >
-  <input type="submit" formaction="delete.jsp" class="button_css" name="DELETE" value="DELETE" >
-  <input type="submit" formaction="update.jsp" class="button_css" name="UPDATE" value="UPDATE" >
-  <input type="submit" formaction="display" class="button_css" name="DISPLAY" value="DISPLAY">
-  <input type="submit" formaction="Login.jsp" class="button_css" name="BACK" value="BACK" >
+  <input type="submit" formaction="Add.jsp" class="button button1" name="ADD" value="ADD" >
+  <input type="submit" formaction="delete.jsp" class="button button2" name="DELETE" value="DELETE" >
+  <input type="submit" formaction="update.jsp" class="button button3" name="UPDATE" value="UPDATE" >
+  <input type="submit" formaction="display" class="button button4" name="DISPLAY" value="DISPLAY">
+  <input type="submit" formaction="Login.jsp" class="button button5" name="BACK" value="BACK" >
 </form>
 </center>
 </p>

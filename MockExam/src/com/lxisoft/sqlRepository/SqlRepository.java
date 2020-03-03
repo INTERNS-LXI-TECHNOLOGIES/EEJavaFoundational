@@ -109,4 +109,26 @@ public void delete(String count)
 		e.printStackTrace();
 	}
 }
+public void updateName(Model model)
+{
+	try
+	{
+		databaseConnectionEstablish();
+		String qry;
+		qry="update exam set qn=?,opt1=?,opt2=?,opt3=?,opt4=?,ans=? where slno=?";
+		ps=con.prepareStatement(qry);
+		ps.setString(1,model.getQn());
+		ps.setString(2,model.getOpt1());
+		ps.setString(3,model.getOpt2());
+		ps.setString(4,model.getOpt3());
+		ps.setString(5,model.getOpt4());
+		ps.setInt(6,model.getAns());
+		ps.setInt(7,model.getSlno());
+		ps.execute();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+}
 }

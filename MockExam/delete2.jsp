@@ -19,16 +19,30 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.button_css
-{
-	background-color: midnightblue;
-	color: white;
-	width: 150px;
-	height: 40px;
-  border-radius: 12px;
-   display: inline-block;
-  font-size: 16px;
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
 }
 input[type=text] {
   width: 300%;
@@ -42,7 +56,7 @@ input[type=text] {
 <p>
   <form>
 <h1><b><i>Question Successfully Deleted !!!</i></b></h1>
-<button formaction="AdminMenu.jsp" class="button_css" name="done" >DONE</button>
+<button formaction="AdminMenu.jsp" class="button button1" name="done" >DONE</button>
 </form>
 </div>
 </div>

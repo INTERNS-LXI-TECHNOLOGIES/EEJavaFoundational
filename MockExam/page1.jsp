@@ -19,12 +19,42 @@
   -ms-transform: translate(-30%, -30%);
   transform: translate(-20%, -20%);
 }
-.button_css
-{
-	background-color: midnightblue;
-	color: white;
-	width: 150px;
-	height: 40px;
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 12px;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
 }
 
 </style>
@@ -40,8 +70,8 @@
  <h2><font color="MidnightBlue"><li>any malpractice will lead to debar</li></font></h2>
 </ol>
 <form method="get" action="check">
-  <input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="BACK"/>
-  <input type="submit" class="button_css"  value="NEXT" />
+  <input type="button" class="button button1" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="BACK"/>
+  <input type="submit" class="button button2"  value="NEXT" />
 </form>
      <%
       // ArrayList<Model> model=new ArrayList<Model>();

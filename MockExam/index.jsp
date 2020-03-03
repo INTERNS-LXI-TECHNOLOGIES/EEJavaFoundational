@@ -19,16 +19,42 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.button_css
-{
-	background-color: midnightblue;
-	color: white;
-	width: 150px;
-	height: 40px;
-  border-radius: 12px;
-   display: inline-block;
-  font-size: 16px;
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 12px;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
 }
 </style>
 <div class="container">
@@ -37,8 +63,8 @@
 <center>
   <h1><font color="midnightblue" size="7">MOCK EXAM</font></h1><br><br>
 
-  <input type="submit" class="button_css" name="USER" value="USER" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';">
-  <input type="submit" class="button_css" name="ADMIN" value="ADMIN" onclick="window.location.href = 'http://localhost:8080/mockExam/Login.jsp';">  
+  <input type="submit" class="button button1" name="USER" value="USER" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';">
+  <input type="submit" class="button button2" name="ADMIN" value="ADMIN" onclick="window.location.href = 'http://localhost:8080/mockExam/Login.jsp';">  
 </center>
 
 </p>

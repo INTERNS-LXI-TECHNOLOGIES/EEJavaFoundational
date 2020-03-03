@@ -21,22 +21,52 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
-.button_css
-{
-	background-color: midnightblue;
-	color: white;
-	width: 150px;
-	height: 40px;
-  border-radius: 12px;
-   display: inline-block;
-  font-size: 16px;
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
   text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #4CAF50;
+  border-radius: 12px;
+}
+
+.button1:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.button2 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #008CBA;
+  border-radius: 12px;
+}
+
+.button2:hover {
+  background-color: #008CBA;
+  color: white;
 }
 input[type=text] {
   width: 300%;
   padding: 12px 20px;
   border: 2px solid red;
   border-radius: 4px;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
 }
 </style>
 <div class="container">
@@ -57,7 +87,7 @@ input[type=text] {
   </tr>
     <%for(int i=0;i<model.size();i++)
     {%> <tr>
-      <td><h2><%out.println(model.get(i).getSlno());%></h2></td>
+      <td><h2><%out.println(i+1);%></h2></td>
       <td><h2><%out.println(model.get(i).getQn());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt1());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt2());%></h2></td>
@@ -70,7 +100,7 @@ input[type=text] {
     %>
    
   </table>
-<button formaction="AdminMenu.jsp" class="button_css" name="done" >DONE</button> 
+<button formaction="AdminMenu.jsp" class="button button1" name="done" >DONE</button> 
 </form>
 </div>
 </div>
