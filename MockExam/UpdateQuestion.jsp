@@ -17,6 +17,7 @@
 		
 		<font size="9">UPDATE QUESTION</font><br>
   <h1><label for="question">Question : </label>
+    <input type = "hidden" name="index" value = <%out.println(i);%>>
     <input type = "hidden" name="Id" value = <%out.println(questions.get(i).getId());%>>
   <input type="text" id="question" name="question" placeholder="<%out.println(questions.get(i).getQuestion().getQuestion());%>"><br>
   <label for="answer">Answer : </label>

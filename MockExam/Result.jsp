@@ -5,13 +5,33 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
 <div>
-	<Head><h1> Exam Result </h1></Head>
+	<font size="9">EXAM RESULT</font><br>
 <form>
 	<%
 
 	 String mark = request.getAttribute("totalMark").toString();
-	 int totalMark = Integer.parseInt(mark);%>
-	 <h2><%out.println("Your Mark Is : "+totalMark);%></h2>
+	 int totalMark = Integer.parseInt(mark);
+	 %>
+	 <h1><%out.println("Your Mark Is : "+totalMark);%></h1>
+	 <%
+	 
+	 if(totalMark >=3)
+	 {
+	 	%>
+	 	<h1><%out.println("Congratulations....");%></h1>
+	 	<h1><%out.println("Exam Passed");%></h1>
+	 <%
+	 }
+	 else
+	 {
+	 	%>
+
+	 	<h1><%out.println("!! Sorry !!");%></h1><br>
+	 	<h1><%out.println("Exam Failed");%></h1>
+	 <%
+	 }
+	 %>
+	 <br>
 	 <button type="submit" formaction="index.jsp" class="button">START EXAM AGAIN</button>
 </form>
 	</div>
