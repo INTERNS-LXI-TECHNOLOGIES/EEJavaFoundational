@@ -1,4 +1,4 @@
-package com.lxisoft.exam;
+package com.lxisoft.control;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -8,7 +8,7 @@ import com.lxisoft.sqlrepository.*;
 import com.lxisoft.model.*;
 public class Exam extends HttpServlet
 {
-    int num=0;
+    int num=1;
 	
 	Sqlrepository sqlrep=new Sqlrepository();
 	public void doGet(HttpServletRequest req,HttpServletResponse res)  

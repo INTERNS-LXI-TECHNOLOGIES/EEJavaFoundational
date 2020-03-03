@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<h1 align="center"><font color="white">Read instruction below</font></h1>
+	<h1 align="center"><font color="white">Read instruction below..</font></h1>
 	
 </head>
 <body background="image/earth.jpg">

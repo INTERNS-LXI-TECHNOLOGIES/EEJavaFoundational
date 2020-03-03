@@ -53,8 +53,23 @@ public class Sqlrepository
 		}
 		return questions;
 	}
-	public void addquestion()
+	public void addquestion(ArrayList<String> datas)
 	{
-		
+		try{
+			String query="insert into mockexam(question,answers,option1,option2,option3)values(?,?,?,?,?)";
+				ps=con.prepareStatement(query);
+			 
+			 		ps.setString(1,datas.get(0));
+			 		ps.setString(2,datas.get(1));
+				 	ps.setString(3,datas.get(2));
+				 	ps.setString(4,datas.get(3));
+				 	ps.setString(5,datas.get(4));
+				 	ps.execute();
+
+		}catch(Exception e)
+			{
+				e.printStackTrace();
+				System.out.println(e);
+			} 
 	}
 }

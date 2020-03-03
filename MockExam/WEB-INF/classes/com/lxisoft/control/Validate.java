@@ -1,4 +1,4 @@
-package com.lxisoft.validate;
+package com.lxisoft.control;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
