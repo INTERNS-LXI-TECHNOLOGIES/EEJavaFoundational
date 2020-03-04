@@ -30,7 +30,7 @@
   <input type="text" id="lname" name="option3" placeholder = "<%out.println(questions.get(i).getOption3().getOption());%>"><br>
   <label for="option4">Option4 : </label>
   <input type="text" id="lname" name="option4" placeholder = "<%out.println(questions.get(i).getOption4().getOption());%>"></h1><br>
-  <button formaction="Admin.jsp" class="button">BACK</button> <button formaction="Update" class="button">UPDATE
+  <button formaction="Update.jsp" class="button">BACK</button> <button formaction="Update" class="button">UPDATE
   </button>
 </div>
 </form>

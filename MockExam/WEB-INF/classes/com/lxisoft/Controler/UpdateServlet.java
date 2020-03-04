@@ -11,6 +11,7 @@ public class UpdateServlet  extends HttpServlet
 	private ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
+		questions.clear();
 		questions = sqlReppo.readFromDatabase(questions);
 		MockExamModel model = new MockExamModel();
 		PrintWriter out = response.getWriter();

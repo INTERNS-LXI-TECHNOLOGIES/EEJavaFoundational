@@ -37,7 +37,9 @@ public class SqlRepository
 	{
 		try
 		{
-
+			String qry = "create table if not exists MockExam(Id int not null unique Auto_Increment,Question varchar(100),Answer varchar(100),Option1 varchar(100),Option2 varchar(100),Option3 varchar(100),Option4 varchar(100))";
+			ps = con.prepareStatement(qry);
+			ps.execute();
 		}
 		catch(Exception e)
 		{
@@ -79,7 +81,7 @@ public class SqlRepository
 	{
 		try
 		{
-			//this.createTable();
+			this.createTable();
 			String qry = "insert into MockExam(Question,Answer,Option1,Option2,Option3,Option4)values(?,?,?,?,?,?)";
 			ps = con.prepareStatement(qry);
 			ps.setString(1,model.getQuestion().getQuestion());

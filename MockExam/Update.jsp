@@ -3,7 +3,6 @@
 <%@page import="java.util.ArrayList"%>
 <html>
 <%
-//ArrayList<MockExamModel> questions = (ArrayList<MockExamModel>)session.getAttribute("questions");
  ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
   SqlRepository sqlReppo = SqlRepository.getInstance();
   questions = sqlReppo.readFromDatabase(questions);
