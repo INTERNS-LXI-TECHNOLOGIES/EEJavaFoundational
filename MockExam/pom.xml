@@ -50,7 +50,7 @@
       <url>http://localhost:8080/manager/text</url>
       <username>admin</username>
       <password>password</password>
-      <path>/ContactApp</path>
+      <path>/MockExam </path>
       </configuration>
     </plugin>
 </plugins>
