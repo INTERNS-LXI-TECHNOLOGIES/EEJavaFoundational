@@ -37,22 +37,21 @@
 
   </dependencies>
   <build>
-  
+  <finalName>MockExam</finalName>
+
   <plugins>
-  <plugin>
-                <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.1</version>
-                <configuration>
-                    <url>http://localhost:8080/manager/text</url>
-                    <server>my-tomcat</server>
-                    <path>/myapp</path>
-                </configuration>
-            </plugin>
+ <plugin>
+    <groupId>org.apache.tomcat.maven</groupId>
+    <artifactId>tomcat7-maven-plugin</artifactId>
+    <version>2.2</version>
+    <configuration>
+      <url>http://localhost:8080/manager/text</url>1
+      <server>TomcatServer</server>
+      <path>/MockExam</path>
+    </configuration>
+  </plugin>
 </plugins>
-
-
   
-    <finalName>MockExam</finalName>
+    
   </build>
 </project>
