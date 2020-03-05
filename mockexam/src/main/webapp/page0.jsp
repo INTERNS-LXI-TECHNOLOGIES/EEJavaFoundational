@@ -60,15 +60,14 @@
 <div class="container">
 <div class="center">
 <p>
+<form>
 <center>
-  <h1><font color="midnightblue" size="7">MOCK EXAM</font></h1><br><br>
-
-  <input type="submit" class="button button1" name="USER" value="USER" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';">
-  <input type="submit" class="button button2" name="ADMIN" value="ADMIN" onclick="window.location.href = 'http://localhost:8080/mockExam/Login.jsp';">  
+Name<input type="text" name="username">
 </center>
-
+  <input type="button" class="button button1" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';" value="Back"/>
+   <input type="button" class="button button2" onclick="window.location.href = 'http://localhost:8080/mockExam/page1.jsp';"  value="NEXT" />
+</form>
 </p>
-</div>
 </div>
 </div>
 

@@ -1,0 +1,8 @@
+com\lxisoft\control\Serverlet.class
+com\lxisoft\control\FinalServlet.class
+com\lxisoft\control\AddServlet.class
+com\lxisoft\sqlRepository\SqlRepository.class
+com\lxisoft\model\Model.class
+com\lxisoft\control\DisplayServlet.class
+com\lxisoft\control\DeleteServlet.class
+com\lxisoft\control\UpdateServlet.class
