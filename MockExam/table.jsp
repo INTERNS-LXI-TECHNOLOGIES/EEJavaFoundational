@@ -17,6 +17,8 @@
     <th>Option 1</th>
     <th>Option 2</th>
     <th>Option 3</th>
+    <th>Edit</th>
+    <th>Delete</th>
   </tr>
 <% try{
 
@@ -28,6 +30,9 @@ for (int i=0;i<datas.size();i++){%>
 <TD><%=(datas.get(i).getOption1())%></TD>
 <TD><%=(datas.get(i).getOption2())%></TD>
 <TD><%=(datas.get(i).getOption3())%></TD>
+<form>
+<TD><button formaction="update.jsp" name="Edit" value=<%out.println(i);%>>Edit</button></TD>
+</form>
 </TR>
 <% } 
 } catch (Exception e) {

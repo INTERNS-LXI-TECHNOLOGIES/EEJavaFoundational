@@ -17,6 +17,7 @@
     <th>Option 1</th>
     <th>Option 2</th>
     <th>Option 3</th>
+
   </tr>
 <% try{
 

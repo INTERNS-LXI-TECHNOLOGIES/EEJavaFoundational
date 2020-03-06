@@ -8,7 +8,7 @@ import com.lxisoft.sqlrepository.*;
 import com.lxisoft.model.*;
 public class Exam extends HttpServlet
 {
-    int num=1;
+    int num=0;
 	ArrayList<Model> questions= new ArrayList<Model>();
 	Sqlrepository sqlrep=new Sqlrepository();
 	public void doGet(HttpServletRequest req,HttpServletResponse res)  

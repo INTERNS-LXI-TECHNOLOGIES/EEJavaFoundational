@@ -32,7 +32,7 @@ public class Add extends HttpServlet
 
         sqlrep.addQuestion(model);
         out.println("Question : "+model.getQuestion());
-        //res.sendRedirect("add.jsp");
+        res.sendRedirect("add.jsp");
     }
    
    

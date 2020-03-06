@@ -6,7 +6,7 @@ import java.lang.Math;
 import java.util.*;
 import com.lxisoft.sqlrepository.*;
 import com.lxisoft.model.*;
-public class Add extends HttpServlet
+public class Update extends HttpServlet
 {    
     Sqlrepository sqlrep=new Sqlrepository();
     public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException  
@@ -14,25 +14,26 @@ public class Add extends HttpServlet
         res.setContentType("text/html");
         PrintWriter out=res.getWriter();
       
-        Model model=new Model();
+         Model model=new Model();
         
        //out.println(req.getParameter("question"));
+       int id=Integer.parseInt(req.getParameter("Id"));
         HttpSession session=req.getSession(); 
-    
-        String question=req.getParameter("question");
+        model.setId(id);
+        String question=req.getParameter("question1");
         model.setQuestion(question);
-        String answer=req.getParameter("Answer");
+        String answer=req.getParameter("Answer1");
         model.setAnswer(answer);
-        String option1=req.getParameter("option1");
+        String option1=req.getParameter("option11");
         model.setOption1(option1);
-        String option2=req.getParameter("option2");
+        String option2=req.getParameter("option21");
         model.setOption2(option2);
-        String option3=req.getParameter("option3");
+        String option3=req.getParameter("option31");
         model.setOption3(option3);
 
-        sqlrep.addQuestion(model);
-        out.println("Question : "+model.getQuestion());
-        //res.sendRedirect("add.jsp");
+        sqlrep.editQuestion(model);
+        req.getRequestDispatcher("display.jsp").forward(req,res);
+        
     }
    
    

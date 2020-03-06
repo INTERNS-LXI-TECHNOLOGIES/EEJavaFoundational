@@ -8,43 +8,31 @@
 <title>MOCK EXAM</title>
 </head>
 <body background="image/earth.jpg">
-<h2><font color="#87CEFA" style="margin-left: 43%">Datas of mock Exam</h2>
-<%ArrayList<Model>datas=(ArrayList<Model>)session.getAttribute("data");%>
-<TABLE cellpadding="15" border="1" style="background-color:  #122f39;">
-    <tr>
-    <th>Question</th>
-    <th>Answer</th> 
-    <th>Option 1</th>
-    <th>Option 2</th>
-    <th>Option 3</th>
-  </tr>
-<% try{
+	<% String edit=request.getParameter("Edit");
+	//out.println("Id : "+edit);%>
+<form>
+<h2><font color="#87CEFA" style="margin-left: 43%">Datas of mock Exam</h2><br><br>
+  <label for="fname" color="white" style="margin-left: 25.2%"> <font color="#87CEFA" >Id</font></label>
+  <input type="text" name="Id" size="60" value=<%out.println(edit);%>><br><br>
+  <label for="fname" color="white" style="margin-left: 21%"> <font color="#87CEFA">Question</font></label>
+  <input type="text" name="question1" size="60"><br><br>
 
-for (int i=0;i<datas.size();i++){%>
+  <label for="fname" color="white" style="margin-left: 21.8%"> <font color="#87CEFA">Answer</font></label>
+  <input type="text" name="Answer1" size="60"><br><br>
 
-<TR>
-<TD><%=(datas.get(i).getQuestion())%></TD>
-<TD><%=(datas.get(i).getAnswer())%></TD>
-<TD><%=(datas.get(i).getOption1())%></TD>
-<TD><%=(datas.get(i).getOption2())%></TD>
-<TD><%=(datas.get(i).getOption3())%></TD>
-</TR>
-<% } 
-} catch (Exception e) {
-%>
+  <label for="fname" color="white" style="margin-left: 21.8%"> <font color="#87CEFA">Option1</font></label>
+  <input type="text" name="option11" size="60"><br><br>
+
+  <label for="fname" color="white" style="margin-left: 21.8%"> <font color="#87CEFA">Option2</font></label>
+  <input type="text" name="option21" size="60"><br><br>
+
+  <label for="fname" color="white" style="margin-left: 21.8%"> <font color="#87CEFA">Option3</font></label>
+  <input type="text" name="option31" size="60"><br><br>
+  <div align ="center">
+
+<button formaction="update" type="submit" style="margin-left: 1%">submit</button></TD>
 </font>
-<font size="+3" color="#87CEFA" style="margin-left:-6%"><b></b>
-<%
-    e.printStackTrace();
-    out.println(e);
-}
-%>
-</TABLE><TABLE>
-<TR>
-<TD><FORM ACTION="admin.jsp" method="get" >
-<button type="submit" style="margin-left: 1%"><-- back</button></TD>
-</TR>
-</TABLE>
-</font>
+</form>
+</div>
 </body>
 </html>

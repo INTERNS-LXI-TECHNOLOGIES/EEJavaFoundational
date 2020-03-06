@@ -75,6 +75,62 @@ public class Sqlrepository
 	}
 	public void updateQuestion(Model model)
 	{
-		
+		try{
+			connection();
+			String query="insert into mockexam(question,answers,option1,option2,option3)values(?,?,?,?,?)";
+				ps=con.prepareStatement(query);
+			 
+			 		ps.setString(1,model.getQuestion());
+			 		ps.setString(2,model.getAnswer());
+				 	ps.setString(3,model.getOption1());
+				 	ps.setString(4,model.getOption2());
+				 	ps.setString(5,model.getOption3());
+				 	ps.execute();
+
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+				System.out.println(e);
+			} 
 	}
+
+	public void editQuestion(Model model)
+	{
+
+		try{
+			connection();
+			//deleteQuestion(model.getId());
+			String query="update mockexam set question=?,answers=?,option1=?,option2=?,option3=? where id=?";
+				ps=con.prepareStatement(query);
+			 		
+			 		ps.setString(1,model.getQuestion());
+			 		ps.setString(2,model.getAnswer());
+				 	ps.setString(3,model.getOption1());
+				 	ps.setString(4,model.getOption2());
+				 	ps.setString(5,model.getOption3());
+				 	ps.setInt(6,model.getId());
+				 	ps.execute();
+
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+				System.out.println(e);
+			} 
+	}
+	public void deleteQuestion(Model s)
+	{
+		try{
+			connection();
+			String query="DELETE FROM mockexam WHERE id=?";
+			ps=con.prepareStatement(query);
+			ps.setInt(1,s.getId());
+			ps.execute();
+			}catch(Exception e)
+			{
+				e.printStackTrace();
+				System.out.println(e);
+			} 
+
+	}
+
 }

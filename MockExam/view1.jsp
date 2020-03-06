@@ -12,10 +12,9 @@
 	
 	model=(ArrayList<Model>)session.getAttribute("array");
 	Integer i=(Integer)session.getAttribute("num");
-	if(i-1<=model.size())
+	if(i<=model.size())
 		
-		{%>
-
+	{%>
 	<form action="go">
 	<h1><font color="#87CEFA"><%=(model.get(i).getQuestion())%></font></h1>
 	<h3><input type="radio" name="option" value="<%=(model.get(i).getAnswer())%>"><font color="#87CEFA"><%=(model.get(i).getAnswer())%></font></h3>
