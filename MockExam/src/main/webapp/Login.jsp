@@ -5,7 +5,7 @@
 </head>
 
 <body>
-    <form method="POST" action='<%= response.encodeURL("j_security_check") %>'>
+    <form method="POST" action="j_security_check">
         <div align="center" class ="inset">
             <h1 style="font-size:50px;"> ADMIN LOGIN </h1>
         <table cellspacing="5">
@@ -20,7 +20,7 @@
             </tr>
 
             <tr>
-                <td align="center"><button type="submit" formaction="Admin.jsp" class ="button">SUBMIT</button></td>
+                <td align="center"><button type="submit" value="user" class ="button">SUBMIT</button></td>
                 <td align="center"><button type="reset" class ="button">RESET</button></td>
                 <td align="center"> <button formaction="index.jsp" class ="button">BACK</button></td>
             </tr>
