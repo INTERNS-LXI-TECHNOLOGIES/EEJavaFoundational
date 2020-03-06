@@ -5,6 +5,13 @@
 </head>
 <body bgcolor="FloralWhite">
 <style>
+    body {
+  background-image: url('full-hd-colourful-download-trees-simple-jpg.jpg');
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%
+}
 .container {
   height: 700px;
   position: relative;

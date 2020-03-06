@@ -7,6 +7,13 @@
 </head>
 <body bgcolor="FloralWhite">
 <style>
+     body {
+  background-image: url('orig_202868.jpg');
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%
+}
 .container {
   height: 700px;
   position: relative;
@@ -76,7 +83,7 @@ table, th, td {
   <form>
 <font size="6" color="midnightblue"><i><b>Welcome to Display Page</b></i></font><br><br><br>
 <% ArrayList<Model> model=(ArrayList<Model>)session.getAttribute("disp");%>
-  <table>
+  <table cellpadding="20">
      <tr>
     <th><h2>slno</h2></th>
     <th><h2>Question</h2></th> 

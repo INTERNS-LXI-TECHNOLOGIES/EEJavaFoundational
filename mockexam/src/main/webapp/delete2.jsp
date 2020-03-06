@@ -5,6 +5,13 @@
 </head>
 <body bgcolor="FloralWhite">
 <style>
+   body {
+  background-image: url('itl.cat_simple-wallpaper_120953.png');
+    background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%
+}
 .container {
   height: 700px;
   position: relative;
