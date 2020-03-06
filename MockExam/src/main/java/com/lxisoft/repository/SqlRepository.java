@@ -81,7 +81,7 @@ public class SqlRepository
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("insert into question(Question,Option1,Option2,Option3,Option4,Answer,Answer2)values(?,?,?,?,?,?)");
+	 		stmt=conn.prepareStatement("insert into question(Question,Option1,Option2,Option3,Option4,Answer)values(?,?,?,?,?,?)");
 	 		stmt.setString(1,q.getQuestion());
 	 		stmt.setString(2,q.getOption1());
 	 		stmt.setString(3,q.getOption2());
