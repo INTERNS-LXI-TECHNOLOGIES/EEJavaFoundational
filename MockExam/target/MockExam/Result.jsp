@@ -1,4 +1,4 @@
-<%@page import="com.lxisoft.Control.*"%>
+ <%@page import="com.lxisoft.Control.*"%>
 <%@page import="com.lxisoft.Model.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
@@ -12,3 +12,7 @@
 out.println(m);%>
 </body>
 </html>
+
+
+	
+	 

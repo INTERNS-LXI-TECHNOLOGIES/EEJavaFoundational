@@ -94,7 +94,6 @@ public class SqlRepository
 	{
 		try
 		{
-			//int id=models.getId();
 			dataBaseConnectionEstablish();
 			String qry="update mockexam set question=?,opt1=?,opt2=?,opt3=?,opt4=?,ans=? where Id=?";
 			ps=con.prepareStatement(qry);
@@ -105,7 +104,6 @@ public class SqlRepository
 	 		ps.setString(5, models.getOpt4());
 	 		ps.setString(6, models.getAnswer());
 	 		ps.setInt(7,models.getId());
-	 		//System.out.println("update mockexam set question="+models.getQuestion()+"Option1"+models.getOpt1()+"Option2="+models.getOpt2()+"Option3="+models.getOpt3()+"Option4="+models.getOpt4()+"Answer="+models.getAnswer()+"where id="+models.getId());
 	 		ps.execute();
 		}
 		catch(SQLException e)

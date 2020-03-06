@@ -52,11 +52,9 @@ public class ResultServlet extends HttpServlet
         }     
         HttpSession session1 = request.getSession(true);
         session1.setAttribute("Mark",totalMark);
-        request.getRequestDispatcher("Questionview.jsp").forward(request,response);
-                 
+        request.getRequestDispatcher("Questionview.jsp").forward(request,response);                 
 
 	}
 }
 
-    
-        
+  
