@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <title> MockExam </title>
 <body bgcolor="OldLace">
@@ -30,9 +31,8 @@
 <b><center><font size="7" color="MediumBlue">Mock Exam </font></center>
 </b>
 <form align = "center" height= "50"%>
-<button formaction="Login.jsp" class="button">ADMIN</button> <button type="submit" formaction="Userlogin.jsp" class="button">USER</button>
-<!-- <input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/MockExam/Admin.jsp';" value="Admin">
-<input type="button" class="button_css" onclick="window.location.href = 'http://localhost:8080/MockExam/Instruction.jsp';" value="User"/> -->
+<button type="submit" formaction="Login.jsp" class="button">ADMIN</button> 
+<button type="submit" formaction="Userlogin.jsp" class="button">USER</button>
 </form>
 </p>
 </div>
@@ -44,12 +44,3 @@
   
 
 
-<div>
-<h1>MOCK EXAM</h1>
-<form align = "center" height= "50"%>
-<button formaction="Login.jsp" class="button">ADMIN</button> <button type="submit" formaction="UserLogin.jsp" class="button">USER</button>
-</form>
-<br>
-</div>
-</body>
-</html>

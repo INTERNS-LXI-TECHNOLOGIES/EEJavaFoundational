@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <%@page import="com.lxisoft.Model.ExamModel"%>
 <%@page import="com.lxisoft.Repository.SqlRepository"%>
 <%@page import="java.util.ArrayList"%>

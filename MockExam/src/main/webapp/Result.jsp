@@ -1,4 +1,5 @@
- <%@page import="com.lxisoft.Control.*"%>
+<!DOCTYPE html>
+<%@page import="com.lxisoft.Control.*"%>
 <%@page import="com.lxisoft.Model.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
