@@ -75,6 +75,7 @@
       <web-resource-collection>
          <web-resource-name>MockExam</web-resource-name>
          <url-pattern>/Admin.jsp</url-pattern>
+         <url-pattern>/Introduction.jsp</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
       </web-resource-collection>
