@@ -73,35 +73,35 @@ public class Sqlrepository
 				System.out.println(e);
 			} 
 	}
-	public void updateQuestion(Model model)
+	/*public void updateQuestion(Model model)
 	{
 		try{
 			connection();
 			String query="insert into mockexam(question,answers,option1,option2,option3)values(?,?,?,?,?)";
 				ps=con.prepareStatement(query);
-			 
+			 		
 			 		ps.setString(1,model.getQuestion());
 			 		ps.setString(2,model.getAnswer());
 				 	ps.setString(3,model.getOption1());
 				 	ps.setString(4,model.getOption2());
 				 	ps.setString(5,model.getOption3());
-				 	ps.execute();
+				 	ps.executeUpdate();
 
 			}catch(Exception e)
 			{
 				e.printStackTrace();
 				System.out.println(e);
 			} 
-	}
+	}*/
 
 	public void editQuestion(Model model)
 	{
 
 		try{
 			connection();
+			System.out.println(model.getQuestion());
 			//deleteQuestion(model.getId());
-			String query="update mockexam set question=?,answers=?,option1=?,option2=?,option3=? where id=?";
-				ps=con.prepareStatement(query);
+				ps=con.prepareStatement("update mockexam set question=?,answers=?,option1=?,option2=?,option3=? where id=?");
 			 		
 			 		ps.setString(1,model.getQuestion());
 			 		ps.setString(2,model.getAnswer());
@@ -117,14 +117,14 @@ public class Sqlrepository
 				System.out.println(e);
 			} 
 	}
-	public void deleteQuestion(Model s)
+	public void deleteQuestion(int id)
 	{
 		try{
 			connection();
-			String query="DELETE FROM mockexam WHERE id=?";
-			ps=con.prepareStatement(query);
-			ps.setInt(1,s.getId());
-			ps.execute();
+			// String query=
+			ps=con.prepareStatement("delete from mockexam where id=?");
+			ps.setInt(1,id);
+			ps.executeUpdate();
 			}catch(Exception e)
 			{
 				e.printStackTrace();

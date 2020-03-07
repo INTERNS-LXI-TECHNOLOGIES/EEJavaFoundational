@@ -13,16 +13,22 @@ public class Delete extends HttpServlet
     {  
         res.setContentType("text/html");
         PrintWriter out=res.getWriter();
-      
-         Model model=new Model();
+        //out.println(req.getParameter("question"));
+        int id=Integer.parseInt(req.getParameter("Delete"));
+        HttpSession session=req.getSession();
+
         
-       //out.println(req.getParameter("question"));
-       int id=Integer.parseInt(req.getParameter("Id"));
-        HttpSession session=req.getSession(); 
-        model.setId(id);
-        sqlrep.editQuestion(model);
+
+        sqlrep.deleteQuestion(id);
+
+        ArrayList<Model> questions= new ArrayList<Model>();
+        Sqlrepository sqlrep=new Sqlrepository();
+        questions.clear();
+        questions=sqlrep.readquestion(questions); 
+        session.setAttribute("array",questions);
+        
         req.getRequestDispatcher("delete.jsp").forward(req,res);
-        
+
     }
    
    

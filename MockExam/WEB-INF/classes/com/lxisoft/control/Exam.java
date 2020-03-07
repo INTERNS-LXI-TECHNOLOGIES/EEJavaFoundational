@@ -16,15 +16,14 @@ public class Exam extends HttpServlet
     {  
         res.setContentType("text/html");
         PrintWriter out=res.getWriter();
-        questions.clear();
-        questions=sqlrep.readquestion(questions);
+        /*questions.clear();
+        questions=sqlrep.readquestion(questions);*/
        // out.println(questions);
-        HttpSession session1=req.getSession(); 
         HttpSession session2=req.getSession(); 
         if(num<questions.size())
         {
 
-            session1.setAttribute("array",questions);
+            
             session2.setAttribute("num",num);
            //res.sendRedirect("view1.jsp"); 
             req.getRequestDispatcher("view1.jsp").forward(req,res);
