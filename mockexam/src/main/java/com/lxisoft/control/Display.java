@@ -15,8 +15,11 @@ public class Display extends HttpServlet
     	HttpSession session=req.getSession(); 
         res.setContentType("text/html");
         PrintWriter out=res.getWriter();
-        datas=(ArrayList<Model>)session.getAttribute("array");
-        session.setAttribute("data",datas);
+         ArrayList<Model> questions= new ArrayList<Model>();
+     Sqlrepository sqlrep=new Sqlrepository();
+     questions.clear();
+     questions=sqlrep.readquestion(questions); 
+     session.setAttribute("array",questions);
         req.getRequestDispatcher("display.jsp").forward(req,res);
         /*for (int i=0;i<datas.size();i++) 
         {

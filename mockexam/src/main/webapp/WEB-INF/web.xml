@@ -1,0 +1,65 @@
+<web-app> 
+    <servlet> 
+         <servlet-name>Exam</servlet-name> 
+         <servlet-class>com.lxisoft.control.Exam</servlet-class> 
+    </servlet> 
+    <servlet-mapping> 
+         <servlet-name>Exam</servlet-name> 
+         <url-pattern>/check</url-pattern> 
+    </servlet-mapping> 
+
+    <servlet> 
+         <servlet-name>Exam</servlet-name> 
+         <servlet-class>com.lxisoft.control.Exam</servlet-class> 
+    </servlet> 
+    <servlet-mapping> 
+         <servlet-name>Exam</servlet-name> 
+         <url-pattern>/get</url-pattern> 
+    </servlet-mapping>
+
+      <servlet> 
+         <servlet-name>Validate</servlet-name> 
+         <servlet-class>com.lxisoft.control.Validate</servlet-class> 
+    </servlet> 
+    <servlet-mapping> 
+         <servlet-name>Validate</servlet-name> 
+         <url-pattern>/go</url-pattern> 
+    </servlet-mapping>
+
+     <servlet> 
+         <servlet-name>Add</servlet-name> 
+         <servlet-class>com.lxisoft.control.Add</servlet-class> 
+    </servlet> 
+    <servlet-mapping> 
+         <servlet-name>Add</servlet-name> 
+         <url-pattern>/add</url-pattern> 
+    </servlet-mapping>
+
+  <servlet> 
+         <servlet-name>Display</servlet-name> 
+         <servlet-class>com.lxisoft.control.Display</servlet-class> 
+    </servlet> 
+    <servlet-mapping> 
+         <servlet-name>Display</servlet-name> 
+         <url-pattern>/display</url-pattern> 
+    </servlet-mapping>
+
+      <servlet> 
+         <servlet-name>Update</servlet-name> 
+         <servlet-class>com.lxisoft.control.Update</servlet-class> 
+    </servlet> 
+    <servlet-mapping> 
+         <servlet-name>Update</servlet-name> 
+         <url-pattern>/update</url-pattern> 
+    </servlet-mapping>
+
+        <servlet> 
+         <servlet-name>Delete</servlet-name> 
+         <servlet-class>com.lxisoft.control.Delete</servlet-class> 
+    </servlet> 
+    <servlet-mapping> 
+         <servlet-name>Delete</servlet-name> 
+         <url-pattern>/delete</url-pattern> 
+    </servlet-mapping>
+       
+</web-app>

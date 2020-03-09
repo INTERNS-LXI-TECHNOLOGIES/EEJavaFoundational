@@ -32,13 +32,12 @@ public class Update extends HttpServlet
         model.setOption3(option3);
 
         sqlrep.editQuestion(model);
-      ArrayList<Model> questions= new ArrayList<Model>();
-      Sqlrepository sqlrep=new Sqlrepository();
-      questions.clear();
-      questions=sqlrep.readquestion(questions); 
-      session.setAttribute("array",questions);
-      
-        req.getRequestDispatcher("table.jsp").forward(req,res);
+     ArrayList<Model> questions= new ArrayList<Model>();
+     Sqlrepository sqlrep=new Sqlrepository();
+     questions.clear();
+     questions=sqlrep.readquestion(questions); 
+     session.setAttribute("array",questions);
+      req.getRequestDispatcher("table.jsp").forward(req,res);
         
     }
    

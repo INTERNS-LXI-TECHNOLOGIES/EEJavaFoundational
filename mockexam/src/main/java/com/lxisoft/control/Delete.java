@@ -26,7 +26,6 @@ public class Delete extends HttpServlet
         questions.clear();
         questions=sqlrep.readquestion(questions); 
         session.setAttribute("array",questions);
-        
         req.getRequestDispatcher("delete.jsp").forward(req,res);
 
     }

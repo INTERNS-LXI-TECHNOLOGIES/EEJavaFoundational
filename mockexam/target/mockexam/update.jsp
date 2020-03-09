@@ -10,7 +10,7 @@
 <body background="image/earth.jpg">
 	<% String edit=request.getParameter("Edit");
 	//out.println("Id : "+edit);%>
-<form>
+<form >
 <h2><font color="#87CEFA" style="margin-left: 43%">Datas of mock Exam</h2><br><br>
   <label for="fname" color="white" style="margin-left: 25.2%"> <font color="#87CEFA" >Id</font></label>
   <input type="text" name="Id" size="60" value=<%out.println(edit);%>><br><br>
@@ -27,11 +27,13 @@
   <input type="text" name="option21" size="60"><br><br>
 
   <label for="fname" color="white" style="margin-left: 21.8%"> <font color="#87CEFA">Option3</font></label>
-  <input type="text" name="option31" size="60"><br><br>
+  <input type="text" name="option31" size="60">
   <div align ="center">
-
-<button formaction="update" type="submit" style="margin-left: 1%">submit</button></TD>
 </font>
+</form>
+<form style="margin-left:0%">
+<button formaction="update" type="submit" >submit</button>
+<button formaction="table.jsp" type="submit" >back</button>
 </form>
 </div>
 </body>

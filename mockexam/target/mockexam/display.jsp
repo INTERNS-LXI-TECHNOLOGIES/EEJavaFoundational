@@ -12,28 +12,25 @@
 <%ArrayList<Model>datas=(ArrayList<Model>)session.getAttribute("array");%>
 <TABLE cellpadding="15" border="1" style="background-color:  #122f39;">
 	<tr>
-    <th>Id</th>
+	<th>Slno</th>
     <th>Question</th>
     <th>Answer</th> 
     <th>Option 1</th>
     <th>Option 2</th>
     <th>Option 3</th>
-    <th>Delete</th>
+
   </tr>
 <% try{
 
 for (int i=0;i<datas.size();i++){%>
 
 <TR>
-<TD><%=(datas.get(i).getId())%></TD>
+<TD><%out.println(i+1);%></TD>
 <TD><%=(datas.get(i).getQuestion())%></TD>
 <TD><%=(datas.get(i).getAnswer())%></TD>
 <TD><%=(datas.get(i).getOption1())%></TD>
 <TD><%=(datas.get(i).getOption2())%></TD>
 <TD><%=(datas.get(i).getOption3())%></TD>
-<form>
-<TD><button formaction="delete" name="Delete" value=<%out.println(datas.get(i).getId());%>>Delete</button></TD>
-</form>
 </TR>
 <% } 
 } catch (Exception e) {
@@ -45,8 +42,10 @@ for (int i=0;i<datas.size();i++){%>
 	out.println(e);
 }
 %>
-<button type="submit" formaction="delete.jsp" style="margin-left: 1%"><-- submit</button>
-<button type="submit" formaction="admin.jsp"  style="margin-left: 1%"><-- back</button></TD></TD>
+</TABLE><TABLE>
+<TR>
+<TD><FORM ACTION="admin.jsp" method="get" >
+<button type="submit" style="margin-left: 1%"><-- back</button></TD>
 </TR>
 </TABLE>
 </font>
