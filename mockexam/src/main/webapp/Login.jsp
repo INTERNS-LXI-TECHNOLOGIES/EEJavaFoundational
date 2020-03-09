@@ -68,11 +68,12 @@
 <div class="center">
 <p>
 <center>
-  <h2><b> UserName  <input type="text" name="name"></b></h2>
- <h2><b> Password  <input type="Password" name="Password"></b></h2>
-<input type="submit" class="button button1" name="login" value="login" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminMenu.jsp';">
-  <input type="submit" class="button button2" name="cancel" value="cancel" onclick="window.location.href = 'http://localhost:8080/mockExam/index.jsp';">  
-
+  <form method=post action="j_security_check">
+  <h2><b> UserName  <input type="text" name="j_username"></b></h2>
+ <h2><b> Password  <input type="Password" name="j_password"></b></h2>
+<button  class="button button1" name="login">Login</button>
+  <button formaction="index.jsp" class="button button2" name="cancel">cancel</button>  
+  </form>
 </center>
 </p>
 </div>

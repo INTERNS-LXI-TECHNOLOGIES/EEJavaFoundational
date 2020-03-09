@@ -42,17 +42,12 @@
 <div class="container">
 <div class="center">
 <p>
-  <% int mark=Integer.parseInt(session.getAttribute("count").toString());%>
-<h1><font color="midnightblue">you have successfully completed the mock exam !!!</font></h1>
-<h1><font color="midnightblue">your score :<%out.println(mark);%></font></h1>
-<%int m=Integer.parseInt(session.getAttribute("count").toString());
-%>
+<h1><font color="midnightblue">You Are Not A Valid User !!!</font></h1>
 <br>
 <br>
 <h1><font color="midnightblue">have a good day</font></h1>
 </p>
 </div>
 </div>
-<%   %>
 </body>
 </html>

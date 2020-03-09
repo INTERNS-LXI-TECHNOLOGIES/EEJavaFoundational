@@ -70,7 +70,7 @@
   <h1><font color="midnightblue" size="7">MOCK EXAM</font></h1><br><br>
 
   <input type="submit" class="button button1" name="USER" value="USER" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';">
-  <input type="submit" class="button button2" name="ADMIN" value="ADMIN" onclick="window.location.href = 'http://localhost:8080/mockExam/Login.jsp';">  
+  <input type="submit" class="button button2" name="ADMIN" value="ADMIN" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminMenu.jsp';">  
 </center>
 
 </p>

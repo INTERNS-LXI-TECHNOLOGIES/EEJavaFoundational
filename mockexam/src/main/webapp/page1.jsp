@@ -13,7 +13,7 @@
   height: 100%
 }
 .container {
-  height: 700px;
+  height: 730px;
   position: relative;
   border: 5px solid midnightblue;
 }

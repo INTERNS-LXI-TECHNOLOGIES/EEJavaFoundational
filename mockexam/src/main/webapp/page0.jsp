@@ -63,16 +63,35 @@
   background-color: #008CBA;
   color: white;
 }
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
+input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid red;
+  border-radius: 4px;
+}
 </style>
 <div class="container">
 <div class="center">
 <p>
 <form>
-<center>
-Name<input type="text" name="username">
-</center>
-  <input type="button" class="button button1" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';" value="Back"/>
-   <input type="button" class="button button2" onclick="window.location.href = 'http://localhost:8080/mockExam/page1.jsp';"  value="NEXT" />
+  <font size="6" color="midnightblue"><b><i> Login !!!</i></b></font>
+  <br><br><br>
+<font size="3" color="midnightblue">USER NAME</font> <input type="text" name="uname">
+ <font size="3" color="midnightblue">PASSWORD</font><input type="password" name="password">
+ <br>
+<button formaction="welcome.jsp" class="button button1">CANCEL</button>
+   <button formaction="page1.jsp" class="button button2">Login</button>&nbsp;&nbsp;&nbsp;
+   <a href="page1.jsp">sign up</a>
 </form>
 </p>
 </div>
