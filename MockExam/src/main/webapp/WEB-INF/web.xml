@@ -62,6 +62,16 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.lxisoft.Controler.LoginServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/Login</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>TestServlet</servlet-name>
     <jsp-file>/index.jsp</jsp-file>
   </servlet>
@@ -83,6 +93,7 @@
       <web-resource-collection>
          <web-resource-name>MockExam</web-resource-name>
          <url-pattern>/Admin.jsp</url-pattern>
+         <url-pattern>/Introduction.jsp</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
       </web-resource-collection>
@@ -92,23 +103,10 @@
       </auth-constraint>
       </security-constraint>
 
-      <security-constraint>
-      <web-resource-collection>
-         <web-resource-name>MockExam</web-resource-name>
-         <url-pattern>/Introduction.jsp</url-pattern>
-            <http-method>GET</http-method>
-            <http-method>POST</http-method>
-      </web-resource-collection>
-      
-      <auth-constraint>
-         <role-name>user</role-name>
-      </auth-constraint>
-      </security-constraint>
-
       <login-config>
       <auth-method>FORM</auth-method>
         <form-login-config>
-           <form-login-page>/Login.jsp</form-login-page>
+           <form-login-page>/Login</form-login-page>
            <form-error-page>/login_failure.jsp</form-error-page>
         </form-login-config>
       </login-config>

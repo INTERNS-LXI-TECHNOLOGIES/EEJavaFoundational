@@ -6,7 +6,7 @@
 <div>
 <h1>MOCK EXAM</h1>
 <form align = "center" height= "50"%>
-<button formaction="Admin.jsp" class="button">ADMIN</button> <button formaction="Introduction.jsp" class="button">USER</button>
+<button formaction="Admin.jsp" name ="admin" value = "admin" class="button">ADMIN</button> <button formaction="Introduction.jsp" name="user" value="user" class="button">USER</button>
 </form>
 <br>
 </div>
