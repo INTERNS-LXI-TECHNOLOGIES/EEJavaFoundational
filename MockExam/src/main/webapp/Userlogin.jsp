@@ -8,7 +8,7 @@
 <body>
     <form method="POST" action='<%= response.encodeURL("j_security_check") %>'>
         <div align="center" class ="inset">
-            <h1 style="font-size:50px;"> USER LOGIN </h1>
+            <h1 style="font-size:30px;"> USER LOGIN </h1>
         <table cellspacing="5">
             <tr>
                 <th align="right"><h1>Username:</h1></th>

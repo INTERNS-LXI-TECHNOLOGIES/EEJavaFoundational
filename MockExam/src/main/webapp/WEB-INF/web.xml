@@ -62,7 +62,6 @@
 <servlet-name>deleteservlet</servlet-name>  
 <url-pattern>/DeleteServlet</url-pattern>  
 </servlet-mapping>
-
  <security-constraint>
         <web-resource-collection>
            <web-resource-name>MockExam</web-resource-name>
@@ -83,11 +82,10 @@
      <login-config>
       <auth-method>FORM</auth-method>
       <form-login-config>
-         <form-login-page>/Login.jsp</form-login-page>
+         <form-login-page>/Adminlogin.jsp</form-login-page>
          <form-error-page>/Error.jsp</form-error-page>
       </form-login-config>
    </login-config>
-
 
 </web-app>  
 

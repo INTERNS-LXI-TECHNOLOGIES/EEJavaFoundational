@@ -31,7 +31,7 @@
 <b><center><font size="7" color="MediumBlue">Mock Exam </font></center>
 </b>
 <form align = "center" height= "50"%>
-<button type="submit" formaction="Login.jsp" class="button">ADMIN</button> 
+<button type="submit" formaction="Admin.jsp" class="button">ADMIN</button> 
 <button type="submit" formaction="Userlogin.jsp" class="button">USER</button>
 </form>
 </p>
