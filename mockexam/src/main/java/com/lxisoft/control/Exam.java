@@ -16,8 +16,8 @@ public class Exam extends HttpServlet
     {  
         res.setContentType("text/html");
         PrintWriter out=res.getWriter();
-        /*questions.clear();
-        questions=sqlrep.readquestion(questions);*/
+        questions.clear();
+        questions=sqlrep.readquestion(questions);
        // out.println(questions);
         HttpSession session2=req.getSession(); 
         if(num<questions.size())

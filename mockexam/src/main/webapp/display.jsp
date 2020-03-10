@@ -10,7 +10,7 @@
 <body background="image/earth.jpg">
 <h2><font color="#87CEFA" style="margin-left: 43%">Datas of mock Exam</h2>
 <%ArrayList<Model>datas=(ArrayList<Model>)session.getAttribute("array");%>
-<TABLE cellpadding="15" border="1" style="background-color:  #122f39;">
+<TABLE align="center" cellpadding="15" border="1" style="background-color:  #122f39" >
 	<tr>
 	<th>Slno</th>
     <th>Question</th>

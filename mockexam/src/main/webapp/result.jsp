@@ -11,7 +11,8 @@
 	<%Integer mark=(Integer)session.getAttribute("count");
 
 	%>
-	<h1><font color="#87CEFA"><%out.println("your Mark1 : "+mark);%></font></h1>
+	<h1><font color="#87CEFA"><%out.println("your Mark : "+mark);%></font></h1>
+		<h1><font color="#87CEFA">my god......</font></h1>
 		
 
 <center>
