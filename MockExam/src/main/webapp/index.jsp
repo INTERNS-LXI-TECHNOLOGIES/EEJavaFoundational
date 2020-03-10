@@ -1,3 +1,9 @@
+<%@page import="com.lxisoft.config.*"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="javax.servlet.*"%>
+<%@page import="javax.servlet.http.*"%>
+<%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -18,6 +24,20 @@
 </head>
 <font color="white">
 <body background="lap.jpeg">
+	<%Internationalization international=new Internationalization();
+	String language=request.getParameter("language");
+	if(language==null)
+	{
+		language="en";
+	}
+	String lang= international.localization(language,"IN","MOCK-EXAM");
+	session.setAttribute("language",language);%>
+</TR>
+<tr> 
+	<TD>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="?language=mal">മലയാളം</a></TD>
+</tr>
+	
 <div>
   <%if (request.isUserInRole("admin"))
     {%>
@@ -25,7 +45,7 @@
     <form action="search" method="get">
     <br><input type="text" name="letter" placeholder="Search" />
     <input type="submit" value="ok"></center></form><%}%>
-	  <h1 align="center">MOCK-EXAM</h1>
+	  <h1 align="center"><%=lang%></h1>
 </div>
 <div>
 <h2 align="center"><u>INSTRUCTIONS</u></h2>
