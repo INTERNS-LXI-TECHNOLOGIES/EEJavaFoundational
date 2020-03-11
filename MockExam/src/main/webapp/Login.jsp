@@ -1,10 +1,12 @@
+<!-- <link rel="stylesheet" href="Style.css"></link> -->
 <html>
-<link rel="stylesheet" href="Style.css"></link>
+
 <head>
 <title>Login Page</title>
 </head>
 
 <body>
+
     <form method="POST" action="j_security_check">
         <div align="center" class ="inset">
             <h1 style="font-size:50px;"> LOGIN HERE </h1>

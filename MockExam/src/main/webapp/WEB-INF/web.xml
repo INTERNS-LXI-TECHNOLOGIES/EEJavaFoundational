@@ -71,16 +71,6 @@
     <url-pattern>/Register</url-pattern>
   </servlet-mapping>
 
-  <servlet>
-    <servlet-name>TestServlet</servlet-name>
-    <jsp-file>/index.jsp</jsp-file>
-  </servlet>
-
-  <servlet-mapping>
-    <servlet-name>TestServlet</servlet-name>
-    <url-pattern>/test/</url-pattern>   
- </servlet-mapping>
-
     <security-role>
       <role-name>admin</role-name>
     </security-role>
@@ -89,19 +79,35 @@
       <role-name>user</role-name>
     </security-role>
 
-
     <security-constraint>
       <web-resource-collection>
          <web-resource-name>MockExam</web-resource-name>
-         <url-pattern>/admin/*</url-pattern>
+         <!-- <url-pattern>/admin/*</url-pattern> -->
          <url-pattern>/Introduction.jsp</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
       </web-resource-collection>
       
       <auth-constraint>
-         <role-name>admin</role-name>
+         <!-- <role-name>admin</role-name> -->
          <role-name>user</role-name>
+      </auth-constraint>
+
+      </security-constraint>
+
+
+    <security-constraint>
+      <web-resource-collection>
+         <web-resource-name>MockExam</web-resource-name>
+         <url-pattern>/admin/*</url-pattern>
+         <!-- <url-pattern>/Introduction.jsp</url-pattern> -->
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+      </web-resource-collection>
+      
+      <auth-constraint>
+         <role-name>admin</role-name>
+         <!-- <role-name>user</role-name> -->
       </auth-constraint>
 
       </security-constraint>
