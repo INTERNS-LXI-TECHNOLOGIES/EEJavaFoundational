@@ -35,6 +35,7 @@
   }%>
 </h1>
 </font>
+<center><a href="index.jsp">Back</a></center>
 </div>
 </body>
 </html>

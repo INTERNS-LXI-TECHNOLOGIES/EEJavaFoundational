@@ -1,6 +1,8 @@
 <%@page import="com.lxisoft.models.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
+<%@page import="com.lxisoft.config.*"%>
+<%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <html>
 <head>
 	<title>Questions</title>
@@ -24,8 +26,16 @@
   		}
   </style>
 </head>
+<%Internationalization international=new Internationalization();
+String language=(String) session.getAttribute("language");
+String questions= international.localization(language,"IN","Questions");
+String back= international.localization(language,"IN","Back");
+String next= international.localization(language,"IN","Next");
+String edit= international.localization(language,"IN","Edit");
+String delete= international.localization(language,"IN","Delete");
+String submit= international.localization(language,"IN","Submit");%>
 <div class="jumbotron text-center">
-<h1 align="center"><u>Questions</u></h1>
+<h1 align="center"><u><%=questions%></u></h1>
 </div>
 <body background="rr.jpeg">
 <table align=center>
@@ -46,20 +56,20 @@
     	<label for="<%=qn.get(i).getOption3()%>"><%=qn.get(i).getOption3()%></label><br>
     	<input type="checkbox" id="<%=qn.get(i).getOption4()%>" name="option" value="<%=qn.get(i).getOption4()%>"/>
     	<label for="<%=qn.get(i).getOption4()%>"><%=qn.get(i).getOption4()%></label><br>
-		  <input type="submit"class="button" value="Next">
+		  <input type="submit"class="button" value="<%=next%>">
 		  </form>
-      <input type="submit"class="button" value="Back" onclick="history.back()">
+      <input type="submit"class="button" value="<%=back%>" onclick="history.back()">
 		  <!-- <a href="admin"><input type="button" class="button" value="Next"/></a> -->
       <%if (request.isUserInRole("admin"))
       {%>
 		    <form action="select" method="get">
     	  <a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
     	  <input type="hidden" name="opt" value="a">
-        <input type="submit" class="button" value=Delete></a></form>
+        <input type="submit" class="button" value="<%=delete%>"></a></form>
         <form action="select" method="get">
 		    <a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
         <input type="hidden" name="opt" value="b">
-        <input type="submit" class="button" value=Edit></a></form></div>	
+        <input type="submit" class="button" value="<%=edit%>"></a></form></div>	
     <%}
   }
 	else
