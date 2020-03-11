@@ -17,8 +17,7 @@ public class SqlRepository
 			try
 			{
 				Class.forName("com.mysql.jdbc.Driver");
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MockExam","root","root");
-				System.out.println("con created");		
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/MockExam","root","root");		
 			}
 			catch(Exception e)
 			{
@@ -37,7 +36,9 @@ public class SqlRepository
 	{
 		try
 		{
-
+			String qry = "Create Table If Not Exists MockExam (Id int Not Null Auto_Increment,Question varchar(200),Answer varchar(100),Option1 varchar(100),Option2 varchar(100),Option3 varchar(100),Option4 varchar(100))";
+			ps = con.prepareStatement(qry);
+			ps.execute();		
 		}
 		catch(Exception e)
 		{
@@ -79,7 +80,7 @@ public class SqlRepository
 	{
 		try
 		{
-			//this.createTable();
+			this.createTable();
 			String qry = "insert into MockExam(Question,Answer,Option1,Option2,Option3,Option4)values(?,?,?,?,?,?)";
 			ps = con.prepareStatement(qry);
 			ps.setString(1,model.getQuestion().getQuestion());
@@ -129,4 +130,32 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 	}
+	public void addUser(String username,String password)
+	{
+		try
+		{
+			String qry = "Insert into users(username,password) values('"+username+"','"+password+"')";
+			ps = con.prepareStatement(qry);
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public void userRoles(String username,String password)
+	{
+		try
+		{
+			this.addUser(username,password);
+			String qry = "Insert into users_roles(username,rolename) values('"+username+"','user')";
+			ps = con.prepareStatement(qry);
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+
 }

@@ -7,8 +7,6 @@ public class LoginServlet extends HttpServlet
 	public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
 		PrintWriter out = response.getWriter();
-		//out.println("admin : "+request.getParameter("admin"));
-		//out.println("user : "+request.getParameter("user"));
 		if(request.getParameter("admin")!=null)
 		{
 			if(request.getParameter("admin").equals("admin"))
