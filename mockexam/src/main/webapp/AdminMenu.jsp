@@ -112,7 +112,7 @@
   <input type="submit" formaction="delete.jsp" class="button button2" name="DELETE" value="DELETE" >
   <input type="submit" formaction="update.jsp" class="button button3" name="UPDATE" value="UPDATE" >
   <input type="submit" formaction="display" class="button button4" name="DISPLAY" value="DISPLAY">
-  <input type="submit" formaction="Login.jsp" class="button button5" name="BACK" value="BACK" >
+  <input type="submit" formaction="index.jsp" class="button button5" name="BACK" value="BACK" >
 </form>
 </center>
 </p>

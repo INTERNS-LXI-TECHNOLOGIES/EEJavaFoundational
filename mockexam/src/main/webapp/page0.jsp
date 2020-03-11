@@ -83,14 +83,14 @@ input[type=password] {
 <div class="container">
 <div class="center">
 <p>
-<form>
+<form form method=post action="j_security_check">
   <font size="6" color="midnightblue"><b><i> Login !!!</i></b></font>
   <br><br><br>
-<font size="3" color="midnightblue">USER NAME</font> <input type="text" name="uname">
- <font size="3" color="midnightblue">PASSWORD</font><input type="password" name="password">
+<font size="3" color="midnightblue">USER NAME</font> <input type="text" name="j_username">
+ <font size="3" color="midnightblue">PASSWORD</font><input type="password" name="j_password">
  <br>
 <button formaction="welcome.jsp" class="button button1">CANCEL</button>
-   <button formaction="page1.jsp" class="button button2">Login</button>&nbsp;&nbsp;&nbsp;
+   <button class="button button2" name="login">Login</button>
    <a href="page1.jsp">sign up</a>
 </form>
 </p>
