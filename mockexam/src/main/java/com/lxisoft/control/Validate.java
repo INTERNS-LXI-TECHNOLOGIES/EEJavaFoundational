@@ -11,7 +11,7 @@ public class Validate extends HttpServlet
 {
 	Sqlrepository sqlrep=new Sqlrepository();
 	Sqlrepository sql=new Sqlrepository();
-	int count;
+	int count=0;
 	public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException  
 	{
 		HttpSession session=req.getSession();

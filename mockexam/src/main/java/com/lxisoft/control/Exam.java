@@ -22,16 +22,14 @@ public class Exam extends HttpServlet
         HttpSession session2=req.getSession(); 
         if(num<questions.size())
         {
-
-            
-            session2.setAttribute("num",num);
-           //res.sendRedirect("view1.jsp"); 
+            session2.setAttribute("num",num); 
             req.getRequestDispatcher("view1.jsp").forward(req,res);
 
         }
         else
         {
             res.sendRedirect("result.jsp");
+            //num=0;
         }
         num++;
         
@@ -39,4 +37,3 @@ public class Exam extends HttpServlet
    
    
 }
-
