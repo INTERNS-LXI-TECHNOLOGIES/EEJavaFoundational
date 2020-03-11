@@ -32,7 +32,7 @@
 </b>
 <form align = "center" height= "50"%>
 <button type="submit" formaction="Admin.jsp" class="button">ADMIN</button> 
-<button type="submit" formaction="Userlogin.jsp" class="button">USER</button>
+<button type="submit" formaction="Instruction.jsp" class="button">USER</button>
 </form>
 </p>
 </div>
