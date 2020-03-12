@@ -151,5 +151,58 @@ public String select(String user)
 		e.printStackTrace();
 	}return copy;
 }
+public void signUp1(String user,String pass)
+{
+	try
+	{
+		createTable();
+		String qry;
+		qry="insert into users(username,password)values(?,?)";
+		ps=con.prepareStatement(qry);
+		ps.setString(1,user);
+		ps.setString(2,pass);
+		ps.execute();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+}
+public void signUp2(String user,String role)
+{
+	try
+	{
+		createTable();
+		String qry;
+		qry="insert into users_roles(username,rolename)values(?,?)";
+		ps=con.prepareStatement(qry);
+		ps.setString(1,user);
+		ps.setString(2,role);
+		ps.execute();
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}
+}
+public ArrayList<String> signUp3(ArrayList<String> user)
+{
+	try
+	{
+		databaseConnectionEstablish();
+		String qry;
+		qry="select username from users";
+		ps=con.prepareStatement(qry);
+		rs=ps.executeQuery(qry);
+		while(rs.next())
+		{
+				user.add(rs.getString(1));
+		}
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}return user;
+}
 
 }

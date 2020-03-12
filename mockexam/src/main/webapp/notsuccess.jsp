@@ -6,7 +6,7 @@
 <body bgcolor="FloralWhite">
 <style>
    body {
-  background-image: url('fun-art_00375794.jpg');
+  background-image: url('itl.cat_simple-wallpaper_120953.png');
     background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,7 +22,7 @@
   margin: 0;
   position: absolute;
   top: 50%;
-  left: 50%;
+  left: 30%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
@@ -51,31 +51,9 @@
   background-color: #4CAF50;
   color: white;
 }
-
-.button2 {
-  background-color: white; 
-  color: black; 
-  border: 2px solid #008CBA;
-  border-radius: 12px;
-}
-
-.button2:hover {
-  background-color: #008CBA;
-  color: white;
-}
 input[type=text] {
-  width: 100%;
+  width: 300%;
   padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid red;
-  border-radius: 4px;
-}
-input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
   border: 2px solid red;
   border-radius: 4px;
 }
@@ -83,19 +61,16 @@ input[type=password] {
 <div class="container">
 <div class="center">
 <p>
-<form form method=post action="j_security_check">
-  <font size="6" color="midnightblue"><b><i> Login !!!</i></b></font>
-  <br><br><br>
-<font size="3" color="midnightblue">USER NAME</font> <input type="text" name="j_username">
- <font size="3" color="midnightblue">PASSWORD</font><input type="password" name="j_password">
- <br>
-<button formaction="index.jsp" class="button button1">CANCEL</button>
-   <button class="button button2" name="login">Login</button>
-   <a href="signUp.jsp">sign up</a>
+  <form>
+<h1><b><i>Entered username already exists!!!</i></b></h1>
+<br>
+<h1><b><i>Please try another one</i></b></h1>
+<button formaction="page0.jsp" class="button button1" name="back" >BACK</button>
 </form>
-</p>
+</div>
 </div>
 </div>
 
+</p>
 </body>
 </html>
