@@ -77,7 +77,7 @@
  <h2><font color="MidnightBlue"><li>any malpractice will lead to debar</li></font></h2>
 </ol>
 <form method="get" action="check">
-  <input type="button" class="button button1" onclick="window.location.href = 'http://localhost:8080/mockExam/page0.jsp';" value="BACK"/>
+  <input type="button" class="button button1" onclick="window.location.href = 'http://localhost:8080/mockExam/index.jsp';" value="BACK"/>
   <input type="submit" class="button button2"  value="NEXT" />
 </form>
      <%

@@ -1,11 +1,12 @@
+<%@ page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>sample project</title>
+	<title>question1</title>
 </head>
-<body bgcolor="FloralWhite">
+<body>
 <style>
-   body {
+  body {
   background-image: url('itl.cat_simple-wallpaper_120953.png');
     background-position: center;
   background-repeat: no-repeat;
@@ -17,7 +18,6 @@
   position: relative;
   border: 5px solid midnightblue;
 }
-
 .center {
   margin: 0;
   position: absolute;
@@ -66,15 +66,19 @@
 </style>
 <div class="container">
 <div class="center">
-<p align="center">
-<b><font size="7" color="midnightblue">Welcome TO Your Mock Exam </font>
-</b>
-<form>
-<input type="button" class="button button1" onclick="window.location.href = 'http://localhost:8080/mockExam/page1.jsp';" value="START"/>
-<input type="button" class="button button2" onclick="window.location.href = 'http://localhost:8080/mockExam/index.jsp';" value="Back"/>
-</form>
+<p>
+<center>
+  <h1><font color="midnightblue" size="7">MOCK EXAM</font></h1><br><br>
+  <%if(session!=null)
+  {session.invalidate();}%>
+  <input type="submit" class="button button1" name="USER" value="USER" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';">
+  <input type="submit" class="button button2" name="ADMIN" value="ADMIN" onclick="window.location.href = 'http://localhost:8080/mockExam/select';">  
+</center>
+
 </p>
 </div>
 </div>
+</div>
+
 </body>
 </html>

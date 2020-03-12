@@ -131,4 +131,25 @@ public void updateName(Model model)
 		e.printStackTrace();
 	}
 }
+public String select(String user)
+{
+	String copy="";
+	try
+	{
+		databaseConnectionEstablish();
+		String qry;
+		qry="select rolename from users_roles where username='"+user+"'";
+		ps=con.prepareStatement(qry);
+		rs=ps.executeQuery(qry);
+		while(rs.next())
+		{
+			copy=rs.getString(1);
+		}
+	}
+	catch(Exception e)
+	{
+		e.printStackTrace();
+	}return copy;
+}
+
 }

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>question1</title>
+	<title>sample project</title>
 </head>
-<body>
+<body bgcolor="FloralWhite">
 <style>
-  body {
+   body {
   background-image: url('itl.cat_simple-wallpaper_120953.png');
     background-position: center;
   background-repeat: no-repeat;
@@ -17,6 +17,7 @@
   position: relative;
   border: 5px solid midnightblue;
 }
+
 .center {
   margin: 0;
   position: absolute;
@@ -65,18 +66,14 @@
 </style>
 <div class="container">
 <div class="center">
-<p>
-<center>
-  <h1><font color="midnightblue" size="7">MOCK EXAM</font></h1><br><br>
-
-  <input type="submit" class="button button1" name="USER" value="USER" onclick="window.location.href = 'http://localhost:8080/mockExam/welcome.jsp';">
-  <input type="submit" class="button button2" name="ADMIN" value="ADMIN" onclick="window.location.href = 'http://localhost:8080/mockExam/AdminMenu.jsp';">  
-</center>
-
+<p align="center">
+<b><font size="7" color="midnightblue">Welcome TO Your Mock Exam </font>
+</b>
+<%if(session!=null)
+  {session.invalidate();}%>
+<input type="submit" class="button button2" name="start" value="START" onclick="window.location.href = 'http://localhost:8080/mockExam/select';">
 </p>
 </div>
 </div>
-</div>
-
 </body>
 </html>

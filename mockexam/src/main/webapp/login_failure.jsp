@@ -42,7 +42,7 @@
 <div class="container">
 <div class="center">
 <p>
-<h1><font color="midnightblue">You Are Not A Valid Admin !!!</font></h1>
+<h1><font color="midnightblue">You Are Not A Valid Person !!!</font></h1>
 <br>
 <br>
 <h1><font color="midnightblue">have a good day</font></h1>

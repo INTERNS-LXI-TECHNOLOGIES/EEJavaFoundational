@@ -89,7 +89,7 @@ input[type=password] {
 <font size="3" color="midnightblue">USER NAME</font> <input type="text" name="j_username">
  <font size="3" color="midnightblue">PASSWORD</font><input type="password" name="j_password">
  <br>
-<button formaction="welcome.jsp" class="button button1">CANCEL</button>
+<button formaction="index.jsp" class="button button1">CANCEL</button>
    <button class="button button2" name="login">Login</button>
    <a href="page1.jsp">sign up</a>
 </form>
