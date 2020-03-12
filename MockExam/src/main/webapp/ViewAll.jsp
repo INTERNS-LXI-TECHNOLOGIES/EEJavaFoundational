@@ -74,7 +74,7 @@ String submit= international.localization(language,"IN","Submit");%>
   }
 	else
 	{%>
-		<center><a href="Result.jsp"><input type="button" class="button" value="Submit"/></a></center>
+		<center><a href="Result.jsp"><input type="button" class="button" value="<%=submit%>"/></a></center>
     </table>
 <%}%>
 </body>

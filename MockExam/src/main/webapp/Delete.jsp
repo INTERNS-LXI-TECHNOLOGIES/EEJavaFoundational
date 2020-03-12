@@ -1,5 +1,7 @@
 <%@page import="com.lxisoft.repository.*"%>
 <%@page import="com.lxisoft.models.*"%>
+<%@page import="com.lxisoft.config.*"%>
+<%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <html>
 <head>
 	<style>
@@ -23,22 +25,27 @@
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 </head>
+<%Question qn=(Question)session.getAttribute("question");
+Internationalization international=new Internationalization();
+String language=(String) session.getAttribute("language");
+String cancel= international.localization(language,"IN","Cancel");
+String confirm= international.localization(language,"IN","Confirm");
+String q=international.localization(language,"IN","Do_You_Want_To_Continue?");%>
 <div class="jumbotron text-center">
 	<h1 align=center>Delete Question</h1>
 </div>
 <body>
-	<%Question qn=(Question)session.getAttribute("question");%>
 	<table align=center border="1" width=30% height=25%>
 	<form action="delete" method="get">
 	<tr>
-		<td><center><div>You want to delete?</center></div></td><br>
+		<td><center><div><%=q%></center></div></td><br>
 	</tr>
 	<tr>
 		<td>
 		<div><input type="hidden" name="qno" value="<%=qn.getQno()%>">
-			<input type="submit" value=Confirm>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" value=<%=confirm%>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	</form>
-	<a href="admin"><input type="submit" value=Cancel></a></div>
+	<a href="admin"><input type="submit" value=<%=cancel%>></a></div>
 		</td>
 	</tr>
 	</table>

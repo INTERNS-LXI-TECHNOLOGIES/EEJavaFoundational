@@ -1,8 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@page import="com.lxisoft.config.*"%>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Add</title>
 </head>
+<%Internationalization international=new Internationalization();
+String language=(String)session.getAttribute("language");
+String add=international.localization(language,"IN","Add");
+String cancel=international.localization(language,"IN","Cancel");%>
 <body>
 <table>
 	<form action="add" method="post">
@@ -13,10 +19,9 @@
 		<br><input type="text" name="option3" required="" placeholder=option3><br>
 		<br><input type="text" name="option4" required="" placeholder=option4><br>
 		<br><input type="text" name="answer" required="" placeholder=answer><br>
-		<!-- <br><input type="text" name="answer2" required="" placeholder=answer2><br> -->
-		<br><input type="submit" value=Add></form>
+		<br><input type="submit" value="<%=add%>"></form>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="admin"><input type="submit" value=Cancel></a></td>
+		<a href="admin"><input type="submit" value="<%=cancel%>"></a></td>
 	</tr>
 </table>
 </body>

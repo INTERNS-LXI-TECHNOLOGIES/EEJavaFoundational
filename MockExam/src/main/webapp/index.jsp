@@ -36,16 +36,16 @@
 	String search= international.localization(language,"IN","Search");
 	String ok= international.localization(language,"IN","ok");
 	session.setAttribute("language",language);%>
-<div>
-  <%if (request.isUserInRole("admin"))
+    <div>
+    <%if (request.isUserInRole("admin"))
     {%>
     <center><a href="Add.jsp"><b><input type="button" class="button" value="+"></b></a><br>
     <form action="search" method="get">
     <br><input type="text" name="letter" placeholder="<%=search%>" />
     <input type="submit" value="<%=ok%>"></center></form><%}%>
-	  <h1 align="center"><%=mockexam%></h1>
-	  <center><a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;
-	  <a href="?language=mal">മലയാളം</a></center>
+	<h1 align="center"><%=mockexam%></h1>
+	<center><a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;
+	<a href="?language=mal">മലയാളം</a></center>
 </div>
 <div>
 <h2 align="center"><u><%=introduction%></u></h2>

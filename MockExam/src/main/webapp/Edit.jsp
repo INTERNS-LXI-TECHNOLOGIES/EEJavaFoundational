@@ -1,5 +1,8 @@
 <%@page import="com.lxisoft.repository.*"%>
 <%@page import="com.lxisoft.models.*"%>
+<%@page import="com.lxisoft.config.*"%>
+<%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
+<html>
 <html>
 <head>
 	<title>EDIT</title>
@@ -27,8 +30,13 @@
 	<center><h1>Edit Question</h1></center>
 </div>
 <body>
-	<%Question qn=(Question)session.getAttribute("question");%>
-	<form action="edit" method="post">
+</head>
+<%Question qn=(Question)session.getAttribute("question");
+Internationalization international=new Internationalization();
+String language=(String) session.getAttribute("language");
+String cancel= international.localization(language,"IN","Cancel");
+String save= international.localization(language,"IN","Save");%>
+<form action="edit" method="post">
 	<input type="hidden" name="qno" value="<%=qn.getQno()%>"/>
 	<tr>		
 		<td><div><input type="text" name="question" value="<%=qn.getQuestion()%>"><br>
@@ -37,9 +45,9 @@
 		<br><input type="text" name="option3" value="<%=qn.getOption3()%>"><br>
 		<br><input type="text" name="option4" value="<%=qn.getOption4()%>"><br>
 		<br><input type="text" name="answer" value="<%=qn.getAnswer()%>"><br>
-		<br><a href="edit"><input type="submit" value=Save></a>
-	</form>
-	<a href="admin"><input type="submit" value=Cancel></a></div></td>
+		<br><a href="edit"><input type="submit" value="<%=save%>"></a>
+</form>
+	<a href="admin"><input type="submit" value="<%=cancel%>"></a></div></td>
 	</tr>
 </body>
 </html>
