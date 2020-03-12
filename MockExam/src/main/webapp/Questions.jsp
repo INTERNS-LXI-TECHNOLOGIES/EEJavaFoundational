@@ -47,11 +47,11 @@ if(qcount != model.size())
 	</div>
 	<%
 	qcount++;
-	%>
+	%>Home
 	<hr size = "5" >
 		<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
 	<div align = "center">
-		<button onclick="check()" type="button" align = "center" id="submitBtn" class="button">NEXT</button> 
+		<button onclick="check()" type="button" align = "center" id="submitBtn" class="button">NEXT</button>
 		<button align = "center" class="button" type="submit" value=<%out.println(qcount);%>>SKIP</button>
 	</div>
 	</form>

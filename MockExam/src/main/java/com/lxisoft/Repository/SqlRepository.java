@@ -157,5 +157,25 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 	}
+	public String selectRole(String username)
+	{
+		String userRole = "";
+		try
+		{
+			String qry = "select rolename from users_roles where username = '"+username+"'";
+			ps = con.prepareStatement(qry);
+			rs = ps.executeQuery(qry);
+			while(rs.next())
+			{
+				userRole = rs.getString(1);
+			}
+
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return userRole;
+	}
 
 }
