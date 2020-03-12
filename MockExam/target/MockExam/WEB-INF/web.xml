@@ -63,28 +63,35 @@
 <url-pattern>/DeleteServlet</url-pattern>  
 </servlet-mapping>
 
+<security-role>
+    <role-name>admin</role-name>
+    </security-role>
+
+     <security-role>
+    <role-name>user</role-name>
+    </security-role>
+
  <security-constraint>
  	<display-name>Admin</display-name>
     <web-resource-collection>
     <web-resource-name>MockExam</web-resource-name>
     <url-pattern>/Admin.jsp</url-pattern>
+    <url-pattern>/Instruction.jsp</url-pattern>
     <http-method>GET</http-method>
     <http-method>POST</http-method>
     </web-resource-collection>
         
     <auth-constraint>
    	<role-name>admin</role-name>
+   	<role-name>user</role-name>
     </auth-constraint>
     </security-constraint>
-  
-    <security-role>
-    <role-name>admin</role-name>
-    </security-role>
+         
      
     <login-config>
     <auth-method>FORM</auth-method>
     <form-login-config>
-    <form-login-page>/Adminlogin.jsp</form-login-page>
+    <form-login-page>/Login.jsp</form-login-page>
     <form-error-page>/Error.jsp</form-error-page>
     </form-login-config>
    </login-config>

@@ -19,7 +19,6 @@ public class ResultServlet extends HttpServlet
         HttpSession session = request.getSession();
         models= (ArrayList<ExamModel>) session.getAttribute("qstn");    
         int option =Integer.parseInt(request.getParameter("option"));
-       // String questionNo = (String)request.getAttribute("questionNo");
         String questionNo = request.getParameter("value");
         if(option == 1)
         {
@@ -52,6 +51,7 @@ public class ResultServlet extends HttpServlet
         }     
         HttpSession session1 = request.getSession(true);
         session1.setAttribute("Mark",totalMark);
+        
         request.getRequestDispatcher("Questionview.jsp").forward(request,response);                 
 
 	}

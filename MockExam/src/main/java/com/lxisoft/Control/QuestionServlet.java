@@ -19,6 +19,7 @@ public class QuestionServlet extends HttpServlet
         models.clear();       
         models = sqlrepo.readFromDatabase(models);
         HttpSession sessions = request.getSession(true);
+        
         sessions.setAttribute("qstn",models);        
         request.getRequestDispatcher("Questionview.jsp").forward(request,response);
     }    
