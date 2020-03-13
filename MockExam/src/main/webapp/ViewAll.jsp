@@ -22,10 +22,30 @@
   			padding-top: 50px;
   			padding-right: 30px;
   			padding-left: 80px;
-  			padding-bottom: 50px;
+  			padding-bottom: 30px;
   		}
   </style>
 </head>
+<script>
+<%
+String clock = request.getParameter( "clock" );
+if( clock == null ) clock = "20";
+%>
+var timeout = <%=clock%>;
+function timer()
+{
+if( --timeout > 0 )
+{
+document.forma.clock.value = timeout;
+window.setTimeout( "timer()", 1000 );
+}
+else
+{
+document.forma.clock.value = "Time over";
+}
+}
+</script>
+
 <%Internationalization international=new Internationalization();
 String language=(String) session.getAttribute("language");
 String questions= international.localization(language,"IN","Questions");
@@ -35,7 +55,9 @@ String edit= international.localization(language,"IN","Edit");
 String delete= international.localization(language,"IN","Delete");
 String submit= international.localization(language,"IN","Submit");%>
 <div class="jumbotron text-center">
-<h1 align="center"><u><%=questions%></u></h1>
+<h1 align="center"><u><%=questions%></u></h1><br>
+<br><form action="<%=request.getRequestURL()%>" name="forma">
+  <h3 align="right">Seconds remaining:<input type="text" name="clock" value="<%=clock%>" style="border:0px solid white"></h3></form>
 </div>
 <body background="rr.jpeg">
 <table align=center>
@@ -46,6 +68,10 @@ String submit= international.localization(language,"IN","Submit");%>
 	{%>
 	   <div>
 		  <form action="result" method="get">
+      
+      <script>
+        timer();
+      </script>
 		  <br><input type=hidden name="i" value="<%=qn.get(i).getQno()%>"/><br>
     	<input type="text" value="<%=qn.get(i).getQuestion()%>"/><br>
     	<input type="checkbox" id="<%=qn.get(i).getOption1()%>" name="option" value="<%=qn.get(i).getOption1()%>"/>
