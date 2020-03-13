@@ -18,8 +18,7 @@ public class QuestionServlet extends HttpServlet
         PrintWriter out = response.getWriter();
         models.clear();       
         models = sqlrepo.readFromDatabase(models);
-        HttpSession sessions = request.getSession(true);
-        
+        HttpSession sessions = request.getSession(true);        
         sessions.setAttribute("qstn",models);        
         request.getRequestDispatcher("Questionview.jsp").forward(request,response);
     }    

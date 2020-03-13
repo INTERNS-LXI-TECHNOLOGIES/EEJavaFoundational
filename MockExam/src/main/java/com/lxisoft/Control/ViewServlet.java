@@ -8,7 +8,6 @@ import java.io.PrintWriter;
 import com.lxisoft.Model.ExamModel;
 import com.lxisoft.Repository.SqlRepository;
 
-
 public class ViewServlet extends HttpServlet 
 { 
   SqlRepository sqlrepo=new SqlRepository();

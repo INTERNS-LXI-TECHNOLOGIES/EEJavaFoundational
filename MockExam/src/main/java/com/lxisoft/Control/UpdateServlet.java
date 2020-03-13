@@ -21,7 +21,7 @@ public class UpdateServlet  extends HttpServlet
 		models.setAnswer(request.getParameter("answer"));
 		sqlrepo.updateQuestion(models);
 		request.getRequestDispatcher("Update.jsp").forward(request,response);
-		System.out.println("update mockexam set question="+models.getQuestion()+"Option1"+models.getOpt1()+"Option2="+models.getOpt2()+"Option3="+models.getOpt3()+"Option4="+models.getOpt4()+"Answer="+models.getAnswer()+"where id="+models.getId());
+		//System.out.println("update mockexam set question="+models.getQuestion()+"Option1"+models.getOpt1()+"Option2="+models.getOpt2()+"Option3="+models.getOpt3()+"Option4="+models.getOpt4()+"Answer="+models.getAnswer()+"where id="+models.getId());
 		
 	}
 }

@@ -6,7 +6,7 @@
 <body>
     <form method="POST" action= "j_security_check">
         <div align="center" class ="inset">
-            <h1 style="font-size:30px;"> ADMIN LOGIN </h1>
+            <h1 style="font-size:30px;"> Welcome to Mockexam </h1>
         <table cellspacing="5">
             <tr>
                 <th align="right"><h1>Username:</h1></th>

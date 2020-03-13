@@ -3,7 +3,6 @@
 <head>
 <title>Admin Login </title>
 </head>
-
 <body>
     <form method="POST" action='<%= response.encodeURL("j_security_check") %>'>
         <div align="center" class ="inset">

@@ -9,21 +9,24 @@ import com.lxisoft.Model.*;
 
 public class ResultServlet extends HttpServlet
 {
-    int count=0;
+   
     int totalMark=0;
+    int test ;
     ArrayList<ExamModel> models;
     public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
     {
-        String answer;
+       
         PrintWriter out = response.getWriter();
         HttpSession session = request.getSession();
         models= (ArrayList<ExamModel>) session.getAttribute("qstn");    
         int option =Integer.parseInt(request.getParameter("option"));
-        String questionNo = request.getParameter("value");
+        int count = Integer.parseInt(request.getParameter("count"));
+        count=count-1;
         if(option == 1)
         {
             if((models.get(count).getAnswer()).equals(models.get(count).getOpt1()))
             {
+
                 totalMark++;
             }              
         }
@@ -48,10 +51,12 @@ public class ResultServlet extends HttpServlet
             {
                 totalMark++;
             }
-        }     
+        }   
+        test += totalMark;
+        totalMark = 0;
         HttpSession session1 = request.getSession(true);
-        session1.setAttribute("Mark",totalMark);        
-        request.getRequestDispatcher("Questionview.jsp").forward(request,response);        
+        session1.setAttribute("Mark",test);
+        request.getRequestDispatcher("Questionview.jsp").forward(request,response);      
 
     }
 }     

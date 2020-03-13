@@ -2,6 +2,7 @@
 <html>
 <title> MockExam </title>
 <body bgcolor="OldLace">
+  <%session.invalidate();%>
 <style>
 .container {
   height: 700px;
