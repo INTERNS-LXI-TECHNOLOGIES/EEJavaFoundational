@@ -10,8 +10,7 @@
 	<h1 align="center">Result</h1>
 <body>
 <%int m=(int) session.getAttribute("Mark");
-int result=m;
-out.println(result);%><br>
+out.println(m);%><br>
 
 <%
   if(m>=5)

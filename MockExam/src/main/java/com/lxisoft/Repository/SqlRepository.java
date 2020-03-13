@@ -38,38 +38,7 @@ public class SqlRepository
 			System.out.println("sssssss"+e);
 		}
 	}	
- 	public ArrayList<ExamModel> readFromDatabase(ArrayList<ExamModel> models)
-	{
-		try
-		{
-			this.dataBaseConnectionEstablish();
-			String qry = "select * from mockexam";
-			ps = con.prepareStatement(qry);
-			rs = ps.executeQuery(qry);
-			while(rs.next())
-			{
-				models.add(new ExamModel());
-				for(int i=0;i<models.size();i++)
-				{
-					if((models.get(i)).getId()==0)
-					{
-						models.get(i).setId(rs.getInt(1));
-						models.get(i).setQuestion(rs.getString(2));
-						models.get(i).setOpt1(rs.getString(3));
-						models.get(i).setOpt2(rs.getString(4));
-						models.get(i).setOpt3(rs.getString(5));
-						models.get(i).setOpt4(rs.getString(6));
-						models.get(i).setAnswer(rs.getString(7));
-					}
-				}
-			}			
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		return models;
-	}
+ 	
 	public void insertIntoDatabase(ExamModel models)
 	{
 		try
@@ -125,8 +94,61 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 	}
-		
+	public ArrayList<ExamModel> readFromDatabase(ArrayList<ExamModel> models)
+	{
+		try
+		{
+			this.dataBaseConnectionEstablish();
+			String qry = "select * from mockexam";
+			ps = con.prepareStatement(qry);
+			rs = ps.executeQuery(qry);
+			while(rs.next())
+			{
+				models.add(new ExamModel());
+				for(int i=0;i<models.size();i++)
+				{
+					if((models.get(i)).getId()==0)
+					{
+						models.get(i).setId(rs.getInt(1));
+						models.get(i).setQuestion(rs.getString(2));
+						models.get(i).setOpt1(rs.getString(3));
+						models.get(i).setOpt2(rs.getString(4));
+						models.get(i).setOpt3(rs.getString(5));
+						models.get(i).setOpt4(rs.getString(6));
+						models.get(i).setAnswer(rs.getString(7));
+					}
+				}
+			}			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return models;
+	}
+	public String selectUser(String user)
+	{	
+		String s=null;
+		try
+		{
+			dataBaseConnectionEstablish();
+			String qry="select rolename from users_roles where username='"+user+"'";
+			ps=con.prepareStatement(qry);
+			rs=ps.executeQuery(qry);
+			while(rs.next())
+			{
+				s=rs.getString(1);
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return s;
+	}		
 }	
+
+
 
 
 

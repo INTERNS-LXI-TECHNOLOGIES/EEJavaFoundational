@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Admin Login </title>
+<title>Login </title>
 </head>
 <body>
-    <form method="POST" action='<%= response.encodeURL("j_security_check") %>'>
+    <form method="POST" action= "j_security_check">
         <div align="center" class ="inset">
-            <h1 style="font-size:30px;"> ADMIN LOGIN </h1>
+            <h1 style="font-size:30px;"> Welcome to Mockexam </h1>
         <table cellspacing="5">
             <tr>
                 <th align="right"><h1>Username:</h1></th>
@@ -19,9 +19,10 @@
             </tr>
 
             <tr>
-                <td align="center"><button type="submit" value="admin" class ="button">SUBMIT</button></td>
+                <td align="center"><button type="submit" name="Login" class ="button">Login</button></td>
                 <td align="center"><button type="reset" class ="button">RESET</button></td>
                 <td align="center"> <button formaction="index.jsp" class ="button">BACK</button></td>
+
             </tr>
         </table>
         <br>
