@@ -3,7 +3,6 @@
 <head>
 	<title>sample project</title>
 </head>
-<body bgcolor="FloralWhite">
 <style>
    body {
   background-image: url('itl.cat_simple-wallpaper_120953.png');
@@ -64,6 +63,7 @@
   color: white;
 }
 </style>
+<body>
 <div class="container">
 <div class="center">
 <p align="center">

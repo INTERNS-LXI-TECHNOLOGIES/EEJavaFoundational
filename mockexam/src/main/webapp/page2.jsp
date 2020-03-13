@@ -57,6 +57,36 @@
 </style>
 <div class="container">
 <div class="center">
+  <script>
+<%
+String clock = "10";
+// if( clock == null ) clock = "180";
+%>
+var timeout = <%=clock%>;
+function timer()
+{
+if( -- timeout > 0 )
+{
+document.getElementById("clock").innerHTML= timeout;
+window.setTimeout( "timer()", 1000 );
+}
+else
+{
+document.getElementById("clock").innerHTML = "Time over";
+document.qform.submit();
+///disable submit-button etc
+}
+}
+//-->
+</script>
+  <form action="<%=request.getRequestURL()%>" name="forma">
+<h1>Seconds remaining: <span id="clock"><%=clock%></span></h1>
+</form>
+<script>
+<!--
+timer();
+//-->
+</script>
 <p>
      <%
       ArrayList<Model> model=new ArrayList<Model>();
@@ -70,7 +100,7 @@
 
         %><font color="midnightblue"> <%out.println("<h1>question no: "+(qcount + 1)+"."+model.get(qcount).getQn()+"</h1>");
            %>
-           <form action="check1" method="get">
+           <form action="check1" method="get" name="qform">
         <h1><input type="radio" name="opt" value="1"/>
           <label for="1"><font color="midnightblue"><% out.println(model.get(qcount).getOpt1());%></label></font></h1>
           <h1><input type="radio" name="opt" value="2"/>
@@ -91,5 +121,6 @@
 </p>
 </div>
 </div>
+
 </body>
 </html>

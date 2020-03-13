@@ -45,6 +45,7 @@
   color: black; 
   border: 2px solid #4CAF50;
   border-radius: 12px;
+  
 }
 
 .button1:hover {
@@ -89,8 +90,8 @@ input[type=password] {
 <font size="3" color="midnightblue">USER NAME</font> <input type="text" name="j_username">
  <font size="3" color="midnightblue">PASSWORD</font><input type="password" name="j_password">
  <br>
-<button formaction="index.jsp" class="button button1">CANCEL</button>
-   <button class="button button2" name="login">Login</button>
+   <button class="button button2" type="submit" name="login">Login</button>
+   <button formaction="index.jsp" class="button button1">CANCEL</button>
    <a href="signUp.jsp">sign up</a>
 </form>
 </p>
