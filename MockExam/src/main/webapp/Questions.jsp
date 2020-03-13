@@ -20,13 +20,45 @@
 </head>
 <link rel="stylesheet" href="option.css"></link>
 <div align="center"><font size="9">!! MOCK EXAM !!</font></div>
+<script>
+<%
+String clock = "10";
+%>
+var timeout = <%=clock%>;
+function timer()
+{
+	if( --timeout > 0 )
+	{
+		document.getElementById('clocky').innerHTML = timeout;
+		window.setTimeout( "timer()", 1000 );
+	}
+	else
+	{
+		var data = window.location.href.split('=');
+		var qcount = parseInt(data[1]) +1;
+		window.location.href=data[0].slice(0,data[0].lastIndexOf('/'))+'/Option?ques='+qcount;
+	}
+}
+//-->
+</script>
 <body>
+<div style = "text-align:right;">
+<form action="Result.jsp" name="forma">
+
+<h1 >Seconds Remaining : <span id="clocky"><%=clock%></span> </h1>
+</form>
+<script>
+
+timer();
+
+</script>
+</div>
 
 <div style="background-color: mediumseagreen ">
 <% 
 ArrayList<MockExamModel> model = (ArrayList<MockExamModel>)session.getAttribute("questions");
 int qcount = Integer.parseInt(request.getParameter("ques"));
-if(qcount != model.size()) 
+if(qcount < model.size()) 
 {
 	out.println("<p><h1>Question No : "+(qcount+1)+"</h1></p>");
 	out.println("<p><h2 class=\"fontbig\">Question : "+model.get(qcount).getQuestion().getQuestion()+"</h2></p>");
@@ -47,7 +79,7 @@ if(qcount != model.size())
 	</div>
 	<%
 	qcount++;
-	%>Home
+	%>
 	<hr size = "5" >
 		<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
 	<div align = "center">

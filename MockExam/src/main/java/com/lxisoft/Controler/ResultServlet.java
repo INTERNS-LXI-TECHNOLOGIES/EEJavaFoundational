@@ -15,6 +15,8 @@ public class ResultServlet extends HttpServlet
 		PrintWriter out = response.getWriter();
 		HttpSession session = request.getSession(true);
 		model = (ArrayList<MockExamModel>)session.getAttribute("Array");
+		//out.println("Model : "+model);
+		//out.println("Array Size : "+model.size());
 		for(int i=0;i<model.size();i++)
 		{
 			if(model.get(i).getAnswer().getAnswer().equals(model.get(i).getSelectedOption().getOption()))

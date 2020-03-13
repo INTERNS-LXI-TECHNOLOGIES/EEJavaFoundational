@@ -13,7 +13,16 @@ public class OptionServlet extends HttpServlet
 		HttpSession session = request.getSession(true);
 		questions = (ArrayList<MockExamModel>)session.getAttribute("questions");
 		PrintWriter out = response.getWriter();
-		int selectedOption = Integer.parseInt(request.getParameter("option"));
+		int selectedOption = 0;//Integer.parseInt(request.getParameter("option"));
+		//out.println("Option : "+request.getParameter("option"));
+		if(request.getParameter("option")==null)
+		{
+			selectedOption = 0;
+		}
+		else if(request.getParameter("option")!=null)
+		{
+			selectedOption = Integer.parseInt(request.getParameter("option"));
+		}
 		for(int i=0;i<questions.size();i++)
 		{
 			if(questions.get(i).getSelectedOption().getOption()== null)
@@ -37,6 +46,10 @@ public class OptionServlet extends HttpServlet
 						String option4 = questions.get(i).getOption4().getOption();
 						questions.get(i).getSelectedOption().setOption(option4);
 						break;
+					default :
+						questions.get(i).getSelectedOption().setOption(" ");
+					    break;
+
 				}
 				break;
 			}

@@ -32,7 +32,7 @@
 	 }
 	 %>
 	 <br>
-	 <button type="submit" formaction="index.jsp" class="button">START EXAM AGAIN</button>
+	 <button type="submit" formaction="Introduction.jsp" class="button">START EXAM AGAIN</button>
 </form>
 	</div>
 	</body>
