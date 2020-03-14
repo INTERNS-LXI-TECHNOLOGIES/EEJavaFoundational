@@ -1,0 +1,102 @@
+<web-app>  
+  
+<servlet>  
+<servlet-name>sl</servlet-name>  
+<servlet-class>com.lxisoft.control.Serverlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>sl</servlet-name>  
+<url-pattern>/check</url-pattern>  
+</servlet-mapping>  
+
+<servlet>  
+<servlet-name>fsl</servlet-name>  
+<servlet-class>com.lxisoft.control.FinalServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>fsl</servlet-name>  
+<url-pattern>/check1</url-pattern>  
+</servlet-mapping> 
+
+<servlet>  
+<servlet-name>fs</servlet-name>  
+<servlet-class>com.lxisoft.control.AddServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>fs</servlet-name>  
+<url-pattern>/add</url-pattern>  
+</servlet-mapping>
+
+<servlet>  
+<servlet-name>ds</servlet-name>  
+<servlet-class>com.lxisoft.control.DisplayServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>ds</servlet-name>  
+<url-pattern>/display</url-pattern>  
+</servlet-mapping> 
+
+<servlet>  
+<servlet-name>dls</servlet-name>  
+<servlet-class>com.lxisoft.control.DeleteServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>dls</servlet-name>  
+<url-pattern>/delete</url-pattern>  
+</servlet-mapping>
+
+<servlet>  
+<servlet-name>upd</servlet-name>  
+<servlet-class>com.lxisoft.control.UpdateServlet</servlet-class>  
+</servlet> 
+<servlet-mapping>  
+<servlet-name>upd</servlet-name>  
+<url-pattern>/update</url-pattern>  
+</servlet-mapping> 
+
+<servlet>  
+<servlet-name>slct</servlet-name>  
+<servlet-class>com.lxisoft.control.SelectServlet</servlet-class>  
+</servlet>
+<servlet-mapping>  
+<servlet-name>slct</servlet-name>  
+<url-pattern>/select</url-pattern>  
+</servlet-mapping> 
+
+<servlet>  
+<servlet-name>sgn</servlet-name>  
+<servlet-class>com.lxisoft.control.SignupServlet</servlet-class>  
+</servlet>
+<servlet-mapping>  
+<servlet-name>sgn</servlet-name>  
+<url-pattern>/signup</url-pattern>  
+</servlet-mapping>  
+
+<display-name>Tomcat7FormBasedJAAS</display-name>
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>mockexam</web-resource-name>
+      <url-pattern>/select</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+      <role-name>user</role-name>
+    </auth-constraint>
+  </security-constraint>
+  <security-role>
+    <role-name>admin</role-name>
+    <role-name>user</role-name>
+  </security-role>
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/page0.jsp</form-login-page>
+      <form-error-page>/login_failure.jsp</form-error-page>
+    </form-login-config>
+  </login-config> 
+</web-app>  
