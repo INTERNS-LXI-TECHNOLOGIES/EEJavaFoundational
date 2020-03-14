@@ -41,6 +41,7 @@
     {%>
     <center><a href="Add.jsp"><b><input type="button" class="button" value="+"></b></a><br>
     <form action="search" method="get">
+    	<input type = "hidden" value ="0" name = "indexValue">
     <br><input type="text" name="letter" placeholder="<%=search%>" />
     <input type="submit" value="<%=ok%>"></center></form><%}%>
 	<h1 align="center"><%=mockexam%></h1>
@@ -56,5 +57,6 @@
 <h4>5. The questions can be answered in any order. Each question carries 1 mark.</h4>
 <h4>6. Once you have answered all the questions please click on the 'Submit' button</h4></div></font>
 <a href="admin"><center><b><input type="button" class="button" value="<%=startexam%>"></b></center></a>
+
 </body>
 </html>

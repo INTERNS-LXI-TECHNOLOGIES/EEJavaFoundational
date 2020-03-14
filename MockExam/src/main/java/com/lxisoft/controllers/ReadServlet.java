@@ -8,14 +8,12 @@ import com.lxisoft.models.*;
 
 public class ReadServlet extends HttpServlet
 {
-	int c=0;
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		SqlRepository repository=new SqlRepository();
 		List<Question> questionList=repository.getAllQuestion();
-		c++;
-		HttpSession session=request.getSession();
-		session.setAttribute("cc",c);
+		// HttpSession session=request.getSession();
+		// session.setAttribute("cc",c);
 		request.setAttribute("questionlist",questionList);	
 		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");
 		rd.forward(request,response);

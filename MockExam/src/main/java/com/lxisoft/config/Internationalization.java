@@ -11,7 +11,6 @@ public class Internationalization
     public class UTF8Control extends Control {
         public ResourceBundle newBundle (String baseName, Locale locale, String format, ClassLoader loader, boolean reload) throws IllegalAccessException, InstantiationException, IOException
         {
-            // The below is a copy of the default implementation.
             String bundleName = toBundleName(baseName, locale);
             String resourceName = toResourceName(bundleName, "properties");
             ResourceBundle bundle = null;
@@ -35,11 +34,13 @@ public class Internationalization
             }
             if (stream != null) 
             {
-                try {
-                    // Only this line is changed to make it to read properties files as UTF-8.
+                try 
+                {
                     bundle = new PropertyResourceBundle(new InputStreamReader(stream, "UTF-8"));
-                } finally {
-                stream.close();
+                }
+                finally 
+                {
+                    stream.close();
                 }
             }
             return bundle;

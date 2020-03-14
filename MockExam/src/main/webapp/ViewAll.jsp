@@ -22,7 +22,7 @@
   			padding-top: 50px;
   			padding-right: 30px;
   			padding-left: 80px;
-  			padding-bottom: 30px;
+  			padding-bottom: 20px;
   		}
   </style>
 </head>
@@ -34,15 +34,15 @@ if( clock == null ) clock = "20";
 var timeout = <%=clock%>;
 function timer()
 {
-if( --timeout > 0 )
-{
-document.forma.clock.value = timeout;
-window.setTimeout( "timer()", 1000 );
-}
-else
-{
-document.forma.clock.value = "Time over";
-}
+  if( --timeout > 0 )
+  {
+    document.forma.clock.value = timeout;
+    window.setTimeout( "timer()", 1000 );
+  }
+  else
+  {
+    document.forma.clock.value = "Time over";
+  }
 }
 </script>
 
@@ -57,13 +57,12 @@ String submit= international.localization(language,"IN","Submit");%>
 <div class="jumbotron text-center">
 <h1 align="center"><u><%=questions%></u></h1><br>
 <br><form action="<%=request.getRequestURL()%>" name="forma">
-  <h3 align="right">Seconds remaining:<input type="text" name="clock" value="<%=clock%>" style="border:0px solid white"></h3></form>
+  <h2 align="right">Seconds remaining:<input type="text" name="clock" value="<%=clock%>" style="border:0px solid white"></h2></form>
 </div>
 <body background="rr.jpeg">
 <table align=center>
 	<%List<Question> qn=(List<Question>) request.getAttribute("questionlist");
-	int j=(int)session.getAttribute("cc");
-	int i=(j-1);
+	int i= Integer.parseInt(request.getParameter("indexValue"));
 	if(i<qn.size())
 	{%>
 	   <div>
@@ -82,12 +81,18 @@ String submit= international.localization(language,"IN","Submit");%>
     	<label for="<%=qn.get(i).getOption3()%>"><%=qn.get(i).getOption3()%></label><br>
     	<input type="checkbox" id="<%=qn.get(i).getOption4()%>" name="option" value="<%=qn.get(i).getOption4()%>"/>
     	<label for="<%=qn.get(i).getOption4()%>"><%=qn.get(i).getOption4()%></label><br>
-		  <input type="submit"class="button" value="<%=next%>">
-		  </form>
-      <input type="submit"class="button" value="<%=back%>" onclick="history.back()">
+      <%
+      i++;
+      %>
+      <button type = "submit" class = "button" name = "indexValue" value = "<%out.println(i);%>" >Submit</button>
+		  <!-- <input type="submit"class="button" value="<%=next%>"> -->
+      <input type="submit"class="button" value="<%=back%>" formaction = "ViewAll.jsp">
+      </form>
 		  <!-- <a href="admin"><input type="button" class="button" value="Next"/></a> -->
-      <%if (request.isUserInRole("admin"))
-      {%>
+      <% 
+      if (request.isUserInRole("admin"))
+      {
+        %>
 		    <form action="select" method="get">
     	  <a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
     	  <input type="hidden" name="opt" value="a">
