@@ -52,10 +52,13 @@ public class ResultServlet extends HttpServlet
                 totalMark++;
             }
         }   
-        test += totalMark;
-        totalMark = 0;
         HttpSession session1 = request.getSession(true);
-        session1.setAttribute("Mark",test);
+        session1.setAttribute("Mark",totalMark);
+        int x = (models.size()-1);
+        if(x==count)
+        {
+            totalMark = 0;
+        }
         request.getRequestDispatcher("Questionview.jsp").forward(request,response);      
 
     }

@@ -1,5 +1,4 @@
-<html>
-<head>
+<html><head>
 <script>
 <!--
 <%
@@ -32,5 +31,4 @@ Seconds remaining: <input type="text" name="clock" value="<%=clock%>" style="bor
 timer();
 //-->
 </script>
-</body>
-</html>
+</body></html>
