@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+  <body bgcolor="OldLace">
 <style>
 .container {
   height: 700px;
@@ -24,27 +24,6 @@
 	height: 40px;
 }
 </style>
-<script>
-<!--
-<%
-String clock = "10";
-%>
-var timeout = <%=clock%>;
-function timer()
-{
-if( --timeout > 0 )
-{
-document.forma.clock.value = timeout;
-window.setTimeout( "timer()", 1000 );
-}
-else
-{
-document.forma.clock.value = "Time over";
-///disable submit-button etc
-}
-}
-//-->
-</script>
 </head>
 <body bgcolor="OldLace">
 <div class="container">
@@ -69,15 +48,6 @@ document.forma.clock.value = "Time over";
 </div>
 </div>
 
-<form action="<%=request.getRequestURL()%>" name="forma">
-Seconds remaining: <input type="text" name="clock" value="<%=clock%>" style="border:0px solid white">
-...
-</form>
-<script>
-<!--
-timer();
-//-->
-</script>
 
 </body>
 </html>
