@@ -3,8 +3,6 @@
 <%@page import="com.lxisoft.Model.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
-<html>
-<html>
 <head>
 	<title>Result</title>
 <style>

@@ -39,6 +39,7 @@ body {
 </b>
 <form align = "center" height= "50"%>
 <button type="submit" formaction="LoginServlet" class="button">LOGIN</button> 
+<button formaction="Register.jsp" class="button">REGISTER</button>
 </form>
 </p>
 </div>
