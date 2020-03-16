@@ -1,6 +1,8 @@
 <%@page import="com.lxisoft.models.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
+<%@page import= "javax.servlet.*"%>
+<%@page import= "javax.servlet.http.*"%>
 <%@page import="com.lxisoft.config.*"%>
 <%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <html>
@@ -61,9 +63,11 @@ String submit= international.localization(language,"IN","Submit");%>
 </div>
 <body background="rr.jpeg">
 <table align=center>
-	<%List<Question> qn=(List<Question>) request.getAttribute("questionlist");
-	int i= Integer.parseInt(request.getParameter("indexValue"));
-	if(i<qn.size())
+	<%List<Question> qn=(List<Question>) session.getAttribute("questionlist");
+	String j = request.getParameter("indexValue");
+  int i = Integer.parseInt(j);
+	out.println(" Value : "+request.getParameter("indexValue"));
+  if(i<qn.size())
 	{%>
 	   <div>
 		  <form action="result" method="get">
@@ -84,7 +88,9 @@ String submit= international.localization(language,"IN","Submit");%>
       <%
       i++;
       %>
-      <button type = "submit" class = "button" name = "indexValue" value = "<%out.println(i);%>" >Submit</button>
+      
+      <input type="hidden" name ="indexValue" value="<%out.print(i);%>">
+      <button type ="submit" name="indexValue" class = "button" value ="<%out.print(i);%>">Next</button>
 		  <!-- <input type="submit"class="button" value="<%=next%>"> -->
       <input type="submit"class="button" value="<%=back%>" formaction = "ViewAll.jsp">
       </form>

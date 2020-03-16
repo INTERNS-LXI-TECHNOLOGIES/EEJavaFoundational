@@ -36,17 +36,21 @@
 	String search= international.localization(language,"IN","Search");
 	String ok= international.localization(language,"IN","ok");
 	session.setAttribute("language",language);%>
-    <div>
+    <div>-
     <%if (request.isUserInRole("admin"))
     {%>
     <center><a href="Add.jsp"><b><input type="button" class="button" value="+"></b></a><br>
     <form action="search" method="get">
-    	<input type = "hidden" value ="0" name = "indexValue">
     <br><input type="text" name="letter" placeholder="<%=search%>" />
     <input type="submit" value="<%=ok%>"></center></form><%}%>
+    <form action="admin" method="get">
+    <input type = "hidden" name ="indexValue" value ="0" >
 	<h1 align="center"><%=mockexam%></h1>
 	<center><a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;
 	<a href="?language=mal">മലയാളം</a></center>
+
+<button formaction="admin">StartExam</button>
+</form>
 </div>
 <div>
 <h2 align="center"><u><%=introduction%></u></h2>
@@ -56,7 +60,8 @@
 <h4>4. You can move between the Test sections to attempt the test section of your choice.</h4>
 <h4>5. The questions can be answered in any order. Each question carries 1 mark.</h4>
 <h4>6. Once you have answered all the questions please click on the 'Submit' button</h4></div></font>
-<a href="admin"><center><b><input type="button" class="button" value="<%=startexam%>"></b></center></a>
+
+<!-- <a href="admin"><center><b><input type="button" class="button" value="<%=startexam%>"></b></center></a> -->
 
 </body>
 </html>

@@ -12,10 +12,11 @@ public class ReadServlet extends HttpServlet
 	{
 		SqlRepository repository=new SqlRepository();
 		List<Question> questionList=repository.getAllQuestion();
-		// HttpSession session=request.getSession();
+		HttpSession session=request.getSession();
 		// session.setAttribute("cc",c);
-		request.setAttribute("questionlist",questionList);	
-		RequestDispatcher rd=request.getRequestDispatcher("ViewAll.jsp");
-		rd.forward(request,response);
+		session.setAttribute("questionlist",questionList);
+		PrintWriter out = response.getWriter();
+		//out.println("IndexValue : "+request.getParameter("indexValue"));	
+		request.getRequestDispatcher("ViewAll.jsp").forward(request,response);
 	}
 }
