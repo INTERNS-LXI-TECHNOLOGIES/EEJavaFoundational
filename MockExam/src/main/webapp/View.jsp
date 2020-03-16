@@ -4,6 +4,15 @@
 <html>
 <head>
   <title>Questions</title>
+  <style>
+body {
+  background-image: url('download2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
 </head>
 <body>  
   <form>

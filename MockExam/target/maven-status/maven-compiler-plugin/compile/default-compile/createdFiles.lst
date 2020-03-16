@@ -1,10 +1,11 @@
 com\lxisoft\Control\UpdateServlet.class
 com\lxisoft\Control\AddServlet.class
 com\lxisoft\Control\LoginServlet.class
+com\lxisoft\Control\RegisterServlet.class
 com\lxisoft\Control\QuestionServlet.class
-com\lxisoft\Model\ExamModel.class
-com\lxisoft\Control\ViewServlet.class
 com\lxisoft\Control\ResultServlet.class
 com\lxisoft\Control\DeleteServlet.class
 com\lxisoft\Repository\SqlRepository.class
+com\lxisoft\Model\ExamModel.class
+com\lxisoft\Control\ViewServlet.class
 com\lxisoft\Control\AddQuestionServlet.class

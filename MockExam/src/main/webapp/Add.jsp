@@ -1,5 +1,16 @@
 <!DOCTYPE html>
-<html>									
+<html>	
+<head>
+  <style>
+body {
+  background-image: url('login.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+</head>								
 <body>
 <form>
 	<div>

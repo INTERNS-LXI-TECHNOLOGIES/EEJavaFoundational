@@ -3,6 +3,17 @@
 <%@page import="com.lxisoft.Repository.SqlRepository"%>
 <%@page import="java.util.ArrayList"%>
 <html>
+<head>
+   <style>
+body {
+  background-image: url('download2.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+
+  </head>
 <%
   ArrayList<ExamModel> models = new ArrayList<ExamModel>();
   SqlRepository sqlrepo = new SqlRepository();

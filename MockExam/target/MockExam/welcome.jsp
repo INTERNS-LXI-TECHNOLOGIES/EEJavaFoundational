@@ -4,12 +4,10 @@
 <%@ page isELIgnored="false" %>
  
 
-<fmt:setLocale value="fr"/>
-<fmt:setLocale value="br"/>
-<fmt:setLocale value="es"/>
+<fmt:setLocale value="${param.lang}" />
 <fmt:setBundle basename="messages" />
  
-<html>
+<html lang="${param.lang}">
 <head>
     <title>PhraseApp - i18n</title>
 </head>

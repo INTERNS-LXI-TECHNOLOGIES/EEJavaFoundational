@@ -126,13 +126,13 @@ public class SqlRepository
 		}
 		return models;
 	}
-	public String selectUser(String user)
+	public String selectUser(String username)
 	{	
 		String s=null;
 		try
 		{
 			dataBaseConnectionEstablish();
-			String qry="select rolename from users_roles where username='"+user+"'";
+			String qry="select rolename from users_roles where username='"+username+"'";
 			ps=con.prepareStatement(qry);
 			rs=ps.executeQuery(qry);
 			while(rs.next())
@@ -145,7 +145,37 @@ public class SqlRepository
 			e.printStackTrace();
 		}
 		return s;
-	}		
+	}	
+
+
+	public void addNewUser(String username,String password)
+	{
+		try
+		{
+			String qry = "Insert into users(username,password) values('"+username+"','"+password+"')";
+			ps = con.prepareStatement(qry);
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public void userRoles(String username,String password)
+	{
+		try
+		{
+			addNewUser(username,password);
+			String qry = "Insert into users_roles(username,rolename) values('"+username+"','user')";
+			ps = con.prepareStatement(qry);
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
 }	
 
 
