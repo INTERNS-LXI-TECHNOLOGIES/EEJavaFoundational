@@ -1,4 +1,4 @@
-package com.lxisoft.control;
+/*package com.lxisoft.control;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -11,6 +11,7 @@ public class Login extends HttpServlet
 {
 	Sqlrepository sqlrep=new Sqlrepository();
 	Sqlrepository sql=new Sqlrepository();
+	ArrayList<String>users=new ArrayList<String>();
 	int count=0;
 	public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException  
 	{
@@ -20,15 +21,9 @@ public class Login extends HttpServlet
 		PrintWriter out = res.getWriter();
 		String quest=req.getParameter("UserId");
 		String quest=req.getParameter("Password");
-		for (int i=0;i<model.size();i++) 
-		{
-			if(quest.equals(model.get(i).getAnswer()))
-			{
-				count=count+1;
-				
-			}
-		}	
+		
+		sqlrep.readUsers(users);
 		res.sendRedirect("get");
 		session.setAttribute("count",count);
 	}
-}
+}*/

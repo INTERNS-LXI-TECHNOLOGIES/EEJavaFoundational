@@ -6,7 +6,7 @@ public class Sqlrepository
 {
 	Connection con=null;
 	PreparedStatement ps=null;
-
+	ResultSet rs=null;
 	
 
 	public void connection()
@@ -66,7 +66,6 @@ public class Sqlrepository
 				 	ps.setString(4,model.getOption2());
 				 	ps.setString(5,model.getOption3());
 				 	ps.execute();
-
 		}catch(Exception e)
 			{
 				e.printStackTrace();
@@ -132,5 +131,22 @@ public class Sqlrepository
 			} 
 
 	}
-
+	
+	/*public void addUser()
+	{
+		questions.clear();
+		try{
+			connection();
+			Statement st = con.createStatement();
+			ResultSet rs = st.executeQuery("select * from users");
+			Model model=null;
+			
+		}catch(Exception e)
+			{
+				e.printStackTrace();
+				System.out.println(e);
+			}
+			
+	}
+*/
 }

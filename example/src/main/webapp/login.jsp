@@ -6,23 +6,20 @@
 <link rel="stylesheet" href="style.css">
 <body>
 	<div class="box">
-		<form >
+		<form method=post action="mock">
 			<h2><font >Login</h2><br><br>
 			<div class="inputbox">
 				<label >UserId</label>
-  				<input type="text" name="UserId">
+  				<input type="text" name="j_username">
   				
   				</div>
   			<div class="inputbox">
   				<label >Password</label>
-  				<input type="text" name="Password">	
+  				<input type="text" name="j_password">	
   			</div>
 			</font>
-			
-		</form>
-<form >
-	<div style="text-align:center;">
-		<button formaction="login" type="submit" >submit</button>
+		<div style="text-align:center;">
+		<button type="submit" >submit</button>
 	</div>
 	</div>
 </form>

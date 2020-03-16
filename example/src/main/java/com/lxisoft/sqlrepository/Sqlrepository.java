@@ -6,7 +6,7 @@ public class Sqlrepository
 {
 	Connection con=null;
 	PreparedStatement ps=null;
-
+	ResultSet rs=null;
 	
 
 	public void connection()
@@ -66,7 +66,6 @@ public class Sqlrepository
 				 	ps.setString(4,model.getOption2());
 				 	ps.setString(5,model.getOption3());
 				 	ps.execute();
-
 		}catch(Exception e)
 			{
 				e.printStackTrace();
@@ -132,7 +131,8 @@ public class Sqlrepository
 			} 
 
 	}
-	public void addUser()
+	
+	/*public void addUser()
 	{
 		questions.clear();
 		try{
@@ -140,19 +140,13 @@ public class Sqlrepository
 			Statement st = con.createStatement();
 			ResultSet rs = st.executeQuery("select * from users");
 			Model model=null;
-			while (rs.next())
+			
+		}catch(Exception e)
 			{
-				model=new Model();
-				model.setId(rs.getInt("id"));
-				model.setQuestion(rs.getString("Question"));
-				model.setAnswer(rs.getString("Answers"));
-				model.setOption1(rs.getString("option1"));
-				model.setOption2(rs.getString("option2"));
-				model.setOption3(rs.getString("option3"));
-				questions.add(model);
+				e.printStackTrace();
+				System.out.println(e);
 			}
-		}
 			
 	}
-
+*/
 }
