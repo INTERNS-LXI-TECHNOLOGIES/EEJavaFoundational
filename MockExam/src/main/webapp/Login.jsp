@@ -2,6 +2,14 @@
 <html>
 <head>
 <title>Login </title>
+<style>
+body {
+  background-image: url('login.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
 </head>
 <body>
     <form method="POST" action= "j_security_check">

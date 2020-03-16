@@ -2,6 +2,11 @@
 <html>
 <head>
 <title>Admin Login </title>
+<style type="text/css">
+  body {
+    color: purple;
+    background-color: #d8da3d }
+  </style>
 </head>
 <body>
     <form method="POST" action='<%= response.encodeURL("j_security_check") %>'>

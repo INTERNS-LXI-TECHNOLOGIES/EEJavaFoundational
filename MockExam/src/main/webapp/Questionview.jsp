@@ -3,6 +3,35 @@
 <%@page import="java.util.ArrayList"%>
 <html>
 <head><center><h1>Questions</h></center>
+	<style>
+body {
+  background-image: url('confsquestion.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.container {
+  height: 700px;
+  position: relative;
+  border: 5px solid oldlace;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  -ms-transform: translate(-30%, -30%);
+  transform: translate(-20%, -20%);
+}
+.button_css
+{
+  background-color: midnightblue;
+  color: white;
+  width: 150px;
+  height: 40px;
+}
+
+</style>
 <script>
 <!--
 <%
@@ -36,18 +65,17 @@ timer();
 //-->
 </script>
 </head>
-
-</head>
 <body>
-<p>
+	<p>
 
 <%	
 	ArrayList<ExamModel> models= (ArrayList<ExamModel>) session.getAttribute("qstn");
 	int j=Integer.parseInt(request.getParameter("count"));		
 	if (j != models.size())
 	{			
-		out.println("<h3>Question : "+models.get(j).getQuestion()+"</h3>");	
+		out.println("<h1><center>Question : "+models.get(j).getQuestion()+"</h1></center>");	
 %>
+<
 <form align="center" method="get" name="qform" action="ResultServlet" >
 	
 	<h2><input type="hidden" value="models.get(j).getId()" name="qstNo">

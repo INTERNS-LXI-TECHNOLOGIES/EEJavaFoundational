@@ -3,6 +3,12 @@
 <head>
   <body bgcolor="OldLace">
 <style>
+body {
+  background-image: url('instruction.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 .container {
   height: 700px;
   position: relative;
@@ -18,11 +24,12 @@
 }
 .button_css
 {
-	background-color: midnightblue;
-	color: white;
-	width: 150px;
-	height: 40px;
+  background-color: midnightblue;
+  color: white;
+  width: 150px;
+  height: 40px;
 }
+
 </style>
 </head>
 <body bgcolor="OldLace">
