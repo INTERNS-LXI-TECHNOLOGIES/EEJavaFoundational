@@ -11,9 +11,9 @@ public class LoginServlet extends HttpServlet
 		sqlReppo = SqlRepository.getInstance();
 		PrintWriter out = response.getWriter();
 		String username = request.getRemoteUser();
-		out.println("User : "+username);
+		//out.println("User : "+username);
 		String userrole = sqlReppo.selectRole(username);
-		out.println("UserRole : "+userrole);
+		//out.println("UserRole : "+userrole);
 			if(userrole.equals("admin"))
 			{
 				response.sendRedirect("Admin.jsp");

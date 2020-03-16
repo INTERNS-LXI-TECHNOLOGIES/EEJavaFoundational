@@ -1,4 +1,38 @@
 <html>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css" integrity="sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+<link rel="stylesheet" href="Sample.css"></link>
+<body>
+
+<div class="wrapper">
+  <div class="login-text">
+    <h1>hgjhgj</h1>
+    <!-- <button class="cta"><i class="fas fa-chevron-down fa-1x"></i></button> -->
+    <!-- <div class="text">
+      <hr>
+      <br> -->
+      
+      <!-- <button class="login-btn" type="submit">Log In</button>
+      <button class="signup-btn">Sign Up</button> -->
+    
+    <!-- </div> -->
+  </div>
+  <div class="call-text">
+    <form method="POST">
+      <input  type="text" placeholder="Username" name="username">
+      <br>
+      <input type="password" placeholder="Password" name="password">
+      <br>
+      <br>
+    <!-- <h1>Welcome to <span>MOCK</span> Exam</h1> -->
+    <button formaction="Register">Create Acount</button> <button formaction="Sample1.jsp">Back</button>
+  </form>
+  </div>
+</div>
+</body>
+</html>
+<!-- 
+<html>
 <link rel="stylesheet" href="Style.css"></link>
 <head>
 <title>REGISTER HERE</title>
@@ -30,4 +64,4 @@
     </div>
     </form>
 </body>
-</html>
+</html> -->

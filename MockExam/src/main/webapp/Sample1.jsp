@@ -11,20 +11,24 @@
       <a href="">Login</a>
       <hr>
       <br>
-      <input  type="text" placeholder="Username">
+      <form method="POST" action="j_security_check">
+      <input  type="text" placeholder="Username" name="j_username">
       <br>
-      <input type="password" placeholder="Password">
+      <input type="password" placeholder="Password" name="j_password">
       <br>
-      <button class="login-btn">Log In</button>
-      <button class="signup-btn">Sign Up</button>
+      <button class="login-btn" type="submit">Log In</button>
+      <button formaction="Register.jsp" class="signup-btn">Sign Up</button>
+    </form>
     </div>
   </div>
   <div class="call-text">
-    <h1>Show us your <span>creative</span> side</h1>
+    <h1>Welcome to <span>MOCK</span> Exam</h1>
     <button>Join the Community</button>
   </div>
+  <
 
 </div>
 <script type="text/javascript" src="Sample.js"></script>
+<!-- </form> -->
 </body>
 </html>

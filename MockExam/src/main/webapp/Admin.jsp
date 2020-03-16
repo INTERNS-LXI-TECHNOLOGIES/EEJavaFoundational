@@ -14,7 +14,7 @@
 		<button formaction="Update.jsp" class="button">UPDATE</button>
 		<button formaction="Delete.jsp" class="button">DELETE</button>
 		<button formaction="Admin.jsp" class="button">SEARCH</button><br><br>
-		<button formaction="index.jsp" class="button">BACK</button>
+		<button formaction="Sample1.jsp" class="button">BACK</button>
 		<button formaction="Logout.jsp" class="button">LOGOUT</button>
 		<br>
 		<br>

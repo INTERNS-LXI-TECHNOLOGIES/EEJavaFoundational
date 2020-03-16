@@ -23,7 +23,7 @@
 <form method="get" action="Home" value = "0">
 	<input type="hidden" name="ques" value="0"/>
     <button  class ="button">Start Exam</button> 
-    <button formaction="index.jsp" class="button">BACK</button> 
+    <button formaction="Sample1.jsp" class="button">BACK</button> 
 </form>
 </div>
 </body>

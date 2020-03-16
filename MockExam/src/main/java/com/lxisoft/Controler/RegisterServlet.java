@@ -14,7 +14,7 @@ public class RegisterServlet extends HttpServlet
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		sqlReppo.userRoles(username,password);
-		request.getRequestDispatcher("index.jsp").forward(request,response);
+		request.getRequestDispatcher("Sample1.jsp").forward(request,response);
 
 	}
 }
