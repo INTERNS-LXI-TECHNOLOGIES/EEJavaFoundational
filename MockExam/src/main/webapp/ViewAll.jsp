@@ -44,6 +44,7 @@ function timer()
   else
   {
     document.forma.clock.value = "Time over";
+    // window.location.href = "index.jsp";
   }
 }
 </script>
@@ -66,15 +67,15 @@ String submit= international.localization(language,"IN","Submit");%>
 	<%List<Question> qn=(List<Question>) session.getAttribute("questionlist");
 	String j = request.getParameter("indexValue");
   int i = Integer.parseInt(j);
+  int k = Integer.parseInt(request.getParameter("indexValue"));
 	out.println(" Value : "+request.getParameter("indexValue"));
   if(i<qn.size())
 	{%>
 	   <div>
-		  <form action="result" method="get">
-      
       <script>
         timer();
       </script>
+		  <form action="result" method="get">
 		  <br><input type=hidden name="i" value="<%=qn.get(i).getQno()%>"/><br>
     	<input type="text" value="<%=qn.get(i).getQuestion()%>"/><br>
     	<input type="checkbox" id="<%=qn.get(i).getOption1()%>" name="option" value="<%=qn.get(i).getOption1()%>"/>
@@ -90,7 +91,7 @@ String submit= international.localization(language,"IN","Submit");%>
       %>
       
       <input type="hidden" name ="indexValue" value="<%out.print(i);%>">
-      <button type ="submit" name="indexValue" class = "button" value ="<%out.print(i);%>">Next</button>
+      <button type ="submit" name="indexValue" class = "button" value ="<%out.print(i);%>"><%=next%></button>
 		  <!-- <input type="submit"class="button" value="<%=next%>"> -->
       <input type="submit"class="button" value="<%=back%>" formaction = "ViewAll.jsp">
       </form>
@@ -98,21 +99,28 @@ String submit= international.localization(language,"IN","Submit");%>
       <% 
       if (request.isUserInRole("admin"))
       {
+
         %>
 		    <form action="select" method="get">
-    	  <a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
+    	  <input type="hidden" name="qno" value="<%=qn.get(k).getQno()%>">
     	  <input type="hidden" name="opt" value="a">
-        <input type="submit" class="button" value="<%=delete%>"></a></form>
+        <a href="select"><input type="submit" class="button" value="<%=delete%>"></a></form>
         <form action="select" method="get">
-		    <a href="select"><input type="hidden" name="qno" value="<%=qn.get(i).getQno()%>">
+		    <input type="hidden" name="qno" value="<%=qn.get(k).getQno()%>">
         <input type="hidden" name="opt" value="b">
-        <input type="submit" class="button" value="<%=edit%>"></a></form></div>	
-    <%}
+        <a href="select"><input type="submit" class="button" value="<%=edit%>"></a></form></div>	
+    <%
+    k++;
+    }
   }
 	else
-	{%>
-		<center><a href="Result.jsp"><input type="button" class="button" value="<%=submit%>"/></a></center>
-    </table>
+	{
+    response.sendRedirect("Result.jsp");
+    %>
+
+		<!-- <center><a href="Result.jsp"><input type="button" class="button" value="<%=submit%>"/></a></center> -->
+    
 <%}%>
+</table>
 </body>
 </html>

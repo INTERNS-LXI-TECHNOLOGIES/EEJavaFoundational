@@ -44,13 +44,12 @@
     <br><input type="text" name="letter" placeholder="<%=search%>" />
     <input type="submit" value="<%=ok%>"></center></form><%}%>
     <form action="admin" method="get">
-    <input type = "hidden" name ="indexValue" value ="0" >
+    <input type = "hidden" name ="indexValue" value ="0">
 	<h1 align="center"><%=mockexam%></h1>
-	<center><a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;
+	<center><a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;&nbsp;
 	<a href="?language=mal">മലയാളം</a></center>
 
-<button formaction="admin">StartExam</button>
-</form>
+
 </div>
 <div>
 <h2 align="center"><u><%=introduction%></u></h2>
@@ -60,6 +59,10 @@
 <h4>4. You can move between the Test sections to attempt the test section of your choice.</h4>
 <h4>5. The questions can be answered in any order. Each question carries 1 mark.</h4>
 <h4>6. Once you have answered all the questions please click on the 'Submit' button</h4></div></font>
+
+<center><button formaction="admin">StartExam</button></center>
+
+</form>
 
 <!-- <a href="admin"><center><b><input type="button" class="button" value="<%=startexam%>"></b></center></a> -->
 
