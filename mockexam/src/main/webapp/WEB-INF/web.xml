@@ -72,12 +72,12 @@
     </servlet-mapping>
 
      <servlet> 
-         <servlet-name>Authenthicate</servlet-name> 
-         <servlet-class>com.lxisoft.control.Authenthicate</servlet-class> 
+         <servlet-name>Authenticate</servlet-name> 
+         <servlet-class>com.lxisoft.control.Authenticate</servlet-class> 
     </servlet> 
     <servlet-mapping> 
-         <servlet-name>Authenthicate</servlet-name> 
-         <url-pattern>/authenthicate</url-pattern> 
+         <servlet-name>Authenticate</servlet-name> 
+         <url-pattern>/authenticate</url-pattern> 
     </servlet-mapping>
 
 
@@ -85,20 +85,22 @@
     <security-constraint>
         <web-resource-collection>
             <web-resource-name>example</web-resource-name>
-            <url-pattern>/mock</url-pattern>
+            <url-pattern>/authenticate</url-pattern>
         </web-resource-collection>
         <auth-constraint>
+             <role-name>admin</role-name>
             <role-name>user</role-name>
         </auth-constraint>
     </security-constraint>
     <security-role>
+         <role-name>admin</role-name>
         <role-name>user</role-name>
     </security-role>
     <login-config>
         <auth-method>FORM</auth-method>
         <form-login-config>
-            <form-login-page>/admin.jsp</form-login-page>
-            <form-error-page>/login_failure.jsp</form-error-page>
+            <form-login-page>/login.jsp</form-login-page>
+            <form-error-page>/failur.jsp</form-error-page>
         </form-login-config>
     </login-config>
 

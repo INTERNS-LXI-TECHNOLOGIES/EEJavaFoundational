@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <body background="image/earth.jpg">

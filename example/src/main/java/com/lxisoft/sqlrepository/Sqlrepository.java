@@ -7,7 +7,7 @@ public class Sqlrepository
 	Connection con=null;
 	PreparedStatement ps=null;
 	ResultSet rs=null;
-	
+	Statement st =null;
 
 	public void connection()
 	{
@@ -31,7 +31,7 @@ public class Sqlrepository
 		questions.clear();
 		try{
 			connection();
-			Statement st = con.createStatement();
+			st = con.createStatement();
 			ResultSet rs = st.executeQuery("select * from mockexam");
 			Model model=null;
 			while (rs.next())
@@ -130,6 +130,28 @@ public class Sqlrepository
 				System.out.println(e);
 			} 
 
+	}
+	public String authenticate(String userName)
+	{
+			String user="";
+		try{
+			connection();
+			String  qry = "select rolename from users_roles where username = '"+userName+"'";
+			//st = con.createStatement();
+			ps = con.prepareStatement(qry);
+			// ps.setString(1,userName);
+			rs=ps.executeQuery(qry);
+			while (rs.next())
+			{
+				user=rs.getString(1);	
+			}
+			
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return user;
 	}
 	
 	/*public void addUser()

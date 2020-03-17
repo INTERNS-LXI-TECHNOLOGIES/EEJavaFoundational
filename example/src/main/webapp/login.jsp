@@ -6,10 +6,10 @@
 <link rel="stylesheet" href="style.css">
 <body>
 	<div class="box">
-		<form method=post action="mock">
+		<form method="POST" action="j_security_check">
 			<h2><font >Login</h2><br><br>
 			<div class="inputbox">
-				<label >UserId</label>
+				<label >UserName</label>
   				<input type="text" name="j_username">
   				
   				</div>
