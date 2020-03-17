@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<head>
 <title> MockExam </title>
 <body bgcolor="OldLace">
   <%session.invalidate();%>
@@ -31,7 +32,7 @@ body {
   height: 40px;
 }
 </style>
-</style>
+</head>
 <div class="container">
 <div class="center">
 <p align="center">
@@ -43,9 +44,7 @@ body {
 </form>
 </p>
 </div>
-</div>
 </body>
-</head>
 </html>
 
   

@@ -77,6 +77,17 @@
 <servlet-name>login</servlet-name>  
 <servlet-class>com.lxisoft.Control.LoginServlet</servlet-class>  
 </servlet>  
+
+<servlet-mapping>  
+<servlet-name>register</servlet-name>  
+<url-pattern>/RegisterServlet</url-pattern>  
+</servlet-mapping>
+
+<servlet>  
+<servlet-name>register</servlet-name>  
+<servlet-class>com.lxisoft.Control.RegisterServlet</servlet-class>  
+</servlet>  
+
   
   <security-constraint>
     <web-resource-collection>

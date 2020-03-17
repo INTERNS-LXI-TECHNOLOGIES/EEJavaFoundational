@@ -20,7 +20,7 @@
             </tr>
 
             <tr>
-                <td align="center"><button type="submit" formaction="Register" class ="button">SUBMIT</button></td>
+                <td align="center"><button type="submit" formaction="RegisterServlet" class ="button">SUBMIT</button></td>
                 <td align="center"><button type="reset" class ="button">RESET</button></td>
                 <td align="center"> <button formaction="index.jsp" class ="button">BACK</button></td>
             </tr>

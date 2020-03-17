@@ -165,7 +165,7 @@ public class SqlRepository
 	{
 		try
 		{
-			addNewUser(username,password);
+			this.addNewUser(username,password);
 			String qry = "Insert into users_roles(username,rolename) values('"+username+"','user')";
 			ps = con.prepareStatement(qry);
 			ps.execute();

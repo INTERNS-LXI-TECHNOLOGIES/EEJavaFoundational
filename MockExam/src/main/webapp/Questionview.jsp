@@ -3,9 +3,9 @@
 <%@page import="java.util.ArrayList"%>
 <html>
 <head><center><h1>Questions</h></center>
-	<style>
+<style>
 body {
-  background-image: url('confsquestion.jpg');
+  background-image: url('quiz.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

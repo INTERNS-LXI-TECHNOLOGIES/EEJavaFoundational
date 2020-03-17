@@ -6,7 +6,7 @@
   <title>Questions</title>
   <style>
 body {
-  background-image: url('download2.jpg');
+  background-image: url('crud.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -21,8 +21,9 @@ body {
   models=sqlrepo.readFromDatabase(models);
 %>
   <table>
+    <center>
     <tr>
-    <th><h2>Qno</h2></th>
+    <!-- <th><h2>Qno</h2></th> -->
     <th><h2>Question</h2></th> 
     <th><h2>Option 1</h2></th>
     <th><h2>Option 2</h2></th>
@@ -31,13 +32,13 @@ body {
     </tr>
     <%for(int i=0;i<models.size();i++)
     {%> <tr>
-      <td><h2><%out.println(models.get(i).getId());%></h2></td>
+    <!--   <td><h2><%out.println(models.get(i).getId());%></h2></td> -->
       <td><h2><%out.println(models.get(i).getQuestion());%></h2></td>
       <td><h2><%out.println(models.get(i).getOpt1());%></h2></td>
       <td><h2><%out.println(models.get(i).getOpt2());%></h2></td>
       <td><h2><%out.println(models.get(i).getOpt3());%></h2></td>
       <td><h2><%out.println(models.get(i).getOpt4());%></h2></td>
-       </tr>
+       </tr></center>
     <br>
    <% }
     %>

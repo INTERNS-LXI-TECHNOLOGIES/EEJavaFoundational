@@ -8,6 +8,16 @@
   	SqlRepository sqlrepo=new SqlRepository();
   	models=sqlrepo.readFromDatabase(models);
 %>
+<head>
+   <style>
+body {
+  background-image: url('crud.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+</style>
+</head>
 	<body>
 	<div>
 	<form>

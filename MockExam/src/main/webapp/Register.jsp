@@ -2,12 +2,19 @@
 <link rel="stylesheet" href="Style.css"></link>
 <head>
 <title>REGISTER </title>
+<style>
+body {
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 </head>
-
+</style>
 <body>
     <form method ="POST" >
         <div align="center" class ="inset">
-            <h1 style="font-size:50px;"> REGISTER </h1>
+            <h1 style="font-size:20px;"> REGISTER </h1>
         <table cellspacing="5">
             <tr>
                 <th align="right"><h1>Username:</h1></th>
@@ -20,7 +27,7 @@
             </tr>
 
             <tr>
-                <td align="center"><button type="submit" formaction="Register" class ="button">SUBMIT</button></td>
+                <td align="center"><button type="submit" formaction="RegisterServlet" class ="button">SUBMIT</button></td>
                 <td align="center"><button type="reset" class ="button">RESET</button></td>
                 <td align="center"> <button formaction="index.jsp" class ="button">BACK</button></td>
             </tr>

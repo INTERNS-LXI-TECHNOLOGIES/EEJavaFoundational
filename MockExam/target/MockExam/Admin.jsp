@@ -2,6 +2,12 @@
 <html>
 <body bgcolor="OldLace">
 <style>
+body {
+  background-image: url('background.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
 .container {
   height: 700px;
   position: relative;
