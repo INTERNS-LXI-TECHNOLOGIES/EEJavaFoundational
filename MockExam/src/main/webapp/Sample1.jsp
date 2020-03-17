@@ -23,7 +23,15 @@
   </div>
   <div class="call-text">
     <h1>Welcome to <span>MOCK</span> Exam</h1>
-    <button>Join the Community</button>
+    <label for="cars">Choose a car:</label>
+
+      <select id="cars">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+        <option value="opel">Opel</option>
+        <option value="audi">Audi</option>
+      </select>
+    <!-- <button>Join the Community</button> -->
   </div>
   <
 

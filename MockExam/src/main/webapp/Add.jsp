@@ -1,11 +1,11 @@
 <html>
-<link rel="stylesheet" href="Sample.css"></link>
+<link rel="stylesheet" href="Style.css"></link>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
 <form>
 	<div class="wrapper">
     <!-- <div class="login-text"> -->
-      <div class="text">
+      <!-- <div class="text"> -->
 		
       		<font size="9">ENTER QUESTION</font><br>
         <h1><label for="question">Question : </label>
@@ -22,7 +22,7 @@
         <input type="text" id="option4" placeholder="Enter Option4"  name="option4"></h1><br>
         <button formaction="Admin.jsp" class="button">BACK</button> <button formaction="Add" class="button">SUBMIT
         </button> <button type="reset" class="button">RESET</button>
-    </div>
+    <!-- </div> -->
   <!-- </div> -->
 </div>
 </form>
