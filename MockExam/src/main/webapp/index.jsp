@@ -23,7 +23,7 @@
   </style>
 </head>
 <font color="white">
-<body background="lap.jpeg">
+<body background="cc.jpg">
 	<%Internationalization international=new Internationalization();
 	String language=request.getParameter("language");
 	if(language==null)
@@ -36,7 +36,9 @@
 	String search= international.localization(language,"IN","Search");
 	String ok= international.localization(language,"IN","ok");
 	session.setAttribute("language",language);%>
-    <div>-
+    <div>
+    	<center><a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	<a href="?language=mal">മലയാളം</a></center>
     <%if (request.isUserInRole("admin"))
     {%>
     <center><a href="Add.jsp"><b><input type="button" class="button" value="+"></b></a><br>
@@ -46,8 +48,7 @@
     <form action="admin" method="get">
     <input type = "hidden" name ="indexValue" value ="0">
 	<h1 align="center"><%=mockexam%></h1>
-	<center><a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;&nbsp;
-	<a href="?language=mal">മലയാളം</a></center>
+	
 
 
 </div>
@@ -60,7 +61,7 @@
 <h4>5. The questions can be answered in any order. Each question carries 1 mark.</h4>
 <h4>6. Once you have answered all the questions please click on the 'Submit' button</h4></div></font>
 
-<center><button formaction="admin">StartExam</button></center>
+<center><button class="button" formaction="admin"><%=startexam%></button></center>
 
 </form>
 

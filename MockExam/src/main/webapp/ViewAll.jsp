@@ -1,19 +1,17 @@
 <%@page import="com.lxisoft.models.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
-<%@page import= "javax.servlet.*"%>
-<%@page import= "javax.servlet.http.*"%>
 <%@page import="com.lxisoft.config.*"%>
 <%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <html>
 <head>
 	<title>Questions</title>
 	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<style>
   		.button
   		{
@@ -50,6 +48,8 @@ function timer()
 </script>
 
 <%Internationalization international=new Internationalization();
+
+
 String language=(String) session.getAttribute("language");
 String questions= international.localization(language,"IN","Questions");
 String back= international.localization(language,"IN","Back");
@@ -92,8 +92,7 @@ String submit= international.localization(language,"IN","Submit");%>
       
       <input type="hidden" name ="indexValue" value="<%out.print(i);%>">
       <button type ="submit" name="indexValue" class = "button" value ="<%out.print(i);%>"><%=next%></button>
-		  <!-- <input type="submit"class="button" value="<%=next%>"> -->
-      <input type="submit"class="button" value="<%=back%>" formaction = "ViewAll.jsp">
+      <input type="button" class="button" value="<%=back%>" onclick="history.back()">
       </form>
 		  <!-- <a href="admin"><input type="button" class="button" value="Next"/></a> -->
       <% 

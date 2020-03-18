@@ -16,9 +16,9 @@
   	}
   </style>
 </head>
-<div><font color="white">
+<div><font color="black">
 <h1 align="center"><u>Result</u></h1>
-<body background="imge.jpg">
+<body background="aa.jpg">
 <h1 align=center>
   <%int m=(int) session.getAttribute("mark");
   out.println("Mark:"+m);
