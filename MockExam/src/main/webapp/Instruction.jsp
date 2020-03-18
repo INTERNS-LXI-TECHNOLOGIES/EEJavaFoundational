@@ -1,7 +1,8 @@
-<!DOCTYPE html>
+<%@page import = "com.lxisoft.Config.*"%>
+<%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <html>
 <head>
-  <body bgcolor="OldLace">
+<title>MockExam</title>
 <style>
 body {
   background-image: url('instruction.jpg');
@@ -29,32 +30,43 @@ body {
   width: 150px;
   height: 40px;
 }
-
 </style>
 </head>
-<body bgcolor="OldLace">
-<div class="container">
-<div class="center">
-<p>
-<h1><font color="MediumBlue">Instruction</font></h1>
-<ol>
+<body>
+ <%
+  Internationalization international = new Internationalization();
+  String language = request.getParameter("language");
+  session.setAttribute("language",language);
+  if(language == null)
+  {
+    language = "mal";
+  } 
+  %>
+  <a href = "?language=mal">Malayalam</a>
+  <div align="center" style="background-color: mediumseagreen " class = "inset">
+    <h1 style="font-size:50px;"> WELCOME TO MOCK EXAM </h1>
+  </div>
+<div class = "inset">
+    <div class="dimbly" align="center">
+    <ul>
+      <h1 style="font-size:30px;"><%out.println(international.localization(language,"IN","Instructions"));%></h1><br>
+    <ol>
  <h2><font color="SlateBlue"><li>Please read instructions so that you will be able to easily navigate through the Test.</li></font> </h2>
  <h2><font color="SlateBlue"><li>Timer start when you click start button.</li></font></h2>
- <h2><font color="SlateBlue"><li>The Question Paper consists of multiple sections each having multiple options for each.</li></font></h2>
+ <h2><font color="SlateBlue"><li>Each Questions having multiple options.</li></font></h2>
  <h2><font color="SlateBlue"><li>Only one Question will be displayed at a time click on "Next"button next question will get.</li></font></h2>
  <h2><font color="SlateBlue"><li>If you answered all the questions please click on the 'Submit' button.</li></font></h2>
 </ol>
+</div>
+  </div><br>
+  <div align = "center">  
 
 <form method="get" action="QuestionServlet" value="0">
-	<input type = "hidden" name = "count" value ="0">
-	<button type="submit" class="button_css"> Start </button>
-	<button formaction = "index.jsp" class="button_css">Back</button>
+  <input type = "hidden" name = "count" value ="0">
+  <button type="submit" class="button_css"> Start </button>
+  <button formaction = "index.jsp" class="button_css">Back</button>
 </form>
-     
-</p>
 </div>
-</div>
-
-
 </body>
 </html>
+  
