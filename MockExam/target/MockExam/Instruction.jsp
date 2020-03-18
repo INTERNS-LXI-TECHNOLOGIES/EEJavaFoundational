@@ -53,7 +53,7 @@ body {
 <div class = "inset">
     <div class="dimbly" align="center">
     <ul>
-      <h1 style="font-size:30px;"><%out.println(international.localization(language,"IN","Instructions_text_properties"));%></h1><br>
+      <h1 style="font-size:30px;"><%out.println(international.localization(language,"IN","Instructions"));%></h1><br>
     <ol>
  <h2><font color="SlateBlue"><li>Please read instructions so that you will be able to easily navigate through the Test.</li></font> </h2>
  <h2><font color="SlateBlue"><li>Timer start when you click start button.</li></font></h2>
