@@ -1,45 +1,39 @@
 package com.lxisoft.Config;
+import java.util.*;
+import java.io.*;
 import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.ResourceBundle.Control;
-import java.util.*;
-import java.io.*;
 import java.net.*;
 import java.net.URLConnection;
+
 public class Internationalization
 {
-    public class UTF8Control extends Control {
-        public ResourceBundle newBundle (String baseName, Locale locale, String format, ClassLoader loader, boolean reload) throws IllegalAccessException, InstantiationException, IOException
+    public class UTF8Control extends Control
+    {
+        public ResourceBundle newBundle(String baseName,Locale locale, String format,ClassLoader loader, boolean reload)throws IllegalAccessException, InstantiationException, IOException
         {
             String bundleName = toBundleName(baseName, locale);
             String resourceName = toResourceName(bundleName, "properties");
             ResourceBundle bundle = null;
             InputStream stream = null;
-            if (reload) 
-            {
+            if (reload) {
                 URL url = loader.getResource(resourceName);
-                if (url != null) 
-                {
+                if (url != null) {
                     URLConnection connection = url.openConnection();
-                    if (connection != null) 
-                    {
+                    if (connection != null) {
                         connection.setUseCaches(false);
                         stream = connection.getInputStream();
                     }
                 }
-            } 
-            else 
-            {
+            } else {
                 stream = loader.getResourceAsStream(resourceName);
             }
-            if (stream != null) 
-            {
-                try 
-                {
+            if (stream != null) {
+                try {
+                    // Only this line is changed to make it to read properties files as UTF-8.
                     bundle = new PropertyResourceBundle(new InputStreamReader(stream, "UTF-8"));
-                }
-                finally 
-                {
+                } finally {
                     stream.close();
                 }
             }
