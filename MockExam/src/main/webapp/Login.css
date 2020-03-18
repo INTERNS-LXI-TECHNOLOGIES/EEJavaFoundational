@@ -7,7 +7,17 @@ input[type=text] {
   border-bottom:2px solid red;
 }
 .button {
-  padding: 15px 25px;
+  height: 40px;
+     width: 180px;
+     border: none;
+     border-radius: 20px;
+     background: linear-gradient(to left, #ab68ca, #de67a3);
+     color: #fff;
+     font-weight: bolder;
+     margin-top: 30px;
+     cursor: pointer;
+     outline: none;
+  /*padding: 15px 25px;
   font-size: 24px;
   text-align: center;
   cursor: pointer;
@@ -16,7 +26,7 @@ input[type=text] {
   background-color: #4CAF50;
   border: none;
   border-radius: 15px;
-  box-shadow: 0 9px #999;
+  box-shadow: 0 9px #999;*/
 }
 
 .button:active {
@@ -48,5 +58,8 @@ table, th, td {
   height: 50px;
 }
 .inset {
-  border-style: inset;
+  /*border-style: inset;*/
+}
+.hi{
+  height :30px;
 }

@@ -13,7 +13,7 @@
 	if(language == null)
 	{
 		language = "mal";
-	} 
+	}
 	%>
 	<a href = "?language=mal">Malayalam</a>
 	<div align="center" style="background-color: mediumseagreen " class = "inset">
