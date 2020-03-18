@@ -3,7 +3,7 @@
 <%@page import="java.util.ArrayList"%>
 <html>
 <head><center><h1>Questions</h></center>
-	<style>
+<style>
 body {
   background-image: url('quiz.jpg');
   background-repeat: no-repeat;

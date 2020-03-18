@@ -152,6 +152,7 @@ public class SqlRepository
 	{
 		try
 		{
+			dataBaseConnectionEstablish();
 			String qry = "Insert into users(username,password) values('"+username+"','"+password+"')";
 			ps = con.prepareStatement(qry);
 			ps.execute();
