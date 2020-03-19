@@ -14,8 +14,9 @@
 </head>
 <body background="image/earth.jpg">
 	<%try
-	{
 	Internationalization international=new Internationalization();
+	session.setAttribute("international",international);
+	session.setAttribute("language",language);
 	String language=request.getParameter("language");
 	if(language==null)
 	{
@@ -26,19 +27,12 @@
 	String startexam= international.localization(language,"IN","StartExam");
 	String search= international.localization(language,"IN","Search");
 	String ok= international.localization(language,"IN","ok");
-	session.setAttribute("language",language);%>
-    <div>-
-    <%if (request.isUserInRole("admin"))
-    {%>
-    <center><a href="Add.jsp"><b><input type="button" class="button" value="+"></b></a><br>
-    <form action="search" method="get">
-    <br><input type="text" name="letter" placeholder="<%=search%>" />
-    <input type="submit" value="<%=ok%>"></center></form><%}%>
-    <form action="admin" method="get">
-    <input type = "hidden" name ="indexValue" value ="0">
-	<h1 align="center"><%out.println(mockexam);%></h1>
-	<center><a href="?language=en">ENGLISH</a>&nbsp;&nbsp;&nbsp;&nbsp;
+	%>
+    <div>
+	<h1 align="center"><%=mockexam%></h1>
+	<center><a href="?language=en">ENGLISH</a>
 	<a href="?language=mal">മലയാളം</a></center>
+
 
 <header>
 	<h3><font color="white">* You have got 10 minutes to complete the exam</font></h3>
@@ -47,14 +41,15 @@
 	<h3><font color="white">* Any malpractice will lead to debar</font></h3>
 	<div align="center" class="button">
 		<form method="get" action="check">
-			<input type="submit" name="Next" value="Next" />
+			<input type="submit" name="Next">
 		</form>
+	</form>
 	</div>
 	<% } 
 	catch (Exception e) {
 %>
-</font>
-<font size="+3" color="#87CEFA" style="margin-left:-6%"><br></br>
+
+<font size="+3" color="#87CEFA" style="margin-left:-6%"></font><br></br>
 <%
 	e.printStackTrace();
 	out.println(e);
