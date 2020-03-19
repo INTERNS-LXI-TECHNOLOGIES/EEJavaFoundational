@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import = "com.lxisoft.Config.*"%>
+<%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <html>	
 <head>
   <style>
@@ -9,9 +11,20 @@ body {
   background-size: cover;
 }
 </style>
-
 </head>								
 <body>
+   <%
+  Internationalization international = new Internationalization();
+  String language = request.getParameter("language");
+  session.setAttribute("language",language);
+  if(language == null)
+  {
+    language = "mal";
+  } 
+  %>
+  <a href = "?language=mal">Malayalam</a>
+   <a href = "?language=en">English</a>
+      <div class="dimbly" align="center">
 <form>
 	<div>
 	<h1></h1>
@@ -28,9 +41,9 @@ body {
   <input type="text" id="option4" name="option4"><br><br>
   <label for="answer">Answer =</label>
   <input type="text" id="answer" name="answer"><br><br>
-  <button formaction="Admin.jsp" class="button">BACK</button> 
-  <button formaction="AddServlet" class="button">SUBMIT</button>
-  <button type="reset" class="button">RESET</button></center>
+  <button formaction="Admin.jsp" class="button"><%out.println(international.localization(language,"IN","Back"));%></button> 
+  <button formaction="AddServlet" class="button"><%out.println(international.localization(language,"IN","Submit"));%></button>
+  <button type="reset" class="button"><%out.println(international.localization(language,"IN","Reset"));%></button></center>
 </div>
 </form>
 </body>

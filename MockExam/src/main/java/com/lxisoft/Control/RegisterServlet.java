@@ -13,11 +13,10 @@ public class RegisterServlet extends HttpServlet
 	private SqlRepository sqlrepo ;
 	public void doPost(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
 	{
-		sqlrepo= new SqlRepository();
+		sqlrepo = new SqlRepository();
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		sqlrepo.userRoles(username,password);
 		request.getRequestDispatcher("index.jsp").forward(request,response);
-
 	}
 }

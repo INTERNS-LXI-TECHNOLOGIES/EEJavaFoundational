@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<%@page import = "com.lxisoft.Config.*"%>
+<%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
 <html>
 <body bgcolor="OldLace">
 <style>
@@ -30,14 +34,30 @@ body {
 	height: 40px;
 }
 </style>
+ <%
+  Internationalization international = new Internationalization();
+  String language = request.getParameter("language");
+  session.setAttribute("language",language);
+  if(language == null)
+  {
+    language = "mal";
+  } 
+  %>
+  <a href = "?language=mal">Malayalam</a>
+   <a href = "?language=en">English</a>
+  <div align="center" style="background-color: mediumseagreen " class = "inset">
+    <h1 style="font-size:50px;"> WELCOME TO MOCK EXAM </h1>
+  </div>
+<div class = "inset">
+    <div class="dimbly" align="center">
 <div>
 <form>
 <center><h1>ADMIN</h1>	
-<button formaction="View.jsp" class="button_css">VIEW</button>
-<button formaction="Add.jsp" class="button_css">ADD</button>
-<button formaction="Update.jsp"  class="button_css">UPDATE</button>
-<button formaction="Delete.jsp" class="button_css">DELETE</button>
-<button formaction ="index.jsp" class="button_css">BACK</button> 
+<button formaction="View.jsp" class="button_css"><%out.println(international.localization(language,"IN","View"));%></button>
+<button formaction="Add.jsp" class="button_css"><%out.println(international.localization(language,"IN","Add"));%></button>
+<button formaction="Update.jsp"  class="button_css"><%out.println(international.localization(language,"IN","Update"));%></button>
+<button formaction="Delete.jsp" class="button_css"><%out.println(international.localization(language,"IN","Delete"));%></button>
+<button formaction ="index.jsp" class="button_css"><%out.println(international.localization(language,"IN","Back"));%></button> 
 </center>
 </form>
 </div>

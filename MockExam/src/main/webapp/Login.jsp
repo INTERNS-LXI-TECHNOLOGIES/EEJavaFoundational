@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<%@page import = "com.lxisoft.Config.*"%>
+<%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <html>
 <head>
 <title>Login </title>
@@ -12,6 +14,20 @@ body {
 </style>
 </head>
 <body>
+   <%
+  Internationalization international = new Internationalization();
+  String language = request.getParameter("language");
+  session.setAttribute("language",language);
+  if(language == null)
+  {
+    language = "mal";
+  } 
+  %>
+  <a href = "?language=mal">Malayalam</a>
+   <a href = "?language=en">English</a>
+  <div class = "inset">
+    <div class="dimbly" align="center">
+
     <form method="POST" action= "j_security_check">
         <div align="center" class ="inset">
             <h1 style="font-size:30px;"> Welcome to Mockexam </h1>
@@ -27,9 +43,9 @@ body {
             </tr>
 
             <tr>
-                <td align="center"><button type="submit" name="Login" class ="button">Login</button></td>
-                <td align="center"><button type="reset" class ="button">RESET</button></td>
-                <td align="center"> <button formaction="index.jsp" class ="button">BACK</button></td>
+                <td align="center"><button type="submit" name="Login" class ="button"><%out.println(international.localization(language,"IN","Login"));%></button></td>
+                <td align="center"><button type="reset" class ="button"><%out.println(international.localization(language,"IN","Reset"));%></button></td>
+                <td align="center"> <button formaction="index.jsp" class ="button"><%out.println(international.localization(language,"IN","Back"));%></button></td>
 
             </tr>
         </table>

@@ -7,7 +7,7 @@
 	<title>Result</title>
 <style>
 body {
-  background-image: url('result1.jpg');
+  background-image: url('images.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

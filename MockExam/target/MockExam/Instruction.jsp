@@ -47,6 +47,7 @@ body {
   } 
   %>
   <a href = "?language=mal">Malayalam</a>
+   <a href = "?language=en">English</a>
   <div align="center" style="background-color: mediumseagreen " class = "inset">
     <h1 style="font-size:50px;"> WELCOME TO MOCK EXAM </h1>
   </div>
