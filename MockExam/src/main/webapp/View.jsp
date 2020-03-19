@@ -20,8 +20,8 @@ ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
   <br>
   </div>
   <form>
-		
-		<table style="width:70%" align = "center">
+		<br>
+		<table style="width:90%" align = "center">
   <tr>
     <th>QuestionNo</th>
     <th>Question</th>

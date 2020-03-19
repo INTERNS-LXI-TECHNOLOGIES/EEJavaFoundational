@@ -3,11 +3,9 @@
 <html>
 <link rel="stylesheet" href="Style.css"></link>
 <head>
-    <!-- <title></title> -->
     <meta charset="UTF-8"/>
     <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
 <body>
 	<%
 	Internationalization international = new Internationalization();
@@ -42,11 +40,8 @@
 		<button formaction="Update.jsp" class="button">UPDATE</button>
 		<button formaction="Delete.jsp" class="button">DELETE</button>
 		<button formaction="Admin.jsp" class="button">SEARCH</button> <button formaction="Logout.jsp" class="button">BACK</button>
-		<!-- <button formaction="Logout.jsp" class="button">LOGOUT</button> -->
-		<!-- <a href = "?language=mal">Malayalam</a> -->
 		<br>
 		<br>
-		<!-- </div> -->
 	</div> 
 </div>
 </form>

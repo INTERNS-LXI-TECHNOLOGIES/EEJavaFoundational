@@ -8,13 +8,20 @@
   questions = sqlReppo.readFromDatabase(questions);
 %>
 	<body>
-	<link rel="stylesheet" href="Login.css"></link>
+	<link rel="stylesheet" href="Style.css"></link>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<body>
 	<div>
 	<form>
-		<h1>!! DELETE QUESTIONS !!</h1>
-		<table style="width:70%" align = "center">
+    <div class="hello" style ="border: outset;">
+    <div align="center" style="background-color: darkmagenta;">
+      <br>
+		<h1 style="font-size:50px;">!! DELETE QUESTIONS !!</h1>
+    <br>
+    </div>
+    <br>
+    <br>
+		<table style="width:90%" align = "center">
   <tr>
   	<th>QuestionNo</th>
     <th>Question</th>
@@ -37,14 +44,18 @@
     <td><%out.println(questions.get(i).getOption2().getOption());%></td>
     <td><%out.println(questions.get(i).getOption3().getOption());%> </td>
     <td><%out.println(questions.get(i).getOption4().getOption());%> </td>
-    <td><button name ="Delete" formaction ="Delete" value =<%out.println(questions.get(i).getId());%>>DELETE</button></td>
+    <td><button style="background-color: darkmagenta;" name ="Delete" formaction ="Delete" value =<%out.println(questions.get(i).getId());%>>DELETE</button></td>
   </tr>
   <%
 	}
   %>
-</table><br>
-	<button formaction="Admin.jsp" class="button">BACK</button> 
+</table>
+<br>
+<div align="center">
+	<button formaction="Admin.jsp" class="button">BACK</button>
+  </div> 
 	</form>
 	</div>
+  </div>
 	</body>
 </html>

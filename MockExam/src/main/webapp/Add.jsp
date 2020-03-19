@@ -4,12 +4,17 @@
 <body>
 <form>
 	<div class="wrapper">
-    <!-- <div class="login-text"> -->
-      <!-- <div class="text"> -->
-		
-      		<font size="9">ENTER QUESTION</font><br>
+        
+		<div align="center" style="background-color: darkmagenta;" >
+            <br>
+            <br>
+      		<font size="9">ENTER QUESTION</font>
+            <br>
+            <br>
+        </div>
+        <div align="center">
         <h1><label for="question">Question : </label>
-        <input type="text" id="question" placeholder="Enter Question" name="question"><br>
+        <input class="text" type="text" id="question" placeholder="Enter Question" name="question"><br>
         <label for="answer">Answer : </label>
         <input type="text" id="answer" placeholder="Enter Answer"  name="answer"><br>
         <label for="option1">Option1 : </label>
@@ -22,8 +27,7 @@
         <input type="text" id="option4" placeholder="Enter Option4"  name="option4"></h1><br>
         <button formaction="Admin.jsp" class="button">BACK</button> <button formaction="Add" class="button">SUBMIT
         </button> <button type="reset" class="button">RESET</button>
-    <!-- </div> -->
-  <!-- </div> -->
+  </div>
 </div>
 </form>
 </body>
