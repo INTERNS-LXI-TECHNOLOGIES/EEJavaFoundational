@@ -14,7 +14,7 @@ public class DeleteServlet extends HttpServlet
 		SqlRepository repository=new SqlRepository();
 		String qno=request.getParameter("qno");
 	    repository.deleteQuestion(qno);
-		RequestDispatcher rd=request.getRequestDispatcher("admin");
+		RequestDispatcher rd=request.getRequestDispatcher("index.jsp");
 		rd.forward(request,response);
 	}
 }

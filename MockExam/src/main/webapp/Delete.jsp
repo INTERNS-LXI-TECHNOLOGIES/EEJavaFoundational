@@ -43,7 +43,7 @@ String q=international.localization(language,"IN","Do_You_Want_To_Continue?");%>
 	<tr>
 		<td>
 		<div><input type="hidden" name="qno" value="<%=qn.getQno()%>">
-			<input type="submit" value=<%=confirm%>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="submit" value="<%=confirm%>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	</form>
 	<a href="admin"><input type="submit" value=<%=cancel%>></a></div>
 		</td>

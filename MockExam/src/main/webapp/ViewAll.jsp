@@ -1,8 +1,9 @@
+<%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@page import="com.lxisoft.config.*"%>
+<!DOCTYPE html>
 <%@page import="com.lxisoft.models.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
-<%@page import="com.lxisoft.config.*"%>
-<%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <html>
 <head>
 	<title>Questions</title>
@@ -26,6 +27,14 @@
   		}
   </style>
 </head>
+<%Internationalization international=new Internationalization();
+String language=(String) session.getAttribute("language");
+String questions= international.localization(language,"IN","Questions");
+String back= international.localization(language,"IN","Back");
+String next= international.localization(language,"IN","Next");
+String edit= international.localization(language,"IN","Edit");
+String delete= international.localization(language,"IN","Delete");
+String submit= international.localization(language,"IN","Submit");%>
 <script>
 <%
 String clock = request.getParameter( "clock" );
@@ -47,18 +56,8 @@ function timer()
 }
 </script>
 
-<%Internationalization international=new Internationalization();
-
-
-String language=(String) session.getAttribute("language");
-String questions= international.localization(language,"IN","Questions");
-String back= international.localization(language,"IN","Back");
-String next= international.localization(language,"IN","Next");
-String edit= international.localization(language,"IN","Edit");
-String delete= international.localization(language,"IN","Delete");
-String submit= international.localization(language,"IN","Submit");%>
 <div class="jumbotron text-center">
-<h1 align="center"><u><%=questions%></u></h1><br>
+<h1 align="center"><u>Questions</u></h1><br>
 <br><form action="<%=request.getRequestURL()%>" name="forma">
   <h2 align="right">Seconds remaining:<input type="text" name="clock" value="<%=clock%>" style="border:0px solid white"></h2></form>
 </div>
@@ -68,7 +67,7 @@ String submit= international.localization(language,"IN","Submit");%>
 	String j = request.getParameter("indexValue");
   int i = Integer.parseInt(j);
   int k = Integer.parseInt(request.getParameter("indexValue"));
-	out.println(" Value : "+request.getParameter("indexValue"));
+	out.println("Qno: "+request.getParameter("indexValue"));
   if(i<qn.size())
 	{%>
 	   <div>
@@ -89,25 +88,23 @@ String submit= international.localization(language,"IN","Submit");%>
       <%
       i++;
       %>
-      
       <input type="hidden" name ="indexValue" value="<%out.print(i);%>">
-      <button type ="submit" name="indexValue" class = "button" value ="<%out.print(i);%>"><%=next%></button>
-      <input type="button" class="button" value="<%=back%>" onclick="history.back()">
+      <button type ="submit" name="indexValue" class = "button" value ="<%out.print(i);%>">Next</button>
+      <input type="button" class="button" value="Back" onclick="history.back()">
       </form>
 		  <!-- <a href="admin"><input type="button" class="button" value="Next"/></a> -->
       <% 
       if (request.isUserInRole("admin"))
       {
-
         %>
 		    <form action="select" method="get">
     	  <input type="hidden" name="qno" value="<%=qn.get(k).getQno()%>">
     	  <input type="hidden" name="opt" value="a">
-        <a href="select"><input type="submit" class="button" value="<%=delete%>"></a></form>
+        <a href="select"><input type="submit" class="button" value="Delete"></a></form>
         <form action="select" method="get">
 		    <input type="hidden" name="qno" value="<%=qn.get(k).getQno()%>">
         <input type="hidden" name="opt" value="b">
-        <a href="select"><input type="submit" class="button" value="<%=edit%>"></a></form></div>	
+        <a href="select"><input type="submit" class="button" value="Edit"></a></form></div>	
     <%
     k++;
     }
@@ -116,9 +113,6 @@ String submit= international.localization(language,"IN","Submit");%>
 	{
     response.sendRedirect("Result.jsp");
     %>
-
-		<!-- <center><a href="Result.jsp"><input type="button" class="button" value="<%=submit%>"/></a></center> -->
-    
 <%}%>
 </table>
 </body>

@@ -19,9 +19,6 @@ public class AddServlet extends HttpServlet
 		q.setOption3(request.getParameter("option3"));
 		q.setOption4(request.getParameter("option4"));
 		q.setAnswer(request.getParameter("answer"));
-		// q.setAnswer2(request.getParameter("answer2"));
-		// String[] answer = request.getParameterValues("option");
-		// q.setAnswer(answer);
 		repo.insertQuestion(q);
 		request.setAttribute("question",q);
 		RequestDispatcher rd=request.getRequestDispatcher("View.jsp");

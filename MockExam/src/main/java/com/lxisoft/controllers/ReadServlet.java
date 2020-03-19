@@ -13,10 +13,8 @@ public class ReadServlet extends HttpServlet
 		SqlRepository repository=new SqlRepository();
 		List<Question> questionList=repository.getAllQuestion();
 		HttpSession session=request.getSession();
-		// session.setAttribute("cc",c);
 		session.setAttribute("questionlist",questionList);
 		PrintWriter out = response.getWriter();
-		//out.println("IndexValue : "+request.getParameter("indexValue"));	
 		request.getRequestDispatcher("ViewAll.jsp").forward(request,response);
 	}
 }

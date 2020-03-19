@@ -33,7 +33,7 @@
     <tr>
         <td><center><%=qn.getAnswer()%></center></td>  
     </tr>
-        <td><center><a href="admin"><input type="submit" value=Back></td></center>
+        <td><center><a href="index.jsp"><input type="submit" value=Back></td></center>
     </tr>
 </body>
 </html>

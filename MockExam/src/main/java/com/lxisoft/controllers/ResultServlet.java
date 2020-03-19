@@ -8,12 +8,9 @@ import com.lxisoft.models.*;
 
 public class ResultServlet extends HttpServlet
 {
-    
-    // int k=0;
-     int mar=0;
+    int mar=0;
     public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
     {
-       
         PrintWriter out = response.getWriter();
         SqlRepository repository=new SqlRepository();
         String option=request.getParameter("option");
@@ -26,12 +23,11 @@ public class ResultServlet extends HttpServlet
             mar++;
         }
         session.setAttribute("mark",mar);
-            if(count==questionList.size())
-            {
-                out.println("Inside Loop");
-                mar=0;
-            }
-           
-            request.getRequestDispatcher("ViewAll.jsp").forward(request,response);
+        if(count==questionList.size())
+        {
+            out.println("Inside Loop");
+            mar=0;
+        }
+        request.getRequestDispatcher("ViewAll.jsp").forward(request,response);
     }
 }
