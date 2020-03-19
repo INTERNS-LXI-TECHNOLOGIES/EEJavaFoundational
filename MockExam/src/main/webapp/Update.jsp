@@ -13,7 +13,7 @@
 <head>
    <style>
 body {
-  background-image: url('crud.jpg');
+  background-image: url('Crud.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

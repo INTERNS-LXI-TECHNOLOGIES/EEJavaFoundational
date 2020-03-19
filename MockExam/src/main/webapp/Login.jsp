@@ -6,7 +6,7 @@
 <title>Login </title>
 <style>
 body {
-  background-image: url('login.jpg');
+  background-image: url('Login.jpeg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

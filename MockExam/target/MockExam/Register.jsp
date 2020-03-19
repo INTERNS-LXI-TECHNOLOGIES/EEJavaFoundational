@@ -1,10 +1,12 @@
+<%@page import = "com.lxisoft.Config.*"%>
+<%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <html>
 <link rel="stylesheet" href="Style.css"></link>
 <head>
 <title>REGISTER </title>
 <style>
 body {
-  background-image: url('background.jpg');
+  background-image: url('Register.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

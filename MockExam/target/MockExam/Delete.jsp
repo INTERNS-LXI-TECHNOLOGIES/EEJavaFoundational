@@ -8,7 +8,7 @@
 <head>
    <style>
 body {
-  background-image: url('crud.jpg');
+  background-image: url('Crud.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -60,8 +60,7 @@ body {
       <td><h2><%out.println(models.get(i).getOpt4());%></h2></td>
        <td><h2><%out.println(models.get(i).getAnswer());%></h2></td>
       <td><button name ="Delete" formaction ="DeleteServlet" value =<%out.println(models.get(i).getId());%>DELETE</button></td>
-        
-      </button></td>
+            
     </tr>
     <%
      }

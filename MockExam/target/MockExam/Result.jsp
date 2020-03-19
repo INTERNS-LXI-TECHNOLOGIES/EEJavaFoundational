@@ -7,7 +7,7 @@
 	<title>Result</title>
 <style>
 body {
-  background-image: url('images.jpg');
+  background-image: url('Result.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -35,7 +35,8 @@ body {
 </style>
 <center><font size="10" color="Black">Result</font></center>	
 <body>
-<%
+	<center>
+		<%
 int m=(int) session.getAttribute("Mark");
 out.println(m);
 %><br>
@@ -49,6 +50,9 @@ out.println(m);
 	 out.println("FAILED");	
   }
   %>
+  
+	</center>
+
  <center> 
 <button class="button" onclick="window.location.href = 'index.jsp';"> 
        BACK

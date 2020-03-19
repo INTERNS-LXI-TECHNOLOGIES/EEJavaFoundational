@@ -6,7 +6,7 @@
   <%session.invalidate();%>
 <style>
 body {
-  background-image: url('login1.jpg');
+  background-image: url('Index.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
