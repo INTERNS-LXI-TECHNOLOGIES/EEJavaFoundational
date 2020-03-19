@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <%@page import="com.lxisoft.Model.ExamModel"%>
 <%@page import="java.util.ArrayList"%>
+<%@page import = "com.lxisoft.Config.*"%>
+<%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <html>
 <head><center><h1>Questions</h></center>
 <style>
@@ -65,6 +67,17 @@ timer();
 //-->
 </script>
 </head>
+
+
+<%Internationalization international=new Internationalization();
+String language=(String) session.getAttribute("language");
+String questions= international.localization(language,"IN","Questions");
+String back= international.localization(language,"IN","Back");
+String next= international.localization(language,"IN","Next");%>
+
+
+
+
 <body>
 	<p>
 
@@ -75,7 +88,6 @@ timer();
 	{			
 		out.println("<h1><center>Question : "+models.get(j).getQuestion()+"</h1></center>");	
 %>
-<
 <form align="center" method="get" name="qform" action="ResultServlet" >
 	
 	<h2><input type="hidden" value="models.get(j).getId()" name="qstNo">
