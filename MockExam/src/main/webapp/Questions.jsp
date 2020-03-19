@@ -1,3 +1,5 @@
+<%@page import = "com.lxisoft.config.*"%>
+<%@page  contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <%@page import="com.lxisoft.Model.MockExamModel"%>
 <%@page import="java.util.ArrayList"%>
 <html>
@@ -18,8 +20,14 @@
               
 	</script>
 </head>
-<link rel="stylesheet" href="option.css"></link>
-<div align="center"><font size="9">!! MOCK EXAM !!</font></div>
+<link rel="stylesheet" href="Style.css"></link>
+<br>
+<br>
+<br>
+<div align="center" style="background-color: darkmagenta;"><font size="9">!! MOCK EXAM !!</font>
+<br>
+<br>
+</div>
 <script>
 <%
 String clock = "10";
@@ -41,30 +49,34 @@ function timer()
 }
 //-->
 </script>
-<body>
-<div style = "text-align:right;">
+<body>	
+<!-- <div style = "text-align:right;"> -->
 <form action="Result.jsp" name="forma">
-
+<div align="right">
 <h1 >Seconds Remaining : <span id="clocky"><%=clock%></span> </h1>
+</div>
 </form>
 <script>
-
-timer();
+ timer();
 
 </script>
 </div>
 
-<div style="background-color: mediumseagreen ">
+<div class="questionBox" style ="border: outset;">
 <% 
 ArrayList<MockExamModel> model = (ArrayList<MockExamModel>)session.getAttribute("questions");
 int qcount = Integer.parseInt(request.getParameter("ques"));
 if(qcount < model.size()) 
 {
-	out.println("<p><h1>Question No : "+(qcount+1)+"</h1></p>");
-	out.println("<p><h2 class=\"fontbig\">Question : "+model.get(qcount).getQuestion().getQuestion()+"</h2></p>");
 	%>
+	<div align="center" style="background-color: darkmagenta;" >
+		<br>
+	<%
+	out.println("<h1>Question No : "+(qcount+1)+"</h1>");
+	out.println("<h1 class=\"fontbig\">Question : "+model.get(qcount).getQuestion().getQuestion()+"</h1>");
+	%>
+	<br>
 	</div>
-	<div>
 	<form method="get" action="Option">
 	<h1>
 	<input onclick="selectRadio()" type ="radio" value="1" id = "Option1" name = "option"> 
@@ -76,13 +88,12 @@ if(qcount < model.size())
 	<h1><input onclick="selectRadio()" type ="radio" value="4" id = "Option4" name = "option"> 
 	<label for = "Option4"> <%out.println(model.get(qcount).getOption4().getOption());%> </label></input></h1>
 
-	</div>
+	
 	<%
 	qcount++;
 	%>
-	<hr size = "5" >
-		<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
 	<div align = "center">
+		<input type="hidden" name="ques" value=<%out.println(qcount);%>/>
 		<button onclick="check()" type="button" align = "center" id="submitBtn" class="button">NEXT</button>
 		<button align = "center" class="button" type="submit" value=<%out.println(qcount);%>>SKIP</button>
 	</div>
@@ -93,5 +104,6 @@ else
 	response.sendRedirect("Result");
 }
 %>
+</div>
 </body>
 </html>

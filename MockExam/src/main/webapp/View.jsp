@@ -8,12 +8,19 @@ ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
   questions = sqlReppo.readFromDatabase(questions);
 %>
 	<body>
-	<link rel="stylesheet" href="Login.css"></link>
+	<link rel="stylesheet" href="Style.css"></link>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<body>
-	<div>
-	<form>
-		<h1>!! VIEW QUESTIONS !!</h1>
+	<div class="hello">
+    <div align="center" style="background-color: darkmagenta;">
+      <br>
+      <br>
+	<h1 style="font-size:50px;">!! VIEW QUESTIONS !!</h1>
+  <br>
+  <br>
+  </div>
+  <form>
+		
 		<table style="width:70%" align = "center">
   <tr>
     <th>QuestionNo</th>
@@ -40,9 +47,12 @@ ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
   <%
 	}
   %>
-</table><br>
+</table>
+<br>
+<div align="center">
 	<button formaction="Admin.jsp" class="button">BACK</button> 
-	</form>
+	</div>
+  </form>
 	</div>
 	</body>
 </html>

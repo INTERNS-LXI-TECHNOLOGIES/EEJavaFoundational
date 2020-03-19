@@ -13,13 +13,17 @@ public class LoginServlet extends HttpServlet
 		String username = request.getRemoteUser();
 		String userrole = sqlReppo.selectRole(username);
 		
+		// response.setCharacterEncoding("UTF-8");
+		// response.setContentType("text/html; charset=utf-8");
 			if(userrole.equals("admin"))
 			{
-				response.sendRedirect("Admin.jsp");
+				request.getRequestDispatcher("Admin.jsp").forward(request,response);
+				//response.sendRedirect("Admin.jsp");
 			}
 			else if(userrole.equals("user"))
 			{
-				response.sendRedirect("Introduction.jsp");	
+				request.getRequestDispatcher("Introduction.jsp").forward(request,response);
+				//response.sendRedirect("Introduction.jsp");	
 			}
 	}
 	

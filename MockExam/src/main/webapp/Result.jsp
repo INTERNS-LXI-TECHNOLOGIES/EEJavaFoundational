@@ -1,14 +1,20 @@
 <%@page import="com.lxisoft.Model.MockExamModel"%>
 <%@page import="java.util.ArrayList"%>
 <html>
-<link rel="stylesheet" href="Login.css"></link>
+<link rel="stylesheet" href="Style.css"></link>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
-<div>
-	<font size="9">EXAM RESULT</font><br>
+<div class = "wrapper">
+		<div align="center" style="background-color: darkmagenta;">
+		<br>
+		<br>
+		<font size="9">EXAM RESULT</font>
+		<br>
+		<br>
+		</div>
+	<div style="padding-top: 15%;padding-left: 37%">
 <form>
 	<%
-
 	 String mark = request.getAttribute("totalMark").toString();
 	 int totalMark = Integer.parseInt(mark);
 	 %>
@@ -34,6 +40,7 @@
 	 <br>
 	 <button type="submit" formaction="Introduction.jsp" class="button">START EXAM AGAIN</button>
 </form>
+</div>
 	</div>
 	</body>
 </html>

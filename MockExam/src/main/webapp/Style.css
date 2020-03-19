@@ -1,6 +1,6 @@
 body {
-    border: solid mediumseagreen;
-    padding: 75px;
+    border: #fff;
+    padding: 51px;
 }
 .button {
   height: 40px;
@@ -105,3 +105,26 @@ p.one{
      margin: 3% auto;
      box-shadow: 2px 18px 70px 0px #9d9d9d;
      overflow: hidden;
+   }
+.hello{
+  width: 1112px;
+    height: 724px;
+    position: relative;
+    margin: 0% auto;
+    box-shadow: 2px 18px 70px 0px #9d9d9d;
+    overflow: hidden;
+    border: outset;
+}
+.questionBox{
+    width: 1117px;
+    height: 562px;
+    position: relative;
+    margin: 0% auto;
+    box-shadow: 2px 18px 70px 0px #9d9d9d;
+    overflow: hidden;
+    border: outset;
+}
+table, th, td {
+  border: 1px solid darkmagenta;
+  height: 50px;
+}
