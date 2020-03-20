@@ -17,6 +17,10 @@ public class MockExamController extends HttpServlet
 		model = sqlReppo.readFromDatabase(model);
 		HttpSession sessions = request.getSession(true);
 		sessions.setAttribute("questions",model);
-		request.getRequestDispatcher("Questions.jsp").forward(request, response);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("Questions.jsp");
+		response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=utf-8");
+		rd.include(request, response);
   	}
 }

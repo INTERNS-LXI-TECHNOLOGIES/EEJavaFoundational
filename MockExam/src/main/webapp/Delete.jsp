@@ -1,22 +1,36 @@
 <%@page import="com.lxisoft.Model.MockExamModel"%>
 <%@page import="com.lxisoft.Repository.SqlRepository"%>
 <%@page import="java.util.ArrayList"%>
+<%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
+<%@page import = "com.lxisoft.config.*"%>
 <html>
+<link rel="stylesheet" href="Style.css"></link>
+<head>
+    <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+</head>
 <%
+    Internationalization international = new Internationalization();
+    String language = session.getAttribute("language").toString();
+    if(language == null)
+    {
+        language = "en";
+    }
+    String back = international.localization(language,"IN","back");
+    String delete = international.localization(language,"IN","Delete");
+    String deleteQuestion = international.localization(language,"IN","DeleteQuestion");
+    
  ArrayList<MockExamModel> questions = new ArrayList<MockExamModel>();
   SqlRepository sqlReppo = SqlRepository.getInstance();
   questions = sqlReppo.readFromDatabase(questions);
 %>
-	<body>
-	<link rel="stylesheet" href="Style.css"></link>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
 	<body>
 	<div>
 	<form>
     <div class="hello" style ="border: outset;">
     <div align="center" style="background-color: darkmagenta;">
       <br>
-		<h1 style="font-size:50px;">!! DELETE QUESTIONS !!</h1>
+		<h1 style="font-size:50px;">!! <%out.println(deleteQuestion);%> !!</h1>
     <br>
     </div>
     <br>
@@ -44,7 +58,7 @@
     <td><%out.println(questions.get(i).getOption2().getOption());%></td>
     <td><%out.println(questions.get(i).getOption3().getOption());%> </td>
     <td><%out.println(questions.get(i).getOption4().getOption());%> </td>
-    <td><button style="background-color: darkmagenta;" name ="Delete" formaction ="Delete" value =<%out.println(questions.get(i).getId());%>>DELETE</button></td>
+    <td><button style="background-color: darkmagenta;" name ="Delete" formaction ="Delete" value =<%out.println(questions.get(i).getId());%>><%out.print(delete);%></button></td>
   </tr>
   <%
 	}
@@ -52,7 +66,7 @@
 </table>
 <br>
 <div align="center">
-	<button formaction="Admin.jsp" class="button">BACK</button>
+	<button formaction="Admin.jsp" class="button"><%out.println(back);%></button>
   </div> 
 	</form>
 	</div>

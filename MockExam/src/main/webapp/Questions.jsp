@@ -4,6 +4,7 @@
 <%@page import="java.util.ArrayList"%>
 <html>
 <head>
+	<meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
 		<script type="text/javascript">
 
 		function selectRadio() {
@@ -20,7 +21,17 @@
               
 	</script>
 </head>
+
 <link rel="stylesheet" href="Style.css"></link>
+<%
+Internationalization international = new Internationalization();
+	String language = session.getAttribute("language").toString();
+	if(language == null)
+	{
+		language = "en";
+	}
+	String mockExam = international.localization(language,"IN","MockExam");
+%>
 <br>
 <br>
 <br>
@@ -30,7 +41,7 @@
 </div>
 <script>
 <%
-String clock = "10";
+String clock = "20";
 %>
 var timeout = <%=clock%>;
 function timer()
