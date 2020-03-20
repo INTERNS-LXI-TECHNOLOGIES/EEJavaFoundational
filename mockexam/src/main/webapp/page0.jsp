@@ -84,7 +84,7 @@ input[type=password] {
 <div class="container">
 <div class="center">
 <p>
-<form form method=post action="j_security_check">
+<form method=post action="j_security_check">
   <font size="6" color="midnightblue"><b><i> Login !!!</i></b></font>
   <br><br><br>
 <font size="3" color="midnightblue">USER NAME</font> <input type="text" name="j_username">
