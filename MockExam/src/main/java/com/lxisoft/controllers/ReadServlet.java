@@ -15,6 +15,7 @@ public class ReadServlet extends HttpServlet
 		HttpSession session=request.getSession();
 		session.setAttribute("questionlist",questionList);
 		PrintWriter out = response.getWriter();
+		request.setCharacterEncoding("UTF-8");
 		request.getRequestDispatcher("ViewAll.jsp").forward(request,response);
 	}
 }

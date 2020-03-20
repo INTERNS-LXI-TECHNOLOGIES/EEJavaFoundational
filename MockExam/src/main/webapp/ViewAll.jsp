@@ -4,6 +4,7 @@
 <%@page import="com.lxisoft.models.*"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
 <html>
 <head>
 	<title>Questions</title>

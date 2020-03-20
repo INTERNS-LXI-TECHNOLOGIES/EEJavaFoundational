@@ -9,8 +9,8 @@
 String language=(String)session.getAttribute("language");
 String add=international.localization(language,"IN","Add");
 String cancel=international.localization(language,"IN","Cancel");%>
-<body>
-<table>
+<body background="aa.jpg">
+<table align="center">
 	<form action="add" method="post">
 	<tr>
 		<td><br><input type="text" name="question" required="" placeholder=question><br>
@@ -21,7 +21,7 @@ String cancel=international.localization(language,"IN","Cancel");%>
 		<br><input type="text" name="answer" required="" placeholder=answer><br>
 		<br><input type="submit" value="<%=add%>"></form>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		<a href="admin"><input type="submit" value="<%=cancel%>"></a></td>
+		<a href="index.jsp"><input type="submit" value="<%=cancel%>"></a></td>
 	</tr>
 </table>
 </body>

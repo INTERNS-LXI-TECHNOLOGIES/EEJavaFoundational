@@ -29,7 +29,7 @@
 <div class="jumbotron text-center">
 	<center><h1>Edit Question</h1></center>
 </div>
-<body>
+<body background="aa.jpg">
 </head>
 <%Question qn=(Question)session.getAttribute("question");
 Internationalization international=new Internationalization();
@@ -47,7 +47,7 @@ String save= international.localization(language,"IN","Save");%>
 		<br><input type="text" name="answer" value="<%=qn.getAnswer()%>"><br>
 		<br><a href="edit"><input type="submit" value="<%=save%>"></a>
 </form>
-	<a href="admin"><input type="submit" value="<%=cancel%>"></a></div></td>
+	<a href="index.jsp"><input type="submit" value="<%=cancel%>"></a></div></td>
 	</tr>
 </body>
 </html>

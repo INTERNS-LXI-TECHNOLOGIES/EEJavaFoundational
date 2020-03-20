@@ -34,18 +34,18 @@ String q=international.localization(language,"IN","Do_You_Want_To_Continue?");%>
 <div class="jumbotron text-center">
 	<h1 align=center>Delete Question</h1>
 </div>
-<body>
+<body background="aa.jpg">
 	<table align=center border="1" width=30% height=25%>
 	<form action="delete" method="get">
 	<tr>
-		<td><center><div><%=q%></center></div></td><br>
+		<td><center><div><b><%=q%></b></center></div></td><br>
 	</tr>
 	<tr>
 		<td>
 		<div><input type="hidden" name="qno" value="<%=qn.getQno()%>">
 			<input type="submit" value="<%=confirm%>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 	</form>
-	<a href="admin"><input type="submit" value=<%=cancel%>></a></div>
+	<a href="index.jsp"><input type="submit" value=<%=cancel%>></a></div>
 		</td>
 	</tr>
 	</table>
