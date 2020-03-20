@@ -7,7 +7,7 @@
 <body bgcolor="OldLace">
 <style>
 body {
-  background-image: url('Admin.jpeg');
+  background-image: url('Admin1.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

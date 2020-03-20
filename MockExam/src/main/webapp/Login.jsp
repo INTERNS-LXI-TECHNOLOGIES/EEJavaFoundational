@@ -14,7 +14,7 @@ body {
 </style>
 </head>
 <body>
-   <%
+  <%
   Internationalization international = new Internationalization();
   String language = request.getParameter("language");
   session.setAttribute("language",language);

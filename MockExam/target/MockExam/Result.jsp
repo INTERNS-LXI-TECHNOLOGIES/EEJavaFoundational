@@ -7,7 +7,7 @@
 	<title>Result</title>
 <style>
 body {
-  background-image: url('Result.jpg');
+  background-image: url('Resultss.jpg');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -33,7 +33,7 @@ body {
   height: 40px;
 }
 </style>
-<center><font size="10" color="Black">Result</font></center>	
+<center><b><font size="30" color="Black">Result</font></b></center><br><br>	
 <body>
 	<center>
 		<%
@@ -51,8 +51,7 @@ out.println(m);
   }
   %>
   
-	</center>
-
+	</center><br><br>
  <center> 
 <button class="button" onclick="window.location.href = 'index.jsp';"> 
        BACK
