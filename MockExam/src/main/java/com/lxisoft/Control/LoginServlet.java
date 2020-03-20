@@ -17,6 +17,9 @@ public class LoginServlet extends HttpServlet
 	  	PrintWriter out = response.getWriter();
 	    String username = request.getRemoteUser();
 	    String role=sqlrepo.selectUser(username);
+
+	    response.setCharacterEncoding("UTF-8");
+	    response.setContentType("text/html: charset=utf-8");
 	    if(role.equals("admin"))
 	    {
 	         response.sendRedirect("Admin.jsp");
