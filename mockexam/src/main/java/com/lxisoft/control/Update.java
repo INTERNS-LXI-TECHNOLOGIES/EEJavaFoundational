@@ -17,8 +17,8 @@ public class Update extends HttpServlet
          Model model=new Model();
         
        //out.println(req.getParameter("question"));
-       int id=Integer.parseInt(req.getParameter("Id"));
-        HttpSession session=req.getSession(); 
+          HttpSession session=req.getSession(); 
+        int id=Integer.parseInt(req.getParameter("Id"));
         model.setId(id);
         String question=req.getParameter("question1");
         model.setQuestion(question);

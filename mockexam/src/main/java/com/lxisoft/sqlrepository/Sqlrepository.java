@@ -8,7 +8,7 @@ public class Sqlrepository
 	PreparedStatement ps=null;
 	ResultSet rs=null;
 	Statement st =null;
-
+	private static Sqlrepository sqlReppo = null;
 	public void connection()
 	{
 		
@@ -53,13 +53,19 @@ public class Sqlrepository
 		}
 		return questions;
 	}
+	public static Sqlrepository getInstance()
+	{
+		if(sqlReppo == null)
+			sqlReppo = new Sqlrepository();
+
+		return sqlReppo;
+	}
 	public void addQuestion(Model model)
 	{
 		try{
 			connection();
 			String query="insert into mockexam(question,answers,option1,option2,option3)values(?,?,?,?,?)";
 				ps=con.prepareStatement(query);
-			 
 			 		ps.setString(1,model.getQuestion());
 			 		ps.setString(2,model.getAnswer());
 				 	ps.setString(3,model.getOption1());
@@ -92,7 +98,21 @@ public class Sqlrepository
 				System.out.println(e);
 			} 
 	}*/
-
+	public void userRoles(String username,String password)
+	{
+		try
+		{
+			connection();
+			this.addUser(username,password);
+			String qry = "Insert into users_roles(username,rolename) values('"+username+"','user')";
+			ps = con.prepareStatement(qry);
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 	public void editQuestion(Model model)
 	{
 
@@ -154,21 +174,19 @@ public class Sqlrepository
 		return user;
 	}
 	
-	/*public void addUser()
+	public void addUser(String username,String password)
 	{
-		questions.clear();
-		try{
+		try
+		{
 			connection();
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from users");
-			Model model=null;
-			
-		}catch(Exception e)
-			{
-				e.printStackTrace();
-				System.out.println(e);
-			}
-			
+			String qry = "Insert into users(username,password) values('"+username+"','"+password+"')";
+			ps = con.prepareStatement(qry);
+			ps.execute();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
-*/
+
 }

@@ -14,7 +14,7 @@
 	<h1><font color="#87CEFA" style="margin-left: 43%">MOCK EXAM</font></h1>
 	<div align ="center">
 	<form>
-	<button formaction="authenticate">Admin</button> <button formaction="authenticate" >User</button>
+	<button formaction="authenticate">login</button>
 	</form>
    </div>
 </body>

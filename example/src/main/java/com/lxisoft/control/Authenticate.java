@@ -11,20 +11,26 @@ public class Authenticate extends HttpServlet
 	
 	public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException  
 	{
+		
 	
 		PrintWriter out = res.getWriter();
 		String userName=req.getRemoteUser();
 		
-		//out.println("userName :"+userName );
 		String userRoll=sqlrep.authenticate(userName);
+		//out.println("userName :"+userName );
+		
 		//out.println("user roll : "+userRoll);
+		req.setCharacterEncoding("UTF-8");
+		res.setContentType("text/html; charset=utf-8");
 		if(userRoll.equals("user"))
 		{
-			  req.getRequestDispatcher("introduction.jsp").forward(req,res);
+			
+			  res.sendRedirect("introduction.jsp");
 		}
 		else if(userRoll.equals("admin"))
 		{
-			  req.getRequestDispatcher("admin.jsp").forward(req,res);
+			  res.sendRedirect("admin.jsp");
+			  
 		}
 	}
 }

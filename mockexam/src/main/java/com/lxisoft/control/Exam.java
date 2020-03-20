@@ -20,8 +20,8 @@ public class Exam extends HttpServlet
         questions=sqlrep.readquestion(questions);
        // out.println(questions);
         HttpSession session2=req.getSession(); 
-        out.println("haiiii");
-      /*  if(num<questions.size())
+        //out.println("haiiii");
+        if(num<questions.size())
         {
             session2.setAttribute("num",num); 
             req.getRequestDispatcher("view1.jsp").forward(req,res);
@@ -33,7 +33,7 @@ public class Exam extends HttpServlet
             //num=0;
         }
         num++;
-        */
+        
     }
    
    

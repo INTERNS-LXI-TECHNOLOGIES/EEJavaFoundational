@@ -1,4 +1,5 @@
 com/lxisoft/control/Authenticate.class
+com/lxisoft/control/Register.class
 com/lxisoft/sqlrepository/Sqlrepository.class
 com/lxisoft/control/Exam.class
 com/lxisoft/control/Update.class

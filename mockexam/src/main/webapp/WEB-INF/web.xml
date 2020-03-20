@@ -81,6 +81,26 @@
     </servlet-mapping>
 
 
+  <servlet>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.lxisoft.control.Register</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Register</url-pattern>
+  </servlet-mapping>
+
+<servlet>
+    <servlet-name>Register</servlet-name>
+    <servlet-class>com.lxisoft.control.Register</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>Register</servlet-name>
+    <url-pattern>/Reg</url-pattern>
+  </servlet-mapping>
+
         <display-name>Tomcat7FormBasedJAAS</display-name>
     <security-constraint>
         <web-resource-collection>

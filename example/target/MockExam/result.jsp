@@ -13,9 +13,11 @@
 	%>
 	<h1><font color="#87CEFA"><%out.println("your Mark : "+mark);%></font></h1>
 	<center>
-	<form action="intro.jsp">
+	<form action="first.jsp">
 		<input type="submit" value="next"></form>
+		
 </center>
 
 </body>
+<%session.invalidate();%>
 </html>
