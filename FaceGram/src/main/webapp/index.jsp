@@ -2,15 +2,14 @@
 <body>
 <h2>facegram</h2>
 </body>
-<form action="adduser">
-  <label for="name">name:</label>
-  <input type="text" id="name" name="name"><br><br>
-  <label for="address">address:</label>
-  <input type="text" id="name" name="address"><br><br>
-  <input type="submit" value="Submit">
+<form action="login">
+  <label for="name">username:</label>
+  <input type="text" id="name" name="username"><br><br>
+  <label for="address">password</label>
+  <input type="text" id="name" name="pass"><br><br>
+  <input type="submit" value="Login">
+</form>
+  <form action="Register.jsp">
+  <button>Register</button>
   </form>
-   
-<button>edit</button>
-<button>update</button>
-<button>remove</button>
 </html>
