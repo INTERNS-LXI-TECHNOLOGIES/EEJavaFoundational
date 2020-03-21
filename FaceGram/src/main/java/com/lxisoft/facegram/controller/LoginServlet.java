@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lxisoft.facegram.Model.UserDetails;
 import com.lxisoft.facegram.repo.Repo;
@@ -28,6 +29,9 @@ public class LoginServlet extends HttpServlet {
 	    } else if(u.getPassword().equals(req.getParameter("pass"))) {
 	    	res.sendRedirect("homePage.jsp");
 	    }
+	    HttpSession session = req.getSession();
+	    session.setAttribute("userName", u);
+	    		
 	}
 	
 }

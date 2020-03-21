@@ -82,4 +82,52 @@ public class Repo
 		}
 		  return u;
 	  }
+	  public void UpdateDetails() {
+		  
+	  }
+
+		public void updateName(String old,UserDetails u)
+		{System.out.println(u);
+			
+			if(u.getBio() != null) {
+				try{
+					String updateQuery="UPDATE user SET bio = '"+u.getBio()+"' where name= '"+old+"'";
+					ps=con.prepareStatement(updateQuery);
+					ps.executeUpdate();
+			   }
+			catch(Exception e)
+			{}
+			}
+			if(u.getEmail() != null) {
+				try{
+					String updateQuery="UPDATE user SET email = '"+u.getEmail()+"' where name= '"+old+"'";
+					ps=con.prepareStatement(updateQuery);
+					ps.executeUpdate();
+			   }
+			catch(Exception e)
+			{}
+			}
+			if(u.getName() != null) {
+				try{
+					String updateQuery="UPDATE user SET name = '"+u.getName()+"' where name= '"+old+"'";
+					ps=con.prepareStatement(updateQuery);
+					ps.executeUpdate();
+			   }
+			catch(Exception e)
+			{}
+			}
+	    }
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
 	}
