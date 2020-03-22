@@ -5,7 +5,7 @@
 <head><center><h1>Questions</h></center>
 <style>
 body {
-  background-image: url('Crud.png');
+  background-image: url('images.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

@@ -1,6 +1,7 @@
 <%@page import="com.lxisoft.Model.ExamModel"%>
 <%@page import="com.lxisoft.Repository.SqlRepository"%>
 <%@page import="java.util.ArrayList"%>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <%@page import = "com.lxisoft.Config.*"%>
 <%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <html>
