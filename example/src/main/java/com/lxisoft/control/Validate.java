@@ -21,7 +21,14 @@ public class Validate extends HttpServlet
 		PrintWriter out = res.getWriter();
 		String quest=req.getParameter("option");
 		//out.println("quest : "+quest);
-		
+		if (quest==null)
+			{
+				req.getRequestDispatcher("get").forward(req,res);
+				//res.sendRedirect("check");
+			}
+	else
+		{
+
 		for (int i=0;i<model.size();i++) 
 		{
 			if(quest.equals(model.get(i).getAnswer()))
@@ -29,7 +36,9 @@ public class Validate extends HttpServlet
 				count=count+1;
 				
 			}
+			
 		}	
+	}
 		res.sendRedirect("get");
 		//out.println("count"+count);
 		session.setAttribute("count",count);

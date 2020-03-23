@@ -1,5 +1,8 @@
 <%@page import="com.lxisoft.config.Internationalization"%>
 <%@page import="java.io.*"%>
+<%@ page import="com.lxisoft.model.Model"%>
+<%@ page import="com.lxisoft.sqlrepository.Sqlrepository"%>
+<%@ page import="java.util.ArrayList"%>
 <%@page import="java.util.*"%>
 <%@page import="javax.servlet.*"%>
 <%@page import="javax.servlet.http.*"%>
@@ -40,7 +43,11 @@
 	
 
 	%>
-   
+   	<% ArrayList<Model> questions= new ArrayList<Model>();
+	Sqlrepository sqlrep=new Sqlrepository();
+	questions.clear();
+    questions=sqlrep.readquestion(questions); 
+    session.setAttribute("array",questions);%>
 
 	 <div>
 	<h1 align="center"><font color="white"><%=mockexam%></font></h1>
@@ -52,7 +59,8 @@
 	<h3><font color="white">* <%=intro4%></font></h3>
 	<div align="center" class="button">
 		<form method="get" action="check">
-			<input type="submit" name="Next">
+			<input type="hidden" name="ques" value="0"/>
+			<button type="submit">Start</button>
 		</form>
 	</form>
 	</div>
