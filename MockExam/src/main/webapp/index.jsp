@@ -45,6 +45,7 @@
     <form action="search" method="get">
     <br><input type="text" name="letter" placeholder="<%=search%>" />
     <input type="submit" value="<%=ok%>"></center></form><%}%>
+    <center><a href="Views.jsp"><input type="submit" value="..."></a></center>
     <form action="admin" method="get">
     <input type = "hidden" name ="indexValue" value ="0">
 	<h1 align="center"><%=mockexam%></h1>
