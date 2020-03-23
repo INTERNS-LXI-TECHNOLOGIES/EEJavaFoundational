@@ -9,7 +9,7 @@
   <title>Questions</title>
   <style>
 body {
-  background-image: url('Crud.png');
+  background-image: url('View.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;

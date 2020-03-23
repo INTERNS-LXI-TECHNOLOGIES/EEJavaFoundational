@@ -14,7 +14,7 @@
 <head>
    <style>
 body {
-  background-image: url('Crud.png');
+  background-image: url('Delete.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
