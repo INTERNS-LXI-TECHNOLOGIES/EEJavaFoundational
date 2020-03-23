@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <head>
-	<title>question1</title>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
-<body bgcolor="FloralWhite">
 <style>
    body {
   background-image: url('fun-art_00375794.jpg');
@@ -80,17 +83,31 @@ input[type=password] {
   border-radius: 4px;
 }
 </style>
+</style>
+  <%
+    Internationalize inter=new Internationalize();
+    String language=request.getParameter("language");
+    if(language==null)
+    {
+      language="mal";
+    } 
+    String login=inter.localization(language,"IN","login");
+     String user=inter.localization(language,"IN","user");
+     String password=inter.localization(language,"IN","password");
+     String cancel=inter.localization(language,"IN","cancel");
+     String signup=inter.localization(language,"IN","signup");
+  %>
 <div class="container">
 <div class="center">
 <p>
 <form form method=get action="signup">
-  <font size="6" color="midnightblue"><b><i> Login !!!</i></b></font>
+  <font size="6" color="midnightblue"><b><i><%out.println(login+"!!!");%></i></b></font>
   <br><br><br>
-<font size="3" color="midnightblue">USER NAME</font> <input type="text" placeholder="enter new username" name="newusername">
- <font size="3" color="midnightblue">PASSWORD</font><input type="password" placeholder="new password" name="newpassword">
+<font size="3" color="midnightblue"><%out.println(user);%></font> <input type="text" placeholder="enter new username" name="newusername">
+ <font size="3" color="midnightblue"><%out.println(password);%></font><input type="password" placeholder="new password" name="newpassword">
  <br>
-<button formaction="page0.jsp" class="button button1">CANCEL</button>
-   <button class="button button2" name="login">Signup</button>
+<button formaction="page0.jsp" class="button button1"><%out.println(cancel);%></button>
+   <button class="button button2" name="login"><%out.println(signup);%></button>
 </form>
 </p>
 </div>

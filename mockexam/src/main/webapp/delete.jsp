@@ -1,10 +1,14 @@
 <%@ page import="com.lxisoft.model.Model"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="com.lxisoft.sqlRepository.SqlRepository"%>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>question1</title>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
 <body bgcolor="FloralWhite">
 <style>
@@ -77,10 +81,21 @@ table, th, td {
   border-collapse: collapse;
 }
 </style>
+<%
+    Internationalize inter=new Internationalize();
+    String language=request.getParameter("language");
+    if(language==null)
+    {
+      language="mal";
+    } 
+    String welcomedelt=inter.localization(language,"IN","welcomedelt");
+    String delete=inter.localization(language,"IN","delete");
+     String done=inter.localization(language,"IN","done");
+  %>
 <div class="container">
 <div class="center">
 <p>
-<font size="6" color="midnightblue"><i><b>Welcome to Delete Page</b></i></font><br><br><br>
+<font size="6" color="midnightblue"><i><b><%out.println(welcomedelt);%></b></i></font><br><br><br>
 <% ArrayList<Model> model=new ArrayList<Model>();
 SqlRepository sql=new SqlRepository();
 model=sql.selectFrom(model);%>
@@ -104,14 +119,14 @@ model=sql.selectFrom(model);%>
       <td><h2><%out.println(model.get(i).getOpt2());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt3());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt4());%></h2></td>
-<td><button formaction="delete" class="button button1" name="delete" value="<%out.println(model.get(i).getSlno());%>">delete</button></td>
+<td><button formaction="delete" class="button button1" name="delete" value="<%out.println(model.get(i).getSlno());%>"><%out.println(delete);%></button></td>
        <%}%>
      </tr>
     <br>
   </table>
 </form>
 <form>
-<button formaction="AdminMenu.jsp" class="button button2" name="done" >DONE</button> 
+<button formaction="AdminMenu.jsp" class="button button2" name="done" ><%out.println(done);%></button> 
 </form>
 </div>
 </div>

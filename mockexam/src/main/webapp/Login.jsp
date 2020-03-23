@@ -1,9 +1,12 @@
 <!DOCTYPE html>
 <html>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <head>
-	<title>question1</title>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
-<body bgcolor="FloralWhite">
 <style>
     body {
   background-image: url('fun-art_00375794.jpg');
@@ -64,6 +67,7 @@
   color: white;
 }
 </style>
+
 <div class="container">
 <div class="center">
 <p>

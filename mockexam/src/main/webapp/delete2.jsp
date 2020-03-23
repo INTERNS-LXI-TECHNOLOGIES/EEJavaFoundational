@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <head>
-	<title>question1</title>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
 <body bgcolor="FloralWhite">
 <style>
@@ -58,12 +62,22 @@ input[type=text] {
   border-radius: 4px;
 }
 </style>
+<%
+    Internationalize inter=new Internationalize();
+    String language=request.getParameter("language");
+    if(language==null)
+    {
+      language="mal";
+    } 
+    String dts=inter.localization(language,"IN","dts");
+     String done=inter.localization(language,"IN","done");
+  %>
 <div class="container">
 <div class="center">
 <p>
   <form>
-<h1><b><i>Question Successfully Deleted !!!</i></b></h1>
-<button formaction="AdminMenu.jsp" class="button button1" name="done" >DONE</button>
+<h1><b><i><%out.println(dts);%> !!!</i></b></h1>
+<button formaction="AdminMenu.jsp" class="button button1" name="done" ><%out.println(done);%></button>
 </form>
 </div>
 </div>

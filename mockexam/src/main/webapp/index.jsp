@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <head>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
 	<title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
 <style>
    body {
@@ -64,14 +68,25 @@
 }
 </style>
 <body>
+  <%
+    Internationalize inter=new Internationalize();
+    String language=request.getParameter("language");
+    if(language==null)
+    {
+      language="mal";
+    } 
+    String start=inter.localization(language,"IN","start");
+     String welcome=inter.localization(language,"IN","welcome");
+  %>
 <div class="container">
 <div class="center">
 <p align="center">
-<b><font size="7" color="midnightblue">Welcome TO Your Mock Exam </font>
+<b><font size="7" color="midnightblue"><%out.println(welcome);%> </font>
 </b>
 <%if(session!=null)
   {session.invalidate();}%>
-<input type="submit" class="button button2" name="start" value="START" onclick="window.location.href = 'http://localhost:8080/mockExam/select';">
+  <br>
+<input type="submit" class="button button2" name="start" value="<%out.println(start);%>" onclick="window.location.href = 'http://localhost:8080/mockExam/select';">
 </p>
 </div>
 </div>

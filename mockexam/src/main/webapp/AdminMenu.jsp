@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <head>
-	<title>question1</title>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
 <body bgcolor="FloralWhite">
 <style>
@@ -97,22 +101,37 @@
   color: white;
 }
 </style>
+ <%
+    Internationalize inter=new Internationalize();
+    String language=request.getParameter("language");
+    if(language==null)
+    {
+      language="mal";
+    } 
+    String mock=inter.localization(language,"IN","mock");
+     String choose=inter.localization(language,"IN","choose");
+     String add=inter.localization(language,"IN","add");
+     String delete=inter.localization(language,"IN","delete");
+     String update=inter.localization(language,"IN","update");
+     String display=inter.localization(language,"IN","display");
+     String back=inter.localization(language,"IN","back");
+  %>
 <div class="container">
 <div class="center">
 <p>
 <center>
-  <font size="7" color=" midnightblue"><i><b>MOCK EXAM</b></i></font>
+  <font size="7" color=" midnightblue"><i><b><%out.println(mock);%></b></i></font>
   <br>
   <br>
-  <font size="6" color=" midnightblue">choose your option</font>
+  <font size="6" color=" midnightblue"><%out.println(choose);%></font>
   <br>
   <br>
   <form>
-  <input type="submit" formaction="Add.jsp" class="button button1" name="ADD" value="ADD" >
-  <input type="submit" formaction="delete.jsp" class="button button2" name="DELETE" value="DELETE" >
-  <input type="submit" formaction="update.jsp" class="button button3" name="UPDATE" value="UPDATE" >
-  <input type="submit" formaction="display" class="button button4" name="DISPLAY" value="DISPLAY">
-  <input type="submit" formaction="index.jsp" class="button button5" name="BACK" value="BACK" >
+  <input type="submit" formaction="Add.jsp" class="button button1" name="ADD" value="<%out.println(add);%>" >
+  <input type="submit" formaction="delete.jsp" class="button button2" name="DELETE" value="<%out.println(delete);%>" >
+  <input type="submit" formaction="update.jsp" class="button button3" name="UPDATE" value="<%out.println(update);%>" >
+  <input type="submit" formaction="display" class="button button4" name="DISPLAY" value="<%out.println(display);%>">
+  <input type="submit" formaction="index.jsp" class="button button5" name="BACK" value="<%out.println(back);%>" >
 </form>
 </center>
 </p>
