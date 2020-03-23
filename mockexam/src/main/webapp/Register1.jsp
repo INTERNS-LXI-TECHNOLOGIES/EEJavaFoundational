@@ -55,7 +55,7 @@
       <label for=password><%out.println(password);%> : </label><input id="password" type="text" placeholder="<%out.println(password);%>" name="password"><br>
       
       <br>
-      <button class ="button" formaction="Reg" id="submitBtn" type="button"><%out.println(signUp);%></button><button class ="button" formaction="login.jsp"><%out.println(login);%></button>
+      <button class ="button" formaction="Reg"><%out.println(signUp);%></button><button class ="button" formaction="login.jsp"><%out.println(login);%></button>
   </form>
   <div class="call-text">
     

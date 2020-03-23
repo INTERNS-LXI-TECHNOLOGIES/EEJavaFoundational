@@ -14,6 +14,9 @@ public class Display extends HttpServlet
     {  
     	HttpSession session=req.getSession(); 
         res.setContentType("text/html");
+
+        req.setCharacterEncoding("UTF-8");
+        res.setContentType("text/html; charset=utf-8");
         PrintWriter out=res.getWriter();
          ArrayList<Model> questions= new ArrayList<Model>();
      Sqlrepository sqlrep=new Sqlrepository();

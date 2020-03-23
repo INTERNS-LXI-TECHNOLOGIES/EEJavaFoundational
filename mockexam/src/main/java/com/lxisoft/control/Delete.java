@@ -12,6 +12,8 @@ public class Delete extends HttpServlet
     public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException  
     {  
         res.setContentType("text/html");
+          req.setCharacterEncoding("UTF-8");
+        res.setContentType("text/html; charset=utf-8");
         PrintWriter out=res.getWriter();
         //out.println(req.getParameter("question"));
         int id=Integer.parseInt(req.getParameter("Delete"));

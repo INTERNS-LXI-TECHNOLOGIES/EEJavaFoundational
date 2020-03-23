@@ -12,12 +12,15 @@ public class Update extends HttpServlet
     public void doGet(HttpServletRequest req,HttpServletResponse res)throws ServletException,IOException  
     {  
         res.setContentType("text/html");
+
+         req.setCharacterEncoding("UTF-8");
+        res.setContentType("text/html; charset=utf-8");
         PrintWriter out=res.getWriter();
       
          Model model=new Model();
         
        //out.println(req.getParameter("question"));
-          HttpSession session=req.getSession(); 
+        HttpSession session=req.getSession(); 
         int id=Integer.parseInt(req.getParameter("Id"));
         model.setId(id);
         String question=req.getParameter("question1");
