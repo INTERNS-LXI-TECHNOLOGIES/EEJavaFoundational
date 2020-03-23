@@ -2,6 +2,23 @@
 <%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <html>
 <body background="image/earth.jpg">
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <script type="text/javascript">
+    function selectRadio() 
+    {
+      document.getElementById('submitBtn').type = "submit";
+    }
+    function check()
+    {
+      var checkLabel1 = document.querySelector('input[name="username"]:checked'); 
+       var checkLabel2= document.querySelector('input[name="password"]:checked'); 
+            if(!checkLabel1 && !checkLabel2) 
+            {
+              alert("Please Insert UserName or password");
+            }
+    }
+       
+  </script>
   <%
   Internationalization international=new Internationalization();
   String language = session.getAttribute("language").toString();
@@ -38,12 +55,10 @@
       <label for=password><%out.println(password);%> : </label><input id="password" type="text" placeholder="<%out.println(password);%>" name="password"><br>
       
       <br>
-      <button class ="button" formaction="Reg"><%out.println(signUp);%></button><button class ="button" formaction="login.jsp"><%out.println(login);%></button>
+      <button class ="button" formaction="Reg" id="submitBtn" type="button"><%out.println(signUp);%></button><button class ="button" formaction="login.jsp"><%out.println(login);%></button>
   </form>
   <div class="call-text">
     
-    <center><a href="?language=en">ENGLISH</a>
-  <a href="?language=mal">മലയാളം</a></center>
   </div>
 </div>
 <script type="text/javascript" src="reg.js"></script>

@@ -2,7 +2,6 @@
 <%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <html>
 <body background="image/earth.jpg">
-  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
   <script type="text/javascript">
     function selectRadio() 
     {
@@ -10,12 +9,19 @@
     }
     function check()
     {
-      var checkLabel1 = document.querySelector('input[name="username"]:checked'); 
-       var checkLabel2= document.querySelector('input[name="password"]:checked'); 
-            if(!checkLabel1 && !checkLabel2) 
+      var checkLabel = document.querySelector('input[name="username"]:checked'); 
+            if(!checkLabel) 
             {
-              alert("Please Insert UserName or password");
-            }
+            alert("Please Insert UserName");
+          }
+    }
+     function check()
+    {
+      var checkLabel = document.querySelector('input[name="password"]:checked'); 
+            if(!checkLabel) 
+            {
+            alert("Please Insert password");
+          }
     }
        
   </script>
@@ -55,7 +61,7 @@
       <label for=password><%out.println(password);%> : </label><input id="password" type="text" placeholder="<%out.println(password);%>" name="password"><br>
       
       <br>
-      <button class ="button" formaction="Reg" id="submitBtn" type="button"><%out.println(signUp);%></button><button class ="button" formaction="login.jsp"><%out.println(login);%></button>
+      <button class ="button" formaction="Reg" id="submitBtn" type="submit"><%out.println(signUp);%></button><button class ="button" formaction="login.jsp"><%out.println(login);%></button>
   </form>
   <div class="call-text">
     

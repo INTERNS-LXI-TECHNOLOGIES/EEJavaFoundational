@@ -8,7 +8,7 @@
 <%@page import="javax.servlet.http.*"%>
 <%@page import="java.util.ResourceBundle"%>
 <%@page import="java.util.ResourceBundle.Control"%>
-<%@ page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
+<%@page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>

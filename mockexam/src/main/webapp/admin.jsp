@@ -15,6 +15,7 @@
   String update = international.localization(language,"IN","Update");
   String dispayAll = international.localization(language,"IN","Display_all");
   String delete = international.localization(language,"IN","Delete");
+  String back = international.localization(language,"IN","Back");
   
   %>
 <body background="image/earth.jpg">
@@ -24,7 +25,8 @@
 	<div align ="center">
 	
 	<form>
-	<button formaction="add.jsp">addQuestion</button><button formaction="table.jsp">update</button><button formaction="display">dispayAll</button><button formaction="delete.jsp">delete</button>
+	<button formaction="add.jsp"><%out.println(addQuestion);%></button><button formaction="table.jsp"><%out.println(update);%></button><button formaction="display"><%out.println(dispayAll);%></button><button formaction="delete.jsp"><%out.println(delete);%></button>
+  <button formaction="login.jsp"><%out.println(back);%></button>
 	</form>
 </div>
 </body>

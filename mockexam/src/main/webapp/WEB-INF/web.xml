@@ -114,7 +114,7 @@
         <display-name>Tomcat7FormBasedJAAS</display-name>
     <security-constraint>
         <web-resource-collection>
-            <web-resource-name>example</web-resource-name>
+            <web-resource-name>MockExam</web-resource-name>
             <url-pattern>/authenticate</url-pattern>
         </web-resource-collection>
         <auth-constraint>

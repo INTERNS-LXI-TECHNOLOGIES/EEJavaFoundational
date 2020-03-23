@@ -22,15 +22,24 @@ public class Authenticate extends HttpServlet
 		//out.println("user roll : "+userRoll);
 		req.setCharacterEncoding("UTF-8");
 		res.setContentType("text/html; charset=utf-8");
-		if(userRoll.equals("user"))
+		if (userRoll==null) 
 		{
 			
-			  res.sendRedirect("introduction.jsp");
 		}
-		else if(userRoll.equals("admin"))
+		else
 		{
-			  res.sendRedirect("admin.jsp");
-			  
+
+			if(userRoll.equals("user"))
+			{
+				
+				  res.sendRedirect("introduction.jsp");
+			}
+			else if(userRoll.equals("admin"))
+			{
+				  res.sendRedirect("admin.jsp");
+				  
+			}
+
 		}
 	}
 }
