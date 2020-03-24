@@ -38,7 +38,16 @@
     <td><%out.println(questionList.get(i).getOption3());%> </td>
     <td><%out.println(questionList.get(i).getOption4());%></td>
     <td><%out.println(questionList.get(i).getAnswer());%></td>
-  </tr>
+  
+  			<form action="select" method="get">
+	    	<input type="hidden" name="qno" value="<%=questionList.get(i).getQuestion()%>">
+	    	<input type="hidden" name="opt" value="a">
+	        <td><input type="submit" value=delete></td></form>
+
+	        <form action="select" method="get">
+	        <input type="hidden" name="qno" value="<%=questionList.get(i).getQuestion()%>">
+	        <input type="hidden" name="opt" value="b">
+	        <td><input type="submit" value=edit></td></form></tr>
   <%
 	}
   %>
