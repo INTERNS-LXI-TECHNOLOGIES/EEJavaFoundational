@@ -1,11 +1,15 @@
 <%@ page import="com.lxisoft.model.Model"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="com.lxisoft.sqlRepository.SqlRepository"%>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>question1</title>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
-<body bgcolor="FloralWhite">
 <style>
      body {
   background-image: url('orig_202868.jpg');
@@ -76,12 +80,27 @@ table, th, td {
   border-collapse: collapse;
 }
 </style>
+<%
+    Internationalize inter=new Internationalize();
+    String language=request.getParameter("language");
+    String lan=(String)session.getAttribute("language");
+     if(lan.equals("mal"))
+    {
+      language="mal";
+    }
+    else
+    {
+      language="en";
+    } 
+    String welcomediply=inter.localization(language,"IN","welcomediply");
+     String done=inter.localization(language,"IN","done");
+  %>
 <div class="container">
 <div class="center">
 <p>
   
   <form>
-<font size="6" color="midnightblue"><i><b>Welcome to Display Page</b></i></font><br><br><br>
+<font size="6" color="midnightblue"><i><b><%out.println(welcomediply);%></b></i></font><br><br><br>
 <% ArrayList<Model> model=(ArrayList<Model>)session.getAttribute("disp");%>
   <table cellpadding="20">
      <tr>
@@ -107,7 +126,7 @@ table, th, td {
     %>
    
   </table>
-<button formaction="AdminMenu.jsp" class="button button1" name="done" >DONE</button> 
+<button formaction="AdminMenu.jsp" class="button button1" name="done" ><%out.println(done);%></button> 
 </form>
 </div>
 </div>

@@ -104,9 +104,14 @@
  <%
     Internationalize inter=new Internationalize();
     String language=request.getParameter("language");
-    if(language==null)
+    String lan=(String)session.getAttribute("language");
+     if(lan.equals("mal"))
     {
       language="mal";
+    }
+    else
+    {
+      language="en";
     } 
     String mock=inter.localization(language,"IN","mock");
      String choose=inter.localization(language,"IN","choose");
@@ -131,7 +136,7 @@
   <input type="submit" formaction="delete.jsp" class="button button2" name="DELETE" value="<%out.println(delete);%>" >
   <input type="submit" formaction="update.jsp" class="button button3" name="UPDATE" value="<%out.println(update);%>" >
   <input type="submit" formaction="display" class="button button4" name="DISPLAY" value="<%out.println(display);%>">
-  <input type="submit" formaction="index.jsp" class="button button5" name="BACK" value="<%out.println(back);%>" >
+  <input type="submit" formaction="select" class="button button5" name="BACK" value="<%out.println(back);%>" >
 </form>
 </center>
 </p>

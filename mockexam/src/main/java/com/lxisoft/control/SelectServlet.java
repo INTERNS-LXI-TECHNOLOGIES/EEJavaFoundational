@@ -14,11 +14,13 @@ public class SelectServlet extends HttpServlet
   //public Model model;
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
   {	 
-    HttpSession session=request.getSession(true);
+    //HttpSession session=request.getSession(true);
   	  PrintWriter out = response.getWriter();
       String username = (String)request.getRemoteUser();
       // out.println("username: "+username);
      String role=sql.select(username);
+     response.setCharacterEncoding("UTF-8");
+     response.setContentType("text/html; charset=utf-8");
      // out.println("role: "+role);
       if(role.equals("admin"))
         {

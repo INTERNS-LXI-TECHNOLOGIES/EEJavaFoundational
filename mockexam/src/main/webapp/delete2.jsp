@@ -65,10 +65,15 @@ input[type=text] {
 <%
     Internationalize inter=new Internationalize();
     String language=request.getParameter("language");
-    if(language==null)
+    String lan=(String)session.getAttribute("language");
+     if(lan.equals("mal"))
     {
       language="mal";
-    } 
+    }
+    else
+    {
+      language="en";
+    }
     String dts=inter.localization(language,"IN","dts");
      String done=inter.localization(language,"IN","done");
   %>

@@ -84,9 +84,14 @@ table, th, td {
 <%
     Internationalize inter=new Internationalize();
     String language=request.getParameter("language");
-    if(language==null)
+      String lan=(String)session.getAttribute("language");
+     if(lan.equals("mal"))
     {
       language="mal";
+    }
+    else
+    {
+      language="en";
     } 
     String welcomedelt=inter.localization(language,"IN","welcomedelt");
     String delete=inter.localization(language,"IN","delete");

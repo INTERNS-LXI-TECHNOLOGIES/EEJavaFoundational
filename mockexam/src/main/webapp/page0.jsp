@@ -87,10 +87,16 @@ input[type=password] {
   <%
     Internationalize inter=new Internationalize();
     String language=request.getParameter("language");
-    if(language==null)
+    String lan=(String)session.getAttribute("language");
+    out.println("language : "+lan);
+    if(lan.equals("mal"))
     {
       language="mal";
-    } 
+    }
+    else
+    {
+      language="en";
+    }
     String login=inter.localization(language,"IN","login");
      String user=inter.localization(language,"IN","user");
      String password=inter.localization(language,"IN","password");

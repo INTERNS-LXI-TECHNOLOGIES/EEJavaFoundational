@@ -1,10 +1,14 @@
 <%@ page import="com.lxisoft.model.Model"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="com.lxisoft.sqlRepository.SqlRepository"%>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>question1</title>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
 <body bgcolor="FloralWhite">
 <style>
@@ -77,12 +81,28 @@ table, th, td {
   border-collapse: collapse;
 }
 </style>
+<%
+    Internationalize inter=new Internationalize();
+    String language=request.getParameter("language");
+      String lan=(String)session.getAttribute("language");
+     if(lan.equals("mal"))
+    {
+      language="mal";
+    }
+    else
+    {
+      language="en";
+    }
+    String welcomeupd=inter.localization(language,"IN","welcomeupd");
+    String update=inter.localization(language,"IN","update");
+     String done=inter.localization(language,"IN","done");
+  %>
 <div class="container">
 <div class="center">
 <p>
   
   <form>
-<font size="6" color="midnightblue"><i><b>Welcome to Update Page</b></i></font><br><br><br>
+<font size="6" color="midnightblue"><i><b><%out.println(welcomeupd);%></b></i></font><br><br><br>
 <% ArrayList<Model> model=new ArrayList<Model>();
 SqlRepository sql=new SqlRepository();
 model=sql.selectFrom(model);
@@ -106,7 +126,7 @@ model=sql.selectFrom(model);
       <td><h2><%out.println(model.get(i).getOpt2());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt3());%></h2></td>
       <td><h2><%out.println(model.get(i).getOpt4());%></h2></td>
-      <td><button formaction="update2.jsp" class="button button1" name="update" value=<%out.println(i);%>>update</td>
+      <td><button formaction="update2.jsp" class="button button1" name="update" value="<%out.println(i);%>"><%out.println(update);%></button></td>
        </tr>
 
     <br>
@@ -114,7 +134,7 @@ model=sql.selectFrom(model);
     %>
    
   </table>
-<button formaction="AdminMenu.jsp" class="button button2" name="done" >DONE</button> 
+<button formaction="AdminMenu.jsp" class="button button2" name="done" ><%out.println(done);%></button> 
 </form>
 </div>
 </div>

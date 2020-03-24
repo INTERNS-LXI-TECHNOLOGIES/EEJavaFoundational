@@ -77,10 +77,15 @@ input[type=text] {
 <%
     Internationalize inter=new Internationalize();
     String language=request.getParameter("language");
-    if(language==null)
+      String lan=(String)session.getAttribute("language");
+     if(lan.equals("mal"))
     {
       language="mal";
-    } 
+    }
+    else
+    {
+      language="en";
+    }
     String welcomeAdd=inter.localization(language,"IN","welcomeAdd");
      String question=inter.localization(language,"IN","question");
      String opt1=inter.localization(language,"IN","opt1");

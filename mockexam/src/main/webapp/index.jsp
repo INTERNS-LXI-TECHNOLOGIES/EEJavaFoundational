@@ -73,20 +73,22 @@
     String language=request.getParameter("language");
     if(language==null)
     {
-      language="mal";
+      language="en";
     } 
     String start=inter.localization(language,"IN","start");
      String welcome=inter.localization(language,"IN","welcome");
+     session.setAttribute("language",language);
   %>
 <div class="container">
 <div class="center">
 <p align="center">
 <b><font size="7" color="midnightblue"><%out.println(welcome);%> </font>
 </b>
-<%if(session!=null)
-  {session.invalidate();}%>
   <br>
+  <center>
 <input type="submit" class="button button2" name="start" value="<%out.println(start);%>" onclick="window.location.href = 'http://localhost:8080/mockExam/select';">
+<a href="?language=en"><font color="white">ENGLISH</font></a>
+<a href="?language=mal"><font color="white">  മലയാളം</font></a></center>
 </p>
 </div>
 </div>

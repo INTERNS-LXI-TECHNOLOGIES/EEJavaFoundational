@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <head>
-	<title>question1</title>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
 <body bgcolor="FloralWhite">
 <style>
@@ -58,14 +62,30 @@ input[type=text] {
   border-radius: 4px;
 }
 </style>
+<%
+    Internationalize inter=new Internationalize();
+    String language=request.getParameter("language");
+     String lan=(String)session.getAttribute("language");
+     if(lan.equals("mal"))
+    {
+      language="mal";
+    }
+    else
+    {
+      language="en";
+    }
+    String ns1=inter.localization(language,"IN","ns1");
+    String ns2=inter.localization(language,"IN","ns2");
+     String back=inter.localization(language,"IN","back");
+  %>
 <div class="container">
 <div class="center">
 <p>
   <form>
-<h1><b><i>Entered username already exists!!!</i></b></h1>
+<h2><b><i><%out.println(ns1);%> !!!</i></b></h2>
 <br>
-<h1><b><i>Please try another one</i></b></h1>
-<button formaction="page0.jsp" class="button button1" name="back" >BACK</button>
+<h2><b><i><%out.println(ns2);%></i></b></h2>
+<button formaction="page0.jsp" class="button button1" name="back" ><%out.println(back);%></button>
 </form>
 </div>
 </div>

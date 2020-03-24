@@ -1,9 +1,14 @@
 <%@ page import="com.lxisoft.model.Model"%>
 <%@ page import="java.util.ArrayList"%>
+<%@ page import="com.lxisoft.sqlRepository.SqlRepository"%>
+<%@page import="com.lxisoft.config.*"%>
+<%@page contentType="text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-	<title>instructions</title>
+  <meta http-equiv="Content_Type" content="text/html;charset=UTF-8"/>
+  <title>sample project</title>
+  <link rel="stylesheet" href="Style.css"></link>
 </head>
 <body bgcolor="FloralWhite">
 <style>
@@ -55,6 +60,22 @@
 }
 
 </style>
+<%
+    Internationalize inter=new Internationalize();
+    String language=request.getParameter("language");
+      String lan=(String)session.getAttribute("language");
+     if(lan.equals("mal"))
+    {
+      language="mal";
+    }
+    else
+    {
+      language="en";
+    } 
+    String time=inter.localization(language,"IN","time");
+    String question=inter.localization(language,"IN","question");
+     String next=inter.localization(language,"IN","next");
+  %>
 <div class="container">
 <div class="center">
   <script>
@@ -80,7 +101,7 @@ document.qform.submit();
 //-->
 </script>
   <form action="<%=request.getRequestURL()%>" name="forma">
-<h1>Seconds remaining: <span id="clock"><%=clock%></span></h1>
+<h1><%out.println(time);%>: <span id="clock"><%=clock%></span></h1>
 </form>
 <script>
 <!--
@@ -98,7 +119,7 @@ timer();
         // out.println("Mark : "+mark);
        if(qcount != model.size()) {
 
-        %><font color="midnightblue"> <%out.println("<h1>question no: "+(qcount + 1)+"."+model.get(qcount).getQn()+"</h1>");
+        %><font color="midnightblue"> <%out.println("<h1>"+question+" :"+(qcount + 1)+"."+model.get(qcount).getQn()+"</h1>");
            %>
            <form action="check1" method="get" name="qform">
         <h1><input type="radio" name="opt" value="1"/>
@@ -110,7 +131,7 @@ timer();
           <h1><input type="radio" name="opt" value="4"/>
           <label for="4"><font color="midnightblue"><% out.println(model.get(qcount).getOpt4());%></label></font></h1>
             <input type="hidden" name="questionNo" value= <%out.println(qcount);%>/>
-            <input type="submit" class="button button1"   value="NEXT" />
+            <input type="submit" class="button button1"   value="<%out.println(next);%>" />
           </form>
 <%    
          } else {

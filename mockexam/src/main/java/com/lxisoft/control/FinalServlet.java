@@ -49,6 +49,8 @@ public class FinalServlet extends HttpServlet
         c1=0;
         c2=0;
        }
+        response.setCharacterEncoding("UTF-8");
+     response.setContentType("text/html; charset=utf-8");
         
      String url="page2.jsp?questionNo="+c;
       response.sendRedirect(url);
