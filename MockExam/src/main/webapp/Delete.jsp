@@ -29,7 +29,7 @@ body {
   session.setAttribute("language",language);
   if(language == null)
   {
-    language = "mal";
+    language = "en";
   } 
   %>
   <a href = "?language=mal">Malayalam</a>
@@ -67,9 +67,12 @@ body {
      }
     %>
   </table><br>
-  <button formaction="Admin.jsp" class="button"><%out.println(international.localization(language,"IN","Back"));%></button> 
+  <button formaction="Admin.jsp" class="button"><%back%></button> 
   </form>
   </div>
   </body>
   </html>
+
+
+
 

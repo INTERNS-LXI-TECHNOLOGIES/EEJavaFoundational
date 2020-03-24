@@ -18,11 +18,11 @@ body {
   <%
   Internationalization international = new Internationalization();
   String language = request.getParameter("language");
-  session.setAttribute("language",language);
   if(language == null)
   {
-    language = "mal";
-  } 
+    language = "en";
+  }
+  session.setAttribute("language",language); 
   %>
   <a href = "?language=mal">Malayalam</a>
    <a href = "?language=en">English</a>
@@ -44,9 +44,9 @@ body {
             </tr>
 
             <tr>
-                <td align="center"><button type="submit" name="Login" class ="button"><%out.println(international.localization(language,"IN","Login"));%></button></td>
-                <td align="center"><button type="reset" class ="button"><%out.println(international.localization(language,"IN","Reset"));%></button></td>
-                <td align="center"> <button formaction="index.jsp" class ="button"><%out.println(international.localization(language,"IN","Back"));%></button></td>
+           <td align="center"><button type="submit" name="Login" class ="button"><%out.println(international.localization(language,"IN","Login"));%></button></td>
+           <td align="center"><button type="reset" class ="button"><%out.println(international.localization(language,"IN","Reset"));%></button></td>
+           <td align="center"> <button formaction="index.jsp" class ="button"><%out.println(international.localization(language,"IN","Back"));%></button></td>
 
             </tr>
         </table>

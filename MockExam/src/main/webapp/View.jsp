@@ -1,9 +1,14 @@
-<%@page import="com.lxisoft.Model.ExamModel"%>
-<%@page import="com.lxisoft.Repository.SqlRepository"%>
-<%@page import="java.util.ArrayList"%>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <%@page import = "com.lxisoft.Config.*"%>
-<%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
+<%@page import="com.lxisoft.Model.ExamModel"%>
+<%@page import="com.lxisoft.Repository.SqlRepository"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="javax.servlet.*"%>
+<%@page import="javax.servlet.http.*"%>
+<%@page import="java.util.ResourceBundle"%>
+<%@page import="java.util.ResourceBundle.Control"%>
+<%@page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <html>
 <head>
   <title>Questions</title>
@@ -17,16 +22,17 @@ body {
 </style>
 </head>
 <body> 
-<%
+ <%
   Internationalization international = new Internationalization();
-  String language = request.getParameter("language");
-  session.setAttribute("language",language);
+  String language = session.getAttribute("language").toString();
   if(language == null)
   {
-    language = "mal";
+    language = "en";
   } 
+   session.setAttribute("language",language);
+   String back= international.localization(language,"IN","Back");
   %>
-  <a href = "?language=mal">Malayalam</a>
+    <a href = "?language=mal">Malayalam</a>
    <a href = "?language=en">English</a>
  <div class = "inset">
     <div class="dimbly" align="center">
@@ -58,10 +64,15 @@ body {
     %>
    
   </table>
-  <button formaction="Admin.jsp" class="button"><%out.println(international.localization(language,"IN","Back"));%></button> 
+  <button formaction="Admin.jsp" class="button"><%=back%></button> 
 </form>
 </div>
 </p>
 </body>
 </html>
  
+
+
+
+
+

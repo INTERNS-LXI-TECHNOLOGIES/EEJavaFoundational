@@ -21,7 +21,7 @@ body {
   session.setAttribute("language",language);
   if(language == null)
   {
-    language = "mal";
+    language = "en";
   } 
   %>
   <a href = "?language=mal">Malayalam</a>

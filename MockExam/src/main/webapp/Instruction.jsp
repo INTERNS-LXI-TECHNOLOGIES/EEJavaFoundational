@@ -1,10 +1,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
 <%@page import = "com.lxisoft.Config.*"%>
-<%@page contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8"%>
 <%@page import="java.io.*"%>
 <%@page import="java.util.*"%>
 <%@page import="javax.servlet.*"%>
 <%@page import="javax.servlet.http.*"%>
+<%@page import="java.util.ResourceBundle"%>
+<%@page import="java.util.ResourceBundle.Control"%>
+<%@page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <html>
 <head>
 <title>MockExam</title>
@@ -38,14 +40,18 @@ body {
 </style>
 </head>
 <body>
+
  <%
   Internationalization international = new Internationalization();
-  String language = request.getParameter("language");
-  session.setAttribute("language",language);
+  String language = session.getAttribute("language").toString();
   if(language == null)
   {
-    language = "mal";
+    language = "en";
   } 
+   session.setAttribute("language",language);
+   String instructions=international.localization(language,"IN","Instructions");
+   String start= international.localization(language,"IN","Start");
+   String back= international.localization(language,"IN","Back");
   %>
   <a href = "?language=mal">Malayalam</a>
    <a href = "?language=en">English</a>
@@ -55,7 +61,7 @@ body {
 <div class = "inset">
     <div class="dimbly" align="center">
     <ul>
-      <h1 style="font-size:30px;"><%out.println(international.localization(language,"IN","Instructions"));%></h1><br>
+      <h1 style="font-size:30px;"><%=instructions%></h1><br>
     <ol>
  <h2><font color="SlateBlue"><li>Please read instructions so that you will be able to easily navigate through the Test.</li></font> </h2>
  <h2><font color="SlateBlue"><li>Timer start when you click start button.</li></font></h2>
@@ -69,8 +75,8 @@ body {
 
 <form method="get" action="QuestionServlet" value="0">
   <input type = "hidden" name = "count" value ="0">
-  <button type="submit" class="button_css"> Start </button>
-  <button formaction = "index.jsp" class="button_css">Back</button>
+  <button type="submit" class="button_css"><%=start%></button>
+  <button formaction = "index.jsp" class="button_css"><%=back%></button>
 </form>
 </div>
 </body>

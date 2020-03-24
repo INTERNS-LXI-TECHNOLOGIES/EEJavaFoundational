@@ -1,4 +1,13 @@
 <!DOCTYPE html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<%@page import = "com.lxisoft.Config.*"%>
+<%@page import="java.io.*"%>
+<%@page import="java.util.*"%>
+<%@page import="javax.servlet.*"%>
+<%@page import="javax.servlet.http.*"%>
+<%@page import="java.util.ResourceBundle"%>
+<%@page import="java.util.ResourceBundle.Control"%>
+<%@page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <%@page import="com.lxisoft.Model.ExamModel"%>
 <%@page import="java.util.ArrayList"%>
 <html>
@@ -66,6 +75,20 @@ timer();
 </script>
 </head>
 <body>
+
+ <%
+  Internationalization international = new Internationalization();
+  String language = session.getAttribute("language").toString();
+  if(language == null)
+  {
+    language = "en";
+  } 
+   session.setAttribute("language",language);
+   String next=international.localization(language,"IN","Next");
+  %>
+
+
+
 	<p>
 
 <%	
@@ -96,7 +119,7 @@ timer();
 	String x = String.valueOf(j);
 	request.setAttribute("questionNo",j); %>
 	<input type="hidden"class="button" name="count" value=<%out.println(j);%>>
-	<button type="submit">Next</button>
+	<button type="submit"><%=next%></button>
 	</form>	
 <%
 	}
