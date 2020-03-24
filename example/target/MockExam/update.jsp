@@ -33,27 +33,24 @@
   String back = international.localization(language,"IN","Back");
 
   %>
-
-	<% int edit=Integer.parseInt(request.getParameter("Edit"));
-	//out.println("Id : "+edit);%>
+  <%Model edit=(Model)session.getAttribute("datas");%>
 <form >
 <h2><font color="#87CEFA" style="margin-left: 43%"><%=datasofmock%></h2><br><br>
-  <label for="fname" color="white" style="margin-left: 25.2%"> <font color="#87CEFA" ><%=id%></font></label>
-  <input type="text" name="Id" size="60" value=<%out.println(edit);%>><br><br>
+  
   <label for="fname" color="white" style="margin-left: 21%"> <font color="#87CEFA"><%=questions%></font></label>
-  <input type="text" name="question1" size="60"><br><br>
+  <input type="text" name="question1" size="60"value=<%out.println(edit.getQuestion());%>><br><br>
 
   <label for="fname" color="white" style="margin-left: 21.8%"> <font color="#87CEFA"><%=answer%></font></label>
-  <input type="text" name="Answer1" size="60"><br><br>
+  <input type="text" name="Answer1" size="60"value=<%out.println(edit.getAnswer());%>><br><br>
 
   <label for="fname" color="white" style="margin-left: 21.8%"> <font color="#87CEFA"><%=option1%></font></label>
-  <input type="text" name="option11" size="60"><br><br>
+  <input type="text" name="option11" size="60"value=<%out.println(edit.getOption1());%>><br><br>
 
   <label for="fname" color="white" style="margin-left: 21.8%"> <font color="#87CEFA"><%=option2%></font></label>
-  <input type="text" name="option21" size="60"><br><br>
+  <input type="text" name="option21" size="60"value=<%out.println(edit.getOption2());%>><br><br>
 
   <label for="fname" color="white" style="margin-left: 21.8%"> <font color="#87CEFA"><%=option3%></font></label>
-  <input type="text" name="option31" size="60">
+  <input type="text" name="option31" size="60"value=<%out.println(edit.getOption3());%>>
   <div align ="center">
 </font>
 <button formaction="update" type="submit" ><%=submit%></button>

@@ -48,7 +48,10 @@
   </tr>
 <% try{
 
-for (int i=0;i<datas.size();i++){%>
+for (int i=0;i<datas.size();i++){
+
+// session.setAttribute("data",datas.get(i));
+%>
 
 <TR>
 <TD><%out.println(i+1);%></TD>
@@ -58,7 +61,7 @@ for (int i=0;i<datas.size();i++){%>
 <TD><%=(datas.get(i).getOption2())%></TD>
 <TD><%=(datas.get(i).getOption3())%></TD>
 <form>
-<TD><button formaction="update.jsp" name="Edit" value=<%out.println(datas.get(i).getId());%>><%=edit%></button></TD>
+<TD><button formaction="update.jsp" name="Edit" value="datas.get(i)"><%=edit%></button></TD>
 </form>
 </TR>
 <% } 
