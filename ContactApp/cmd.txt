@@ -1,0 +1,1 @@
+javac -cp .;..\WEB-INF\lib\servlet-api.jar com\lxisoft\servlet\AddContactServlet.java -d ..\WEB-INF\classes

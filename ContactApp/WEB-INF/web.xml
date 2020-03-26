@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<web-app>
+	<servlet>
+		<servlet-name>Add</servlet-name>
+		<servlet-class>com.lxisoft.servlet.AddContactServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add</servlet-name>
+		<url-pattern>/addContact</url-pattern>
+	</servlet-mapping>
+</web-app>	
