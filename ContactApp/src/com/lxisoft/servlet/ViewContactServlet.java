@@ -8,16 +8,15 @@ import com.lxisoft.model.*;
 public class ViewContactServlet extends HttpServlet
 {
 	
-	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
+	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
 			ArrayList<Contact> contactList = new ArrayList<Contact>();
 			DataBase db = new DataBase();
 		try
 		{
-			int i = 0;
-			contactList =  db.getAllContacts(contactList);
-			PrintWriter pw = res.getWriter();
-			pw.println(contactList.get(i).getFirstName());
+			response.setContentType("text/html");
+			response.sendRedirect("ViewContacts.jsp");
+
 		}
 		catch(Exception e)
 		{

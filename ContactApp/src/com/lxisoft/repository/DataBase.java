@@ -68,5 +68,32 @@ public class DataBase
 		}
 		return contactList;
 	}
-
+	public void updateDb(Contact contact)
+	{
+		createDbConnection();
+		try
+		{
+			ps = con.prepareStatement("update contactdb set firstname='"+contact.getFirstName()+"',lastname ='"+contact.getLastName()+"', phoneno='"+contact.getPhoneNum()+"' where id='"+contact.getId()+"'");
+			ps.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+	public void deleteFromDb(int id)
+	{
+		createDbConnection();
+		try
+		{
+			System.out.println(id);
+			String sql = "delete from contactdb where id='"+id+"'";
+			stmt = con.createStatement();
+			stmt.executeUpdate(sql);
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
 }

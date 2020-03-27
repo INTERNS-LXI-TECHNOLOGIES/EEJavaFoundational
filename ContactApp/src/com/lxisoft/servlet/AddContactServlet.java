@@ -8,19 +8,19 @@ import com.lxisoft.model.*;
 public class AddContactServlet extends HttpServlet
 {
 	
-	public void doGet(HttpServletRequest req,HttpServletResponse res) throws ServletException,IOException
+	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
 		try
 		{
 			DataBase db = new DataBase();
 			ArrayList<Contact> contactList = new ArrayList<Contact>();
-			Contact contact = new Contact();		
-
-		
-			contact.setFirstName(req.getParameter("firstname"));
-			contact.setLastName(req.getParameter("lastname"));
-			contact.setPhoneNum(req.getParameter("phno"));
+			Contact contact = new Contact();				
+			contact.setFirstName(request.getParameter("firstname"));
+			contact.setLastName(request.getParameter("lastname"));
+			contact.setPhoneNum(request.getParameter("phno"));
 			db.addToDatabase(contact);
+			//request.getRequestDispatcher("ViewContacts.jsp").forward(request,response);					
+			response.sendRedirect("ViewContacts.jsp");
 		}
 		catch(Exception e)
 		{
