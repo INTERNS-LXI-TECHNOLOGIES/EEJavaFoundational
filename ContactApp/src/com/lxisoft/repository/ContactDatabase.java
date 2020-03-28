@@ -63,44 +63,22 @@ public class ContactDatabase
 		return idList;
 	}
 	
-	// public ArrayList<Contact> searchDatabase(ArrayList<Contact> contactList,int searchId)
-	// {
-	// 	createDatabaseConnection();
-	// 	try
-	// 	{
-	// 		String sql = "select * from contactapp where id = '"+searchId+"'";
-	// 		stmt = con.createStatement();
-	// 		rs = stmt.executeQuery(sql);
-	// 		int i = 0;
-	// 		while(rs.next())
-	// 		{
-	// 			contactList.add(i,new Contact());
-	// 			contactList.get(i).setId(rs.getInt("id"));
-	// 			contactList.get(i).setfirstname(rs.getString("FirstName"));
-	// 			contactList.get(i).setlastname(rs.getString("LastName"));
-	// 			contactList.get(i). setnumber(rs.getString("number"));
-	// 		}
-	// 	}catch(SQLException e)
-	// 	{
-	// 		System.out.println(e);
-	// 	}
-	// 	return contactList;
-	// }
-	// public void deletRecord(int deleteId)
-	// {
-	// 	try
-	// 	{
-	// 		String sql = "delete from contactapp where id ='"+deleteId+"'";
-	// 		stmt = con.createStatement();
-	// 		stmt.executeUpdate(sql);
-	// 		System.out.println("Record Sucessfully Deleted");
-	// 		stmt.close();
-	// 		con.close();
-	// 	}catch(SQLException e)
-	// 	{
-	// 		System.out.println(e);
-	// 	}
-	// }
+	
+	public void deletRecord(int deleteId)
+	{
+		try
+		{
+			String sql = "delete from contactapp where id ='"+deleteId+"'";
+			stmt = con.createStatement();
+			stmt.executeUpdate(sql);
+			System.out.println("Record Sucessfully Deleted");
+			stmt.close();
+			con.close();
+		}catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+	}
 
 
 
@@ -126,5 +104,19 @@ public class ContactDatabase
 		catch(SQLException e)
 		{		e.printStackTrace();	}
 		return contactList;
+	}
+
+		public void editList(Contact contact)
+	{
+		createDbConnection();
+		try
+		{
+			ps = con.prepareStatement("update contactdb set firstname='"+contact.getFirstname()+"',lastname ='"+contact.getLastname()+"', phoneno='"+contact.getNumber()+"' where id='"+contact.getId()+"'");
+			ps.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
