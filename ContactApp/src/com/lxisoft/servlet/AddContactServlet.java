@@ -12,16 +12,33 @@ public class AddContactServlet extends HttpServlet
 	{
 		try
 		{
+			boolean duplicateFlag = false;
 			DataBase db = new DataBase();
 			ArrayList<Contact> contactList = new ArrayList<Contact>();
-			Contact contact = new Contact();				
+			Contact contact = new Contact();
 			contact.setFirstName(request.getParameter("firstname"));
 			contact.setLastName(request.getParameter("lastname"));
 			contact.setPhoneNum(request.getParameter("phno"));
-			db.addToDatabase(contact);
-			//request.getRequestDispatcher("ViewContacts.jsp").forward(request,response);					
-			response.sendRedirect("ViewContacts.jsp");
-		}
+			contactList = db.getAllContacts(contactList);
+			int i = 0;
+			for (Contact c:contactList) 
+			{
+				if(c.getFullName().toLowerCase().equals(contact.getFullName().toLowerCase()))
+				{
+					duplicateFlag = true;		
+				}
+			}	
+			if(duplicateFlag == true)
+			{
+				response.sendRedirect("error.jsp");
+			}	
+			else
+			{
+				db.addToDatabase(contact);					
+				response.sendRedirect("ViewContacts.jsp");
+				
+			}	
+		}	
 		catch(Exception e)
 		{
 			e.printStackTrace();

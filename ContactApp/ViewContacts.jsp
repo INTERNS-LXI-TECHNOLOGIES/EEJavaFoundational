@@ -32,12 +32,5 @@
 		<%}%>
 	</table>
 	<a href="index.html"><button>Home</button></a>
-	<!-- <script type="text/javascript">
-		window.alert("Record Successfully added....");
-		//window.location.href="http://localhost:8080/students/view.jsp";
-	</script>
-
- -->
-
 </body>
 </html>

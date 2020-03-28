@@ -17,12 +17,12 @@
 		<url-pattern>/viewContact</url-pattern>
 	</servlet-mapping>
 	<servlet>
-		<servlet-name>Edit</servlet-name>
-		<servlet-class>com.lxisoft.servlet.EditContactServlet</servlet-class>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>com.lxisoft.servlet.SearchContactServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>Edit</servlet-name>
-		<url-pattern>/editContact</url-pattern>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/searchContact</url-pattern>
 	</servlet-mapping>
 	<servlet>
 		<servlet-name>Delete</servlet-name>
