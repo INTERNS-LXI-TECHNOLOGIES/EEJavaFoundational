@@ -9,10 +9,10 @@ public class EditServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
-		DataBase db = new DataBase();
+		ContactDatabase database = new ContactDatabase();
 		int id = Integer.parseInt(request.getParameter("id"));
-		String fname = request.getParameter("fname");
-		String lname = request.getParameter("lname");
+		String fname = request.getParameter("FirstName");
+		String lname = request.getParameter("LastName");
 		String number = request.getParameter("number");	
 		PrintWriter out = response.getWriter();
 		Contact contact = new Contact();
@@ -20,7 +20,7 @@ public class EditServlet extends HttpServlet
 		contact.setFirstname(fname);
 		contact.setLastname(lname);
 		contact.setNumber(number);
-		db.editList(contact);
-		response.sendRedirect("View.jsp");
+		database.editList(contact);
+		response.sendRedirect("view.jsp");
 	}
 }

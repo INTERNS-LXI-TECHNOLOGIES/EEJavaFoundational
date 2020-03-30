@@ -66,6 +66,7 @@ public class ContactDatabase
 	
 	public void deletRecord(int deleteId)
 	{
+		createDatabaseConnection();
 		try
 		{
 			String sql = "delete from contactapp where id ='"+deleteId+"'";
@@ -108,10 +109,10 @@ public class ContactDatabase
 
 		public void editList(Contact contact)
 	{
-		createDbConnection();
+		createDatabaseConnection();
 		try
 		{
-			ps = con.prepareStatement("update contactdb set firstname='"+contact.getFirstname()+"',lastname ='"+contact.getLastname()+"', phoneno='"+contact.getNumber()+"' where id='"+contact.getId()+"'");
+			ps = con.prepareStatement("update contactapp set FirstName = '"+contact.getFirstname()+"', LastName ='"+contact.getLastname()+"', number='"+contact.getNumber()+"' where id='"+contact.getId()+"'");
 			ps.executeUpdate();
 		}
 		catch(SQLException e)

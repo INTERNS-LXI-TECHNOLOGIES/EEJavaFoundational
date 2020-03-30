@@ -3,13 +3,32 @@
 	<head>
 		<title>Add Contact</title>
 		<style>
-			body
-			{
-			margin-top : 230px; 
-			text-align :center;
-			
+		body{
+		 background-color: lightblue;	
+		 margin-top:250px;
+		 text-align:center;
+		}
+
+		h1 {
+  			color: black;
+  			text-align: center;
+  			font-family: verdana;
 			}
-		</style>
+	.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  .button:hover {  background-color: black;}
+}	
+	</style>
 	</head>
 	<body>
 		<h1>Adding Contact</h1>
@@ -17,11 +36,11 @@
 			
 			FirstName:<input type="text" placeholder="Your FirstName" name="fname" required><br><br>
 			LastName:<input type="text" placeholder="Your LastName" name="lname" required><br><br>
-			number:<input type="text" placeholder="Your Number" name="number" required><br><br>
-			<button type="submit">Add</button>
-			<button type="reset">Reset</button>
+			number:<input type="number" placeholder="Your Number" name="number" required><br><br>
+		<!-- 	<button type="submit">Add</button> --><input type="submit" class="button" value="Add">
+			<!-- <button type="reset">Reset</button> --><input type="reset" class="button" value="Reset">
 		</form>
-		<a href="index.html"><button type="submit">Home</button></a>	
+		<a href="index.html"><!-- <button type="submit">Home</button> --><input type="submit" class="button" value="Home"></a>	
 		
 	</body>
 </html>

@@ -6,9 +6,37 @@
 <html>
 <head>
 	<title>ViewContacts</title>
+		<style>
+		body{
+		 background-color: lightblue;	
+		 margin-top:250px;
+		 text-align:center;
+		}
+
+		h1 {
+  			color: black;
+  			text-align: center;
+  			font-family: verdana;
+			}
+	.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 8px 35px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button:hover {  background-color: black;}
+.button2:hover {  background-color: #f44336;}
+.button2 {background-color: #4CAF50;}	
+	</style>
 </head>
 <body>
-
+	<h1>Conntact List</h1>
 	<table border="1" width="100%">
 		<tr>
 			<th>Id</th>
@@ -28,13 +56,13 @@
 			<td><%out.println(contactList.get(i).getFirstname());%></td>
 			<td><%out.println(contactList.get(i).getLastname());%></td>
 			<td><%out.println(contactList.get(i).getNumber());%></td> 
-		</tr>	
-			<td><a href="edit.jsp?id=<%=contactList.get(i).getId()%>"><button>Edit</button></a></td>
-			<td><a href="ContactDelete?id=<%=contactList.get(i).getId()%>"><button>Delete</button></a></td>	
-				<%}%>
+		
+			<td><a href="edit.jsp?id=<%=contactList.get(i).getId()%>"><button class="button">Edit</button></a></td>
+			<td><a href="contactDelete?id=<%=contactList.get(i).getId()%>"><button class="button button2">Delete</button></a></td>	
+				<%}%></tr>	
 	</table>
 
-	<a href="index.html"><button>Home</button></a>
+	<a href="index.html"><button class="button">Home</button></a>
 
 
 </body>
