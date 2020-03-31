@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?xml version="1.0"?>
 <web-app>
 	<servlet>
@@ -40,4 +41,48 @@
 		<servlet-name>Update</servlet-name>
 		<url-pattern>/updateContact</url-pattern>
 	</servlet-mapping>
+=======
+<?xml version="1.0"?>
+<web-app>
+	<servlet>
+		<servlet-name>Add</servlet-name>
+		<servlet-class>com.lxisoft.servlet.AddContactServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add</servlet-name>
+		<url-pattern>/addContact</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>View</servlet-name>
+		<servlet-class>com.lxisoft.servlet.ViewContactServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>View</servlet-name>
+		<url-pattern>/viewContact</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>com.lxisoft.servlet.SearchContactServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/searchContact</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Delete</servlet-name>
+		<servlet-class>com.lxisoft.servlet.DeleteContactServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Delete</servlet-name>
+		<url-pattern>/deleteContact</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Update</servlet-name>
+		<servlet-class>com.lxisoft.servlet.UpdateContactServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Update</servlet-name>
+		<url-pattern>/updateContact</url-pattern>
+	</servlet-mapping>
+>>>>>>> b81f6fd2e67710b4348ee6ebc133966c3528ddee
 </web-app>	
