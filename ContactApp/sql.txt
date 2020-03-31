@@ -1,0 +1,2 @@
+create table contactdb(id int not null auto_increment,firstname varchar(25) not null,lastname varchar(25) not null,fullname varchar(25) not null,phoneno varchar(25) not null,
+primary key(id,phoneno));
