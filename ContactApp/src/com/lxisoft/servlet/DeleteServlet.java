@@ -17,7 +17,7 @@ public class DeleteServlet extends HttpServlet
 			PrintWriter out = response.getWriter();
 			out.println(id);
 			db.deletRecord(id);
-			response.sendRedirect("view.jsp");		
+			response.sendRedirect("delete.jsp");		
 		}
 		catch(Exception e)
 		{

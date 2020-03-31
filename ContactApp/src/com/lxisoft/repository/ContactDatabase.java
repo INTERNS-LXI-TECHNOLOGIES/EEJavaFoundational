@@ -107,6 +107,31 @@ public class ContactDatabase
 		return contactList;
 	}
 
+
+public ArrayList<Contact> searchDatabase(ArrayList<Contact> contactList,String temp)
+	{
+		createDatabaseConnection();
+		try
+		{
+			String sql  = "select * from contactapp WHERE FirstName LIKE '"+temp+"%'";
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			int i = 0;
+			while(rs.next())
+			{
+				contactList.add(i,new Contact());
+				contactList.get(i).setId(rs.getInt("id"));
+				contactList.get(i).setFirstname(rs.getString("FirstName"));
+				contactList.get(i).setLastname(rs.getString("LastName"));
+				contactList.get(i).setNumber(rs.getString("number"));
+				i++;		
+			}
+		}
+		catch(SQLException e)
+		{		e.printStackTrace();	}
+		return contactList;
+	}
+
 		public void editList(Contact contact)
 	{
 		createDatabaseConnection();

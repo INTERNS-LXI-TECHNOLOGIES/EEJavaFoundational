@@ -8,6 +8,6 @@
 </body>
 	<script type="text/javascript">
 		window.alert("Record Dleted Successfully....");
-		window.redirect("ContactView.jsp");
+		window.location.href="http://localhost:8080/ContactApp/view.jsp";
 	</script>
 </html>

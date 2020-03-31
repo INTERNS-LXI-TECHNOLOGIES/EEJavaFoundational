@@ -36,7 +36,7 @@
 	</style>
 </head>
 <body>
-	<h1>Conntact List</h1>
+	<h1>Search Result</h1>
 	<table border="1" width="100%">
 		<tr>
 			<th>Id</th>
@@ -48,7 +48,8 @@
 		<%
 		ContactDatabase db = new ContactDatabase();
 		ArrayList<Contact> contactList = new ArrayList<Contact>();
-		contactList = db.viewDatabase(contactList);	%>
+		String temp = request.getParameter("searchname");
+		contactList = db.searchDatabase(contactList,temp);	%>
 	
 		<%	for (int i=0;i<contactList.size();i++) 	{%>
 		<tr>				
