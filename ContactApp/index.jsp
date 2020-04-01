@@ -6,6 +6,7 @@
 <html>
 <head>
 	<title>ContactApp</title>
+	<link rel="stylesheet" type="text/css" href="page.css">
 	<style type="text/css">
 		
 		html,body{
@@ -52,8 +53,9 @@
 		</form>
 	</div>
 	<div id="view">
-		<table border="1" width="100%">
+		<table id="pager" border="1" width="100%">
 		<tr>
+			<th>SL.NO</th>
 			<th>ID</th>
 			<th>FULL NAME</th>
 			<th>PHONE NUMBER</th>
@@ -73,7 +75,8 @@
 		<%
 			for (int i=0;i<contactList.size();i++) 
 			{%>
-		<tr>				
+		<tr>
+			<td><%out.println(i+1);%></td>				
 			<td><%out.println(contactList.get(i).getId());%></td>
 			<td><%out.println(contactList.get(i).getFullName());%></td>
 			<td><%out.println(contactList.get(i).getPhoneNum());%></td> 
@@ -85,5 +88,16 @@
 		}%>
 	</table>
 	</div>
+		<div id="pageNavPosition" class="pager-nav" style="float: right;"></div>
+<script src="PagerJS.js" defer></script>
+<script>
+<script>
+let pager = new Pager('pager', 6);
+
+pager.init();
+pager.showPageNav('pager', 'pageNavPosition');
+pager.showPage(1);
+</script>
+</script>
 </body>
 </html>
