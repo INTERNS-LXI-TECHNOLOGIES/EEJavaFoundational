@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<web-app>
+	<welcome-file>index.jsp</welcome-file>
+	<servlet>
+		<servlet-name>read</servlet-name>
+		<servlet-class>com.mockexam.servlet.ReadServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>read</servlet-name>
+		<url-pattern>/readExamData</url-pattern>
+	</servlet-mapping>
+</web-app>
