@@ -2,7 +2,7 @@ package com.mockexam.repository;
 import java.io.*;
 import java.sql.*;
 import java.util.*;
-
+import com.mockexam.model.*;
 public class Database
 {
 	Connection con = null;
@@ -125,7 +125,7 @@ public class Database
 	{
 		try
 		{
-			String sql ="create table mockexamdb(id int not null auto_increment,question varchar(30) not null,answer varchar(25) not null,completed boolean not null,result varchar(20) not null,mark int not null,primary key(id))";
+			String sql ="create table mockexamdb(id int not null auto_increment,question varchar(30) not null,answer varchar(25) not null,attempted boolean not null,mark varchar(20) not null,primary key(id))";
 			stmt = con.createStatement();
 			stmt.executeUpdate(sql);
 		}
@@ -139,15 +139,46 @@ public class Database
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");	
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mockexam","root","root");
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();	
 		}
 	}
-
-			
-   
+	// public void insertData()
+	// {
+	// 	createDbConnection()
+	// 	ps = con.prepareStatement("insert into mockexamdb(question,answer,attempted,mark) values()");
+	// 	ps.executeUpdate();
+	// }
+	public ArrayList<Model> getMockExamData(ArrayList<Model> examQA)
+	{
+		try{
+		String sql = "select * from mockexamdb";
+		stmt = con.createStatement();
+		rs = stmt.executeQuery(sql);
+		int i=0;
+		while(rs.next())
+		{
+			examQA.add(i,new Model());
+			examQA.get(i).setId(rs.getInt("id"));
+			examQA.get(i).setQuestion(rs.getString("question"));
+			examQA.get(i).setOpt1(rs.getString("opt1"));
+			examQA.get(i).setOpt2(rs.getString("opt2"));
+			examQA.get(i).setOpt3(rs.getString("opt3"));
+			examQA.get(i).setOpt4(rs.getString("opt4"));
+			examQA.get(i).setQuestion(rs.getString("answer"));
+			examQA.get(i).setAttempted(rs.getBoolean("attempted"));
+			examQA.get(i).setMark(rs.getInt("mark"));
+			i++;
+		}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return examQA;
+	}
 }
 
