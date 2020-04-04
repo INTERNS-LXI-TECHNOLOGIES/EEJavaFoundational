@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+		<servlet-name>Add</servlet-name>
+		<servlet-class>com.lxisoft.servlet.AddServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add</servlet-name>
+		<url-pattern>/questionAdd</url-pattern>
+	</servlet-mapping>
+
 </web-app>

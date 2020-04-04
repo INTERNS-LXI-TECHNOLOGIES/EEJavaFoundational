@@ -1,7 +1,11 @@
+<%@page import="com.lxisoft.servlet.*"%>
+<%@page import="com.lxisoft.model.*"%>
+<%@page import="com.lxisoft.repository.*"%>
+<%@page import="java.util.*"%>
 <!DOCTYPE HTML>
 <html>
   <head>
-    <title>Contact App</title>
+    <title>Mock Exam</title>
   <style>
     body{
      background-color: lightblue; 
@@ -83,7 +87,13 @@ input[type=text] {
 <body>
 <h1>Mock Exam</h1>
 <h2>Instructions</h2>
-
+<h3>1.fdhgfhfghfgh
+	2.dgdfhgsgfhgdgd
+	3.dfhgdfhggd
+	4.ertruyghbnzdfdsa
+</h3>
+ <a href="add.html"><button class="button">Add Question</button></a>
+ <a href="question.jsp"><button class="button">Start Exam</button></a>
 
 </body>
 </html>
