@@ -1,3 +1,6 @@
+<%@page import="javax.servlet.*"%>
+<%@page import="javax.servlet.http.*"%>
+<%@page import="com.mockexam.servlet.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +47,10 @@
 		</p>
 	</div>
 	<div id="bbtn">
-		<a href="readExamData"><button id="btn" style="height: 50px;width: 100px " >Start Exam</button></a>
+		<form action="examController" method="GET">
+			<!-- <input type="hidden" name="count" value="0"> -->
+			<button id="btn" style="height: 50px;width: 100px">Start Exam</button>
+		</form>
 	</div>
 </body>
 </html>

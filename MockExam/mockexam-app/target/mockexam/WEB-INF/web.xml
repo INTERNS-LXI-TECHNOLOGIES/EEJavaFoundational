@@ -9,4 +9,20 @@
 		<servlet-name>read</servlet-name>
 		<url-pattern>/readExamData</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>Answer</servlet-name>
+		<servlet-class>com.mockexam.servlet.GetAnswerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Answer</servlet-name>
+		<url-pattern>/getAnswer</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>Controller</servlet-name>
+		<servlet-class>com.mockexam.servlet.ExamControllerServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Controller</servlet-name>
+		<url-pattern>/examController</url-pattern>
+	</servlet-mapping>
 </web-app>

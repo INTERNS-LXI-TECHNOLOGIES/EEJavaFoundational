@@ -7,17 +7,13 @@ import com.mockexam.model.*;
 import com.mockexam.repository.*;
 public class ReadServlet extends HttpServlet
 {
+	private int count=0;
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
 		try
 		{
-			ArrayList<Model> examQA = new  ArrayList<Model>();
-			Database db = new Database();
-			examQA = db.getMockExamData(examQA);
-			//PrintWriter writer = response.getWriter();
-			HttpSession session = request.getSession();
-			session.setAttribute("examdata",examQA);
-			request.getRequestDispatcher("questions.jsp").forward(request,response);
+			// response.sendRedirect("questions.jsp");
+			request.getRequestDispatcher("questions.jsp").forward(request,response);	
 		}
 		catch(Exception e)
 		{

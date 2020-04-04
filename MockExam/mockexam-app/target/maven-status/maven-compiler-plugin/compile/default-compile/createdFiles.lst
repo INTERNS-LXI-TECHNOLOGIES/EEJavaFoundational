@@ -1,3 +1,5 @@
 com/mockexam/servlet/ReadServlet.class
+com/mockexam/servlet/GetAnswerServlet.class
+com/mockexam/servlet/ExamControllerServlet.class
 com/mockexam/repository/Database.class
 com/mockexam/model/Model.class

@@ -9,6 +9,11 @@
 <head>
 	<title>Questions</title>
 		<style type="text/css">
+			html,body
+			{
+				background-color: lightgreen;
+				margin-top: 40px;
+			}
 			#question{
 				background-color: grey;
 				width: 1150px;
@@ -56,32 +61,45 @@
 		</style>
 	</head>
 <body>
-	<% 
-		ArrayList<Model> data = new ArrayList<Model>();
-		data = (ArrayList<Model>)session.getAttribute("examdata"); 
-	%>
-	<div id="question">
-		<p style="font-size:40px;">Q--><%out.println(data.get(1).getQuestion());%></p>
+		<%
+			String count = request.getAttribute("count").toString();
+			int qCount = (Integer.parseInt(count));
+			ArrayList<Model> data = new ArrayList<Model>();
+			data = (ArrayList<Model>)session.getAttribute("examdatas");
+			if(qCount<data.size())
+			{	
+		%>
+		<div id="question">
+		<p style="font-size:40px;">Q<%out.println(data.get(qCount ).getQuestion());%></p>
+		<form action="getAnswer" method="GET">
+		<input type="hidden" name="id" value="<%=data.get(qCount ).getId()%>">
 		<div id="option">
 			<span>
-			<input type="radio" id="radiobtn" name="ans1">
-			<label><%out.println(data.get(1).getOpt1());%></label><br>
+			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount ).getOpt1()%>" required="required">
+			<label><%out.println(data.get(qCount ).getOpt1());%></label><br>
 			</span>
 			<span>
-			<input type="radio" id="radiobtn" name="ans1">
-			<label><%out.println(data.get(1).getOpt2());%></label><br>
+			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount ).getOpt2()%>">
+			<label><%out.println(data.get(qCount ).getOpt2());%></label><br>
 			</span>
 			<span>
-			<input type="radio" id="radiobtn" name="ans1">
-			<label><%out.println(data.get(1).getOpt3());%></label><br>
+			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount ).getOpt3()%>">
+			<label><%out.println(data.get(qCount ).getOpt3());%></label><br>
 			</span>
 			<span>
-			<input type="radio" id="radiobtn" name="ans1">
-			<label><%out.println(data.get(1).getOpt4());%></label>
+			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount ).getOpt4()%>">
+			<label><%out.println(data.get(qCount ).getOpt4());%></label>
 			</span>
 		</div>
-			<button id="btn" style="height: 35px;width: 85px;">Next</button>
+			<%
+			qCount ++;
+			%>
+			<input type="hidden" name="ques" value="<%out.println(qCount );%>"/>
+			<a href="getAnswer"><button type="submit" id="btn" style="height: 35px;width: 85px;">Next</button></a>
 			<button id="btn" style="height: 35px;width: 85px;">Previous</button>
+		</form>
+		<%}%>	
 	</div>
+	
 </body>
 </html>
