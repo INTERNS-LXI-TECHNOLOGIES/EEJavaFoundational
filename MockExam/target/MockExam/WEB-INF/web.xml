@@ -14,4 +14,22 @@
 		<url-pattern>/questionAdd</url-pattern>
 	</servlet-mapping>
 
+	 <servlet>
+		<servlet-name>Mark</servlet-name>
+		<servlet-class>com.lxisoft.servlet.MarkServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Mark</servlet-name>
+		<url-pattern>/addMark</url-pattern>
+	</servlet-mapping>
+
+	 <servlet>
+		<servlet-name>Result</servlet-name>
+		<servlet-class>com.lxisoft.servlet.ResultServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Result</servlet-name>
+		<url-pattern>/viewMark</url-pattern>
+	</servlet-mapping>
+
 </web-app>

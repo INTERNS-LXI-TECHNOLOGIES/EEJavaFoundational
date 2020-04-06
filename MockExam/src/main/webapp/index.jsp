@@ -87,13 +87,16 @@ input[type=text] {
 <body>
 <h1>Mock Exam</h1>
 <h2>Instructions</h2>
-<h3>1.fdhgfhfghfgh
-	2.dgdfhgsgfhgdgd
-	3.dfhgdfhggd
-	4.ertruyghbnzdfdsa
-</h3>
- <a href="add.html"><button class="button">Add Question</button></a>
- <a href="question.jsp"><button class="button">Start Exam</button></a>
+<h3>1.fdhgfhfghfgh</h3>
+<h3>2.dgdfhgsgfhgdgd</h3>
+<h3>3.dfhgdfhggd</h3>
+<h3>4.ertruyghbnzdfdsa</h3>
 
+ 
+ <form action="question.jsp" method="GET">
+ 	<a href="add.html"><button class="button">Add Question</button></a>
+			<input type="hidden" name="count" value="0">
+			<button class="button">Start Exam</button>
+		</form>
 </body>
 </html>

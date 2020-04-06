@@ -13,7 +13,7 @@ public class AddServlet extends HttpServlet
 		try
 		{
 			ExamDatabase db = new ExamDatabase();
-			ArrayList<Problem> contactList = new ArrayList<Problem>();
+			ArrayList<Problem> questions = new ArrayList<Problem>();
 			Problem problem = new Problem();				
 			problem.setQuestion(request.getParameter("question"));
 			problem.setOption1(request.getParameter("option1"));

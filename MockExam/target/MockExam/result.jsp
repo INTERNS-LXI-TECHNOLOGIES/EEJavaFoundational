@@ -85,17 +85,12 @@ input[type=text] {
   </style>
   </head>
 <body>
-<h1>Mock Exam</h1>
-<h2>Instructions</h2>
-<h3>1.fdhgfhfghfgh</h3>
-<h3>2.dgdfhgsgfhgdgd</h3>
-<h3>3.dfhgdfhggd</h3>
-<h3>4.ertruyghbnzdfdsa</h3>
+<% int mark = Integer.parseInt(session.getAttribute("score").toString()); %>
 
- <a href="add.html"><button class="button">Add Question</button></a>
- <form action="question.jsp" method="GET">
-			<input type="hidden" name="count" value="0">
-			<button class="button">Start Exam</button>
-		</form>
+<li><h1> Thank U For Attending The Exam </h1></li>
+        <li><h1> You Got <%out.println(mark);%> Marks.</h1></li>
+
+
+
 </body>
 </html>

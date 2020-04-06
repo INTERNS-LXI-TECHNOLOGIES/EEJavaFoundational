@@ -56,7 +56,7 @@ public class ExamDatabase
 			int i = 0;
 			while(rs.next())
 			{
-				ProblemList.add(i,new Problem());
+				questions.add(i,new Problem());
 				questions.get(i).setId(rs.getInt("id"));
 				questions.get(i).setQuestion(rs.getString("question"));
 				questions.get(i).setOption1(rs.getString("option1"));
