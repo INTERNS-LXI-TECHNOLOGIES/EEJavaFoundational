@@ -1,6 +1,3 @@
-<%@page import="javax.servlet.*"%>
-<%@page import="javax.servlet.http.*"%>
-<%@page import="com.mockexam.servlet.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,11 +5,37 @@
 	<style type="text/css">
 		head,body{
 			background-color: #7fcdcd;
+			/*background-image: url("pic.jpg");*/
+			position: fixed;
 		}
 		#heading{
 			text-align: center;
+			position: relative;
+			left:-40px;
+			top: 100px;
+		}
+		button
+		{
+			background-color: #008cba;
+			text-indent: 0px;
+			border:1px solid dark;
+			display:inline-block;
+			font-family: Arial;
+			color: black;
+			font-size: 16px;
+			height: 45px;
+			width: 145px;
+			text-decoration: none;
+			text-align: center;text-shadow: 1px 1px 0px;
+			line-height: 10px;
+			overflow: hidden;
+			border-radius: 15px; 
+			outline: none;
+			margin-top: 200px;
+			margin-left: auto;
 		}
 		#box{
+			background-image: url("pic.jpg");
 			background-color: lightgrey;
 			width: 1150px;
 			border:15px solid green;
@@ -20,37 +43,31 @@
 			padding-top: 5px;
 			margin: 35px;
 			border-radius: 45px;
+			height: 400px;
 
 		}
 		#btn{
+
 			border-radius: 15px;
 			border-color: black;
-			background-color: red;
-		}
-		#bbtn{
-			text-align: center;
+			margin-top: -20px;
+			position: relative;
+			top: 30px;
+			left: 400px;
+			down: 40px;
 		}
 	</style>
 </head>
 <body>
-	<div id="heading">
-		<h1>Mock Exam</h1>
-	</div>
+	
 	<div id="box">
-		<h5 style="text-align: center;font-size: 20px;color:black; ">Instruction To The Candidates</h5>
-		<p style="font-size: 30px">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-		</p>
-	</div>
-	<div id="bbtn">
-		<form action="examController" method="GET">
-			<!-- <input type="hidden" name="count" value="0"> -->
-			<button id="btn" style="height: 50px;width: 100px">Start Exam</button>
-		</form>
+		<div id="heading">
+			<h1>Mock Exam</h1>
+		</div>
+		<div id="btn">
+		<a href="login.html"><button>Login</button></a>
+		<a href="register.html"><button>Register</button></a>
+		</div>
 	</div>
 </body>
 </html>

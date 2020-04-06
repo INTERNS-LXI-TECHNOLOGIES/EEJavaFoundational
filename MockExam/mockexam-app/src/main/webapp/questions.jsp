@@ -4,6 +4,7 @@
 <%@page import="javax.servlet.*"%>
 <%@page import="javax.servlet.http.*"%>
 <%@page import="com.mockexam.model.*"%>
+<%@page language="java" contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8" trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -62,44 +63,46 @@
 	</head>
 <body>
 		<%
-			String count = request.getAttribute("count").toString();
-			int qCount = (Integer.parseInt(count));
+			int qCount = Integer.parseInt(request.getParameter("count"));
 			ArrayList<Model> data = new ArrayList<Model>();
 			data = (ArrayList<Model>)session.getAttribute("examdatas");
 			if(qCount<data.size())
 			{	
 		%>
 		<div id="question">
-		<p style="font-size:40px;">Q<%out.println(data.get(qCount ).getQuestion());%></p>
+		<p style="font-size:40px;">Q<%out.println(qCount+1);%>---><%out.println(data.get(qCount).getQuestion());%></p>
 		<form action="getAnswer" method="GET">
-		<input type="hidden" name="id" value="<%=data.get(qCount ).getId()%>">
+		<input type="hidden" name="id" value="<%=data.get(qCount).getId()%>">
 		<div id="option">
 			<span>
-			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount ).getOpt1()%>" required="required">
-			<label><%out.println(data.get(qCount ).getOpt1());%></label><br>
+			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount).getOpt1()%>" required="required">
+			<label><%out.println(data.get(qCount).getOpt1());%></label><br>
 			</span>
 			<span>
-			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount ).getOpt2()%>">
-			<label><%out.println(data.get(qCount ).getOpt2());%></label><br>
+			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount).getOpt2()%>">
+			<label><%out.println(data.get(qCount).getOpt2());%></label><br>
 			</span>
 			<span>
-			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount ).getOpt3()%>">
-			<label><%out.println(data.get(qCount ).getOpt3());%></label><br>
+			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount).getOpt3()%>">
+			<label><%out.println(data.get(qCount).getOpt3());%></label><br>
 			</span>
 			<span>
-			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount ).getOpt4()%>">
-			<label><%out.println(data.get(qCount ).getOpt4());%></label>
+			<input type="radio" id="radiobtn" name="ans" value="<%=data.get(qCount).getOpt4()%>">
+			<label><%out.println(data.get(qCount).getOpt4());%></label>
 			</span>
 		</div>
 			<%
 			qCount ++;
 			%>
-			<input type="hidden" name="ques" value="<%out.println(qCount );%>"/>
+			<input type="hidden" name="count" value="<%=qCount%>">
 			<a href="getAnswer"><button type="submit" id="btn" style="height: 35px;width: 85px;">Next</button></a>
 			<button id="btn" style="height: 35px;width: 85px;">Previous</button>
 		</form>
-		<%}%>	
+		<%}%>
+		<%else
+		{
+			response.sendRedirect("viewResult");	
+		}%>	
 	</div>
-	
 </body>
 </html>

@@ -25,4 +25,22 @@
 		<servlet-name>Controller</servlet-name>
 		<url-pattern>/examController</url-pattern>
 	</servlet-mapping>
+	<servlet>
+		<servlet-name>Result</servlet-name>
+		<servlet-class>com.mockexam.servlet.ResultServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Result</servlet-name>
+		<url-pattern>/viewResult</url-pattern>
+	</servlet-mapping>
+	<jsp-config>
+      <jsp-property-group>
+        <url-pattern>*.jsp</url-pattern>
+        <trim-directive-whitespaces>true</trim-directive-whitespaces>
+      </jsp-property-group>
+    </jsp-config>
+    <init-param>
+    <param-name>trimSpaces</param-name>
+    <param-value>true</param-value>
+</init-param>
 </web-app>
