@@ -4,7 +4,6 @@
 <%@page import="javax.servlet.*"%>
 <%@page import="javax.servlet.http.*"%>
 <%@page import="com.mockexam.model.*"%>
-<%@page language="java" contentType = "text/html;charset=UTF-8" pageEncoding = "UTF-8" trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -104,11 +103,5 @@
 			response.sendRedirect("viewResult");	
 		}%>	
 	</div>
-	<!-- <script type="text/javascript">
-		function trim(el) 
-		{
-			el.value = el.value.replace(/(^s*)|(\s*$)/gi, " ").replace(/[ ]{ 2,}/gi, " ").replace(/n +/, "\n");
-		}
-	</script> -->
 </body>
 </html>

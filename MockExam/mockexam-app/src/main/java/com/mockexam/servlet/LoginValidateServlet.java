@@ -9,18 +9,18 @@ public class LoginValidateServlet extends HttpServlet
 {
 	Database db = new Database();
 	ArrayList<User> userRecord = new ArrayList<User>();
-	public void doGet(HttpServletRequest request,HttpServletResponse reaponse) throws IOException,ServletException
+	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
-		String username = request.getPsrameter("username");
-		String password = request.getPsrameter("password");
-		String role = db.getRole(username);
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		String role = db.getUserRole(username);
 		if(role.equals("admin"))
 		{
-			request.getRequestDispatcher("admin.jsp").forward(request,response);
+			response.sendRedirect("adminLoginSuccess.jsp");
 		}
 		else if(role.equals("user"))
 		{
-			request.getRequestDispatcher("admin.jsp").forward(request,response);
+			response.sendRedirect("userLoginSuccess.jsp");
 		}
 		else 
 		{

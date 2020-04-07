@@ -4,8 +4,7 @@
 	<title>MockExam</title>
 	<style type="text/css">
 		head,body{
-			background-color: #7fcdcd;
-			/*background-image: url("pic.jpg");*/
+			/*background-color: #7fcdcd;*/
 			position: fixed;
 		}
 		#heading{
@@ -56,6 +55,10 @@
 			left: 400px;
 			down: 40px;
 		}
+		h1
+		{
+			font-size: 50px;
+		}
 	</style>
 </head>
 <body>
@@ -65,8 +68,8 @@
 			<h1>Mock Exam</h1>
 		</div>
 		<div id="btn">
-		<a href="login.html"><button>Login</button></a>
-		<a href="register.html"><button>Register</button></a>
+		<a href="login.jsp"><button>Login</button></a>
+		<a href="register.jsp"><button>Register</button></a>
 		</div>
 	</div>
 </body>

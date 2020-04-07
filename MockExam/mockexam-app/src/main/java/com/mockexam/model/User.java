@@ -10,7 +10,7 @@ public class User
 	{
 		this.id = id;
 	}
-	public void getId()
+	public int getId()
 	{
 		return id;
 	}
@@ -18,7 +18,7 @@ public class User
 	{
 		this.username = uname;
 	}
-	public void getUserName()
+	public String getUserName()
 	{
 		return username;
 	}
@@ -27,7 +27,7 @@ public class User
 	{
 		this.password = pass;
 	}
-	public void getPassword()
+	public String getPassword()
 	{
 		return password;
 	}
@@ -36,7 +36,7 @@ public class User
 	{
 		this.role = role;
 	}
-	public void getRole()
+	public String getRole()
 	{
 		return role;
 	}
@@ -44,7 +44,7 @@ public class User
 	{
 		this.score = score;
 	}
-	public void getScore()
+	public int getScore()
 	{
 		return score;
 	}

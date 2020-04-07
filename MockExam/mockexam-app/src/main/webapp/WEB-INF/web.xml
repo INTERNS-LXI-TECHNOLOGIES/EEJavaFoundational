@@ -47,12 +47,38 @@
 	</servlet-mapping>
 	
 	<servlet>
-		<servlet-name>lRegistration</servlet-name>
+		<servlet-name>Registration</servlet-name>
 		<servlet-class>com.mockexam.servlet.RegisterUserServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Registration</servlet-name>
 		<url-pattern>/userRegistration</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>SearchQuestion</servlet-name>
+		<servlet-class>com.mockexam.servlet.SearchQuestionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SearchQuestion</servlet-name>
+		<url-pattern>/searchQuestion</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>UpdateQuestion</servlet-name>
+		<servlet-class>com.mockexam.servlet.UpdateQuestionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateQuestion</servlet-name>
+		<url-pattern>/updateQuestion</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>DeleteQuestion</servlet-name>
+		<servlet-class>com.mockexam.servlet.DeleteQuestionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>DeleteQuestion</servlet-name>
+		<url-pattern>/deleteQuestion</url-pattern>
 	</servlet-mapping>
 	
 

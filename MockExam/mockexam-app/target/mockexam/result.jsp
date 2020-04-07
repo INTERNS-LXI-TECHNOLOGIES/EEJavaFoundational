@@ -59,6 +59,7 @@
 				<li><h1> Hurray...Congragulation....You Passed...</h1></li>		
 				<%	
 				}
+				request.removeAttribute("totalScore");
 				%>
 				<%%>
 			</ul>

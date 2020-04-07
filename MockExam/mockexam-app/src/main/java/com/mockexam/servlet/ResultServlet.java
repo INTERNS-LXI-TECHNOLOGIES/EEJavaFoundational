@@ -9,16 +9,15 @@ public class ResultServlet extends HttpServlet
 {
 	ArrayList<String> anslist = new  ArrayList<String>();
 	ArrayList<Model> data = new  ArrayList<Model>();
-	int mark = 0;
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
-		response.setContentType("text/html");
 		PrintWriter pw = response.getWriter();
 		HttpSession session = request.getSession();
 		data = (ArrayList<Model>)session.getAttribute("examdatas");
 		anslist = (ArrayList<String>)session.getAttribute("answers");
 		pw.println("exatas="+data.size());
 		int size = data.size();
+		int mark = Integer.parseInt(request.getParameter("score"));
 		for (int i=0;i<size;i++) 
 		{
 			if(anslist.get(i).equals(data.get(i).getAnswer()))
