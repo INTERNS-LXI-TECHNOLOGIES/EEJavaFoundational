@@ -4,7 +4,7 @@ import java.util.*;
 
 public class User
 {
-private String name,password;
+private String name,password,role;
 private int id;
 
 public void setId(int id)
@@ -19,7 +19,16 @@ public void setName(String name)
 public void setPassword(String password)                               
     { 
         this.password = password; 
+    } 
+
+public void setRole(String role)                               
+    { 
+        this.role = role; 
     }   
+public String getRole()
+    {
+        return role;
+    }  
 public int getId()
     {
         return id;

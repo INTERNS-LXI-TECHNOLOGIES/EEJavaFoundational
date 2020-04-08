@@ -72,5 +72,28 @@ public class ExamDatabase
 		return questions;
 	}
 
-
-}	
+public ArrayList<User> viewUserDatabase(ArrayList<User> users)
+	{
+		createDatabaseConnection();
+		try
+		{
+			String sql  = "select * from persons" ;
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			int i = 0;
+			while(rs.next())
+			{
+				users.add(i,new User());
+				users.get(i).setId(rs.getInt("id"));
+				users.get(i).setName(rs.getString("name"));
+				users.get(i).setPassword(rs.getString("password"));
+				users.get(i).setRole(rs.getString("role"));
+			
+				i++;		
+			}
+		}
+		catch(SQLException e)
+		{		e.printStackTrace();	}
+		return users;
+	}
+}

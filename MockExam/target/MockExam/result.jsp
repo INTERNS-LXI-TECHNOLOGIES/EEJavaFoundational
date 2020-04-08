@@ -85,12 +85,12 @@ input[type=text] {
   </style>
   </head>
 <body>
-<% int mark = Integer.parseInt(session.getAttribute("score").toString()); %>
+<% int mark = Integer.parseInt(request.getAttribute("score").toString()); %>
 
 <li><h1> Thank U For Attending The Exam </h1></li>
         <li><h1> You Got <%out.println(mark);%> Marks.</h1></li>
 
-
+  <a href="index.jsp"><!-- <button type="submit">Home</button> --><input type="submit" class="button" value="Home"></a> 
 
 </body>
 </html>

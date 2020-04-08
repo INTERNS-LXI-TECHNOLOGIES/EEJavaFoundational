@@ -13,13 +13,16 @@ public class LoginServlet extends HttpServlet
 		try
 		{
 			ExamDatabase db = new ExamDatabase();
-			
+			ArrayList<User> users = new ArrayList<User>();
 			String name=(request.getParameter("name"));
 			String password=(request.getParameter("password"));
-			db.addToDatabase(problem);
+			users=db.viewUserDatabase(users);
+			if(users.get(0).getName()==name&&users.get(0).getPassword()==password)
+			{
+				response.sendRedirect("admin.jsp");
+			}
 			
-			
-			response.sendRedirect("a.html");
+			response.sendRedirect("index.jsp");
 		}
 		catch(Exception e)
 		{
