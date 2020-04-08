@@ -66,7 +66,7 @@
 		</p>
 	</div>
 	<div id="bbtn" >
-		<form action="index.jsp" method="GET">
+		<form action="instruction.jsp" method="GET">
 			<button id="btn" style="height: 50px;width: 100px">Home</button>
 		</form>
 	</div>

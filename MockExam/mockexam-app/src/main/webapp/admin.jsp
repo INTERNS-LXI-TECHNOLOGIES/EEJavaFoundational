@@ -26,15 +26,18 @@
 		}
 		#search{
 			float: right;
-			position: relative;top: -50px;
+			position: relative;
+			top: -50px;
+			right: 300px;
 		}
-		/*#view
+		#logout
 		{
-			display: inline-table;
-			width: 40%;
-			margin: auto;
+			float: right;
+			position: relative;
+			top: -50px;	
+			left: 550px;
 		}
-*/		table
+		table
 		{
     		align-content: center;
    			margin: inherit;
@@ -43,7 +46,7 @@
 		
 	</style>
 </head>
-<body>
+<body onload="myFunction()">
 	<div id="addQuestion">
 		<a href="add.html"><button class="button1">Add Question</button></a>
 	</div>
@@ -53,6 +56,11 @@
 			<button class="button2" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">Search</button>
 		</form>
 	</div>
+	<div id="logout">
+		<button class="button3" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">
+			Logout
+		</button>
+	</div>	
 	<div id="view">
 		<table id="pager" border="2" width="100%">
 		<tr>
@@ -104,11 +112,16 @@
 <script src="PagerJS.js" defer></script>
 <script>
 <script>
-let pager = new Pager('pager', 6);
+	function myFunction() 
+	{
+		alert("Admin Login Successfull......");
+	}
 
+let pager = new Pager('pager', 6);
 pager.init();
 pager.showPageNav('pager', 'pageNavPosition');
 pager.showPage(1);
+
 </script>
 </script>
 </body>

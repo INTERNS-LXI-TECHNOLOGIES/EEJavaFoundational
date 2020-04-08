@@ -8,23 +8,21 @@ import com.mockexam.repository.*;
 public class LoginValidateServlet extends HttpServlet
 {
 	Database db = new Database();
-	ArrayList<User> userRecord = new ArrayList<User>();
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		String role = db.getUserRole(username);
-		if(role.equals("admin"))
+
+		String username = request.getRemoteUser();
+		String userRole = db.getUserRole(username);
+		PrintWriter pw = response.getWriter();
+		if(userRole.equals("admin"))
 		{
-			response.sendRedirect("adminLoginSuccess.jsp");
-		}
-		else if(role.equals("user"))
-		{
-			response.sendRedirect("userLoginSuccess.jsp");
+			pw.println(userRole);
+			// response.sendRedirect("admin.jsp");
 		}
 		else 
 		{
-			response.sendRedirect("errorLogin.jsp");			
-		}
+			pw.println(userRole);
+			// response.sendRedirect("introduction.jsp");
+		}	
 	}
 }

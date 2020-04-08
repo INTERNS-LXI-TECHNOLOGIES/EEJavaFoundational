@@ -7,13 +7,14 @@ import com.mockexam.repository.*;
 import com.mockexam.model.*;
 public class DeleteQuestionServlet extends HttpServlet
 {
-	
+	Database db = new Database();
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
 		try
 		{
-			Database db = new Database();
+			PrintWriter pz = response.getWriter();
 			int id = Integer.parseInt(request.getParameter("id"));
+			pz.println(id);
 			db.deleteQuestionRecord(id);
 			response.sendRedirect("delete.jsp");		
 		}

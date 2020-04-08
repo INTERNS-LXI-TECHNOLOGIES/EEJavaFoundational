@@ -7,7 +7,7 @@
 	<title>MockExam</title>
 	<style type="text/css">
 		head,body{
-			background-color: #7fcdcd;
+			background:#009b77;
 		}
 		#heading{
 			text-align: center;
@@ -34,7 +34,7 @@
 		}
 	</style>
 </head>
-<body>
+<body onload="myFunction()">
 	<div id="heading">
 		<h1>Mock Exam</h1>
 	</div>
@@ -56,5 +56,11 @@
 			<button id="btn" style="height: 50px;width: 100px">Start Exam</button>
 		</form>
 	</div>
+	<script type="text/javascript">
+		function myFunction() 
+		{
+			alert("User Login Successfull......");
+		}
+	</script>
 </body>
 </html>

@@ -60,7 +60,7 @@ public class Database
 	{
 		createDbConnection();
 		try{
-		ps = con.prepareStatement("insert into mockexamdb(question,opt1,opt2,opt3,opt4,answer) values('"+m.getQuestion()+"','"+m.getOpt1()+"','"+m.getOpt2()+"','"+m.getOpt3()+"','"+m.getOpt4()+"','"+m.getAnswer()+"')");
+		ps = con.prepareStatement("update mockexamdb set question='"+m.getQuestion()+"',opt1='"+m.getOpt1()+"',opt2='"+m.getOpt2()+"',opt3='"+m.getOpt3()+"',opt4='"+m.getOpt4()+"',answer='"+m.getAnswer()+"'");
 		ps.executeUpdate();
 		}
 		catch(SQLException e)
@@ -81,7 +81,7 @@ public class Database
 			e.printStackTrace();
 		}
 	}
-	public void getUserRecord()
+	public ArrayList<User>  getUserRecord(ArrayList<User> user)
 	{
 		createDbConnection();
 		try
@@ -89,24 +89,31 @@ public class Database
 			String sql = "select * from users";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
+			int i=0;
 			while(rs.next())
 			{
-
+				user.add(i,new User());
+				user.get(i).setId(rs.getInt("id"));
+				user.get(i).setUserName(rs.getString("username"));
+				user.get(i).setPassword(rs.getString("password"));
+				user.get(i).setRole(rs.getString("role"));
+				i++;
 			} 
 		}
 		catch(SQLException e)
 		{
 			e.printStackTrace();
 		}
+		return user;
 	}
 	public void deleteQuestionRecord(int id)
 	{
 		createDbConnection();
 		try
 		{
-			String sql = "delete * from  mockexamdb where id ='"+id+"'";
+			String sql = "delete from  mockexamdb where id ='"+id+"'";
 			stmt = con.createStatement();
-			rs = stmt.executeQuery(sql); 
+			stmt.executeUpdate(sql); 
 		}
 		catch(SQLException e)
 		{
@@ -115,16 +122,16 @@ public class Database
 	}	
 	public String getUserRole(String username)
 	{
-		String userRole = null;
+		String userRole = " ";
 		createDbConnection();
 		try
 		{
-			String sql = "select role from users where username = '"+ username+"' ";
+			String sql = "select rolename from user_roles where username = '"+ username+"' ";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			while(rs.next())
 			{
-				userRole = rs.getString("role");
+				userRole = rs.getString("rolename");
 			} 
 		}
 		catch(SQLException e)
@@ -162,6 +169,8 @@ public class Database
 		}
 		return questionData;
 	}
+
+	
 
 }
 

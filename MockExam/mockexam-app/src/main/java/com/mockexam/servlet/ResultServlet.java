@@ -15,9 +15,11 @@ public class ResultServlet extends HttpServlet
 		HttpSession session = request.getSession();
 		data = (ArrayList<Model>)session.getAttribute("examdatas");
 		anslist = (ArrayList<String>)session.getAttribute("answers");
+		int mark = 0;
 		pw.println("exatas="+data.size());
+		pw.println("mark="+mark);
 		int size = data.size();
-		int mark = Integer.parseInt(request.getParameter("score"));
+		
 		for (int i=0;i<size;i++) 
 		{
 			if(anslist.get(i).equals(data.get(i).getAnswer()))
@@ -25,8 +27,9 @@ public class ResultServlet extends HttpServlet
 				mark ++;
 			}	
 		}
+		pw.println("mark="+mark);
 		request.setAttribute("totalScore",mark);
-		mark = 0;
+		mark=0;
 		request.getRequestDispatcher("result.jsp").forward(request,response);
 	}
 }
