@@ -72,6 +72,24 @@ public class ExamDatabase
 		return questions;
 	}
 
+		public void deletRecord(int deleteId)
+	{
+		createDatabaseConnection();
+		try
+		{
+			String sql = "delete from Questions where id ='"+deleteId+"'";
+			stmt = con.createStatement();
+			stmt.executeUpdate(sql);
+			System.out.println("Record Sucessfully Deleted");
+			stmt.close();
+			con.close();
+		}catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+	}
+
+
 public ArrayList<User> viewUserDatabase(ArrayList<User> users)
 	{
 		createDatabaseConnection();
