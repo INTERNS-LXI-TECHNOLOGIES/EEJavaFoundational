@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Success</title>
+	<title>Error</title>
 </head>
 <body>
 	<script type="text/javascript">

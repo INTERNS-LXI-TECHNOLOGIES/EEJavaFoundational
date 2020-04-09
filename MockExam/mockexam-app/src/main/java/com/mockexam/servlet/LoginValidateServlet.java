@@ -17,12 +17,12 @@ public class LoginValidateServlet extends HttpServlet
 		if(userRole.equals("admin"))
 		{
 			pw.println(userRole);
-			// response.sendRedirect("admin.jsp");
+			response.sendRedirect("admin.jsp");
 		}
 		else 
 		{
 			pw.println(userRole);
-			// response.sendRedirect("introduction.jsp");
+			response.sendRedirect("introduction.jsp");
 		}	
 	}
 }

@@ -73,7 +73,7 @@ public class Database
 		createDbConnection();
 		try
 		{
-			ps = con.prepareStatement("insert into users(username,password,role) values('"+user.getUserName()+"','"+user.getPassword()+"','"+user.getRole()+"')");
+			ps = con.prepareStatement("insert into users(username,password) values('"+user.getUserName()+"','"+user.getPassword()+"')");
 			ps.executeUpdate();
 		}
 		catch(SQLException e)
@@ -93,10 +93,8 @@ public class Database
 			while(rs.next())
 			{
 				user.add(i,new User());
-				user.get(i).setId(rs.getInt("id"));
 				user.get(i).setUserName(rs.getString("username"));
 				user.get(i).setPassword(rs.getString("password"));
-				user.get(i).setRole(rs.getString("role"));
 				i++;
 			} 
 		}

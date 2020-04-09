@@ -55,7 +55,7 @@
 		OPT_1  <input type="text" name="op1" value="<%=request.getParameter("opt1")%>" required="required"><br><br>
 		OPT_2  <input type="text" name="op2" value="<%=request.getParameter("opt2")%>" required="required"><br><br>
 		OPT_3  <input type="text" name="op3" value="<%=request.getParameter("opt3")%>" required="required"><br><br>
-		OPT_1  <input type="text" name="op4" value="<%=request.getParameter("opt4")%>" required="required"><br><br>
+		OPT_4  <input type="text" name="op4" value="<%=request.getParameter("opt4")%>" required="required"><br><br>
 		ANSWER <input type="text" name="ans" value="<%=request.getParameter("answer")%>" required="required"><br><br>
 		<button value="updatebtn">UPDATE</button>
 		</form>	

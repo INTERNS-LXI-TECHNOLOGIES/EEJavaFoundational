@@ -12,9 +12,9 @@ public class DeleteQuestionServlet extends HttpServlet
 	{
 		try
 		{
-			PrintWriter pz = response.getWriter();
+			PrintWriter pw = response.getWriter();
 			int id = Integer.parseInt(request.getParameter("id"));
-			pz.println(id);
+			pw.println(id);
 			db.deleteQuestionRecord(id);
 			response.sendRedirect("delete.jsp");		
 		}
