@@ -43,4 +43,22 @@
 	</servlet-mapping>
 
 
+	 <servlet>
+		<servlet-name>Delete</servlet-name>
+		<servlet-class>com.lxisoft.servlet.DeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Delete</servlet-name>
+		<url-pattern>/problemDelete</url-pattern>
+	</servlet-mapping>
+
+ <servlet>
+		<servlet-name>Edit</servlet-name>
+		<servlet-class>com.lxisoft.servlet.EditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Edit</servlet-name>
+		<url-pattern>/questionEdit</url-pattern>
+	</servlet-mapping>
+
 </web-app>

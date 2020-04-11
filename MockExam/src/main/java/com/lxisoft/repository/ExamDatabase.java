@@ -89,6 +89,36 @@ public class ExamDatabase
 		}
 	}
 
+public void deletRecord(int deleteId)
+	{
+		createDatabaseConnection();
+		try
+		{
+			String sql = "delete from Questions where id ='"+deleteId+"'";
+			stmt = con.createStatement();
+			stmt.executeUpdate(sql);
+			System.out.println("Record Sucessfully Deleted");
+			stmt.close();
+			con.close();
+		}catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+	}
+
+		public void editList(Problem problem)
+	{
+		createDatabaseConnection();
+		try
+		{
+			ps = con.prepareStatement("update Questions set question = '"+problem.getQuestion()+"', option1 ='"+problem.getOption1()+"', option2 ='"+problem.getOption2()+"', option3 ='"+problem.getOption3()+"', option4 ='"+problem.getOption4()+"', answer='"+problem.getAnswer()+"' where id='"+problem.getId()+"'");
+			ps.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
 
 public ArrayList<User> viewUserDatabase(ArrayList<User> users)
 	{
@@ -114,4 +144,30 @@ public ArrayList<User> viewUserDatabase(ArrayList<User> users)
 		{		e.printStackTrace();	}
 		return users;
 	}
+
+// public ArrayList<User> viewUserDatabase(ArrayList<User> users)
+// 	{
+// 		createDatabaseConnection();
+// 		try
+// 		{
+// 			String sql  = "select * from persons" ;
+// 			stmt = con.createStatement();
+// 			rs = stmt.executeQuery(sql);
+// 			int i = 0;
+// 			while(rs.next())
+// 			{
+// 				users.add(i,new User());
+// 				users.get(i).setId(rs.getInt("id"));
+// 				users.get(i).setName(rs.getString("name"));
+// 				users.get(i).setPassword(rs.getString("password"));
+// 				users.get(i).setRole(rs.getString("role"));
+			
+// 				i++;		
+// 			}
+// 		}
+// 		catch(SQLException e)
+// 		{		e.printStackTrace();	}
+// 		return users;
+// 	}
+	
 }
