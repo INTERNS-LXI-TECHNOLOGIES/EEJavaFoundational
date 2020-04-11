@@ -20,6 +20,15 @@
 	</servlet-mapping>
 	
 	<servlet>
+		<servlet-name>AddQuestion</servlet-name>
+		<servlet-class>com.mockexam.servlet.AddQuestionServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddQuestion</servlet-name>
+		<url-pattern>/addExamData</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
 		<servlet-name>Controller</servlet-name>
 		<servlet-class>com.mockexam.servlet.ExamControllerServlet</servlet-class>
 	</servlet>
@@ -81,22 +90,14 @@
 		<url-pattern>/deleteQuestion</url-pattern>
 	</servlet-mapping>
 
-	<jsp-config>
-      <jsp-property-group>
-        <url-pattern>*.jsp</url-pattern>
-        <trim-directive-whitespaces>true</trim-directive-whitespaces>
-      </jsp-property-group>
-    </jsp-config>
-    <init-param>
-    	<param-name>trimSpaces</param-name>
-    	<param-value>true</param-value>
-	</init-param>
-
 	<security-constraint>
 		<diplay-name>FormBasedAuthentication</diplay-name>
 		<web-resource-collection>
 			<web-resource-name>mockexam</web-resource-name>
-			<url-pattern>/userLogin</url-pattern>
+			<url-pattern>/admin.jsp</url-pattern>
+			<url-pattern>/introduction.jsp</url-pattern>
+			<http-method>GET</http-method>
+            <http-method>POST</http-method>
 		</web-resource-collection>
 		<auth-contraint>
 			<role-name>admin</role-name>
@@ -115,7 +116,10 @@
       </form-login-config>
    </login-config>
 
-
-
-
+   <resource-ref>
+   	<description>MySQL DataBase</description>
+   	<res-ref-name>jdbc/MySQLDB</res-ref-name>
+   	<res-type>javax.sql.DataSource</res-type>
+   	<res-auth>Container</res-auth>
+   </resource-ref>
 </web-app>

@@ -52,7 +52,7 @@
 	</div>
 	<div id="search">
 		<form action="searchQuestion" method="GET">
-			<input type="text" name="searchname" placeholder="Enter a Question ID" required style="width: 500px; height: 45px">
+			<input type="text" name="id" placeholder="Enter a Question ID" required style="width: 500px; height: 45px">
 			<button class="button2" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">Search</button>
 		</form>
 	</div>

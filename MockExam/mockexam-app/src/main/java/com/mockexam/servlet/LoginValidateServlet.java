@@ -10,7 +10,7 @@ public class LoginValidateServlet extends HttpServlet
 	Database db = new Database();
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
-
+		HttpSession session  = request.getSession(true);
 		String username = request.getRemoteUser();
 		String userRole = db.getUserRole(username);
 		PrintWriter pw = response.getWriter();

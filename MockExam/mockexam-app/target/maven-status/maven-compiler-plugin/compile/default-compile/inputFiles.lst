@@ -3,6 +3,7 @@
 /home/rahul/Desktop/Maven-Projects/mockexam-app/src/main/java/com/mockexam/model/Model.java
 /home/rahul/Desktop/Maven-Projects/mockexam-app/src/main/java/com/mockexam/servlet/SearchQuestionServlet.java
 /home/rahul/Desktop/Maven-Projects/mockexam-app/src/main/java/com/mockexam/servlet/DeleteQuestionServlet.java
+/home/rahul/Desktop/Maven-Projects/mockexam-app/src/main/java/com/mockexam/servlet/AddQuestionServlet.java
 /home/rahul/Desktop/Maven-Projects/mockexam-app/src/main/java/com/mockexam/model/User.java
 /home/rahul/Desktop/Maven-Projects/mockexam-app/src/main/java/com/mockexam/servlet/LoginValidateServlet.java
 /home/rahul/Desktop/Maven-Projects/mockexam-app/src/main/java/com/mockexam/servlet/GetAnswerServlet.java

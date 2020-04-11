@@ -1,5 +1,6 @@
 com/mockexam/servlet/ResultServlet.class
 com/mockexam/servlet/GetAnswerServlet.class
+com/mockexam/servlet/AddQuestionServlet.class
 com/mockexam/repository/Database.class
 com/mockexam/servlet/SearchQuestionServlet.class
 com/mockexam/servlet/LoginValidateServlet.class

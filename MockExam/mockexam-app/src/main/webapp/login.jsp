@@ -1,6 +1,4 @@
-<meta http-equiv="Cache-Control" content="no-store,no-cache,must-revalidate"/>
-<meta http-equiv="Pragma" content="no-cache"/>
-<meta http-equiv="Expires" content="-1"/>
+<%request.getSession().setMaxInactiveInterval(-1);%>
 <!DOCTYPE html>
 <html>
 <head>

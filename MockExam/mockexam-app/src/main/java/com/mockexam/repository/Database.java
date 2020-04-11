@@ -56,6 +56,19 @@ public class Database
 		}
 		return examQA;
 	}
+	public void insertMockExamData(Model exam)
+	{
+		createDbConnection();
+		try
+		{
+			ps = con.prepareStatement("insert into mockexamdb(question,opt1,opt2,opt3,opt4,answer) values('"+exam.getQuestion()+"','"+exam.getOpt1()+"','"+exam.getOpt2()+"','"+exam.getOpt3()+"','"+exam.getOpt4()+"','"+exam.getAnswer()+"')");
+			ps.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
 	public void updateMockExamData(Model m)
 	{
 		createDbConnection();

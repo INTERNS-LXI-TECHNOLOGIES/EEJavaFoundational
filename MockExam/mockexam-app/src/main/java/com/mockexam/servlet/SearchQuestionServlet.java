@@ -11,9 +11,9 @@ public class SearchQuestionServlet extends HttpServlet
 	{
 		Database db = new Database();
 		ArrayList<Model> questionData = new ArrayList<Model>();
-		String id = (String)request.getParameter("searchname");
-		int searchId = Integer.parseInt(id);
-		questionData = db.searchQuestion(questionData,searchId);
+		String id = (String)request.getParameter("id");
+		int qId = Integer.parseInt(id);
+		questionData = db.searchQuestion(questionData,qId);
 		if(questionData.size() == 0)
 		{
 			response.sendRedirect("searchError.jsp");
