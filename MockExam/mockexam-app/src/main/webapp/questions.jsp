@@ -91,17 +91,19 @@
 			</span>
 		</div>
 			<%
-			qCount ++;
+				qCount ++;
 			%>
 			<input type="hidden" name="count" value="<%=qCount%>">
 			<a href="getAnswer"><button type="submit" id="btn" style="height: 35px;width: 85px;">Next</button></a>
 			<button id="btn" style="height: 35px;width: 85px;">Previous</button>
 		</form>
-		<%}%>
-		<%else
+		<%
+		}
+		else
 		{
 			response.sendRedirect("viewResult");	
-		}%>	
+		}
+		%>	
 	</div>
 </body>
 </html>

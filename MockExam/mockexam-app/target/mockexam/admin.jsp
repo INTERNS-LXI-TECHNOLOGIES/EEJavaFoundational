@@ -24,18 +24,19 @@
 			font-size: 15px;
 			border-radius: 10px;
 		}
-		#search{
-			float: right;
-			position: relative;
-			top: -50px;
-			right: 300px;
-		}
 		#logout
 		{
 			float: right;
 			position: relative;
 			top: -50px;	
-			left: 550px;
+			left: 50px;
+		}
+		#exam
+		{
+			float: right;
+			position: relative;
+			top: -50px;	
+			left: -210px;
 		}
 		table
 		{
@@ -50,11 +51,10 @@
 	<div id="addQuestion">
 		<a href="add.html"><button class="button1">Add Question</button></a>
 	</div>
-	<div id="search">
-		<form action="searchQuestion" method="GET">
-			<input type="text" name="id" placeholder="Enter a Question ID" required style="width: 500px; height: 45px">
-			<button class="button2" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">Search</button>
-		</form>
+	<div id="exam">
+		<button class="button4" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">
+			Test Exam
+		</button>
 	</div>
 	<div id="logout">
 		<button class="button3" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">

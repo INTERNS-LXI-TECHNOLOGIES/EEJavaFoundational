@@ -52,7 +52,6 @@
 	<div id="bbtn" >
 		<form action="examController" method="GET">
 			<input type="hidden" name="count" value="0">
-			<input type="hidden" name="score" value="0">
 			<button id="btn" style="height: 50px;width: 100px">Start Exam</button>
 		</form>
 	</div>

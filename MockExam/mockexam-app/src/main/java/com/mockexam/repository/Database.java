@@ -152,12 +152,12 @@ public class Database
 		return userRole; 
 	}	
 
-	public ArrayList<Model> searchQuestion(ArrayList<Model> questionData,int searchId)
+	public ArrayList<Model> searchQuestion(ArrayList<Model> questionData,String searchId)
 	{
 		int i=0;
 		try
 		{
-			String sql = "select * from mockexamdb where id = '"+searchId+"'";
+			String sql = "select * from mockexamdb where id = '"+searchId+"%'";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			while(rs.next())
@@ -170,7 +170,6 @@ public class Database
 				questionData.get(i).setOpt3(rs.getString("opt3"));
 				questionData.get(i).setOpt4(rs.getString("opt4"));
 				questionData.get(i).setAnswer(rs.getString("answer"));
-				i++;
 			}
 
 		}
