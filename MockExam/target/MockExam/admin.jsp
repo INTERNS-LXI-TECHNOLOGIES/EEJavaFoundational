@@ -103,7 +103,7 @@ input[type=text] {
     </tr>
     <%
     ExamDatabase db = new ExamDatabase();
-    ArrayList<Problem> ProblemList = new ArrayList<Problem>();
+    ArrayList<Problem> problemList = new ArrayList<Problem>();
     problemList = db.viewDatabase(problemList); %>
   
     <%  for (int i=0;i<problemList.size();i++)  {%>
@@ -116,8 +116,8 @@ input[type=text] {
       <td><%out.println(problemList.get(i).getOption4());%></td>
       <td><%out.println(problemList.get(i).getAnswer());%></td> 
     
-      <td><a href="edit.jsp?id=<%=ProblemList.get(i).getId()%>"><button class="button">Edit</button></a><!-- </td> -->
-      <!-- <td> --><a href="ProblemDelete?id=<%=ProblemList.get(i).getId()%>"><button class="button button2">Delete</button></a></td> 
+      <td><a href="edit.jsp?id=<%=problemList.get(i).getId()%>"><button class="button">Edit</button></a><!-- </td> -->
+      <!-- <td> --><a href="problemDelete?id=<%=problemList.get(i).getId()%>"><button class="button button2">Delete</button></a></td> 
         <%}%></tr>  
   </table>
 		</form>

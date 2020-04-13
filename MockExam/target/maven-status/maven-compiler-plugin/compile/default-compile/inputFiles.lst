@@ -1,7 +1,10 @@
 C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\model\Problem.java
 C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\servlet\MarkServlet.java
 C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\servlet\ResultServlet.java
+C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\servlet\DeleteServlet.java
 C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\servlet\LoginServlet.java
 C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\repository\ExamDatabase.java
+C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\servlet\EditServlet.java
+C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\servlet\AdduserServlet.java
 C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\servlet\AddServlet.java
 C:\Users\afs\Desktop\MockExam\src\main\java\com\lxisoft\model\User.java

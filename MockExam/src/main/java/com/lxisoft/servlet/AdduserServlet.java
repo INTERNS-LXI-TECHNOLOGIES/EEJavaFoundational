@@ -15,9 +15,9 @@ public class AdduserServlet extends HttpServlet
 			ExamDatabase db = new ExamDatabase();
 			ArrayList<User> questions = new ArrayList<User>();
 			User user = new User();				
-			user.setQuestion(request.getParameter("name"));
-			user.setOption1(request.getParameter("password"));
-			user.setOption2(request.getParameter("role"));
+			user.setName(request.getParameter("name"));
+			user.setPassword(request.getParameter("password"));
+			user.setRole(request.getParameter("role"));
 			
 			db.addUserToDatabase(user);
 			response.sendRedirect("add.html");

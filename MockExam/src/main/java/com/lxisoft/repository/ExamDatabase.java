@@ -89,22 +89,22 @@ public class ExamDatabase
 		}
 	}
 
-public void deletRecord(int deleteId)
-	{
-		createDatabaseConnection();
-		try
-		{
-			String sql = "delete from Questions where id ='"+deleteId+"'";
-			stmt = con.createStatement();
-			stmt.executeUpdate(sql);
-			System.out.println("Record Sucessfully Deleted");
-			stmt.close();
-			con.close();
-		}catch(SQLException e)
-		{
-			System.out.println(e);
-		}
-	}
+// public void deletRecord(int deleteId)
+// 	{
+// 		createDatabaseConnection();
+// 		try
+// 		{
+// 			String sql = "delete from Questions where id ='"+deleteId+"'";
+// 			stmt = con.createStatement();
+// 			stmt.executeUpdate(sql);
+// 			System.out.println("Record Sucessfully Deleted");
+// 			stmt.close();
+// 			con.close();
+// 		}catch(SQLException e)
+// 		{
+// 			System.out.println(e);
+// 		}
+// 	}
 
 		public void editList(Problem problem)
 	{
@@ -144,6 +144,24 @@ public ArrayList<User> viewUserDatabase(ArrayList<User> users)
 		{		e.printStackTrace();	}
 		return users;
 	}
+
+		public int addUserToDatabase(User model)
+	{
+		createDatabaseConnection();
+		try
+		{
+			ps = con.prepareStatement("insert into persons(name,password,role) values('"+model.getName()+"','"+model.getPassword()+"','"+model.getRole()+"')");
+			row = ps.executeUpdate();
+			ps.close();
+			con.close();
+		}
+		catch(SQLException e)                                                                                    
+		{
+			e.printStackTrace();
+		}
+		return row;                                                                   
+	}
+
 
 // public ArrayList<User> viewUserDatabase(ArrayList<User> users)
 // 	{

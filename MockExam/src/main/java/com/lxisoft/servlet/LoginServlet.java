@@ -30,11 +30,12 @@ public class LoginServlet extends HttpServlet
 			{
 				if(users.get(0).getRole()==role)
 				{
-				response.sendRedirect("admin.jsp");}
+				response.sendRedirect("admin.jsp");
+				return;}
 				else
 				{
 					response.sendRedirect("question.jsp");
-				}	
+					return;				}	
 
 				 	 
 			}

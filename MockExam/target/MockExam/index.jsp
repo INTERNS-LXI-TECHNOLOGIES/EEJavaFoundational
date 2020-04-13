@@ -93,8 +93,8 @@ input[type=text] {
  <form action="logining" method="GET">
   User Name:<input type="text" placeholder="User Name" name="name" required><br><br>
   Password:<input type="text" placeholder="Password" name="password" required><br><br>
-  <button class="button">Login as Admin</button>
-<!--  <a href="logining?id=2"><button class="button">Login as User</button></a> -->
+  <button class="button">Login</button>
+ <a href="logining?id=2"><button class="button">Create New User</button></a>
 		</form>
 </body>
 </html>

@@ -94,7 +94,8 @@ input[type=text] {
   User Name:<input type="text" placeholder="User Name" name="name" required><br><br>
   Password:<input type="text" placeholder="Password" name="password" required><br><br>
   <button class="button">Login</button>
- <a href="logining?id=2"><button class="button">Create New User</button></a>
+ 
 		</form>
+    <a href="logining?id=2"><button class="button">Create New User</button></a>
 </body>
 </html>
