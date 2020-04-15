@@ -34,7 +34,7 @@
 		}
 	</style>
 </head>
-<body onload="myFunction()">
+<body>
 	<div id="heading">
 		<h1>Mock Exam</h1>
 	</div>

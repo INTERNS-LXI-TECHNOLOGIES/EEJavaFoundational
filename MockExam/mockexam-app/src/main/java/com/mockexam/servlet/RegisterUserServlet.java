@@ -18,6 +18,7 @@ public class RegisterUserServlet extends HttpServlet
 		user.setPassword(password);
 		user.setRole(role);
 		db.insertUserRecord(user);
+		db.insertUserRoles(user);
 		response.sendRedirect("registerSuccess.jsp");
 		
 	}

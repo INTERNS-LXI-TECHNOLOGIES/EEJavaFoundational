@@ -10,6 +10,7 @@ public class ResultServlet extends HttpServlet
 	ArrayList<String> anslist = new  ArrayList<String>();
 	ArrayList<Model> data = new  ArrayList<Model>();
 	int mark;
+	int totalScore;
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
 		PrintWriter pw = response.getWriter();
@@ -26,8 +27,10 @@ public class ResultServlet extends HttpServlet
 				mark ++;
 			}	
 		}
+		
 		request.setAttribute("totalScore",mark);
 		mark=0;
 		request.getRequestDispatcher("result.jsp").forward(request,response);
+		
 	}
 }

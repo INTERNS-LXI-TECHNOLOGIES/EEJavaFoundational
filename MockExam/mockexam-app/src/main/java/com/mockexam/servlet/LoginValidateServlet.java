@@ -23,12 +23,12 @@ public class LoginValidateServlet extends HttpServlet
 				{
 					if(userRole.equals("admin"))
 					{
-						response.sendRedirect("admin.jsp");
+						response.sendRedirect("adminLogin.jsp");
 						return;
 					}
 					else if(userRole.equals("user")) 
 					{
-						response.sendRedirect("introduction.jsp");
+						response.sendRedirect("userLogin.jsp");
 						return;			
 					}	
 				}

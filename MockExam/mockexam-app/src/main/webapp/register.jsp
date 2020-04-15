@@ -8,8 +8,8 @@
     <div class="login-page">
       <div class="form">
         <form action="userRegistration" method="GET" class="login-form">
-           <input type="text" name="uname" placeholder="name"/>
-          <input type="password" name="pass" placeholder="password"/>
+           <input type="text" name="uname" placeholder="name" autocomplete="off" />
+          <input type="password" name="pass" placeholder="password" autocomplete="off" />
            <button>Register</button>
            <p class="message">Already registered? <a href="login.jsp">Login</a></p>
         </form>

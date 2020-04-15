@@ -60,7 +60,7 @@
 		<button value="updatebtn">UPDATE</button>
 		</form>	
 		<br>
-		<a href="#"><button value="homebtn">Home</button></a>
+		<a href="admin.jsp"><button value="homebtn">Home</button></a>
 	</div>
 </body>
 </html>

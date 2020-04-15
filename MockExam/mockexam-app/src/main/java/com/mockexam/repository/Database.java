@@ -14,10 +14,14 @@ public class Database
 	{
 		try
 		{
-			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Connecting to DataBase..........");
-			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mockexam","root","root");
+			if(con == null)
+			{
+				Class.forName("com.mysql.jdbc.Driver");
+				System.out.println("Connecting to DataBase..........");
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mockexam","root","root");
 			
+			}
+				
 		}
 		catch(ClassNotFoundException e)
 		{
@@ -29,6 +33,21 @@ public class Database
 		}
 
 	}
+
+	public void createTable()
+	{
+		createDbConnection();
+		try
+		{
+			ps = con.prepareStatement("create table if not exists mockexamdb(id int not null auto_increment,question varchar(30) not null,opt1 varchar(30) not null,opt2 varchar(30) not null,opt3 varchar(30) not null,opt4 varchar(30) not null,answer varchar(25) not null,primary key(id))");
+			ps.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
 	public ArrayList<Model> getMockExamData(ArrayList<Model> examQA)
 	{
 		createDbConnection();
@@ -73,7 +92,7 @@ public class Database
 	{
 		createDbConnection();
 		try{
-		ps = con.prepareStatement("update mockexamdb set question='"+m.getQuestion()+"',opt1='"+m.getOpt1()+"',opt2='"+m.getOpt2()+"',opt3='"+m.getOpt3()+"',opt4='"+m.getOpt4()+"',answer='"+m.getAnswer()+"'");
+		ps = con.prepareStatement("update mockexamdb set question='"+m.getQuestion()+"',opt1='"+m.getOpt1()+"',opt2='"+m.getOpt2()+"',opt3='"+m.getOpt3()+"',opt4='"+m.getOpt4()+"',answer='"+m.getAnswer()+"' where id='"+m.getId()+"' ");
 		ps.executeUpdate();
 		}
 		catch(SQLException e)
@@ -94,6 +113,20 @@ public class Database
 			e.printStackTrace();
 		}
 	}
+	public void insertUserRoles(User user)
+	{
+		createDbConnection();
+		try
+		{
+			ps = con.prepareStatement("insert into user_roles(username,rolename) values('"+user.getUserName()+"','"+user.getRole()+"')");
+			ps.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
 	public ArrayList<User>  getUserRecord(ArrayList<User> user)
 	{
 		createDbConnection();

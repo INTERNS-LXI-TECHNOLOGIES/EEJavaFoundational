@@ -95,7 +95,7 @@ function Pager(tableName, itemsPerPage) {
 
 
 //
-let pager = new Pager('pager', 15);
+let pager = new Pager('pager', 13);
 
 pager.init();
 pager.showPageNav('pager', 'pageNavPosition');

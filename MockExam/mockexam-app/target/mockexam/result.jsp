@@ -59,14 +59,13 @@
 				<li><h1> Hurray...Congragulation....You Passed...</h1></li>		
 				<%	
 				}
-				request.removeAttribute("totalScore");
 				%>
 				<%%>
 			</ul>
 		</p>
 	</div>
 	<div id="bbtn" >
-		<form action="instruction.jsp" method="GET">
+		<form action="login.jsp" method="GET">
 			<button id="btn" style="height: 50px;width: 100px">Home</button>
 		</form>
 	</div>

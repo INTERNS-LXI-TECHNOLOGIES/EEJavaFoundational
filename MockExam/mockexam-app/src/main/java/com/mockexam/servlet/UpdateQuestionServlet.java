@@ -11,13 +11,17 @@ public class UpdateQuestionServlet extends HttpServlet
 	Database db = new Database();
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws IOException,ServletException
 	{
-		String quest = request.getParameter("quest");
+		String qid = request.getParameter("id");
+		String question = request.getParameter("ques");
 		String op1 = request.getParameter("op1");
 		String op2 = request.getParameter("op2");
 		String op3 = request.getParameter("op3");
 		String op4 = request.getParameter("op4");
 		String ans = request.getParameter("ans");
-		updateModel.setQuestion(quest);
+		
+		int id = Integer.parseInt(qid);
+		updateModel.setId(id);
+		updateModel.setQuestion(question);
 		updateModel.setOpt1(op1);
 		updateModel.setOpt2(op2);
 		updateModel.setOpt3(op3);
