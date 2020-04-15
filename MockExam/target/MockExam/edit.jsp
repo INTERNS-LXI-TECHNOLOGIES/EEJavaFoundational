@@ -1,3 +1,7 @@
+<%@page import="com.lxisoft.servlet.*"%>
+<%@page import="com.lxisoft.model.*"%>
+<%@page import="com.lxisoft.repository.*"%>
+<%@page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +35,7 @@
 </head>
 <body>
 		<%
-		String n = request.getParameter("id");
+		int n =Integer.parseInt(request.getParameter("id"));
 			ExamDatabase db = new ExamDatabase();
 			ArrayList<Problem> questions = new ArrayList<Problem>();
 			questions = db.viewDatabase(questions);
@@ -40,12 +44,12 @@
 		<form action="questionEdit" method="GET">
 		<h2>Add Details</h2>
 		 ID&nbsp&nbsp&nbsp<input type="text" name="id" placeholder="E" value="<%=request.getParameter("id")%>" readonly /><br><br>
-		Question &nbsp&nbsp &nbsp<input type="text" name="Question" value ="<%questions.get(n).getQuestion()%>" required><br><br>
-		Options One:<input type="text" value ="<%questions.get(n).getOption1()%>" name="option1" required><br><br>
-		Options Two:<input type="text" value ="<%questions.get(n).getOption2()%>" name="option2" required><br><br>
-		OptionsThree:<input type="text" value ="<%questions.get(n).getOption3()%>" name="option3" required><br><br>
-		Options Four:<input type="text" value ="<%questions.get(n).getOption4()%>" name="option4" required><br><br>
-		Answer :<input type="number" value ="<%questions.get(n).getAnswer()%>" name="answer" required><br><br>
+		Question &nbsp&nbsp &nbsp<input type="text" name="Question" value ="<%questions.get(n).getQuestion();%>" required><br><br>
+		Options One:<input type="text" value ="<%questions.get(n).getOption1();%>" name="option1" required><br><br>
+		Options Two:<input type="text" value ="<%questions.get(n).getOption2();%>" name="option2" required><br><br>
+		OptionsThree:<input type="text" value ="<%questions.get(n).getOption3();%>" name="option3" required><br><br>
+		Options Four:<input type="text" value ="<%questions.get(n).getOption4();%>" name="option4" required><br><br>
+		Answer :<input type="number" value ="<%questions.get(n).getAnswer();%>" name="answer" required><br><br>
 		<button class="button">Change</button>
 		</form>	
 		<br>

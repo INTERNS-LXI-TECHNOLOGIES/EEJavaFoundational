@@ -93,9 +93,10 @@ input[type=text] {
  <form action="logining" method="GET">
   User Name:<input type="text" placeholder="User Name" name="name" required><br><br>
   Password:<input type="text" placeholder="Password" name="password" required><br><br>
+<!--   <input type="hidden" name="count" value="0"> -->
   <button class="button">Login</button>
  
 		</form>
-    <a href="logining?id=2"><button class="button">Create New User</button></a>
+    <a href="adduser.html"><button class="button">Create New User</button></a>
 </body>
 </html>

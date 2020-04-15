@@ -86,15 +86,17 @@ input[type=text] {
   </head>
 <body>
 <h1>Mock Exam</h1>
-<h2>Login</h2>
+<h2>Instructions</h2>
 
 
  
- <form action="logining" method="GET">
-  User Name:<input type="text" placeholder="User Name" name="name" required><br><br>
-  Password:<input type="text" placeholder="Password" name="password" required><br><br>
-<!--   <input type="hidden" name="count" value="0"> -->
-  <button class="button">Login</button>
+ <form action="question.jsp" method="GET">
+  
+  <h3>1.Students  should take Hallticket</h3>
+  <h3>2.Student should have ID cards</h3>
+   <h3>3...................</h3>
+  <input type="hidden" name="count" value="0">
+  <button class="button">Start Exam</button>
  
 		</form>
     <a href="adduser.html"><button class="button">Create New User</button></a>

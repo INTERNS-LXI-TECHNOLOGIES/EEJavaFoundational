@@ -20,30 +20,34 @@ public class LoginServlet extends HttpServlet
 			String role="admin";
 			users=db.viewUserDatabase(users);
 
-			 pw.println("user name ="+name);
-			  pw.println("user psswd ="+password);
-			//for(int i=0;i<users.size();i++){
+			 // pw.println("user name ="+name);
+			 //  pw.println("user psswd ="+password);
+			for(int i=0;i<users.size();i++){
 
-			 // pw.println("user ="+users.get(i).getName());
-			 // pw.println("password ="+users.get(i).getPassword());	
-			if(users.get(0).getName() == name && users.get(0).getPassword() == password)
+			if(users.get(i).getName().equals(name) && users.get(i).getPassword().equals(password))
 			{
-				if(users.get(0).getRole()==role)
+				if(users.get(i).getRole().equals(role))
 				{
+					// RequestDispatcher rd= request.getRequestDispatcher("admin.jsp");	
+					// rd.forward(request,response);
 				response.sendRedirect("admin.jsp");
-				return;}
+				return;
+				}
 				else
 				{
-					response.sendRedirect("question.jsp");
-					return;				}	
-
-				 	 
+					// RequestDispatcher rd= request.getRequestDispatcher("instraction.jsp");	
+					// rd.forward(request,response);
+				response.sendRedirect("instraction.jsp");
+				return;
+				}
 			}
-		// 		}
-		// // 	else{
-			// response.sendRedirect("index.jsp");}
-				 pw.println("user ="+users.get(0).getName());
-			 pw.println("password ="+users.get(0).getPassword());	
+			
+			}
+			response.sendRedirect("index.jsp");
+			return;
+			
+				//  pw.println("user ="+users.get(0).getName());
+			 // pw.println("password ="+users.get(0).getPassword());	
 		 }
 		catch(Exception e)
 		{

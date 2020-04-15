@@ -60,5 +60,13 @@
 		<servlet-name>Edit</servlet-name>
 		<url-pattern>/questionEdit</url-pattern>
 	</servlet-mapping>
+<servlet>
+		<servlet-name>Adduser</servlet-name>
+		<servlet-class>com.lxisoft.servlet.AdduserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Adduser</servlet-name>
+		<url-pattern>/userAdding</url-pattern>
+	</servlet-mapping>
 
 </web-app>

@@ -1,3 +1,7 @@
+<%@page import="com.lxisoft.servlet.*"%>
+<%@page import="com.lxisoft.model.*"%>
+<%@page import="com.lxisoft.repository.*"%>
+<%@page import="java.util.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +35,7 @@
 </head>
 <body>
 		<%
-		String n = request.getParameter("id");
+		int n =Integer.parseInt(request.getParameter("id"));
 			ExamDatabase db = new ExamDatabase();
 			ArrayList<Problem> questions = new ArrayList<Problem>();
 			questions = db.viewDatabase(questions);

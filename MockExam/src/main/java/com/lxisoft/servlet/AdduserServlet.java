@@ -20,7 +20,7 @@ public class AdduserServlet extends HttpServlet
 			user.setRole(request.getParameter("role"));
 			
 			db.addUserToDatabase(user);
-			response.sendRedirect("add.html");
+			response.sendRedirect("index.jsp");
 		}
 		catch(Exception e)
 		{

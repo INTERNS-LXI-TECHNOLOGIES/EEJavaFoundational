@@ -99,6 +99,7 @@ input[type=text] {
       <th>Option 2</th>
       <th>option 3</th>
        <th>Option 4</th>
+       <th>Answer</th>
       <th>Change or Delete</th>
     </tr>
     <%
@@ -121,5 +122,8 @@ input[type=text] {
         <%}%></tr>  
   </table>
 		</form>
+     <a href="add.html"><button class="button">Creat New Question</button></a>
+     <a href="index.jsp"><button class="button">LOg Out</button></a>
+     
 </body>
 </html>
