@@ -17,7 +17,7 @@ public class ResultServlet extends HttpServlet
 		options = (ArrayList<Problem>)session.getAttribute("examqus");
 		anslist = (ArrayList<String>)session.getAttribute("answers");
 		int size = options.size();
-		// pw.println("exatas="+options.size());
+		
 		for (int i=0;i<size;i++) 
 		{
 			if(anslist.get(i).equals(options.get(i).getAnswer()))

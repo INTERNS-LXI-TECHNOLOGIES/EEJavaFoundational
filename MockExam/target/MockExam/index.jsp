@@ -97,6 +97,6 @@ input[type=text] {
   <button class="button">Login</button>
  
 		</form>
-    <a href="adduser.html"><button class="button">Create New User</button></a>
+    <a href="adduser.html"><button class="button">Sign New User</button></a>
 </body>
 </html>

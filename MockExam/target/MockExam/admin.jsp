@@ -90,7 +90,7 @@ input[type=text] {
 
 
  
- <form action="" method="GET">
+ <form action="edit.jsp" method="GET">
  <table border="1" width="100%">
     <tr>
       <th>Id</th>
@@ -117,11 +117,13 @@ input[type=text] {
       <td><%out.println(problemList.get(i).getOption4());%></td>
       <td><%out.println(problemList.get(i).getAnswer());%></td> 
     
-      <td><a href="edit.jsp?id=<%=problemList.get(i).getId()%>"><button class="button">Edit</button></a><!-- </td> -->
+      <td><!-- <a href="edit.jsp?id=<%=problemList.get(i).getId()%>"> --><input type="hidden" name="id" value="<%=problemList.get(i).getId()%>"><button class="button">Edit</button><!-- </a> --><!-- </td> -->
       <!-- <td> --><a href="problemDelete?id=<%=problemList.get(i).getId()%>"><button class="button button2">Delete</button></a></td> 
         <%}%></tr>  
   </table>
 		</form>
-     <a href="add.html"><button class="button">Login</button></a>
+     <a href="add.html"><button class="button">Creat New Question</button></a>
+     <a href="index.jsp"><button class="button">LOg Out</button></a>
+     
 </body>
 </html>

@@ -28,27 +28,19 @@ public class LoginServlet extends HttpServlet
 			{
 				if(users.get(i).getRole().equals(role))
 				{
-					// RequestDispatcher rd= request.getRequestDispatcher("admin.jsp");	
-					// rd.forward(request,response);
-				response.sendRedirect("admin.jsp");
-				return;
+					response.sendRedirect("admin.jsp");
+					return;
 				}
 				else
 				{
-					// RequestDispatcher rd= request.getRequestDispatcher("instraction.jsp");	
-					// rd.forward(request,response);
-				response.sendRedirect("instraction.jsp");
-				return;
+					response.sendRedirect("instraction.jsp");
+					return;
 				}
-			}
-			
-			}
+			}  }
 			response.sendRedirect("index.jsp");
 			return;
 			
-				//  pw.println("user ="+users.get(0).getName());
-			 // pw.println("password ="+users.get(0).getPassword());	
-		 }
+		}
 		catch(Exception e)
 		{
 			e.printStackTrace();

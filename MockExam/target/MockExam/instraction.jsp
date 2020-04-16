@@ -95,10 +95,13 @@ input[type=text] {
   <h3>1.Students  should take Hallticket</h3>
   <h3>2.Student should have ID cards</h3>
    <h3>3...................</h3>
+   <h3>4...................</h3>
+   <h3>5...................</h3>
+   
   <input type="hidden" name="count" value="0">
   <button class="button">Start Exam</button>
  
 		</form>
-    <a href="adduser.html"><button class="button">Create New User</button></a>
+      <button class="button">Create New User</button></a>
 </body>
 </html>
