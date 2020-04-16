@@ -58,6 +58,16 @@
 				padding-top: 25px;
 				padding-left: 40px;
 			}
+			#clock
+			{
+				top: 30px;
+				right: 60px;
+				position: absolute;
+			}
+			#timerclock
+			{
+				font-size: 40px;
+			}
 		</style>
 	</head>
 <body>
@@ -68,6 +78,13 @@
 			if(qCount<data.size())
 			{	
 		%>
+		<form action="getAnswer" method="GET">
+			<div id="clock">
+				<!-- <input type="hidden" name="count" value="<%=qCount%>"> -->
+				<label id="timerclock">Time : <span id="timer"></span></label>		
+			</div>
+		</form>
+		
 		<div id="question">
 		<p style="font-size:40px;">Q<%out.println(qCount+1);%>---><%out.println(data.get(qCount).getQuestion());%></p>
 		<form action="getAnswer" method="GET">
@@ -93,9 +110,9 @@
 			<%
 				qCount ++;
 			%>
-			<input type="hidden" name="count" value="<%=qCount%>">
+			<input type="hidden" name="count" value="<%=qCount%>" id="cnt">
 			<a href="getAnswer"><button type="submit" id="btn" style="height: 35px;width: 85px;">Next</button></a>
-			<button id="btn" style="height: 35px;width: 85px;">Previous</button>
+			<!-- <button id="btn" style="height: 35px;width: 85px;">Previous</button> -->
 		</form>
 		<%
 		}
@@ -105,5 +122,22 @@
 		}
 		%>	
 	</div>
+	<script type="text/javascript">
+		var qCount=document.getElementById('cnt').value;
+		var sec = 10;
+		var time = setInterval(myTimer, 1000);
+		function myTimer() 
+		{
+    		document.getElementById('timer').innerHTML = sec + "sec left";
+    		sec--;
+    		if (sec == -1) 
+    		{
+        		clearInterval(time);
+        		alert("Time out!! :(");
+        		console.log(qCount);
+        		window.location.href="http://localhost:8080/mockexam/getAnswer?count="+qCount;
+    		}
+		}
+	</script>
 </body>
 </html>

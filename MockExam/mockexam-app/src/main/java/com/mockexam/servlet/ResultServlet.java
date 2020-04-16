@@ -17,20 +17,21 @@ public class ResultServlet extends HttpServlet
 		HttpSession session = request.getSession();
 		data = (ArrayList<Model>)session.getAttribute("examdatas");
 		anslist = (ArrayList<String>)session.getAttribute("answers");
-		pw.println("exatas="+data.size());
-		int size = data.size();
-		
-		for (int i=0;i<size;i++) 
+		for (int j=0;j<anslist.size();j++) 
 		{
-			if(anslist.get(i).equals(data.get(i).getAnswer()))
+			anslist.remove(null);	
+		}
+		for (int i=0;i<anslist.size();i++) 
+		{
+			if(data.get(i).getAnswer().equals(anslist.get(i)))
 			{
 				mark ++;
 			}	
 		}
-		
-		request.setAttribute("totalScore",mark);
-		mark=0;
-		request.getRequestDispatcher("result.jsp").forward(request,response);
+		// pw.println(mark);
+		// request.setAttribute("totalScore",mark);
+		// mark=0;
+		// request.getRequestDispatcher("result.jsp").forward(request,response);
 		
 	}
 }
