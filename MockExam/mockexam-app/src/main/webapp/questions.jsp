@@ -36,11 +36,6 @@
 				font-size: 23px;
 				vertical-align: middle;
 			}
-			/*#radiobtn{
-				width: 1.5em;
-				height: 1.5em;
-			}*/
-
 			#btn
 			{
 				height: 35px;
@@ -133,8 +128,8 @@
     		if (sec == -1) 
     		{
         		clearInterval(time);
-        		alert("Time out!! :(");
-        		console.log(qCount);
+        		// alert("Time out!! :(");
+        		// console.log(qCount);
         		window.location.href="http://localhost:8080/mockexam/getAnswer?count="+qCount;
     		}
 		}

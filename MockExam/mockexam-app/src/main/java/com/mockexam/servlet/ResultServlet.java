@@ -21,17 +21,20 @@ public class ResultServlet extends HttpServlet
 		{
 			anslist.remove(null);	
 		}
-		for (int i=0;i<anslist.size();i++) 
+		for (int x=0;x<data.size();x++) 
 		{
-			if(data.get(i).getAnswer().equals(anslist.get(i)))
+			for (int y=0;y<anslist.size();y++) 
 			{
-				mark ++;
-			}	
+				if(data.get(x).getAnswer().equals(anslist.get(y)))
+				{
+					mark ++;
+				}				
+			}
+				
 		}
-		// pw.println(mark);
-		// request.setAttribute("totalScore",mark);
-		// mark=0;
-		// request.getRequestDispatcher("result.jsp").forward(request,response);
+		request.setAttribute("totalScore",mark);
+		mark=0;
+		request.getRequestDispatcher("result.jsp").forward(request,response);
 		
 	}
 }

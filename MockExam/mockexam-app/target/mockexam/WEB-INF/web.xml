@@ -90,14 +90,11 @@
 		<url-pattern>/deleteQuestion</url-pattern>
 	</servlet-mapping>
 
-	<!-- <security-constraint>
-		<diplay-name>FormBasedAuthentication</diplay-name>
+	<diplay-name>FormBasedAuthentication</diplay-name>
+	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>mockexam</web-resource-name>
-			<url-pattern>/admin.jsp</url-pattern>
-			<url-pattern>/introduction.jsp</url-pattern>
-			<http-method>GET</http-method>
-            <http-method>POST</http-method>
+			<url-pattern>/userLogin</url-pattern>
 		</web-resource-collection>
 		<auth-contraint>
 			<role-name>admin</role-name>
@@ -114,13 +111,5 @@
          <form-login-page>/login.jsp</form-login-page>
          <form-error-page>/errorLogin.jsp</form-error-page>
       </form-login-config>
-   </login-config>
-
-   <resource-ref>
-   	<description>MySQL DataBase</description>
-   	<res-ref-name>jdbc/MySQLDB</res-ref-name>
-   	<res-type>javax.sql.DataSource</res-type>
-   	<res-auth>Container</res-auth>
-   </resource-ref> -->
-   
+   </login-config>  
 </web-app>
