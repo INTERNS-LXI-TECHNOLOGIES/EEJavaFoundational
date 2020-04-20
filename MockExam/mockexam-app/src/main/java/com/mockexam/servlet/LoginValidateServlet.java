@@ -12,6 +12,7 @@ public class LoginValidateServlet extends HttpServlet
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
 		HttpSession session  = request.getSession(true);
+		
 		String username = request.getRemoteUser();
 		String userRole = db.getUserRole(username);
 		PrintWriter pw = response.getWriter();
@@ -25,31 +26,29 @@ public class LoginValidateServlet extends HttpServlet
 			pw.println(userRole);
 			response.sendRedirect("introduction.jsp");
 		}	
-		// String userRole =" ";
-		// String username = request.getParameter("username");
-		// String password = request.getParameter("password");
-		// users = db.getUserRecord(users);
-		// for (int i=0;i<users.size();i++) 
-		// {
-		// 	if(users.get(i).getUserName().equals(username) && users.get(i).getPassword().equals(password))
-		// 	{
-		// 		userRole = db.getUserRole(username);
-		// 		{
-		// 			if(userRole.equals("admin"))
-		// 			{
-		// 				response.sendRedirect("adminLogin.jsp");
-		// 				return;
-		// 			}
-		// 			else if(userRole.equals("user")) 
-		// 			{
-		// 				response.sendRedirect("userLogin.jsp");
-		// 				return;			
-		// 			}	
-		// 		}
-		// 	return;	
-		// 	}
-		// }	
-		// response.sendRedirect("errorLogin.jsp");	
-		// return;		
+		String userRole =" ";
+		String username = request.getParameter("username");
+		String password = request.getParameter("password");
+		users = db.getUserRecord(users);
+		for (int i=0;i<users.size();i++) 
+		{
+			if(users.get(i).getUserName().equals(username) && users.get(i).getPassword().equals(password))
+			{
+				userRole = db.getUserRole(username);
+				{
+					if(userRole.equals("admin"))
+					{
+						response.sendRedirect("adminLogin.jsp");
+						return;
+					}
+						response.sendRedirect("userLogin.jsp");
+						return;			
+					}	
+				}
+			return;	
+			}
+		}	
+		response.sendRedirect("errorLogin.jsp");	
+		return;		
 	}
 }
