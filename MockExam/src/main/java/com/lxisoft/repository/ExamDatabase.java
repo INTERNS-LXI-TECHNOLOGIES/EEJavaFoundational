@@ -1,7 +1,7 @@
 package com.lxisoft.repository;
 import com.lxisoft.model.*;
 import com.lxisoft.servlet.*;
-import java.io.*;
+import java.io.*; 
 import java.sql.*;
 import java.util.*;
 public class ExamDatabase
@@ -9,7 +9,7 @@ public class ExamDatabase
 	Connection con = null;
 	ResultSet rs= null;
 	Statement stmt = null;
-	PreparedStatement ps = null;;
+	PreparedStatement ps = null;
 	int row;
 	
 	public void createDatabaseConnection()
@@ -148,46 +148,4 @@ public ArrayList<User> viewUserDatabase(ArrayList<User> users)
 
 	
 
-	// 		public void removeUser(int deleteId)
-	// {
-	// 	createDatabaseConnection();
-	// 	try
-	// 	{
-	// 		String sql = "delete from Questions where id ='"+deleteId+"'";
-	// 		stmt = con.createStatement();
-	// 		stmt.executeUpdate(sql);
-	// 		System.out.println("Record Sucessfully Deleted");
-	// 		stmt.close();
-	// 		con.close();
-	// 	}catch(SQLException e)
-	// 	{
-	// 		System.out.println(e);
-	// 	}
-	// }
-
-// public ArrayList<User> viewUserDatabase(ArrayList<User> users)
-// 	{
-// 		createDatabaseConnection();
-// 		try
-// 		{
-// 			String sql  = "select * from persons" ;
-// 			stmt = con.createStatement();
-// 			rs = stmt.executeQuery(sql);
-// 			int i = 0;
-// 			while(rs.next())
-// 			{
-// 				users.add(i,new User());
-// 				users.get(i).setId(rs.getInt("id"));
-// 				users.get(i).setName(rs.getString("name"));
-// 				users.get(i).setPassword(rs.getString("password"));
-// 				users.get(i).setRole(rs.getString("role"));
-			
-// 				i++;		
-// 			}
-// 		}
-// 		catch(SQLException e)
-// 		{		e.printStackTrace();	}
-// 		return users;
-// 	}
-	
 }

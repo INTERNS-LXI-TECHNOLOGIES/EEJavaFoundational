@@ -59,6 +59,8 @@
             <%i++;%>
             <input type="hidden" name="count" value="<%=i%>">
  			 <a href="addMark"><button id="myBtn" class="button">Submit</button></a>
+ 			 <input type="hidden" name="count" value="<%=i%>">
+
  			 <a href="addMark"><button id="myBtn2" class="button button2">Skip</button></a>
 			<div><span id="countdown">10</span></div>	
  			</form>
@@ -79,10 +81,16 @@ var countdown = setInterval(function() {
     	document.getElementById("2").disabled = true;
     	document.getElementById("3").disabled = true; 
 	   	document.getElementById("4").disabled = true;   	
+
+	   	// document.getElementById("myBtn").disabled = true;
+    	// document.getElementById("1").disabled = true;
+    	// document.getElementById("2").disabled = true;
+    	// document.getElementById("3").disabled = true; 
+	   	// document.getElementById("4").disabled = true;   	
     }
 }, 1000);
 </script>
-
+ 
 
 </body>
 
