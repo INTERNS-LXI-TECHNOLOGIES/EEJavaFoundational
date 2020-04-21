@@ -18,7 +18,7 @@ public class Database
 			{
 				Class.forName("com.mysql.jdbc.Driver");
 				System.out.println("Connecting to DataBase..........");
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mockexam","root","root");
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mockexam","testuser","testpassword");
 			
 			}
 				
