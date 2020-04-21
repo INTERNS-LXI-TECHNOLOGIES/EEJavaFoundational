@@ -25,30 +25,6 @@ public class LoginValidateServlet extends HttpServlet
 		{
 			pw.println(userRole);
 			response.sendRedirect("introduction.jsp");
-		}	
-		String userRole =" ";
-		String username = request.getParameter("username");
-		String password = request.getParameter("password");
-		users = db.getUserRecord(users);
-		for (int i=0;i<users.size();i++) 
-		{
-			if(users.get(i).getUserName().equals(username) && users.get(i).getPassword().equals(password))
-			{
-				userRole = db.getUserRole(username);
-				{
-					if(userRole.equals("admin"))
-					{
-						response.sendRedirect("adminLogin.jsp");
-						return;
-					}
-						response.sendRedirect("userLogin.jsp");
-						return;			
-					}	
-				}
-			return;	
-			}
-		}	
-		response.sendRedirect("errorLogin.jsp");	
-		return;		
+		}			
 	}
 }
