@@ -127,3 +127,14 @@ input[type=text] {
      
 </body>
 </html>
+
+
+
+
+     <!-- <td> <a href="edit.jsp?id=<%=problemList.get(i).getId()%>"> --><!-- <input type="hidden" name="id" value="<%=problemList.get(i).getId()%>"><button class="button">Edit</button></a> -->
+      <!-- <td><a href="problemDelete?id=<%=problemList.get(i).getId()%>"><button class="button button2">Delete --><!-- </button></a></td> 
+        <%}%></tr>  
+  </table>
+    </form> -->
+    <!--  <a href="add.html"><button class="button">Creat New Question</button></a>
+     <a href="index.jsp"><button class="button">LOg Out</button></a> --> -->

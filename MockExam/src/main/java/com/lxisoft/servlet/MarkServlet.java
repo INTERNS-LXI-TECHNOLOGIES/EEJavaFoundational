@@ -15,7 +15,16 @@ public class MarkServlet extends HttpServlet
 			HttpSession session = request.getSession();
 					
 			String ans = request.getParameter("scores");
-		answerList.add(ans);
+			if(ans== null)
+			{
+				ans="0";
+				answerList.add(ans);	
+			}
+
+			else
+			{
+				answerList.add(ans);
+			}	
 		session.setAttribute("answers",answerList);
 		request.getRequestDispatcher("question.jsp").forward(request,response);
 		}
