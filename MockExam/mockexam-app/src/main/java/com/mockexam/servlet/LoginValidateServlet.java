@@ -11,6 +11,21 @@ public class LoginValidateServlet extends HttpServlet
 	ArrayList<User> users = new ArrayList<User>();
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
 	{
+		HttpSession session  = request.getSession(true);
+		
+		String username = request.getRemoteUser();
+		String userRole = db.getUserRole(username);
+		PrintWriter pw = response.getWriter();
+		if(userRole.equals("admin"))
+		{
+			pw.println(userRole);
+			response.sendRedirect("admin.jsp");
+		}
+		else 
+		{
+			pw.println(userRole);
+			response.sendRedirect("introduction.jsp");
+		}	
 		String userRole =" ";
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
@@ -26,8 +41,6 @@ public class LoginValidateServlet extends HttpServlet
 						response.sendRedirect("adminLogin.jsp");
 						return;
 					}
-					else if(userRole.equals("user")) 
-					{
 						response.sendRedirect("userLogin.jsp");
 						return;			
 					}	
