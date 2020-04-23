@@ -73,7 +73,7 @@
 			if(qCount<data.size())
 			{	
 		%>
-		<form action="getAnswer" method="GET">
+		<form action="../getAnswer" method="GET">
 			<div id="clock">
 				<!-- <input type="hidden" name="count" value="<%=qCount%>"> -->
 				<label id="timerclock">Time : <span id="timer"></span></label>		
@@ -113,7 +113,7 @@
 		}
 		else
 		{
-			response.sendRedirect("viewResult");	
+			response.sendRedirect("secured/viewResult");	
 		}
 		%>	
 	</div>

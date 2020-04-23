@@ -52,7 +52,7 @@
 			margin-top: -20px;
 			position: relative;
 			top: 30px;
-			left: 400px;
+			left: 450px;
 			down: 40px;
 		}
 		h1
@@ -68,8 +68,8 @@
 			<h1>Mock Exam</h1>
 		</div>
 		<div id="btn">
-		<a href="login.jsp"><button>Login</button></a>
-		<a href="register.jsp"><button>Register</button></a>
+		<a href="secured/introduction.jsp"><button>Attend Exam</button></a>
+		<!-- <a href="register.jsp"><button>Register</button></a> -->
 		</div>
 	</div>
 </body>

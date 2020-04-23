@@ -16,7 +16,7 @@ public class DeleteQuestionServlet extends HttpServlet
 			int id = Integer.parseInt(request.getParameter("id"));
 			pw.println(id);
 			db.deleteQuestionRecord(id);
-			response.sendRedirect("delete.jsp");		
+			response.sendRedirect("../delete.jsp");		
 		}
 		catch(Exception e)
 		{

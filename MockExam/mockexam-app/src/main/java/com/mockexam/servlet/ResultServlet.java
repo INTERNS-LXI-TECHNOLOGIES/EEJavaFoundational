@@ -34,7 +34,7 @@ public class ResultServlet extends HttpServlet
 		}
 		request.setAttribute("totalScore",mark);
 		mark=0;
-		request.getRequestDispatcher("result.jsp").forward(request,response);
+		request.getRequestDispatcher("secured/result.jsp").forward(request,response);
 		
 	}
 }

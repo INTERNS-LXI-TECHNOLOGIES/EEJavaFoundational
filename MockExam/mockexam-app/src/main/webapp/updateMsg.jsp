@@ -6,7 +6,7 @@
 <body>
 	<script type="text/javascript">
 		alert("SucessFully Updated");
-		window.location="admin.jsp";
+		window.location="admin/admin.jsp";
 	</script>
 </body>
 </html>

@@ -6,7 +6,7 @@
 <html>
 <head>
 	<title>Admin Menu</title>
-	<link rel="stylesheet" type="text/css" href="page.css">
+	<link rel="stylesheet" type="text/css" href="../page.css">
 	<style type="text/css">
 		
 		html,body{
@@ -49,15 +49,15 @@
 </head>
 <body>
 	<div id="addQuestion">
-		<a href="add.html"><button class="button1">Add Question</button></a>
+		<a href="../add.html"><button class="button1">Add Question</button></a>
 	</div>
 	<div id="exam">
-		<a href="introduction.jsp"><button class="button4" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">
+		<a href="../secured/introduction.jsp"><button class="button4" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">
 			Test Exam
 		</button></a>
 	</div>
 	<div id="logout">
-		<a href="logout.jsp"><button class="button3" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">
+		<a href="../logout.jsp"><button class="button3" style="height: 50px;background-color: #008cba; width: 100px; color: white;border-radius: 10px;">
 			Logout
 		</button></a>
 	</div>	
@@ -98,7 +98,7 @@
 			<td><%out.println(questionList.get(i).getOpt4());%></td> 
 			<td><%out.println(questionList.get(i).getAnswer());%></td>
 
-			<td><a href="update.jsp?
+			<td><a href="../update.jsp?
 				id=<%=questionList.get(i).getId()%>&
 				question=<%=questionList.get(i).getQuestion()%>&
 				opt1=<%=questionList.get(i).getOpt1()%>&
@@ -115,7 +115,7 @@
 	</table>
 	</div>
 <div id="pageNavPosition" class="pager-nav" style="float: right;"></div>
-<script src="PagerJS.js" defer></script>
+<script src="../PagerJS.js" defer></script>
 <script>
 <script>
 let pager = new Pager('pager', 13);

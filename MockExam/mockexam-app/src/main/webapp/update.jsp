@@ -48,7 +48,7 @@
 		String n = request.getParameter("id");
 		%> -->
 	<div class="container">
-		<form action="updateQuestion"  method="GET">
+		<form action="admin/updateQuestion"  method="GET">
 		<h2>UPDATE QUESTION</h2>
 		ID<input type="text" name="id" value="<%=request.getParameter("id")%>" readonly /><br><br>
 		QUESTION <input type="text" id="que" name="ques" value="<%=request.getParameter("question")%>" required="required"></textarea> <br><br>
@@ -60,7 +60,7 @@
 		<button value="updatebtn">UPDATE</button>
 		</form>	
 		<br>
-		<a href="admin.jsp"><button value="homebtn">Home</button></a>
+		<a href="admin/admin.jsp"><button value="homebtn">Home</button></a>
 	</div>
 </body>
 </html>

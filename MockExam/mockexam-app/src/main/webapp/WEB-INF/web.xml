@@ -14,15 +14,9 @@
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
 	version="4.0" metadata-complete="true">
-<<<<<<< HEAD
 	<welcome-file>index.jsp</welcome-file>
 	<diplay-name>Mock exam</diplay-name>
 	
-=======
-
-	<diplay-name>Mock exam</diplay-name>
-
->>>>>>> 410c444627f7620f2b97b90b734b5b87c5c186ec
 	<request-character-encoding>UTF-8</request-character-encoding>
 
 	<servlet>
@@ -59,11 +53,6 @@
 	</servlet>
 
 	<servlet>
-		<servlet-name>SearchQuestion</servlet-name>
-		<servlet-class>com.mockexam.servlet.SearchQuestionServlet</servlet-class>
-	</servlet>
-
-	<servlet>
 		<servlet-name>UpdateQuestion</servlet-name>
 		<servlet-class>com.mockexam.servlet.UpdateQuestionServlet</servlet-class>
 	</servlet>
@@ -80,34 +69,11 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Answer</servlet-name>
-<<<<<<< HEAD
-		<url-pattern>/secured/*</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>AddQuestion</servlet-name>
-		<url-pattern>/admin/*</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Controller</servlet-name>
-		<url-pattern>/secured/*</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Result</servlet-name>
-		<url-pattern>/secured/*</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>login</servlet-name>
-		<url-pattern>/secured/*</url-pattern>
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>Registration</servlet-name>
-		<url-pattern>/secured/*</url-pattern>
-=======
 		<url-pattern>/getAnswer</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>AddQuestion</servlet-name>
-		<url-pattern>/addExamData</url-pattern>
+		<url-pattern>/admin/addExamData</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Controller</servlet-name>
@@ -115,32 +81,23 @@
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Result</servlet-name>
-		<url-pattern>/viewResult</url-pattern>
+		<url-pattern>/secured/viewResult</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>login</servlet-name>
-		<url-pattern>/userLogin</url-pattern>
+		<url-pattern>/secured/userLogin</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>Registration</servlet-name>
-		<url-pattern>/userRegistration</url-pattern>
->>>>>>> 410c444627f7620f2b97b90b734b5b87c5c186ec
-	</servlet-mapping>
-	<servlet-mapping>
-		<servlet-name>SearchQuestion</servlet-name>
-		<url-pattern>/searchQuestion</url-pattern>
+		<url-pattern>/secured/userRegistration</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>UpdateQuestion</servlet-name>
-<<<<<<< HEAD
-		<url-pattern>/admin/*</url-pattern>
-=======
-		<url-pattern>/updateQuestion</url-pattern>
->>>>>>> 410c444627f7620f2b97b90b734b5b87c5c186ec
+		<url-pattern>/admin/updateQuestion</url-pattern>
 	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>DeleteQuestion</servlet-name>
-		<url-pattern>/admin/*</url-pattern>
+		<url-pattern>/admin/deleteQuestion</url-pattern>
 	</servlet-mapping>
 
 
@@ -149,13 +106,8 @@
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>Mock exam admin access</web-resource-name>
-<<<<<<< HEAD
 			<!-- <url-pattern>/userLogin/*</url-pattern> -->
 			<url-pattern>/admin/*</url-pattern> 
-=======
-			<url-pattern>/userLogin/*</url-pattern>
-			<!--<url-pattern>/security/*</url-pattern> -->
->>>>>>> 410c444627f7620f2b97b90b734b5b87c5c186ec
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>admin</role-name>
@@ -164,14 +116,11 @@
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>Mock exam user access</web-resource-name>
-<<<<<<< HEAD
 			<url-pattern>/secured/*</url-pattern>
-=======
-			<url-pattern>/readExamData/*</url-pattern>
->>>>>>> 410c444627f7620f2b97b90b734b5b87c5c186ec
 		</web-resource-collection>
 		<auth-constraint>
 			<role-name>user</role-name>
+			<role-name>admin</role-name>
 		</auth-constraint>
 	</security-constraint>
 	<!-- Define the Login Configuration for this Application -->
@@ -194,11 +143,7 @@
 	<security-role>
 		<description>
 				The role that is required to access Exams
-<<<<<<< HEAD
 		</description>
-=======
-			</description>
->>>>>>> 410c444627f7620f2b97b90b734b5b87c5c186ec
 		<role-name>user</role-name>
 	</security-role>
 

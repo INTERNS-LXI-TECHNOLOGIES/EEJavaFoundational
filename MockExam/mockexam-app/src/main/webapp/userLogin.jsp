@@ -8,6 +8,6 @@
 </body>
 	<script type="text/javascript">
 		window.alert("User Login Successfull....");
-		window.location.href="http://localhost:8080/mockexam/introduction.jsp";
+		window.location.href="http://localhost:8080/mockexam/admin/introduction.jsp";
 	</script>
 </html>

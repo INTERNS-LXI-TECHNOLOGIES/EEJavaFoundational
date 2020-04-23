@@ -28,7 +28,7 @@ public class UpdateQuestionServlet extends HttpServlet
 		updateModel.setOpt4(op4);
 		updateModel.setAnswer(ans);
 		db.updateMockExamData(updateModel);
-		response.sendRedirect("updateMsg.jsp");
+		response.sendRedirect("../updateMsg.jsp");
 
 	}
 }

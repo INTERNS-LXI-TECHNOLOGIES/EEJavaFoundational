@@ -24,7 +24,7 @@ public class AddQuestionServlet extends HttpServlet
 		examModel.setOpt4(op4);
 		examModel.setAnswer(ans);
 		db.insertMockExamData(examModel);
-		response.sendRedirect("addMsg.jsp");
+		response.sendRedirect("../addMsg.jsp");
 
 
 	}

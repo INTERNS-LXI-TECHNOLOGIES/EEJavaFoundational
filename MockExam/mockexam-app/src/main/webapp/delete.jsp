@@ -8,6 +8,6 @@
 </body>
 	<script type="text/javascript">
 		window.alert("Record Dleted Successfully....");
-		window.location.href="http://localhost:8080/mockexam/admin.jsp";
+		window.location.href="http://localhost:8080/mockexam/admin/admin.jsp";
 	</script>
 </html>
