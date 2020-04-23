@@ -90,7 +90,7 @@ input[type=text] {
 
 
  
- <form action="edit.jsp" method="GET">
+ <form action="edit.jsp" method="POST">
  <table border="1" width="100%">
     <tr>
       <th>Id</th>
