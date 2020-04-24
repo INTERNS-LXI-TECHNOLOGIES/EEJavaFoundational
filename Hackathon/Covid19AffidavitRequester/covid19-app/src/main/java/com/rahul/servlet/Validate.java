@@ -1,0 +1,30 @@
+package com.rahul.servlet;
+import java.util.*;
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import com.rahul.model.*;
+import com.rahul.repository.*;
+public class Validate extends HttpServlet
+{
+	Database db = new Database();
+	ArrayList<User> users = new ArrayList<User>();
+	public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException
+	{
+		HttpSession session  = request.getSession(true);
+		
+		String username = request.getRemoteUser();
+		String userRole = db.getUserRole(username);
+		PrintWriter pw = response.getWriter();
+		if(userRole.equals("admin"))
+		{
+			pw.println(userRole);
+			response.sendRedirect("admin/admin.jsp");
+		}
+		else 
+		{
+			pw.println(userRole);
+			response.sendRedirect("secured/add.jsp");
+		}			
+	}
+}
