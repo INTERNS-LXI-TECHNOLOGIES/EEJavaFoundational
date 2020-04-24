@@ -94,7 +94,7 @@ public ArrayList<User> viewDatabase(ArrayList<User> userAFS)
 				userAFS.get(i).setPassengerAFS(rs.getString("copsnger"));
 				userAFS.get(i).setRelationAFS(rs.getString("relation"));
 				userAFS.get(i).setReasonAFS(rs.getString("reason"));
-				userAFS.setFlagAFS(rs.getString("flag"));
+				userAFS.get(i).setFlagAFS(rs.getInt("flag"));
 				i++;		
 			}
 		}

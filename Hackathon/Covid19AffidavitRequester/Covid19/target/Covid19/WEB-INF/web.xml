@@ -60,14 +60,4 @@
 		<url-pattern>/logining</url-pattern>
 	</servlet-mapping>
 
-	<servlet>
-		<servlet-name>aprove</servlet-name>
-		<servlet-class>com.ashik.servlet.ResponceServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>aprove</servlet-name>
-		<url-pattern>/aproverequest</url-pattern>
-	</servlet-mapping>
-
-
 </web-app>

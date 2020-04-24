@@ -39,7 +39,7 @@
 	
 
 		
-		<form  method="GET" action="aproverequest" >
+		<form  method="GET" action="requestAdd" >
 
 	<% ExamDatabase db = new ExamDatabase();
     ArrayList<User> requestList = new ArrayList<User>();
@@ -60,8 +60,8 @@
  			Co Passenger : <%out.println(requestList.get(i).getPassengerAFS());%>
  			Relation : <%out.println(requestList.get(i).getRelationAFS());%>
  			Reason : <%out.println(requestList.get(i).getReasonAFS());%>
-		<input type="hidden" flag ="1"name="id" value="<%=problemList.get(i).getId()%>"><button class="button">Aproved</button>
-		<input type="hidden" flag="2" name="id" value="<%=problemList.get(i).getId()%>"><button class="button">Canceled</button>
+		<input type="submit" class="button" value="Add">
+		<input type="reset" class="button" value="Reset">
 		 <%}%>
 		</form>
 		<a href="index.jsp"><input type="submit" class="button" value="Home"></a>	

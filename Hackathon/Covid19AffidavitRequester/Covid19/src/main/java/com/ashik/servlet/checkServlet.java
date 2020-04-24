@@ -5,7 +5,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import com.ashik.repository.*;
 import com.ashik.model.*;
-public class AddServlet extends HttpServlet
+public class checkServlet extends HttpServlet
 {
 	
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
@@ -18,16 +18,16 @@ public class AddServlet extends HttpServlet
 			response.setContentType("text/html; charset=utf-8");
 			String flagAFS = db.checkRequestAFS(phAFS);
 
-			if(flafAFS.equals("0"))
+			if(flagAFS.equals("0"))
 			{
 				response.sendRedirect("notChecked.jsp");
 			}
-			else if(flafAFS.equals("1"))
+			else if(flagAFS.equals("1"))
 			{
 				
 				response.sendRedirect("approved.jsp");	
 			}
-			else if(flafAFS.equals("2"))
+			else if(flagAFS.equals("2"))
 			{
 				response.sendRedirect("cancel.jsp");		
 			}	
