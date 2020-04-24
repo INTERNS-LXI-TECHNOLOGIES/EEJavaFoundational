@@ -8,6 +8,6 @@
 </body>
 	<script type="text/javascript">
 		window.alert("Request Successfull....");
-		window.location.href="http://localhost:1436/covid19/";
+		window.location.href="http://localhost:8080/mockexam/admin/admin.jsp";
 	</script>
 </html>

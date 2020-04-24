@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Request Affidavit</title>
+	<title>Affidavit</title>
 	<style type="text/css">
 		head,body{
 			/*background-color: #7fcdcd;*/
@@ -65,12 +65,12 @@
 	
 	<div id="box">
 		<div id="heading">
-			<h1>AFFIDAVIT REQUEST</h1>
+			<h1>STATUS</h1>
 		</div>
 		<div id="btn">
-		<a href="secured/add.jsp"><button>REQUEST</button></a>
-		<a href="secured/check.jsp"><button>Status</button></a>
-		<!-- <a href="register.jsp"><button>Register</button></a> -->
+			<form action="check" method="GET">
+			PHONE NUMBER<input type="text" name="phno">
+			</form>
 		</div>
 	</div>
 </body>

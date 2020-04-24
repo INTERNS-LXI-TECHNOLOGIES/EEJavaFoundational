@@ -171,6 +171,26 @@ public class Database
 		return userRole; 
 	}	
 
+	public ArrayList<Model> check(ArrayList<Model> a, String no)
+	{
+		createDbConnection();
+		try
+		{
+			String sql = "select * from affidavitdb where phno = '"+ no+"' ";
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			while(rs.next())
+			{
+				userRole = rs.getString("rolename");
+			} 
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+		return userRole; 
+	}	
+
 	
 
 }
