@@ -32,7 +32,7 @@
   <input type="text" id="timeAmr" name="timeAmr"><br><br>
 
   <button formaction="index.jsp" class="button">Back</button> 
-  <button type="reset" class="button">Reset</button></center>
+  <button type="reset" class="button">Submit</button></center>
 </div>
 </form>
 </body>

@@ -9,7 +9,7 @@
 <%@page contentType="text/html;charset=UTF-8"  pageEncoding="UTF-8"%>
 <html>
 <head>
-   <div align="center" style="background-color: mediumseagreen " class = "inset">
+   <div align="center" style="background-color: grey " class = "inset">
     <h1 style="font-size:50px;"> Admin Management </h1>
   
 <div>
