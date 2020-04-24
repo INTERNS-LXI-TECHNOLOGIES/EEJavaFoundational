@@ -12,7 +12,8 @@
 <!-- <button type="submit" formaction="LoginServlet" class="button">LOGIN</button> 
  -->
  	
- 	<button type="submit" formaction="AddServlet" class="button">LOGIN</button> 
+ 	<button type="submit" formaction="AddServlet" class="button">Admin</button> 
+ 	<button type="submit" formaction="AddUser" class="button">User</button>
 
  </form>
 </p>

@@ -26,13 +26,21 @@
     {%> <tr>
       <td><h2><%out.println(modelAmr.get(i).getNameAmr());%></h2></td>
       <td><h2><%out.println(modelAmr.get(i).getAddressAmr());%></h2></td>
+      <td><h2><%out.println(modelAmr.get(i).getPhnoAmr());%></h2></td>
+      <td><h2><%out.println(modelAmr.get(i).getVehicleNoAmr());%></h2></td>
+      <td><h2><%out.println(modelAmr.get(i).getVehicleTypeAmr());%></h2></td>
+      <td><h2><%out.println(modelAmr.get(i).getLocationAmr());%></h2></td>
+      <td><h2><%out.println(modelAmr.get(i).getDestinationAmr());%></h2></td>
+      <td><h2><%out.println(modelAmr.get(i).getCoPassengerAmr());%></h2></td>
+      <td><h2><%out.println(modelAmr.get(i).getRelationAmr());%></h2></td>
+      <td><h2><%out.println(modelAmr.get(i).getReasonAmr());%></h2></td>
+      <td><h2><%out.println(modelAmr.get(i).getTimeAmr());%></h2></td>
       </tr></center>
     <br>
    <% }
     %>
    
   </table>
-  <a href="Details.jsp">Click here for details</a><br><br>
   <button formaction="Admin.jsp" class="button">Back</button> 
 </form>
 </div>

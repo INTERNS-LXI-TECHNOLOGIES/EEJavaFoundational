@@ -13,19 +13,10 @@ public class AddServlet  extends HttpServlet
   {
     PrintWriter out = response.getWriter();
     SqlRepositoryAmr sqlrepoAmr=new SqlRepositoryAmr();
-    CovidAmrModel modelAmr=new CovidAmrModel();
-    modelAmr.setNameAmr(request.getParameter("name"));
-    modelAmr.setAddressAmr(request.getParameter("address"));                     
-    modelAmr.setPhnoAmr(request.getParameter("phno"));
-    modelAmr.setVehicleNoAmr(request.getParameter("vehicleno"));
-    modelAmr.setVehicleTypeAmr(request.getParameter("vehicleType"));
-    modelAmr.setLocationAmr(request.getParameter("location"));
-    modelAmr.setDestinationAmr(request.getParameter("destination"));
-    modelAmr.setCoPassengerAmr(request.getParameter("copassenger"));
-    modelAmr.setRelationAmr(request.getParameter("relation"));
-    modelAmr.setReasonAmr(request.getParameter("reason"));
-    modelAmr.setTimeAmr(request.getParameter("time"));  
-    sqlrepoAmr.insertIntoDatabase(modelAmr); 
+    ArrayList<CovidAmrModel> modelAmr=new ArrayList<CovidAmrModel>();
+    modelAmr=sqlrepoAmr.readFromDatabase(modelAmr); 
     request.getRequestDispatcher("Admin.jsp").forward(request,response);
   }  
 }
+
+     

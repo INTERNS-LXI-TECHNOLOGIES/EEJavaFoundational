@@ -1,10 +1,12 @@
 package com.amritha.control;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import java.io.IOException;
-import java.io.PrintWriter;
+
 import com.amritha.model.CovidAmrModel;
 import com.amritha.repository.SqlRepositoryAmr;
+
+import java.io.IOException;
+import java.io.PrintWriter;
 public class AddUser extends HttpServlet
 {  
   public void doGet(HttpServletRequest request, HttpServletResponse response)throws ServletException, IOException 
@@ -25,6 +27,6 @@ public class AddUser extends HttpServlet
     modelAmr.setTimeAmr(request.getParameter("time"));   
     sqlrepoAmr.insertIntoDatabase(modelAmr); 
     HttpSession session = request.getSession(true);
-    request.getRequestDispatcher("Admin.jsp").forward(request,response);
+    request.getRequestDispatcher("Add.jsp").forward(request,response);
   }  
 }
