@@ -46,19 +46,20 @@
     requestList = db.viewDatabaseAFS(requestList);
     	for (int i=0;i<requestList.size();i++)  {%>
 		 <table border="1" width="100%">
-		 	Request ID :  <%out.println(requestList.get(i).getIdAFS());%>	
-			Name : <%out.println(requestList.get(i).getNameAFS());%>
-			Phone Number : <%out.println(requestList.get(i).getPhnumberAFS());%>
-			Adderss : <%out.println(requestList.get(i).getAdressAFS());%>
-			Vehicle Number : <%out.println(requestList.get(i).getVhnumberAFS());%>
-			Vehicle Type : <%out.println(requestList.get(i).getVhtypeAFS());%>
-			Starting Location : <%out.println(requestList.get(i).getStartinglAFS());%>
-			Destination :  <%out.println(requestList.get(i).getDestinationAFS());%>
-			Starting Date : <%out.println(requestList.get(i).getSdateAFS());%>
- 			Ending Date : <%out.println(requestList.get(i).getEdateAFS());%>
- 			Co Passenger : <%out.println(requestList.get(i).getPassengerAFS());%>
- 			Relation : <%out.println(requestList.get(i).getRelationAFS());%>
- 			Reason : <%out.println(requestList.get(i).getReasonAFS());%>
+		<h3>Request ID :  <%out.println(requestList.get(i).getIdAFS());%></h3>	
+		<h3>Name : <%out.println(requestList.get(i).getNameAFS());%></h3>
+		<h3>Phone Number : <%out.println(requestList.get(i).getPhnumberAFS());%></h3>
+		<h3>Adderss : <%out.println(requestList.get(i).getAdressAFS());%></h3>
+		<h3>Vehicle Number : <%out.println(requestList.get(i).getVhnumberAFS());%></h3>
+		<h3>Vehicle Type : <%out.println(requestList.get(i).getVhtypeAFS());%></h3>
+		<h3>Starting Location : <%out.println(requestList.get(i).getStartinglAFS());%></h3>
+		<h3>Destination :  <%out.println(requestList.get(i).getDestinationAFS());%></h3>
+		<h3>Starting Date : <%out.println(requestList.get(i).getSdateAFS());%></h3>
+ 		<h3>Ending Date : <%out.println(requestList.get(i).getEdateAFS());%></h3>
+ 		<h3>Co Passenger : <%out.println(requestList.get(i).getPassengerAFS());%></h3>
+ 		<h3>Relation : <%out.println(requestList.get(i).getRelationAFS());%></h3>
+ 		<h3>Reason : <%out.println(requestList.get(i).getReasonAFS());%></h3>
+ 		
 		<input type="hidden" flag ="1"name="id" value="<%=requestList.get(i).getIdAFS()%>"><button class="button">Aproved</button>
 		<input type="hidden" flag="2" name="id" value="<%=requestList.get(i).getIdAFS()%>"><button class="button">Canceled</button>
 		 <%}%>
