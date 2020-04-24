@@ -43,8 +43,9 @@
 
 	<% UserDatabase db = new UserDatabase();
     ArrayList<User> requestList = new ArrayList<User>();
-    requestList = db.viewDatabaseAFS(requestList);
-    	for (int i=0;i<requestList.size();i++)  {%>
+    requestList = db.viewDatabaseAFS(requestList); %>
+  
+    	 <%  for (int i=0;i<requerstList.size();i++)  {%>
 		 <table border="1" width="100%">
 		 	Request ID :  <%out.println(requestList.get(i).getIdAFS());%>	
 			Name : <%out.println(requestList.get(i).getNameAFS());%>
@@ -59,8 +60,8 @@
  			Co Passenger : <%out.println(requestList.get(i).getPassengerAFS());%>
  			Relation : <%out.println(requestList.get(i).getRelationAFS());%>
  			Reason : <%out.println(requestList.get(i).getReasonAFS());%>
-		<input type="hidden" flag ="1"name="id" value="<%=requestList.get(i).getIdAFS()%>"><button class="button">Aproved</button>
-		<input type="hidden" flag="2" name="id" value="<%=requestList.get(i).getIdAFS()%>"><button class="button">Canceled</button>
+		<input type="hidden" flag ="1"name="id" value="<%=problemList.get(i).getId()%>"><button class="button">Aproved</button>
+		<input type="hidden" flag="2" name="id" value="<%=problemList.get(i).getId()%>"><button class="button">Canceled</button>
 		 <%}%>
 		</form>
 		<a href="index.jsp"><input type="submit" class="button" value="Home"></a>	

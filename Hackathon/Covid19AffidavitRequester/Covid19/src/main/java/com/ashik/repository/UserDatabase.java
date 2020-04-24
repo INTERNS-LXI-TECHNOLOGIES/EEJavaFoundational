@@ -69,7 +69,7 @@ public String checkRequestAFS(String phnumber)
 	}
 	
 
-public ArrayList<User> viewDatabase(ArrayList<User> userAFS)
+public ArrayList<User> viewDatabaseAFS(ArrayList<User> userAFS)
 	{
 		createDatabaseConnection();
 		try
@@ -104,7 +104,7 @@ public ArrayList<User> viewDatabase(ArrayList<User> userAFS)
 	}
 
 
-		public void setResponce(int id,int flag)
+		public void setResponce(String id,String flag)
 	{
 		createDatabaseConnection();
 		try
