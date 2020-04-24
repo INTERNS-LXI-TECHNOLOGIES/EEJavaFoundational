@@ -7,9 +7,10 @@
 <!DOCTYPE html>
 <body background="image/COVID19.jpg">
 	<%ArrayList<Model> requests= new ArrayList<Model>();
-	Sqlrepository sqlrep=new Sqlrepository();
+	
 	requests.clear();
-    requests=sqlrep.readRquests(requests); 
+	Sqlrepository sqlrep=new Sqlrepository();
+    requests=sqlrep.readRequests(requests); 
     session.setAttribute("array",requests);%>
   
 	<h1><font color="#87CEFA" style="margin-left: 43%">Covid19AffidavitRequester</font></h1>
