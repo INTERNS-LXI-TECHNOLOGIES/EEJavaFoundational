@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<web-app>
+	<servlet>
+		<servlet-name>Add</servlet-name>
+		<servlet-class>com.lxisoft.servlet.AddServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Add</servlet-name>
+		<url-pattern>/contactAdd</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Delete</servlet-name>
+		<servlet-class>com.lxisoft.servlet.DeleteServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Delete</servlet-name>
+		<url-pattern>/contactDelete</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Edit</servlet-name>
+		<servlet-class>com.lxisoft.servlet.EditServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Edit</servlet-name>
+		<url-pattern>/contactEdit</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>		

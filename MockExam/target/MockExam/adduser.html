@@ -1,0 +1,47 @@
+<html>
+	
+	<head>
+		<title>Add User</title>
+		<style>
+		body{
+		 background-color: lightblue;	
+		 margin-top:250px;
+		 text-align:center;
+		}
+
+		h1 {
+  			color: black;
+  			text-align: center;
+  			font-family: verdana;
+			}
+	.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  .button:hover {  background-color: black;}
+}	
+	</style>
+	</head>
+	<body>
+		<h1>Adding Questiont</h1>
+		<form  method="GET" action="userAdding" >
+			
+			Name :<input type="text" placeholder="Your Name" name="name" required><br><br>
+			Password :<input type="text" placeholder="Your Password" name="password" required><br><br>
+			Role :<input type="text" placeholder="Your Role" name="role" required><br><br>
+		
+		<input type="submit" class="button" value="Add">
+		<input type="reset" class="button" value="Reset">
+		</form>
+		<a href="index.jsp"><input type="submit" class="button" value="Home"></a>	
+		
+	</body>
+</html>
