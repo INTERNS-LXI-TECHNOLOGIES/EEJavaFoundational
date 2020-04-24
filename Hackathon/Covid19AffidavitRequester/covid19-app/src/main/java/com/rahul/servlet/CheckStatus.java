@@ -14,8 +14,6 @@ public class CheckStatus extends HttpServlet
 	{
 		String pno = request.getParameter("phno");
 		status = d.check(status,pno);
-		response.sendRedirect("reqSuccessMsg.jsp");
-
 
 	}
 }

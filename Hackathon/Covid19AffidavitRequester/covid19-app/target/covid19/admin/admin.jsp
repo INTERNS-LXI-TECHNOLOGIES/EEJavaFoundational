@@ -79,6 +79,7 @@
 			<th>returnTime</th>
 			<th>vehicleType</th>
 			<th>vehicleRegNo</th>
+
 		</tr>
 		<%
 		Database db = new Database();
@@ -97,7 +98,6 @@
 			{%>
 		<tr>
 			<td><%out.println(i+1);%></td>				
-			<td><%out.println(requestList.get(i).getIdRmp());%></td>
 			<td><%out.println(requestList.get(i).getNameRmp());%></td>
 			<td><%out.println(requestList.get(i).getAddressRmp());%></td>
 			<td><%out.println(requestList.get(i).getPhnoRmp());%></td>

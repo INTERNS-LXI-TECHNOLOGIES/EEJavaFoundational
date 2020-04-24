@@ -1,6 +1,7 @@
+
 <!DOCTYPE html>
-<html>
-<head>
+<!-- saved from url=(0047)http://localhost:1436/covid19/secured/check.jsp -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 	<title>Affidavit</title>
 	<style type="text/css">
 		head,body{
@@ -49,7 +50,8 @@
 
 			border-radius: 15px;
 			border-color: black;
-			margin-top: -20px;
+			margin-top: 20px;
+			margin-left: -200px;
 			position: relative;
 			top: 30px;
 			left: 450px;
@@ -59,19 +61,23 @@
 		{
 			font-size: 50px;
 		}
+		input
+		{
+			height:30px;
+
+		}
 	</style>
 </head>
 <body>
 	
 	<div id="box">
-		<div id="heading">
-			<h1>STATUS</h1>
-		</div>
 		<div id="btn">
-			<form action="check" method="GET">
-			PHONE NUMBER<input type="text" name="phno">
+			<form action="../check" method="GET">
+			<label style="font-size:40px;">PHONE NUMBER</label><input type="text" name="phno">
+			<button>Check</button>
 			</form>
 		</div>
 	</div>
-</body>
-</html>
+
+
+</body></html>

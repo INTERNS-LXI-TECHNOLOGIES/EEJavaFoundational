@@ -53,7 +53,7 @@ public class Database
 			d.get(i).setReasonRmp(rs.getString("reason"));
 			d.get(i).setPhnoRmp(rs.getString("phno"));
 			d.get(i).setAddressRmp(rs.getString("address"));
-			d.get(i).setVehicleNoRmp(rs.getString("vehicleRegNo)"));
+			d.get(i).setVehicleNoRmp(rs.getString("vehicleRegNo"));
 			d.get(i).setVehivleTypeRmp(rs.getString("vehicleType"));
 			d.get(i).setStartLocRmp(rs.getString("source"));
 			d.get(i).setEndLocRmp(rs.getString("Destination"));

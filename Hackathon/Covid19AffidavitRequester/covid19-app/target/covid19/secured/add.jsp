@@ -50,8 +50,8 @@
 		EndLocation &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="endLoc"  required="required"><br><br>
 		StartDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="startDate"  required="required"><br><br>
 		StartTime&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="startTime"  required="required"><br><br>
+		EndDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="endDate"  required="required"><br><br>
 		EndTime&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="endTime"  required="required"><br><br>
-		EndDate&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="endDtae"  required="required"><br><br>
 		CopassengerName&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="coName"  required="required"><br><br>
 		Relation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <input type="text" name="relation"  required="required"><br><br>
 		Reason&nbsp;&nbsp;&nbsp;&nbsp;<textarea name="reason" required="required"></textarea><br><br>
