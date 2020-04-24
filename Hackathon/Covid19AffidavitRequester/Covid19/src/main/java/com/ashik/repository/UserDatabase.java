@@ -104,5 +104,20 @@ public ArrayList<User> viewDatabase(ArrayList<User> userAFS)
 	}
 
 
+		public void setResponce(int id,int flag)
+	{
+		createDatabaseConnection();
+		try
+		{
+			ps = con.prepareStatement("update users set flag = '"+flag+"'where id='"+id+"'");
+			ps.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
+	}
+
+
 
 }	
