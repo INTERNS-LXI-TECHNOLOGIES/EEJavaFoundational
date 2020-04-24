@@ -34,7 +34,7 @@ public class SqlRepositoryMVT
  	    }
  	}
 
- 	public List<RequestMVT> getAllRequests()
+ 	public List<RequestMVT> getAllRequestsMVT()
 	{
 		try
 		{
@@ -45,20 +45,20 @@ public class SqlRepositoryMVT
 			{
 				RequestMVT rmvt=new RequestMVT();
 				rmvt.setId(String.valueOf(rs.getInt("Id")));
-				rmvt.setName(rs.getString("Name"));
-				rmvt.setPhnNo(rs.getString("PhnNo"));	
-				rmvt.setAddress(rs.getString("Address"));
-				rmvt.setVehicleNo(rs.getString("VehicleNo"));	
-				rmvt.setVehicleType(rs.getString("VehicleType"));
-				rmvt.setStartingLocation(rs.getString("StartingLocation"));
-				rmvt.setDestination(rs.getString("Destination"));
-				rmvt.setStartingTime(rs.getString("StartingTime"));
-				rmvt.setStartingDate(rs.getString("StartingDate"));
-				rmvt.setEndingTime(rs.getString("EndingTime"));
-				rmvt.setEndingDate(rs.getString("EndingDate"));
-				rmvt.setCoPassengerName(rs.getString("CoPassengerName"));
-				rmvt.setRelation(rs.getString("Relation"));
-				rmvt.setReason(rs.getString("Reason"));
+				rmvt.setNameMVT(rs.getString("Name"));
+				rmvt.setPhnNoMVT(rs.getString("PhnNo"));	
+				rmvt.setAddressMVT(rs.getString("Address"));
+				rmvt.setVehicleNoMVT(rs.getString("VehicleNo"));	
+				rmvt.setVehicleTypeMVT(rs.getString("VehicleType"));
+				rmvt.setStartingLocationMVT(rs.getString("StartingLocation"));
+				rmvt.setDestinationMVT(rs.getString("Destination"));
+				rmvt.setStartingTimeMVT(rs.getString("StartingTime"));
+				rmvt.setStartingDateMVT(rs.getString("StartingDate"));
+				rmvt.setEndingTimeMVT(rs.getString("EndingTime"));
+				rmvt.setEndingDateMVT(rs.getString("EndingDate"));
+				rmvt.setCoPassengerNameMVT(rs.getString("CoPassengerName"));
+				rmvt.setRelationMVT(rs.getString("Relation"));
+				rmvt.setReasonMVT(rs.getString("Reason"));
 				requestList.add(rmvt);
 			}
 		}
@@ -70,25 +70,25 @@ public class SqlRepositoryMVT
 		return requestList; 
 	}
 
-	public void insertRequest(RequestMVT rmvt)
+	public void insertRequestMVT(RequestMVT rmvt)
  	{
  		try
  		{
-	 		stmt=conn.prepareStatement("insert into request(Name,PhnNo,Address,VehicleNo,VehicleType,StartingLocation,Destination,StartingTime,StartingDate,EndingTime,EndingDate,CoPassengerName,relation,Reason)values(?,?,?,?,?,?,?,?,?,?,?,?)");
-	 		stmt.setString(1,rmvt.getName());
-	 		stmt.setString(2,rmvt.getPhnNo());
-	 		stmt.setString(3,rmvt.getAddress());
-	 		stmt.setString(4,rmvt.getVehicleNo());
-	 		stmt.setString(5,rmvt.getVehicleType());
-	 	    stmt.setString(6,rmvt.getStartingLocation());
-	 	    stmt.setString(7,rmvt.getDestination());
-	 	    stmt.setString(8,rmvt.getStartingTime());
-	 	    stmt.setString(9,rmvt.getStartingDate());
-	 	    stmt.setString(10,rmvt.getEndingTime());
-	 	    stmt.setString(11,rmvt.getEndingDate());
-	 	    stmt.setString(12,rmvt.getCoPassengerName());
-	 	    stmt.setString(13,rmvt.getRelation());
-	 	    stmt.setString(14,rmvt.getReason());
+	 		stmt=conn.prepareStatement("insert into request(Name,PhnNo,Address,VehicleNo,VehicleType,StartingLocation,Destination,StartingTime,StartingDate,EndingTime,EndingDate,CoPassengerName,relation,Reason)values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+	 		stmt.setString(1,rmvt.getNameMVT());
+	 		stmt.setString(2,rmvt.getPhnNoMVT());
+	 		stmt.setString(3,rmvt.getAddressMVT());
+	 		stmt.setString(4,rmvt.getVehicleNoMVT());
+	 		stmt.setString(5,rmvt.getVehicleTypeMVT());
+	 	    stmt.setString(6,rmvt.getStartingLocationMVT());
+	 	    stmt.setString(7,rmvt.getDestinationMVT());
+	 	    stmt.setString(8,rmvt.getStartingTimeMVT());
+	 	    stmt.setString(9,rmvt.getStartingDateMVT());
+	 	    stmt.setString(10,rmvt.getEndingTimeMVT());
+	 	    stmt.setString(11,rmvt.getEndingDateMVT());
+	 	    stmt.setString(12,rmvt.getCoPassengerNameMVT());
+	 	    stmt.setString(13,rmvt.getRelationMVT());
+	 	    stmt.setString(14,rmvt.getReasonMVT());
 	 		stmt.executeUpdate();
 	 		System.out.println("Successfully Inserted");
  		}

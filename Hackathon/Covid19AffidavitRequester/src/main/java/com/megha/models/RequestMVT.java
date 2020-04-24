@@ -4,20 +4,20 @@ import java.io.*;
 public class RequestMVT
 {
 	private String id;
-	private String name;
-	private String phnNo;
-	private String address;
-	private String vehicleNO;
-	private String vehicleType;
-	private String startingLocation;
-	private String destination;
-	private String startingTime;
-	private String startingDate;
-	private String endingTime;
-    private String endingDate;
-    private String coPassengerName;
-    private String relation;
-    private String reason;
+	private String nameMVT;
+	private String phnNoMVT;
+	private String addressMVT;
+	private String vehicleNoMVT;
+	private String vehicleTypeMVT;
+	private String startingLocationMVT;
+	private String destinationMVT;
+	private String startingTimeMVT;
+	private String startingDateMVT;
+	private String endingTimeMVT;
+    private String endingDateMVT;
+    private String coPassengerNameMVT;
+    private String relationMVT;
+    private String reasonMVT;
 
 	public void setId(String id)
 	{
@@ -28,128 +28,128 @@ public class RequestMVT
 		return id;
 	}
 
-	public void setName(String name)
+	public void setNameMVT(String nameMVT)
 	{
-		this.name=name;
+		this.nameMVT=nameMVT;
 	}
-	public String getName()
+	public String getNameMVT()
 	{
-		return name;
-	}
-
-	public void setPhnNo(String phnNo)
-	{
-		this.phnNo=phnNo;
-	}
-	public String getPhnNo()
-	{
-		return phnNo;
+		return nameMVT;
 	}
 
-	public void setAddress(String address)
+	public void setPhnNoMVT(String phnNoMVT)
 	{
-		this.address=address;
+		this.phnNoMVT=phnNoMVT;
 	}
-	public String getAddress()
+	public String getPhnNoMVT()
 	{
-		return address;
-	}
-
-	public void setVehicleNO(String vehicleNO)
-	{
-		this.vehicleNO=vehicleNO;
-	}
-	public String getVehicleNO()
-	{
-		return vehicleNO;
+		return phnNoMVT;
 	}
 
-	public void setVehicleType(String vehicleType)
+	public void setAddressMVT(String addressMVT)
 	{
-		this.vehicleType=vehicleType;
+		this.addressMVT=addressMVT;
 	}
-	public String getVehicleType()
+	public String getAddressMVT()
 	{
-		return vehicleType;
-	}
-
-	public void setStartingLocation(String startingLocation)
-	{
-		this.startingLocation=startingLocation;
-	}
-	public String getStartingLocation()
-	{
-		return startingLocation;
+		return addressMVT;
 	}
 
-	public void setDestination(String answer)
+	public void setVehicleNoMVT(String vehicleNoMVT)
 	{
-		this.destination=destination;
+		this.vehicleNoMVT=vehicleNoMVT;
 	}
-	public String getDestination()
+	public String getVehicleNoMVT()
 	{
-		return destination;
-	}
-
-	public void setStartingTime(String startingTime)
-	{
-		this.startingTime=startingTime;
-	}
-	public String getStartingTime()
-	{
-		return startingTime;
-	}
-	public void setStartingDate(String startingDate)
-	{
-		this.startingDate=startingDate;
-	}
-	public String getStartingDate()
-	{
-		return startingDate;
+		return vehicleNoMVT;
 	}
 
-	public void setEndingTime(String endingTime)
+	public void setVehicleTypeMVT(String vehicleTypeMVT)
 	{
-		this.endingTime=endingTime;
+		this.vehicleTypeMVT=vehicleTypeMVT;
 	}
-	public String getEndingTime()
+	public String getVehicleTypeMVT()
 	{
-		return endingTime;
-	}
-
-	public void setEndingDate(String endingDate)
-	{
-		this.endingDate=endingDate;
-	}
-	public String getEndingDate()
-	{
-		return endingDate;
+		return vehicleTypeMVT;
 	}
 
-	public void setCoPassengerName(String coPassengerName)
+	public void setStartingLocationMVT(String startingLocationMVT)
 	{
-		this.coPassengerName=coPassengerName;
+		this.startingLocationMVT=startingLocationMVT;
 	}
-	public String getCoPassengerName()
+	public String getStartingLocationMVT()
 	{
-		return coPassengerName;
-	}
-
-	public void setRelation(String relation)
-	{
-		this.relation=relation;
-	}
-	public String getRelation()
-	{
-		return relation;
+		return startingLocationMVT;
 	}
 
-	public void setReason(String reason)
+	public void setDestinationMVT(String answerMVT)
 	{
-		this.reason=reason;
+		this.destinationMVT=destinationMVT;
 	}
-	public String getReason()
+	public String getDestinationMVT()
 	{
-		return reason;
+		return destinationMVT;
+	}
+
+	public void setStartingTimeMVT(String startingTimeMVT)
+	{
+		this.startingTimeMVT=startingTimeMVT;
+	}
+	public String getStartingTimeMVT()
+	{
+		return startingTimeMVT;
+	}
+	public void setStartingDateMVT(String startingDateMVT)
+	{
+		this.startingDateMVT=startingDateMVT;
+	}
+	public String getStartingDateMVT()
+	{
+		return startingDateMVT;
+	}
+
+	public void setEndingTimeMVT(String endingTimeMVT)
+	{
+		this.endingTimeMVT=endingTimeMVT;
+	}
+	public String getEndingTimeMVT()
+	{
+		return endingTimeMVT;
+	}
+
+	public void setEndingDateMVT(String endingDateMVT)
+	{
+		this.endingDateMVT=endingDateMVT;
+	}
+	public String getEndingDateMVT()
+	{
+		return endingDateMVT;
+	}
+
+	public void setCoPassengerNameMVT(String coPassengerNameMVT)
+	{
+		this.coPassengerNameMVT=coPassengerNameMVT;
+	}
+	public String getCoPassengerNameMVT()
+	{
+		return coPassengerNameMVT;
+	}
+
+	public void setRelationMVT(String relationMVT)
+	{
+		this.relationMVT=relationMVT;
+	}
+	public String getRelationMVT()
+	{
+		return relationMVT;
+	}
+
+	public void setReasonMVT(String reasonMVT)
+	{
+		this.reasonMVT=reasonMVT;
+	}
+	public String getReasonMVT()
+	{
+		return reasonMVT;
 	}
 }

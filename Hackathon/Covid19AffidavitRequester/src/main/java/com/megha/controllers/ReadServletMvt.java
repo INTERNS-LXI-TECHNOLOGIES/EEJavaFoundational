@@ -11,7 +11,7 @@ public class ReadServletMvt extends HttpServlet
 	public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException
 	{
 		SqlRepositoryMVT repository=new SqlRepositoryMVT();
-		List<RequestMVT> requestList=repository.getAllRequests();
+		List<RequestMVT> requestList=repository.getAllRequestsMVT();
 		HttpSession session=request.getSession();
 		session.setAttribute("requestlist",requestList);
 		PrintWriter out = response.getWriter();
