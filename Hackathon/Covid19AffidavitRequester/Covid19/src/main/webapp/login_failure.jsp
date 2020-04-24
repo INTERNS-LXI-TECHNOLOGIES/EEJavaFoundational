@@ -1,12 +1,9 @@
-<%@page import="com.ashik.servlet.*"%>
-<%@page import="com.ashik.model.*"%>
-<%@page import="com.ashik.repository.*"%>
-<%@page import="java.util.*"%>
-<!DOCTYPE HTML>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-  <head>
-    <title>Covid 19</title>
-  <style>
+<head>
+	 <style>
     body{
      background-color: lightblue; 
     /* margin-top:250px;*/
@@ -83,19 +80,12 @@ input[type=text] {
 .pagination a:hover:not(.active) {background-color: #ddd;}
 
   </style>
-  </head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Not Checkes</title>
+</head>
 <body>
-<h1>Covid 19</h1>
-<h2></h2>
 
-
- 
- <form action="add.html" method="GET">
-  
-     
-   <button class="button">Create New Request</button>
- 
-		</form>
-      <a href="check.jsp"><button class="button">Check Request</button></a>
-</body>
+<h2>Your User name or Password is Missmatching</h2>
+<a href="index.jsp"><button class="button">Cancel</button></a>
+</body> 
 </html>

@@ -69,4 +69,40 @@ public String checkRequestAFS(String phnumber)
 	}
 	
 
+public ArrayList<User> viewDatabase(ArrayList<User> userAFS)
+	{
+		createDatabaseConnection();
+		try
+		{
+			String sql  = "select * from users" ;
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			int i = 0;
+			while(rs.next())
+			{
+				userAFS.add(i,new User());
+				userAFS.get(i).setIdAFS(rs.getInt("id"));
+				userAFS.get(i).setNameAFS(rs.getString("name"));
+				userAFS.get(i).setPhnumberAFS(rs.getString("phone"));
+				userAFS.get(i).setAdressAFS(rs.getString("adress"));
+				userAFS.get(i).setVhnumberAFS(rs.getString("vhno"));
+				userAFS.get(i).setVhtypeAFS(rs.getString("vhtype"));
+				userAFS.get(i).setStartinglAFS(rs.getString("sstartl"));
+				userAFS.get(i).setDestinationAFS(rs.getString("stopl"));
+				userAFS.get(i).setSdateAFS(rs.getString("sdate"));
+				userAFS.get(i).setEdateAFS(rs.getString("edate"));
+				userAFS.get(i).setPassengerAFS(rs.getString("copsnger"));
+				userAFS.get(i).setRelationAFS(rs.getString("relation"));
+				userAFS.get(i).setReasonAFS(rs.getString("reason"));
+				userAFS.setFlagAFS(rs.getString("flag"));
+				i++;		
+			}
+		}
+		catch(SQLException e)
+		{		e.printStackTrace();	}
+		return userAFS;
+	}
+
+
+
 }	

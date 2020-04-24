@@ -7,6 +7,10 @@ public class User
 private String nameAFS,phnumberAFS,adressAFS,vhnumberAFS,startinglAFS,destinationAFS,sdateAFS,edateAFS,passengerAFS,relationAFS,reasonAFS,vhtypeAFS;
 private int idAFS,flagAFS;
 
+public void setIdAFS(int idAFS)                               
+    { 
+        this.idAFS = idAFS; 
+    }
 public int getIdAFS()
     {
         return idAFS;
