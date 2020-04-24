@@ -77,7 +77,7 @@ public class Database
 		createDbConnection();
 		try
 		{
-			ps = con.prepareStatement("insert into affidavitdb(name,address,phno,companionName,relation,reason,source,Destination,startDate,returnDate,startTime,endTime,vehicleType,vehicleRegNo) values('"+data.getNameRmp()+"','"+data.getAddressRmp()+"','"+data.getCopassengerRmp()+"','"+data.getRelationRmp()+"','"+data.getReasonRmp()+"','"+data.getStartLocRmp()+"','"+data.getEndLocRmp()+"','"+data.getStartDateRmp()+"','"+data.getEndDateRmp()+"','"+data.getStartTimeRmp()+"','"+data.getEndTimeRmp()+"','"+data.getVehivleTypeRmp()+"','"+data.getVehicleNoRmp()+"')");
+			ps = con.prepareStatement("insert into affidavitdb(name,address,phno,companionName,relation,reason,source,Destination,startDate,returnDate,startTime,endTime,vehicleType,vehicleRegNo,status) values('"+data.getNameRmp()+"','"+data.getAddressRmp()+"','"+ data.getPhnoRmp()+"','"+data.getCopassengerRmp()+"','"+data.getRelationRmp()+"','"+data.getReasonRmp()+"','"+data.getStartLocRmp()+"','"+data.getEndLocRmp()+"','"+data.getStartDateRmp()+"','"+data.getEndDateRmp()+"','"+data.getStartTimeRmp()+"','"+data.getEndTimeRmp()+"','"+data.getVehivleTypeRmp()+"','"+data.getVehicleNoRmp()+"','"+data.getApprovedRmp()+"')");
 			ps.executeUpdate();
 		}
 		catch(SQLException e)
@@ -173,6 +173,7 @@ public class Database
 
 	public ArrayList<Model> check(ArrayList<Model> a, String no)
 	{
+		int i=0;
 		createDbConnection();
 		try
 		{
@@ -181,14 +182,30 @@ public class Database
 			rs = stmt.executeQuery(sql);
 			while(rs.next())
 			{
-				userRole = rs.getString("rolename");
+			a.add(i,new Model());
+			a.get(i).setIdRmp(rs.getInt("id"));
+			a.get(i).setNameRmp(rs.getString("name"));
+			a.get(i).setCopassengerRmp(rs.getString("companionName"));
+			a.get(i).setRelationRmp(rs.getString("relation"));
+			a.get(i).setReasonRmp(rs.getString("reason"));
+			a.get(i).setPhnoRmp(rs.getString("phno"));
+			a.get(i).setAddressRmp(rs.getString("address"));
+			a.get(i).setVehicleNoRmp(rs.getString("vehicleRegNo)"));
+			a.get(i).setVehivleTypeRmp(rs.getString("vehicleType"));
+			a.get(i).setStartLocRmp(rs.getString("source"));
+			a.get(i).setEndLocRmp(rs.getString("Destination"));
+			a.get(i).setStartDateRmp(rs.getString("startDate"));
+			a.get(i).setEndDateRmp(rs.getString("returnDate"));
+			a.get(i).setStartTimeRmp(rs.getString("startTime"));
+			a.get(i).setEndTimeRmp(rs.getString("endTime"));
+			a.get(i).setApprovedRmp(rs.getInt("status"));
 			} 
 		}
 		catch(SQLException e)
 		{
 			e.printStackTrace();
 		}
-		return userRole; 
+		return a; 
 	}	
 
 	

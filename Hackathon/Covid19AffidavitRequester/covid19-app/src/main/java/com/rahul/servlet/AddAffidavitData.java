@@ -41,6 +41,7 @@ public class AddAffidavitData extends HttpServlet
 		affidavit.setEndDateRmp(eDateRmp);
 		affidavit.setStartTimeRmp(startTimeRmp);
 		affidavit.setEndTimeRmp(endTimeRmp);
+		affidavit.setApprovedRmp(0);
 
 		db.insertData(affidavit);
 		response.sendRedirect("reqSuccessMsg.jsp");

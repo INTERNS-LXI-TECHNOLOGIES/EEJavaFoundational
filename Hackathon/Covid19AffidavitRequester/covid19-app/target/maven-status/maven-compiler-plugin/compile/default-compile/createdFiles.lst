@@ -1,5 +1,6 @@
 com/rahul/model/User.class
 com/rahul/servlet/AddAffidavitData.class
+com/rahul/servlet/CheckStatus.class
 com/rahul/model/Model.class
 com/rahul/servlet/Validate.class
 com/rahul/repository/Database.class

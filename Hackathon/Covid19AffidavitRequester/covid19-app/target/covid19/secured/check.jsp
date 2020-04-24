@@ -64,10 +64,12 @@
 <body>
 	
 	<div id="box">
+		<div id="heading">
+			<h1>STATUS</h1>
+		</div>
 		<div id="btn">
 			<form action="check" method="GET">
 			PHONE NUMBER<input type="text" name="phno">
-			<button>Check</button>
 			</form>
 		</div>
 	</div>

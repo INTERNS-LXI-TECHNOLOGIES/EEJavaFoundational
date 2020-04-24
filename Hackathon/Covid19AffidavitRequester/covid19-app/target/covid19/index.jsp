@@ -69,6 +69,7 @@
 		</div>
 		<div id="btn">
 		<a href="secured/add.jsp"><button>REQUEST</button></a>
+		<a href="secured/check.jsp"><button>Status</button></a>
 		<!-- <a href="register.jsp"><button>Register</button></a> -->
 		</div>
 	</div>

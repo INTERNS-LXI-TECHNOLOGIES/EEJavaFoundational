@@ -17,7 +17,18 @@ public class Model
 	private String reasonRmp;
 	private String startTimeRmp;
 	private String endTimeRmp;
-	
+	private int approvedRmp;
+
+
+	public  void setApprovedRmp(int n)
+	{
+		this.approvedRmp = n;
+	}
+	public int getApprovedRmp()
+	{
+		return approvedRmp;
+	}
+
 	public  void setIdRmp(int id)
 	{
 		this.idRmp = id;

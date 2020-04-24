@@ -5,7 +5,7 @@ import java.util.*;
 import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-public class AddAffidavitData extends HttpServlet
+public class CheckStatus extends HttpServlet
 {
 	Model a = new Model();
 	Database d = new Database();
