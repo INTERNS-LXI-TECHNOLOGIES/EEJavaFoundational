@@ -1,0 +1,21 @@
+<web-app>
+<servlet>
+      <servlet-name>Read</servlet-name>
+      <servlet-class>com.megha.controllers.ReadServletMvt</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Read</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>Add</servlet-name>
+      <servlet-class>com.megha.controllers.AddServletMVT</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Add</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+</web-app>
