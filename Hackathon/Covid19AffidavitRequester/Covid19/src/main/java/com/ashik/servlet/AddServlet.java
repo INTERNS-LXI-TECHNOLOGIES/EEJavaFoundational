@@ -28,7 +28,7 @@ public class AddServlet extends HttpServlet
 			userAFS.setRelationAFS(request.getParameter("relation"));
 			userAFS.setReasonAFS(request.getParameter("reason"));
 			userAFS.setFlagAFS(0);
-			db.addToDatabase(userAFS);
+			db.addToDatabaseAFS(userAFS);
 			response.sendRedirect("add.html");
 		}
 		catch(Exception e)

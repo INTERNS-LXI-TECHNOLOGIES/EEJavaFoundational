@@ -7,12 +7,20 @@
 
    <servlet>
 		<servlet-name>Add</servlet-name>
-		<servlet-class>com.lxisoft.servlet.AddServlet</servlet-class>
+		<servlet-class>com.ashik.servlet.AddServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Add</servlet-name>
 		<url-pattern>/requestAdd</url-pattern>
 	</servlet-mapping>
 
+	 <servlet>
+		<servlet-name>check</servlet-name>
+		<servlet-class>com.ashik.servlet.checkServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>check</servlet-name>
+		<url-pattern>/requestCheck</url-pattern>
+	</servlet-mapping>
 
 </web-app>

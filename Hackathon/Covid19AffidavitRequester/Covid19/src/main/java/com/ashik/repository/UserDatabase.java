@@ -28,7 +28,7 @@ public class UserDatabase
 		}
 	}
 
-	public int addToDatabase(User model)
+	public int addToDatabaseAFS(User model)
 	{
 		createDatabaseConnection();
 		try
@@ -45,5 +45,28 @@ public class UserDatabase
 		return row;                                                                   
 	}
 
+
+public String checkRequestAFS(String phnumber)
+	{
+		createDatabaseConnection();
+		String flag = "";
+		try
+		{
+			String qry = "select flag from users where phone = '"+phnumber+"'";
+			ps = con.prepareStatement(qry);
+			rs = ps.executeQuery(qry);
+			while(rs.next())
+			{
+				flag = rs.getString(1);
+			}
+
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return flag;
+	}
+	
 
 }	
