@@ -1,9 +1,9 @@
-package com.lxisoft.repository;
+package com.amritha.repository;
 import java.util.*;
-import java.io.*;
+
 import java.sql.*;
-import com.lxisoft.repository.SqlRepositoryAmr;
-import com.lxisoft.model.CovidAmrModel;
+import com.amritha.repository.SqlRepositoryAmr;
+import com.amritha.model.CovidAmrModel;
 public class SqlRepositoryAmr
 {
 	Connection con = null;
@@ -83,7 +83,7 @@ public class SqlRepositoryAmr
 			ps.setString(9,modelAmr.getRelationAmr());
 			ps.setString(10,modelAmr.getReasonAmr());
 			ps.setString(11,modelAmr.getTimeAmr());
-	 		ps.setInt(12,modelAmr.getId());
+	 		ps.setInt(12,modelAmr.getIdAmr());
 	 		ps.execute();
 		}
 		catch(SQLException e)
@@ -103,14 +103,14 @@ public class SqlRepositoryAmr
 			while(rs.next())
 			{
 				modelAmr.add(new CovidAmrModel());
-				for(int i=0;i<models.size();i++)
+				for(int i=0;i<modelAmr.size();i++)
 				{
-					if((modelAmr.get(i)).getId()==0)
+					if((modelAmr.get(i)).getIdAmr()==0)
 					{
-						modelAmr.get(i).setId(rs.getInt(1));
+						modelAmr.get(i).setIdAmr(rs.getInt(1));
 						modelAmr.get(i).setNameAmr(rs.getString(2));
 						modelAmr.get(i).setAddressAmr(rs.getString(3));						
-						modelAmr.get(i).setPhnoAmr(rs.getLong(4));
+						modelAmr.get(i).setPhnoAmr(rs.getString(4));
 						modelAmr.get(i).setVehicleNoAmr(rs.getString(5));
 						modelAmr.get(i).setVehicleTypeAmr(rs.getString(6));
 						modelAmr.get(i).setLocationAmr(rs.getString(7));
@@ -129,7 +129,7 @@ public class SqlRepositoryAmr
 		{
 			e.printStackTrace();
 		}
-		return models;
+		return modelAmr;
 	}
 	public String selectUser(String username)
 	{	

@@ -4,7 +4,6 @@
   <groupId>com.amritha</groupId>
   <artifactId>Covid19AffidavitRequester</artifactId>
   <packaging>war</packaging>
-  <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>Covid19AffidavitRequester Maven Webapp</name>
   <url>http://maven.apache.org</url>
@@ -25,7 +24,13 @@
       <scope>test</scope>
     </dependency>
 
-    
+    <dependency>
+  <groupId>org.apache.maven.plugins</groupId>
+  <artifactId>maven-compiler-plugin</artifactId>
+  <version>3.8.1</version>
+  <type>maven-plugin</type>
+</dependency>
+
     <dependency>
         <groupId>jstl</groupId>
         <artifactId>jstl</artifactId>

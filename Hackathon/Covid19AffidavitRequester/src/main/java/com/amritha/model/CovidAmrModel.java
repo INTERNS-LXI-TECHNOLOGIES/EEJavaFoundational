@@ -1,11 +1,10 @@
 package com.amritha.model;
-import com.lxisoft.model.CovidAmrModel;
 public class CovidAmrModel
 { 	
 	private int id;
 	private String nameAmr;
 	private String addressAmr;
-	private long phnoAmr;
+	private String phnoAmr;
 	private String vehicleNoAmr;
 	private String vehicleTypeAmr;
 	private String locationAmr;
