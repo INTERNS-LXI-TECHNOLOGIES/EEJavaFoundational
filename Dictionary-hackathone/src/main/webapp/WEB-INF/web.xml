@@ -1,0 +1,60 @@
+<web-app>
+<servlet>
+      <servlet-name>create</servlet-name>
+      <servlet-class>com.lxisoft.servlet.AddServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>create</servlet-name>
+        <url-pattern>/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+      <servlet-name>read</servlet-name>
+      <servlet-class>com.lxisoft.servlet.ReadServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>read</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+      <servlet-name>Select</servlet-name>
+      <servlet-class>com.lxisoft.servlet.SelectByIdServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Select</servlet-name>
+        <url-pattern>/select</url-pattern>
+    </servlet-mapping>
+
+<security-constraint>
+      <web-resource-collection>
+         <web-resource-name>java</web-resource-name>
+         <url-pattern>/index.jsp</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+      </web-resource-collection>
+      
+      <auth-constraint>
+        <role-name>user</role-name>
+        <role-name>admin</role-name>
+      </auth-constraint>
+   </security-constraint>
+   
+   <security-role>
+      <role-name>user</role-name>
+      <role-name>admin</role-name>
+   </security-role>
+   
+   <login-config>
+      <auth-method>FORM</auth-method>
+      <form-login-config>
+         <form-login-page>/Login.jsp</form-login-page>
+         <form-error-page>/Error.jsp</form-error-page>
+      </form-login-config>
+   </login-config>
+
+    
+    
+</web-app>

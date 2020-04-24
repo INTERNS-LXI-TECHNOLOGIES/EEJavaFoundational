@@ -13,7 +13,10 @@
 # Package Files #
 *.jar
 *.war
+<<<<<<< HEAD
 *.nar
+=======
+>>>>>>> 1319e47d2946062aaffa6bc4f180ba96791d57c8
 *.ear
 *.zip
 *.tar.gz
