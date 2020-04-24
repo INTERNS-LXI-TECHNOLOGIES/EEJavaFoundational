@@ -1,13 +1,39 @@
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-  version="2.5">
-  <servlet-mapping>  
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee 
+    http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+
+
+<!-- <servlet-mapping>  
 <servlet-name>login</servlet-name>  
 <url-pattern>/LoginServlet</url-pattern>  
 </servlet-mapping>
 
 <servlet>  
 <servlet-name>login</servlet-name>  
-<servlet-class>com.lxisoft.control.LoginServlet</servlet-class>  
+<servlet-class>com.amritha.control.LoginServlet</servlet-class>  
+</servlet>  -->
+<servlet>  
+<servlet-name>addservlet</servlet-name>  
+<servlet-class>com.amritha.control.AddServlet</servlet-class>  
 </servlet>  
-</web-app>  
+  
+<servlet-mapping>  
+<servlet-name>addservlet</servlet-name>  
+<url-pattern>/AddServlet</url-pattern>  
+</servlet-mapping>
+
+<servlet>  
+<servlet-name>viewservlet</servlet-name>  
+<servlet-class>com.amritha.control.ViewServlet</servlet-class>  
+</servlet>  
+  
+<servlet-mapping>  
+<servlet-name>viewservlet</servlet-name>  
+<url-pattern>/ViewServlet</url-pattern>  
+</servlet-mapping>
+
+</web-app>
+
+

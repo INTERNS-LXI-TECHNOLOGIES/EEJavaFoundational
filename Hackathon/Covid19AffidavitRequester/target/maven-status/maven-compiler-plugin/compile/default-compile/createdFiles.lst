@@ -1,4 +1,5 @@
 com\amritha\control\AddUser.class
+com\amritha\control\AddServlet.class
 com\amritha\repository\SqlRepositoryAmr.class
 com\amritha\control\LoginServlet.class
 com\amritha\model\CovidAmrModel.class
