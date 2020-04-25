@@ -90,7 +90,7 @@ input[type=text] {
 
 
 <form method=POST action="j_security_check">
-    <p>
+    <p>                                                                       
       <span>Username:</span> <br /> <input type="text" name="j_username">
     </p>
     <p>

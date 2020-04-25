@@ -89,8 +89,8 @@ input[type=text] {
 <h2>Login</h2>
 
 
-<form method=post action="j_security_check">
-    <p>
+<form method=POST action="j_security_check">
+    <p>                                                                       
       <span>Username:</span> <br /> <input type="text" name="j_username">
     </p>
     <p>
@@ -101,7 +101,7 @@ input[type=text] {
       <input type="submit" value="Login">
     </p>
   </form>
- 
+  
  <!-- <form action="logining" method="GET">
   User Name:<input type="text" placeholder="User Name" name="name" required><br><br>
   Password:<input type="text" placeholder="Password" name="password" required><br><br>

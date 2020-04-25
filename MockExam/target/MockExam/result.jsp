@@ -89,6 +89,26 @@ input[type=text] {
 
 <li><h1> Thank U For Attending The Exam </h1></li>
         <li><h1> You Got <%out.println(mark);%> Marks.</h1></li>
+
+        <%
+   
+   if(totalMark >=1)
+   {
+    %>
+    <h1><%out.println("Congratulations....");%></h1>
+    <h1><%out.println("Exam Passed");%></h1>
+   <%
+   }
+   else
+   {
+    %>
+
+    <h1><%out.println("!! Sorry !!");%></h1><br>
+    <h1><%out.println("Exam Failed");%></h1>
+   <%
+   }
+   %>
+   <br>
         
   <a href="index.jsp"><!-- <button type="submit">Home</button> --><input type="submit" class="button" value="Home"></a> 
 

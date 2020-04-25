@@ -146,6 +146,28 @@ public ArrayList<User> viewUserDatabase(ArrayList<User> users)
 		return row;                                                                   
 	}
 
+
+	public String selectRole(String username)
+	{
+		createDatabaseConnection();
+		String userRole = "";
+		try
+		{
+			String qry = "select rolename from users_roles where username = '"+username+"'";
+			ps = con.prepareStatement(qry);
+			rs = ps.executeQuery(qry);
+			while(rs.next())
+			{
+				userRole = rs.getString(1);
+			}
+
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return userRole;
+	}
 	
 
 }

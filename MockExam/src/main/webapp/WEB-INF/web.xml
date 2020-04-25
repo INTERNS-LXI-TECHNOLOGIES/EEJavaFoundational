@@ -8,7 +8,7 @@
   <security-constraint>
 		<web-resource-collection>
 			<web-resource-name>MockExam</web-resource-name>
-			<url-pattern>/admin.jsp</url-pattern>
+			<url-pattern>/logining</url-pattern>
 			<http-method>POST</http-method>
 			<http-method>GET</http-method>
 		</web-resource-collection>
@@ -29,7 +29,7 @@
 	<login-config>
 		<auth-method>FORM</auth-method>
 		<form-login-config>
-			<form-login-page>/admin.jsp</form-login-page>
+			<form-login-page>/login.jsp</form-login-page>
 			<form-error-page>/login_failure.jsp</form-error-page>
 		</form-login-config>
 	</login-config>

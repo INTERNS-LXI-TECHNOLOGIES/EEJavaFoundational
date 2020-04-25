@@ -90,7 +90,7 @@ input[type=text] {
 
 
  
- <form action="edit.jsp" method="POST">
+ <form action="edit.jsp" method="GET">
  <table border="1" width="100%">
     <tr>
       <th>Id</th>
@@ -121,7 +121,7 @@ input[type=text] {
       <!-- <td> --><a href="problemDelete?id=<%=problemList.get(i).getId()%>"><button class="button button2">Delete</button></a></td> 
         <%}%></tr>  
   </table>
-		</form>
+    </form>
      <a href="add.html"><button class="button">Creat New Question</button></a>
      <a href="index.jsp"><button class="button">LOg Out</button></a>
      
@@ -131,10 +131,4 @@ input[type=text] {
 
 
 
-     <!-- <td> <a href="edit.jsp?id=<%=problemList.get(i).getId()%>"> --><!-- <input type="hidden" name="id" value="<%=problemList.get(i).getId()%>"><button class="button">Edit</button></a> -->
-      <!-- <td><a href="problemDelete?id=<%=problemList.get(i).getId()%>"><button class="button button2">Delete --><!-- </button></a></td> 
-        <%}%></tr>  
-  </table>
-    </form> -->
-    <!--  <a href="add.html"><button class="button">Creat New Question</button></a>
-     <a href="index.jsp"><button class="button">LOg Out</button></a> --> -->
+ 
