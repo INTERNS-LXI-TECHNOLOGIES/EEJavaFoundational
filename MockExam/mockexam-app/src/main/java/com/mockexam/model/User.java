@@ -5,7 +5,6 @@ public class User
 	private String username;
 	private String password;
 	private String role;
-	private int score;
 	
 	public void setId(int id)
 	{
@@ -41,13 +40,4 @@ public class User
 	{
 		return role;
 	}
-	public void setScore(int score)
-	{
-		this.score = score;
-	}
-	public int getScore()
-	{
-		return score;
-	}
-
 }

@@ -113,7 +113,7 @@
 		}
 		else
 		{
-			response.sendRedirect("secured/viewResult");	
+			response.sendRedirect("viewResult");	
 		}
 		%>	
 	</div>
@@ -130,7 +130,7 @@
         		clearInterval(time);
         		// alert("Time out!! :(");
         		// console.log(qCount);
-        		window.location.href="http://localhost:8080/mockexam/getAnswer?count="+qCount;
+        		window.location.href="http://localhost:1546/mockexam/getAnswer?count="+qCount;
     		}
 		}
 	</script>

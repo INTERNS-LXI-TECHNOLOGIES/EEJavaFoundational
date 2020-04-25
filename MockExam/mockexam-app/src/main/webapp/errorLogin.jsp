@@ -6,7 +6,7 @@
 <body>
 	<script type="text/javascript">
 		alert("Something Went Wrong.Login UnSuccessfull...please try again");
-		window.location.href="http://localhost:8080/mockexam/";
+		window.location.href="http://localhost:1546/mockexam/";
 	</script>
 </body>
 </html>
