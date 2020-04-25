@@ -1,0 +1,59 @@
+<html>
+	
+	<head>
+		<title>Add New Request</title>
+		<style>
+		body{
+		 background-color: lightblue;	
+		 margin-top:250px;
+		 text-align:center;
+		}
+
+		h1 {
+  			color: black;
+  			text-align: center;
+  			font-family: verdana;
+			}
+	.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  .button:hover {  background-color: black;}
+}	
+	</style>
+	</head>
+	<body>
+		<h1>Request Form</h1>
+		<form  method="GET" action="requestAdd" >
+			
+			Name :<input type="text" placeholder="Your Name" name="user" required><br><br>
+			Phone Number :<input type="text" placeholder="Your Phone Number" name="phnumber" required><br><br>
+			Adderss :<input type="text" placeholder="Your Address" name="address" required><br><br>
+			Vehicle Number :<input type="text" placeholder="Your Vehicle number" name="vhnumber" required><br><br>
+			Vehicle Type :
+			<input type="radio" name="vhtype" id="1" value="4wheeler">
+ 			<label>Four Wheeler</label><br>
+ 			<input type="radio" name="vhtype" id="2" value="2wheeler">
+ 			<label>Two Wheeler</label><br>
+			Starting Location :<input type="text" placeholder="Your Starting Location" name="slocation" required><br><br>
+			Destination :<input type="text" placeholder="Your Destination" name="destination" required><br><br>
+			Starting Date :<input type="text" placeholder="Starting Date" name="sdate" required><br><br>
+ 			Ending Date :<input type="text" placeholder="Ending date" name="edate" required><br><br>
+ 			Co Passenger :<input type="text" placeholder="Your Co passenger" name="copasnger" required><br><br>
+ 			Relation :<input type="text" placeholder="Your Relation" name="relation" required><br><br>
+ 			Reason :<input type="text" placeholder="Your Reason" name="reason" required><br><br>
+		<input type="submit" class="button" value="Add">
+		<input type="reset" class="button" value="Reset">
+		</form>
+		<a href="index.jsp"><input type="submit" class="button" value="Home"></a>	
+		
+	</body>
+</html>
