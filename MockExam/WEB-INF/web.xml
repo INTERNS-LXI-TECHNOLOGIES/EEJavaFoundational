@@ -1,0 +1,12 @@
+<web-app>
+
+	<servlet>
+		<servlet-name>date</servlet-name>
+		<servlet-class>com.lxisoft.servlet.DateServlet.java</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>date</servlet-name>
+		<url-pattern>/showdate</url-pattern>
+	</servlet-mapping>
+
+</web-app>
