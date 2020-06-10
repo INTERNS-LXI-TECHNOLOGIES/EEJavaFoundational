@@ -1,19 +1,16 @@
 package com.lxisoft.servlet;
+import com.lxisoft.model.*;
+import com.lxisoft.repository.*;
 import java.io.*;
 import java.util.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
-import com.lxisoft.repository.*;
-import com.lxisoft.model.*;
-public class AddServlet extends HttpServlet
+public class EditServlet extends HttpServlet
 {
-	
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
-		try
-		{
-			QuestionDatabase db = new QuestionDatabase();
-			ArrayList<Question> questions = new ArrayList<Question>();
+		QuestionDatabase db = new QuestionDatabase();
+			
 			Question question = new Question();				
 			question.setQuestion(request.getParameter("question"));
 			question.setOption1(request.getParameter("option1"));
@@ -21,14 +18,8 @@ public class AddServlet extends HttpServlet
 			question.setOption3(request.getParameter("option3"));
 			question.setOption4(request.getParameter("option4"));
 			question.setAnswer(request.getParameter("answer"));
-			
-			db.addToDatabase(question);
-			response.sendRedirect("add.html");
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-
+		
+		db.editList(question);
+		response.sendRedirect("admin.jsp");
 	}
 }
