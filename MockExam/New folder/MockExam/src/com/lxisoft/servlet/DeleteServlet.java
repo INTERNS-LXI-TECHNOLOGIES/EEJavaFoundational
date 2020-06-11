@@ -12,7 +12,7 @@ public class DeleteServlet extends HttpServlet
 	{
 		try
 		{
-			ExamDatabase db = new ExamDatabase();
+			QuestionDatabase db = new QuestionDatabase();
 			int id = Integer.parseInt(request.getParameter("id"));
 			PrintWriter out = response.getWriter();
 			out.println(id);

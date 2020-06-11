@@ -2,7 +2,7 @@ package com.lxisoft.model;
 import java.io.*;  
 import java.util.*;  
 
-public class question
+public class Question
 {
 private String question,option1,option2,option3,option4,answer;
 private int id;

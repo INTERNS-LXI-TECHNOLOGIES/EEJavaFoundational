@@ -28,7 +28,7 @@ public class QuestionDatabase
 		}
 	}
 
-	public int addToDatabase(Problem problem)
+	public int addToDatabase(Question problem)
 	{
 		createDatabaseConnection();
 		try
@@ -43,6 +43,47 @@ public class QuestionDatabase
 			e.printStackTrace();
 		}
 		return row;                                                                   
+	}
+
+	public ArrayList<Question> viewDatabase(ArrayList<Question> questions)
+	{
+		createDatabaseConnection();
+		try
+		{
+			String sql  = "select * from Questions" ;
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			int i = 0;
+			while(rs.next())
+			{
+				questions.add(i,new Question());
+				questions.get(i).setId(rs.getInt("id"));
+				questions.get(i).setQuestion(rs.getString("question"));
+				questions.get(i).setOption1(rs.getString("option1"));
+				questions.get(i).setOption2(rs.getString("option2"));
+				questions.get(i).setOption3(rs.getString("option3"));
+				questions.get(i).setOption4(rs.getString("option4"));
+				questions.get(i).setAnswer(rs.getString("answer"));
+				i++;		
+			}
+		}
+		catch(SQLException e)
+		{		e.printStackTrace();	}
+		return questions;
+	}
+
+		public void editList(Question problem)
+	{
+		createDatabaseConnection();
+		try
+		{
+			ps = con.prepareStatement("update Questions set question = '"+problem.getQuestion()+"', option1 ='"+problem.getOption1()+"', option2 ='"+problem.getOption2()+"', option3 ='"+problem.getOption3()+"', option4 ='"+problem.getOption4()+"', answer='"+problem.getAnswer()+"' where id='"+problem.getId()+"'");
+			ps.executeUpdate();
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 		public void deletRecord(int deleteId)
