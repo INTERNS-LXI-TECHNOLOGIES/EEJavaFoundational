@@ -11,8 +11,8 @@
    <body>
 
    	<div>
-    <a href="add.html"><button class="button">ADD Question</button></a>
-    <a href="view.jsp"><button class="button">View Questions</button></a>
+    <a href="admin.html"><button class="button">Admin Login</button></a>
+    <a href="exam.jsp"><button class="button">Attend Exam</button></a>
     </div>
    </body>
 </html>
