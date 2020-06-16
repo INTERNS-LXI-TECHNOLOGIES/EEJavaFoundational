@@ -103,4 +103,46 @@ public class QuestionDatabase
 		}
 	}
 
+		public int addUserToDatabase(User model)
+	{
+		createDatabaseConnection();
+		try
+		{
+			ps = con.prepareStatement("insert into users(name,password,role) values('"+model.getName()+"','"+model.getPassword()+"','"+model.getRole()+"')");
+			row = ps.executeUpdate();
+			ps.close();
+			con.close();
+		}
+		catch(SQLException e)                                                                                    
+		{
+			e.printStackTrace();
+		}
+		return row;                                                                   
+	}
+
+	public ArrayList<User> viewUserDatabase(ArrayList<User> users)
+	{
+		createDatabaseConnection();
+		try
+		{
+			String sql  = "select * from users" ;
+			stmt = con.createStatement();
+			rs = stmt.executeQuery(sql);
+			int i = 0;
+			while(rs.next())
+			{
+				users.add(i,new User());
+				users.get(i).setId(rs.getInt("id"));
+				users.get(i).setName(rs.getString("name"));
+				users.get(i).setPassword(rs.getString("password"));
+				users.get(i).setRole(rs.getString("role"));
+				users.get(i).setMark(0);
+				i++;		
+			}
+		}
+		catch(SQLException e)
+		{		e.printStackTrace();	}
+		return users;
+	}
 }
+ 

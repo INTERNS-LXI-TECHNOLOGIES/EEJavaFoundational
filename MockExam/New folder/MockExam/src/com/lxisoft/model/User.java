@@ -30,7 +30,7 @@ public void setMark(int mark)
     {
         this.mark = mark;
     }
-public String getMark()
+public int getMark()
     {
         return mark;
     }  
