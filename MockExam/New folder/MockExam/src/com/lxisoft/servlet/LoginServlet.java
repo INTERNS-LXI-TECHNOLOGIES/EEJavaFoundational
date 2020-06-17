@@ -23,11 +23,13 @@ public class LoginServlet extends HttpServlet
 			{
 				if(user.getName()==users.get(i).getName()&&user.getPassword()==users.get(i).getPassword())
 				{
-					response.sendRedirect("exam.jsp");		
+					//response.sendRedirect("exam.jsp");	
+					request.getRequestDispatcher("introduction.jsp").forward(request,response);
 				}
 				else
 				{
-					response.sendRedirect("login.html");		
+					request.getRequestDispatcher("login.html").forward(request,response);
+					//response.sendRedirect("login.html");		
 				}
 			}
 			

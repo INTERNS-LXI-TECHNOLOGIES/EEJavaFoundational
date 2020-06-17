@@ -11,8 +11,14 @@
    <body>
 
    	<div>
+   		 <h1>Welcome To MockExam</h1>
+      <br>
+      <br>
+      <br>
+      <br>
     <a href="admin.html"><button class="button">Admin Login</button></a>
-    <a href="introduction.html"><button class="button">Attend Exam</button></a>
+    <a href="adduesr.html"><button class="button">New User</button></a>
+    <a href="login.html"><button class="button">Login</button></a>
     </div>
    </body>
 </html>
