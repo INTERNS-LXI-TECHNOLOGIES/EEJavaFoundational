@@ -19,17 +19,23 @@ public class LoginServlet extends HttpServlet
 			user.setPassword(request.getParameter("password"));
 			user.setRole(request.getParameter("role"));
 			users=db.viewUserDatabase(users);
+			
+		 response.setCharacterEncoding("UTF-8");
+		response.setContentType("text/html; charset=utf-8");
 			for(int i=0;i<users.size();i++)
 			{
 				if(user.getName()==users.get(i).getName()&&user.getPassword()==users.get(i).getPassword())
 				{
 					//response.sendRedirect("exam.jsp");	
-					request.getRequestDispatcher("introduction.jsp").forward(request,response);
+					//request.getRequestDispatcher("introduction.jsp").forward(request,response);
+					response.sendRedirect("exam.jsp");	
+
 				}
 				else
 				{
-					request.getRequestDispatcher("login.html").forward(request,response);
+					//request.getRequestDispatcher("login.html").forward(request,response);
 					//response.sendRedirect("login.html");		
+					response.sendRedirect("login.html");		
 				}
 			}
 			
