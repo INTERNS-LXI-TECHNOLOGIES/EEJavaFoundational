@@ -144,5 +144,19 @@ public class QuestionDatabase
 		{		e.printStackTrace();	}
 		return users;
 	}
+
+	// 	public void editList(Question problem)
+	// {
+	// 	createDatabaseConnection();
+	// 	try
+	// 	{
+	// 		ps = con.prepareStatement("update Questions set question = '"+problem.getQuestion()+"', option1 ='"+problem.getOption1()+"', option2 ='"+problem.getOption2()+"', option3 ='"+problem.getOption3()+"', option4 ='"+problem.getOption4()+"', answer='"+problem.getAnswer()+"' where id='"+problem.getId()+"'");
+	// 		ps.executeUpdate();
+	// 	}
+	// 	catch(SQLException e)
+	// 	{
+	// 		e.printStackTrace();
+	// 	}
+	// }
 }
  
