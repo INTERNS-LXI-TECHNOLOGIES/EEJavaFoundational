@@ -24,12 +24,12 @@ public class LoginServlet extends HttpServlet
 		response.setContentType("text/html; charset=utf-8");
 			for(int i=0;i<users.size();i++)
 			{
-				if(user.getName()==users.get(i).getName()&&user.getPassword()==users.get(i).getPassword())
+				if(user.getName().equals(users.get(i).getName())&&user.getPassword().equals(users.get(i).getPassword()))
 				{
 					//response.sendRedirect("exam.jsp");	
 					//request.getRequestDispatcher("introduction.jsp").forward(request,response);
 					//response.sendRedirect("exam.jsp");
-					 RequestDispatcher rd=request.getRequestDispatcher("exam.jsp");  
+					 RequestDispatcher rd=request.getRequestDispatcher("introduction.html");  
        				 rd.forward(request, response);  	
 
 				}
@@ -42,29 +42,6 @@ public class LoginServlet extends HttpServlet
        				 rd.forward(request, response);  	
 				}
 			}
-
-
-
-			// 	for(int i=0;i<users.size();i++)
-			// {
-			// 	if(user.getName()==users.get(i).getName()&&user.getPassword()==users.get(i).getPassword())
-			// 	{
-			// 		//response.sendRedirect("exam.jsp");	
-			// 		//request.getRequestDispatcher("introduction.jsp").forward(request,response);
-			// 		//response.sendRedirect("exam.jsp");
-			// 		 RequestDispatcher rd=request.getRequestDispatcher("exam.jsp");  
-   //     				 rd.forward(request, response);  	
-
-			// 	}
-			// 	else
-			// 	{
-			// 		//request.getRequestDispatcher("login.html").forward(request,response);
-			// 		//response.sendRedirect("login.html");		
-			// 		//response.sendRedirect("login.html");	
-			// 		 RequestDispatcher rd=request.getRequestDispatcher("login.html");  
-   //     				 rd.forward(request, response);  	
-			// 	}
-			// }
 			
 		}
 		catch(Exception e)

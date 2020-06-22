@@ -45,6 +45,22 @@
 		<url-pattern>/userAdding</url-pattern>
 	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>mark</servlet-name>
+		<servlet-class>com.lxisoft.servlet.MarkServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>mark</servlet-name>
+		<url-pattern>/addMark</url-pattern>
+	</servlet-mapping>
 
+	<servlet>
+		<servlet-name>result</servlet-name>
+		<servlet-class>com.lxisoft.servlet.ResultServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>result</servlet-name>
+		<url-pattern>/resultView</url-pattern>
+	</servlet-mapping>
 
 </web-app>		

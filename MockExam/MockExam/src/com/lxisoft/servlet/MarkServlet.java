@@ -26,7 +26,7 @@ public class MarkServlet extends HttpServlet
 				answerList.add(ans);
 			}	
 		session.setAttribute("answers",answerList);
-		request.getRequestDispatcher("question.jsp").forward(request,response);
+		request.getRequestDispatcher("exam.jsp").forward(request,response);
 		}
 		catch(Exception e)
 		{

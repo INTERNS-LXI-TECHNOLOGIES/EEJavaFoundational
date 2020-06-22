@@ -6,6 +6,33 @@
 <html>
   <head>
     <title>Mock Exam</title>
+    	<style>
+		body{
+		 background-color: white ;	
+		 margin-top:250px;
+		 text-align:center;
+		}
+
+		h1 {
+  			color: black;
+  			text-align: center;
+  			font-family: verdana;
+			}
+	.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+  .button:hover {  background-color: black;}
+}	
+	</style>
   </head>
 
    <body>
@@ -15,7 +42,7 @@
 			QuestionDatabase db = new QuestionDatabase();
 			ArrayList<Question> questions = new ArrayList<Question>();
 			questions = db.viewDatabase(questions);
-			//session.setAttribute("examqus",questions);	%>
+			session.setAttribute("examqus",questions);	%>
 		
 		<%	if(i<questions.size()) {%>
 		
@@ -35,22 +62,15 @@
  			 <input type="hidden" name="count" value="<%=i%>">
 
  			 <a href="addMark"><button id="myBtn2" class="button button2">Skip</button></a>
-			<div><span id="countdown">10</span></div>	
+			<!-- <div><span id="countdown">10</span></div>	 -->
  			</form>
 
 		<%}					
 			else
-				{ response.sendRedirect("result.html"); }%>
+				{ response.sendRedirect("resultView"); }%>
 
     <a href="index.html"><button class="button">Close</button></a>
     </body>
 
-  <!--   <form id="Question"; style= "text-align:left" action="addMark">				
-			<li>Question :<%out.println(questions.get(i).getQuestion()+"?");%></li>
-			<input type="radio" name="scores" id="1" value="1">
- 			<label><%out.println(questions.get(i).getOption1());%></label><br>
- 			
-            <input type="hidden" name="count" value="<%=i%>">
- 			 <a href="addMark"><button id="myBtn" class="button">Submit</button></a>
- 			 <input type="hidden" name="count" value="<%=i%>"> -->
+ 
 </html>
