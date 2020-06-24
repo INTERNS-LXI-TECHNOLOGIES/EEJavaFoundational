@@ -77,16 +77,25 @@ var countdown = setInterval(function() {
     seconds--;
     document.getElementById("countdown").textContent = seconds;
     if (seconds <= 0)
-    { clearInterval(countdown);
+    {   clearInterval(countdown);
     	document.getElementById("myBtn").disabled = true;
     	document.getElementById("1").disabled = true;
     	document.getElementById("2").disabled = true;
     	document.getElementById("3").disabled = true; 
 	   	document.getElementById("4").disabled = true;   	
 
+	   	// 	document.getElementById("myBtn").disabled = true;
+    	// document.getElementById("1").disabled = true;
+    	// document.getElementById("2").disabled = true;
+    	// document.getElementById("3").disabled = true; 
+	   	// document.getElementById("4").disabled = true;   	
+
 	}
 }, 1000);
 </script>
+	
+
+
 
     </body>
 
