@@ -1,23 +1,39 @@
+<%@page import="com.lxisoft.servlet.*"%>
+<%@page import="com.lxisoft.model.*"%>
+<%@page import="com.lxisoft.repository.*"%>
+<%@page import="java.util.*"%>
+<!DOCTYPE HTML>
 <html>
-	
-	<head>
-		<title>Login User</title>
-			<style>
-		body{
-		 background-color: white ;	
-		 margin-top:250px;
-		 text-align:center;
-		}
+  <head>
+    <title>Mock Exam</title>
+  <style>
+    body{
+     background-color: lightblue; 
+    /* margin-top:250px;*/
+    /* text-align:center;*/
+    }
 
-		h1 {
-  			color: black;
-  			text-align: center;
-  			font-family: verdana;
-			}
-	.button {
-  background-color: #4CAF50;
+    a {
+  float: left;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 20px;
+}
+
+    h1 {
+        color: black;
+        text-align: center;
+        font-family: verdana;
+      }
+  .button {
+  background-color:#C2F6A6;
   border: none;
   color: white;
+
+   border-radius: 5px;
   padding: 15px 32px;
   text-align: center;
   text-decoration: none;
@@ -25,12 +41,50 @@
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+} 
+.button:hover {  background-color: black; }
+.button2 {background-color: #4CAF50;} 
+.button2:hover {  background-color: #f44336;}
 
-  .button:hover {  background-color: black;}
-}	
-	</style>
-	</head>
-	<body>
+.search-container {  float: right;}
+
+.search-container button {
+  float: right;
+  padding: 6px 10px;
+  margin-top: 8px;
+  margin-right: 16px;
+  background: #4CAF50;
+  font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+  
+
+  .pagination {  display: inline-block; }
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.active {  background-color: #4CAF50;
+  color: white; }
+
+.pagination a:hover:not(.active) {background-color: #ddd;}
+
+  </style>
+  </head>
+<body>
 <% int mark = Integer.parseInt(request.getAttribute("score").toString()); %>
 
 <li><h1> Thank U For Attending The Exam </h1></li>
@@ -38,7 +92,7 @@
 
         <%
    
-   if(totalMark >=1)
+   if(mark >=1)
    {
     %>
     <h1><%out.println("Congratulations....");%></h1>
@@ -56,25 +110,7 @@
    %>
    <br>
         
-  <a href="index.jsp"><input type="submit" class="button" value="Home"></a> 
+  <a href="index.jsp"><!-- <button type="submit">Home</button> --><input type="submit" class="button" value="Home"></a> 
 
-<!--  if(totalMark >=1)
-   {
-    %>
-    <h1><%out.println("Congratulations....");%></h1>
-    <h1><%out.println("Exam Passed");%></h1>
-   <%
-   }
-   else
-   {
-    %>
-
-    <h1><%out.println("!! Sorry !!");%></h1><br>
-    <h1><%out.println("Exam Failed");%></h1>
-   <%
-   }
-   %>
-   <br>
- -->
 </body>
 </html>

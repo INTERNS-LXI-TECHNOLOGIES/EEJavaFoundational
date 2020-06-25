@@ -29,6 +29,6 @@ public class ResultServlet extends HttpServlet
 		pw.println("mark = "+mark);
 		request.setAttribute("score",mark);	
 		mark=0;
-		request.getRequestDispatcher("result.html").forward(request,response);		
+		request.getRequestDispatcher("result.jsp").forward(request,response);		
 	}
 }

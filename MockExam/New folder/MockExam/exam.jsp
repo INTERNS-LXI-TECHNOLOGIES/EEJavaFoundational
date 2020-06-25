@@ -8,7 +8,7 @@
     <title>Mock Exam</title>
     	<style>
 		body{
-		 background-color: white ;	
+		 background-color:#C2F6A6 ;	
 		 margin-top:250px;
 		 text-align:center;
 		}
