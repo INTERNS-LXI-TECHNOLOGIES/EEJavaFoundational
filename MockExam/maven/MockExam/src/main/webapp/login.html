@@ -1,14 +1,10 @@
-<%@page import="com.lxisoft.servlet.*"%>
-<%@page import="com.lxisoft.model.*"%>
-<%@page import="com.lxisoft.repository.*"%>
-<%@page import="java.util.*"%>
-<!DOCTYPE HTML>
 <html>
-  <head>
-    <title>Mock Exam</title>
-    	<style>
+	
+	<head>
+		<title>Login User</title>
+			<style>
 		body{
-		 background-color:#C2F6A6 ;	
+		 background-color: #C2F6A6 ;	
 		 margin-top:250px;
 		 text-align:center;
 		}
@@ -30,8 +26,7 @@
   margin: 4px 2px;
   cursor: pointer;
 
-
- /*   .button {
+  /*	.button {
   background-color: #4CAF50;
   border: none;
   color: white;
@@ -46,19 +41,18 @@
   .button:hover {  background-color: black;}
 }	
 	</style>
-  </head>
-
-   <body>
-
-   	<div>
-   		 <h1>Welcome To MockExam</h1>
-      <br>
-      <br>
-      <br>
-      <br>
-    <a href="admin.html"><button class="button">Admin Login</button></a>
-    <a href="adduesr.html"><button class="button">New User</button></a>
-    <a href="login.html"><button class="button">Login</button></a>
-    </div>
-   </body>
+	</head>
+	<body>
+			<h1>Login Details</h1>
+		<form  method="GET" action="userLogin" >
+			
+			Name :<input type="text" placeholder="Your Name" name="name" required><br><br>
+			Password :<input type="password" placeholder="Your Password" name="password" required><br><br>
+		
+		<input type="submit" class="button" value="Login">
+		</form>
+		<a href="index.jsp"><input type="submit" class="button" value="Home"></a>	
+		
+		
+	</body>
 </html>

@@ -5,7 +5,7 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
-  <security-constraint>
+ <!--  <security-constraint>
 		<web-resource-collection>
 			<web-resource-name>MockExam</web-resource-name>
 			<url-pattern>/logining</url-pattern>
@@ -32,7 +32,7 @@
 			<form-login-page>/login.jsp</form-login-page>
 			<form-error-page>/login_failure.jsp</form-error-page>
 		</form-login-config>
-	</login-config>
+	</login-config> -->
 
   <servlet>
 		<servlet-name>Add</servlet-name>

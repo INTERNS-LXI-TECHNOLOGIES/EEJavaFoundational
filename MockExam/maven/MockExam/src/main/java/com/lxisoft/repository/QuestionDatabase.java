@@ -9,7 +9,7 @@ public class QuestionDatabase
 	Connection con = null;
 	ResultSet rs= null;
 	Statement stmt = null;
-	PreparedStatement ps = null;;
+	PreparedStatement ps = null;
 	int row;
 	
 	public void createDatabaseConnection()
@@ -23,7 +23,7 @@ public class QuestionDatabase
 			{	e.printStackTrace();	}
 			
 		}catch(ClassNotFoundException e)
-		{
+		{                  
 			e.printStackTrace();
 		}
 	}
@@ -145,18 +145,6 @@ public class QuestionDatabase
 		return users;
 	}
 
-	// 	public void editList(Question problem)
-	// {
-	// 	createDatabaseConnection();
-	// 	try
-	// 	{
-	// 		ps = con.prepareStatement("update Questions set question = '"+problem.getQuestion()+"', option1 ='"+problem.getOption1()+"', option2 ='"+problem.getOption2()+"', option3 ='"+problem.getOption3()+"', option4 ='"+problem.getOption4()+"', answer='"+problem.getAnswer()+"' where id='"+problem.getId()+"'");
-	// 		ps.executeUpdate();
-	// 	}
-	// 	catch(SQLException e)
-	// 	{
-	// 		e.printStackTrace();
-	// 	}
-	// }
+	
 }
  
