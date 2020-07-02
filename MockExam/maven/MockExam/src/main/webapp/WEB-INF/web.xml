@@ -20,6 +20,21 @@
 		</auth-constraint>
   </security-constraint>
 
+ <!--   <security-constraint>
+		<web-resource-collection>
+			<web-resource-name>MockExam</web-resource-name>
+			<url-pattern>/logining</url-pattern>
+			<http-method>POST</http-method>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+
+
+		<auth-constraint>
+			<role-name>admin</role-name>
+			<role-name>user</role-name>
+		</auth-constraint>
+  </security-constraint>
+ -->
 
 	<security-role>
 		<role-name>admin</role-name>

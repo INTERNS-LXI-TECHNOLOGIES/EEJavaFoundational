@@ -102,13 +102,7 @@ input[type=text] {
     </p>
   </form>
   
- <!-- <form action="logining" method="GET">
-  User Name:<input type="text" placeholder="User Name" name="name" required><br><br>
-  Password:<input type="text" placeholder="Password" name="password" required><br><br>
-  <input type="hidden" name="count" value="0">
-  <button class="button">Login</button>
  
-		</form> --> 
     <a href="adduser.html"><button class="button">Sign New User</button></a>
 </body>
 </html>
