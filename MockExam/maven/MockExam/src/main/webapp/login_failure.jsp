@@ -7,7 +7,7 @@
 <title>Login failure</title>
 <style>
     body{
-     background-color: lightblue; 
+     background-color:#C2F6A6; 
     /* margin-top:250px;*/
     /* text-align:center;*/
     }

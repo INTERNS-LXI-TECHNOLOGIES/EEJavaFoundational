@@ -85,32 +85,19 @@ input[type=text] {
   </style>
   </head>
 <body>
-<% int mark = Integer.parseInt(request.getAttribute("score").toString()); %>
+<% // int mark = Integer.parseInt(request.getAttribute("score").toString());
+    <% QuestionDatabase db = new QuestionDatabase();
+    ArrayList<User> userList = new ArrayList<User>();
+    userList = db.viewResult(userList); %>
+%>
 
-<li><h1> Thank U For Attending The Exam </h1></li>
-        <li><h1> You Got <%out.println(mark);%> Marks.</h1></li>
-
-        <%
-   
-   if(mark >=1)
-   {
-    %>
-    <h1><%out.println("Congratulations....");%></h1>
-    <h1><%out.println("Exam Passed");%></h1>
-   <%
-   }
-   else
-   {
-    %>
-
-    <h1><%out.println("!! Sorry !!");%></h1><br>
-    <h1><%out.println("Exam Failed");%></h1>
-   <%
-   }
-   %>
-   <br>
-        
+<li><h1> The Persons Who Attented The Exam</h1></li>
+  <li><h1></h1></li>
+  <%  for (int i=0;i<userList.size();i++)  {%>
+   <tr>        
+      <td><br><%out.println("\n"+userList.get(i).getName());%></td>
+      <td><br><%out.println("\n"+userList.get(i).getMark());%></td>
   <a href="index.jsp"><!-- <button type="submit">Home</button> --><input type="submit" class="button" value="Home"></a> 
 
 </body>
-</html>
+</html>        
