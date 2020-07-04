@@ -8,7 +8,7 @@
   <security-constraint>
 		<web-resource-collection>
 			<web-resource-name>MockExam</web-resource-name>
-			<url-pattern>/logining</url-pattern>
+			<url-pattern>/protected/*</url-pattern>
 			<http-method>POST</http-method>
 			<http-method>GET</http-method>
 		</web-resource-collection>

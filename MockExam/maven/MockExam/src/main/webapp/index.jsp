@@ -56,7 +56,7 @@
       <br>
       <br>
       <br>
-    <a href="admin.html"><button class="button">Admin Login</button></a>
+    <a href="protected/admin.html"><button class="button">Admin Login</button></a>
     <a href="adduesr.html"><button class="button">New User</button></a>
     <a href="login.html"><button class="button">Login</button></a>
     </div>
