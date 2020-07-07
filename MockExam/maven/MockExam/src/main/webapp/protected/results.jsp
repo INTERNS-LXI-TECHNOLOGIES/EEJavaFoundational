@@ -111,26 +111,7 @@ input[type=text] {
   <a href="index.jsp"><!-- <button type="submit">Home</button> --><input type="submit" class="button" value="Home"></a> 
 
 
- <!--   <tr>
-      <th>Name</th>
-      <th>Mark</th>
-    </tr>  
-<% // int mark = Integer.parseInt(request.getAttribute("score").toString());
-    <% QuestionDatabase db = new QuestionDatabase();
-    ArrayList<User> userList = new ArrayList<User>();
-    userList = db.viewUserDatabase(userList); %>
-%>
 
-<li><h1> The Persons Who Attented The Exam</h1></li>
-  <li><h1></h1></li>
-  <%  for (int i=0;i<userList.size();i++)  {%>
-   <tr>        
-      <td><br><%out.println("\n"+userList.get(i).getName());%></td>
-      <td><br><%out.println("\n"+userList.get(i).getMark());%></td>
-
-      <%}%></tr> 
-    </table>
-    </form>   -->
 
 </body>
 </html>        
