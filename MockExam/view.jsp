@@ -11,12 +11,12 @@ Statement s = c.createStatement();
 ResultSet r = s.executeQuery("select * from questions");
 %>
 <table>
-<tr><th>Name</th><th>Phone number</th><th>email</th><th>city</th><th>district</th><th>state</th>
+<tr><th>Question</th><th>Answere</th><th>Option-1</th><th>Option-2</th><th>Option-3</th><th>Option-4</th>
 </tr>
 <%
 while(r.next())
 	{
-		String n = r.getString("name");
+		
 		int i=1;
 		%><tr><% 
 		while(i<=6){
