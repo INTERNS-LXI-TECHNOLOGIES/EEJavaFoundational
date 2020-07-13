@@ -11,7 +11,7 @@ Statement s = c.createStatement();
 ResultSet r = s.executeQuery("select * from questions");
 %>
 <table>
-<tr><th>Question</th><th>Answere</th><th>Option-1</th><th>Option-2</th><th>Option-3</th><th>Option-4</th>
+<tr><th>Question</th><th>Answere</th><th>Option-1</th><th>Option-2</th><th>Option-3</th>
 </tr>
 <%
 while(r.next())
@@ -19,7 +19,7 @@ while(r.next())
 		
 		int i=1;
 		%><tr><% 
-		while(i<=6){
+		while(i<6){
 								%><td>
 								<% out.println(r.getString(i));
 								   i++;
