@@ -34,4 +34,32 @@ public class DatabaseRepo
 		}
 		
 	}
+
+	public ArrayList<Question> PrintDatabase()
+	{
+		ArrayList<Question> questions= new ArrayList<Question>;
+		int i = 0;
+		createDatabaseConnection();
+		try
+		{
+			s = con.createStatement();
+			r = s.executeQuery("select * from questions");
+			while(r.next())
+			{
+				questions.add(i,new Question());
+				questions.get(i).setId(rs.getInt("id"));
+				questions.get(i).setQuestion(r.getString("questions"));
+				questions.get(i).setAnswer(r.getString("answere"));
+				questions.get(i).setOption1(r.getString("option1"));
+				questions.get(i).setOption2(r.getString("option2"));
+				questions.get(i).setOption3(r.getString("option3"));
+				i++;		
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();			
+		}
+		return questions;
+	}
 }
