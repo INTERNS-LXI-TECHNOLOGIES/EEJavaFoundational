@@ -1,8 +1,8 @@
-package com.lxisoft;
+package com.lxisoft.model;
 public class Question
 {
     public String question,answere;
-    public String option1,option2,option3,option4;
+    public String option1,option2,option3;
     public void setQuestion(String question)                               
     { 
         this.question = question; 
@@ -20,10 +20,6 @@ public class Question
     {
         this.option3=op3;
     }
-    public void setOption4(String op4)
-    {
-        this.option4=op4;
-    }      
     public void setAnswere(String answere)                       
     {                          
         this.answere=answere;
@@ -44,10 +40,6 @@ public class Question
     {
         return option3;
     }        
-    public String getOption4()
-    {
-        return option4;
-    }       
     public String getAnswere()
     {
         return answere;

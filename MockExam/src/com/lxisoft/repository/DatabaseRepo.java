@@ -1,4 +1,5 @@
 package com.lxisoft.repository;
+import com.lxisoft.model.*;
 import java.sql.*;
 import java.util.*;
 public class DatabaseRepo
@@ -11,7 +12,7 @@ public class DatabaseRepo
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
-			c = DriverManager.getConnection("jdbc:mysql://localhost:3306/mockexam","root","root");
+			con = DriverManager.getConnection("jdbc:mysql://localhost:3306/mockexam","root","root");
 		}
 		catch( Exception e)
 		{
@@ -22,7 +23,15 @@ public class DatabaseRepo
 	public void addToDatabase(Question q)
 	{
 		createDatabaseConnection();
-		s.executeUpdate("insert into questions values('"+q.question+"','"+q.answere+"','"+q.option1+"','"+q.option2+"','"+q.option3+"')");
-
+		try
+		{
+			s=con.createStatement();
+			s.executeUpdate("insert into questions values('"+q.question+"','"+q.answer+"','"+q.option1+"','"+q.option2+"','"+q.option3+"')");	
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
 	}
 }

@@ -1,8 +1,8 @@
-
+package com.lxisoft.model;
 public class Question
 {
-    private String question,answer;
-    private String option1,option2,option3,option4;
+    public String question,answer;
+    public String option1,option2,option3,option4;
     public void setQuestion(String question)                               
     { 
         this.question = question; 
@@ -29,10 +29,6 @@ public class Question
         this.answer=answer;
     }
 
-    public int getId()
-    {
-        return id;
-    }
     public String getQuestion()  
     { 
         return question; 
