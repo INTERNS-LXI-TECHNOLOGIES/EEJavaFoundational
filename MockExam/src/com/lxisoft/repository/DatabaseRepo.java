@@ -37,7 +37,7 @@ public class DatabaseRepo
 
 	public ArrayList<Question> PrintDatabase()
 	{
-		ArrayList<Question> questions= new ArrayList<Question>;
+		ArrayList<Question> questions= new ArrayList<Question>();
 		int i = 0;
 		createDatabaseConnection();
 		try
@@ -47,7 +47,6 @@ public class DatabaseRepo
 			while(r.next())
 			{
 				questions.add(i,new Question());
-				questions.get(i).setId(rs.getInt("id"));
 				questions.get(i).setQuestion(r.getString("questions"));
 				questions.get(i).setAnswer(r.getString("answere"));
 				questions.get(i).setOption1(r.getString("option1"));
@@ -61,5 +60,31 @@ public class DatabaseRepo
 			e.printStackTrace();			
 		}
 		return questions;
+	}
+
+	public void updateDatabase(ArrayList<Question> questions)
+	{
+		createDatabaseConnection();
+		try
+			{
+				s=con.createStatement();
+				s.executeUpdate("truncate table questions");	
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		for(Question q : questions)
+		{
+			try
+			{
+				s=con.createStatement();
+				s.executeUpdate("insert into questions values('"+q.question+"','"+q.answer+"','"+q.option1+"','"+q.option2+"','"+q.option3+"')");	
+			}
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
 	}
 }
