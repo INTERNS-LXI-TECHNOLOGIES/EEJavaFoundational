@@ -21,7 +21,7 @@ questions = db.PrintDatabase();
 int id=1;
 %>
 <table style="background-color:#00FF00">
-<tr><th>Question - Number </th><th>Question</th><th>Answere</th><th>Option-1</th><th>Option-2</th><th>Option-3</th>
+<tr><th>Question - Number </th><th>Question</th><th>Answere</th><th>Option-1</th><th>Option-2</th><th>Option-3</th><th> Select Any operation</th>
 </tr>
 <%
 for(Question q : questions)
@@ -34,7 +34,8 @@ for(Question q : questions)
 		<td><% out.println(q.option1); %></td>
 		<td><% out.println(q.option2); %></td>
 		<td><% out.println(q.option3); %></td>
-        <td><a href="questionDelete?id=<%=questionList.get(i).getId()%>"><button>Delete</button></a></td>
+        <td><a href="DeleteQuestion.jsp?id=<%=id%>"><button>Delete</button>
+        <a href="EditQuestion.jsp?id=<%=id%>"><button>Edit</button></td>
 
 	</tr><%
 	id++;
