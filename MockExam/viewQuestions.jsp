@@ -2,7 +2,7 @@
 <head><title>display</title>
 <style>
 table, th, td {
-  border: 1px solid black;
+  border: 2px solid red;
 }
 table.center {
   margin-left: auto; 

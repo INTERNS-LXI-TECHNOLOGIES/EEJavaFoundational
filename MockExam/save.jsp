@@ -18,7 +18,7 @@ q.option3 = option3;
 db.addToDatabase(q);
 
 %>
-<a href="index.html"><button class="button">Home</button></a>
+<a href="AdminOptions.html"><button class="button">Home</button></a>
 
 
 

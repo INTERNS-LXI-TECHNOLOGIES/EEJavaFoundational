@@ -1,11 +1,31 @@
 <html>
 <head>
 <style>
+	body
+	{
+		background-color: #FF6F61  ;	
+	}
+	.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+ 
+
+  .button:hover {  background-color: black;}
+}	
 </style>
 <title>HomePage</title><head>
 <body>
 <h1 align="center">MOCK EXAM</h1>
-<h4 align="center">Enter Your Details</h4>
+<h4 align="center">Add A New Question</h4>
 
 <form  	align="center" action="save.jsp">
 <table align="center">
@@ -13,7 +33,7 @@
 <td>Eneter the question  :</td><td> <input type="text" name="question"/> </td>
 </tr>
 <tr>
-<td>CORRECT ANSWERE :</td><td> <input type="text" name="answere"/>  </td>
+<td>Correct Answere  :</td><td> <input type="text" name="answere"/>  </td>
 </tr>
 <tr>
 <td>option 1 :</td><td><input type="text" name="opt1"/> <br> </td>
@@ -29,7 +49,8 @@
 <br>
 <br>
 <input type="submit" name="sub" value="submit"> 
-<input type="button" name="cancel" value="cancel"/> 
+<a href="AdminOptions.html">
+<input type="button" name="cancel" value="cancel"/> </a>
 
 
 
