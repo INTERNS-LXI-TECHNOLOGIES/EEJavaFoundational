@@ -86,5 +86,21 @@ public class DatabaseRepo
 				e.printStackTrace();
 			}
 		}
+
+	}
+
+	public void addUser(String name , String regno)
+	{
+		createDatabaseConnection();
+		try
+		{
+			s=con.createStatement();
+			s.executeUpdate("insert into userinfo(name , regno) values('"+name+"','"+regno+"')");	
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+
 	}
 }

@@ -22,6 +22,7 @@ q.option3 = option3;
 DatabaseRepo db = new DatabaseRepo();
 ArrayList<Question> questions= new ArrayList<Question>();
 questions = db.PrintDatabase();
+questions.remove(id-1);
 questions.add(id-1 , q);
 db.updateDatabase(questions);
 %>
