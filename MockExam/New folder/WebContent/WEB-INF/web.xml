@@ -1,0 +1,10 @@
+<web-app>
+<servlet>
+	<servlet-name>addQuestion</servlet-name>
+	<servlet-class>com.lxisoft.contoller.AddQuestionServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+		<servlet-name>addQuestion</servlet-name>
+		<url-pattern>/add</url-pattern>
+</servlet-mapping>
+</web-app>
