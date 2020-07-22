@@ -8,7 +8,7 @@ String name = request.getParameter("name");
 String regno = request.getParameter("regno");
 db.addUser(name,regno);
 %>
-<a href="index.html"><button class="button">Home</button></a>
+<a href="view_user.jsp"><button class="button">view</button></a>
 
 
 
