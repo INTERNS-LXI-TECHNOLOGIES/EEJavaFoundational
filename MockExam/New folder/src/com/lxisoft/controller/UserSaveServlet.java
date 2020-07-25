@@ -11,13 +11,14 @@ import com.lxisoft.repository.DatabaseRepo;
 
 public class UserSaveServlet extends HttpServlet
 {
+	private static final long serialVersionUID = 1L;
 	private DatabaseRepo db = new DatabaseRepo();
 	public void doGet(HttpServletRequest request , HttpServletResponse response) throws IOException,ServletException
 	{
 		String name = request.getParameter("name"); 
 		String regno = request.getParameter("regno");
 		db.addUser(name,regno);
-		response.sendRedirect("index.html");
+		response.sendRedirect("useroptions.html");
 	}
 
 }
