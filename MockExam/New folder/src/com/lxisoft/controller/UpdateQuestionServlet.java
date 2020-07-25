@@ -11,18 +11,25 @@ import javax.servlet.http.HttpServletResponse;
 import com.lxisoft.model.Question;
 import com.lxisoft.repository.DatabaseRepo;
 
-public class DeleteQuestionServlet extends HttpServlet  
+public class UpdateQuestionServlet extends HttpServlet
 {
-	private static final long serialVersionUID = 1L;
+
+	private Question question=new Question();
 	private DatabaseRepo db = new DatabaseRepo();
-	private ArrayList<Question> questions= new ArrayList<Question>();
-	public void doGet(HttpServletRequest request , HttpServletResponse response) throws IOException,ServletException
+	private ArrayList<Question> questions = new ArrayList<Question>();
+	public void doGet(HttpServletRequest request , HttpServletResponse response) throws ServletException, IOException
 	{
 		int id = Integer.parseInt(request.getParameter("id"));
+		question.setQuestion(request.getParameter("question"));
+		question.setAnswer(request.getParameter("answere"));
+		question.setOption1(request.getParameter("opt1"));
+		question.setOption2(request.getParameter("opt2"));
+		question.setOption3(request.getParameter("opt3"));
 		questions = db.PrintDatabase();
 		questions.remove(id-1);
+		questions.add(id-1 , question);
 		db.updateDatabase(questions);
 		response.sendRedirect("AdminOptions.html");
-		
 	}
+
 }

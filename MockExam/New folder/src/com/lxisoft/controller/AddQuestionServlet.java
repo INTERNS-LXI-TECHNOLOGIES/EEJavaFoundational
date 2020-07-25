@@ -21,7 +21,8 @@ public class AddQuestionServlet extends HttpServlet
 		question.setOption2(request.getParameter("opt2"));
 		question.setOption3(request.getParameter("opt3"));
 		db.addToDatabase(question);
-		response.sendRedirect("viewQuestions.jsp");
+		response.sendRedirect("AdminOptions.html");
+		
 		}
 		catch(Exception e)
 		{

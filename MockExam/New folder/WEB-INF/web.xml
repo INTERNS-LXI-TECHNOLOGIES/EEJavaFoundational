@@ -18,4 +18,23 @@
     <servlet-name>DeleteQuestion</servlet-name>
     <url-pattern>/DeleteQuestion</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>UpdateQuestion</servlet-name>
+    <servlet-class>com.lxisoft.controller.UpdateQuestionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateQuestion</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+  
+    <servlet>
+    <servlet-name>SaveUser</servlet-name>
+    <servlet-class>com.lxisoft.controller.UserSaveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveUser</servlet-name>
+    <url-pattern>/saveuser</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

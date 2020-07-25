@@ -43,12 +43,12 @@ h1 {
 				<td><% out.println(q.option2); %></td>
 				<td><% out.println(q.option3); %></td>
 		        <td><a href="DeleteQuestion?id=<%=id%>"><button>Delete</button>
-		        <a href="EditQuestion?id=<%=id%>"><button>Edit</button></td>
+		        <a href="EditQuestion.jsp?id=<%=id%>"><button>Edit</button></td>
 
 			</tr><%
 			id++;
 		}
 		%>
-		<td> <a href="index.html"><button class="View Question">Go Back </button></a></td>
+		</table>
 </body>
 </html>
