@@ -1,4 +1,9 @@
 <html>
+
+	<%@ page import="com.lxisoft.repository.*"%>
+	<%@ page import="com.lxisoft.model.*"%>
+	<%@ page import="java.sql.*"%>
+	<%@ page import="java.util.*"%>
   <head>
     <title>Start-Exam</title>
     	<style>
@@ -34,12 +39,25 @@
   </head>
   <body>
   <%
-  int count = 1;
+  int i = 0;
   DatabaseRepo db = new DatabaseRepo();
-  ArrayList<Question> questions = new ArrayList<question>();
-  questions = db.printDatabase();
+  ArrayList<Question> questions = new ArrayList<Question>();
+  questions = db.PrintDatabase();
   
   
      %>
+     
+     <h1>Question - <% out.println(i+1); %></h1>
   
+		<form id="exam"; style= "text-align:left" action="addMark">				
+			<li>Question :<%out.println(questions.get(i).getQuestion()+"?");%></li>
+			<input type="radio" name="scores" id="1" value="1">
+ 			<label><%out.println(questions.get(i).getOption1());%></label><br>
+ 			<input type="radio" name="scores" id="2" value="2">
+ 			<label><%out.println(questions.get(i).getOption2());%></label><br>
+ 			<input type="radio" name="scores" id="3" value="3">
+ 			<label><%out.println(questions.get(i).getOption3());%></label><br>
+ 			<input type="radio" name="scores" id="4" value="4">
+ 			<label><%out.println(questions.get(i).getAnswer());%></label><br>
+ 		</form>
   </body>
