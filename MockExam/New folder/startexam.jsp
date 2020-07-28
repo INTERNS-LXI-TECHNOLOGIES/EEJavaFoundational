@@ -19,7 +19,7 @@
 			}
 .button {
   padding: 15px 25px;
-  font-size: 24px;
+  font-size: 11px;
   text-align: center;
   cursor: pointer;
   outline: none;
@@ -39,17 +39,12 @@
   </head>
   <body>
   <%
-  int i = 0;
+  int i= 0;
   DatabaseRepo db = new DatabaseRepo();
   ArrayList<Question> questions = new ArrayList<Question>();
   questions = db.PrintDatabase();
-  
-  
-     %>
-     
-     <h1>Question - <% out.println(i+1); %></h1>
-  
-		<form id="exam" style= "text-align:left" action="setMark">				
+ %>
+<form id="Question"; style= "text-align:left" action="setMark">				
 			<li>Question :<%out.println(questions.get(i).getQuestion());%></li>
 			<input type="radio" name="scores" id="1" value="1">
  			<label><%out.println(questions.get(i).getOption1());%></label><br>
@@ -59,8 +54,10 @@
  			<label><%out.println(questions.get(i).getOption3());%></label><br>
  			<input type="radio" name="scores" id="4" value="4">
  			<label><%out.println(questions.get(i).getAnswer());%></label><br>
- 		<% i=i+1;%>
- 			<input type="hidden" name ="qcount" value = "<% =i+1; %>" >
- 			 <a href="setMark"><button id="setmark" class="button">SUBMIT</button></a>
- 		</form>
+ <%i++; 
+ out.println(i);%>
+<a href="setMark"><button id="setmark" class="button">SUBMIT</button></a>
+ </form>
+ 
+     
   </body>
