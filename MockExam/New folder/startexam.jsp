@@ -39,11 +39,13 @@
   </head>
   <body>
   <%
-  
-  int i= Integer.parseInt(request.getParameter("qCount"));
+  HttpSession sessions = request.getSession(true);
+  int i= (Integer)sessions.getAttribute("question_count");
   DatabaseRepo db = new DatabaseRepo();
   ArrayList<Question> questions = new ArrayList<Question>();
   questions = db.PrintDatabase();
+  if(i<questions.size());
+  {
  %>
 <form id="Question"; style= "text-align:left" action="setMark">				
 			<li>Question :<%out.println(questions.get(i).getQuestion());%></li>
@@ -55,10 +57,16 @@
  			<label><%out.println(questions.get(i).getOption3());%></label><br>
  			<input type="radio" name="scores" id="4" value="4">
  			<label><%out.println(questions.get(i).getAnswer());%></label><br>
- <%i++; 
- out.println(i);%>
-  <input type="hidden" name="qCount" value="<%=i%>">
-<a href="setMark"><button id="setmark" class="button">SUBMIT</button></a>
+ <%i++;
+ session.setAttribute("question_count",i);
+  }
+else
+ {
+	 out.println("Last questions");
+ }
+ %>
+<input type="hidden" name="qCount" value="<%=i%>">
+<button id="setmark" class="button">SUBMIT</button>
  </form>
  
      

@@ -46,4 +46,14 @@
     <url-pattern>/setMark</url-pattern>
   </servlet-mapping>
   
+  
+    <servlet>
+    <servlet-name>SetExam</servlet-name>
+    <servlet-class>com.lxisoft.controller.ExamSetupServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetExam</servlet-name>
+    <url-pattern>/SetExam</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
