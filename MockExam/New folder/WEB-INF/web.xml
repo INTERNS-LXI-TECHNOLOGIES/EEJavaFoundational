@@ -37,4 +37,13 @@
     <url-pattern>/save</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+    <servlet-name>SetAnswere</servlet-name>
+    <servlet-class>com.lxisoft.controller.SetAnswereServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SetAnswere</servlet-name>
+    <url-pattern>/setMark</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

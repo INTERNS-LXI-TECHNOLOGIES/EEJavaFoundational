@@ -39,7 +39,8 @@
   </head>
   <body>
   <%
-  int i= 0;
+  
+  int i= Integer.parseInt(request.getParameter("qCount"));
   DatabaseRepo db = new DatabaseRepo();
   ArrayList<Question> questions = new ArrayList<Question>();
   questions = db.PrintDatabase();
@@ -56,6 +57,7 @@
  			<label><%out.println(questions.get(i).getAnswer());%></label><br>
  <%i++; 
  out.println(i);%>
+  <input type="hidden" name="qCount" value="<%=i%>">
 <a href="setMark"><button id="setmark" class="button">SUBMIT</button></a>
  </form>
  
