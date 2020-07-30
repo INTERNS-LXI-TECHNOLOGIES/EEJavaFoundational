@@ -13,7 +13,10 @@ public class SetMarkServlet extends HttpServlet
 	private static final long serialVersionUID = 1L;
 	public void doGet(HttpServletRequest request ,HttpServletResponse response) throws ServletException, IOException
 	{
-		HttpSession session = request.getSession(false);
+		HttpSession sessions = request.getSession(false);
+		int qId =(Integer)sessions.getAttribute("question_count");
+		int option = Integer.parseInt(request.getParameter("options"));
+		
 		request.getRequestDispatcher("startexam.jsp").forward(request,response);
 	}
 }

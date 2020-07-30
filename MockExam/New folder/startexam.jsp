@@ -44,26 +44,28 @@
   DatabaseRepo db = new DatabaseRepo();
   ArrayList<Question> questions = new ArrayList<Question>();
   questions = db.PrintDatabase();
-  if(i<questions.size());
+ // out.println("size = " + questions.size()+ "i= " + i);
+  if(i<questions.size())
   {
  %>
 <form id="Question"; style= "text-align:left" action="setMark">				
 			<li>Question :<%out.println(questions.get(i).getQuestion());%></li>
-			<input type="radio" name="scores" id="1" value="1">
+			<input type="radio" name="options" id="1" value="1">
  			<label><%out.println(questions.get(i).getOption1());%></label><br>
- 			<input type="radio" name="scores" id="2" value="2">
+ 			<input type="radio" name="options" id="2" value="2">
  			<label><%out.println(questions.get(i).getOption2());%></label><br>
- 			<input type="radio" name="scores" id="3" value="3">
+ 			<input type="radio" name="options" id="3" value="3">
  			<label><%out.println(questions.get(i).getOption3());%></label><br>
- 			<input type="radio" name="scores" id="4" value="4">
+ 			<input type="radio" name="options" id="4" value="4">
  			<label><%out.println(questions.get(i).getAnswer());%></label><br>
  <%i++;
  session.setAttribute("question_count",i);
   }
-else
- {
-	 out.println("Last questions");
- }
+  else
+  {
+	  alert()
+  }
+//	 out.println("Last questions");
  %>
 <input type="hidden" name="qCount" value="<%=i%>">
 <button id="setmark" class="button">SUBMIT</button>
