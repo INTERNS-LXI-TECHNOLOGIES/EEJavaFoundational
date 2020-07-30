@@ -14,7 +14,7 @@ public class SetAnswereServlet extends HttpServlet
 	public  void doGet(HttpServletRequest request , HttpServletResponse response) throws IOException 
 	{
 		HttpSession session = request.getSession();
-		response.sendRedirect("startexam.jsp");
+		//response.sendRedirect("startexam.jsp");
 		
 		
 	}

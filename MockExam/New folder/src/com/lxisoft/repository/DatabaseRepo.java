@@ -103,4 +103,19 @@ public class DatabaseRepo
 		}
 
 	}
+	
+	public void addResult(String regno , int mark)
+	{
+		createDatabaseConnection();
+		try
+		{
+			s=con.createStatement();
+			s.executeUpdate("update userinfo set mark = " + mark +" where regno = '" + regno +"'");
+
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
 }

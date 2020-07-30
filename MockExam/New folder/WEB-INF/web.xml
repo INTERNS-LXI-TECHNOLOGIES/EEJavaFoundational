@@ -39,14 +39,21 @@
   
   <servlet>
     <servlet-name>SetAnswere</servlet-name>
-    <servlet-class>com.lxisoft.controller.SetAnswereServlet</servlet-class>
+    <servlet-class>com.lxisoft.controller.SetMarkServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>SetAnswere</servlet-name>
     <url-pattern>/setMark</url-pattern>
   </servlet-mapping>
   
-  
+   <servlet>
+    <servlet-name>printResult</servlet-name>
+    <servlet-class>com.lxisoft.controller.PrintResultServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>printResult</servlet-name>
+    <url-pattern>/viewResult</url-pattern>
+  </servlet-mapping>
     <servlet>
     <servlet-name>SetExam</servlet-name>
     <servlet-class>com.lxisoft.controller.ExamSetupServlet</servlet-class>

@@ -39,12 +39,12 @@
   </head>
   <body>
   <%
-  HttpSession sessions = request.getSession(true);
+  HttpSession sessions = request.getSession(false);
   int i= (Integer)sessions.getAttribute("question_count");
   DatabaseRepo db = new DatabaseRepo();
   ArrayList<Question> questions = new ArrayList<Question>();
   questions = db.PrintDatabase();
- // out.println("size = " + questions.size()+ "i= " + i);
+ out.println("size = " + questions.size()+ "i= " + i);
   if(i<questions.size())
   {
  %>
@@ -58,12 +58,13 @@
  			<label><%out.println(questions.get(i).getOption3());%></label><br>
  			<input type="radio" name="options" id="4" value="4">
  			<label><%out.println(questions.get(i).getAnswer());%></label><br>
- <%i++;
+ <%
+ i++;
  session.setAttribute("question_count",i);
   }
   else
   {
-	  alert()
+	  response.sendRedirect("viewResult");
   }
 //	 out.println("Last questions");
  %>
