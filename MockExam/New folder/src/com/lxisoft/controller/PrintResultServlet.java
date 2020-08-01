@@ -21,8 +21,9 @@ public class PrintResultServlet extends HttpServlet
 		HttpSession sessions = request.getSession(false);
 		String userId =(String) sessions.getAttribute("userId");
 		int userMark = (Integer) sessions.getAttribute("userMark");
-		pw.println("mark = "+userMark);
+		//pw.println("mark = "+userMark);
 		db.addResult(userId , userMark);
+		request.getRequestDispatcher("Result.jsp").forward(request,response);
 	}
 
 }
