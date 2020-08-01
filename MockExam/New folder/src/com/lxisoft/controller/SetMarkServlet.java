@@ -23,10 +23,18 @@ public class SetMarkServlet extends HttpServlet
 		PrintWriter pw = response.getWriter();
 		HttpSession sessions = request.getSession(false);
 		int userMark = (Integer)sessions.getAttribute("userMark");
+		int option;
 		questions = db.PrintDatabase();
+		
 		int qId =(Integer)sessions.getAttribute("question_count");
 		qId=qId-1;
-		int option = Integer.parseInt(request.getParameter("options"));
+		try{
+		option = Integer.parseInt(request.getParameter("options"));
+		}
+		catch(NumberFormatException e)
+		{
+			option = 0;
+		}
 		String userChoice = "";
 		pw.println("mark = "+userMark);
 		switch(option)
@@ -39,6 +47,9 @@ public class SetMarkServlet extends HttpServlet
 		 	     break;
 		case 4 : userChoice = questions.get(qId).getAnswer();
 		 		 break;
+		 		 
+		default : userChoice = "";
+				  break;
 		}
 		
 		if(userChoice.equals((questions).get(qId).getAnswer()))
