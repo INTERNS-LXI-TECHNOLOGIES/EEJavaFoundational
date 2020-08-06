@@ -1,0 +1,62 @@
+<html>
+	
+	<head>
+		<title>Login User</title>
+			<style>
+		body{
+		 background-color: #f7cac9  ;	
+		 margin-top:250px;
+		 text-align:center;
+		}
+
+		h1 {
+  			color: black;
+  			text-align: center;
+  			font-family: verdana;
+			}
+	.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+ 
+
+  .button:hover {  background-color: black;}
+}	
+	</style>
+	</head>
+	<body>
+			<h1>Login Details</h1>
+		<form  method="GET"  >
+			
+			Name : &nbsp &nbsp&nbsp<input type="text" placeholder="Admin UserName" name="username" required><br><br>
+			Password :<input type="password" placeholder="Admin  Password" name="password" required><br><br>
+		
+		<input type="button" class="button" value="Login" onclick="check(this.form)">
+		</form>
+		<a href="index.html"><input type="submit" class="button" value="Home"></a>	
+
+		<script language="javascript">
+		function check(form)/*function to check userid & password*/
+		{
+		 /*the following code checkes whether the entered userid and password are matching*/
+		 if(form.username.value == "admin" && form.password.value == "admin")
+		  {
+		    window.open("AdminOptions.html","_self")/*opens the target page while Id & password matches*/
+		  }
+		 else
+		 {
+		  	alert("Error Password or Username")/*displays error message*/
+		 }
+		}
+		</script>
+		
+	</body>
+</html>
