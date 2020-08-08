@@ -2,7 +2,8 @@
 <head><title>display</title>
 <style>
 table, th, td {
-  border: 2px solid red;
+  border: .1px solid black;
+  border-style: dotted;
 }
 table.center {
   margin-left: auto; 
@@ -13,6 +14,7 @@ h1 {
   			text-align: center;
   			font-family: courier;
 			}
+
 </style>
 </head>
 <body>
@@ -28,7 +30,8 @@ h1 {
 	questions = db.PrintDatabase();
 	int id=1;
 	%>
-	<table style="background-color:#00FF00" align="center">
+	
+	<table style="background-color:#FFF8DC	" align="center">
 		<tr><th>Question - Number </th><th>Question</th><th>Answere</th><th>Option-1</th><th>Option-2</th><th>Option-3</th><th> Select Any operation</th>
 		</tr>
 		<%
@@ -42,12 +45,13 @@ h1 {
 				<td><% out.println(q.option1); %></td>
 				<td><% out.println(q.option2); %></td>
 				<td><% out.println(q.option3); %></td>
-		        <td><a href="DeleteQuestion.jsp?id=<%=id%>"><button>Delete</button>
+		        <td><a href="DeleteQuestion?id=<%=id%>"><button>Delete</button>
 		        <a href="EditQuestion.jsp?id=<%=id%>"><button>Edit</button></td>
 
 			</tr><%
 			id++;
 		}
 		%>
+		</table>
 </body>
 </html>
