@@ -8,5 +8,26 @@
   <servlet-mapping>
     <servlet-name>add</servlet-name>
     <url-pattern>/add</url-pattern>
-  </servlet-mapping>  
+  </servlet-mapping>
+
+
+   <servlet>
+    <servlet-name>DeleteQuestion</servlet-name>
+    <servlet-class>com.lxisoft.controller.DeleteQuestionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DeleteQuestion</servlet-name>
+    <url-pattern>/DeleteQuestion</url-pattern>
+  </servlet-mapping>
+  
+
+   <servlet>
+    <servlet-name>UpdateQuestion</servlet-name>
+    <servlet-class>com.lxisoft.controller.UpdateQuestionServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateQuestion</servlet-name>
+    <url-pattern>/update</url-pattern>
+  </servlet-mapping>
+    
 </web-app>
