@@ -1,5 +1,27 @@
 <html>
 <head><title>Delete Question</title>
+<style>
+	body
+	{
+		background-color: #FF6F61  ;	
+	}
+	.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+ 
+
+  .button:hover {  background-color: black;}
+}	
+</style>
 </head>
 <body>
 <%@ page import="com.lxisoft.repository.*"%>
@@ -14,6 +36,13 @@ ArrayList<Question> questions= new ArrayList<Question>();
 questions = db.PrintDatabase();
 Question q = questions.get(id-1);
 %>
+<div align="center" style="background-color:#B22222;">
+		<br>
+		<br>
+		<font size="9">Edit Question</font>
+		<br>
+		<br>
+</div>
 <form  	align="center" action="update">
 <table align="center">
 <tr>
@@ -44,5 +73,5 @@ db.updateDatabase(questions);
 <a href="AdminOptions.html">
       <button class="Admin Menu ">Admin Menu</button>
       </a>
-
+</form>
 </html>
