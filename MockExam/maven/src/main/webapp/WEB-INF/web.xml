@@ -62,5 +62,26 @@
     <servlet-name>SetExam</servlet-name>
     <url-pattern>/SetExam</url-pattern>
   </servlet-mapping>
-  
+      <security-role>
+      <role-name>admin</role-name>
+    </security-role>
+
+    <security-role>
+      <role-name>user</role-name>
+    </security-role>
+
+    <security-constraint>
+      <web-resource-collection>
+         <web-resource-name>MockExam</web-resource-name>
+         <url-pattern>/usersignup</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+      </web-resource-collection>
+      
+      <auth-constraint>
+         <role-name>admin</role-name>
+         <role-name>user</role-name>
+      </auth-constraint>
+
+      </security-constraint>
 </web-app>
