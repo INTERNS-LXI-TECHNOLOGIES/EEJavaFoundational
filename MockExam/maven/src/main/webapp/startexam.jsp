@@ -78,7 +78,7 @@
  	}
  	else
  	{
- 		alert
+ 		 alert("Time out \n Move to next Question");
  		reLoad();
  	}
  }
@@ -132,5 +132,6 @@
 <input type="hidden" name="qCount" value="<%=i%>">
 <button id="setmark" class="button">SUBMIT</button>
  </form>
+</div>
 </div>
   </body>

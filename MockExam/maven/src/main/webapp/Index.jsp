@@ -1,7 +1,6 @@
 <html>
-
 <head>
-<title>Login User</title>
+<title>Mock Exam</title>
 <style>
 body {
 	background-color: #f7cac9;
@@ -35,15 +34,12 @@ h1 {
 </style>
 </head>
 <body>
-	<h1>Login Details</h1>
-	<form method="POST" action="j_security_check">
-		username :<input type="text" placeholder=" UserName" name="j_username" required><br>
-		Password :<input type="password" placeholder="  Password" name="j_password" required><br>
-		<br> <input type="submit" value="signin">
-	</form>
-	<input type="submit" class="button" value="Home">
-
-
-
+<% session.invalidate(); %>
+	<div align="center">
+		<h1>MockExam</h1>
+			<form align = "center" height= "50"%>
+				<button formaction="login" class="button">LOGIN</button> 
+			</form>
+	</div>
 </body>
 </html>
