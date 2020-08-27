@@ -39,6 +39,7 @@ h1 {
 		<h1>MockExam</h1>
 			<form align = "center" height= "50"%>
 				<button formaction="login" class="button">LOGIN</button> 
+				<button formaction="register.jsp" class="button">Register</button> 
 			</form>
 	</div>
 </body>
