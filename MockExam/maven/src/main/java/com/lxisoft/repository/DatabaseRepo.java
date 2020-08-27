@@ -89,20 +89,6 @@ public class DatabaseRepo
 
 	}
 
-	public void addUser(String name , String regno)
-	{
-		createDatabaseConnection();
-		try
-		{
-			s=con.createStatement();
-			s.executeUpdate("insert into userinfo(name , regno) values('"+name+"','"+regno+"')");	
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-
-	}
 	
 	public void addResult(String regno , int mark)
 	{
@@ -112,6 +98,34 @@ public class DatabaseRepo
 			s=con.createStatement();
 			s.executeUpdate("update userinfo set mark = " + mark +" where regno = '" + regno +"'");
 
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void addUser(String username , String password)
+	{
+		createDatabaseConnection();
+		try
+		{
+			s=con.createStatement();
+			s.executeUpdate("Insert into users(username,password) values('"+username+"','"+password+"')");
+
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+	}
+	
+	public void userRoles(String username,String password)
+	{
+		try
+		{
+			s=con.createStatement();
+			s.executeUpdate( "Insert into users_roles(username,rolename) values('"+username+"','user')");
 		}
 		catch(Exception e)
 		{
