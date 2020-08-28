@@ -105,14 +105,14 @@ public class DatabaseRepo
 		}
 	}
 	
-	public void addUser(String username , String password)
+	public void addUser(String username , String password,String userRole)
 	{
 		createDatabaseConnection();
 		try
 		{
 			s=con.createStatement();
 			s.executeUpdate("Insert into users(user_name,user_pass) values('"+username+"','"+password+"')");
-			this.setUserRoles(username,password);
+			this.setUserRoles(username,password,userRole);
 
 		}
 		catch(Exception e)
@@ -121,12 +121,12 @@ public class DatabaseRepo
 		}
 	}
 	
-	public void setUserRoles(String username,String password)
+	public void setUserRoles(String username,String password,String userRole)
 	{
 		try
 		{
 			s=con.createStatement();
-			s.executeUpdate( "Insert into user_roles(user_name,role_name) values('"+username+"','user')");
+			s.executeUpdate( "Insert into user_roles(user_name,role_name) values('"+username+"','"+userRole+"')");
 		}
 		catch(Exception e)
 		{

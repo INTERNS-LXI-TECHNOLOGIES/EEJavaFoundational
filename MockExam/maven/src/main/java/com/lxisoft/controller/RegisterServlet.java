@@ -16,8 +16,9 @@ public class RegisterServlet extends HttpServlet
 	{
 		String name = request.getParameter("username"); 
 		String pass = request.getParameter("password");
+		String role = request.getParameter("role");
 		
-		db.addUser(name, pass);
+		db.addUser(name, pass,role);
 		
 		response.sendRedirect("login");
 		

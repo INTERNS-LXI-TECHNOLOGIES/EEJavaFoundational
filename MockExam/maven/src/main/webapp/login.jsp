@@ -4,9 +4,15 @@
 <title>Login User</title>
 <style>
 body {
-	background-color: #f7cac9;
+	background-color:#FF6F61;
 	text-align: center;
+	
 }
+ th, td { 
+                width:150px; 
+                text-align:center; 
+                padding:100px 
+                border-spacing:0 15px;
 
 h1 {
 	color: black;
@@ -35,7 +41,14 @@ h1 {
 </style>
 </head>
 <body>
-	<h1>Login Details</h1>
+<div align="center" style="background-color:#B22222;">
+		<br>
+		<br>
+		<font size="9">Login Details </font>
+		<br>
+		<br>
+</div>
+<div  style="padding-top: 6%;">
 	<form method="POST" action="j_security_check">
 		<table align="center">
 			<tr>
@@ -50,8 +63,10 @@ h1 {
 			<tr>
 				<td><input type="submit" value="sign in" class="button"></td>
 				<td><a href="Index.jsp"> <input type="button" class="button" value="Home"></a> </td>
+				</table>
 	</form>
-</table>
+	</div>
+
 
 
 
