@@ -15,7 +15,7 @@ h1 {
 }
 
 .button {
-	padding: 15px 25px;
+	padding: 10px 10px;
 	font-size: 24px;
 	text-align: center;
 	cursor: pointer;
@@ -37,11 +37,21 @@ h1 {
 <body>
 	<h1>Login Details</h1>
 	<form method="POST" action="j_security_check">
-		username :<input type="text" placeholder=" UserName" name="j_username" required><br>
-		Password :<input type="password" placeholder="  Password" name="j_password" required><br>
-		<br> <input type="submit" value="signin">
+		<table align="center">
+			<tr>
+				<td>User Name :</td>
+				<td><input type="text" placeholder=" UserName" name="j_username" required></td>
+			</tr>
+			<tr>
+				<td>Password :</td>
+				<td><input type="password" placeholder="  Password" name="j_password" required></td>
+			</tr>
+	
+			<tr>
+				<td><input type="submit" value="sign in" class="button"></td>
+				<td><a href="Index.jsp"> <input type="button" class="button" value="Home"></a> </td>
 	</form>
-	<input type="submit" class="button" value="Home">
+</table>
 
 
 

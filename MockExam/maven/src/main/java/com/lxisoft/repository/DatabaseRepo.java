@@ -111,7 +111,8 @@ public class DatabaseRepo
 		try
 		{
 			s=con.createStatement();
-			s.executeUpdate("Insert into users(username,password) values('"+username+"','"+password+"')");
+			s.executeUpdate("Insert into users(user_name,user_pass) values('"+username+"','"+password+"')");
+			this.setUserRoles(username,password);
 
 		}
 		catch(Exception e)
@@ -120,16 +121,37 @@ public class DatabaseRepo
 		}
 	}
 	
-	public void userRoles(String username,String password)
+	public void setUserRoles(String username,String password)
 	{
 		try
 		{
 			s=con.createStatement();
-			s.executeUpdate( "Insert into users_roles(username,rolename) values('"+username+"','user')");
+			s.executeUpdate( "Insert into user_roles(user_name,role_name) values('"+username+"','user')");
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
+	}
+	
+	public String getRole(String username)
+	{
+		String role = "none";
+		createDatabaseConnection();
+		try
+		{
+			s = con.createStatement();
+			r = s.executeQuery("select role_name from user_roles where user_name = '" + username+"'");
+			while(r.next())
+			{
+				role = r.getString(1);
+
+			}
+		}
+		catch(SQLException e)
+		{
+			e.printStackTrace();			
+		}
+		return role;
 	}
 }

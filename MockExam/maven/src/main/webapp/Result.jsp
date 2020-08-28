@@ -53,7 +53,7 @@
 	 String rNum = sessions.getAttribute("userId").toString();
 	 int totalMark = Integer.parseInt(mark);
 	 %>
-	  <h1><%out.println("Register Number  : "+rNum);%></h1>
+ 	 <h1><%out.println("Register Number  : "+rNum);%></h1>
 	 <h1><%out.println("Your Mark Is : "+totalMark);%></h1>
 	 <%
 	 
@@ -73,7 +73,7 @@
 	 }
 	 %>
 	 <br>
-	 <button type="submit" formaction="index.html" class="button">START EXAM AGAIN</button>
+	 <button type="submit" formaction="Index.jsp" class="button">START EXAM AGAIN</button>
 </form>
 </div>
 	</body>

@@ -11,15 +11,15 @@
 		<table align="center">
 			<tr>
 				<td>Name :</td>
-				<td><input type="text" name="name" /></td>
+				<td><input type="text" name="username" /></td>
 			</tr>
 			<tr>
 				<td>Register Number :</td>
-				<td><input type="text" name="regno" /></td>
+				<td><input type="text" name="password" /></td>
 			</tr>
 			<tr>
 				<td></td>
-				<td><button formaction="" class="button">Register</button></td>
+				<td><button formaction="register" class="button">Register</button></td>
 			</tr>
 		</table>
 	</form>
