@@ -3,11 +3,15 @@ import com.lxisoft.files.File;
 
 
 import java.util.*;
+import java.io.*;
+import java.io.FileWriter;
+import java.util.ArrayList;
 public class Movie{
 	
 	Director director=new Director();
 	Producer producer=new Producer();
 	Comedian comedian=new Comedian();
+    FileReppo filereppo=new FileReppo();
 
 	Actors actors=new Actors();
 
@@ -41,8 +45,26 @@ public class Movie{
         
         
         comedian.setcomedianDialoges();
+        filereppo.fileCreation();
+        
 
 	}
+
+    public void writeToFile(String name){
+        
+
+        try{
+            FileOutputStream writeData = new FileOutputStream("newfile.txt");
+            ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
+
+            writeStream.writeObject(actors.comedian.comedianScript);
+            writeStream.flush();
+            writeStream.close();
+
+            }catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
 	
 

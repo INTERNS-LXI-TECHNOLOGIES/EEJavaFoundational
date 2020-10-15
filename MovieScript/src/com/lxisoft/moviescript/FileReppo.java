@@ -1,12 +1,15 @@
 package com.lxisoft.moviescript;
 import java.io.*;
+import java.io.FileWriter;
+import java.util.ArrayList;
+
 
 import java.util.Scanner;
 
 public class FileReppo{
 
 	public void fileCreation(){
-		File file = new File("new file.txt");
+		File file = new File("newfile.txt");
 		 try {
 	    	
 	  	file.createNewFile();
@@ -16,15 +19,6 @@ public class FileReppo{
 	  }
 	}
 
-	public void writeToFile(String name){
-		try{
-		FileWritter mywritter=new FileWritter("Result.txt",true);
-		mywritter.write(name+" wins\n");
-		myWritter.close();
-		}catch(IOException e){
-			System.out.println("ERROR");
-			
-		}
-	}
+	
 
 }
