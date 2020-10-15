@@ -1,19 +1,23 @@
 package com.lxisoft.moviescript;
-import com.lxisoft.moviescript.Movie;
+
 import java.util.*;
 public class Comedian{
 	 public ArrayList<String> comedianScript = new ArrayList<String>();
-	 private String comedianDialogue;
+	  Random random=new Random();
+	 private String randomComedianDialogue;
 	public void setcomedianDialogue(String a){
-		this.comedianDialogue=a;
+		this.randomComedianDialogue=a;
 
 	}
 	public String getcomedianDialogue(){
-		return comedianDialogue;
+		return randomComedianDialogue;
 	}
 
 	 public void setcomedianDialoges(){
-	 	
+	 	comedianScript.add("COMEDIAN: what................");
+		comedianScript.add("COMEDIAN: HE WAS GOOD FOR NOTHING YOU KEEP HIM");
+
+		System.out.println(comedianScript.get(random.nextInt(comedianScript.size())));
 
         
     }

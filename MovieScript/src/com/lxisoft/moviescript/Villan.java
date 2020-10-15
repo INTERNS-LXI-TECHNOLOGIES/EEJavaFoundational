@@ -13,7 +13,9 @@ public class Villan{
 	}
 
 	public void villanDialogueMethod(){
-		 villanScript.get(0).setvillanDialogue(" YOUR SON  IS UNDER MY CUSTODY");
+		villanScript.add("YOUR SON IS UNDER MY CUSTODY");
+		villanScript.add("IF YOU WANT TO RELEASE HIM GIVE MY 5 LAKHS");
+		
 		
 	}
 
