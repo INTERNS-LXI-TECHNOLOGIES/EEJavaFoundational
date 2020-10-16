@@ -14,8 +14,10 @@ public class Comedian{
 	}
 
 	 public void setcomedianDialoges(){
-	 	comedianScript.add("COMEDIAN: what................");
-		comedianScript.add("COMEDIAN: HE WAS GOOD FOR NOTHING YOU KEEP HIM");
+
+	 	System.out.println("\n SCENE 1");
+	 	comedianScript.add("\n COMEDIAN: what................");
+		comedianScript.add("\n COMEDIAN: HE WAS GOOD FOR NOTHING YOU KEEP HIM");
 
 		System.out.println(comedianScript.get(random.nextInt(comedianScript.size())));
 
