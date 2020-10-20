@@ -1,9 +1,7 @@
 package com.lxisoft.moviescript;
 import java.io.*;
-import java.io.FileWriter;
-import java.io.FileNotFoundException; 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
 
 import java.util.Scanner;
@@ -11,31 +9,24 @@ import java.util.Scanner;
 public class FileReppo{
 
 	public void fileCreation(){
-		File file = new File("newfile.txt");
-		 try {
-	    	
-	  	file.createNewFile();
-	  }
-	  catch(Exception ex){
-	  	System.out.println(" "+ex);
-	  }
+		try{
+
+			File file=new File("F:\\Program files\\EEJavaFoundational\\MovieScript\\src\\com\\lxisoft\\moviescript\\File1.txt");
+			if(file.createNewFile()){
+				System.out.println("FILE CREATED:"+file.getName());
+
+			}
+			else{
+				System.out.println("FILE ALREADY EXITS");
+			}
+		}
+		catch(IOException e){
+			System.out.println("An error occured");
+			e.printStackTrace();
+		}
+		
+
+
+
 	}
-
-	public void readFromFile(){
-    	
-    
-      			Scanner myReader = new Scanner("newfile.txt");
-      			while (myReader.hasNextLine()) {
-        		String data = myReader.nextLine();
-        		System.out.println(data);
-      	
-      		myReader.close();
-    
-    	}
-
-  	}
-
-
-
-
 }

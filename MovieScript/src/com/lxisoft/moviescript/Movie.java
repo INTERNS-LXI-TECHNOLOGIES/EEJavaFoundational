@@ -55,6 +55,7 @@ public class Movie{
         System.out.println("************************************************************************************************");
         comedian.setcomedianDialoges();
         filereppo.fileCreation();
+        
 
 
             }
@@ -62,21 +63,7 @@ public class Movie{
 
     }
 
-    public void writeToFile(ArrayList<String> comedianScript){
-        
-
-        try{
-            FileOutputStream writeData = new FileOutputStream("newfile.txt");
-            ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
-
-            writeStream.writeObject(actors.comedian.comedianScript);
-            writeStream.flush();
-            writeStream.close();
-
-            }catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
+   
 
 
 
