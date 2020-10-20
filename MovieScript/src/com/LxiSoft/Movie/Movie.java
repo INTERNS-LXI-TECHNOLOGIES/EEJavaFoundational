@@ -17,8 +17,8 @@ public class Movie
     System.out.println("       *                      by Writer Koshy                                 *");
     System.out.println("       *                                                                      *");
     System.out.println("       ************************************************************************");
-files.fileMake();
-this.dialoguSelection();
+  // files.fileMake();
+    this.dialoguSelection();
 	}
 	public void dialoguSelection()
 	{

@@ -9,7 +9,7 @@ public class CreateFile
 	{
 		try
 		{
-	File file = new File("Computer:\\home\\arun\\Desktop\\lxi_works1\\EEJavaFoundational\\MovieScript\\src\\com\\LxiSoft\\\\Movie\\dialogues.txt");
+	File file = new File("C:\\home\\arun\\Desktop\\lxi_works1\\EEJavaFoundational\\MovieScript\\src\\com\\LxiSoft\\\\Movie\\dialogues.txt");
 
 	if(file.createNewFile())
 	{
@@ -19,11 +19,12 @@ public class CreateFile
 	{
 		System.out.println("File Already Created");
 	}
+
 }
 catch(IOException e)
 {
 	System.out.println("An error occured");
    e.printStackTrace();
-}
-}
-}
+   }
+  }
+  }
