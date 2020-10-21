@@ -15,6 +15,7 @@ public class FileReppo{
 			if(file.createNewFile()){
 				System.out.println("FILE CREATED:"+file.getName());
 
+
 			}
 			else{
 				System.out.println("FILE ALREADY EXITS");
@@ -28,5 +29,18 @@ public class FileReppo{
 
 
 
+	}
+
+	public void checking(){
+		if(file.exists()){
+			System.out.println("FILE NAME"+file.getName());
+			System.out.println("Absolute path"+file.getAbsolutePath());
+			System.out.println("Writeabl:"+file.canWrite());
+			System.out.println("Readable:"+file.canRead());
+			System.out.println("File size in bytes:"+file.length());
+		}
+		else{
+			System.out.println("*****************");
+		}
 	}
 }
