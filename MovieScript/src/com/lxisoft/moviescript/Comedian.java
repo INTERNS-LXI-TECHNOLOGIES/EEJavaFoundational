@@ -18,6 +18,8 @@ public class Comedian{
 	 	System.out.println("\n SCENE 1");
 	 	comedianScript.add("\n COMEDIAN: what................");
 		comedianScript.add("\n COMEDIAN: HE WAS GOOD FOR NOTHING YOU KEEP HIM");
+		comedianScript.add("\n COMEDIAN:NOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO");
+		comedianScript.add("\n COMEDIAN:SAVE USSSSSSSSSSSSSSSSS");
 
 		System.out.println(comedianScript.get(random.nextInt(comedianScript.size())));
 
