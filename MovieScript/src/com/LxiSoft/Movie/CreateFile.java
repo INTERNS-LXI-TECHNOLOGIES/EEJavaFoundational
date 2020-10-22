@@ -5,12 +5,13 @@ import java.io.IOException;
 
 public class CreateFile
 {
+	File file = new File("C:\\home\\arun\\Desktop\\lxi_works1\\EEJavaFoundational\\MovieScript\\src\\com\\LxiSoft\\\\Movie\\dialogues.txt");
+
 	public void fileMake()
 	{
 		try
 		{
-	File file = new File("C:\\home\\arun\\Desktop\\lxi_works1\\EEJavaFoundational\\MovieScript\\src\\com\\LxiSoft\\\\Movie\\dialogues.txt");
-
+	
 	if(file.createNewFile())
 	{
 		System.out.println("File created"+file.getName());
@@ -26,5 +27,22 @@ catch(IOException e)
 	System.out.println("An error occured");
    e.printStackTrace();
    }
+   this.fileInfo();
+  }
+  public void fileInfo()
+  {
+  	if(file.exists())
+  	{
+  		System.out.println("File name: "+file.getName());
+  		System.out.println("File path: "+file.getAbsolutePath());
+  			System.out.println("File Writable: "+file.canWrite());
+  		System.out.println("File readable: "+file.canRead());
+  		System.out.println("File size in bytes: "+file.length());
+  		
+  	}
+  	else
+{
+	System.out.println("File Doesnt excist;");  		
+}
   }
   }
