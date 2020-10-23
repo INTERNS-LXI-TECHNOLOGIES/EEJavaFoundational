@@ -5,7 +5,7 @@ import java.io.IOException;
 
 public class CreateFile
 {
-	File file = new File("C:\\home\\arun\\Desktop\\lxi_works1\\EEJavaFoundational\\MovieScript\\src\\com\\LxiSoft\\\\Movie\\dialogues.txt");
+	File file = new File("C:\\home\\Desktop\\lxi_works1\\EEJavaFoundational\\MovieScript\\classes\\dialogues.txt");
 
 	public void fileMake()
 	{

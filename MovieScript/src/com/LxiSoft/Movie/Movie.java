@@ -38,7 +38,7 @@ public class Movie
         if(choice==2)
         {
              
-          comedy.randomComedyDialogue();
+          comedy.writeComedyDialogue();
 
          
         }
