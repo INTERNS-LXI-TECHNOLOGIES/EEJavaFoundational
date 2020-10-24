@@ -1,10 +1,11 @@
 package com.Lxisoft.Test;
-import com.lxisfot.MovieScriptApp.*;
+import com.Lxisoft.MovieScriptApp.*;
 public class TDD
 {
-	public void main (String [] args)
+	public static void main (String [] args)
 	{
-		movieScript m = new movieScript();
+		Movie m = new Movie();
+		m.intro();
 		
 	}
 }

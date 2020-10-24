@@ -1,6 +1,12 @@
 package com.Lxisoft.MovieScriptApp;
-
-public class Actor
+import java.util.*;
+public class Actors
 {
+	Comedian comedian=new Comedian();
+	Villan villan =new Villan();
+
+	
+
+	
 
 }
