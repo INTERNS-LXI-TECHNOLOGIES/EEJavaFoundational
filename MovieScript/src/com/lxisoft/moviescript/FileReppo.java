@@ -19,6 +19,12 @@ public class FileReppo{
 			}
 			else{
 				System.out.println("FILE ALREADY EXITS");
+				if(file.exists()){
+					System.out.println(" FILE NAME:"+file.getName());
+					System.out.println(" ABSOLUTE PATH:"+file.getAbsolutePath());
+					System.out.println(" Readable:"+file.canRead());
+					System.out.println(" Writtable:"+file.canWrite());
+				}
 			}
 		}
 		catch(IOException e){

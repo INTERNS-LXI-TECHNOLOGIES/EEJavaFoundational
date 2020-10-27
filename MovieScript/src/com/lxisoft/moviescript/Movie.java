@@ -8,17 +8,29 @@ import java.util.Scanner;
 import java.io.*;
 import java.io.FileWriter;
 import java.util.ArrayList;
+
 import java.util.Scanner;
 public class Movie{
-	
-	Director director=new Director();
+
+    Actors actors=new	 Actors(String sceneNo, String actorName,String actorDialogue ) {
+        this.sceneNo = sceneNo;
+        this.actorName =  actorName;
+        this.actorDialogue =  actorDialogue;
+    }
+     @Override
+    public String toString() {
+        return "Actors{" +
+                " sceneNo  ='" + sceneNo + '\'' +
+                ",actorName='" + actorName + '\'' +
+                ", actorDialogue=" + actorDialogue +
+                "}\n";
+    }
+   Director director=new Director();
 	Producer producer=new Producer();
 	Comedian comedian=new Comedian();
     FileReppo filereppo=new FileReppo();
     Scanner scanner=new Scanner(System.in);
     String dialogue;
-
-	Actors actors=new Actors();
 
 	public void randomCheck(){
 		System.out.println("************************************************************************************************");
@@ -40,7 +52,7 @@ public class Movie{
         System.out.println("************************************************************************************************");
         System.out.println("************************************************************************************************");
         System.out.println("************************************************************************************************");
-        System.out.println("\n MOVIE NAME:DESPICABLE ME");
+        System.out.println("\n FINDING NEMO");
         this.display();
 
 	}
@@ -61,6 +73,7 @@ public class Movie{
 
         comedian.setcomedianDialoges();
         filereppo.fileCreation();
+        this.fileWrite();
      
         
 
@@ -143,6 +156,10 @@ public class Movie{
                 System.out.println("Enter the new name");
                 String newDialouge=scanner.next();
                // comedian.comedianScript[indexnumber].set(newDialouge);
+            }
+
+            public void fileWrite(){
+                       
             }
     
 
