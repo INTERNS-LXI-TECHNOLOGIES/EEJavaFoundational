@@ -11,24 +11,10 @@ import java.util.ArrayList;
 
 import java.util.Scanner;
 public class Movie{
-
-    Actors actors=new	 Actors(String sceneNo, String actorName,String actorDialogue ) {
-        this.sceneNo = sceneNo;
-        this.actorName =  actorName;
-        this.actorDialogue =  actorDialogue;
-    }
-     @Override
-    public String toString() {
-        return "Actors{" +
-                " sceneNo  ='" + sceneNo + '\'' +
-                ",actorName='" + actorName + '\'' +
-                ", actorDialogue=" + actorDialogue +
-                "}\n";
-    }
-   Director director=new Director();
-	Producer producer=new Producer();
-	Comedian comedian=new Comedian();
-    FileReppo filereppo=new FileReppo();
+   
+   
+   Actors actors=new Actors();
+	
     Scanner scanner=new Scanner(System.in);
     String dialogue;
 
@@ -44,8 +30,8 @@ public class Movie{
         System.out.println("*****                                                                                      *****");
         System.out.println("*****                                   MOVIE SCRIPT                                       *****");
         System.out.println("*****                                                                                      *****");
-        System.out.println("*****                                                                                      *****");
-        System.out.println("*****                                                                                      *****");
+        System.out.println("*****                                   FINDING NEMO                                      *****");
+        System.out.println("*****                                   ________________                                   *****");
         System.out.println("*****                                                                                      *****");
         System.out.println("*****                                                                                      *****");
         System.out.println("*****                                                                                      *****");
@@ -54,6 +40,7 @@ public class Movie{
         System.out.println("************************************************************************************************");
         System.out.println("\n FINDING NEMO");
         this.display();
+        actors.addingDialogue();
 
 	}
 
@@ -71,9 +58,9 @@ public class Movie{
         System.out.println("************************************************************************************************");
         
 
-        comedian.setcomedianDialoges();
-        filereppo.fileCreation();
-        this.fileWrite();
+      //comedian.setcomedianDialoges();
+       //ilereppo.fileCreation();
+       //his.fileWrite();
      
         
 
@@ -81,9 +68,7 @@ public class Movie{
             }
         }
         public void adminFunctions(){
-        System.out.println("**********************************");
-        System.out.println("\n \n  ***THE CURRENT Comedian SCRIPT IS***");
-       
+        
         boolean quit=false;
 
          int choice=0;
@@ -137,15 +122,16 @@ public class Movie{
              dialogue=scanner.next();
 
 
-          
-            comedian.comedianScript.add(dialogue);
+          actors.actordialogue.add(dialogue);
+            
            
             }
              public void removeDynamically(){
             System.out.println("Enter the index Number of item to be deleted");
             int indexnumber=scanner.nextInt();
 
-            comedian.comedianScript.remove(indexnumber);
+          
+          actors.actordialogue.remove(indexnumber);
             }
 
             
@@ -157,20 +143,6 @@ public class Movie{
                 String newDialouge=scanner.next();
                // comedian.comedianScript[indexnumber].set(newDialouge);
             }
-
-            public void fileWrite(){
-                       
-            }
-    
-
-   
-
-
-
-   
-	
-
-
 
 	
 	
