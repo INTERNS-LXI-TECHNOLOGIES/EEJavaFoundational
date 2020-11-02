@@ -8,6 +8,19 @@ import java.io.*;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Random;
+import java.io.BufferedReader;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.io.BufferedReader; 
+import java.io.FileReader; 
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files; 
+import java.nio.file.Paths; 
+import java.util.ArrayList; 
+import java.util.Collections; 
+import java.util.List;
+
 
 public class Actors   implements Serializable{
 	 ArrayList<String>  actordialogue= new ArrayList<>();
@@ -60,12 +73,13 @@ actordialogue.add("............THE END..............");
 
 
 this.createFile();
-this.randomSelection();
+//this.randomSelection();
+//this.readFile();
 }
 
-public void createFile(){
+public void createFile(){//and read
 	try{
-            FileOutputStream writeData = new FileOutputStream("F:\\Program files\\EEJavaFoundational\\MovieScript\\src\\com\\lxisoft\\moviescript\\moviescriptfile.ser");
+            FileOutputStream writeData = new FileOutputStream("F:\\Program files\\EEJavaFoundational\\MovieScript\\src\\com\\lxisoft\\moviescript\\moviescriptfile.csv");
             ObjectOutputStream writeStream = new ObjectOutputStream(writeData);
 
             writeStream.writeObject(actordialogue);
@@ -75,6 +89,22 @@ public void createFile(){
         }catch (IOException e) {
             e.printStackTrace();
         }
+}
+ 
+public void readFile() throws Exception{
+
+List<String> lines = Collections.emptyList(); 
+try {
+lines = Files.readAllLines(Paths.get(""), StandardCharsets.UTF_8); 
+} 
+catch (IOException e) {
+ // TODO Auto-generated catch block
+  e.printStackTrace();
+  } System.out.println("Content of List:"); 
+  System.out.println(lines);
+
+
+
 }
 
 public void randomSelection(){
@@ -86,24 +116,13 @@ public void randomSelection(){
       if(choice==0){
 
 
-     for(int i=index;i<actordialogue.size();i++){
-        System.out.println(actordialogue.get(i));
+       for(int i=index;i<actordialogue.size();i++){
+          System.out.println(actordialogue.get(i));
 
-     }}//for if
-
-     public void randomSelection(){
-     int index = random.nextInt(actordialogue.size());
-     String randomDialogue=actordialogue.get(index);
-     System.out.println("RANDOM DIALOGUE:"+randomDialogue);
-     System.out.println("PRESS 0 TO CONTINUE");
-      int choice=scanner.nextInt();
-      if(choice==0){
+       }
+     }//for if
 
 
-     for(int i=index;i<actordialogue.size();i++){
-        System.out.println(actordialogue.get(i));
-
-     }}//for if
 
 
 }
