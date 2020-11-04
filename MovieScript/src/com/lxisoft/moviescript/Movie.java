@@ -14,6 +14,9 @@ public class Movie{
    
    
    Actors actors=new Actors();
+   Scriptwriter scriptwriter=new Scriptwriter();
+   Director director=new Director();
+   
 	
     Scanner scanner=new Scanner(System.in);
     String dialogue;
