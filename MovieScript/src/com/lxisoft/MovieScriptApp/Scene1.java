@@ -136,4 +136,45 @@ System.out.println("............THE END( Scene-1 )..............");
 
 
 }
+
+public void readFile() throws Exception{
+
+List<String> lines = Collections.emptyList(); 
+try {
+lines = Files.readAllLines(Paths.get(""), StandardCharsets.UTF_8); 
+} 
+catch (IOException e) {
+ // TODO Auto-generated catch block
+  e.printStackTrace();
+  } System.out.println("Content of List:"); 
+  System.out.println(lines);
+
+
+
+}
+
+public void randomSelection(){
+     int index = random.nextInt(actordialogue.size());
+     String randomDialogue=actordialogue.get(index);
+     System.out.println("RANDOM DIALOGUE:"+randomDialogue);
+     System.out.println("PRESS 0 TO CONTINUE");
+      int choice=scanner.nextInt();
+      if(choice==0){
+
+
+       for(int i=index;i<actordialogue.size();i++){
+          System.out.println(actordialogue.get(i));
+
+       }
+     }//for if
+
+
+
+
+}
+
+
+	
+
+}
 }
