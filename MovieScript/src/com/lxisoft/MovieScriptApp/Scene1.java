@@ -166,7 +166,22 @@ public void randomSelection(){
           System.out.println(actordialogue.get(i));
 
        }
-     }//for if
+     }
+
+}
+public void randomSelection(){
+     int index = random.nextInt(actordialogue.size());
+     String randomDialogue=actordialogue.get(index);
+     System.out.println("RANDOM DIALOGUE:"+randomDialogue);
+     System.out.println("PRESS 0 TO CONTINUE");
+      int choice=scanner.nextInt();
+      if(choice==0){
+
+
+       for(int i=index;i<actordialogue.size();i++){
+          System.out.println(actordialogue.get(i));
+
+       }//for if
 
 
 
@@ -176,5 +191,4 @@ public void randomSelection(){
 
 	
 
-}
 }
