@@ -1,9 +1,8 @@
+<!DOCTYPE html>
+<html>
 <%@page import="com.lxisoft.modal.Contact,com.lxisoft.repository.AddressBook"%>
 <%@page import="java.sql.*,java.io.*"%>
 <%@page import="java.sql.Connection"%>
-
-<!DOCTYPE html>
-<html>
 <head>
 	<title>Contact App</title>
 </head>
