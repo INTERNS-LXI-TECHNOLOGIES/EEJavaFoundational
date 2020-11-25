@@ -10,12 +10,12 @@
 	   out.println(name);
 	   if(name.equals("karthik")&&password.equals("123456"))
 		{
-			response.sendRedirect("FirstPage.html");
+			response.sendRedirect("Menu.html");
 		}
 		else
 		{
 
-			//response.sendRedirect("FirstPage.html");
+			response.sendRedirect("Failed.html");
 		}%>
 </body>
 </html>

@@ -37,6 +37,28 @@ public class AddressBook
 			e.printStackTrace();
 		}
 	}
+	public ArrayList<Contact> read()
+   {         System.out.println("...........");
+             ArrayList<Contact> datas=new ArrayList<Contact>(); 
+	         ResultSet rs;
+			 try{
+	         ps=con.prepareStatement("select * from contact");
+             rs=ps.executeQuery();			 
+             while(rs.next())
+			 {	
+              Contact cm=new Contact();
+              cm.setName(rs.getString("name"));
+			  cm.setNumber(rs.getString("number"));
+			  cm.setEmail(rs.getString("email"));
+			  datas.add(cm);
+			  System.out.println("..........."+cm);
+              System.out.println(rs.getString(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
+			 }
+			 }catch(Exception e){
+				 e.printStackTrace();
+			 }
+			 return datas;
+   }
 
 
 	public String addToDatabase(String name,String number,String email)
@@ -52,6 +74,8 @@ public class AddressBook
 		   {
 		   	
 		     System.out.println(name+number);
+		     		
+
 			
             ps=con.prepareStatement("insert into contact(NAME,Number,Email) values(?,?,?)");
 		     ps.setString(1,name);
