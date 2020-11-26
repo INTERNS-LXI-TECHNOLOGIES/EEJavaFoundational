@@ -4,7 +4,10 @@
 <script >
 	$(document).ready(function(){
 
-	swal ( "Incorrect Password !!!, Please try Again" )
+	swal ( "Contact Added Successfully" )
+	setTimeout(function(){
+            window.location.href = 'Menu.jsp';
+         }, 3600);
 });
 
 </script>

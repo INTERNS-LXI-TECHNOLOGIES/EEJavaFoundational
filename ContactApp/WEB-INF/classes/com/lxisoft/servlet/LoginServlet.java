@@ -6,11 +6,10 @@ import javax.servlet.http.HttpServlet;
 
 import java.io.IOException;
 
-//@WebServlet("/LoginCheck")
 
-public class LoginCheck extends HttpServlet  {
+public class LoginServlet extends HttpServlet  {
 
-	public LoginCheck(){
+	public LoginServlet(){
 	super();
 	}
 
@@ -20,11 +19,11 @@ public class LoginCheck extends HttpServlet  {
 		String password=request.getParameter("password");
 		if(uname.equals("karthik")&&password.equals("123456"))
 		{
-			response.sendRedirect("Menu.html");
+			response.sendRedirect("Menu.jsp");
 		}
 		else
 		{
-			response.sendRedirect("Failed.html");
+			response.sendRedirect("Failed.jsp");
 		}
 	}
 }

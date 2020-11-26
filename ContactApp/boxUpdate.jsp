@@ -4,7 +4,10 @@
 <script >
 	$(document).ready(function(){
 
-	swal ( "Contact Deleted Succesfully" )
+	swal ( "Contact Updated Succesfully" )
+	setTimeout(function(){
+            window.location.href = 'Menu.jsp';
+         }, 3600);
 });
 
 </script>
