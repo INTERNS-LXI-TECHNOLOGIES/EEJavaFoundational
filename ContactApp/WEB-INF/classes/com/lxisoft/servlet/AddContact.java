@@ -1,22 +1,35 @@
-<!DOCTYPE html>
-<html>
-<%@page import="com.lxisoft.modal.Contact,com.lxisoft.repository.AddressBook"%>
-<%@page import="java.sql.*,java.io.*"%>
-<%@page import="java.sql.Connection"%>
+package com.lxisoft.servlet;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.io.*;
+import java.sql.*;
+import java.io.*;
+import javax.servlet.http.HttpServlet;
+import com.lxisoft.modal.Contact;
+import com.lxisoft.repository.AddressBook;
 
-<head>
-	<title>Contact App</title>
-</head>
-<body>
-	<% String name= request.getParameter("name");
+
+
+public class AddContact extends HttpServlet
+{
+	public AddContact(){
+		super();
+	}
+
+	protected void doPost(HttpServletRequest request,HttpServletResponse response)
+	{
+
+
+		String name= request.getParameter("name");
 	   String number= request.getParameter("number");
 	   String email= request.getParameter("email"); 
-	   		 Contact contact=new Contact();
+	   Contact contact=new Contact();
 	   		 contact.setName(name);
 	   		 contact.setNumber(number);
 	   		 contact.setEmail(email);
 	   		try
 		   	{
+
 		    Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
@@ -30,13 +43,13 @@
 		     ps.setString(3,contact.getEmail());
 		  			
 			int a=ps.executeUpdate();
-			out.println("Contact added");
+		
+         
+     	response.sendRedirect("box.html");
+
 		}catch(Exception e)
 		{
-			out.println(e);
 		}
 
-		%>
-
-</body>
-</html>
+	}
+}
