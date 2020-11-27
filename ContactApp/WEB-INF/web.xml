@@ -18,12 +18,12 @@
 </servlet-mapping>
 
 <servlet>
-<servlet-name>DeleteServlet</servlet-name>
-<servlet-class>com.lxisoft.servlet.DeleteServlet</servlet-class>
+<servlet-name>DeleteContactServlet</servlet-name>
+<servlet-class>com.lxisoft.servlet.DeleteContactServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-<servlet-name>DeleteServlet</servlet-name>
-<url-pattern>/DeleteServlet</url-pattern>
+<servlet-name>DeleteContactServlet</servlet-name>
+<url-pattern>/DeleteContactServlet</url-pattern>
 </servlet-mapping> 
 
 <servlet>

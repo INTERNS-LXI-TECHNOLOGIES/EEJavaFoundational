@@ -6,23 +6,24 @@ import java.sql.*;
 import java.io.*;
 import javax.servlet.http.HttpServlet;
 import com.lxisoft.modal.Contact;
-import com.lxisoft.repository.AddressBook;
+import com.lxisoft.repository.AddressBookRepository;
 
 
 
-public class DeleteServlet extends HttpServlet
+public class DeleteContactServlet extends HttpServlet
 {
-	public DeleteServlet(){
+	public DeleteContactServlet(){
 		super();
 	}
 
 	protected void doPost(HttpServletRequest request,HttpServletResponse response)
 	{
-		AddressBook addressbook =new AddressBook();
+		AddressBookRepository addressbookrepo =new AddressBookRepository();
 		String name = request.getParameter("name");
+		addressbookrepo.deleteName(name);
 	 try{
-	 	addressbook.delete(name);
-	response.sendRedirect("boxDelete.jsp");
+	 	
+	response.sendRedirect("DeleteMessage.jsp");
 
 	   }
 	 catch(Exception e){}

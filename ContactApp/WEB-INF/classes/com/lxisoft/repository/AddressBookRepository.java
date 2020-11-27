@@ -1,40 +1,44 @@
 package com.lxisoft.repository;
 //import com.lxisoft.control.*;
 import com.lxisoft.modal.*;
-import com.lxisoft.view.*;
+//import com.lxisoft.view.*;
 import java.sql.*;
 import java.util.Collections;
 import java.io.*;
 import java.util.ArrayList;
 
 
-public class AddressBook 
+public class AddressBookRepository 
 {
 
 	
 	Connection con = null;
-	ResultSet rs= null;
-	Statement stmt = null;
 	PreparedStatement ps = null;
 	int row;
-			ArrayList<Contact> contact=new ArrayList<Contact>();
+			
+   public ArrayList<Contact> read()
+   {
+   	ArrayList<Contact> datas=new ArrayList<Contact>(); 
 
-	public ArrayList<Contact> read()
-   {         System.out.println("...........");
-             ArrayList<Contact> datas=new ArrayList<Contact>(); 
-	         ResultSet rs;
 			 try{
-	         ps=con.prepareStatement("select * from contact");
-             rs=ps.executeQuery();			 
+			 Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
+			Statement stmt = con.createStatement();
+	
+           PreparedStatement ps=con.prepareStatement("select * from contact");
+             ResultSet rs=ps.executeQuery();			 
              while(rs.next())
 			 {	
-              Contact cm=new Contact();
-              cm.setName(rs.getString("name"));
-			  cm.setNumber(rs.getString("number"));
-			  cm.setEmail(rs.getString("email"));
-			  datas.add(cm);
-			  System.out.println("..........."+cm);
-              System.out.println(rs.getString(1)+"  "+rs.getString(2)+"  "+rs.getString(3));  
+              Contact contact=new Contact();
+              
+              
+              	contact.setName(rs.getString("name"));
+			  	contact.setNumber(rs.getString("number"));
+				contact.setEmail(rs.getString("email"));
+				datas.add(contact);
+			  
+			  
 			 }
 			 }catch(Exception e){
 				 e.printStackTrace();
@@ -46,20 +50,21 @@ public class AddressBook
 	public void addToDatabase(String name,String number,String email)
 
 	{	
-	Contact contact=new Contact();	     		    try
+	Contact contact=new Contact();	     		
+	    try
 		   	{
 
 		    Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
 			Statement stmt = con.createStatement();
-			//out.println("Succesfull"+"\n");
+			System.out.println("Succesfull"+"\n");
 
 			
            PreparedStatement ps=con.prepareStatement("insert into contact(NAME,Number,Email) values(?,?,?)");
-		     ps.setString(1,contact.getName());
-		     ps.setString(2,contact.getNumber());
-		     ps.setString(3,contact.getEmail());
+		     ps.setString(1,name);
+		     ps.setString(2,number);
+		     ps.setString(3,email);
 		  			
 			int a=ps.executeUpdate();
 		
@@ -69,7 +74,7 @@ public class AddressBook
 		{
 		}
 	}
-	public void updateDatabse(String newname,String name)
+	public void updateName(String newname,String name)
 	{
 	try{
 	 	Class.forName("com.mysql.cj.jdbc.Driver");
@@ -83,24 +88,8 @@ public class AddressBook
 		catch(Exception e)
 		{}
 	}
-		/*public void database(ArrayList<Contact> contact)
-		{
-					databaseConnection();
-					try
-					{
-					stmt=con.createStatement();
-					rs=stmt.executeQuery("select * from contact");
-					while(rs.next())
-					{
-						System.out.println("Name"+rs.getString("Name")+""+rs.getInt("Number")+""+rs.getString("Email"));
-					}
-				}catch(Exception e)
-				{
-								e.printStackTrace();
-
-				}
-		}*/
-		public void delete(String name)
+		
+		public void deleteName(String name)
 		{
 					try{
 	 Class.forName("com.mysql.cj.jdbc.Driver");
@@ -112,7 +101,9 @@ public class AddressBook
 	  PreparedStatement ps=con.prepareStatement(query);
 	  ps.setString(1,name);
 	  ps.executeUpdate();
-	       	
+	  System.out.println("<html><body><table><tr><td>Username</td></tr></table></body>");
+	  System.out.println("testing");
+
 
 	   }
 	 catch(Exception e){

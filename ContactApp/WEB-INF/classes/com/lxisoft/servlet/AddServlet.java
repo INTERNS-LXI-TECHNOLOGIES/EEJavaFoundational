@@ -6,7 +6,7 @@ import java.sql.*;
 import java.io.*;
 import javax.servlet.http.HttpServlet;
 import com.lxisoft.modal.Contact;
-import com.lxisoft.repository.AddressBook;
+import com.lxisoft.repository.AddressBookRepository;
 
 
 
@@ -18,7 +18,7 @@ public class AddServlet extends HttpServlet
 
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) 
 	{
-		AddressBook addressbook=new AddressBook();
+		AddressBookRepository addressbookrepo=new AddressBookRepository();
 
 
 		String name= request.getParameter("name");
@@ -28,10 +28,10 @@ public class AddServlet extends HttpServlet
 	   		 contact.setName(name);
 	   		 contact.setNumber(number);
 	   		 contact.setEmail(email);
-	   		 addressbook.addToDatabase(name,number,email);
+	   		 addressbookrepo.addToDatabase(name,number,email);
 	   		 try
 	   		 {
-	   		response.sendRedirect("box.jsp");
+	   		response.sendRedirect("ContactAddedMessage.jsp");
 	   	}
 	   	catch(Exception e)
 		{

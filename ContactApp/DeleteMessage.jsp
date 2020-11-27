@@ -13,8 +13,16 @@
 	swal ( "Contact Deleted Succesfully" )
 });
 	setTimeout(function(){
-            window.location.href = 'Menu.jsp';
-         }, 3600);
+                         window.location.href = 'ViewContact.jsp';
+
+
+                     }, 600);
+	setTimeout(function(){
+                         window.location.href = 'Menu.jsp';
+
+
+                     },);
+
 
 </script>
 

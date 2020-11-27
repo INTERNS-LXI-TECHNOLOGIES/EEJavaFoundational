@@ -66,7 +66,7 @@ body {
     <a href="ViewContact.jsp">View Contact</a>
     <a href="AddContact.jsp">Add Contact</a>
     <a href="UpdateName.jsp">Update Contact</a>
-    <a href="Delete.jsp">Remove Contact</a>
+    <a href="DeleteContact.jsp">Remove Contact</a>
   </div>
 </div>
 
