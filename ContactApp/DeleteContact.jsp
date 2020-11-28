@@ -7,6 +7,7 @@
 	<title></title>
 </head>
 <body>
+    
 	    <div id="login">
         <h3 class="text-center text-white pt-5">Delete Contact</h3>
         <div class="container">
@@ -17,13 +18,17 @@
                             <h3 class="text-center text-info">Delete Contact</h3>
                             <div class="form-group">
                                 <label for="name" class="text-info">Name</label><br>
-                                <input type="text" name="name" id="name" class="form-control">
+                                <input type="text" name="name" id="name" class="form-control" value="<%= request.getParameter("id")%>"">
                             </div>
 
                             <div class="form-group">
-                                
-                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
-                            </div>
+                                               
+                                <input type="submit" style="text-indent:-9999px">   
+                                <script type="text/javascript">
+                                        document.getElementById("login-form").submit(); 
+
+                                </script>   
+                                                      </div>
                           
                         </form>
                     </div>

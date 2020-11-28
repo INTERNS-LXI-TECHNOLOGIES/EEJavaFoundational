@@ -16,12 +16,8 @@
                          window.location.href = 'ViewContact.jsp';
 
 
-                     }, 600);
-	setTimeout(function(){
-                         window.location.href = 'Menu.jsp';
-
-
-                     },);
+                     }, 2600);
+	
 
 
 </script>

@@ -15,36 +15,37 @@ public class AddressBookRepository
 	Connection con = null;
 	PreparedStatement ps = null;
 	int row;
-			
-   public ArrayList<Contact> read()
-   {
-   	ArrayList<Contact> datas=new ArrayList<Contact>(); 
+	   	ArrayList<Contact> contactList=new ArrayList<Contact>(); 
 
-			 try{
-			 Class.forName("com.mysql.cj.jdbc.Driver");
+			
+    public ArrayList<Contact> read()
+	{
+		try
+		{
+			//PreparedStatement ps;
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
 			Statement stmt = con.createStatement();
 	
            PreparedStatement ps=con.prepareStatement("select * from contact");
              ResultSet rs=ps.executeQuery();			 
-             while(rs.next())
-			 {	
-              Contact contact=new Contact();
-              
-              
-              	contact.setName(rs.getString("name"));
-			  	contact.setNumber(rs.getString("number"));
+		
+			while(rs.next())
+			{
+				Contact contact=new Contact();
+				contact.setName(rs.getString("name"));
+				contact.setNumber(rs.getString("number"));
 				contact.setEmail(rs.getString("email"));
-				datas.add(contact);
-			  
-			  
-			 }
-			 }catch(Exception e){
-				 e.printStackTrace();
-			 }
-			 return datas;
-   }
+				contactList.add(contact);
+			}
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		return contactList;
+	}
 
 
 	public void addToDatabase(String name,String number,String email)
@@ -82,6 +83,34 @@ public class AddressBookRepository
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
 			Statement stmt = con.createStatement();
 				String updateQuery="UPDATE contact SET name = '"+newname+"' where name= '"+name+"'";
+				PreparedStatement ps=con.prepareStatement(updateQuery);
+				ps.executeUpdate();
+		   }
+		catch(Exception e)
+		{}
+	}
+	public void updateNumber(String newnumber,String number)
+	{
+	try{
+	 	Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
+			Statement stmt = con.createStatement();
+				String updateQuery="UPDATE contact SET number = '"+newnumber+"' where number= '"+number+"'";
+				PreparedStatement ps=con.prepareStatement(updateQuery);
+				ps.executeUpdate();
+		   }
+		catch(Exception e)
+		{}
+	}
+	public void updateEmail(String newmail,String mail)
+	{
+	try{
+	 	Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
+			Statement stmt = con.createStatement();
+				String updateQuery="UPDATE contact SET email = '"+newmail+"' where email= '"+mail+"'";
 				PreparedStatement ps=con.prepareStatement(updateQuery);
 				ps.executeUpdate();
 		   }

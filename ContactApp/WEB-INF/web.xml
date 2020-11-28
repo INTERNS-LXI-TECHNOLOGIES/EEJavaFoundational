@@ -33,7 +33,25 @@
 <servlet-mapping>
 <servlet-name>UpdateServlet</servlet-name>
 <url-pattern>/UpdateServlet</url-pattern>
-</servlet-mapping> 
+</servlet-mapping>
+
+<servlet>
+<servlet-name>UpdateNumberServlet</servlet-name>
+<servlet-class>com.lxisoft.servlet.UpdateNumberServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>UpdateNumberServlet</servlet-name>
+<url-pattern>/UpdateNumberServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>UpdateEmailServlet</servlet-name>
+<servlet-class>com.lxisoft.servlet.UpdateEmailServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>UpdateEmailServlet</servlet-name>
+<url-pattern>/UpdateEmailServlet</url-pattern>
+</servlet-mapping>   
 
 
 </web-app>

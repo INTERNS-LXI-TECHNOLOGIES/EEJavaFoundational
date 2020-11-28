@@ -16,15 +16,15 @@
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="UpdateServlet" method="Post">
+                        <form id="login-form" class="form" action="UpdateNumberServlet" method="Post">
                             <h3 class="text-center text-info">Update Contact</h3>
                             <div class="form-group">
-                                <label for="name" class="text-info">Old Name</label><br>
-                                <input type="text" name="name" id="name" class="form-control " value="<%= request.getParameter("id")%>">
+                                <label for="name" class="text-info">Old Number</label><br>
+                                <input type="text" name="number" id="number" class="form-control " value="<%= request.getParameter("id")%>">
                             </div>
                             <div class="form-group">
-                                <label for="name" class="text-info">New Name</label><br>
-                                <input type="text" name="newname" id="name" class="form-control">
+                                <label for="name" class="text-info">New Number</label><br>
+                                <input type="text" name="newnumber" id="newnumber" class="form-control">
                             </div>
 
                             <div class="form-group">
