@@ -6,7 +6,7 @@
 
 	swal ( "Contact Updated Succesfully" )
 	setTimeout(function(){
-            window.location.href = 'ViewContact.jsp';
+            window.location.href = 'ViewServlet';
          }, 3600);
 });
 

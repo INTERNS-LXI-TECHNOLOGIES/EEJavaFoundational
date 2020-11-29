@@ -1,30 +1,30 @@
 package com.lxisoft.servlet;
+import java.util.*;
+import javax.servlet.http.*;
+import javax.servlet.*;
+import java.io.*;
+import com.lxisoft.repository.*;
+import com.lxisoft.modal.*;
 
-import java.io.IOException;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.util.ArrayList;
+public class ViewServlet extends HttpServlet
+{
+		AddressBookRepository addressbookrepo = new AddressBookRepository();
 
 
-import com.lxisoft.modal.Contact;
-import com.lxisoft.repository.AddressBook;
-public class ViewServlet extends HttpServlet {
-	public ViewServlet(){
-		super();
-	}
-
-		protected void doPost(HttpServletRequest request,HttpServletResponse response)
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException
 	{
-		
-	 try{
-	 	Contact cm=new Contact();
-AddressBook addressbook=new AddressBook();
-System.out.println("\n"+addressbook.read()+"\t"+"\n");
-	//response.sendRedirect("boxDelete.jsp");
 
-	   }
-	 catch(Exception e){}
-}
-}
+		ArrayList <Contact> contactList = new ArrayList<Contact>();
+
+		contactList= addressbookrepo.read();
+
+
+		request.setAttribute("contactList",contactList);
+
+		RequestDispatcher rd = request.getRequestDispatcher("ViewContact.jsp");
+
+
+		rd.forward(request,response);
+					
+	}
+}  

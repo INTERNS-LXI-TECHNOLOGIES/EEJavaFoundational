@@ -36,22 +36,12 @@
 </servlet-mapping>
 
 <servlet>
-<servlet-name>UpdateNumberServlet</servlet-name>
-<servlet-class>com.lxisoft.servlet.UpdateNumberServlet</servlet-class>
+<servlet-name>ViewServlet</servlet-name>
+<servlet-class>com.lxisoft.servlet.ViewServlet</servlet-class>
 </servlet>
 <servlet-mapping>
-<servlet-name>UpdateNumberServlet</servlet-name>
-<url-pattern>/UpdateNumberServlet</url-pattern>
+<servlet-name>ViewServlet</servlet-name>
+<url-pattern>/ViewServlet</url-pattern>
 </servlet-mapping>
-
-<servlet>
-<servlet-name>UpdateEmailServlet</servlet-name>
-<servlet-class>com.lxisoft.servlet.UpdateEmailServlet</servlet-class>
-</servlet>
-<servlet-mapping>
-<servlet-name>UpdateEmailServlet</servlet-name>
-<url-pattern>/UpdateEmailServlet</url-pattern>
-</servlet-mapping>   
-
 
 </web-app>

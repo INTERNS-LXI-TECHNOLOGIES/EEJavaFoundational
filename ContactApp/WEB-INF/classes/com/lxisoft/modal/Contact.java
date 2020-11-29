@@ -1,12 +1,19 @@
 package com.lxisoft.modal;
-import com.lxisoft.control.*;
+import com.lxisoft.repository.*;
 public class Contact
 {
 	private String name;
 	private String email;
 	private String number;
-	
+	private int ID;
 
+	
+public int getID() {
+      return ID;
+   }
+   public void setID(int id) {
+      ID = id;
+   }
 	public void setName(String name)
 	{
 		this.name=name;

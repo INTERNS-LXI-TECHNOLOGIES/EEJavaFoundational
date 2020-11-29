@@ -1,62 +1,59 @@
-
-<%@ page import="java.util.*"%>
-<%@ page import="java.io.*"%>
-<%@page import="com.lxisoft.modal.Contact,com.lxisoft.repository.AddressBookRepository,java.util.*"%>
-
 <!DOCTYPE html>
 <html>
-<head>
-	<title>View Page</title>
-	<link rel="stylesheet" href="Style.css">
-</head>
-<body>
-	<style>
-		table, th, td {
+<head> 
+<style>
+	table, th, td {
   border: 1px solid black;
 }
-	</style>
-	<h2>Contact List</h2>
-	<table>
-		<tr>
-			<th>Name</th>
-						<th>Update Name</th>
-
-			<th>Number</th>
-						<th>Update No:</th>
-
-			<th>Email</th>
-						<th>Update Mail</th>
-						<th>Delete Contact</th>
-
-		</tr>
-
-	<%
-				AddressBookRepository addressbookrepo=new AddressBookRepository();
-				Contact cm=new Contact();
-
-
-		ArrayList<Contact> contactList=addressbookrepo.read();
+</style> 
+	<h1 align="center">CONTACTS</h1>
+	<p align="center"><b>Note:</b>Press the name to do Any updates.</p>
+	<title>
 		
-		for(int i=0;i<contactList.size();i++)
-		{ 
-	%>
-			<tr>
-				<td><%out.println(contactList.get(i).getName());%></td>
-								<td><a  href="UpdateName.jsp?id=<%out.println(contactList.get(i).getName());%>">Update</a></td>
+	</title>
+</head>
+<body style="background: white">
+<%@page import = "com.lxisoft.servlet.*"%>
+<%@page import = "com.lxisoft.repository.*"%>
+<%@page import = "com.lxisoft.modal.*,java.util.*"%>
 
-				<td><%out.println(contactList.get(i).getNumber());%></td>
-								<td><a  href="UpdateNumber.jsp?id=<%out.println(contactList.get(i).getNumber());%>">Update</a></td>
+<table align="center" style="border-collapse: collapse;">
+	        <tr>
+				<th >NAME</th>
+								<th >Number</th>
+																<th >Email-ID</th>
+																						<th >Delete Contact</th>
 
-				<td><%out.println(contactList.get(i).getEmail());%></td>
-								<td><a  href="UpdateEmail.jsp?id=<%out.println(contactList.get(i).getEmail());%>">Update</a></td>
 
-				<td><a href="DeleteContact.jsp?id=<%out.println(contactList.get(i).getName());%>">Delete</a></td>
 
+				
 			</tr>
+<% ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("contactList");
+	
+	for(Contact contact : contactList)
+		{ %>
+			<b>
+			<tr style=" font-style:oblique;  ">
+			<td>
+		<a href="UpdateContactSelected.jsp?id=<%=contact.getID()%>&temp=<%=contact.getName()%>&temp1=<%=contact.getNumber()%>&temp2=<%=contact.getEmail()%>"><input type="button" name="submit" value="<%=contact.getName() %>"></a>
+				</td>
+				<td>
+					<%out.println(contact.getNumber());%>
+				</td>
+				<td>
+					<%out.println(contact.getEmail());%>
+				</td>
+				 <td>
+					<a href="DeleteContact.jsp?temp=<%=contact.getName()%>&id=<%=contact.getID()%>"><input type="button" name="submit" value="Delete"></a>
+				</td>
+			
 			</tr>
-			<!-- System.out.println(contactList.get(i).getId()+"\t"+contactList.get(i).getName()+"\t"+contactList.get(i).getNumber()); -->
-		<% }%>
+			</b>
+			<%
+		} %>
+
 </table>
-<a href="Menu.jsp"><input type="button" value="Go back to menu" name="cancel"/></a>
+<center><a href="Menu.jsp"><input type="button" value="Go back to menu" name="cancel"/></a></center>
+
 </body>
 </html>

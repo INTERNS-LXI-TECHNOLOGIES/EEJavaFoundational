@@ -1,33 +1,38 @@
+
 package com.lxisoft.servlet;
-import javax.servlet.*;
+import java.util.*;
 import javax.servlet.http.*;
+import javax.servlet.*;
 import java.io.*;
-import java.sql.*;
-import java.io.*;
-import javax.servlet.http.HttpServlet;
-import com.lxisoft.modal.Contact;
-import com.lxisoft.repository.AddressBookRepository;
-
-
+import com.lxisoft.repository.*;
+import com.lxisoft.modal.*;
 
 public class UpdateServlet extends HttpServlet
 {
-	public UpdateServlet(){
-		super();
-	}
+		AddressBookRepository addressbookrepo = new AddressBookRepository();
 
-	protected void doPost(HttpServletRequest request,HttpServletResponse response)
+	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException
 	{
-		AddressBookRepository addressbookrepo =new AddressBookRepository();
-		String name = request.getParameter("name");
-		String newname =request.getParameter("newname");
-		addressbookrepo.updateName(newname,name);
-		try{
-			response.sendRedirect("UpdateMessage.jsp");
-		}catch(Exception e)
-		{
-		}
+		
+		String newname= request.getParameter("name");
+				String id= request.getParameter("id");
 
-	 
+	   String newnumber= request.getParameter("number");
+	   String newemail= request.getParameter("email"); 
+		
+
+	
+	   Contact contact=new Contact();
+	   		 contact.setName(newname);
+	   		 contact.setNumber(newnumber);
+	   		 contact.setEmail(newemail);
+
+	   		 addressbookrepo.edit(id,newname,newnumber,newemail);
+
+		RequestDispatcher rd = request.getRequestDispatcher("/ViewServlet");
+		rd.forward(request,response);
+		
+
 	}
+
 }

@@ -63,7 +63,7 @@ body {
 <div id="myNav" class="overlay">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <div class="overlay-content">
-    <a href="ViewContact.jsp">View Contact</a>
+    <a href="ViewServlet">View Contact</a>
     <a href="AddContact.jsp">Add Contact</a>
     <a href="UpdateName.jsp">Update Contact</a>
     <a href="DeleteContact.jsp">Remove Contact</a>

@@ -1,5 +1,3 @@
-<%@page import="com.lxisoft.modal.Contact,java.util.*"%>
-
 
 <!DOCTYPE html>
 <html>
@@ -7,25 +5,37 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <head>
-	<title></title>
+	<title>
+		
+		
+	</title>
 </head>
-<body>
-    <div id="login">
-        <h3 class="text-center text-white pt-5">Update Contact</h3>
+<body style="background: lightblue">
+  
+<%@page import = "com.lxisoft.servlet.*"%>
+<%@page import = "com.lxisoft.repository.*"%>
+<%@page import = "com.lxisoft.sqlrepository.*"%>
+<%@page import = "com.lxisoft.model.*,java.util.*"%>
+<div id="login">
         <div class="container">
             <div id="login-row" class="row justify-content-center align-items-center">
                 <div id="login-column" class="col-md-6">
                     <div id="login-box" class="col-md-12">
-                        <form id="login-form" class="form" action="UpdateNumberServlet" method="Post">
+                        <form id="login-form" class="form" action="UpdateServlet" method="GET">
                             <h3 class="text-center text-info">Update Contact</h3>
                             <div class="form-group">
-                                <label for="name" class="text-info">Old Number</label><br>
-                                <input type="text" name="number" id="number" class="form-control " value="<%= request.getParameter("id")%>">
+                                <label for="name" class="text-info">Enter Name</label><br>
+                                <input type="text" name="name" id="name" class="form-control " >
                             </div>
                             <div class="form-group">
-                                <label for="name" class="text-info">New Number</label><br>
-                                <input type="text" name="newnumber" id="newnumber" class="form-control">
+                                <label for="name" class="text-info">Enter Number</label><br>
+                                <input type="text" name="number" id="name" class="form-control">
                             </div>
+                            <div class="form-group">
+                                <label for="name" class="text-info">Enter Email</label><br>
+                                <input type="text" name="email" id="name" class="form-control">
+                            </div>
+
 
                             <div class="form-group">
                                 

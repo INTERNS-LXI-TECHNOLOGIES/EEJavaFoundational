@@ -1,7 +1,5 @@
 package com.lxisoft.repository;
-//import com.lxisoft.control.*;
 import com.lxisoft.modal.*;
-//import com.lxisoft.view.*;
 import java.sql.*;
 import java.util.Collections;
 import java.io.*;
@@ -22,10 +20,13 @@ public class AddressBookRepository
 	{
 		try
 		{
-			//PreparedStatement ps;
+
 			Class.forName("com.mysql.cj.jdbc.Driver");
 			
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
+
+									contactList.clear();
+
 			Statement stmt = con.createStatement();
 	
            PreparedStatement ps=con.prepareStatement("select * from contact");
@@ -34,17 +35,44 @@ public class AddressBookRepository
 			while(rs.next())
 			{
 				Contact contact=new Contact();
+
+				contact.setID(rs.getInt("id"));
 				contact.setName(rs.getString("name"));
 				contact.setNumber(rs.getString("number"));
 				contact.setEmail(rs.getString("email"));
 				contactList.add(contact);
 			}
+			stmt.close();
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
 		return contactList;
+	}
+	public void edit(String id,String name,String number,String email)
+	{ 
+		try
+		{
+
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
+			Statement stm = con.createStatement();
+		  ps = con.prepareStatement("update contact set NAME=?,Number=?,Email=? where ID =?");
+		  ps.setString(1,name);
+		     ps.setString(2,number);
+		     ps.setString(3,email);
+		     		  ps.setString(4,id);
+
+
+		ps.executeUpdate();
+		}
+		catch(Exception e)
+		{
+
+		}
+		
 	}
 
 
@@ -59,7 +87,6 @@ public class AddressBookRepository
 			
 			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
 			Statement stmt = con.createStatement();
-			System.out.println("Succesfull"+"\n");
 
 			
            PreparedStatement ps=con.prepareStatement("insert into contact(NAME,Number,Email) values(?,?,?)");
@@ -89,34 +116,7 @@ public class AddressBookRepository
 		catch(Exception e)
 		{}
 	}
-	public void updateNumber(String newnumber,String number)
-	{
-	try{
-	 	Class.forName("com.mysql.cj.jdbc.Driver");
-			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
-			Statement stmt = con.createStatement();
-				String updateQuery="UPDATE contact SET number = '"+newnumber+"' where number= '"+number+"'";
-				PreparedStatement ps=con.prepareStatement(updateQuery);
-				ps.executeUpdate();
-		   }
-		catch(Exception e)
-		{}
-	}
-	public void updateEmail(String newmail,String mail)
-	{
-	try{
-	 	Class.forName("com.mysql.cj.jdbc.Driver");
-			
-			Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contact","root","Karthik1996$");
-			Statement stmt = con.createStatement();
-				String updateQuery="UPDATE contact SET email = '"+newmail+"' where email= '"+mail+"'";
-				PreparedStatement ps=con.prepareStatement(updateQuery);
-				ps.executeUpdate();
-		   }
-		catch(Exception e)
-		{}
-	}
+	
 		
 		public void deleteName(String name)
 		{
@@ -127,11 +127,10 @@ public class AddressBookRepository
 			Statement stmt = con.createStatement();
 
 	 String query="delete from contact where name=?";
-	  PreparedStatement ps=con.prepareStatement(query);
+	   ps=con.prepareStatement(query);
 	  ps.setString(1,name);
 	  ps.executeUpdate();
-	  System.out.println("<html><body><table><tr><td>Username</td></tr></table></body>");
-	  System.out.println("testing");
+	 
 
 
 	   }

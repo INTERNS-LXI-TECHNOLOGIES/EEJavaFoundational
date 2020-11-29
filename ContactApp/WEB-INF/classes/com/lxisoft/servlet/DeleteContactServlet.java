@@ -16,16 +16,21 @@ public class DeleteContactServlet extends HttpServlet
 		super();
 	}
 
-	protected void doPost(HttpServletRequest request,HttpServletResponse response)
+	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException , IOException
 	{
 		AddressBookRepository addressbookrepo =new AddressBookRepository();
 		String name = request.getParameter("name");
+		String id =request.getParameter("id");
 		addressbookrepo.deleteName(name);
-	 try{
+
+		RequestDispatcher rd = request.getRequestDispatcher("/ViewServlet");
+		rd.forward(request,response);
+	 /*try{
 	 	
 	response.sendRedirect("DeleteMessage.jsp");
 
 	   }
-	 catch(Exception e){}
+	 catch(Exception e){}*/
+
 }
 }
