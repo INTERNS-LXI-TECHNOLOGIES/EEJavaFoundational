@@ -25,12 +25,12 @@ public class DeleteContactServlet extends HttpServlet
 
 		RequestDispatcher rd = request.getRequestDispatcher("/ViewServlet");
 		rd.forward(request,response);
-	 /*try{
+	 try{
 	 	
 	response.sendRedirect("DeleteMessage.jsp");
 
 	   }
-	 catch(Exception e){}*/
+	 catch(Exception e){}
 
 }
 }

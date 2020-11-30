@@ -27,11 +27,11 @@
 
                             <div class="form-group">
                                                
-                                <input type="submit" style="text-indent:-9999px">   
-                                <!--script type="text/javascript">
+                                <!--input type="submit" style="text-indent:-9999px"-->   
+                                <script type="text/javascript">
                                         document.getElementById("login-form").submit(); 
 
-                                </script-->   
+                                </script>   
                                                       </div>
                           
                         </form>
