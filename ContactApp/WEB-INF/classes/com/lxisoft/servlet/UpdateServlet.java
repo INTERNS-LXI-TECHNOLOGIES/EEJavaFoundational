@@ -28,6 +28,13 @@ public class UpdateServlet extends HttpServlet
 	   		 contact.setEmail(newemail);
 
 	   		 addressbookrepo.edit(id,newname,newnumber,newemail);
+try
+	   		 {
+	   		response.sendRedirect("ContactAddedMessage.jsp");
+	   	}
+	   	catch(Exception e)
+		{
+		}
 
 		RequestDispatcher rd = request.getRequestDispatcher("/ViewServlet");
 		rd.forward(request,response);

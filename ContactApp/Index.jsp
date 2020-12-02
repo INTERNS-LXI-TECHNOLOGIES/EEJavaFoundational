@@ -89,7 +89,7 @@ body {
   <div class="login-container" action="LoginServlet" method="POST">
     <form action="LoginServlet" method="POST">
       <input type="text" placeholder="Username" id="username" name="username">
-      <input type="text" placeholder="Password" id="password" name="password">
+      <input type="password" placeholder="Password" id="password" name="password">
       <button type="submit">Login</button>
     </form>
   </div>

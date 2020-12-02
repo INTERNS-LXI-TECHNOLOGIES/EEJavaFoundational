@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -64,22 +64,34 @@ body {
 </head>
 <body>
 
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <div class="overlay-content">
+    <a href="AddContact.jsp">Add Contact</a>
+    <a href="ViewServlet">Update Contact</a>
+    
 
+  </div>
+</div>
 
-<h2 style="text-align: center;">Contact App</h2>
+<h2 style="text-align: center;">Welcome Admin</h2>
 <p align="right">
         <button type="button" class="btn btn-default btn-sm">
-          <a href="Index.jsp"> <span class="glyphicon glyphicon-log-out"></span> Log out
+          <a href="Menu.jsp"> <span class="glyphicon glyphicon-log-out"></span> Log out
         </button></a>
       </p>
 
+  <p style="text-align: center;"><button style="margin:5px;" class="openbtn" onclick="openNav()">&#9776;View Admin Options</button></p>
 
-  <div class="text-align" style="text-align: center;">
-<a href="ViewServletUser" ><button type="button" class="btn btn-primary">View Contact</button></a>
- <a href="AdminMenu.jsp"> <button type="button" class="btn btn-primary">Admin Console</button></a>
-</div>
+<script>
+function openNav() {
+  document.getElementById("myNav").style.width = "100%";
+}
 
-
+function closeNav() {
+  document.getElementById("myNav").style.width = "0%";
+}
+</script>
      
 </body>
 </html>
