@@ -18,6 +18,7 @@ public class AddServlet extends HttpServlet
 
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) 
 	{
+		
 		AddressBookRepository addressbookrepo=new AddressBookRepository();
 
 
@@ -29,6 +30,7 @@ public class AddServlet extends HttpServlet
 	   		 contact.setNumber(number);
 	   		 contact.setEmail(email);
 	   		 addressbookrepo.addToDatabase(name,number,email);
+
 	   		 try
 	   		 {
 	   		response.sendRedirect("ContactAddedMessage.jsp");
@@ -36,6 +38,9 @@ public class AddServlet extends HttpServlet
 	   	catch(Exception e)
 		{
 		}
-
 	}
-}
+	
+	}
+
+	
+

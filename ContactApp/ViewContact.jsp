@@ -13,6 +13,7 @@
 	</title>
 </head>
 <body style="background: white">
+	<%if (request.isUserInRole("admin")) {%>
 <%@page import = "com.lxisoft.servlet.*"%>
 <%@page import = "com.lxisoft.repository.*"%>
 <%@page import = "com.lxisoft.modal.*,java.util.*,com.lxisoft.secured.*"%>
@@ -54,6 +55,12 @@
 
 </table>
 <center><a href="AdminMenu.jsp"><input type="button" value="Go back to menu" name="cancel"/></a></center>
+<%}
+else
+{
+	            response.sendRedirect("WrongUser.jsp");
+
+}%>
 
 </body>
 </html>

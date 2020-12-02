@@ -15,16 +15,19 @@ public class LoginServlet extends HttpServlet  {
 
 	protected void doPost(HttpServletRequest request,HttpServletResponse response) throws IOException
 	{
+
 		String uname=request.getParameter("username");
 		String password=request.getParameter("password");
-		if(uname.equals("karthik")&&password.equals("123456"))
-		{
+		//if(uname.equals("karthik")&&password.equals("123456"))
+		//if (request.isUserInRole("admin"))
+		
+		//{
 			response.sendRedirect("Menu.jsp");
-		}
+		/*}
 		else
 		{
 			response.sendRedirect("Failed.jsp");
-		}
+		}*/
 	}
 }
 

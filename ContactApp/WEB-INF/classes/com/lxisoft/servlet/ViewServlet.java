@@ -13,6 +13,7 @@ public class ViewServlet extends HttpServlet
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException
 	{
+		//if (request.isUserInRole("admin")) {
 
 		ArrayList <Contact> contactList = new ArrayList<Contact>();
 
@@ -25,6 +26,11 @@ public class ViewServlet extends HttpServlet
 
 
 		rd.forward(request,response);
+	/*}
+	else
+	{
+	   		response.sendRedirect("WrongUser.jsp");
+	}*/
 					
 	}
 }  

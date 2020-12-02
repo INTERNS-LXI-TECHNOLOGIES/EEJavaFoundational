@@ -86,10 +86,10 @@ body {
 <div class="topnav">
   <a class="active" href="#home">Home</a>
   <a href="about.jsp">About</a>
-  <div class="login-container" action="LoginServlet" method="POST">
-    <form action="LoginServlet" method="POST">
-      <input type="text" placeholder="Username" id="username" name="username">
-      <input type="password" placeholder="Password" id="password" name="password">
+  <div class="login-container">
+    <form action="j_security_check" method="POST">
+      <input type="text" placeholder="Username" id="j_username" name="j_username">
+      <input type="password" placeholder="Password" id="j_password" name="j_password">
       <button type="submit">Login</button>
     </form>
   </div>
