@@ -9,7 +9,7 @@ pageEncoding="ISO-8859-1"%>
 <body>
 <% session.invalidate(); %>
 <p>You have been successfully logout</p>
-<%	   		response.sendRedirect("Menu.jsp");
+<%	   		response.sendRedirect("index.jsp");
 %>
 </body>
 </html>

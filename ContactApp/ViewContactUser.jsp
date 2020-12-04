@@ -50,7 +50,7 @@
 		} %>
 
 </table>
-<center><a href="Menu.jsp"><input type="button" value="Go back to menu" name="cancel"/></a></center>
+<center><a href="index.jsp"><input type="button" value="Go back to menu" name="cancel"/></a></center>
 
 </body>
 </html>

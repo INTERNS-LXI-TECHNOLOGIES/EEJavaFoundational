@@ -6,7 +6,7 @@
 
 	swal ( "Admin Authentication required!!!!" )
 	setTimeout(function(){
-            window.location.href = 'Menu.jsp';
+            window.location.href = 'index.jsp';
          }, 3600);
 });
 
