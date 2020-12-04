@@ -1,0 +1,8 @@
+com/lxisoft/servlet/UpdateServlet.class
+com/lxisoft/repository/AddressBookRepository.class
+com/lxisoft/servlet/DeleteContactServlet.class
+com/lxisoft/servlet/ViewServletUser.class
+com/lxisoft/servlet/LoginServlet.class
+com/lxisoft/servlet/ViewServlet.class
+com/lxisoft/modal/Contact.class
+com/lxisoft/servlet/AddServlet.class
