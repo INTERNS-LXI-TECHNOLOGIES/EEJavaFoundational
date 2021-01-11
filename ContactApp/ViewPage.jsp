@@ -1,3 +1,4 @@
+
 <%@page import ="java.sql.*" %> 
 <%@page import ="java.util.*" %>
 <!DOCTYPE html>
@@ -10,12 +11,21 @@
 	<a href =index.html><h1 align = center><b><u> Contact APP </u></b></h1></a>
 	<p align = center>contact app developed by Faris for LxiTechnologies pvt.ltd</p>
 	<p><b> Contacts Database<b></p>
+		<h1>Displaying Student List</h1> 
+	<table border ="1" width="500" align="center"> 
+		<tr bgcolor="00FF7F"> 
+		<th><b>First Name</b></th> 
+		<th><b>Last Name</b></th> 
+		<th><b>Email</b></th>
+		<th><b>Contact Number</b></th> 
+		</tr> 
 		<%
 		String jdbcURL = "jdbc:mysql://localhost:3306/ContactApp";
   	String userName = "root";
   	String password = "root";
   	PreparedStatement preparedstatement=null;
 	Statement statement=null;
+	ResultSet result = null;
 	
 	try
 		{
@@ -38,11 +48,12 @@
 			String email = result.getString(4);
 			String contactNumber = result.getString(5);
 			
-			System.out.println("\t"+id+"\t"+fname+"\t"+lname+"\t"+email+"\t\t"+contactNumber+"\t");
+			out.println("\n\t"+id+"\n\t"+fname+"\n\t"+lname+"\n\t"+email+"\n\t"+contactNumber+"\n\t");
+			
 			}
-			connection.close();
+			
 		} 
-		i		}	
+			
 
 			catch(SQLException e)
 			{
@@ -54,6 +65,10 @@
 			out.println(e);
 		}
 	%>
+	
+</table>
 	 <a href = index.html color=black>Back to Home Page</a>
+
 </body>
 </html>
+ 	
