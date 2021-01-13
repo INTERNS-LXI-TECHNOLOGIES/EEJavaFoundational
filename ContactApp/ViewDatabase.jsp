@@ -1,7 +1,9 @@
 <%@page import="com.Lxisoft.Control.*"%>
 <%@page import="com.Lxisoft.Model.*"%>
+<%@page import="com.Lxisoft.Repositry.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 
 <!DOCTYPE html>
 <html>
@@ -11,9 +13,9 @@
 <body>
   <link href="style1.css" rel="stylesheet" type ="text/css">
   <div class="testbox">
-    <h1><a href="Index.html" class="header"> Contact Application</h1>
+    <h1><a href="Index.html" class="header"> Contact Application</a></h1>
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
-    <div style="overflow-x:auto;">
+    <div style="overflow-y:auto;">
     <table>
     	<tr>
     		<th>First Name</th>
@@ -21,14 +23,39 @@
     		<th>Email</th>
     		<th>Contact Number</th>
     	</tr>
+    	<tr>
+    		<td>1</td>
+    		<td>2></td>
+    		<td>3</td>
+    		<td>4</td>
+    	</tr>
+    	<tr>
+    		<td>fa</td>
+    		<td>ba</td>
+    		<td>ck</td>
+    		<td>is</td>
+    	</tr>
+    	<tr>
+    		<td>fa</td>
+    		<td>ba</td>
+    		<td>ck</td>
+    		<td>is</td>
+    	</tr>
+<tr>
+    		<td>fa</td>
+    		<td>ba</td>
+    		<td>ck</td>
+    		<td>is</td>
+    	</tr>
     	<%
-    		ContactAppController contact = new ContactAppController();
-    		contact.printDatabase(data);
+    		ContactAppController contactApp= new ContactAppController();
     	%>
     </table>
 </div>
-  <div class="buttons">
-    <a href="AddContacts.jsp" class="button">View Contact Database</a></div>
+    <a href="AddContacts.jsp" class="button">Add Contacts</a>
+    <a href="AddContacts.jsp" class="button">Delete Contact</a>
+    <a href="AddContacts.jsp" class="button">Update Contact</a>
+
     
 </body>
 </html>

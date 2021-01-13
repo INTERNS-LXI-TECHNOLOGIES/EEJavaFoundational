@@ -9,20 +9,20 @@ public class ContactAppController
 	ArrayList<Contact> data = new ArrayList<Contact>();
 	MysqlRepositry repo = new MysqlRepositry();
 
-	public void AddContacts(ArrayList<Contact> databaseConnection)
+	public void AddContacts(ArrayList<Contact> data)
 	{
 		repo.addContacts(data);
 	}
-	public void updateContacts(ArrayList<Contact> databaseConnection)
+	public void updateContacts(ArrayList<Contact> data)
 	{
 		repo.updateContacts(data);
 
 	}
-	public void deleteContacts(ArrayList<Contact> databaseConnection)
+	public void deleteContacts(ArrayList<Contact> data)
 	{
 		repo.deleteContacts(data);
 	}
-	public void printDatabase(ArrayList<Contact> databaseConnection)
+	public void printDatabase(ArrayList<Contact> data)
 	{
 		repo.printDatabase(data);
 	}

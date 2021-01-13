@@ -1,4 +1,5 @@
 package com.Lxisoft.Repositry;
+import com.Lxisoft.Repositry.*;
 import java.sql.*;
 
 public class MysqlRepositry
@@ -8,6 +9,7 @@ public class MysqlRepositry
 	ResultSet result =null;
 	PreparedStatement preparedStatement=null;
 	int row;
+	Contact contact=new Contact();
 
 	public void createDatabaseConnection()
 	{
@@ -34,12 +36,12 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public void addtoDatabase()
+	public void addtoDatabase(ArrayList<Contact> data)
 	{
 		createDatabaseConnection();
 		try
 		{
-		preparedstatement = connection.prepareStatement("INSERT INTO ContactInfo (First_Name,Last_Name,Email,Contact_Number) VALUES ('"+fname+"','"+lName+"','"+email+"','"+phNo+"')");
+		preparedstatement = connection.prepareStatement("INSERT INTO ContactInfo (First_Name,Last_Name,Email,Contact_Number) VALUES ('"+data.get(0).setFirstName()+"','"+data.get(0).setLastName()+"','"+data.get(0).setEmail()+"','"+data.get(0).setContactNumber()+"')");
 		row = preparedstatement.executeUpdate();
 		preparedstatement.close();
 		connection.close();
@@ -49,12 +51,12 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public void updateContacts()
+	public void updateContacts(ArrayList<Contact> data)
 	{
 		createDatabaseConnection();
 		try
 		{
-		preparedStatement=connection.prepareStatement("UPDATE ContactInfo SET First_Name='"+fname+"',  Last_Name='"+lName+"', Email='"+email+"', Contact_Number='"+phNo+"' WHERE id ='"+j+"'");
+		preparedStatement=connection.prepareStatement("UPDATE ContactInfo SET First_Name='"+data.get(0).setFirstName()+"',  Last_Name='"+data.get(0).setFirstName()+"', Email='"+data.get(0).setFirstName()+"', Contact_Number='"+data.get(0).setFirstName()+"' WHERE id ='"+j+"'");
 		row = preparedstatement.executeUpdate();
 		preparedstatement.close();
 		connection.close();
@@ -65,7 +67,7 @@ public class MysqlRepositry
 		}
 
 	}
-	public void deleteContacts()
+	public void deleteContacts(ArrayList<Contact> data)
 	{
 		createDatabaseConnection();
 		try
@@ -80,7 +82,7 @@ public class MysqlRepositry
 			System.out.println(e)
 		}
 	}
-	public void printDatabase()
+	public void printDatabase(ArrayList<Contact> data)
 	{
 		try
 		{
