@@ -1,6 +1,6 @@
-<%@page import="com.Lxisoft.Control.*"%>
-<%@page import="com.Lxisoft.Model.*"%>
-<%@page import="com.Lxisoft.Repositry.*"%>
+<%@page import="com.lxisoft.control.*"%>
+<%@page import="com.lxisoft.model.*"%>
+<%@page import="com.lxisoft.repositry.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>

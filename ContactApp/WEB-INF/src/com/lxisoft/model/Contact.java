@@ -1,4 +1,4 @@
-package com.Lxisoft.Model;
+package com.lxisoft.model;
 
 public class Contact
 {
@@ -6,6 +6,7 @@ public class Contact
 	private String lastName;
 	private String email;
 	private String contactNumber;
+	private String index;
 
 	public void setFirstName(String firstName)
 	{
@@ -22,6 +23,15 @@ public class Contact
 	public void setContactNumber(String contactNumber)
 	{
 		this.contactNumber=contactNumber;
+	}
+	public void setIndexID(String index)
+	{
+		this.index=index;
+	}
+	
+	public String getIndexID()
+	{
+		return index;
 	}
 	public String getFirstName()
 	{
