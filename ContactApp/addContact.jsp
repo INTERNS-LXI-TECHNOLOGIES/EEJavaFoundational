@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<%@page import="com.lxisoft.Model.Contact,com.lxisoft.repository.ContactRepository"%>
+<%@page import="com.lxisoft.model.*"%>
 <%@page import="java.sql.*,java.io.*"%>
 <%@page import="java.sql.Connection"%>
 <head>
@@ -9,18 +9,18 @@
 <body>
 	<% String fname= request.getParameter("fname");
 	   String lname= request.getParameter("lname");
-	   String email= request.getParameter("email");
+	   String mailid= request.getParameter("mailid");
 	   String number= request.getParameter("number");
 	   Contact contact = new Contact();
 	   contact.setFirstName(fname);
 	   contact.setLastName(lname);
 	   contact.setNumber(number);
-	   contact.setMailId(email);
+	   contact.setMailId(mailid);
 	   try
 	   {
-	   	Class.forName("com.mysql.cj.jdbc.Driver");
+	   	Class.forName("com.mysql.jdbc.Driver");
 	   	 Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","password");
-	   	 Statement stmt = con.creatStatement();
+	   	 Statement stmt = con.createStatement();
 
 	   	   PreparedStatement ps = con.prepareStatement("insert into contactapp(FirstName,LastName,MailId,Number) values(?,?,?,?)");
 	   	   ps.setString(1,contact.getFirstName());
@@ -31,7 +31,7 @@
 	   }
 	   catch(SQLException e)
 	   {
-	   	System.out.println(e)
+	   
 	   }
       %>
 </body>
