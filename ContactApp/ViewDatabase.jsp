@@ -23,38 +23,23 @@
     		<th>Email</th>
     		<th>Contact Number</th>
     	</tr>
-    	<tr>
-    		<td>1</td>
-    		<td>2></td>
-    		<td>3</td>
-    		<td>4</td>
-    	</tr>
-    	<tr>
-    		<td>fa</td>
-    		<td>ba</td>
-    		<td>ck</td>
-    		<td>is</td>
-    	</tr>
-    	<tr>
-    		<td>fa</td>
-    		<td>ba</td>
-    		<td>ck</td>
-    		<td>is</td>
-    	</tr>
-<tr>
-    		<td>fa</td>
-    		<td>ba</td>
-    		<td>ck</td>
-    		<td>is</td>
-    	</tr>
+    
     	<%
-    		ContactAppController contactApp= new ContactAppController();
-    	%>
-    </table>
+    		ContactAppController controller= new ContactAppController();
+            Contact contact = new Contact();
+        
+        controller.printDatabase();
+            %>
+      <td><%out.print(contact.getFirstName());%></td>
+      <td><%out.print(contact.getLastName()); %></td>
+      <td><%out.print(contact.getEmail());%></td>
+      <td><%out.print(contact.getContactNumber()); %></td>
+    </tr>
+</table>
 </div>
-    <a href="AddContacts.jsp" class="button">Add Contacts</a>
-    <a href="AddContacts.jsp" class="button">Delete Contact</a>
-    <a href="AddContacts.jsp" class="button">Update Contact</a>
+    <a href="AddContacts.html" class="button">Add Contacts</a>
+    <a href="DeleteContacts.html" class="button">Delete Contact</a>
+    <a href="UpdateContacts.html" class="button">Update Contact</a>
 
     
 </body>

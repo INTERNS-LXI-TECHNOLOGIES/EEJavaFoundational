@@ -109,7 +109,7 @@ hr{
   margin-top:30px;
   margin-bottom:30px;
 }  
-input[type=text]{
+input[type=text],[type=email]{
   width: 500px; 
   height: 39px;  
   border-radius: 0px 4px 4px 0px/5px 5px 4px 4px; 

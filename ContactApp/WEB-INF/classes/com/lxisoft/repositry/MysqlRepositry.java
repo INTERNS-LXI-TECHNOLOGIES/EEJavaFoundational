@@ -1,6 +1,4 @@
 package com.lxisoft.repositry;
-import com.lxisoft.model.Contact;
-import java.util.*;
 import java.sql.*;
 
 public class MysqlRepositry
@@ -37,14 +35,14 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public void addtoDatabase()
+	public void addtoDatabase(ArrayList<Contact> data)
 	{
 		createDatabaseConnection();
 		try
 		{
-		preparedStatement = connection.prepareStatement("INSERT INTO ContactInfo (First_Name,Last_Name,Email,Contact_Number) VALUES ('"+contact.getFirstName()+"','"+contact.getLastName()+"','"+contact.getEmail()+"','"+contact.getContactNumber()+"')");
-		row = preparedStatement.executeUpdate();
-		preparedStatement.close();
+		preparedstatement = connection.prepareStatement("INSERT INTO ContactInfo (First_Name,Last_Name,Email,Contact_Number) VALUES ('"+data.get(0).setFirstName()+"','"+data.get(0).setLastName()+"','"+data.get(0).setEmail()+"','"+data.get(0).setContactNumber()+"')");
+		row = preparedstatement.executeUpdate();
+		preparedstatement.close();
 		connection.close();
 		}
 	catch(SQLException e)
@@ -52,15 +50,14 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public void updateContacts()
+	public void updateContacts(ArrayList<Contact> data)
 	{
-		String update=contact.getIndexID();
 		createDatabaseConnection();
 		try
 		{
-		preparedStatement = connection.prepareStatement("UPDATE ContactInfo SET First_Name='"+contact.getFirstName()+"',  Last_Name='"+contact.getLastName()+"', Email='"+contact.getEmail()+"', Contact_Number='"+contact.getContactNumber()+"' WHERE ID ='"+update+"'");
-		row = preparedStatement.executeUpdate();
-		preparedStatement.close();
+		preparedStatement=connection.prepareStatement("UPDATE ContactInfo SET First_Name='"+data.get(0).setFirstName()+"',  Last_Name='"+data.get(0).setFirstName()+"', Email='"+data.get(0).setFirstName()+"', Contact_Number='"+data.get(0).setFirstName()+"' WHERE id ='"+j+"'");
+		row = preparedstatement.executeUpdate();
+		preparedstatement.close();
 		connection.close();
 		}
 		catch(SQLException e)
@@ -71,7 +68,6 @@ public class MysqlRepositry
 	}
 	public void deleteContacts(ArrayList<Contact> data)
 	{
-		String delete=null;
 		createDatabaseConnection();
 		try
 		{
@@ -82,12 +78,11 @@ public class MysqlRepositry
 		}
 		catch(SQLException e)
 		{
-			System.out.println(e);
+			System.out.println(e)
 		}
 	}
-	public void printDatabase()
+	public void printDatabase(ArrayList<Contact> data)
 	{
-		
 		try
 		{
 		String sql  = "SELECT * FROM  ContactInfo" ;
@@ -101,18 +96,11 @@ public class MysqlRepositry
 			String lname = result.getString(3);
 			String email = result.getString(4);
 			String contactNumber = result.getString(5);
-
-		
-			contact.setIndexID(id);
-			contact.setFirstName(fname);
-			contact.setLastName(lname);
-			contact.setEmail(email);
-			contact.setContactNumber(contactNumber);
 			connection.close();
-		}}
+		}
 		catch(SQLException e)
 		{
-			System.out.println(e);
+			System.out.println(e)
 		}
 
 	}

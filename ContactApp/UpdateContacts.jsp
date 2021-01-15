@@ -1,3 +1,7 @@
+<%@page import="com.lxisoft.control.*"%>
+<%@page import="com.lxisoft.model.*"%>
+<%@page import="java.util.*"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,20 +12,27 @@
   <div class="testbox">
     <h1><a href="Index.html" class="header"> Contact Application</a></h1>
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
-    <form action=# method="post">
-     <label id="icon" for="name"><i class="icon-envelope "></i></label>
-    <input type="text" name="deleteIndexID" id="name" placeholder="Enter ID to Update" required/></br>
-  <label id="icon" for="name"><i class="icon-envelope "></i></label>
-  <input type="text" name="name" id="name" placeholder="Enter First Name" required/></br>
-     <label id="icon" for="name"><i class="icon-envelope "></i></label>
-  <input type="text" name="name" id="name" placeholder=" Enter Last Name" required/></br>
-<label id="icon" for="name"><i class="icon-envelope "></i></label>
-  <input type="text" name="name" id="name" placeholder="Email" required/></br>
-<label id="icon" for="name"><i class="icon-envelope "></i></label>
-  <input type="text" name="name" id="name" placeholder="Enter Contact Number" required/></br>
-</form>
-  <a href="#" class="updatebutton"> Update </a>
-   <a href="#" class="button">View Database</a>
+    <p class="add"> Contact Has Been Updated</p>
+    <%
+    
+  ContactAppController controller ContactAppController();
+  Contact contact=new Contact();
+  String id =request.getParameter("ID");    
+
+    String fname=request.getParameter("fisrtname");
+    String lname=request.getParameter("lastname");
+    String email=request.getParameter("email");
+    String phno=request.getParameter("contactnumber");
+
+    contact.setFirstName(fname);
+  contact.setLastName(lname);
+  contact.setEmail(email);
+  contact.setContactNumber(phno);
+  controller.updateContacts();
+
+    
+    %>
+    <a href="ViewDatabase.jsp" class="button">View Database</a> 
 
 
 </div>
