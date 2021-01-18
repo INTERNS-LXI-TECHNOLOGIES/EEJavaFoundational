@@ -1,29 +1,28 @@
 package com.lxisoft.control;
-import com.lxisoft.model.contact;
+import com.lxisoft.model.Contact;
 import com.lxisoft.repositry.MysqlRepositry;
 import java.util.*;
 import java.sql.*;
 
 public class ContactAppController
 {
-	ArrayList<Contact> data = new ArrayList<Contact>();
 	MysqlRepositry repo = new MysqlRepositry();
 
-	public void AddContact(ArrayList<Contact> data)
+	public void AddContact()
 	{
-		repo.addContacts(data);
+		repo.addtoDatabase();
 	}
-	public void updateContact(ArrayList<Contact> data)
+	public void updateContact()
 	{
-		repo.updateContacts(data);
+		repo.updateContacts();
 
 	}
-	public void deleteContact(ArrayList<Contact> data)
+	public void deleteContact()
 	{
-		repo.deleteContacts(data);
+		repo.deleteContacts();
 	}
-	public void printDatabase(ArrayList<Contact> data)
+	public void printDatabase()
 	{
-		repo.printDatabase(data);
+		repo.printDatabase();
 	}
 }
