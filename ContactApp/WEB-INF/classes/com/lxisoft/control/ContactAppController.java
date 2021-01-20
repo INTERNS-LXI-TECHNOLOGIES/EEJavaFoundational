@@ -8,21 +8,29 @@ public class ContactAppController
 {
 	MysqlRepositry repo = new MysqlRepositry();
 
-	public void AddContact()
+	public void addContact(String fname,String lname,String email,String phno)
 	{
-		repo.addtoDatabase();
+		repo.addtoDatabase(fname,lname,email,phno);
 	}
-	public void updateContact()
+	public void updateContact(String id,String fname,String lname,String email,String phno)
 	{
-		repo.updateContacts();
+		repo.updateContacts(id,fname,lname,email,phno);
 
 	}
-	public void deleteContact()
+	public void deleteContact(String delete)
 	{
-		repo.deleteContacts();
+		repo.deleteContacts(delete);
 	}
-	public void printDatabase()
+	public void printDatabases()
 	{
 		repo.printDatabase();
+	}
+	public void createConnection()
+	{
+		repo.createDatabaseConnection();
+	}
+	public void printDetails(String name)
+	{
+		repo.printDetail(name);
 	}
 }

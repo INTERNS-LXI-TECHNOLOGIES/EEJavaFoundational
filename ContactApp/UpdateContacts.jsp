@@ -15,20 +15,14 @@
     <p class="add"> Contact Has Been Updated</p>
     <%
     
-  ContactAppController controller ContactAppController();
+  ContactAppController controller = new ContactAppController();
   Contact contact=new Contact();
-  String id =request.getParameter("ID");    
-
+    String id =request.getParameter("ID");    
     String fname=request.getParameter("fisrtname");
     String lname=request.getParameter("lastname");
     String email=request.getParameter("email");
     String phno=request.getParameter("contactnumber");
-
-    contact.setFirstName(fname);
-  contact.setLastName(lname);
-  contact.setEmail(email);
-  contact.setContactNumber(phno);
-  controller.updateContacts();
+    controller.updateContact(id,fname,lname,email,phno);
 
     
     %>

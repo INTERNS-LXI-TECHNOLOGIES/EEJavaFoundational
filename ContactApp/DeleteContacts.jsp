@@ -17,7 +17,7 @@
       
   ContactAppController controller=new ContactAppController();
       String delete=request.getParameter("delete");    
-      controller.deleteContacts(); 
+      controller.deleteContact(delete); 
     %>
    <a href="ViewDatabase.jsp" class="button">View Database</a>
 

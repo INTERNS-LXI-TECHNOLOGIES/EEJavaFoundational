@@ -166,6 +166,11 @@ a.header
   text-decoration:none;
 
 }
+a.tabledata
+{
+
+  text-decoration:none;
+}
 p.credits
 {
   font-size: 20px;
@@ -193,6 +198,7 @@ th, td
 {
   text-align: left;
   padding: 8px;
+  text-decoration:none;
 }
 
 tr:nth-child(even) 

@@ -13,18 +13,14 @@
     <h1><a href="Index.html" class="header"> Contact Application</h1>
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
     <%
-      ContactAppController controller= new ContactAppController();
-     Contact contact= new Contact(); 
-      String fname=request.getParameter("firstname");
-  String lname=request.getParameter("lastname");
-  String email=request.getParameter("email");
-  String phno=request.getParameter("contactnumber");
-  Contact contact=new Contact();
-  contact.setFirstName(fname);
-  contact.setLastName(lname);
-  contact.setEmail(email);
-  contact.setContactNumber(phno);
-    controller.addContact();  
+    ContactAppController controller= new ContactAppController();
+    Contact contact= new Contact(); 
+    String fname=request.getParameter("firstname");
+    String lname=request.getParameter("lastname");
+    String email=request.getParameter("email");
+    String phno=request.getParameter("contactnumber");
+
+    controller.addContact(fname,lname,email,phno);  
 
     %>
     <p class="add">Contact Added Successfully.</p>
