@@ -147,4 +147,25 @@ public class MysqlRepositry
 		{
 			System.out.println(e);
 		}
-	}}
+	}
+	public void updateindividualContacts(String id,String fname,String lname,String email,String phno)
+	{
+		createDatabaseConnection();
+		contact.setFirstName(fname);
+		contact.setLastName(lname);
+		contact.setEmail(email);
+		contact.setContactNumber(phno);
+		try
+		{
+		preparedStatement=connection.prepareStatement("UPDATE ContactInfo SET First_Name ='"+contact.getFirstName()+"',Last_Name='"+contact.getLastName()+"', Email='"+contact.getEmail()+"', Contact_Number='"+contact.getContactNumber()+"' WHERE ID='"+id+"' ");
+		row = preparedStatement.executeUpdate();
+		preparedStatement.close();
+		connection.close();
+		}
+		catch(SQLException e)
+		{
+			System.out.println(e);
+		}
+
+	}
+}
