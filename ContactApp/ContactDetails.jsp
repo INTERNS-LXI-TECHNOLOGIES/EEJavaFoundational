@@ -25,7 +25,7 @@
     <%
     ContactAppController controller= new ContactAppController();
     Contact contact = new Contact();
-    String name=request.getParameter("Name");
+    String name=request.getParameter(id);
     controller.printDetails(name);
 
     %>

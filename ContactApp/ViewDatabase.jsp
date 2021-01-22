@@ -64,7 +64,7 @@
        %>
      <tr>
       <td><%out.print(id); %></td>
-      <td><a href="ContactDetails.jsp" id="Name"class="tabledata"><%out.print(contact.getFirstName());%></a></td>
+      <td><a href="ContactDetails.jsp?id=<%contact.getFirstName();%>" class="tabledata"><%out.print(contact.getFirstName());%></a></td>
       <td><%out.print(contact.getLastName()); %></td>
       <td><%out.print(contact.getEmail());%></td>
       <td><%out.print(contact.getContactNumber()); %></td>

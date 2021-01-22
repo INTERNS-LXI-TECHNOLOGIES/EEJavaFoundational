@@ -59,13 +59,15 @@ public class MysqlRepositry
 	public void updateContacts(String id,String fname,String lname,String email,String phno)
 	{
 		createDatabaseConnection();
+		contact.setIndex(id);
 		contact.setFirstName(fname);
 		contact.setLastName(lname);
 		contact.setEmail(email);
 		contact.setContactNumber(phno);
 		try
 		{
-		preparedStatement=connection.prepareStatement("UPDATE ContactInfo SET First_Name ='"+contact.getFirstName()+"',Last_Name='"+contact.getLastName()+"', Email='"+contact.getEmail()+"', Contact_Number='"+contact.getContactNumber()+"' WHERE ID='"+id+"' ");
+
+		preparedStatement=connection.prepareStatement("UPDATE ContactInfo SET First_Name ='"+contact.getFirstName()+"',Last_Name='"+contact.getLastName()+"', Email='"+contact.getEmail()+"', Contact_Number='"+contact.getContactNumber()+"' WHERE ID='"+contact.getIndex()+"' ");
 		row = preparedStatement.executeUpdate();
 		preparedStatement.close();
 		connection.close();
@@ -126,46 +128,27 @@ public class MysqlRepositry
 		createDatabaseConnection();
 		try
 		{
-		String sql  = "SELECT First_Name,Last_Name,Email,ContactNumber FROM  ContactInfo where First_Name='"+name+"'" ;
+		String sql  = "SELECT First_Name,Last_Name,Email,Contact_Number FROM  ContactInfo where First_Name='"+name+"'" ;
 		statement = connection.createStatement();
 		result = statement.executeQuery(sql);
 		while(result.next())
 			{
 			
 			String fname = result.getString(1);	
-			String lname = result.getString(2);
+		 	String lname = result.getString(2);
 			String email = result.getString(3);
 			String phno = result.getString(4);
 			contact.setFirstName(fname);
 			contact.setLastName(lname);
 			contact.setEmail(email);
 			contact.setContactNumber(phno);
-		}
 			connection.close();
 		}
-		catch(SQLException e)
-		{
-			System.out.println(e);
-		}
-	}
-	public void updateindividualContacts(String id,String fname,String lname,String email,String phno)
-	{
-		createDatabaseConnection();
-		contact.setFirstName(fname);
-		contact.setLastName(lname);
-		contact.setEmail(email);
-		contact.setContactNumber(phno);
-		try
-		{
-		preparedStatement=connection.prepareStatement("UPDATE ContactInfo SET First_Name ='"+contact.getFirstName()+"',Last_Name='"+contact.getLastName()+"', Email='"+contact.getEmail()+"', Contact_Number='"+contact.getContactNumber()+"' WHERE ID='"+id+"' ");
-		row = preparedStatement.executeUpdate();
-		preparedStatement.close();
-		connection.close();
+			
 		}
 		catch(SQLException e)
 		{
 			System.out.println(e);
 		}
-
 	}
 }
