@@ -30,10 +30,7 @@
     	<th>Contact Number</th>
     </tr>
     <tr>
-    	<td><%out.print(contact.getFirstName());%></td>
-    	<td><%out.print(contact.getLastName());%></td>
-    	<td><%out.print(contact.getEmail());%></td>
-    	<td><%out.print(contact.getContactNumber());%></td>
+    	
     </tr>
     
     </table>
