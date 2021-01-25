@@ -25,20 +25,22 @@
     <%
     ContactAppController controller= new ContactAppController();
     Contact contact = new Contact();
-    String name=request.getParameter(id);
-    controller.printDetails(name);
-
+    String id=request.getParameter("id");
+    String fname=request.getParameter("fname");
+    String lname=request.getParameter("lname");
+    String email=request.getParameter("email");
+    String contactNumber=request.getParameter("contactNumber");
+    String delete=fname;
     %>
 		<tr>
-      <td><%out.print(contact.getFirstName());%></a></td>
-      <td><%out.print(contact.getLastName());%></td>
-      <td><%out.print(contact.getEmail());%></td>
-      <td><%out.print(contact.getContactNumber());%></td>
+      <td><%out.print(fname);%></a></td>
+      <td><%out.print(lname);%></td>
+      <td><%out.print(email);%></td>
+      <td><%out.print(contactNumber);%></td>
       </tr></table>
-     <a href="ViewDatabase.jsp" class="button">View Database</a>
-
-
-
+      <a href="DeleteContacts.jsp?delete=<%=fname%>" class="button">Delete Contact</a>
+      <a href="UpdateContact.jsp?id=<%=id%>" class="button">Update Contact</a>
+      <a href="ViewDatabase.jsp" class="button">View Database</a>
 </div>
 </body>
 </html>

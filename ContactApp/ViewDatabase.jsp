@@ -64,7 +64,7 @@
        %>
      <tr>
       <td><%out.print(id); %></td>
-      <td><a href="ContactDetails.jsp?id=<%contact.getFirstName();%>" class="tabledata"><%out.print(contact.getFirstName());%></a></td>
+      <td><a href="ContactDetails.jsp?id=<%=id%>&fname=<%=contact.getFirstName()%>&lname=<%=contact.getLastName()%>&email=<%=contact.getEmail()%>&contactNumber=<%=contact.getContactNumber()%>" id class="tabledata"><%out.print(contact.getFirstName());%></a></td>
       <td><%out.print(contact.getLastName()); %></td>
       <td><%out.print(contact.getEmail());%></td>
       <td><%out.print(contact.getContactNumber()); %></td>
@@ -90,8 +90,7 @@
 </table>
 </div>
     <a href="AddContacts.html" class="button">Add Contacts</a>
-    <a href="DeleteContacts.html" class="button">Delete Contact</a>
-    <a href="UpdateContacts.html" class="button">Update Contact</a>
+    <a href="SearchContacts.html" class="button">Search Contacts</a>
 
     
 </body>

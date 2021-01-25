@@ -17,7 +17,7 @@
     
   ContactAppController controller = new ContactAppController();
   Contact contact=new Contact();
-    String id =request.getParameter("ID");    
+    String id =request.getParameter("id");    
     String fname=request.getParameter("firstname");
     String lname=request.getParameter("lastname");
     String email=request.getParameter("email");

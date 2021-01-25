@@ -123,7 +123,7 @@ public class MysqlRepositry
 		}
 
 	}
-	public void printDetail(String name)
+	public void searchDatabase(String name)
 	{
 		createDatabaseConnection();
 		try

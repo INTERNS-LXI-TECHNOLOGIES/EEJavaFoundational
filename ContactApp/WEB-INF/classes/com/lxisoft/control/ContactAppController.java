@@ -29,8 +29,8 @@ public class ContactAppController
 	{
 		repo.createDatabaseConnection();
 	}
-	public void printDetails(String name)
+	public void searchContacts(String name)
 	{
-		repo.printDetail(name);
+		repo.searchDatabase(name);
 	}
 }
