@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<%@page import="com.lxisoft.model.Contact"%>
+<%@page import="com.lxisoft.model.Contact,com.lxisoft.control.*,com.lxisoft.repository.*"%>
 <%@page import="java.sql.*,java.io.*,java.util.*"%>
 <%@page import="java.sql.Connection"%>
 <head>
@@ -8,7 +8,7 @@
 </head>
 <body bgcolor="orange">
 	<center>
-    <table border="1">
+    <table border="1">	
       <tr>
         <th>Id</th>
         <th>First Name</th>
@@ -18,8 +18,9 @@
       </tr>
       <tr>
 	<%
-	   String name= request.getParameter("name");
-
+	  Control control = new Control();
+      String name= request.getParameter("name");
+      control.searchContact(name); 
 	   try
 	   {
 	   	Class.forName("com.mysql.cj.jdbc.Driver");
@@ -43,12 +44,12 @@
 	   catch(Exception e)
 	   {
 	   	
-	   }
+	   }      
       %>
      </tr>
      </table>
      <tr><h1><b> THIS IS THE DATA YOU REQUESTED TO SEARCH </b></h1></tr>
-      	<tr><td></td><td><a href="index.html" type="submit"> INDEX PAGE </a></td></tr>
+      	<tr><td></td><td><a href="View.jsp" type="submit"> VIEW PAGE </a></td></tr>
       </center>
 </body>
 </html>

@@ -1,4 +1,7 @@
 package com.lxisoft.model;
+import com.lxisoft.model.*;
+import com.lxisoft.repository.*;
+import com.lxisoft.control.*;
 public  class Contact
 {
 	private String fname;

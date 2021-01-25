@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
 <%@page import="com.lxisoft.model.Contact,com.lxisoft.control.*,com.lxisoft.repository.*"%>
-<%@page import="java.sql.*,java.io.*,java.util.*"%>
+<%@page import="java.sql.*,java.io.*"%>
 <%@page import="java.sql.Connection"%>
 <head>
-	<title>Contact App</title>
+	<title> SEARCH OPTION </title>
 </head>
-<body bgcolor="B87333">
-  <center>
-    <table border="">
+<body bgcolor="pink">
+	<center>
+		<h1 class="text-center text-white pt-5">SEARCH OPTION</h1>
+		<form action="Search.jsp" method="get">
+			<tr><td>ENTER THE FIRST NAME TO SEARCH : </td><td><input type="text" name="name"></td></tr>
+			<tr><td></td><td><input type="submit" value="SUBMIT"></td></tr>
+		<table border="1">
       <tr>
         <th>Id</th>
         <th>First Name</th>
@@ -45,14 +49,9 @@
       }
       %>
       </tr>
-    </table>
-    <tr><h1><b> THE DETAILS OF THE CONTACTS </b></h1></tr>  
-    <table>
-       <tr><td></td><td><a href="addContact.html" type="submit"> ADD CONTACT </a></td></tr>
-       <tr><td></td><td><a href="Search1.jsp" type="submit"> SEARCH CONTACT </a></td></tr>
-      <tr><td></td><td><a href="Delete.jsp" type="submit"> DELETE CONTACT </a></td></tr>
-        <tr><td></td><td><a href="index.html" type="submit"> INDEX PAGE </a></td></tr>
-    </table>
-         </center>
+		</table>
+		<tr><td></td><td><a href="View.jsp" type="submit"> VIEW PAGE </a></td></tr>	
+	</form>
+	</center>
 </body>
 </html>
