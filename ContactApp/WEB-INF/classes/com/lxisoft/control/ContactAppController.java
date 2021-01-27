@@ -21,9 +21,9 @@ public class ContactAppController
 	{
 		repo.deleteContacts(delete);
 	}
-	public void printDatabases()
+	public void printDatabases(ArrayList<Contact> contactList)
 	{
-		repo.printDatabase();
+		repo.printDatabase(contactList);
 	}
 	public void createConnection()
 	{

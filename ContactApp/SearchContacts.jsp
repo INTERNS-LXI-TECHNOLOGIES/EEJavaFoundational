@@ -16,6 +16,7 @@
     <h1><a href="Index.html" class="header"> Contact Application</a></h1>
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
     <%
+
     	String name=request.getParameter("search");
     	ContactAppController controller= new ContactAppController();
     	controller.searchContacts(name);
@@ -30,7 +31,10 @@
     	<th>Contact Number</th>
     </tr>
     <tr>
-    	
+    	<td><%=contact.getFirstName()%></td>
+   		<td><%=contact.getLastName()%></td>
+        <td><%=contact.getEmail()%></td>
+        <td><%=contact.getContactNumber()%></td>
     </tr>
     
     </table>

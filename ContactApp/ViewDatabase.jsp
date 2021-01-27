@@ -26,45 +26,17 @@
     	</tr>
      
     	<%
-    		ContactAppController controller= new ContactAppController();
-            Contact contact = new Contact();
-  Connection connection=null;
-  Statement statement=null;
-  ResultSet result =null;
-  PreparedStatement preparedStatement=null;
-  int row;
-    String jdbcURL="jdbc:mysql://localhost:3306/ContactApp" ;
-    String jdbcUserName="root";
-    String jdbcPassword="root";
-
-    try
-    {
-      Class.forName("com.mysql.cj.jdbc.Driver");
-      try
-      {
-        connection=DriverManager.getConnection(jdbcURL,jdbcUserName,jdbcPassword);
+    		ContactAppController controller = new ContactAppController();
+        ArrayList<Contact> contactList= new ArrayList<Contact>();
+        controller.printDatabases(contactList);
         
-    
-    String sql  = "SELECT * FROM  ContactInfo" ;
-    statement = connection.createStatement();
-    result = statement.executeQuery(sql);
-    while(result.next())
-      {
-      String id=result.getString(1);
-      String fname = result.getString(2); 
-      String lname = result.getString(3);
-      String email = result.getString(4);
-      String contactNumber = result.getString(5);
-      contact.setFirstName(fname);
-      contact.setLastName(lname);
-      contact.setEmail(email);
-      contact.setContactNumber(contactNumber);
-      
-
+  
+     for(Contact contact : contactList)
+    { 
        %>
      <tr>
-      <td><%out.print(id); %></td>
-      <td><a href="ContactDetails.jsp?id=<%=id%>&fname=<%=contact.getFirstName()%>&lname=<%=contact.getLastName()%>&email=<%=contact.getEmail()%>&contactNumber=<%=contact.getContactNumber()%>" id class="tabledata"><%out.print(contact.getFirstName());%></a></td>
+      <td><%out.print(contact.getIndex()); %></td>
+      <td><a href="ContactDetails.jsp?id=<%=contact.getIndex()%>&fname=<%=contact.getFirstName()%>&lname=<%=contact.getLastName()%>&email=<%=contact.getEmail()%>&contactNumber=<%=contact.getContactNumber()%>" id class="tabledata"><%out.print(contact.getFirstName());%></a></td>
       <td><%out.print(contact.getLastName()); %></td>
       <td><%out.print(contact.getEmail());%></td>
       <td><%out.print(contact.getContactNumber()); %></td>
@@ -72,19 +44,6 @@
       <%
         
       }
-    connection.close();
-    }
-
-      catch(SQLException e)
-      {
-        System.out.println(e);
-      }
-    }
-
-    catch(ClassNotFoundException e)
-    {
-      System.out.println(e);
-    }
       %>
     
 </table>

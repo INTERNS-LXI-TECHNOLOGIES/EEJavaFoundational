@@ -39,7 +39,7 @@
       <td><%out.print(contactNumber);%></td>
       </tr></table>
       <a href="DeleteContacts.jsp?delete=<%=fname%>" class="button">Delete Contact</a>
-      <a href="UpdateContact.jsp?id=<%=id%>" class="button">Update Contact</a>
+      <a href="UpdateContact.jsp?id=<%=id%>&fname=<%=fname%>&lname=<%=lname%>&email=<%=email%>&contactNumber=<%=contactNumber%>" class="button">Update Contact</a>
       <a href="ViewDatabase.jsp" class="button">View Database</a>
 </div>
 </body>
