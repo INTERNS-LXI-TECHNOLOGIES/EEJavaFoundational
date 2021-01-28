@@ -10,6 +10,7 @@ public class MysqlRepositry
 	ResultSet result =null;
 	PreparedStatement preparedStatement=null;
 	int row;
+	ArrayList<Contact> contactList= new ArrayList<Contact>();
 	
 	public void createDatabaseConnection()
 	{
@@ -92,32 +93,35 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public void printDatabase(ArrayList<Contact> contactList)
+	public ArrayList<Contact> printDatabase()
 	{
-		
 		createDatabaseConnection();
+		Contact contact=new Contact();
 		try
 		{
+		
 		String sql  = "SELECT * FROM  ContactInfo" ;
 		statement = connection.createStatement();
 		result = statement.executeQuery(sql);
 		while(result.next())
 			{
-				Contact contact=new Contact();
+				
 			contact.setIndex(result.getString(1));
 			contact.setFirstName(result.getString(2));	
 			contact.setLastName(result.getString(3));
 			contact.setEmail(result.getString(4));
 			contact.setContactNumber(result.getString(5));
-			contactList.add(new Contact());
+			contactList.add( new Contact());
 			
 		}
 		connection.close();
+
 	}
 		catch(SQLException e)
 		{
 			System.out.println(e);
 		}
+		return contactList;
 
 	}
 	public void searchDatabase(String name, ArrayList<Contact> searchContact)

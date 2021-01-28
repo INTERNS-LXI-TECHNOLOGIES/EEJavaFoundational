@@ -27,8 +27,8 @@
      
     	<%
     		ContactAppController controller = new ContactAppController();
-        ArrayList<Contact> contactList= new ArrayList<Contact>();
-        controller.printDatabases(contactList);
+      
+        controller.printDatabases();
         
   
      for(Contact contact : contactList)
@@ -36,7 +36,7 @@
        %>
      <tr>
       <td><%out.print(contact.getIndex()); %></td>
-      <td><a href="ContactDetails.jsp?id=<%=contact.getIndex()%>&fname=<%=contact.getFirstName()%>&lname=<%=contact.getLastName()%>&email=<%=contact.getEmail()%>&contactNumber=<%=contact.getContactNumber()%>" id class="tabledata"><%out.print(contact.getFirstName());%></a></td>
+      <td><a href="ContactDetails.jsp?id=<%=contact.getIndex()%>&fname=<%=contact.getFirstName()%>&lname=<%=contact.getLastName()%>&email=<%=contact.getEmail()%>&contactNumber=<%=contact.getContactNumber()%>" class="tabledata"><%out.print(contact.getFirstName());%></a></td>
       <td><%out.print(contact.getLastName()); %></td>
       <td><%out.print(contact.getEmail());%></td>
       <td><%out.print(contact.getContactNumber()); %></td>
