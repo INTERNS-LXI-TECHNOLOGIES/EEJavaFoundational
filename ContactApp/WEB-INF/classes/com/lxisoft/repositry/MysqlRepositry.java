@@ -104,17 +104,12 @@ public class MysqlRepositry
 		while(result.next())
 			{
 				Contact contact=new Contact();
-			String id=result.getString(1);
-			String fname = result.getString(2);	
-			String lname = result.getString(3);
-			String email = result.getString(4);
-			String contactNumber = result.getString(5);
-			contactList.add(contact);
-			contact.setIndex(id);
-			contact.setFirstName(fname);
-			contact.setLastName(lname);
-			contact.setEmail(email);
-			contact.setContactNumber(contactNumber);
+			contact.setIndex(result.getString(1));
+			contact.setFirstName(result.getString(2));	
+			contact.setLastName(result.getString(3));
+			contact.setEmail(result.getString(4));
+			contact.setContactNumber(result.getString(5));
+			contactList.add(new Contact());
 			
 		}
 		connection.close();
@@ -125,7 +120,7 @@ public class MysqlRepositry
 		}
 
 	}
-	public void searchDatabase(String name)
+	public void searchDatabase(String name, ArrayList<Contact> searchContact)
 	{
 		Contact contact=new Contact();
 		createDatabaseConnection();
@@ -136,17 +131,14 @@ public class MysqlRepositry
 		result = statement.executeQuery(sql);
 		while(result.next())
 			{
-			 String id=result.getString(1);
-			 String fname = result.getString(2);	
-		 	 String lname = result.getString(3);
-			 String email = result.getString(4);
-			 String phno = result.getString(5);
-			 contact.setIndex(id);
-			 contact.setFirstName(fname);
-			 contact.setLastName(lname);
-			 contact.setEmail(email);
-			 contact.setContactNumber(phno);
-			
+			 
+			 contact.setIndex(result.getString(1));
+			 contact.setFirstName(result.getString(2));	
+		 	 contact.setLastName(result.getString(3));
+			 contact.setEmail(result.getString(4));
+			 contact.setContactNumber(result.getString(5));			 
+			 searchContact.add( new Contact());
+			 
 			
 		}
 			connection.close();
