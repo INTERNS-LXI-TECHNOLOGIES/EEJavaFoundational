@@ -29,8 +29,8 @@ public class ContactAppController
 	{
 		repo.createDatabaseConnection();
 	}
-	public void searchContacts(String name,ArrayList<Contact>searchContact)
+	public void searchContacts(String name)
 	{
-		repo.searchDatabase(name,searchContact);
+		repo.searchDatabase(name);
 	}
 }

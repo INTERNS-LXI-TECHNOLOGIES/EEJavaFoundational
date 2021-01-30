@@ -26,9 +26,9 @@
   <%
     	String name=request.getParameter("search");
     	ContactAppController controller= new ContactAppController();
-    	ArrayList<Contact> searchContact = new ArrayList<Contact>();
-    	controller.searchContacts(name,searchContact);
-    	for(Contact contact : searchContact)
+    	ArrayList<Contact> contactList = new ArrayList<Contact>();
+    	controller.searchContacts(name);
+    	for(Contact contact : contactList)
     {%>
     	<tr>
     	<td><%out.print(contact.getIndex());%></td>

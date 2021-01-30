@@ -97,6 +97,7 @@ public class MysqlRepositry
 	{
 		createDatabaseConnection();
 		Contact contact=new Contact();
+		contactList.clear();
 		try
 		{
 		
@@ -124,7 +125,7 @@ public class MysqlRepositry
 		return contactList;
 
 	}
-	public void searchDatabase(String name, ArrayList<Contact> searchContact)
+	public ArrayList<Contact> searchDatabase(String name)
 	{
 		Contact contact=new Contact();
 		createDatabaseConnection();
