@@ -26,9 +26,7 @@
     	</tr>
      
     	<%
-    		ContactAppController controller = new ContactAppController();
-      
-        controller.printDatabases();
+        ArrayList<Contact> contactList = (ArrayList<Contact>) request.getAttribute("contactList");
         
   
      for(Contact contact : contactList)

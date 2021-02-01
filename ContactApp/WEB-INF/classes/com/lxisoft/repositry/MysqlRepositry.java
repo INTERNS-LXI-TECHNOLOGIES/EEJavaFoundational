@@ -10,11 +10,8 @@ public class MysqlRepositry
 	ResultSet result =null;
 	PreparedStatement preparedStatement=null;
 	int row;
-	ArrayList<Contact> contactList= new ArrayList<Contact>();
-	
 	public void createDatabaseConnection()
 	{
-		Contact contact=new Contact();
 		String jdbcURL="jdbc:mysql://localhost:3306/ContactApp"	;
 		String jdbcUserName="root";
 		String jdbcPassword="root";
@@ -93,11 +90,11 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public ArrayList<Contact> printDatabase()
+	public ArrayList<Contact> printDatabase(ArrayList<Contact> contactList)
 	{
 		createDatabaseConnection();
 		Contact contact=new Contact();
-		contactList.clear();
+		
 		try
 		{
 		
@@ -112,10 +109,11 @@ public class MysqlRepositry
 			contact.setLastName(result.getString(3));
 			contact.setEmail(result.getString(4));
 			contact.setContactNumber(result.getString(5));
-			contactList.add( new Contact());
+			contactList.add(contact);
+		
 			
 		}
-		connection.close();
+		
 
 	}
 		catch(SQLException e)
@@ -125,10 +123,11 @@ public class MysqlRepositry
 		return contactList;
 
 	}
-	public ArrayList<Contact> searchDatabase(String name)
+/*	public ArrayList<Contact> searchDatabase(String name)
 	{
 		Contact contact=new Contact();
 		createDatabaseConnection();
+		contactList.clear();
 		try
 		{
 		String sql  = "SELECT ID,First_Name,Last_Name,Email,Contact_Number FROM  ContactInfo where First_Name like'%"+name+"%'" ;
@@ -142,15 +141,16 @@ public class MysqlRepositry
 		 	 contact.setLastName(result.getString(3));
 			 contact.setEmail(result.getString(4));
 			 contact.setContactNumber(result.getString(5));			 
-			 searchContact.add( new Contact());
+			
 			 
 			
-		}
+			}
 			connection.close();
 		}
 		catch(SQLException e)
 		{
 			System.out.println(e);
 		}
-	}
+		return contact;
+	}*/
 }
