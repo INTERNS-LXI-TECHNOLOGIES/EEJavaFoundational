@@ -1,4 +1,4 @@
-<%@page import="com.lxisoft.control.*"%>
+<%@page import="com.lxisoft.servlet.*"%>
 <%@page import="com.lxisoft.model.*"%>
 <%@page import="com.lxisoft.repositry.*"%>
 <%@page import="java.util.*"%>
@@ -26,7 +26,7 @@
     	</tr>
      
     	<%
-        ArrayList<Contact> contactList = (ArrayList<Contact>) request.getAttribute("contactList");
+        ArrayList<Contact> contactList = (ArrayList<Contact>)request.getAttribute("contactList");
         
   
      for(Contact contact : contactList)

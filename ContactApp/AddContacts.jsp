@@ -1,31 +1,35 @@
-<%@page import="com.lxisoft.control.*"%>
+<%@page import="com.lxisoft.servlet.*"%>
 <%@page import="com.lxisoft.model.*"%>
 <%@page import="java.util.*"%>
 <%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Contact Application</title>
+  <title>form</title>
 </head>
 <body>
-  <link href="style1.css" rel="stylesheet" type ="text/css">
-  <div class="testbox">
-    <h1><a href="Index.html" class="header"> Contact Application</h1>
-    <h2> by Lxisoft Texhnologies pvt.ltd</h2>
-    <%
-    ContactAppController controller= new ContactAppController();
-    Contact contact= new Contact(); 
-    String fname=request.getParameter("firstname");
-    String lname=request.getParameter("lastname");
-    String email=request.getParameter("email");
-    String phno=request.getParameter("contactnumber");
+<link href="style1.css" rel="stylesheet" type ="text/css">
 
-    controller.addContact(fname,lname,email,phno);  
+<div class="testbox">
+  <h1>Registration</h1>
 
-    %>
-    <p class="add">Contact Added Successfully.</p>
-  <div class="buttons">
-    <a href="ViewDatabase.jsp" class="button">View Contact Database</a>
-    
+  <form action="AddContactServlet" method ="post">
+  <hr>
+  <label id="icon" for="name"><i class="icon-envelope "></i></label>
+  <input type="text" name="firstname" id="firstname" placeholder="First Name" required/></br>
+  <label id="icon" for="name"><i class="icon-user"></i></label>
+  <input type="text" name="lastname" id="lastname" placeholder="Last Name" required/></br>
+  <label id="icon" for="name"><i class="icon-shield"></i></label>
+  <input type="email" name="email" id="email" placeholder="Email" required/></br>
+  <label id="icon" for="name"><i class="icon-user"></i></label>
+  <input type="text" name="contactnumber" id="contactnumber" placeholder="Contact Number" required/></br>
+<div class="checkbox">
+   <input type="checkbox" value="None" id="radioOne" name="T&C" required/></br>
+      <label for="checkbox" class="box" ></div>
+     <div class ="tc"><p> By clicking Register, you agree on our <a href="#">terms and condition</a>.</p></label></div>
+   <input type="submit" value="Register" href="AddContacts.jsp" class="registerbutton">
+   <a href="ViewDatabase.jsp" class="button">View Database</a>
+  </form>
+</div>
 </body>
 </html>

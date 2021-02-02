@@ -35,14 +35,10 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public void addtoDatabase(String fname, String lname,String email, String contactNumber)
+	public void addtoDatabase()
 	{
 		Contact contact=new Contact();
 		createDatabaseConnection();
-		contact.setFirstName(fname);
-		contact.setLastName(lname);
-		contact.setEmail(email);
-		contact.setContactNumber(contactNumber);
 		try
 		{
 		preparedStatement = connection.prepareStatement("INSERT INTO ContactInfo (First_Name,Last_Name,Email,Contact_Number) VALUES ('"+contact.getFirstName()+"','"+contact.getLastName()+"','"+contact.getEmail()+"','"+contact.getContactNumber()+"')");
@@ -113,7 +109,7 @@ public class MysqlRepositry
 		
 			
 		}
-		
+		connection.close();
 
 	}
 		catch(SQLException e)

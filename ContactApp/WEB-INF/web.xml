@@ -1,4 +1,6 @@
 <web-app>
+
+	
 <servlet>
 <servlet-name>ViewDatabaseServlet</servlet-name>
 <servlet-class>com.lxisoft.servlet.ViewDatabaseServlet</servlet-class>
@@ -7,4 +9,16 @@
 <servlet-name>ViewDatabaseServlet</servlet-name>
 <url-pattern>/ViewDatabaseServlet</url-pattern>
 </servlet-mapping>
+
+
+<servlet>
+<servlet-name>AddContactServlet</servlet-name>
+<servlet-class>com.lxisoft.servlet.AddContactServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>AddContactServlet</servlet-name>
+<url-pattern>/AddContactServlet</url-pattern>
+</servlet-mapping>
+
+
 </web-app>
