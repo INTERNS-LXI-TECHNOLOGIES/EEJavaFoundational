@@ -27,8 +27,8 @@
    <input type="checkbox" value="None" id="radioOne" name="T&C" required/></br>
       <label for="checkbox" class="box" ></div>
      <div class ="tc"><p> By clicking Register, you agree on our <a href="#">terms and condition</a>.</p></label></div>
-   <input type="submit" value="Register" href="AddContacts.jsp" class="registerbutton">
-   <a href="ViewDatabase.jsp" class="button">View Database</a>
+   <input type="submit" value="Register" class="registerbutton"/>
+   <a href="ViewDatabaseServlet" class="button">View Database</a>
   </form>
 </div>
 </body>

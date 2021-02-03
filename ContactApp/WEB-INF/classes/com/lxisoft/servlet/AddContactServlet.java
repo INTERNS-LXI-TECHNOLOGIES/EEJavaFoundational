@@ -10,29 +10,22 @@ public class AddContactServlet extends HttpServlet
 {
 	MysqlRepositry database = new MysqlRepositry();
 
-	protected void doget(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
+	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
 	{
 		Contact contact= new Contact(); 
     	String fname=request.getParameter("firstname");
     	String lname=request.getParameter("lastname");
     	String email=request.getParameter("email");
     	String phno=request.getParameter("contactnumber");
-    	contact.setFirstName(fname);
+		contact.setFirstName(fname);
     	contact.setLastName(lname);
     	contact.setEmail(email);
     	contact.setContactNumber(phno);
-    	database.addtoDatabase();
-    	if(fname.isEmpty() || lname.isEmpty() || email.isEmpty() || 
-		phno.isEmpty())
-		{
-			RequestDispatcher req = request.getRequestDispatcher("AddContact.jsp");
-			req.include(request, response);
-		}
-		else
-		{
-			RequestDispatcher req = request.getRequestDispatcher("AddContactMessage.jsp");
+    	database.addtoDatabase(contact);
+
+
+			RequestDispatcher req = request.getRequestDispatcher("AddContactsMessage.jsp");
 			req.forward(request, response);
 		}
     	
 	}
-}

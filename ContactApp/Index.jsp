@@ -1,3 +1,9 @@
+<%@page import="com.lxisoft.servlet.*"%>
+<%@page import="com.lxisoft.model.*"%>
+<%@page import="com.lxisoft.repositry.*"%>
+<%@page import="java.util.*"%>
+<%@page import="java.sql.*"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,35 +14,9 @@
 	<div class="testbox">
 		<h1> Contact Application</h1>
 		<h2> by Lxisoft Technologies pvt.ltd</h2>
-		<form action="#">
-		<label id="icon" for="name"><i class="icon-envelope "></i></label>
-  		<input type="text" name="uname" id="uname" placeholder="Enter Username " required/></br>
-  		<label id="icon" for="name"><i class="icon-envelope "></i></label>
-  		<input type="password" name="name" id="name" placeholder="Enter Password" required/>
-		<input type="submit" value="login" class="login"/>
-		<%
-			String uname=request.getParameter("uname");
-			String password=request.getParameter("password");
-
-			if(uname.equals(uname) && password.equals(password))
-			{%>
-				<a href=index.html>redirecting</a>
-			<%}
-				 else if (uname.equals(uname))
-				 {%>
-				 	<p>invalid username or password</p>
-				 <%}
-				 	else if (password.equals(password))
-				 {%>
-					<p> invalid username or password</p>
-				 <%}
-				 		else{
-
-				 		%>
-				 		<p> Invalid access.</p>
-				 		<%}
-				 		%>
+		<p class="credits">It is a contact app developed by Faris for bytatech technologies under Lxisoft Technologies pvt.ltd </p>
+	<div class="buttons">
+		<a href="ViewDatabaseServlet" class="button">View Contact Database</a>
 		
-		</form>
 </body>
 </html>

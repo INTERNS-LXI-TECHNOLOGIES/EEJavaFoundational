@@ -8,16 +8,17 @@ import javax.servlet.*;
 import java.io.*;
 
 
-public class ViewDatabaseServlet extends HttpServlet
+public class SearchContactServlet extends HttpServlet
 {
 	MysqlRepositry database = new MysqlRepositry();
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
 	{
-		ArrayList<Contact> contactList =new ArrayList<Contact>();
-		contactList=database.printDatabase();
-		request.setAttribute("contactList",contactList);		
-		RequestDispatcher rd= request.getRequestDispatcher("ViewDatabase.jsp");
+		String fname=request.getParameter("search");
+		ArrayList<Contact> searchList =new ArrayList<Contact>();
+		searchList=database.searchDatabase(fname);
+		request.setAttribute("searchList",searchList);		
+		RequestDispatcher rd= request.getRequestDispatcher("SearchContact.jsp");
 		rd.forward(request,response);
 	} 
 }

@@ -1,7 +1,9 @@
 package com.lxisoft.repositry;
 import com.lxisoft.model.Contact;
+import com.lxisoft.servlet.*;
 import java.util.*;
 import java.sql.*;
+import java.io.*;
 
 public class MysqlRepositry
 {
@@ -10,6 +12,7 @@ public class MysqlRepositry
 	ResultSet result =null;
 	PreparedStatement preparedStatement=null;
 	int row;
+	ArrayList<Contact> contactList=new ArrayList<Contact>();
 	public void createDatabaseConnection()
 	{
 		String jdbcURL="jdbc:mysql://localhost:3306/ContactApp"	;
@@ -35,9 +38,9 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public void addtoDatabase()
+	public void addtoDatabase(Contact contact)
 	{
-		Contact contact=new Contact();
+		
 		createDatabaseConnection();
 		try
 		{
@@ -86,44 +89,42 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public ArrayList<Contact> printDatabase(ArrayList<Contact> contactList)
+	public ArrayList<Contact> printDatabase()
 	{
-		createDatabaseConnection();
-		Contact contact=new Contact();
-		
+		createDatabaseConnection();	
+		contactList.clear();
 		try
 		{
 		
-		String sql  = "SELECT * FROM  ContactInfo" ;
 		statement = connection.createStatement();
-		result = statement.executeQuery(sql);
+		preparedStatement =connection.prepareStatement("SELECT * FROM  ContactInfo");
+		result = preparedStatement.executeQuery();
 		while(result.next())
 			{
-				
+			Contact contact = new Contact();	
 			contact.setIndex(result.getString(1));
 			contact.setFirstName(result.getString(2));	
 			contact.setLastName(result.getString(3));
 			contact.setEmail(result.getString(4));
 			contact.setContactNumber(result.getString(5));
 			contactList.add(contact);
-		
 			
-		}
-		connection.close();
-
+			}
+		statement.close();
 	}
 		catch(SQLException e)
 		{
 			System.out.println(e);
 		}
-		return contactList;
+	return contactList;
 
-	}
-/*	public ArrayList<Contact> searchDatabase(String name)
+	}	
+	public ArrayList<Contact> searchDatabase(String name)
 	{
 		Contact contact=new Contact();
 		createDatabaseConnection();
-		contactList.clear();
+		ArrayList<Contact> searchList= new ArrayList<Contact>();
+		searchList.clear();
 		try
 		{
 		String sql  = "SELECT ID,First_Name,Last_Name,Email,Contact_Number FROM  ContactInfo where First_Name like'%"+name+"%'" ;
@@ -137,7 +138,7 @@ public class MysqlRepositry
 		 	 contact.setLastName(result.getString(3));
 			 contact.setEmail(result.getString(4));
 			 contact.setContactNumber(result.getString(5));			 
-			
+			searchList.add(contact);
 			 
 			
 			}
@@ -147,6 +148,6 @@ public class MysqlRepositry
 		{
 			System.out.println(e);
 		}
-		return contact;
-	}*/
+		return searchList;
+	}
 }

@@ -4,7 +4,6 @@
 <%@page import="java.util.*"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,10 +12,9 @@
 <body>
   <link href="style1.css" rel="stylesheet" type ="text/css">
   <div class="testbox">
-    <h1><a href="Index.html" class="header"> Contact Application</a></h1>
+    <h1><a href="Index.jsp" class="header"> Contact Application</a></h1>
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
-    <div style="overflow-y:auto;">
-    <table>
+     <table>
     	<tr>
         <th>ID</th>
     		<th>First Name</th>
@@ -26,14 +24,14 @@
     	</tr>
      
     	<%
-        ArrayList<Contact> contactList=(ArrayList<Contact>)request.getAttribute("contactList");
+        ArrayList<Contact> searchList=(ArrayList<Contact>)request.getAttribute("searchList");
          
-     for(Contact contact : contactList)
+     for(Contact contact : searchList)
     { 
        %>
      <tr>
       <td><%out.print(contact.getIndex()); %></td>
-      <td><a href="ContactDetails.jsp?id=<%=contact.getIndex()%>&fname=<%=contact.getFirstName()%>&lname=<%=contact.getLastName()%>&email=<%=contact.getEmail()%>&contactNumber=<%=contact.getContactNumber()%>" class="tabledata"><%out.print(contact.getFirstName());%></a></td>
+      <td><%out.print(contact.getFirstName());%></a></td>
       <td><%out.print(contact.getLastName()); %></td>
       <td><%out.print(contact.getEmail());%></td>
       <td><%out.print(contact.getContactNumber()); %></td>
@@ -44,10 +42,7 @@
       %>
     
 </table>
-</div>
-    <a href="AddContactServlet" class="button">Add Contacts</a>
-    <a href="SearchContacts.jsp" class="button">Search Contacts</a>
+    <a href="ViewDatabaseServlet" class="button">View Database</a>
 
-    
 </body>
 </html>

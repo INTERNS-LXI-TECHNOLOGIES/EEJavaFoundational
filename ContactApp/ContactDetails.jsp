@@ -13,7 +13,7 @@
 <body>
   <link href="style1.css" rel="stylesheet" type ="text/css">
   <div class="testbox">
-    <h1><a href="Index.html" class="header"> Contact Application</a></h1>
+    <h1><a href="Index.jsp" class="header"> Contact Application</a></h1>
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
     <table>
     <tr>
@@ -23,7 +23,7 @@
     		<th>Contact Number</th>
     	</tr>
     <%
-    ContactAppController controller= new ContactAppController();
+    
     Contact contact = new Contact();
     String id=request.getParameter("id");
     String fname=request.getParameter("fname");
@@ -38,9 +38,9 @@
       <td><%out.print(email);%></td>
       <td><%out.print(contactNumber);%></td>
       </tr></table>
-      <a href="DeleteContacts.jsp?delete=<%=fname%>" class="button">Delete Contact</a>
+      <a href="DeleteContactServlet?delete=<%=fname%>" class="button">Delete Contact</a>
       <a href="UpdateContact.jsp?id=<%=id%>&fname=<%=fname%>&lname=<%=lname%>&email=<%=email%>&contactNumber=<%=contactNumber%>" class="button">Update Contact</a>
-      <a href="ViewDatabase.jsp" class="button">View Database</a>
+      <a href="ViewDatabaseServlet" class="button">View Database</a>
 </div>
 </body>
 </html>
