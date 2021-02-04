@@ -1,3 +1,7 @@
+<%@page import="com.lxisoft.control.*"%>
+<%@page import="com.lxisoft.model.*"%>
+<%@page import="java.util.*"%>
+<%@page import="java.sql.*"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +10,7 @@
 <body>
   <link href="style1.css" rel="stylesheet" type ="text/css">
   <div class="testbox">
-    <h1><a href="Index.html" class="header"> Contact Application</a></h1>
+    <h1><a href="Index.jsp" class="header"> Contact Application</a></h1>
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
     <%
         String updateId=request.getParameter("id");
@@ -16,7 +20,7 @@
         String phno=request.getParameter("contactNumber");        
 
     %>
-    <form action="UpdateContactServlet" method="POST">
+    <form action="UpdateContactServlet?id=<%=updateId%>" method="POST">
   <label id="icon" for="name"><i class="icon-envelope "></i></label>
   <input type="text" name="firstname" id="firstname" value="<%=fname%>" required/></br>
      <label id="icon" for="name"><i class="icon-envelope "></i></label>
@@ -27,7 +31,7 @@
   <input type="text" name="contactnumber" id="contactnumber" value="<%=phno%>" required/></br>
   <input type="submit" value="Update" class="updatebutton"/>
 </form>
-   <a href="ViewDatabase.jsp" class="button">View Database</a>
+   <a href="ViewDatabaseServlet" class="button">View Database</a>
 
 
 </div>

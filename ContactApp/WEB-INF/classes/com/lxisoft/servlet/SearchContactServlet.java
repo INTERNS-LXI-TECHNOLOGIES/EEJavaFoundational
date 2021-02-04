@@ -18,7 +18,7 @@ public class SearchContactServlet extends HttpServlet
 		ArrayList<Contact> searchList =new ArrayList<Contact>();
 		searchList=database.searchDatabase(fname);
 		request.setAttribute("searchList",searchList);		
-		RequestDispatcher rd= request.getRequestDispatcher("SearchContact.jsp");
+		RequestDispatcher rd= request.getRequestDispatcher("SearchContactDetails.jsp");
 		rd.forward(request,response);
 	} 
 }

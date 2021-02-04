@@ -45,7 +45,7 @@
     
 </table>
 </div>
-    <a href="AddContactServlet" class="button">Add Contacts</a>
+    <a href="AddContacts.jsp" class="button">Add Contacts</a>
     <a href="SearchContacts.jsp" class="button">Search Contacts</a>
 
     

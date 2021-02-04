@@ -30,15 +30,14 @@
     String lname=request.getParameter("lname");
     String email=request.getParameter("email");
     String contactNumber=request.getParameter("contactNumber");
-    String delete=fname;
     %>
 		<tr>
-      <td><%out.print(fname);%></a></td>
+      <td><%out.print(fname);%></td>
       <td><%out.print(lname);%></td>
       <td><%out.print(email);%></td>
       <td><%out.print(contactNumber);%></td>
       </tr></table>
-      <a href="DeleteContactServlet?delete=<%=fname%>" class="button">Delete Contact</a>
+      <a href="DeleteContactServlet?id=<%=id%>" class="button">Delete Contact</a>
       <a href="UpdateContact.jsp?id=<%=id%>&fname=<%=fname%>&lname=<%=lname%>&email=<%=email%>&contactNumber=<%=contactNumber%>" class="button">Update Contact</a>
       <a href="ViewDatabaseServlet" class="button">View Database</a>
 </div>

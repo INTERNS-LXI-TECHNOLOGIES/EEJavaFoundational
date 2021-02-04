@@ -12,16 +12,23 @@ public class UpdateContactServlet extends HttpServlet
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
 	{
-  	Contact contact=new Contact();
-    String id =request.getParameter("id");    
-    String fname=request.getParameter("firstname");
-    String lname=request.getParameter("lastname");
-    String email=request.getParameter("email");
-    String phno=request.getParameter("contactnumber");
-    database.updateContacts(id,fname,lname,email,phno);
+  	
+        Contact contact=new Contact();
+        String id =request.getParameter("id");    
+        String fname=request.getParameter("firstname");
+        String lname=request.getParameter("lastname");
+        String email=request.getParameter("email");
+        String phno=request.getParameter("contactnumber");
+        contact.setIndex(id);
+        contact.setFirstName(fname);
+        contact.setLastName(lname);
+        contact.setEmail(email);
+        contact.setContactNumber(phno);
 
+        database.updateContacts(contact);
 
-			RequestDispatcher req = request.getRequestDispatcher("UpdateContactMessage.jsp");
-			req.forward(request, response);
-	}
+	   RequestDispatcher req = request.getRequestDispatcher("UpdateContactMessage.jsp");
+	   req.forward(request, response);
+	
+    }
 }

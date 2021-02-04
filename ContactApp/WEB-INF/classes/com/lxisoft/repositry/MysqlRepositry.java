@@ -54,14 +54,14 @@ public class MysqlRepositry
 			System.out.println(e);
 		}
 	}
-	public void updateContacts(String id, String fname, String lname, String email, String phno)
+	public void updateContacts(Contact contact)
 	{
-		Contact contact=new Contact();
+		
 		createDatabaseConnection();
 		try
 		{
 
-		preparedStatement=connection.prepareStatement("UPDATE ContactInfo SET First_Name ='"+fname+"',Last_Name='"+lname+"', Email='"+email+"', Contact_Number='"+phno+"' WHERE ID='"+id+"' ");
+		preparedStatement=connection.prepareStatement("UPDATE ContactInfo SET First_Name ='"+contact.getFirstName()+"',Last_Name='"+contact.getLastName()+"', Email='"+contact.getEmail()+"', Contact_Number='"+contact.getContactNumber()+"' WHERE ID='"+contact.getIndex()+"' ");
 		row = preparedStatement.executeUpdate();
 		preparedStatement.close();
 		connection.close();
@@ -121,10 +121,9 @@ public class MysqlRepositry
 	}	
 	public ArrayList<Contact> searchDatabase(String name)
 	{
-		Contact contact=new Contact();
+		
 		createDatabaseConnection();
-		ArrayList<Contact> searchList= new ArrayList<Contact>();
-		searchList.clear();
+		contactList.clear();
 		try
 		{
 		String sql  = "SELECT ID,First_Name,Last_Name,Email,Contact_Number FROM  ContactInfo where First_Name like'%"+name+"%'" ;
@@ -133,12 +132,13 @@ public class MysqlRepositry
 		while(result.next())
 			{
 			 
+			 Contact contact=new Contact();
 			 contact.setIndex(result.getString(1));
 			 contact.setFirstName(result.getString(2));	
 		 	 contact.setLastName(result.getString(3));
 			 contact.setEmail(result.getString(4));
 			 contact.setContactNumber(result.getString(5));			 
-			searchList.add(contact);
+			 contactList.add(contact);
 			 
 			
 			}
@@ -148,6 +148,6 @@ public class MysqlRepositry
 		{
 			System.out.println(e);
 		}
-		return searchList;
+		return contactList;
 	}
 }

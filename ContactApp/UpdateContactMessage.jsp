@@ -14,7 +14,7 @@
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
     <p class="add">Contact Updated Successfully.</p>
   <div class="buttons">
-    <a href="ViewDatabase.jsp" class="button">View Contact Database</a>
+    <a href="ViewDatabaseServlet" class="button">View Contact Database</a>
     
 </body>
 </html>
