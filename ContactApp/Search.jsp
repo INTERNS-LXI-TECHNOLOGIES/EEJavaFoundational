@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<%@page import="com.lxisoft.model.Contact,com.lxisoft.control.*,com.lxisoft.repository.*"%>
+<%@page import="com.lxisoft.model.Contact,com.lxisoft.servlet.*,com.lxisoft.repository.*,com.lxisoft.servlet.*"%>
 <%@page import="java.sql.*,java.io.*,java.util.*"%>
 <%@page import="java.sql.Connection"%>
 <head>
@@ -17,10 +17,7 @@
         <th>Number</th>
       </tr>
       <tr>
-	<%
-	  Control control = new Control();
-      String name= request.getParameter("name");
-      control.searchContact(name); 
+	<% 
 	   try
 	   {
 	   	Class.forName("com.mysql.cj.jdbc.Driver");

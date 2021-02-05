@@ -1,24 +1,46 @@
 <!DOCTYPE html>
 <html>
-<%@page import="com.lxisoft.model.Contact,com.lxisoft.control.*,com.lxisoft.repository.*"%>
-<%@page import="java.sql.*,java.io.*"%>
-<%@page import="java.sql.Connection"%>
-
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <head>
-	<title>Contact App</title>
+	<title></title>
 </head>
-<body bgcolor="8A2BE2">
-	<center>
-	<%
-	   String name= request.getParameter("name");
-	   String lastname= request.getParameter("lname");
-	   String number= request.getParameter("number");
-	   String email= request.getParameter("email");
-	   		 Control control = new Control();
-	   		 control.addContact(name,lastname,,number,email); 	
-		%>
-		<tr><h1><b> CONTACTS IS ADDED SUCCESSFULLY </b></h1></tr>  
-        <tr><td></td><td><a href="View.jsp" type="submit"> VIEW PAGE </a></td></tr>
-        </center>
+<body>
+	    <div id="login">
+        <h3 class="text-center text-white pt-5">Add Contact</h3>
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <form id="login-form" class="form" action="AddServlet" method="get">
+                            <h3 class="text-center text-info">Add Contact</h3>
+                            <div class="form-group">
+                                <label for="number" class="text-info">Enter the Name</label><br>
+                                <input type="name" name="name" id="name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="number" class="text-info">Enter the LastName</label><br>
+                                <input type="name" name="lname" id="lname" class="form-control">
+                            </div>
+                             <div class="form-group">
+                                <label for="email" class="text-info">Enter the Email Id</label><br>
+                                <input type="email" name="email" id="name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="number" class="text-info">Enter the Number</label><br>
+                                <input type="number" name="number" id="name" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="submit">
+                            </div>
+                          
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

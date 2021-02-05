@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<%@page import="com.lxisoft.model.Contact,com.lxisoft.control.*,com.lxisoft.repository.*"%>
+<%@page import="com.lxisoft.model.Contact,com.lxisoft.servlet.*,com.lxisoft.repository.*,com.lxisoft.servlet.*"%>
 <%@page import="java.sql.*,java.io.*,java.util.*"%>
 <%@page import="java.sql.Connection"%>
 <head>
@@ -48,10 +48,10 @@
     </table>
     <tr><h1><b> THE DETAILS OF THE CONTACTS </b></h1></tr>  
     <table>
-       <tr><td></td><td><a href="addContact.html" type="submit"> ADD CONTACT </a></td></tr>
+       <tr><td></td><td><a href="addContact.jsp" type="submit"> ADD CONTACT </a></td></tr>
        <tr><td></td><td><a href="Search1.jsp" type="submit"> SEARCH CONTACT </a></td></tr>
       <tr><td></td><td><a href="Delete.jsp" type="submit"> DELETE CONTACT </a></td></tr>
-        <tr><td></td><td><a href="index.html" type="submit"> INDEX PAGE </a></td></tr>
+        <tr><td></td><td><a href="index.jsp" type="submit"> INDEX PAGE </a></td></tr>
     </table>
          </center>
 </body>

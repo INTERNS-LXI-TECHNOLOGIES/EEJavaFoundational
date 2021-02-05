@@ -1,29 +1,37 @@
 package com.lxisoft.model;
 import com.lxisoft.model.*;
 import com.lxisoft.repository.*;
-import com.lxisoft.control.*;
+import com.lxisoft.servlet.*;
 public  class Contact
 {
-	private String fname;
-	private String lname;
-	private String mailid;
+	private String name;
+	private String lastname;
+	private String email;
 	private String number;
 
-	public void setFirstName(String fname)
+	public void setFirstName(String name)
 	{
-		this.fname = fname;
+		this.name = name;
 	}
 	public String getFirstName()
 	{
-		return fname;
+		return name;
 	}
-	public void setLastName(String lname)
+	public void setLastName(String lastname)
 	{
-		this.lname = lname;
+		this.lastname = lastname;
 	}
 	public String getLastName()
 	{
-		return lname;
+		return lastname;
+	}
+	public void setMailId(String email)
+	{
+		this.email = email;
+	}
+	public String getMailId()
+	{
+		return email;
 	}
 	public void setNumber(String number)
 	{
@@ -33,16 +41,9 @@ public  class Contact
 	{
 		return number;
 	}
-	public void setMailId(String mailid)
-	{
-		this.mailid = mailid;
-	}
-	public String getMailId()
-	{
-		return mailid;
-	}
+	
 		public String toString()
 	{
-		return "\n"+"firstname :"+fname+"    lastname :"+lname+"    number :"+number+"  email :"+mailid+"\n";
+		return "\n"+"firstname :"+name+"    lastname :"+lastname+"  email :"+email+"    number :"+number+"\n";
 	}
 }

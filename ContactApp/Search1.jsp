@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<%@page import="com.lxisoft.model.Contact,com.lxisoft.control.*,com.lxisoft.repository.*"%>
+<%@page import="com.lxisoft.model.Contact,com.lxisoft.servlet.*,com.lxisoft.repository.*,com.lxisoft.servlet.*"%>
 <%@page import="java.sql.*,java.io.*"%>
 <%@page import="java.sql.Connection"%>
 <head>
@@ -9,7 +9,7 @@
 <body bgcolor="pink">
 	<center>
 		<h1 class="text-center text-white pt-5">SEARCH OPTION</h1>
-		<form action="Search.jsp" method="get">
+		<form action="SearchServlet" method="get">
 			<tr><td>ENTER THE FIRST NAME TO SEARCH : </td><td><input type="text" name="name"></td></tr>
 			<tr><td></td><td><input type="submit" value="SUBMIT"></td></tr>
 		<table border="1">

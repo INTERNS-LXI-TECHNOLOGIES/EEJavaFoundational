@@ -1,5 +1,5 @@
 package com.lxisoft.repository;
-import com.lxisoft.control.*;
+import com.lxisoft.servlet.*;
 import com.lxisoft.model.*;
 import java.io.*;
 import java.sql.*;
@@ -38,8 +38,9 @@ public class ContactRepository
     createDatabaseConnection();
     try
     {
-         PreparedStatement ps=con.prepareStatement("insert into contactapp(FirstName,LastName,MailID,Number) values('"+contact.getFirstName()+"','"+contact.getLastName()+"','"+contact.getMailId()+"','"+contact.getNumber()+"')"); 
-      int a=ps.executeUpdate();
+         PreparedStatement ps=con.prepareStatement("insert into contactapp(FirstName,LastName,MailID,Number) values('"+contact.getFirstName()+"','"+contact.getLastName()+"','"+contact.getMailId()+"','"+contact.getNumber()+"')");       
+         int a=ps.executeUpdate();
+
       ps.close();
       con.close();
     }
