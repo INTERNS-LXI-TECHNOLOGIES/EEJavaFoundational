@@ -17,7 +17,7 @@ public class LoginServlet extends HttpServlet
 		String username="Faris";
 		String password="0987654321";
 
-		if(uname.equals(username) && pword.equals(password) )
+		if(uname==username && pword==password )
 		{
 
 			RequestDispatcher req=request.getRequestDispatcher("Index.jsp"); 
