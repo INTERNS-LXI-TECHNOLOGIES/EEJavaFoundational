@@ -74,25 +74,6 @@ a.button:hover {
   box-shadow: none;
   
 }
-a.registerbutton
-{
-  font-size: 22px;
-  font-weight: 30;
-  color: white; 
-  margin-top:-120px;
-  margin-left:477px;
-  padding-top: 10px;
-  padding-right: 20px;
-  padding-bottom: -10px;
-  padding-left: 30px;
-  display: inline-block;
-  text-decoration: none;
-  width: 80px; height: 50px; 
-  border-radius: 5px; 
-  background-color: #3a57af; 
-  box-shadow: 0 3px rgba(58,87,175,.75); 
-  position: relative; 
-}
 p
 {
   font-size: 12px;
@@ -323,4 +304,108 @@ input.login:hover {
   background-color:#2e458b 
   box-shadow: none;
   
+}
+  a.loginuser
+{
+    font-size: 22px;
+  font-weight: 30;
+  color: white; 
+  margin-top:30px;
+  margin-left:40px;
+  margin-bottom:10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: -10px;
+  padding-left: 30px;
+  display: inline-block;
+  text-decoration: none;
+  width: 320px; height: 40px; 
+  border-radius: 5px; 
+  background-color: #3a57af; 
+  box-shadow: 0 3px rgba(58,87,175,.75); 
+  position: relative; 
+}
+
+a.loginuser:hover {
+  top: 3px;
+  background-color:#2e457b; 
+  box-shadow: none;
+}
+a.loginadmin
+{
+    font-size: 22px;
+  font-weight: 30;
+  color: white; 
+  margin-top:30px;
+  margin-left:40px;
+  margin-bottom:10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: -10px;
+  padding-left: 30px;
+  display: inline-block;
+  text-decoration: none;
+  width: 320px; height: 40px; 
+  border-radius: 5px; 
+  background-color: #3a57af; 
+  box-shadow: 0 3px rgba(58,87,175,.75); 
+  position: relative; 
+}
+
+a.loginadmin:hover {
+  top: 3px;
+  background-color:#2e457b; 
+  box-shadow: none;
+}
+ a.loginuser
+{
+    font-size: 22px;
+  font-weight: 30;
+  color: white; 
+  margin-top:30px;
+  margin-left:40px;
+  margin-bottom:10px;
+  padding-top: 10px;
+  padding-right: 0px;
+  padding-bottom: -10px;
+  padding-left: 30px;
+  display: inline-block;
+  text-decoration: none;
+  width: 320px; height: 40px; 
+  border-radius: 5px; 
+  background-color: #3a57af; 
+  box-shadow: 0 3px rgba(58,87,175,.75); 
+  position: relative; 
+}
+
+a.loginuser:hover {
+  top: 3px;
+  background-color:#2e457b; 
+  box-shadow: none;
+}
+input.updatebutton
+{
+    font-size: 22px;
+  font-weight: 30;
+  color: white; 
+  margin-top:30px;
+  margin-left:502px;
+  margin-bottom:10px;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 30px;
+  padding-left: 30px;
+  display: inline-block;
+  text-decoration: none;
+  width: 120px; height: 40px; 
+  border-radius: 5px; 
+  background-color: #3a57af; 
+  box-shadow: 0 3px rgba(58,87,175,.75); 
+  position: relative; 
+}
+
+input.updatebutton:hover {
+  top: 3px;
+  background-color:#2e457b; 
+  box-shadow: none;
 }
