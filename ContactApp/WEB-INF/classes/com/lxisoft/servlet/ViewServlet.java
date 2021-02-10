@@ -5,7 +5,7 @@ import javax.servlet.*;
 import java.io.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.model.*;
-
+import java.util.ArrayList;
 public class ViewServlet extends HttpServlet
 {
 		ContactRepository contactrepo = new ContactRepository();
@@ -13,9 +13,9 @@ public class ViewServlet extends HttpServlet
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException
 	{
-		Contact contact = new Contact();
-		contactrepo.viewDatabase(contact);
-		request.setAttribute("contact",contact);
+		ArrayList<Contact> contactList = new ArrayList<Contact>();
+		contactList = contactrepo.viewDatabase();
+		request.setAttribute("contactList",contactList);
 		RequestDispatcher rd = request.getRequestDispatcher("View.jsp");
 		rd.forward(request,response);				
 	}

@@ -19,8 +19,8 @@ public class DeleteServlet extends HttpServlet
 	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException , IOException
 	{
 		ContactRepository contactrepo = new ContactRepository();
-		String name = request.getParameter("name");
-		contactrepo.deleteRecord(name);
+		String id = request.getParameter("id");
+		contactrepo.deleteRecord(id);
 
 		RequestDispatcher rd = request.getRequestDispatcher("/ViewServlet");
 		rd.forward(request,response);

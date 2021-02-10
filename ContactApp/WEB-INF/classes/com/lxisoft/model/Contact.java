@@ -8,7 +8,17 @@ public  class Contact
 	private String lastname;
 	private String email;
 	private String number;
+	private int id;
 
+
+   public void setID(int id)
+   {
+      id = id;
+   }
+   public int getID()
+   {
+      return id;
+   }
 	public void setFirstName(String name)
 	{
 		this.name = name;

@@ -34,6 +34,16 @@
 <servlet-name>ViewServlet</servlet-name>
 <url-pattern>/ViewServlet</url-pattern>
 </servlet-mapping>
+
+<servlet>
+<servlet-name>UpdateServlet</servlet-name>
+<servlet-class>com.lxisoft.servlet.UpdateServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>UpdateServlet</servlet-name>
+<url-pattern>/UpdateServlet</url-pattern>
+</servlet-mapping>
+
 <welcome-file-list>
 <welcome-file>/WEB-INF/index.jsp</welcome-file>
 </welcome-file-list>

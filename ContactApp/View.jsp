@@ -15,42 +15,32 @@
         <th>Last Name</th>
         <th>MailID</th>
         <th>Number</th>
+        <th>DELETE</th>
       </tr>
       <tr>
-	   <%  
- try
-  {
-      Class.forName("com.mysql.cj.jdbc.Driver");
-       Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","password");
-        Statement stmt = con.createStatement();
-       PreparedStatement ps =con.prepareStatement("select * from contactapp");
-      ResultSet rs = ps.executeQuery();
-     while(rs.next())
-    {
-       %>
+<%  
+  ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("contactList");
+  
+  for(Contact contact : contactList)
+    { 
+      %>
      <tr>
-        <td><%=rs.getInt("id")%></td>
-        <td><%=rs.getString("FirstName")%></td>
-        <td><%=rs.getString("LastName")%></td>
-        <td><%=rs.getString("MailID")%></td>
-        <td><%=rs.getString("Number")%></td>
+        <td><%out.println(contact.getID());%></td>
+        <td><a href="Update.jsp?id=<%=contact.getID()%>&temp=<%=contact.getFirstName()%>&temp1=<%=contact.getLastName()%>&temp2=<%=contact.getMailId()%>&temp3=<%=contact.getNumber()%>"><input type="button" name="submit" value="<%=contact.getFirstName()%>"></a></td>
+        <td><%out.println(contact.getLastName());%></td>
+        <td><%out.println(contact.getMailId());%></td>
+        <td><%out.println(contact.getNumber());%></td>
+        <td><a href="DeleteServlet" type="submit"> DELETE</a></td>
      </tr>
       <%   
     }
-    con.close();
-  }
-      catch(SQLException e)
-      {
-        
-      }
-      %>
+    %>
       </tr>
     </table>
     <tr><h1><b> THE DETAILS OF THE CONTACTS </b></h1></tr>  
     <table>
        <tr><td></td><td><a href="addContact.jsp" type="submit"> ADD CONTACT </a></td></tr>
        <tr><td></td><td><a href="Search1.jsp" type="submit"> SEARCH CONTACT </a></td></tr>
-      <tr><td></td><td><a href="Delete.jsp" type="submit"> DELETE CONTACT </a></td></tr>
         <tr><td></td><td><a href="index.jsp" type="submit"> INDEX PAGE </a></td></tr>
     </table>
          </center>
