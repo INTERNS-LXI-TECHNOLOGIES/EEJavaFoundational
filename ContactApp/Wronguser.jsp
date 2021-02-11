@@ -14,10 +14,8 @@
 	<div class="testbox">
 		<h1> Contact Application</h1>
 		<h2> by Lxisoft Technologies pvt.ltd</h2>
-		<p class="credits">It is a contact app developed by Faris for bytatech technologies under Lxisoft Technologies pvt.ltd </p>
-		<div class="buttons">
-		<a href="userIndex.jsp" class="loginuser">LogIn as User</a>
-		<a href="adminIndex.jsp" class="loginadmin">LogIn as Admin</a>
-		</div>
+		<p color="red" class="credits"> You are Entered wrong password, Username please check it again and try... </p>
+		
+	</div>
 </body>
 </html>

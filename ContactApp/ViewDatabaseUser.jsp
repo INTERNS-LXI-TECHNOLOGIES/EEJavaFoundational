@@ -13,7 +13,7 @@
 <body>
   <link href="style1.css" rel="stylesheet" type ="text/css">
   <div class="testbox">
-    <h1><a href="adminIndex.jsp" class="header"> Contact Application</a></h1>
+    <h1><a href="userIndex.jsp" class="header"> Contact Application</a></h1>
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
     <div style="overflow-y:auto;">
     <table>
@@ -33,7 +33,7 @@
        %>
      <tr>
       <td><%out.print(contact.getIndex()); %></td>
-      <td><a href="ContactDetails.jsp?id=<%=contact.getIndex()%>&fname=<%=contact.getFirstName()%>&lname=<%=contact.getLastName()%>&email=<%=contact.getEmail()%>&contactNumber=<%=contact.getContactNumber()%>" class="tabledata"><%out.print(contact.getFirstName());%></a></td>
+      <td><%out.print(contact.getFirstName());%></a></td>
       <td><%out.print(contact.getLastName()); %></td>
       <td><%out.print(contact.getEmail());%></td>
       <td><%out.print(contact.getContactNumber()); %></td>
@@ -42,13 +42,9 @@
         
       }
       %>
+      <a href="Logout.jsp" class="button"> LogOut</a>
     
 </table>
-</div>
-    <a href="AddContacts.jsp" class="button">Add Contacts</a>
-    <a href="SearchContacts.jsp" class="button">Search Contacts</a>
-    <a href="Logout.jsp" class="button">LogOut</a>
-
-    
+</div>    
 </body>
 </html>

@@ -11,13 +11,14 @@
 	<title>Contact Application</title>
 </head>
 <body>
-	<%if(request.isUserinRole("admin")){%>
+	<%if(request.isUserInRole("user")){%>
 	<link href="style1.css" rel="stylesheet" type ="text/css">
 	<div class="testbox">
 		<h1> Contact Application</h1>
 		<h2> by Lxisoft Technologies pvt.ltd</h2>
 		<p class="credits">Welcome User </p>
-		<a href="ViewDatabaseServlet" class="button">View Database</a>
+		<a href="ViewDatabaseUserServlet" class="button">View Database</a>
+		<a href="Logout.jsp" class="button">LogOut</a>
 		<%}
 		else
 		{
