@@ -16,7 +16,7 @@ public class AddServlet extends HttpServlet
 		super();
 	}
 
-	protected void doGet(HttpServletRequest request,HttpServletResponse response) 
+	protected void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException , IOException
 	{
 		
 	   ContactRepository contactrepo = new ContactRepository();
@@ -31,14 +31,8 @@ public class AddServlet extends HttpServlet
 	   contact.setNumber(number);
 	   contactrepo.addToDatabase(contact);
 
-	    try
-	    {
-	   		response.sendRedirect("View.jsp");
-	   	}
-	   	catch(Exception e)
-		{
-
-		}
+	   RequestDispatcher rd = request.getRequestDispatcher("/ViewServlet");
+		rd.forward(request,response);
 	}
 	
 }

@@ -12,24 +12,20 @@ public class UpdateServlet extends HttpServlet
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException , IOException
 	{
-		String id = request.getParameter("id");
+	   String id = request.getParameter("id");
 	   String newname= request.getParameter("name");
 	   String newlastname= request.getParameter("lname");
 	   String newemail= request.getParameter("email");
 	   String newnumber= request.getParameter("number");
 	   Contact contact=new Contact();
+	   //contact.setID(id);
 	   contact.setFirstName(newname);
 	   contact.setLastName(newlastname);
 	   contact.setMailId(newemail); 
 	   contact.setNumber(newnumber);
 	   contactrepo.updateDatabase(id,newname,newlastname,newemail,newnumber);
-try
-	   	{
-	   		response.sendRedirect("View.jsp");
-	   	}
-	   	catch(Exception e)
-		{
-		}
+	   		RequestDispatcher rd = request.getRequestDispatcher("/ViewServlet");
+	   		rd.forward(request,response);
 	}
 
 }

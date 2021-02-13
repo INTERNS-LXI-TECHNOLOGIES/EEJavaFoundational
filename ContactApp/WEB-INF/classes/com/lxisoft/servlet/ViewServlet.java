@@ -15,7 +15,7 @@ public class ViewServlet extends HttpServlet
 	{
 		ArrayList<Contact> contactList = new ArrayList<Contact>();
 		contactList = contactrepo.viewDatabase();
-		request.setAttribute("contactList",contactList);
+		request.setAttribute("list",contactList);
 		RequestDispatcher rd = request.getRequestDispatcher("View.jsp");
 		rd.forward(request,response);				
 	}

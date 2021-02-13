@@ -52,8 +52,9 @@ public class ContactRepository
 
   public ArrayList<Contact> viewDatabase()
   {
-    createDatabaseConnection();
+    System.out.println("hello contact started");
     contactList.clear();
+    createDatabaseConnection();
     try
     {
          Statement stmt = con.createStatement();
@@ -63,18 +64,20 @@ public class ContactRepository
      {
         Contact contact = new Contact();  
       contact.setID(rs.getInt("id"));
-      contact.setFirstName(rs.getString("name"));  
-      contact.setLastName(rs.getString("lastname"));
-      contact.setMailId(rs.getString("email"));
-      contact.setNumber(rs.getString("number"));
+      contact.setFirstName(rs.getString("FirstName"));  
+      contact.setLastName(rs.getString("LastName"));
+      contact.setMailId(rs.getString("MailID"));
+      contact.setNumber(rs.getString("Number"));
       contactList.add(contact);
-
+      
      }
+     stmt.close();
    }
      catch(Exception e)
    {
-      
+      e.printStackTrace();
     }
+    System.out.println(contactList.size());
     return contactList;
   }
 
@@ -85,12 +88,12 @@ public class ContactRepository
     try
     {
       Statement stm = con.createStatement();
-      ps = con.prepareStatement("update contactapp where id ='"+id+"' set FirstName=?,LastName=?,MailID=?,Number=?");
-      ps.setString(1,id);
-      ps.setString(2,name);
-      ps.setString(3,lastname);
-      ps.setString(4,email);
-      ps.setString(5,number);
+      ps = con.prepareStatement("update contactapp  set FirstName=?,LastName=?,MailID=?,Number=? where id=?");
+      ps.setString(5,id);
+      ps.setString(1,name);
+      ps.setString(2,lastname);
+      ps.setString(3,email);
+      ps.setString(4,number);
       
 
 
@@ -126,12 +129,12 @@ public class ContactRepository
      }
   }
 
-  public void deleteRecord(String id)
+  public void deleteRecord(String name)
   {
     createDatabaseConnection();
     try
     {
-         String sql = "delete from contactapp where id ='"+id+"'";
+         String sql = "delete from contactapp where FirstName ='"+name+"'";
          stmt = con.createStatement();
          stmt.executeUpdate(sql);
          stmt.close();

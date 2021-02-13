@@ -20,16 +20,11 @@ public class DeleteServlet extends HttpServlet
 	{
 		ContactRepository contactrepo = new ContactRepository();
 		String id = request.getParameter("id");
-		contactrepo.deleteRecord(id);
+		String name = request.getParameter("name");
+		contactrepo.deleteRecord(name);
 
 		RequestDispatcher rd = request.getRequestDispatcher("/ViewServlet");
 		rd.forward(request,response);
-	 try{
-	 	
-	response.sendRedirect("Delete.jsp");
-
-	   }
-	 catch(Exception e){}
 
 }
 }

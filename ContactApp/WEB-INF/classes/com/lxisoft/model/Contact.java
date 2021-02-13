@@ -1,7 +1,6 @@
 package com.lxisoft.model;
-import com.lxisoft.model.*;
-import com.lxisoft.repository.*;
-import com.lxisoft.servlet.*;
+//import com.lxisoft.repository.*;
+//import com.lxisoft.servlet.*;
 public  class Contact
 {
 	private String name;
@@ -13,7 +12,7 @@ public  class Contact
 
    public void setID(int id)
    {
-      id = id;
+     this.id = id;
    }
    public int getID()
    {

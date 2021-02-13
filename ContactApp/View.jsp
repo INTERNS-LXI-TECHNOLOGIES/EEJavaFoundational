@@ -19,8 +19,8 @@
       </tr>
       <tr>
 <%  
-  ArrayList<Contact> contactList=(ArrayList<Contact>) request.getAttribute("contactList");
-  
+  ArrayList<Contact> contactList= new ArrayList<Contact>();
+  contactList = (ArrayList<Contact>) request.getAttribute("list");
   for(Contact contact : contactList)
     { 
       %>
@@ -30,7 +30,7 @@
         <td><%out.println(contact.getLastName());%></td>
         <td><%out.println(contact.getMailId());%></td>
         <td><%out.println(contact.getNumber());%></td>
-        <td><a href="DeleteServlet" type="submit"> DELETE</a></td>
+        <td><a href="DeleteServlet?id=<%=contact.getID()%>&name=<%=contact.getFirstName()%>"><input type="button" name="submit" value="DELETE"></a></td>
      </tr>
       <%   
     }
