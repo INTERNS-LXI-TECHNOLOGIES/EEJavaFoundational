@@ -16,7 +16,7 @@
 		<h2> by Lxisoft Technologies pvt.ltd</h2>
 		<p class="credits">It is a contact app developed by Faris for bytatech technologies under Lxisoft Technologies pvt.ltd </p>
 		<div class="buttons">
-		<a href="userIndex.jsp" class="loginuser">LogIn as User</a>
+		<a href="adminIndex.jsp" class="loginuser">LogIn as User</a>
 		<a href="adminIndex.jsp" class="loginadmin">LogIn as Admin</a>
 		</div>
 </body>

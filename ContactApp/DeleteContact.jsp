@@ -4,6 +4,7 @@
   <title>Contact Application</title>
 </head>
 <body>
+	<%if(request.isUserInRole("admin")){%>
   <link href="style1.css" rel="stylesheet" type ="text/css">
   <div class="testbox">
     <h1><a href="Index.html" class="header"> Contact Application</a></h1>
@@ -17,4 +18,10 @@
 
 </div>
 </body>
+<% }
+	else
+		{
+			response.sendRedirect("WrongAuth.jsp");
+		}
+%>
 </html>

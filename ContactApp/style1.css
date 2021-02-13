@@ -258,12 +258,12 @@ input.searchbutton
   font-size: 22px;
   font-weight: 30;
   color: white; 
-  margin-top:-90px;
+  margin-top:40px;
   margin-left:490px;
   margin-bottom:10px;
   padding-top: 10px;
   padding-right: 20px;
-  padding-bottom: -10px;
+  padding-bottom: 10px;
   padding-left: 30px;
   display: inline-block;
   text-decoration: none;

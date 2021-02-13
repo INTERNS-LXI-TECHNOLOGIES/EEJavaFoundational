@@ -4,24 +4,19 @@
 <%@page import="java.util.*"%>
 <%@page import="java.sql.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Contact Application</title>
 </head>
-<body>	
+<body>
 	<link href="style1.css" rel="stylesheet" type ="text/css">
 	<div class="testbox">
 		<h1> Contact Application</h1>
 		<h2> by Lxisoft Technologies pvt.ltd</h2>
-		<p class="credits">It is a contact app developed by Faris for bytatech technologies under Lxisoft Technologies pvt.ltd </p>
-		<div class="buttons">
-		<a href="ViewDatabaseServlet" class="button">View Database</a>
-		<a href ="Logout.jsp" class="button"> LogOut</a>
-		</div>
+		<p color="red" class="credits"> You don't have authorisation to acces this page.... </p>
+		<a href="adminIndex.jsp" class="button"> Back to Home</a>
 		
-    
+	</div>
 </body>
-
 </html>
