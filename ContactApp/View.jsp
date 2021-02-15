@@ -30,7 +30,7 @@
         <td><%out.println(contact.getLastName());%></td>
         <td><%out.println(contact.getMailId());%></td>
         <td><%out.println(contact.getNumber());%></td>
-        <td><a href="DeleteServlet?id=<%=contact.getID()%>&name=<%=contact.getFirstName()%>"><input type="button" name="submit" value="DELETE"></a></td>
+        <td><a href="Delete.jsp?id=<%=contact.getID()%>&name=<%=contact.getFirstName()%>"><input type="button" name="submit" value="DELETE"></a></td>
      </tr>
       <%   
     }

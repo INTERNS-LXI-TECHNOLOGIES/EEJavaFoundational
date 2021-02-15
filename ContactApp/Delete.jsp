@@ -11,13 +11,15 @@
   <center>
       <h1 class="text-center text-white pt-5">DELETE CONTACT</h1>
     <table>
-        <tr><td>ENTER THE FIRST NAME YOU WANT TO DELETE : </td><td><input type="text" name="name"></td></tr>
-      <tr><td></td><td><input type="submit" value="SUBMIT"></td></tr>
+        <tr><td>DO YOU WANT TO DELETE THIS CONTACT: </td></tr>
+        <div class="form-group">
+         <label for="number" class="text-info">Name</label><br>
+         <input type="name" name="name" id="name" class="form-control"value="<%= request.getParameter("name")%>">
+         <input type="hidden" name="id" id="id" class="form-control " value="<%= request.getParameter("id")%>">
+         <a href="DeleteServlet?id=id&name=name"><input type="button" name="submit" value="YES"></a>
+         <a href="ViewServlet"><input type="button" name="submit" value="NO"></a>
+         </div>
     </table>  
-    <h1><b> YOUR REQUESTED CONTACT HAVE BEEN DELETED </b></h1>
-      <table>
-        <tr><td></td><td><a href="View.jsp" type="submit"> VIEW PAGE </a></td></tr>
-      </table>
       </center>
         </form>
 </body>

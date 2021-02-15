@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.ArrayList;
 public class ContactRepository
 {  
-   Connection con = null;
+   Connection con;
   ResultSet rs= null;
   Statement stmt = null;
   PreparedStatement ps = null;
@@ -33,13 +33,19 @@ public class ContactRepository
       e.printStackTrace();
     }
   }
-  public void addToDatabase(Contact contact)
+  public void addToDatabase(String name,String lastname,String email,String number)
   {
     createDatabaseConnection();
     try
     {
-         PreparedStatement ps=con.prepareStatement("insert into contactapp(FirstName,LastName,MailID,Number) values('"+contact.getFirstName()+"','"+contact.getLastName()+"','"+contact.getMailId()+"','"+contact.getNumber()+"')");       
-         int a=ps.executeUpdate();
+         PreparedStatement ps=con.prepareStatement("insert into contactapp(FirstName,LastName,MailID,Number) values(?,?,?,?)");       
+         ps.setString(1,name);
+         ps.setString(2,lastname);
+         ps.setString(3,email);
+         ps.setString(4,number);
+            
+      int a=ps.executeUpdate();
+    
 
       ps.close();
       con.close();
@@ -52,7 +58,6 @@ public class ContactRepository
 
   public ArrayList<Contact> viewDatabase()
   {
-    System.out.println("hello contact started");
     contactList.clear();
     createDatabaseConnection();
     try

@@ -29,7 +29,7 @@ public class AddServlet extends HttpServlet
 	   contact.setLastName(lastname);
 	   contact.setMailId(email); 
 	   contact.setNumber(number);
-	   contactrepo.addToDatabase(contact);
+	   contactrepo.addToDatabase(name,lastname,email,number);
 
 	   RequestDispatcher rd = request.getRequestDispatcher("/ViewServlet");
 		rd.forward(request,response);
