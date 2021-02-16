@@ -36,6 +36,15 @@
 </servlet-mapping>
 
 <servlet>
+<servlet-name>ViewServletuser</servlet-name>
+<servlet-class>com.lxisoft.servlet.ViewServletuser</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ViewServletuser</servlet-name>
+<url-pattern>/ViewServletuser</url-pattern>
+</servlet-mapping>
+
+<servlet>
 <servlet-name>UpdateServlet</servlet-name>
 <servlet-class>com.lxisoft.servlet.UpdateServlet</servlet-class>
 </servlet>

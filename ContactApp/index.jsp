@@ -11,7 +11,9 @@
 	<center>
 		<h1><b><i><ul>CONTACT APP </b></i></ul></h1>
 		<table>
-			<tr><td></td><td><a href="ViewServlet" type="submit"> VIEW CONTACT </a></td></tr>
+			<tr><td></td><td><a href="ViewServletuser" type="submit"> USER </a></td></tr>
+			<tr><td></td><td><a href="ViewServlet" type="submit"> ADMIN </a></td></tr>
+
 		</table>	
 	</center>
 </body>

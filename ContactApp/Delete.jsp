@@ -16,9 +16,9 @@
          <label for="number" class="text-info">Name</label><br>
          <input type="name" name="name" id="name" class="form-control"value="<%= request.getParameter("name")%>">
          <input type="hidden" name="id" id="id" class="form-control " value="<%= request.getParameter("id")%>">
-         <a href="DeleteServlet?id=id&name=name"><input type="button" name="submit" value="YES"></a>
-         <a href="ViewServlet"><input type="button" name="submit" value="NO"></a>
-         </div>
+         <input type="submit" name="name" value="YES">
+         <a href="ViewServlet"><input type="button" name="name" value="NO"></a>
+         </div>                  
     </table>  
       </center>
         </form>
