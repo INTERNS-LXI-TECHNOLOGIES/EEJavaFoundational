@@ -12,7 +12,7 @@
   <div class="testbox">
     <h1><a href="Index.jsp" class="header"> Contact Application</h1>
     <h2> by Lxisoft Texhnologies pvt.ltd</h2>
-    <p class="add">Contact Updated Successfully.</p>
+    <p class="add">Contact Added Successfully.</p>
   <div class="buttons">
     <a href="ViewDatabaseServlet" class="button">View Contact Database</a>
     

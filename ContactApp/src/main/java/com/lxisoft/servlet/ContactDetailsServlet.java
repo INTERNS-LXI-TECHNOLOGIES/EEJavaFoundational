@@ -14,7 +14,7 @@ public class ContactDetailsServlet extends HttpServlet
 
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException,IOException
 	{
-		String id=request.getAttribute("id");
+		//String id=request.getAttribute("id");
    		String fname=request.getParameter("fname");
     	String lname=request.getParameter("lname");
     	String email=request.getParameter("email");
