@@ -41,7 +41,7 @@
     <table>
        <tr><td></td><td><a href="addContact.jsp" type="submit"> ADD CONTACT </a></td></tr>
        <tr><td></td><td><a href="Search1.jsp" type="submit"> SEARCH CONTACT </a></td></tr>
-        <tr><td></td><td><a href="index.jsp" type="submit"> INDEX PAGE </a></td></tr>
+        <tr><td></td><td><a href="logout.jsp" type="submit"> LOGOUT </a></td></tr>
     </table>
          </center>
 </body>

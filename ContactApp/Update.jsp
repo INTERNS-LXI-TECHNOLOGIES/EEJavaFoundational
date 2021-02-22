@@ -7,6 +7,7 @@
 	<title></title>
 </head>
 <body>
+    <%if(request.isUserInRole("admin")){%>
 	    <div id="login">
         <h3 class="text-center text-white pt-5">UPDATE Contact</h3>
         <div class="container">
@@ -44,4 +45,10 @@
         </div>
     </div>
 </body>
+<%}
+  else
+    {
+      response.sendRedirect("ucantuse.jsp");
+    }
+%>
 </html>

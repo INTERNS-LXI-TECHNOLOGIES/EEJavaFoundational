@@ -46,7 +46,7 @@
      </tr>
      </table>
      <tr><h1><b> THIS IS THE DATA YOU REQUESTED TO SEARCH </b></h1></tr>
-      	<tr><td></td><td><a href="View.jsp" type="submit"> VIEW PAGE </a></td></tr>
+      	<tr><td></td><td><a href="ViewServlet" type="submit"> VIEW PAGE </a></td></tr>
       </center>
 </body>
 </html>

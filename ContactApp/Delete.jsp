@@ -7,6 +7,7 @@
   <title>Contact App</title>
 </head>
 <body bgcolor="800020">
+   <%if(request.isUserInRole("admin")){%>
     <form action="DeleteServlet" method="get">
   <center>
       <h1 class="text-center text-white pt-5">DELETE CONTACT</h1>
@@ -23,4 +24,10 @@
       </center>
         </form>
 </body>
+<%}
+  else
+    {
+      response.sendRedirect("ucantuse.jsp");
+    }
+%>
 </html>

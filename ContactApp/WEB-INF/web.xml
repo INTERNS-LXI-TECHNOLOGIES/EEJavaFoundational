@@ -53,7 +53,31 @@
 <url-pattern>/UpdateServlet</url-pattern>
 </servlet-mapping>
 
-<welcome-file-list>
-<welcome-file>/WEB-INF/index.jsp</welcome-file>
-</welcome-file-list>
+<security-constraint>
+      <web-resource-collection>
+         <web-resource-name>security</web-resource-name>
+         <url-pattern>/Admin.jsp</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+      </web-resource-collection>
+      
+      <auth-constraint>
+         <description></description>
+         <role-name>admin</role-name>
+         <role-name>user</role-name>
+      </auth-constraint>
+   </security-constraint>
+   
+   <security-role>
+      <role-name>admin</role-name>
+      <role-name>user</role-name>
+   </security-role>
+   
+   <login-config>
+      <auth-method>FORM</auth-method>
+      <form-login-config>
+         <form-login-page>/login.jsp</form-login-page>
+         <form-error-page>/errorpage.jsp</form-error-page>
+      </form-login-config>
+   </login-config>
 </web-app>
