@@ -3,7 +3,8 @@ A user should use this form to register his details about the function being hel
 The details to be filled in the request form are,
 Name, phone number, Function details,address of the function being held, Number of peoples attending the function and their phone numbers 
  
-The admin should approve or reject the request. User can get his status by entering the phone number.
+The admin should approve or reject the request and should be able to perform CRUD operation of number of peoples accepted. 
+User can get his status by entering the phone number.
 
 Requirements:
 
