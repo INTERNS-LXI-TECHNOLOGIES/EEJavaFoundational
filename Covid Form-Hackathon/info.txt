@@ -1,0 +1,14 @@
+A user should use this form to register his details about the function being held at his place.So this application helps user to request for an affidavit by specifying the following details.
+
+The details to be filled in the request form are,
+Name, phone number, Function details,address of the function being held, Number of peoples attending the function and their phone numbers 
+ 
+The admin should approve or reject the request. User can get his status by entering the phone number.
+
+Requirements:
+
+Usage of arrays, interface and packages is necessary.
+Use mysql as the database
+Use jsp and servlets for UI and access mysql database
+Maven project will be the ideal choice
+Configure users in database or users.xml file of tomcat
