@@ -1,0 +1,5 @@
+com\lxisoft\servlet\AddApplicationServlet.class
+com\lxisoft\repositry\CovidDatabase.class
+com\lxisoft\servlet\SearchApplicationServlet.class
+com\lxisoft\model\CovidForm.class
+com\lxisoft\servlet\ViewApplicationServlet.class

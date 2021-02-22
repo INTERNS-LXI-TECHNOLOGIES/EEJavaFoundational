@@ -1,0 +1,60 @@
+<web-app>
+
+	
+<servlet>
+<servlet-name>AddApplicationServlet</servlet-name>
+<servlet-class>com.lxisoft.servlet.AddApplicationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>AddApplicationServlet</servlet-name>
+<url-pattern>/AddApplicationServlet</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>SearchApplicationServlet</servlet-name>
+<servlet-class>com.lxisoft.servlet.SearchApplicationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>SearchApplicationServlet</servlet-name>
+<url-pattern>/SearchApplicationServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+<servlet-name>ViewApplicationServlet</servlet-name>
+<servlet-class>com.lxisoft.servlet.ViewApplicationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+<servlet-name>ViewApplicationServlet</servlet-name>
+<url-pattern>/ViewApplicationServlet</url-pattern>
+</servlet-mapping>
+
+
+<security-constraint>
+      <web-resource-collection>
+         <web-resource-name>SecuredBookSite</web-resource-name>
+         <url-pattern>/Adminindex.jsp</url-pattern>
+            <http-method>GET</http-method>
+            <http-method>POST</http-method>
+      </web-resource-collection>
+      
+      <auth-constraint>
+         <description>Let only managers use this app</description>
+         <role-name>admin</role-name>
+      </auth-constraint>
+   </security-constraint>
+   
+   <security-role>
+      <role-name>admin</role-name>
+   </security-role>
+   
+   <login-config>
+      <auth-method>FORM</auth-method>
+      <form-login-config>
+         <form-login-page>/LogIn.jsp</form-login-page>
+         <form-error-page>/Errorlogin.jsp</form-error-page>
+      </form-login-config>
+   </login-config>
+
+
+
+</web-app>
+</web-app>
