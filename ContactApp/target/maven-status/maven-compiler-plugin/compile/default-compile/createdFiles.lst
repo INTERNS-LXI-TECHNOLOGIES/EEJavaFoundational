@@ -1,0 +1,9 @@
+com\lxisoft\servlet\UpdateContactServlet.class
+com\lxisoft\model\Contact.class
+com\lxisoft\servlet\ContactDetailsServlet.class
+com\lxisoft\servlet\SearchContactServlet.class
+com\lxisoft\servlet\ViewDatabaseServlet.class
+com\lxisoft\servlet\DeleteContactServlet.class
+com\lxisoft\servlet\ViewDatabaseUserServlet.class
+com\lxisoft\repositry\MysqlRepositry.class
+com\lxisoft\servlet\AddContactServlet.class
