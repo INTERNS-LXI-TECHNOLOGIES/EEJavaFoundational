@@ -1,0 +1,8 @@
+com\lxisoft\servlet\ViewServletuser.class
+com\lxisoft\servlet\SearchServlet.class
+com\lxisoft\repository\ContactRepository.class
+com\lxisoft\model\Contact.class
+com\lxisoft\servlet\DeleteServlet.class
+com\lxisoft\servlet\UpdateServlet.class
+com\lxisoft\servlet\AddServlet.class
+com\lxisoft\servlet\ViewServlet.class
