@@ -3,7 +3,8 @@ A user should be able to fill his details in the form to take part in the covid 
 The details to be filled in the request form are:-
 Name, Age,Address,phone number, Email-Id,Blood Type, 
  
-The admin should approve or reject the request and should be able to perform CRUD operation on the applicants.He should be able to accept or reject the request of each user. 
+The admin should approve or reject the request of each applicant and should be able to perform CRUD operation on the applicants.
+
 User should get his status by entering the phone number or Name.
 
 Requirements:
