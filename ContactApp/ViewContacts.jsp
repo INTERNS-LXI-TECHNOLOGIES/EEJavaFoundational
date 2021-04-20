@@ -4,6 +4,14 @@
 	<title>View contact</title>
 </head>
 <body>
+	<table border="1">
+		<tr>
+			<td>S.No</td>
+			<td>Name</td>
+			<td>Number</td>
+			<td>E-mail</td>
+			<td>Action</td>
+		</tr>
 	<%@ page import="java.sql.*" %>
 	<%@ page import="java.util.*" %>
 	<%
@@ -12,28 +20,24 @@
 	    
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","abi@1003");
         Statement stmnt = con.createStatement();
-        ResultSet rs = stmnt.executeQuery("select * from contacts");
-        out.println("+--------+-----------------------+---------------------+-------------------------------+");
-        %>
-        <%
-        out.println("|   S.No |         Name          |       Number         |            E-Mail            |")
-        %>
-        <%
-        out.println("+--------+-----------------------+---------------------+-------------------------------+");
+        ResultSet rs = stmnt.executeQuery("select * from contacts");        
         
         while(rs.next()){
-            int sno = rs.getInt("sno");
-            String nme = rs.getString("name");
-            String num = rs.getString("number");
-            String mail = rs.getString("email");
-            %>
-            <%
-            out.println("  "+sno+"     "+name+"      "+number+"         "+email);
-        }
         %>
-        <%
-        out.println("+--------+-----------------------+---------------------+-------------------------------+");
+        <tr>
+        	<td><%= rs.getInt("sno")%></td>
+        	<td><%= rs.getString("name")%></td>
+        	<td><%= rs.getString("number")%></td>
+        	<td><%= rs.getString("email")%></td>
+        	<td><a href="DeleteContact.jsp?id=<%=rs.getInt("sno")%>"><button type="button" class="DeleteContact">Delete</button></a></td>
+        </tr>
+        <%    
+        }    
+    }
+    catch(Exception e){
+        e.printStackTrace();
     }
     %> 
+    </table>
 </body>
 </html>

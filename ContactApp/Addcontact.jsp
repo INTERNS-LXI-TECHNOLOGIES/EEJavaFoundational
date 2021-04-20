@@ -14,7 +14,7 @@
 	    Class.forName("com.mysql.cj.jdbc.Driver");
 	    
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","abi@1003");
-        //out.println(cname+"  "+num+"  "+mail);
+        
         PreparedStatement ps = con.prepareStatement("insert into contacts(name,number,email) values('"+cname+"','"+num+"','"+mail+"')");
         int row = ps.executeUpdate();
         

@@ -29,6 +29,8 @@
 	<br/><br/>
 	<a href="Addcontact.html">Add_Contact</a>
 	<br/>
+	<a href="ViewContacts.jsp">View_Contact</a>
+	<br>
 	<a href="index.html">Log_out</a>
 </body>
 </html>
