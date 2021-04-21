@@ -26,6 +26,8 @@
     
     %>
     <br>
+    <a href="ViewContacts.jsp">View_contact</a>
+    <br>
     <br>
     <a href="Addcontact.html">Add_contact</a>
     <br>
