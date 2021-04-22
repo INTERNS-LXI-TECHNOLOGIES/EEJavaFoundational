@@ -15,8 +15,9 @@
 	    Class.forName("com.mysql.cj.jdbc.Driver");
 	    
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","abi@1003");
+        int num = Integer.parseInt(snum);
         PreparedStatement ps = con.prepareStatement("update contacts set name=?,number=?,email=? where sno='"+snum+"'");
-        ps.setInt(1,snum);
+        ps.setInt(1,num);
         ps.setString(2,nme);
         ps.setString(3,no);
         ps.setString(4,eml);
