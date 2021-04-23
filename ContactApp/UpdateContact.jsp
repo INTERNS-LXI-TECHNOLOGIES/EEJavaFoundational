@@ -7,13 +7,13 @@
 	<%@ page import="java.util.*" %>
 	<%@ page import="java.sql.*" %>
 	<%
-	String id = request.getParameter("id");
+	String nme = request.getParameter("name");
 	try{
 	    Class.forName("com.mysql.cj.jdbc.Driver");
 	    
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","abi@1003");
         Statement stmnt = con.createStatement();
-        ResultSet rs = stmnt.executeQuery("select * from contacts where sno='"+id+"'");        
+        ResultSet rs = stmnt.executeQuery("select * from contacts where name='"+nme+"'");        
         
         while(rs.next()){
         %>
@@ -27,7 +27,7 @@
         	E-Mail : <br><input type="text" name="mail" value="<%=rs.getString("email") %>">
         	<br>
         	<br>
-        	<input type="submit" name="change" value="Update">
+        	<a href="Update.jsp?name=<%=rs.getString("name")%> & num=<%=rs.getString("number")%> & mail=<%=rs.getString("email")%>"></a><input type="submit" name="change" value="Update">
         </form>
         <%
         }

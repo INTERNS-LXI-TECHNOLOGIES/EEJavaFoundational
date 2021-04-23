@@ -11,6 +11,7 @@
 			<td>Number</td>
 			<td>E-mail</td>
 			<td>Action</td>
+			<td>Action</td>
 		</tr>
 	<%@ page import="java.sql.*" %>
 	<%@ page import="java.util.*" %>
@@ -29,7 +30,8 @@
         	<td><%= rs.getString("name")%></td>
         	<td><%= rs.getString("number")%></td>
         	<td><%= rs.getString("email")%></td>
-        	<td><a href="DeleteContact.jsp?id=<%=rs.getInt("sno")%>"><button type="button" class="DeleteContact">Delete</button></a><a href="UpdateContact.jsp?id=<%=rs.getInt("sno")%>"><button type="button" class="UpdateContact">Update</button></a></td>
+        	<td><a href="DeleteContact.jsp?id=<%=rs.getInt("sno")%>"><button type="button" class="DeleteContact">Delete</button></a></td>
+        	<td><a href="UpdateContact.jsp?name=<%=rs.getString("name")%>"><button type="button" class="UpdateContact">Update</button></a></td>
         </tr>
         <%    
         }    
@@ -40,7 +42,7 @@
     %> 
     </table>
     <br>
-    <a href="Login.jsp">Home</a>
+    <a href="Home.jsp">Home</a>
     <br>
     <br>
     <a href="index.html">Log_out</a>

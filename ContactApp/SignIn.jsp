@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Log in</title>
+	<title>Sign up</title>
 </head>
 <body>
 	<h1>Welcome</h1>
@@ -25,12 +25,8 @@
     catch(ClassNotFoundException e){
         e.printStackTrace();
     }
+    response.sendRedirect("Home.jsp");
 	%>
-	<br/><br/>
-	<a href="Addcontact.html">Add_Contact</a>
-	<br/>
-	<a href="ViewContacts.jsp">View_Contact</a>
-	<br>
-	<a href="index.html">Log_out</a>
+	
 </body>
 </html>
