@@ -18,7 +18,7 @@
         while(rs.next()){
         %>
         <form action="Update.jsp">
-        	<input type="hidden" name="sn" value="<%=rs.getInt("sno") %>">
+        	ID : <input type="text" name="sn" value="<%=rs.getInt("sno") %>">
         	<br>
         	Name : <br><input type="text" name="name" value="<%=rs.getString("name") %>">
         	<br>
@@ -27,9 +27,10 @@
         	E-Mail : <br><input type="text" name="mail" value="<%=rs.getString("email") %>">
         	<br>
         	<br>
-        	<a href="Update.jsp?name=<%=rs.getString("name")%> & num=<%=rs.getString("number")%> & mail=<%=rs.getString("email")%>"></a><input type="submit" name="change" value="Update">
+            <input type="submit" value="Update">
         </form>
         <%
+         	//<a href="Update.jsp?name=<%=rs.getString("name") & num=<%=rs.getString("number") & mail=<%=rs.getString("email")">
         }
     }
     catch (Exception e) {
