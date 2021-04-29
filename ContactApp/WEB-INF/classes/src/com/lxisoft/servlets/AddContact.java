@@ -1,7 +1,9 @@
 package com.lxisoft.servlets;
-import  java.servlet.*;
-import  java.servlet.http.*;
+import java.io.*;
+import  javax.servlet.*;
+import  javax.servlet.http.*;
 import  java.util.*;
+import com.lxisoft.model.*;
 import com.lxisoft.repository.ContactList;
 
 public class AddContact extends HttpServlet{
@@ -12,8 +14,14 @@ public class AddContact extends HttpServlet{
 		String num = request.getParameter("number");
 		String mail = request.getParameter("email");
 		contact.setName(name);
-		contact.setNumber(number);
+		contact.setNumber(num);
 		contact.setEmail(mail);
-		list.addToContactDatabase(name,number,mail);
+		list.addToContactDatabase(name,num,mail);
+		try{
+			response.sendRedirect("ViewContacts.jsp");
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
 	}
 }

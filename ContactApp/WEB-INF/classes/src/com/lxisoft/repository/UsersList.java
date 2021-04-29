@@ -4,7 +4,7 @@ import com.lxisoft.servlets.*;
 import java.util.*;
 import java.sql.*;
 
-public class ContactList{
+public class UsersList{
 	Connection con = null;
 	Statement stmnt = null;
 	ResultSet rs = null;
@@ -37,18 +37,24 @@ public class ContactList{
 	}
 	public void checkUser(String name,String password){
 		this.databaseConnection();
-		stmnt = con.createStatement();
-		rs = stmnt.executeQuery("select * from users where name='"+name+"'");
-		if (rs.next()) {
-			if(rs.getString(3).equals(password)){
-				out.println("Welcome ")
-			}
-			else{
-				out.println("Wrong password");
-			}
+		try{
+			stmnt = con.createStatement();
+	    	rs = stmnt.executeQuery("select * from users where name='"+name+"'");
+		    if (rs.next()) {
+			    if(rs.getString(3).equals(password)){
+				    System.out.println("Welcome ");
+			    }
+			    else{
+				    System.out.println("Wrong password");
+			    }
+		    }
+		    else{
+			    System.out.println("UserName or the Password is wrong");
+		    }
 		}
-		else{
-			out.println("UserName or the Password is wrong");
+		catch(Exception e){
+			e.printStackTrace();
 		}
+		
 	}
 }

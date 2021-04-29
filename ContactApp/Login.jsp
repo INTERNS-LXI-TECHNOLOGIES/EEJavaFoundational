@@ -4,6 +4,21 @@
 	<title>Log in</title>
 </head>
 <body>
+    <h2>Log In</h2>
+    <form action="Login">
+        <br>
+        User Name : <input type="text" name="name">
+        <br>  
+        <br>
+        Password  : <input type="password" name="password">
+        <br>
+        <br>
+        <input type="submit" name="button" value="Login">
+        <br>
+        <br>
+        <a href="index.html">Back</a>
+    </form>
+    <!--
 	<%@page import="java.util.*" %>
 	<%@page import ="java.sql.*" %>
 	<%
@@ -48,6 +63,6 @@
         e.printStackTrace();         	
     }        
         
-	%>
+	%>-->
 </body>
 </html>

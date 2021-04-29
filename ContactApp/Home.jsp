@@ -6,7 +6,7 @@
 <body>
 	<h2>Contact App</h2>
 	<br>
-	<a href="Addcontact.html">Add_Contact</a>
+	<a href="Addcontact.jsp">Add_Contact</a>
 	<br/>
 	<a href="ViewContacts.jsp">View_Contact</a>
 	<br>

@@ -4,7 +4,19 @@
 	<title>Sign up</title>
 </head>
 <body>
-	<h1>Welcome</h1>
+	<h1>Sign up</h1><br/>
+	<form action="Signin">
+		User name <br/><input type="text" name="userName">
+		<br/>
+		Password <br/><input type="password" name="password">
+		<br>
+		<br>
+		<input type="submit" value="Signup">
+	</form>
+	<br>
+	<br>
+	<a href="index.html">Back</a>
+	<!--<h1>Welcome</h1>
 	<%@ page import="java.sql.*" %>
 	<%@ page import="java.util.*" %>
 	<%
@@ -27,6 +39,6 @@
     }
     response.sendRedirect("Home.jsp");
 	%>
-	
+	-->
 </body>
 </html>

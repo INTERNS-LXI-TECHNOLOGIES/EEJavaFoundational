@@ -4,7 +4,17 @@
 	<title>Added contact</title>
 </head>
 <body>
-	<%@ page import="java.sql.*" %>
+    <form action="AddContact">
+        Contact Name : <br><input type="text" name="contactName">
+        <br>
+        Number : <br><input type="text" name="number">
+        <br>
+        Email : <br><input type="text" name="mailid">
+        <br>
+        <br>
+        <input type="submit" value="Add">
+    </form>
+	<!--<%@ page import="java.sql.*" %>
 	<%@ page import="java.util.*" %>
 	<%
 	String cname = request.getParameter("contactName");
@@ -24,7 +34,7 @@
         e.printStackTrace();
     }
     
-    %>
+    %>-->
     <br>
     <a href="ViewContacts.jsp">View_contact</a>
     <br>

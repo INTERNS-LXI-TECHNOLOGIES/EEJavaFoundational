@@ -1,7 +1,8 @@
 package com.lxisoft.servlets;
-import  java.servlet.*;
-import  java.servlet.http.*;
-import  java.util.*;
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
+import java.util.*;
 import com.lxisoft.repository.UsersList;
 
 public class Signin extends HttpServlet{
@@ -11,10 +12,10 @@ public class Signin extends HttpServlet{
 		String name = request.getParameter("name");
 		String pass = request.getParameter("password");
 		
-		users.addToUsersDatabase(name,pass);
+		users.addToUserDatabase(name,pass);
 
 		try{
-			response.sendRedirect("Home.jsp")
+			response.sendRedirect("Home.jsp");
 		}
 		catch(Exception e){
 			e.printStackTrace();
