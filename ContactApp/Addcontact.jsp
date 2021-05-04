@@ -4,7 +4,7 @@
 	<title>Added contact</title>
 </head>
 <body>
-    <form action="AddContact">
+    <form action="AddContacts">
         Contact Name : <br><input type="text" name="contactName">
         <br>
         Number : <br><input type="text" name="number">

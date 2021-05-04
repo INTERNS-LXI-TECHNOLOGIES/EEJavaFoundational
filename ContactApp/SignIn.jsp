@@ -5,7 +5,7 @@
 </head>
 <body>
 	<h1>Sign up</h1><br/>
-	<form action="Signin">
+	<form action="Signup">
 		User name <br/><input type="text" name="userName">
 		<br/>
 		Password <br/><input type="password" name="password">

@@ -5,7 +5,7 @@
 </servlet>
 <servlet-mapping>
 	<servlet-name>Signin</servlet-name>
-	<url-pattern>/Signin</url-pattern>
+	<url-pattern>/Signup</url-pattern>
 </servlet-mapping>
 
 <servlet>
@@ -14,7 +14,7 @@
 </servlet>
 <servlet-mapping>
 	<servlet-name>AddContact</servlet-name>
-	<url-pattern>/AddContact</url-pattern>
+	<url-pattern>/AddContacts</url-pattern>
 </servlet-mapping>
 
 <servlet>
