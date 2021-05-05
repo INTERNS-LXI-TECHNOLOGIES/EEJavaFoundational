@@ -4,7 +4,7 @@
 	<title>Added contact</title>
 </head>
 <body>
-    <form action="AddContacts">
+    <form action="add">
         Contact Name : <br><input type="text" name="contactName">
         <br>
         Number : <br><input type="text" name="number">
@@ -12,7 +12,7 @@
         Email : <br><input type="text" name="mailid">
         <br>
         <br>
-        <input type="submit" value="Add">
+        <input type="button" value="Add">
     </form>
 	<!--<%@ page import="java.sql.*" %>
 	<%@ page import="java.util.*" %>

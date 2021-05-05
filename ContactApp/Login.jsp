@@ -5,7 +5,7 @@
 </head>
 <body>
     <h2>Log In</h2>
-    <form action="Login">
+    <form action="login">
         <br>
         User Name : <input type="text" name="name">
         <br>  
@@ -13,7 +13,7 @@
         Password  : <input type="password" name="password">
         <br>
         <br>
-        <input type="submit" name="button" value="Login">
+        <input type="button" value="Login">
         <br>
         <br>
         <a href="index.html">Back</a>

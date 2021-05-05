@@ -1,28 +1,28 @@
 <web-app>
 <servlet>
 	<servlet-name>Signin</servlet-name>
-	<servlet-class>com.lxisoft.servlets.Signin</servlet-class>
+	<servlet-class>com.lxisoft.servlets.SignupServlet</servlet-class>
 </servlet>
 <servlet-mapping>
 	<servlet-name>Signin</servlet-name>
-	<url-pattern>/Signup</url-pattern>
+	<url-pattern>/signup</url-pattern>
 </servlet-mapping>
 
 <servlet>
 	<servlet-name>AddContact</servlet-name>
-	<servlet-class>com.lxisoft.servlets.AddContact</servlet-class>
+	<servlet-class>com.lxisoft.servlets.AddContactServlet</servlet-class>
 </servlet>
 <servlet-mapping>
 	<servlet-name>AddContact</servlet-name>
-	<url-pattern>/AddContacts</url-pattern>
+	<url-pattern>/add</url-pattern>
 </servlet-mapping>
 
 <servlet>
 	<servlet-name>Login</servlet-name>
-	<servlet-class>com.lxisoft.servlets.Login</servlet-class>
+	<servlet-class>com.lxisoft.servlets.LoginServlet</servlet-class>
 </servlet>
 <servlet-mapping>
 	<servlet-name>Login</servlet-name>
-	<url-pattern>/Login</url-pattern>
+	<url-pattern>/login</url-pattern>
 </servlet-mapping>
 </web-app>

@@ -5,13 +5,13 @@
 </head>
 <body>
 	<h1>Sign up</h1><br/>
-	<form action="Signup">
+	<form action="signup">
 		User name <br/><input type="text" name="userName">
 		<br/>
 		Password <br/><input type="password" name="password">
 		<br>
 		<br>
-		<input type="submit" value="Signup">
+		<input type="button" value="Signup">
 	</form>
 	<br>
 	<br>

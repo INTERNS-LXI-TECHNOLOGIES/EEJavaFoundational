@@ -3,8 +3,9 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.util.*;
+import com.lxisoft.repository.UsersList;
 
-public class Login{
+public class LoginServlet extends HttpServlet{
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 		String user = request.getParameter("name");

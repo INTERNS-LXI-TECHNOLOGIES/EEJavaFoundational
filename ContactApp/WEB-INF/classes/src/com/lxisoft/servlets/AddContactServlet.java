@@ -6,13 +6,13 @@ import  java.util.*;
 import com.lxisoft.model.*;
 import com.lxisoft.repository.ContactList;
 
-public class AddContact extends HttpServlet{
+public class AddContactServlet extends HttpServlet{
 	public void doPost(HttpServletRequest request, HttpServletResponse response){
 		Contacts contact = new Contacts();
 		ContactList list = new ContactList();
-		String name = request.getParameter("name");
+		String name = request.getParameter("contactName");
 		String num = request.getParameter("number");
-		String mail = request.getParameter("email");
+		String mail = request.getParameter("mailid");
 		contact.setName(name);
 		contact.setNumber(num);
 		contact.setEmail(mail);
