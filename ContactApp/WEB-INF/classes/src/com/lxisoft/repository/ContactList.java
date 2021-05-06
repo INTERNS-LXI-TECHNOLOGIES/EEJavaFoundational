@@ -30,6 +30,7 @@ public class ContactList{
 		try{
 			ps = con.prepareStatement("insert into contacts(name,number,email) values('"+name+"','"+number+"','"+mail+"')");
 			row = ps.executeUpdate();
+			response.sendRedirect("ViewContacts.jsp");
 			System.out.println("Contact Added");
 		}
 		catch(Exception e){

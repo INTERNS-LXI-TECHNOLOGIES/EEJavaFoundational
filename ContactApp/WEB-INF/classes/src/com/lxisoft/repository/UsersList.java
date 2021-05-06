@@ -42,9 +42,11 @@ public class UsersList{
 	    	rs = stmnt.executeQuery("select * from users where name='"+name+"'");
 		    if (rs.next()) {
 			    if(rs.getString(3).equals(password)){
+				    respose.sendRedirect("Home.jsp");
 				    System.out.println("Welcome ");
 			    }
 			    else{
+			    	respose.sendRedirect("index.jsp");
 				    System.out.println("Wrong password");
 			    }
 		    }

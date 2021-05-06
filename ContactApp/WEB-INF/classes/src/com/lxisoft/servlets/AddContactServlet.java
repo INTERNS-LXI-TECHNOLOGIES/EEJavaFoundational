@@ -7,7 +7,7 @@ import com.lxisoft.model.*;
 import com.lxisoft.repository.ContactList;
 
 public class AddContactServlet extends HttpServlet{
-	public void doPost(HttpServletRequest request, HttpServletResponse response){
+	public void doGet(HttpServletRequest request, HttpServletResponse response){
 		Contacts contact = new Contacts();
 		ContactList list = new ContactList();
 		String name = request.getParameter("contactName");
@@ -17,11 +17,11 @@ public class AddContactServlet extends HttpServlet{
 		contact.setNumber(num);
 		contact.setEmail(mail);
 		list.addToContactDatabase(name,num,mail);
-		try{
+		/*try{
 			response.sendRedirect("ViewContacts.jsp");
 		}
 		catch(Exception e){
 			e.printStackTrace();
-		}
+		}*/
 	}
 }
