@@ -14,12 +14,12 @@ public class LoginServlet extends HttpServlet{
 
 	    users.checkUser(user,pass);
 
-/*	    try{
+	    try{
 	    	respose.sendRedirect("Home.jsp");
 	    }
 	    catch(Exception e){
 	    	e.printStackTrace();
-	    }*/
+	    }
 	}
 
 }
