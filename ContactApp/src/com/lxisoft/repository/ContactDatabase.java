@@ -6,6 +6,7 @@ import java.sql.*;
 import java.util.*;
 public class ContactDatabase
 {
+	Contact model = new Contact();
 	Connection con = null;
 	ResultSet rs= null;
 	Statement stmt = null;
@@ -94,10 +95,10 @@ public class ContactDatabase
 			int i = 0;
 			while(rs.next())
 			{
-				contactList.add(i,new Contact());
+				contactList.add(new Contact());
 				contactList.get(i).setId(rs.getInt("id"));
 				contactList.get(i).setName(rs.getString("name"));
-				contactList.get(i).seNumber(rs.getString("number"));
+				contactList.get(i).setNumber(rs.getString("number"));
 				contactList.get(i).setEmail(rs.getString("email"));
 				i++;		
 			}
