@@ -7,7 +7,7 @@
 
 </body>
 <script type="text/javascript">
-	window.alert("Record Dleted Successfully....");
+	window.alert("Contact Deleted");
 	window.location.href="http://localhost:8080/ContactApp/view.jsp";
 </script>
 </html>

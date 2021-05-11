@@ -28,6 +28,8 @@ public class ContactDatabase
 			e.printStackTrace();
 		}
 	}
+	
+
 	public int addToDatabase(Contact model)
 	{
 		createDatabaseConnection();
@@ -44,36 +46,17 @@ public class ContactDatabase
 		}
 		return row;                                                                   
 	}
-	/*public ArrayList<Integer> getIdFromDatabase(ArrayList<Integer> idList)
-	{                                                                
-		createDatabaseConnection();
-		try
-		{
-			String sql = "select id from contactapp";
-			stmt = con.createStatement();
-			rs = stmt.executeQuery(sql);                                             
-			while(rs.next())
-			{
-				idList.add(rs.getInt(1)); 
-			}
-		}
-		catch(SQLException e)
-		{
-			e.printStackTrace();
-		}
-		return idList;
-	}
-	*/
 	
-	public void deletRecord(int deleteId)
+
+	public void deletRecord(String delete)
 	{
 		createDatabaseConnection();
 		try
 		{
-			String sql = "delete from contacts where id ='"+deleteId+"'";
+			String sql = "delete from contacts where name ='"+delete+"'";
 			stmt = con.createStatement();
 			stmt.executeUpdate(sql);
-			System.out.println("Record Sucessfully Deleted");
+			//System.out.println("Record Sucessfully Deleted");
 			stmt.close();
 			con.close();
 		}catch(SQLException e)
@@ -96,7 +79,7 @@ public class ContactDatabase
 			while(rs.next())
 			{
 				contactList.add(new Contact());
-				contactList.get(i).setId(rs.getInt("id"));
+				contactList.get(i).setId(rs.getInt("sno"));
 				contactList.get(i).setName(rs.getString("name"));
 				contactList.get(i).setNumber(rs.getString("number"));
 				contactList.get(i).setEmail(rs.getString("email"));
@@ -115,7 +98,7 @@ public class ContactDatabase
 		createDatabaseConnection();
 		try
 		{
-			ps = con.prepareStatement("update contacts set name = '"+contact.getName()+"', number ='"+contact.getNumber()+"', email='"+contact.getEmail()+"' where id='"+contact.getId()+"'");
+			ps = con.prepareStatement("update contacts set name = '"+contact.getName()+"', number ='"+contact.getNumber()+"', email='"+contact.getEmail()+"' where sno='"+contact.getId()+"'");
 			ps.executeUpdate();
 		}
 		catch(SQLException e)

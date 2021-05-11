@@ -13,10 +13,10 @@ public class DeleteServlet extends HttpServlet
 		try
 		{
 			ContactDatabase db = new ContactDatabase();
-			int id = Integer.parseInt(request.getParameter("id"));
+			String name = request.getParameter("name");
 			PrintWriter out = response.getWriter();
-			out.println(id);
-			db.deletRecord(id);
+			out.println(name);
+			db.deletRecord(name);
 			response.sendRedirect("delete.jsp");		
 		}
 		catch(Exception e)
