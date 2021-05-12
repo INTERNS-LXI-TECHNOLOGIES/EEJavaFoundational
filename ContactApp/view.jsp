@@ -22,16 +22,20 @@
 		ArrayList<Contact> contactList = new ArrayList<Contact>();
 		contactList = db.viewDatabase(contactList);	%>
 	
-		<%	for (int i=0;i<contactList.size();i++) 	{%>
+		<%	for (int i=0;i<contactList.size();i++) 	{
+		        int id = contactList.get(i).getId();
+		        String name = contactList.get(i).getName();
+		        String number = contactList.get(i).getNumber();
+		        String mail = contactList.get(i).getEmail();
+		         %>
 		<tr>				
-			<td><%out.println(contactList.get(i).getId());%></td>
-			<td><%out.println(contactList.get(i).getName());%></td>
-			<td><%out.println(contactList.get(i).getNumber());%></td>
-			<td><%out.println(contactList.get(i).getEmail());%></td> 
-		
-			<td><a href="edit.jsp?id=<%=contactList.get(i).getId()%>"><button class="button">Edit</button></a>
+			<td><%out.println(id/*contactList.get(i).getId()*/);%></td>
+			<td><%out.println(name/*contactList.get(i).getName()*/);%></td>
+			<td><%out.println(number/*contactList.get(i).getNumber()*/);%></td>
+			<td><%out.println(mail/*contactList.get(i).getEmail()*/);%></td> 		
+			<td><a href="edit.jsp?id=<%=id%> & name=<%=name%> & num =<%=number%> & mail=<%=mail%>"><button class="button">Edit</button></a>
 			<a href="contactDelete?name=<%=contactList.get(i).getName()%>"><button class="button button2">Delete</button></a></td>	
-				<%}%></tr>	
+			<%}%></tr>	
 	</table>
 
 	<br>
