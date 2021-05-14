@@ -37,7 +37,9 @@
 			<a href="contactDelete?name=<%=contactList.get(i).getName()%>"><button class="button button2">Delete</button></a></td>	
 			<%}%></tr>	
 	</table>
-
+	
+	<br>
+	<a href="search.html"><button class="button">Search</button></a>
 	<br>
 	<a href="index.html"><button class="button">Home</button></a>
 	<br>

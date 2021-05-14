@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app>
 	<servlet>
+		<servlet-name>Sign</servlet-name>
+		<servlet-class>com.lxisoft.servlet.SignupServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Sign</servlet-name>
+		<url-pattern>/signup</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
 		<servlet-name>Add</servlet-name>
 		<servlet-class>com.lxisoft.servlet.AddServlet</servlet-class>
 	</servlet>
@@ -25,5 +34,14 @@
 	<servlet-mapping>
 		<servlet-name>Edit</servlet-name>
 		<url-pattern>/contactEdit</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>Search</servlet-name>
+		<servlet-class>com.lxisoft.servlet.SearchServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Search</servlet-name>
+		<url-pattern>/search</url-pattern>
 	</servlet-mapping>
 </web-app>	

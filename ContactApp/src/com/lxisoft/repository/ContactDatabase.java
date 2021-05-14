@@ -106,4 +106,13 @@ public class ContactDatabase
 			e.printStackTrace();
 		}
 	}
+
+	public void searchContact(String name){
+		createDatabaseConnection();
+		try{
+			stmnt = con.CreateStatement()
+			row = stmnt.executeStatement("select * from contacts where name = '"+name+"'");
+
+		}
+	}
 }
