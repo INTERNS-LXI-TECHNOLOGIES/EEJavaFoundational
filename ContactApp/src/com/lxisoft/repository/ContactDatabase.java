@@ -22,8 +22,8 @@ public class ContactDatabase
 				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","abi@1003");	
 			}catch(SQLException e)
 			{	e.printStackTrace();	}
-			
-		}catch(ClassNotFoundException e)
+			}
+		catch(ClassNotFoundException e)
 		{
 			e.printStackTrace();
 		}
@@ -107,12 +107,17 @@ public class ContactDatabase
 		}
 	}
 
-	public void searchContact(String name){
+	/*public void searchContact(String name){
 		createDatabaseConnection();
 		try{
 			stmnt = con.CreateStatement()
-			row = stmnt.executeStatement("select * from contacts where name = '"+name+"'");
-
+			rs = stmnt.executeStatement("select * from contacts where name = '"+name+"'");
+			while(rs.next()){
+				int sno = rs.getId();
+				String name = rs.getName();
+				String number = rs.getNumber();
+				String mail = s.getEmail();
+			}
 		}
-	}
+	}*/
 }

@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Contacts</title>
 </head>
 <body>
 	<h1>Contact List</h1>

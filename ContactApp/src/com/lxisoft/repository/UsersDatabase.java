@@ -8,8 +8,9 @@ import java.util.*;
 public class UsersDatabase{
 	Connection con = null;
 	PreparedStatement ps =null;
-	ResultStatement rs = null;
+	//ResultStatement rs = null;
 	Statement stmnt = null;
+	int row;
 
 	public void createDatabaseConnection()
 	{
@@ -27,10 +28,10 @@ public class UsersDatabase{
 		}
 	}
 
-	public void addUsers(){
+	public void addUsers(String name,String password){
 		createDatabaseConnection();
 		try{
-			ps = con.prepareStatement("insert into users(name,password) values('"+model.getName()+"','"+model.getNumber()+"','"+model.getEmail()+"')");
+			ps = con.prepareStatement("insert into users(name,password) values('"+name+"','"+password+"')");
 			row = ps.executeUpdate();
 			ps.close();
 			con.close();
@@ -42,4 +43,31 @@ public class UsersDatabase{
 		//return row;                                                                   
 	}
 
+	public boolean checkUser(String name,String password){
+		boolean action = false;
+		createDatabaseConnection();
+		try{
+			Statement stmnt = con.createStatement();
+            ResultSet rs = stmnt.executeQuery("select * from users where name='"+name+"'");
+            if(rs.next()){
+                if(rs.getString(3).equals(password)){
+                    action = true;
+                }
+            }
+            else{
+                action = false;
+                //out.println("Wrong password or username");
+		    }
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		if(action == true){
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
 }

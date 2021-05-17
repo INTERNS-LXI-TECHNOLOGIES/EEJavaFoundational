@@ -10,13 +10,13 @@ public class EditServlet extends HttpServlet
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException
 	{
 		ContactDatabase database = new ContactDatabase();
-		int id = Integer.parseInt(request.getParameter("sno"));
+		String id = request.getParameter("sno");
 		String cname = request.getParameter("name");
 		String cnumber = request.getParameter("number");
 		String mail = request.getParameter("email");	
 		PrintWriter out = response.getWriter();
 		Contact contact = new Contact();
-		contact.setId(id);
+		contact.setId(Integer.parseInt(request.getParameter("sno")));
 		contact.setName(cname);
 		contact.setNumber(cnumber);
 		contact.setEmail(mail);
