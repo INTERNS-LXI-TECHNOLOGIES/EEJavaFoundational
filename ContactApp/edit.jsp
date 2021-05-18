@@ -14,7 +14,7 @@
 	Statement stmnt = null;
 	PreparedStatement ps = null;;
 	int row;
-	//String n = request.getParameter("id");
+	String n = request.getParameter("id");
 		try
 		{
 			Class.forName("com.mysql.jdbc.Driver");
