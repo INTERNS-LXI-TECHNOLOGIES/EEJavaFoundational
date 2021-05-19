@@ -72,7 +72,7 @@ public class ContactDatabase
 		createDatabaseConnection();
 		try
 		{
-			String sql  = "select * from contacts" ;
+			String sql  = "select * from contacts order by name DESC";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			int i = 0;

@@ -34,7 +34,7 @@
 			}
 		    //cd.createDatabaseConnection();
 		    stmt = con .createStatement();
-		    rs = stmt.executeQuery("select * from contacts where name = '"+name+"'");
+		    rs = stmt.executeQuery("select * from contacts where name like '%"+name+"%'");
 		    if(rs != null){
 		        
 		        while(rs.next()){
