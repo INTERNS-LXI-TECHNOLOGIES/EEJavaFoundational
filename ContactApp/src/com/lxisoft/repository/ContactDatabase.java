@@ -72,7 +72,7 @@ public class ContactDatabase
 		createDatabaseConnection();
 		try
 		{
-			String sql  = "select * from contacts order by name DESC";
+			String sql  = "select * from contacts order by name";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			int i = 0;
@@ -87,7 +87,9 @@ public class ContactDatabase
 			}
 		}
 		catch(SQLException e)
-		{		e.printStackTrace();	}
+		{
+			e.printStackTrace();	
+		}
 		return contactList;
 	}
 
@@ -106,18 +108,5 @@ public class ContactDatabase
 			e.printStackTrace();
 		}
 	}
-
-	/*public void searchContact(String name){
-		createDatabaseConnection();
-		try{
-			stmnt = con.CreateStatement()
-			rs = stmnt.executeStatement("select * from contacts where name = '"+name+"'");
-			while(rs.next()){
-				int sno = rs.getId();
-				String name = rs.getName();
-				String number = rs.getNumber();
-				String mail = s.getEmail();
-			}
-		}
-	}*/
+	
 }

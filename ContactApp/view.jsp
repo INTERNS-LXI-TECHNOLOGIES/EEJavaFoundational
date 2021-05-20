@@ -11,7 +11,7 @@
 	<h1>Contact List</h1>
 	<table border="1" width="50%">
 		<tr>
-			<th>Id</th>
+			<!--<th>Id</th>-->
 			<th>Name</th>
 			<th>Number</th>
 			<th>E-Mail</th>
@@ -29,11 +29,11 @@
 		        String mail = contactList.get(i).getEmail();
 		         %>
 		<tr>				
-			<td><%out.println(id/*contactList.get(i).getId()*/);%></td>
+			<!--<td><%out.println(id/*contactList.get(i).getId()*/);%></td>-->
 			<td><%out.println(name/*contactList.get(i).getName()*/);%></td>
 			<td><%out.println(number/*contactList.get(i).getNumber()*/);%></td>
 			<td><%out.println(mail/*contactList.get(i).getEmail()*/);%></td> 		
-			<td><a href="edit.jsp?id=<%=id%> & name=<%=name%> & num =<%=number%> & mail=<%=mail%>"><button class="button">Edit</button></a>
+			<td><a href="edit.jsp?id=<%=id%> & name=<%=contactList.get(i).getName()%> & num =<%=number%> & mail=<%=mail%>"><button class="button">Edit</button></a>
 			<a href="contactDelete?name=<%=contactList.get(i).getName()%>"><button class="button button2">Delete</button></a></td>	
 			<%}%></tr>	
 	</table>
