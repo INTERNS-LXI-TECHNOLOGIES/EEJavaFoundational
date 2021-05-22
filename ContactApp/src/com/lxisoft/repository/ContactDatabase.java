@@ -67,7 +67,7 @@ public class ContactDatabase
 
 
 
-	public ArrayList<Contact> viewDatabase(ArrayList<Contact> contactList)
+	public ArrayList<Contact> viewDatabase(ArrayList<Contact> contactList,int start,int num)
 	{
 		createDatabaseConnection();
 		try
@@ -75,8 +75,9 @@ public class ContactDatabase
 			String sql  = "select * from contacts order by name";
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
+			//rs.absolute(start);
 			int i = 0;
-			while(rs.next())
+			while(rs.next() && i != num)
 			{
 				contactList.add(new Contact());
 				contactList.get(i).setId(rs.getInt("sno"));
