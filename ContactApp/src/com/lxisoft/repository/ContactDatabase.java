@@ -4,6 +4,7 @@ import com.lxisoft.servlet.*;
 import java.io.*;
 import java.sql.*;
 import java.util.*;
+import java.util.List;
 public class ContactDatabase
 {
 	Contact model = new Contact();
@@ -67,31 +68,35 @@ public class ContactDatabase
 
 
 
-	public ArrayList<Contact> viewDatabase(ArrayList<Contact> contactList,int start,int num)
+	public List<Contact> viewDatabase(int start,int num)
 	{
 		createDatabaseConnection();
+		List<Contact> list = new ArrayList<Contact>();
+		Contact contact = null;
 		try
 		{
-			String sql  = "select * from contacts order by name";
+			String sql  = "select SQL_CALC_FOUND_ROWS * from contacts order by name limit "+start+","+num;
 			stmt = con.createStatement();
 			rs = stmt.executeQuery(sql);
 			//rs.absolute(start);
-			int i = 0;
-			while(rs.next() && i != num)
+			//int i = 0;
+			while(rs.next())
 			{
-				contactList.add(new Contact());
-				contactList.get(i).setId(rs.getInt("sno"));
-				contactList.get(i).setName(rs.getString("name"));
-				contactList.get(i).setNumber(rs.getString("number"));
-				contactList.get(i).setEmail(rs.getString("email"));
-				i++;		
+				contact = new Contact();
+				contact.setId(rs.getInt("sno"));
+				contact.setName(rs.getString("name"));
+				contact.setNumber(rs.getString("number"));
+				contact.setEmail(rs.getString("email"));
+				list.add(contact);
+				//i++;		
 			}
+			rs.close();
 		}
 		catch(SQLException e)
 		{
 			e.printStackTrace();	
 		}
-		return contactList;
+		return list;
 	}
 
 
@@ -108,6 +113,20 @@ public class ContactDatabase
 		{
 			e.printStackTrace();
 		}
+	}
+	public int numOfContacts(){
+		createDatabaseConnection();
+		int total = 0;
+		try{
+			stmt = con.createStatement();
+			rs = stmt.executeQuery("select count(*) from contacts");
+			rs.next();
+			total = rs.getInt(1);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return total;
 	}
 	
 }
