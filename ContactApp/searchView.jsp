@@ -55,6 +55,6 @@
 	</table>
 	<br>
 	<br>
-	<a href="view.jsp">Back</a>
+	<a href="view">Back</a>
 </body>
 </html>

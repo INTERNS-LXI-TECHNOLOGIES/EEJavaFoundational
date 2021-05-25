@@ -68,10 +68,10 @@ public class ContactDatabase
 
 
 
-	public List<Contact> viewDatabase(int start,int num)
+	public ArrayList<Contact> viewDatabase(int start,int num)
 	{
 		createDatabaseConnection();
-		List<Contact> list = new ArrayList<Contact>();
+		ArrayList<Contact> list = new ArrayList<Contact>();
 		Contact contact = null;
 		try
 		{

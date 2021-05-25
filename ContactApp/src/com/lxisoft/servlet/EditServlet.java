@@ -21,6 +21,6 @@ public class EditServlet extends HttpServlet
 		contact.setNumber(cnumber);
 		contact.setEmail(mail);
 		database.editList(contact);
-		response.sendRedirect("view.jsp");
+		response.sendRedirect("view");
 	}
 }

@@ -10,7 +10,13 @@
 </head>
 <body>
 	<center><h1>Contact List</h1></center>
-	<table border="1" cellpadding="5" cellspacing="5">
+	<%
+
+		ArrayList<Contact> contacts = (ArrayList<Contact>)request.getAttribute("contactList");
+		int id = 0;
+		String name = null;
+	%>
+	<table style="width:70%" border="1" cellpadding="10" cellspacing="10">
 		<tr>
 			<th>Name</th>
 			<th>Number</th>
@@ -18,47 +24,44 @@
 			<th>Actions</th>
 		</tr>
 		<%
-		List<Contact> contacts = (List<Contact>)request.getAttribute("contactList");
-		for(int i=0;i<contacts.size();i++){
 
+		for(Contact contact : contacts){
+		    id = contact.getId();
+		    name = contact.getName();
 		%>
 		<!--<c:forEach var="contacts" items="${contactList}">-->
 		<tr>
-		   	<td><%=contacts.name%></td>
-			<td><%=contact.number%></td>
-			<td><%contact.eMail%></td>
-			<td><a href="edit.jsp?id=<%=contacts.sno%> & name=<%=contacts.name%> & num =<%=contacts.number%>"><button class="button">Edit</button></a>
-			<a href="contactDelete?name=<%=contacts.name%>"><button class="button button2">Delete</button></a></td>	
+		   	<td><%out.print(contact.getName());%></td>
+			<td><%out.print(contact.getNumber());%></td>
+			<td><%out.print(contact.getEmail());%></td>
+			<td><a href="edit.jsp?id=<%=id%>"><button class="button">Edit</button></a>
+			<a href="contactDelete?name=<%=name%>"><button class="button button2">Delete</button></a></td>	
+			</tr>
 		</tr>
 		<%}%>
 	    <!--</c:forEach>-->
 	</table>
+	<br>
+
+<%
+    int num = (Integer)request.getAttribute("numOfPage");
+    for(int j=1; j<=num; j++){
+        %>
+        <a href="view?page=<%=j%>"><%=j%></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    <%
+	}
+	%>
+	
+	<br>
+	<br>
+	<a href="search.html"><button class="button">Search</button></a>
+	<br>
+	<br>
+	<a href="add.html"><button class="button">AddContact</button></a> 
+	
 
 
-	    <c:if test="${pageNumber != 1}">
-        <td><a href="view?page=${pageNumber - 1}">Previous</a></td>
-        </c:if>
- 
-  
-        <table border="1" cellpadding="5" cellspacing="5">
-            <tr>
-                <c:forEach begin="1" end="${noOfPages}" var="i">
-                    <c:choose>
-                        <c:when test="${pageNumber eq i}">
-                            <td>${i}</td>
-                        </c:when>
-                        <c:otherwise>
-                            <td><a href="view?page=${i}">${i}</a></td>
-                        </c:otherwise>
-                    </c:choose>
-                </c:forEach>
-            </tr>
-        </table>
-     
-        <c:if test="${pageNumber lt noOfPages}">
-            <td><a href="view?page=${pageNumber + 1}">Next</a></td>
-        </c:if>
-	    </table>
 </body>
 </html>
 

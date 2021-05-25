@@ -53,7 +53,7 @@
 		%>
 	
 		<br>
-		<a href="index.html"><button class="button">Home</button></a>
+		<a href="view"><button class="button">Home</button></a>
 	</div>
 </body>
 </html>

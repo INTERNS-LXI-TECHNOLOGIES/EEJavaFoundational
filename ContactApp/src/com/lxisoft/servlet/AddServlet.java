@@ -24,7 +24,7 @@ public class AddServlet extends HttpServlet
 
 			db.addToDatabase(contact);
 			//contactList = db.viewDatabase(contactList);
-			response.sendRedirect("ViewServlet");
+			response.sendRedirect("view");
 		}
 		catch(Exception e)
 		{
