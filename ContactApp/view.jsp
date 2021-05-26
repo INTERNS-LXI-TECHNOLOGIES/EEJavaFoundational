@@ -16,7 +16,7 @@
 		int id = 0;
 		String name = null;
 	%>
-	<table style="width:70%" border="1" cellpadding="10" cellspacing="10">
+	<table style="width:50%" border="1" cellpadding="10" cellspacing="10">
 		<tr>
 			<th>Name</th>
 			<th>Number</th>

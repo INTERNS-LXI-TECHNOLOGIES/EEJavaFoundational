@@ -20,7 +20,7 @@ public class AddServlet extends HttpServlet
 			contact.setName(request.getParameter("name"));
 			contact.setNumber(request.getParameter("number"));
 			contact.setEmail(request.getParameter("mail"));
-			//contactList = db.viewDatabase(contactList);
+			
 
 			db.addToDatabase(contact);
 			//contactList = db.viewDatabase(contactList);
