@@ -15,7 +15,7 @@
 		ArrayList<Contact> contacts = (ArrayList<Contact>)request.getAttribute("contactList");
 		int id = 0;
 		String name = null;
-		if(request.isUserInRole("admin")){
+		if(request.isUserInRole("admin-gui")){
 	%>
 	<table style="width:50%" border="1" cellpadding="10" cellspacing="10">
 		<tr>

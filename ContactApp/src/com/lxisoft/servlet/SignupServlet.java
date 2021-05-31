@@ -15,7 +15,7 @@ public class SignupServlet extends HttpServlet{
 		users.addUsers(name,pass);
 		
 		try{
-		    response.sendRedirect("view.jsp");	
+		    response.sendRedirect("view");	
 		}
 		catch (Exception e) {
 			e.printStackTrace();
