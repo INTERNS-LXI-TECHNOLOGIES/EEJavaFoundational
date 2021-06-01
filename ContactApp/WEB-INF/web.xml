@@ -58,8 +58,8 @@
         <web-resource-collection>
             <web-resource-name>Secured</web-resource-name>
             <url-pattern>/home.jsp</url-pattern>
-            <http-method>GET</http-method>
             <http-method>POST</http-method>
+            <http-method>GET</http-method>
         </web-resource-collection>
       
         <auth-constraint>

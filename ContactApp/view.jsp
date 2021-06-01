@@ -15,7 +15,7 @@
 		ArrayList<Contact> contacts = (ArrayList<Contact>)request.getAttribute("contactList");
 		int id = 0;
 		String name = null;
-		if(request.isUserInRole("admin-gui")){
+		if(request.isUserInRole("admin")){
 	%>
 	<table style="width:50%" border="1" cellpadding="10" cellspacing="10">
 		<tr>
@@ -60,6 +60,9 @@
 	<br>
 	<br>
 	<a href="add.html"><button class="button">AddContact</button></a> 
+	<br>
+	<br>
+	<a href="logout.jsp"><button class="button">Logout</button></a> 
 <%}
 else{
 %>
@@ -102,7 +105,7 @@ else{
 	<a href="search.html"><button class="button">Search</button></a>
 	<br>
 	<br>
-	<a href="index.html"><button class="button">Logout</button></a> 
+	<a href="logout.jsp"><button class="button">Logout</button></a> 
 <%}%>
 
 </body>
