@@ -3,8 +3,8 @@ import com.lxisoft.model.*;
 import com.lxisoft.repository.*;
 import java.io.*;
 import java.util.*;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 public class EditServlet extends HttpServlet
 {
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException

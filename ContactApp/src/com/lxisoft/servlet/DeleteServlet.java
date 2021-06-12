@@ -1,8 +1,8 @@
 package com.lxisoft.servlet;
 import java.io.*;
 import java.util.*;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 import com.lxisoft.repository.*;
 import com.lxisoft.model.*;
 public class DeleteServlet extends HttpServlet

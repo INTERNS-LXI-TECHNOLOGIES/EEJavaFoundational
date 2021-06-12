@@ -18,7 +18,7 @@ public class UsersDatabase{
 		{
 			Class.forName("com.mysql.jdbc.Driver");
 			try{
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","abi@1003");	
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/tomcat_users","root","abi@1003");	
 			}catch(SQLException e)
 			{	e.printStackTrace();	}
 			
@@ -31,7 +31,7 @@ public class UsersDatabase{
 	public void addUsers(String name,String password){
 		createDatabaseConnection();
 		try{
-			ps = con.prepareStatement("insert into users(name,password) values('"+name+"','"+password+"')");
+			ps = con.prepareStatement("insert into users(username,password) values('"+name+"','"+password+"')");
 			row = ps.executeUpdate();
 			ps.close();
 			con.close();

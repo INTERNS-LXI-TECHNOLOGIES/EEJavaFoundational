@@ -10,6 +10,18 @@
 </head>
 <body>
 	<center><h1>Contact List</h1></center>
+	<br>
+	<div align="center">
+        <div class="search-container">
+            <form action="searchView.jsp">
+			    <input type="text" placeholder="Enter name to search" name="name">
+			    <button type="submit">Search</button>
+		    </form>
+        </div>
+    </div>
+    <br>
+    <br>
+    <center>
 	<%
 
 		ArrayList<Contact> contacts = (ArrayList<Contact>)request.getAttribute("contactList");
@@ -56,9 +68,6 @@
 	
 	<br>
 	<br>
-	<a href="search.html"><button class="button">Search</button></a>
-	<br>
-	<br>
 	<a href="add.html"><button class="button">AddContact</button></a> 
 	<br>
 	<br>
@@ -102,11 +111,9 @@ else{
 	
 	<br>
 	<br>
-	<a href="search.html"><button class="button">Search</button></a>
-	<br>
 	<br>
 	<a href="logout.jsp"><button class="button">Logout</button></a> 
 <%}%>
-
+</center>
 </body>
 </html>
