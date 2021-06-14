@@ -2,8 +2,8 @@ package com.lxisoft.servlet;
 import com.lxisoft.model.*;
 import com.lxisoft.repository.*;
 import java.io.*;
-import jakarta.servlet.*;
-import jakarta.servlet.http.*;
+import javax.servlet.*;
+import javax.servlet.http.*;
 
 public class SignupServlet extends HttpServlet{
 	public void doGet(HttpServletRequest request,HttpServletResponse response){
@@ -15,7 +15,7 @@ public class SignupServlet extends HttpServlet{
 		users.addUsers(name,pass);
 		
 		try{
-		    response.sendRedirect("view");	
+		    response.sendRedirect("signupSuccess.jsp");	
 		}
 		catch (Exception e) {
 			e.printStackTrace();

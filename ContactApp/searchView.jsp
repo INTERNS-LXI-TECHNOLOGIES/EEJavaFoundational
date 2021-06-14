@@ -8,7 +8,64 @@
 	<title>Search</title>
 </head>
 <body>
+	<%
+	if(request.isUserInRole("admin"))
+	{
+	%>
 	<h4>The Search Result</h4>
+	<table border="1" width="50%">
+		<tr>
+			<th>Name</th>
+			<th>Number</th>
+			<th>Mail</th>
+			<th>Actions</th>
+		</tr>
+		<%
+		String name = request.getParameter("name");
+		Contact model = new Contact();
+	    Connection con = null;
+	    ResultSet rs= null;
+	    Statement stmt = null;
+	    PreparedStatement ps = null;;
+	    int row;
+		//ContactDatabase cd = new ContactDatabase();
+		try{
+		    Class.forName("com.mysql.jdbc.Driver");
+			try{
+				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","abi@1003");	
+			}catch(SQLException e)
+			{	
+				e.printStackTrace();	
+			}
+		    //cd.createDatabaseConnection();
+		    stmt = con .createStatement();
+		    rs = stmt.executeQuery("select * from contacts where name like '%"+name+"%'");
+		    if(rs != null){
+		        
+		        while(rs.next()){
+		        %>
+			    <tr>
+			        <td><%=rs.getString("name")%></td>
+			    	<td><%=rs.getString("number")%></td>
+			    	<td><%=rs.getString("email")%></td>
+			    	<td><a href="edit.jsp?name=<%=name%>"><button class="button">Edit</button></a>
+			        <a href="contactDelete?name=<%=name%>"><button class="button button2">Delete</button></a></td>
+			    </tr> 
+			    <%
+			    }
+		    }
+	    }
+	    catch(Exception e){
+	        e.printStackTrace();
+	    }
+		%>
+
+	</table>
+	<%
+    }
+    else{
+	%>
+		<h4>The Search Result</h4>
 	<table border="1" width="50%">
 		<tr>
 			<th>Name</th>
@@ -53,6 +110,7 @@
 	    }
 		%>
 	</table>
+	<%}%>
 	<br>
 	<br>
 	<a href="view">Back</a>

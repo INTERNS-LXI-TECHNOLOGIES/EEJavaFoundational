@@ -35,6 +35,22 @@ public class UsersDatabase{
 			row = ps.executeUpdate();
 			ps.close();
 			con.close();
+			this.addUserRoles(name);
+		}
+		catch(SQLException e)                                                                                    
+		{
+			e.printStackTrace();
+		}
+		//return row;                                                                   
+	}
+	public void addUserRoles(String name){
+		createDatabaseConnection();
+		String role = "user";
+		try{
+			ps = con.prepareStatement("insert into user_roles(username,role) values('"+name+"','"+role+"')");
+			row = ps.executeUpdate();
+			ps.close();
+			con.close();
 		}
 		catch(SQLException e)                                                                                    
 		{
