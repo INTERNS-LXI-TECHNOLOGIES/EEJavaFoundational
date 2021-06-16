@@ -51,13 +51,13 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>View</servlet-name>
-		<url-pattern>/view</url-pattern>
+		<url-pattern>/viewServlet</url-pattern>
 	</servlet-mapping>
 
 	<security-constraint>
         <web-resource-collection>
             <web-resource-name>Secured</web-resource-name>
-            <url-pattern>/home.jsp</url-pattern>
+            <url-pattern>/view.jsp</url-pattern>
             <http-method>POST</http-method>
             <http-method>GET</http-method>
         </web-resource-collection>

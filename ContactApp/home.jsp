@@ -10,7 +10,7 @@
 		<br>
 		<br>
 		<br>
-		<a href="view"><button class="button">View Contacts</button></a>
+		<a href="viewServlet"><button class="button">View Contacts</button></a>
 		<br>
 		<br>
 		<a href="logout.jsp"><button class="button">Log out</button></a>
