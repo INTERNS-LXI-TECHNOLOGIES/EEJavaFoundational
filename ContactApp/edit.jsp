@@ -53,7 +53,7 @@
 		%>
 	
 		<br>
-		<a href="view"><button class="button">Home</button></a>
+		<a href="viewServlet"><button class="button">Home</button></a>
 	</div>
 </body>
 </html>

@@ -57,7 +57,7 @@
 	<security-constraint>
         <web-resource-collection>
             <web-resource-name>Secured</web-resource-name>
-            <url-pattern>/home.jsp</url-pattern>
+            <url-pattern>/viewServlet</url-pattern>
             <http-method>GET</http-method>
             <http-method>POST</http-method>
         </web-resource-collection>

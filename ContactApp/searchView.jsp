@@ -39,7 +39,7 @@
 			}
 		    //cd.createDatabaseConnection();
 		    stmt = con .createStatement();
-		    rs = stmt.executeQuery("select * from contacts where name like '%"+name+"%'");
+		    rs = stmt.executeQuery("select * from contacts where name like '%"+name+"%' order by name");
 		    if(rs != null){
 		        
 		        while(rs.next()){
@@ -113,6 +113,6 @@
 	<%}%>
 	<br>
 	<br>
-	<a href="view">Back</a>
+	<a href="viewServlet">Back</a>
 </body>
 </html>
