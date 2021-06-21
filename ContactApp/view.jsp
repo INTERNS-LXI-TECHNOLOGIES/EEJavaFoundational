@@ -13,7 +13,7 @@
 	<br>
 	<div align="center">
         <div class="search-container">
-            <form action="searchView.jsp">
+            <form action="search">
 			    <input type="text" placeholder="Enter name to search" name="name">
 			    <button type="submit">Search</button>
 		    </form>

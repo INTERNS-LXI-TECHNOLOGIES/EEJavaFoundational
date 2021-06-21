@@ -2,117 +2,217 @@
 <%@page import="com.lxisoft.model.*"%>
 <%@page import="com.lxisoft.repository.*"%>
 <%@page import="java.util.*,java.sql.*"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Search</title>
+	<title>Contacts</title>
 </head>
 <body>
+	<center><h1>Contact List</h1></center>
+	<br>
+	<div align="center">
+        <div class="search-container">
+            <form action="search">
+			    <input type="text" placeholder="Enter name to search" name="name">
+			    <button type="submit">Search</button>			   
+		    </form>
+		    <a href="viewServlet"><button class="button">ClearSearch</button></a>
+        </div>
+    </div>
+    <br>
+    <br>
+    <center>
 	<%
-	if(request.isUserInRole("admin"))
-	{
+
+		ArrayList<Contact> contacts = (ArrayList<Contact>)request.getAttribute("contactList");
+		int id = 0;
+		String name = null;
+		if(request.isUserInRole("admin")){
 	%>
-	<h4>The Search Result</h4>
-	<table border="1" width="50%">
+	<table style="width:50%" border="1" cellpadding="10" cellspacing="10">
 		<tr>
 			<th>Name</th>
 			<th>Number</th>
-			<th>Mail</th>
+			<th>E-Mail</th>
 			<th>Actions</th>
 		</tr>
 		<%
-		String name = request.getParameter("name");
-		Contact model = new Contact();
-	    Connection con = null;
-	    ResultSet rs= null;
-	    Statement stmt = null;
-	    PreparedStatement ps = null;;
-	    int row;
-		//ContactDatabase cd = new ContactDatabase();
-		try{
-		    Class.forName("com.mysql.jdbc.Driver");
-			try{
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","abi@1003");	
-			}catch(SQLException e)
-			{	
-				e.printStackTrace();	
-			}
-		    //cd.createDatabaseConnection();
-		    stmt = con .createStatement();
-		    rs = stmt.executeQuery("select * from contacts where name like '%"+name+"%' order by name");
-		    if(rs != null){
-		        
-		        while(rs.next()){
-		        %>
-			    <tr>
-			        <td><%=rs.getString("name")%></td>
-			    	<td><%=rs.getString("number")%></td>
-			    	<td><%=rs.getString("email")%></td>
-			    	<td><a href="edit.jsp?name=<%=name%>"><button class="button">Edit</button></a>
-			        <a href="contactDelete?name=<%=name%>"><button class="button button2">Delete</button></a></td>
-			    </tr> 
-			    <%
-			    }
-		    }
-	    }
-	    catch(Exception e){
-	        e.printStackTrace();
-	    }
-		%>
 
+		for(Contact contact : contacts){
+		    id = contact.getId();
+		    name = contact.getName();
+		%>
+		<!--<c:forEach var="contacts" items="${contactList}">-->
+		<tr>
+		   	<td><%out.print(contact.getName());%></td>
+			<td><%out.print(contact.getNumber());%></td>
+			<td><%out.print(contact.getEmail());%></td>
+			<td><a href="edit.jsp?id=<%=id%>"><button class="button">Edit</button></a>
+			<a href="contactDelete?name=<%=name%>"><button class="button button2">Delete</button></a></td>	
+			</tr>
+		</tr>
+		<%}%>
+	    <!--</c:forEach>-->
 	</table>
-	<%
-    }
-    else{
+	<br>
+
+<%
+    int num = (Integer)request.getAttribute("numOfPage");
+    for(int j=1; j<=num; j++){
+        %>
+        <a href="search?page=<%=j%>"><%=j%></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    <%
+	}
 	%>
-		<h4>The Search Result</h4>
-	<table border="1" width="50%">
+	
+	<br>
+	<br>
+	<a href="add.html"><button class="button">AddContact</button></a> 
+	<br>
+	<br>
+	<a href="logout.jsp"><button class="button">Logout</button></a> 
+<%}
+else{
+%>
+    <table style="width:50%" border="1" cellpadding="10" cellspacing="10">
 		<tr>
 			<th>Name</th>
 			<th>Number</th>
-			<th>Mail</th>
+			<th>E-Mail</th>
 		</tr>
 		<%
-		String name = request.getParameter("name");
-		Contact model = new Contact();
-	    Connection con = null;
-	    ResultSet rs= null;
-	    Statement stmt = null;
-	    PreparedStatement ps = null;;
-	    int row;
-		//ContactDatabase cd = new ContactDatabase();
-		try{
-		    Class.forName("com.mysql.jdbc.Driver");
-			try{
-				con = DriverManager.getConnection("jdbc:mysql://localhost:3306/contactapp","root","abi@1003");	
-			}catch(SQLException e)
-			{	
-				e.printStackTrace();	
-			}
-		    //cd.createDatabaseConnection();
-		    stmt = con .createStatement();
-		    rs = stmt.executeQuery("select * from contacts where name like '%"+name+"%'");
-		    if(rs != null){
-		        
-		        while(rs.next()){
-		        %>
-			    <tr>
-			        <td><%=rs.getString("name")%></td>
-			    	<td><%=rs.getString("number")%></td>
-			    	<td><%=rs.getString("email")%></td>
-			    </tr> 
-			    <%
-			    }
-		    }
-	    }
-	    catch(Exception e){
-	        e.printStackTrace();
-	    }
+
+		for(Contact contact : contacts){
+		    id = contact.getId();
+		    name = contact.getName();
 		%>
+		<!--<c:forEach var="contacts" items="${contactList}">-->
+		<tr>
+		   	<td><%out.print(contact.getName());%></td>
+			<td><%out.print(contact.getNumber());%></td>
+			<td><%out.print(contact.getEmail());%></td>	
+			</tr>
+		</tr>
+		<%}%>
+	    <!--</c:forEach>-->
 	</table>
-	<%}%>
+	<br>
+
+<%
+    int num = (Integer)request.getAttribute("numOfPage");
+    for(int j=1; j<=num; j++){
+        %>
+        <a href="search?page=<%=j%>"><%=j%></a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+    <%
+	}
+	%>
+	
 	<br>
 	<br>
-	<a href="viewServlet">Back</a>
+	<br>
+	<a href="logout.jsp"><button class="button">Logout</button></a> 
+<%}%>
+</center>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -128,5 +128,37 @@ public class ContactDatabase
 		}
 		return total;
 	}
+	public int numOfSearchContacts(String name){
+		createDatabaseConnection();
+		int total = 0;
+		try{
+			stmt = con.createStatement();
+			rs = stmt.executeQuery("select count(*) from contacts where name like '%"+name+"%'");
+			rs.next();
+			total = rs.getInt(1);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return total;
+	}
+
+	public ArrayList<Contact> viewSearchResult(int start,int num,String name) throws Exception{
+		createDatabaseConnection();
+		ArrayList<Contact> searchList = new ArrayList<Contact>();
+		Contact search = null;
+		stmt = con .createStatement();
+	    rs = stmt.executeQuery("select SQL_CALC_FOUND_ROWS * from contacts where name like '%"+name+"%' order by name limit "+start+","+num);
+	    if(rs != null){
+	        while(rs.next()){
+	        	search = new Contact();
+	            search.setName(rs.getString("name"));
+			   	search.setNumber(rs.getString("number"));
+			   	search.setEmail(rs.getString("email"));
+			   	searchList.add(search);
+			}
+		}
+		return searchList;
+	}
 	
 }
