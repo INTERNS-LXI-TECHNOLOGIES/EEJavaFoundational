@@ -128,20 +128,7 @@ public class ContactDatabase
 		}
 		return total;
 	}
-	public int numOfSearchContacts(String name){
-		createDatabaseConnection();
-		int total = 0;
-		try{
-			stmt = con.createStatement();
-			rs = stmt.executeQuery("select count(*) from contacts where name like '%"+name+"%'");
-			rs.next();
-			total = rs.getInt(1);
-		}
-		catch(Exception e){
-			e.printStackTrace();
-		}
-		return total;
-	}
+
 
 	public ArrayList<Contact> viewSearchResult(int start,int num,String name) throws Exception{
 		createDatabaseConnection();
@@ -159,6 +146,21 @@ public class ContactDatabase
 			}
 		}
 		return searchList;
+	}
+
+	public int numOfSearchContacts(String name){
+		createDatabaseConnection();
+		int total = 0;
+		try{
+			stmt = con.createStatement();
+			rs = stmt.executeQuery("select count(*) from contacts where name like '%"+name+"%'");
+			rs.next();
+			total = rs.getInt(1);
+		}
+		catch(Exception e){
+			e.printStackTrace();
+		}
+		return total;
 	}
 	
 }

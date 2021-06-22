@@ -9,7 +9,11 @@ import javax.servlet.http.*;
 public class SearchServlet extends HttpServlet{
 
 	public void doGet(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
-		String name = request.getParameter("name");
+		String name = "";
+		if(request.getParameter("name") != null){
+			name = request.getParameter("name"); 
+		}
+		
 		ContactDatabase contacts = new ContactDatabase();
 		int pageNumber = 1;
 		int totalContacts = 0;

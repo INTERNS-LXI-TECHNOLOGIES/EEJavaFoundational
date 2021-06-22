@@ -88,7 +88,7 @@ else{
 		    id = contact.getId();
 		    name = contact.getName();
 		%>
-		<!--<c:forEach var="contacts" items="${contactList}">-->
+		
 		<tr>
 		   	<td><%out.print(contact.getName());%></td>
 			<td><%out.print(contact.getNumber());%></td>
