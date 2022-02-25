@@ -1,0 +1,86 @@
+<!DOCTYPE html> 
+<html> 
+  <head>  
+  <title>Contacts</title> 
+  </head> 
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<style>
+  * {box-sizing: border-box;}
+  .header {
+  overflow: hidden;
+  background-color: #07a521;
+  padding: 20px 10px;
+}
+.header-right {
+  float: right;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-style: calc();
+  font-size: medium;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: right;
+  }
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #D6EEEE;
+}
+ /* body {
+    background-image: url('con2.jpg');
+    background-repeat: no-repeat;
+  }*/
+  </style>
+  <body>
+    <center>
+
+      <div class="header">
+        <img src="con.png" alt="logo" align =left width="100" height="100"/>
+       <h1> <i> CONTACTS </i> </h1>
+       <div class="header-right">
+        <a class="active" href="#home">ADD</a>
+        <a href="#contact">UPDATE</a>
+        <a href="#about">DELETE</a>
+      </div>
+      </div>
+     
+       <table border="4" width = 80%>
+          <tr>
+            <th>FIRST_NAME</th>
+            <th>LAST_NAME</th>
+            <th>CONTACT</th>
+            <th>EMAIL</th>
+          </tr>
+          <tr>
+               <td>SUJITH</td>
+               <td>K A</td>
+               <td>3276590356</td>
+               <td>sujithka@gmail.com</td>
+             </tr>
+             <td>MUBASHIR</td>
+             <td>K </td>
+             <td>9976534356</td>
+             <td>mubashirk@gmail.com</td>
+           </tr>
+           </table>
+         
+          </center>
+           </body>
+           </html>
