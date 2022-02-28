@@ -54,7 +54,7 @@ tr:nth-child(even) {
         <img src="con.png" alt="logo" align =left width="100" height="100"/>
        <h1> <i> CONTACTS </i> </h1>
        <div class="header-right">
-        <a class="active" href="#home">ADD</a>
+        <a class="active" href="Add.html">ADD</a>
         <a href="#contact">UPDATE</a>
         <a href="#about">DELETE</a>
       </div>
