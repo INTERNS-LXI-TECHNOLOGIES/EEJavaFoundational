@@ -12,7 +12,8 @@
           Class.forName("com.mysql.cj.jdbc.Driver"); 
          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lxisoft","root","root"); 
           PreparedStatement ps = null;
-          ps = con.prepareStatement(" DELETE FROM contacts WHERE ph_no ="+request.getParameter("ph_no"));
+          
+          ps = con.prepareStatement(" DELETE FROM contacts WHERE ph_no ='"+request.getParameter("ph_no")+"'" );
            ps.executeUpdate();
 out.println("Data Deleted Successfully!");
 }

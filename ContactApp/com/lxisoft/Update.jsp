@@ -70,60 +70,38 @@ input[type=text]:focus, input[type=password]:focus {
 }
      </style>
   <body>
-    <%
+<%
      try{
           
-          Class.forName("com.mysql.cj.jdbc.Driver").newInstance(); 
+          Class.forName("com.mysql.cj.jdbc.Driver"); 
          Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lxisoft","root","root"); 
+          Statement st  = con.createStatement(); 
+          ResultSet rs = st.executeQuery("select * from contacts ");
           PreparedStatement ps = null;
-          ResultSet rs = null;
-          Statement st  = con.createStatement();
-          %>
-
-          <form action=" " method="POST">
-          <div class="container">
-
-
-     <%
-     
-     //ps = con.createStatement();
-     String ph = request.getParameter("ph_no");
-     rs = st.executeQuery("SELECT * FROM contacts WHERE ph_no = '"+ph+"'");
-     while(rs.next()&&!rs.last()){
-     
+          while(rs.next()) 
+          {
      %>
-          <hr>
+
+ <form action="Add.jsp" method="POST">
+          <div class="container">
+           <center> <h1> <b>UPDATE CONTACT</b></h1></center>
+            <hr>
         
             <label for="f_name"><b>FIRST_NAME</b></label>
-            <input type="text" name="f_name" value= '<%= rs.getString(1) %>'>
+            <input type="text"  name="f_name" value="<%=rs.getString(1)%>">
         
             <label for="l_name"><b>LAST_NAME</b></label>
-            <input type="text" name="l_name" value= '<%= rs.getString(2) %>'>
+            <input type="text"  name="l_name" value="<%=rs.getString(2)%>">
         
             <label for="ph_no"><b>MOBILE_NUMBER</b></label>
-            <input type="text" name="ph_no" value= '<%= rs.getString(3) %>'>
+            <input type="text"  name="ph_no" value="<%=rs.getString(3)%>">
         
             <label for="email"><b>Email</b></label>
-            <input type="text" name="email" value= '<%= rs.getString(4) %>'>
+            <input type="text"  name="email" value="<%=rs.getString(4)%>">
             
             <hr>
-      <%
-     }
-     %>
 
-     <center>
-     
-            <button class="button button2"  name="cancel" type="reset" value="reset">CANCEL</button>
-
-            <button class="button button1" name="delete" type="submit" value="submit">UPDATE</button>
-
-          </center>
-                
-          </div>
-          <% 
-          
-
-
+<%
           String fName = request.getParameter("f_name");
           String lName = request.getParameter("f_name");
           String phn = request.getParameter("ph_no");
@@ -132,22 +110,33 @@ input[type=text]:focus, input[type=password]:focus {
           if(fName != null && lName != null && phn != null && email != null){
 
 
-               ps = con.prepareStatement("UPDATE contacts set f_name=?,l_name=?,ph_no=?,email=?,WHERE ph_no = '"+phn+"'");
+               ps = con.prepareStatement("UPDATE contacts set f_name=?,l_name=?,ph_no=?,email=?,WHERE sl_no = '"+rs.getString(5)+"'");
                ps.setString(1, request.getParameter("f_name"));
                ps.setString(2, request.getParameter("f_name"));
                ps.setString(3, request.getParameter("ph_no"));
                ps.setString(4, request.getParameter("email"));
                ps.executeUpdate();
 
-
+out.println("update successfully!");
           }
-          }
-       finally
-        {
-            System.out.println("finally block executed");
-        }
-         %>
 
-          </body>
-          </html>
-     
+    %>
+
+         <center>
+            <button class="button button2"  name="update" type="submit" value="submit">UPDATE</button>
+
+            <button class="button button1" name="cancel" type="reset" value="reset">CANCEL</button>
+
+          </center>
+          
+
+ <%
+      } con.close();
+         st.close();
+         }catch(Exception e){
+     System.out.println(e);
+     e.printStackTrace();
+    }
+    %>
+        </body>
+        </html>

@@ -42,6 +42,17 @@ th, td {
 tr:nth-child(even) {
   background-color: #D6EEEE;
 }
+.button1 {
+  background-color: white;
+  color: black;
+  border: 2px solid #f70909;
+  size:50px;
+}
+
+.button1:hover {
+  background-color: #f00303;
+  color: white;
+}
  /* body {
     background-image: url('con2.jpg');
     background-repeat: no-repeat;
@@ -56,16 +67,18 @@ tr:nth-child(even) {
        <div class="header-right">
         <a class="active" href="Add.html">ADD</a>
         <a href="#contact">UPDATE</a>
-        <a href="#about">DELETE</a>
+        <a href="Delete.html">DELETE</a>
       </div>
       </div>
      
     <table border="4" width = 80%>
           <tr>
+            <th>SL_NO</th>
             <th>FIRST_NAME</th>
             <th>LAST_NAME</th>
             <th>CONTACT</th>
             <th>EMAIL</th>
+           
           </tr>
     <%
      try{
@@ -80,10 +93,17 @@ tr:nth-child(even) {
      %>
 
      <tr>
+               <td> <%= rs.getString(5) %> </td>
                <td> <%= rs.getString(1) %> </td>
                <td> <%= rs.getString(2) %> </td>
                <td> <%= rs.getString(3) %> </td>
                <td> <%= rs.getString(4) %> </td>
+               <td> 
+               <a href ="Delete.html">DELETE</a>
+               </td>
+               <td>
+                 <a href ="Update.jsp?sl_no=<%=rs.getString(5)%>">UPDATE</a>
+              </td>
              </tr>
       <%
       } con.close();
