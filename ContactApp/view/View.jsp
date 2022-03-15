@@ -121,7 +121,7 @@ tr:nth-child(even) {
                <td> <%= cr.printContacts().get(i).getEmail() %> </td>
                <td> 
  
-              <button class="button1"> <a href ="Delete.html">DELETE</a> </button>
+              <button class="button1"> <a href ="Deleteform.jsp?sl_no=<%= cr.printContacts().get(i).getId() %>">DELETE</a> </button>
                </td>
                <td>
                <button class="button2">  <a href ="Updateform.jsp?sl_no=<%= cr.printContacts().get(i).getId() %>">UPDATE</a></button>
