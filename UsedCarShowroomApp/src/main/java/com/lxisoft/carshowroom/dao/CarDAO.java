@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.lxisoft.carshowroom.servlet.Car;
+import com.lxisoft.carshowroom.model.Car;
 
 public class CarDAO {
 	private String jdbcURL;
@@ -26,7 +26,7 @@ public class CarDAO {
 	protected void connect() throws SQLException {
 		if (jdbcConnection == null || jdbcConnection.isClosed()) {
 			try {
-				Class.forName("com.mysql.jdbc.Driver");
+				Class.forName("com.mysql.cj.jdbc.Driver");
 			} catch (ClassNotFoundException e) {
 				throw new SQLException(e);
 			}

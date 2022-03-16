@@ -1,4 +1,4 @@
-package com.lxisoft.carshowroom.servlet;
+package com.lxisoft.carshowroom.model;
 
 public class Car {
 	private int carId;
