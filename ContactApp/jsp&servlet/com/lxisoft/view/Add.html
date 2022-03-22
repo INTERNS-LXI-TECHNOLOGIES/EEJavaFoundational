@@ -1,0 +1,110 @@
+<!DOCTYPE html> 
+<html> 
+  <head>  
+  <title>Add Contacts</title> 
+  </head>
+  <style>
+       * {box-sizing: border-box}
+
+/* Add padding to containers */
+.container {
+  padding: 16px;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Overwrite default styles of hr */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for the submit/register button */
+.submit {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.submit:hover {
+  opacity:1;
+}
+
+.Reset {
+  background-color: #d10808;
+  color: white;
+  padding: 16px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+.Reset:hover {
+  opacity:1;
+}
+
+/* Add a blue text color to links */
+a {
+  color: dodgerblue;
+}
+
+/* Set a grey background color and center the text of the "sign in" section */
+.signin {
+  background-color: #f1f1f1;
+  text-align: center;
+}
+  </style>
+  <body>
+     <form action="Add.jsp" method="POST">
+          <div class="container">
+           <center> <h1> <b>ADD CONTACT</b></h1></center>
+            <hr>
+        
+            <label for="f_name"><b>FIRST_NAME</b></label>
+            <input type="text" placeholder="Enter Name" name="f_name" required>
+        
+            <label for="l_name"><b>LAST_NAME</b></label>
+            <input type="text" placeholder="Enter Name" name="l_name" required>
+        
+            <label for="ph_no"><b>MOBILE_NUMBER</b></label>
+            <input type="text" placeholder="Enter Number" name="ph_no" required>
+        
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+            
+            <hr>
+        
+           
+            <button class="submit" name="save" onclick="myFunction()" type="submit" value="submit"> SAVE </button>
+            
+            <button class="submit" name="cancel" onclick="alert('Hello\nThe option you have selected is an CANCEL!!!')"  type="reset" value="reset" > CANCEL </button>
+          </div>
+     
+          <script>
+            function myFunction() {
+              alert("Hello\nThe option you have selected is an SAVE!!!");
+            }
+            </script>
+        </form>
+  </body>
+</html>
