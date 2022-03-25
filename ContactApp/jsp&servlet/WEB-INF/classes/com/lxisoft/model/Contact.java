@@ -15,11 +15,19 @@ this.firstName = n1;
 this.lastName = n2;
 this.phNumber = ph;
 this.email = mail;
-
-
-
 	
 }
+
+public Contact(String n1,String n2,String ph,String mail){
+
+	
+	this.firstName = n1;
+	this.lastName = n2;
+	this.phNumber = ph;
+	this.email = mail;
+		
+	}
+	
 	public void setFirstName(String firstName)
 	{
 		this.firstName= firstName;
@@ -59,5 +67,10 @@ this.email = mail;
 	public int getId()
 	{
 		return this.id;
+	}
+
+	public String toString() {
+		return "id: "+this.id+"\nfirstName: "+firstName+"\nlastName: "+lastName
+		+"\nphNumber: "+phNumber+"\nemail: "+email;
 	}
 }
