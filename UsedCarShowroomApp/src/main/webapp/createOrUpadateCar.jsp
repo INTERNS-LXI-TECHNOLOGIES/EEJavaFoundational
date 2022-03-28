@@ -11,6 +11,8 @@
 				<a href="home">Home</a>
 				&nbsp;&nbsp;&nbsp;
 				<a href="create">Add New Car</a>
+				&nbsp;&nbsp;&nbsp;
+				<a href="logout">Logout</a>
 			</h2>
 		</div>
 		<div align="center">

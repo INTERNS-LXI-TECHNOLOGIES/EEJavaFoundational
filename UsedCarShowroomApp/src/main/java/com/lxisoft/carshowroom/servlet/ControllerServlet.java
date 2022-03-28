@@ -9,6 +9,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.lxisoft.carshowroom.dao.CarDAO;
 import com.lxisoft.carshowroom.model.Car;
@@ -44,7 +45,7 @@ public class ControllerServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String action = request.getServletPath();
-		
+
 		try {
 			switch (action) {
 			case "/create":
@@ -58,6 +59,9 @@ public class ControllerServlet extends HttpServlet {
 				break;
 			case "/home":
 				home(request, response);
+				break;
+			case "/logout":
+				logout(request, response);
 				break;
 			default:
 				response.sendRedirect("home");
@@ -140,5 +144,11 @@ public class ControllerServlet extends HttpServlet {
 		request.setAttribute("carList", carList);
 		RequestDispatcher dispatcher = request.getRequestDispatcher("home.jsp");
 		dispatcher.forward(request, response);
+	}
+
+	private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		response.sendRedirect("home");
 	}
 }
