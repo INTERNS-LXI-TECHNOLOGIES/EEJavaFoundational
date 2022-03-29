@@ -4,20 +4,24 @@
 <html>
 	<head>
 		<title>Used Car Showroom Application</title>
+		<style>
+		     .links, .links a {color: #979da3; text-decoration: none;}
+		</style>
 	</head>
-	<body>
-		<div align="center">
+	<body style="margin:0;background: #e6f0e9;">
+		<div
+			style="background: #0a3939; color: white; text-align: center; padding: 9px; text-transform: uppercase;">
 			<h1>Used Car Showroom Application</h1>
-			<h2>
+			<h2 class="links">
 				<a href="home">Home</a>
-				&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;|&nbsp;&nbsp;
 				<a href="create">Add New Car</a>
-				&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;|&nbsp;&nbsp;
 				<a href="logout">Logout</a>
 			</h2>
 		</div>
-		<div align="center">
-			<table border="1">
+		<div style="padding: 40px;">
+			<table cellspacing="0" border="1" cellpadding="5" style="text-transform: uppercase; width: 100%; text-align: center;">
 				<tr>
 					<th>CAR ID</th>
 					<th>MANUFACTURER</th>

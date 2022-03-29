@@ -5,9 +5,13 @@
 	<head>
 		<title>Used Car Showroom Application</title>
 	</head>
-	<body>
+	<body style="margin:0;background: #e6f0e9;">
+		<div
+			style="background: #0a3939; color: white; text-align: center; padding: 9px; text-transform: uppercase;">
+			<h1>Used Car Showroom Application</h1>
+		</div>
 		<div align="center">
-			<h4>Invalid username or password</h4>
+			<h2>Invalid username or password</h2>
 		</div>
 	</body>
 </html>
