@@ -7,11 +7,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.lxisoft.model.*;
-public class ContactDAO {
+public class ContactDAO implements MyProvider{
      
-     private String jdbcURL ="jdbc:mysql://localhost:3306/lxisoft";
+    /* private String jdbcURL ="jdbc:mysql://localhost:3306/lxisoft";
      private String jdbcUsername ="root";
-     private String jdbcPassword ="root";
+     private String jdbcPassword ="root";*/
 
      private static final String INSERT_USERS_SQL = "INSERT INTO contacts" + "(f_name, l_name, ph_no, email)VALUES" + "(? ,? ,? ,?);";
      private static final String SELECT_USER_BY_ID = "select f_name, l_name, ph_no, email, sl_no from contacts where sl_no =?";
@@ -124,12 +124,13 @@ public class ContactDAO {
       public boolean updateContact(Contact user) throws SQLException {
           boolean rowUpdated;
           try (Connection connection = getConnection(); PreparedStatement statement = connection.prepareStatement(UPDATE_USERS_SQL);) {
+             
               statement.setString(1, user.getFirstName());
               statement.setString(2, user.getLastName());
               statement.setString(3, user.getPhNumber());
               statement.setString(4, user.getEmail());
               statement.setInt(5, user.getId());
-  
+  System.out.println("contact"+user);
               rowUpdated = statement.executeUpdate() > 0;
           }
           return rowUpdated;
