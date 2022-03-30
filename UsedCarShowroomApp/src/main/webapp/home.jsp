@@ -31,7 +31,9 @@
 					<th>TOTAL KILOMETERS</th>
 					<th>EXPECTED PRICE</th>
 					<th>OTHER DETAILS</th>
+					<% if (request.isUserInRole("admin")) { %>
 					<th>ACTIONS</th>
+					<% } %>
 				</tr>
 				<c:forEach var="car" items="${carList}">
 					<tr>
@@ -43,11 +45,13 @@
 						<td>${car.totalKilometers}</td>
 						<td>${car.expectedPrice}</td>
 						<td>${car.otherDetails}</td>
+						<% if (request.isUserInRole("admin")) { %>
 						<td>
 							<a href="edit?carId=${car.carId}">Edit</a>
 							&nbsp;&nbsp;&nbsp;&nbsp;
 							<a href="delete?carId=${car.carId}">Delete</a>
 						</td>
+						<% } %>
 					</tr>
 				</c:forEach>
 			</table>
