@@ -73,7 +73,7 @@ public class ControllerServlet extends HttpServlet {
 	}
 
 	private void createCar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = request.getRequestDispatcher("createOrUpadateCar.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("createOrUpdateCar.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -110,7 +110,7 @@ public class ControllerServlet extends HttpServlet {
 	private void editCar(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
 		int carId = Integer.parseInt(request.getParameter("carId"));
 		Car existingCar = carDAO.getCar(carId);
-		RequestDispatcher dispatcher = request.getRequestDispatcher("createOrUpadateCar.jsp");
+		RequestDispatcher dispatcher = request.getRequestDispatcher("createOrUpdateCar.jsp");
 		request.setAttribute("car", existingCar);
 		dispatcher.forward(request, response);
 
