@@ -26,7 +26,7 @@
                 <div class="card">
                     <div class="card-body">
                         <c:if test="${user != null}">
-                            <form action="<%=request.getContextPath()%>/contact" method="put">
+                            <form action="<%=request.getContextPath()%>/update" method="put">
                         </c:if>
                         <c:if test="${user == null}">
                             <form action="<%=request.getContextPath()%>/contact" method="post">

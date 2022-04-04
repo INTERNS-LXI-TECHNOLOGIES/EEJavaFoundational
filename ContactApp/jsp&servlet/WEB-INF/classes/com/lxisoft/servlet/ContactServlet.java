@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.*;
 
 import com.lxisoft.dao.*;
 import com.lxisoft.model.*;
@@ -64,6 +65,9 @@ public class ContactServlet extends HttpServlet{
                case "/update":
                    updateContact(request, response);
                    break;
+               case "/logout":
+                    logout(request, response);
+                    break;
                default:
                    listContact(request, response);
                    break;
@@ -77,14 +81,14 @@ public class ContactServlet extends HttpServlet{
           throws SQLException, IOException, ServletException {
               List < Contact > listUser = contactDAO.selectAllContacts();
               request.setAttribute("listUser", listUser);
-              RequestDispatcher dispatcher = request.getRequestDispatcher("contact-list.jsp");
+              RequestDispatcher dispatcher = request.getRequestDispatcher("view/contact-list.jsp");
               dispatcher.forward(request, response);
           }
 
 
            private void showNewForm(HttpServletRequest request, HttpServletResponse response)
            throws ServletException, IOException {
-               RequestDispatcher dispatcher = request.getRequestDispatcher("contact-form.jsp");
+               RequestDispatcher dispatcher = request.getRequestDispatcher("view/contact-form.jsp");
                dispatcher.forward(request, response);
            }
 
@@ -92,7 +96,7 @@ public class ContactServlet extends HttpServlet{
            throws SQLException, ServletException, IOException {
                int id = Integer.parseInt(request.getParameter("id"));
                Contact existingUser = contactDAO.selectContact(id);
-               RequestDispatcher dispatcher = request.getRequestDispatcher("contact-form.jsp");
+               RequestDispatcher dispatcher = request.getRequestDispatcher("view/contact-form.jsp");
                request.setAttribute("user", existingUser);
                dispatcher.forward(request, response);
        
@@ -133,9 +137,18 @@ public class ContactServlet extends HttpServlet{
        
            }
 
+    private void logout(HttpServletRequest request, HttpServletResponse response) throws IOException,SQLException,ServletException {
+        
+        HttpSession session = request.getSession();
+        session.invalidate();
+        List < Contact > listUser = contactDAO.selectAllContacts();
+        request.setAttribute("listUser", listUser);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/index.jsp");
+        dispatcher.forward(request, response);
+        
 
 
-
+}
 
      }
 

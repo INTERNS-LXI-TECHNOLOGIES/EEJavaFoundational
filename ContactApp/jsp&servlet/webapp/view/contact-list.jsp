@@ -13,27 +13,38 @@
             <header>
                 <nav class="navbar navbar-expand-md navbar-dark" style="background-color: tomato">
                     <div>
-                        <a href="https://www.javaguides.net" class="navbar-brand"> Contact App </a>
+                        <a href=" " class="navbar-brand"> Contact App </a>
                     </div>
+
 
                     <ul class="navbar-nav">
                         <li><a href="<%=request.getContextPath()%>/list" class="nav-link">Contacts</a></li>
                     </ul>
+                  
                 </nav>
+                 
             </header>
             <br>
 
             <div class="row">
+
                 <!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
-                <div class="container">
-                    <h3 class="text-center">List of Contacts</h3>
-                    <hr>
-                    <div class="container text-left">
 
-                        <a href="contact-form.jsp" class="btn btn-success">Add
-     New User</a>
+                <div class="container">
+
+                    <h3 class="text-center">List of Contacts</h3>
+
+                    <hr>
+
+
+                    <div class="container text-right">
+
+                        <a href="contact-form.jsp" class="btn btn-success">Add New User</a>    &nbsp;&nbsp;|&nbsp;&nbsp;
+                <a href="logout">Logout</a>
+                        
                     </div>
+
                     <br>
                     <table class="table table-bordered">
                         <thead>
@@ -67,7 +78,7 @@
                                                                         <td>
                                         <c:out value="${user.email}" />
                                     </td>
-                                    <td><a href="edit?id=<c:out value='${user.id}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${user.id}' />">Delete</a></td>
+                                    <td><a href="edit?id=<c:out value='${user.id}' />">Edit</a> &nbsp;&nbsp;&nbsp;&nbsp; <a href="delete?id=<c:out value='${user.id}' />" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
                                 </tr>
                             </c:forEach>
                             <!-- } -->
