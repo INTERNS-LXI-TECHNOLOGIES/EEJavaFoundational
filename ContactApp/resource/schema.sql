@@ -9,3 +9,10 @@ CREATE TABLE `contacts` (
   PRIMARY KEY (`sl_no`),
   UNIQUE KEY `ph_no` (`ph_no`)
 );
+
+create table users (username varchar(15) not null primary key,password varchar(15) not null);
+
+create table roles (   role_name varchar(15) not null primary key );
+
+create table users_roles (username varchar(15) not null, role_name varchar(15) not null,   primary key (username, role_name), FOREIGN KEY (username) REFERENCES users (username) ON DELETE CASCADE  ON UPDATE CASCADE, FOREIGN KEY (role_name) REFERENCES roles (role_name) ON DELETE CASCADE ON UPDATE CASCADE );
+

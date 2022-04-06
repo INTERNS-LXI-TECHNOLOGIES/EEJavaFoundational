@@ -143,7 +143,7 @@ public class ContactServlet extends HttpServlet{
         session.invalidate();
         List < Contact > listUser = contactDAO.selectAllContacts();
         request.setAttribute("listUser", listUser);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/index.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/login.jsp");
         dispatcher.forward(request, response);
         
 

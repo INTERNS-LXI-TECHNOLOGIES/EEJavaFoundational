@@ -11,7 +11,7 @@
             <div class="box">
                 <img class="avatar" src=" ">
                 <h1> Login Account</h1>
-<form action="j_security_check" method="post">
+<form action="j_security_check" method="post" >
                     <p>
 Username</p>
 <input type="text" placeholder="Username" name="j_username" required>
