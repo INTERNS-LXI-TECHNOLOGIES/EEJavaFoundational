@@ -48,10 +48,12 @@
 
 	<login-config>
 		<auth-method>FORM</auth-method>
+		<realm-name>DataSourceRealm</realm-name>
 		<form-login-config>
 			<form-login-page>/view/index.jsp</form-login-page>
-			<form-error-page>/view/error.jsp</form-error-page>
+	 	<form-error-page>/view/error.jsp</form-error-page>
 		</form-login-config>
+
 	</login-config>
 
 
@@ -59,6 +61,9 @@
 		<exception-type>java.lang.Exception</exception-type>
 		<location>/Error.jsp</location>
 	</error-page>
-
+	<error-page>
+		<error-code>403</error-code>
+		<location>/view/customerror.jsp</location>
+	</error-page>
 
 </web-app>
