@@ -1,0 +1,7 @@
+com/lxisoft/dao/ContactDAO.class
+com/lxisoft/dao/MyProvider.class
+com/lxisoft/servlet/ContactServlet.class
+com/lxisoft/model/User.class
+com/lxisoft/dao/MyConnectionProvider.class
+com/lxisoft/dao/UserDAO.class
+com/lxisoft/model/Contact.class
