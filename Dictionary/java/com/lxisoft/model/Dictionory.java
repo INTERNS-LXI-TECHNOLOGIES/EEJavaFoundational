@@ -9,14 +9,17 @@ public class Dictionory {
     }
 
     public void setWords(String words) {
+
         this.words = words;
     }
 
     public String getMeaning() {
+
         return meaning;
     }
 
     public void setMeaning(String meaning) {
-        this.meaning =meaning;
+
+        this.meaning = meaning;
     }
 }
