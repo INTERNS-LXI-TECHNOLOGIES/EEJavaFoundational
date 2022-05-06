@@ -12,7 +12,6 @@ public class Dictionory {
 
         this.words = words;
     }
-
     public String getMeaning() {
 
         return meaning;
