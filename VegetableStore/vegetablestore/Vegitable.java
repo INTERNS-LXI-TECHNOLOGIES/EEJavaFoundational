@@ -17,7 +17,7 @@ public void setName(String name)  {
 this.name = name;
 }     
 
-   
+
 public String getprice() {
 
  return price;
@@ -48,4 +48,14 @@ this.orderQuantity = orderQuantity;
 }  
 
 
+public static void main(String [] args) {
+	
+print();	
+}
+
+public static void print()  {
+
+System.out.println("ghcj");
+
+}
 }
