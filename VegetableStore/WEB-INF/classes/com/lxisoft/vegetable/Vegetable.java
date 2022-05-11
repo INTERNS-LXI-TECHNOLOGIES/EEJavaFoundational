@@ -1,7 +1,7 @@
-package com.lxisoft.vegitables;
+package com.lxisoft.vegetable;
 
 
-public class Vegitable {
+public class Vegetable {
  
 private String name;
 private String price;
@@ -48,14 +48,5 @@ this.orderQuantity = orderQuantity;
 }  
 
 
-public static void main(String [] args) {
-	
-print();	
-}
 
-public static void print()  {
-
-System.out.println("ghcj");
-
-}
 }

@@ -11,9 +11,9 @@
 <div style = "color : red">
 
 <button>ENTER</button>
-<%@ page import = "Vegitable.java"%>
-<%Vegitable veg = new Vegitable(); %>
-<%veg.main(); %>
+<%@ page import = "WEB-INF.classes.Home"%>
+<%Home.main(); %>
+
 
 
 <h1>WELCOME TO VEGETABLE STORE</h1>
