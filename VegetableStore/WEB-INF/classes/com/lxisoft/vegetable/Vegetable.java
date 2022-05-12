@@ -1,4 +1,4 @@
-package com.lxisoft.vegetable;
+
 
 
 public class Vegetable {
