@@ -20,22 +20,9 @@
 
 </servlet>
 
-<servlet>
-
-<servlet-name>VegetablePage</servlet-name>
-<servlet-class>com.lxisoft.servlets.VegetableServlet</servlet-class>
-
-</servlet>
-
-
 <servlet-mapping>
 <servlet-name>WelcomePage</servlet-name>
 <url-pattern>/</url-pattern>
-</servlet-mapping>
-
-<servlet-mapping>
-<servlet-name>VegetablePage</servlet-name>
-<url-pattern>/1</url-pattern>
 </servlet-mapping>
 
 </web-app>

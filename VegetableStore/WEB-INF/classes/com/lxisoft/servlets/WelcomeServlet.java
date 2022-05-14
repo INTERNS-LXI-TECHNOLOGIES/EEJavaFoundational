@@ -10,13 +10,20 @@ import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
 
 
-public class VegetableServlet extends HttpServlet {
+public class WelcomeServlet extends HttpServlet {
 
  public void doGet(HttpServletRequest request,
  HttpServletResponse response)
 throws IOException, ServletException
 {
 	
+	
+	try {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/welcome.jsp");
+        requestDispatcher.forward(request, response);
+       } catch (Exception ex) {
+           ex.printStackTrace ();
+       }
 	
 }
 	
