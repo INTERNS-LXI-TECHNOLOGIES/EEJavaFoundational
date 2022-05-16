@@ -16,7 +16,12 @@ public class VegetableServlet extends HttpServlet {
  HttpServletResponse response)
 throws IOException, ServletException
 {
-	
+	try {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/vegetable.jsp");
+        requestDispatcher.forward(request, response);
+       } catch (Exception ex) {
+           ex.printStackTrace ();
+       }
 	
 }
 	
