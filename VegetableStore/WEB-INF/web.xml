@@ -6,11 +6,7 @@
   version="3.1"
   metadata-complete="true">
 
-    <description>
-      My Example Servlet application
-    </description>
-    <display-name>My Servlet and JSP Examples</display-name>
-
+  
 
 
 <servlet>
@@ -35,7 +31,7 @@
 
 <servlet-mapping>
 <servlet-name>VegetablePage</servlet-name>
-<url-pattern>/1</url-pattern>
+<url-pattern>/my-page</url-pattern>
 </servlet-mapping>
 
 </web-app>

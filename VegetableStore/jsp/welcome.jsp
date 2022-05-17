@@ -7,7 +7,7 @@
 <h1> WELCOME TO VEGETABLE STORE</h1>
 
 
-<form action="/1" method="post">
+<form action="my-page" method="get">
 <button>ENTER</button>
 
 </form>
