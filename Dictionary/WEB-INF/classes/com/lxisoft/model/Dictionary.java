@@ -1,10 +1,11 @@
 package com.lxisoft.model;
 
-public class Dictionory {
+public class Dictionary {
     private String words;
     private String meaning;
 
     public String getWords() {
+
         return words;
     }
     public void setWords(String words) {

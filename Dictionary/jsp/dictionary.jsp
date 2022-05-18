@@ -3,6 +3,19 @@
   <body style="background-color:powderblue;">
 
       <header>English Dictionary</header>
+
+    <%@ page import="com.lxisoft.model.Dictionary" %>
+    <% Dictionary dictionary = new Dictionary();%>
+    <% 
+    dictionary.setWords("Abomasum"); 
+    dictionary.setMeaning(" The fourth stomach of a ruminant, such as a cow or sheep (noun)");
+    %>
+    
+    <h5> WORD :  
+    <%= dictionary.getWords() %> 
+    MEANING : 
+    <%= dictionary.getMeaning() %></h5>
+
       <div class="container">
         <form>
         <input type="search" placeholder="Search Word">

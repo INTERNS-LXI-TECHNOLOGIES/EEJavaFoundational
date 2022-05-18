@@ -1,0 +1,17 @@
+<web-app >
+
+<description>
+    My Dictionary application
+</description>
+<display-name> Dictionary Application </display-name>
+
+<servlet>
+<servlet-name> Dictionary </servlet-name>
+<servlet-class>com.lxisoft.model.DictionaryServlet</servlet-class>
+</servlet>
+
+    <servlet-mapping>
+        <servlet-name>Dictionary</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>
