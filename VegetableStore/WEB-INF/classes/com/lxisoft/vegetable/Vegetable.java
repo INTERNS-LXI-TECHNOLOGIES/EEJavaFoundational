@@ -1,12 +1,27 @@
 
+package com.lxisoft.vegetable;
+
 
 
 public class Vegetable {
  
 private String name;
-private String price;
-private String stock;
-private String orderQuantity;
+private double price;
+private double stock;
+private double orderQuantity;
+
+
+public Vegetable(String name,double price, double stock, double orderQuantity) {
+
+this.name = name;
+this.price = price;
+this.stock = stock;
+this.orderQuantity = orderQuantity;
+
+
+}
+
+
 
 public String getName() {
 
@@ -18,31 +33,31 @@ this.name = name;
 }     
 
 
-public String getprice() {
+public double getprice() {
 
  return price;
 }
-public void setPrice(String price)  {
+public void setPrice(double price)  {
 
 this.price = price;
 }  
 
 
-public String getStock() {
+public double getStock() {
 
  return stock;
 }
-public void setStock(String stock)  {
+public void setStock(double stock)  {
  
 this.stock = stock;
 }  
 
 
-public String getOrderQuantity() {
+public double getOrderQuantity() {
 
  return orderQuantity;
 }
-public void setOrderQuantity(String orderQuantity)  {
+public void setOrderQuantity(double orderQuantity)  {
 
 this.orderQuantity = orderQuantity;  
 }  
