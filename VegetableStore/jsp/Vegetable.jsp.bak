@@ -1,3 +1,9 @@
+<%@page import ="com.lxisoft.vegetable.Vegetable"%>
+<$@page import ="java.util.ArrayList"%>
+
+
+
+
 <html>
 
 <body>
@@ -11,11 +17,11 @@
 
 <tr>
 
-<td><% = vegetable.getName()%></td>
+<td><% = vegetables.getName()%></td>
 
 </tr>
 
-}%>
+} %>
 
 
 

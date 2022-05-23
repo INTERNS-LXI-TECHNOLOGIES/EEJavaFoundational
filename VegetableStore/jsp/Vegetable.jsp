@@ -1,5 +1,5 @@
-<%@page import ="com.lxisoft.vegetable.Vegetable"%>
-<$@page import ="java.util.ArrayList"%>
+<%@page import ="com.lxisoft.vegetable.Vegetable";%>
+<$@page import ="java.util.ArrayList";%>
 
 
 
@@ -13,11 +13,11 @@
 
  <%ArrayList<Vegetable> vegetable = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
-  for (Vegetable vegetables : vegetable) {
+  for (Vegetable vegetables : vegetable) {%>
 
 <tr>
 
-<td><% = vegetable.getName()%></td>
+<td><%vegetables.getName();%></td>
 
 </tr>
 

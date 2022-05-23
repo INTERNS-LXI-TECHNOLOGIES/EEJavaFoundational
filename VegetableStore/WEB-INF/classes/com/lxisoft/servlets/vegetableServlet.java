@@ -44,7 +44,7 @@ vegetables.add(new Vegetable(rs.getString(1),rs.getDouble(1),rs.getDouble(1),rs.
 
 }
 
-request.setAttribute("vegetable" ,vegetables);
+request.setAttribute("vegetable",vegetables);
   RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/vegetable.jsp");
         requestDispatcher.forward(request, response);
 
