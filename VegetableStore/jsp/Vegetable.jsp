@@ -1,27 +1,31 @@
-<%@page import ="com.lxisoft.vegetable.Vegetable";%>
-<$@page import ="java.util.ArrayList";%>
-
-
-
-
 <html>
+
+
+<%@ page import="com.lxisoft.vegetable.Vegetable"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.List"%>
+
+
+
 
 <body>
 
 
  <h1>Vegetable Details</h1>
 
- <%ArrayList<Vegetable> vegetable = (ArrayList<Vegetable>)request.getAttribute("vegetable");
+ <%List<Vegetable> vegetable = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
-  for (Vegetable vegetables : vegetable) {%>
+  for (int i = 0; i <vegetable.size(); i++) {%>
 
-<tr>
+<%out.println("Name :" +vegetable.get(i).getName());%>
 
-<td><%vegetables.getName();%></td>
+<%out.println("Price : " + vegetable.get(i).getPrice());%>
 
-</tr>
+<%out.println("Stock :" +vegetable.get(i).getStock());%>
 
-}%>
+<%out.println("Minimum Order Quantitye :" +vegetable.get(i).getOrderQuantity());%>
+
+<%}%>
 
 
 
