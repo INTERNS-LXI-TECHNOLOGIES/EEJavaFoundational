@@ -14,7 +14,12 @@ public class DictionaryServlet extends HttpServlet {
                       HttpServletResponse response)
             throws IOException, ServletException {
                 
-                System.out.println("I am the winner");
+               try {
+                   RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/dictionary.jsp");
+                   requestDispatcher.forward(request, response);
+               } catch (Exception ex) {
+                   ex.printStackTrace();
+               }
             }
     }
         
