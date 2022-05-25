@@ -40,7 +40,8 @@ throws IOException, ServletException
 
 while(rs.next())
 {
-vegetables.add(new Vegetable(rs.getString(1),rs.getDouble(1),rs.getDouble(1),rs.getDouble(1)));
+vegetables.add(new Vegetable(rs.getString(1),rs.getDouble(2),rs.getDouble(3),rs.getDouble(4)));
+
 
 }
 
