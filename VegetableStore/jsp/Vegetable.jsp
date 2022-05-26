@@ -13,9 +13,15 @@
 
  <h1>Vegetable Details</h1>
 
+ <table style="width: 100%;" border="1">
+
  <%List<Vegetable> vegetable = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
+
   for (int i = 0; i <vegetable.size(); i++) {%>
+
+<td>
+
 
 <%out.println("Name :" +vegetable.get(i).getName());%>
 
@@ -25,12 +31,12 @@
 
 <%out.println("Minimum Order Quantitye :" +vegetable.get(i).getOrderQuantity());%>
 
+<button>Buy</button>
 
+</td>
 
-<%}%>
-
-
-
+<%}%>  
+</table>
 </body>
 
 </html>
