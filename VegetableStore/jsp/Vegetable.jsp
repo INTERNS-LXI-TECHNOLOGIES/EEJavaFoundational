@@ -11,7 +11,7 @@
 <body>
 
 
- <h1>Vegetable Details</h1>
+ <h1><center>Vegetable Details</center></h1>
 
  <table style="width: 100%;" border="1">
 
