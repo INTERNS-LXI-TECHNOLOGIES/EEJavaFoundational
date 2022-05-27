@@ -2,29 +2,31 @@
   </head>
   <body style="background-color:powderblue;">
 
-      <header>English Dictionary</header>
+     <h3> <header>English Dictionary</header></h3>
 
-    <%@ page import="com.lxisoft.model.Dictionary" %>
-    <% Dictionary dictionary = new Dictionary();%>
-    <% 
-    dictionary.setWords("Abomasum"); 
-    dictionary.setMeaning(" The fourth stomach of a ruminant, such as a cow or sheep (noun)");
-    %>
-    
-    <h5> WORD :  
-    <%= dictionary.getWords() %> 
-    MEANING : 
-    <%= dictionary.getMeaning() %></h5>
+    <%@ page import="com.lxisoft.model.Words" %>
+    <%@ page import="java.util.ArrayList" %>
+    <%@ page import="java.util.List" %>
 
       <div class="container">
         <form>
-        <input type="search" placeholder="Search Word">
-        <button type="submit">Search</button>
+        <h4><input type="search" placeholder="Search Word">
+        <button type="submit">Search</button></h4>
+
       </form>
       <form class="nosubmit">
       </form>
       </div>
-      <p class="info-text">Type any existing word and press enter to get meaning, example, synonyms, etc.</p>
+
+       <%List<Words> words = (ArrayList<Words>) request.getAttribute("words");
+
+                  for (int i = 0; i<words.size(); i++) {%>
+
+                 <h3> <%out.println("WORD :" + words.get(i).getWords());%>
+                  <%out.println("MEANING :" + words.get(i).getMeaning());%>
+                  <% } %></h3>
+
+                  <p class="info-text">Type any existing word and click Search to get meaning, example, synonyms, etc.</p>
       <ul>
           <div class="details">
           </div>
