@@ -15,21 +15,21 @@
 
  <table style="width: 100%;" border="1">
 
- <%List<Vegetable> vegetable = (ArrayList<Vegetable>)request.getAttribute("vegetable");
+ <%List<Vegetable> vegetables = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
 
-  for (int i = 0; i <vegetable.size(); i++) {%>
+  for (Vegetable vegetable : vegetables) {%>
 
 <td>
 
 
-<%out.println("Name :" +vegetable.get(i).getName());%>
+<%out.println("Name :" +vegetable.getName());%>
 
-<%out.println("Price : " + vegetable.get(i).getPrice());%>
+<%out.println("Price : " + vegetable.getPrice());%>
 
-<%out.println("Stock :" +vegetable.get(i).getStock());%>
+<%out.println("Stock :" +vegetable.getStock());%>
 
-<%out.println("Minimum Order Quantitye :" +vegetable.get(i).getOrderQuantity());%>
+<%out.println("Minimum Order Quantitye :" +vegetable.getOrderQuantity());%>
 
 <button>Buy</button>
 

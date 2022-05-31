@@ -4,16 +4,16 @@
 <body> 
 
  <div style = "color : red"> 
-<h1> WELCOME TO VEGETABLE STORE</h1>
+<h1><center> WELCOME TO VEGETABLE STORE</center></h1>
 
 
 <form action="my-page" method="get">
-<button>ENTER</button>
+ <center><button>ENTER</button></center>
 
 </form>
 </div>
 
-<img src = "..\WEB-INF\classes\com\lxisoft\picture\store.JPEG"></img>
+<center><img src = "..\WEB-INF\classes\com\lxisoft\picture\store.JPEG" width="400"></img></center>
 
 </body>
 
