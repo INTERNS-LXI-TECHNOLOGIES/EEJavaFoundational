@@ -5,7 +5,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
-import com.lxisoft.model.Words;
+import com.lxisoft.model.Word;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class DictionaryServlet extends HttpServlet {
                       HttpServletResponse response)
             throws IOException, ServletException {
 
-        List<Words> words = new ArrayList <Words>();
+        List<Word> words = new ArrayList <Word>();
                try {
                    Class.forName("com.mysql.cj.jdbc.Driver");
 
@@ -29,12 +29,13 @@ public class DictionaryServlet extends HttpServlet {
 
                    while (rst.next()) {
 
-                       words.add(new Words(rst.getString(1),rst.getString(2)));
-
+                       words.add(new Word(rst.getString(1), rst.getString(2)));
+                   }
                        request.setAttribute ("words", words);
+
                        RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/dictionary.jsp");
                        requestDispatcher.forward(request, response);
-                   }
+
                }
                    catch (Exception ex) {
                    ex.printStackTrace();

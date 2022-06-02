@@ -1,8 +1,8 @@
 package com.lxisoft.model;
-public class Words {
+public class Word {
     private String words;
     private String meaning;
-    public Words(String words, String meaning ){
+    public Word(String words, String meaning ){
         this.words = words;
         this.meaning = meaning;
     }

@@ -4,7 +4,7 @@
 
      <h3> <header>English Dictionary</header></h3>
 
-    <%@ page import="com.lxisoft.model.Words" %>
+    <%@ page import="com.lxisoft.model.Word" %>
     <%@ page import="java.util.ArrayList" %>
     <%@ page import="java.util.List" %>
 
@@ -18,7 +18,7 @@
       </form>
       </div>
 
-       <%List<Words> words = (ArrayList<Words>) request.getAttribute("words");
+       <%List<Word> words = (ArrayList<Word>) request.getAttribute("words");
 
                   for (int i = 0; i<words.size(); i++) {%>
 
