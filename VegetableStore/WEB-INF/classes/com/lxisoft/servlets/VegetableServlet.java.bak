@@ -57,13 +57,5 @@ request.setAttribute("vegetable",vegetables);
 }
 
 
-public void doUpdate(HttpServletRequest request,
- HttpServletResponse response)
-throws IOException, ServletException
-{
-
-  RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/edit.jsp");
-  requestDispatcher.forward(request, response);
-
-}
+	
 }
