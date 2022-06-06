@@ -31,11 +31,10 @@
 
 <%out.println("Minimum Order Quantitye :" +vegetable.getOrderQuantity());%>
 
-<form action="my-page" method="update">
+<form action="my-page" method="PUT">
 
 <Button>edit</Button>
-  
-</form>
+  </form>
 
 <button>Buy</button>
 

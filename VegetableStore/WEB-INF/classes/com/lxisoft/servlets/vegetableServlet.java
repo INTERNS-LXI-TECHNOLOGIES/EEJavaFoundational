@@ -57,13 +57,24 @@ request.setAttribute("vegetable",vegetables);
 }
 
 
-public void doUpdate(HttpServletRequest request,
+public void doPut(HttpServletRequest request,
  HttpServletResponse response)
 throws IOException, ServletException
 {
-
+	System.out.println("put method working");
+	
+try {
+	
+	
   RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/edit.jsp");
   requestDispatcher.forward(request, response);
+}
 
+catch(Exception e) {
+	
+	e.printStackTrace();
+	
+}
+	
 }
 }
