@@ -57,11 +57,11 @@ request.setAttribute("vegetable",vegetables);
 }
 
 
-public void doPut(HttpServletRequest request,
+public void doPost(HttpServletRequest request,
  HttpServletResponse response)
 throws IOException, ServletException
 {
-	System.out.println("put method working");
+	System.out.println("post method working");
 	
 try {
 	
