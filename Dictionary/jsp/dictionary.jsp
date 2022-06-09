@@ -18,13 +18,9 @@
       </form>
       </div>
 
-       <%List<Word> words = (ArrayList<Word>) request.getAttribute("words");
+       <%List<Word> words = (ArrayList<Word>) request.getAttribute("words");%>
 
-                  for (int i = 0; i<words.size(); i++) {%>
 
-                 <h3> <%out.println("WORD :" + words.get(i).getWords());%>
-                  <%out.println("MEANING :" + words.get(i).getMeaning());%>
-                  <% } %></h3>
 
                   <p class="info-text">Type any existing word and click Search to get meaning, example, synonyms, etc.</p>
       <ul>
