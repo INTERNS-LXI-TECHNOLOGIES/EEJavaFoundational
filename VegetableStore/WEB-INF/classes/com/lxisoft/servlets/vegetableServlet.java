@@ -1,5 +1,6 @@
 package com.lxisoft.servlets;
 
+
 import com.lxisoft.vegetable.Vegetable;
 
 import java.sql.*;
@@ -40,6 +41,7 @@ throws IOException, ServletException
 while(rs.next())
 {
 vegetables.add(new Vegetable(rs.getString(2),rs.getDouble(3),rs.getDouble(4),rs.getDouble(5)));
+
 
 }
 

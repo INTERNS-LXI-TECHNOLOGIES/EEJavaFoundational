@@ -9,7 +9,8 @@
 
 
 <body>
-
+  
+  <button >Add Vegetable</button>
 
  <h1><center>Vegetable Details</center></h1>
 
@@ -18,7 +19,7 @@
  <%List<Vegetable> vegetables = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
 
-  for ( Vegetable vegetable : vegetables) {%>
+  for (Vegetable vegetable : vegetables) {%>
 
 <td>
 
@@ -45,4 +46,3 @@
 </body>
 
 </html>
-
