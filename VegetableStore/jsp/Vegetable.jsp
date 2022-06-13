@@ -9,30 +9,42 @@
 
 
 <body>
-  
+  <form action ="AddPage" method = "POST">
+
   <button >Add Vegetable</button>
+  
+  </form>
 
  <h1><center>Vegetable Details</center></h1>
 
- <table style="width: 100%;" border="1">
+ <center><table style="width: 90%;" border="1">
+ 
+ <tr>
+ <th>Name</th>
+ <th>Price</th>
+ <th>Stock</th>
+ <th>Minimum Order Quantity</th>
+ <th>Actions</th>
+ 
+ </tr>
 
  <%List<Vegetable> vegetables = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
-
+ 
   for (Vegetable vegetable : vegetables) {%>
+  
 
-<td>
+<tr>
 
+<td><%out.println("Name :" +vegetable.getName());%></td>
 
-<%out.println("Name :" +vegetable.getName());%>
+<td><%out.println("Price : " + vegetable.getPrice());%></td>
 
-<%out.println("Price : " + vegetable.getPrice());%>
+<td><%out.println("Stock :" +vegetable.getStock());%></td>
 
-<%out.println("Stock :" +vegetable.getStock());%>
+<td><%out.println("Minimum Order Quantity :" +vegetable.getOrderQuantity());%></td>
 
-<%out.println("Minimum Order Quantitye :" +vegetable.getOrderQuantity());%>
-
-<form action="my-page" method="POST">
+<td><form action="my-page" method="POST">
 
 <Button>edit</Button>
   </form>
@@ -41,8 +53,9 @@
 
 </td>
 
+</tr>
 <%}%>  
-</table>
+</table></center>
 </body>
 
 </html>
