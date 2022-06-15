@@ -6,12 +6,16 @@ package com.lxisoft.vegetable;
 public class Vegetable {
  
 private String name;
-private double price;
-private double stock;
-private double orderQuantity;
+private String price;
+private String stock;
+private String orderQuantity;
+
+public Vegetable() {
+
+}
 
 
-public Vegetable(String name,double price, double stock, double orderQuantity) {
+public Vegetable(String name,String price,String stock, String orderQuantity) {
 
 this.name = name;
 this.price = price;
@@ -33,31 +37,31 @@ this.name = name;
 }     
 
 
-public double getPrice() {
+public String getPrice() {
 
  return price;
 }
-public void setPrice(double price)  {
+public void setPrice(String price)  {
 
 this.price = price;
 }  
 
 
-public double getStock() {
+public String getStock() {
 
  return stock;
 }
-public void setStock(double stock)  {
+public void setStock(String stock)  {
  
 this.stock = stock;
 }  
 
 
-public double getOrderQuantity() {
+public String getOrderQuantity() {
 
  return orderQuantity;
 }
-public void setOrderQuantity(double orderQuantity)  {
+public void setOrderQuantity(String orderQuantity)  {
 
 this.orderQuantity = orderQuantity;  
 }  

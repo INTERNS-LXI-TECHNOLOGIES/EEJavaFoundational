@@ -17,7 +17,7 @@
 <div align = "center">
 <h4>Add the Vegetable</h4>
 
-<form action ="<%=request.getContextPath() %>/addpage" method ="post">
+<form action ="<%=request.getContextPath() %>/addPage" method ="post">
 
 <table style = "width: 80%">
 

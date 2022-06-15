@@ -9,63 +9,57 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
+import com.lxisoft.dao.VegetableDao;
+import com.lxisoft.vegetable.Vegetable;
 
 public class AddVegetableServlet extends HttpServlet {
 
-
-
-
-
-
-public void doPost(HttpServletRequest request,
+public AddVegetableServlet() {
+	
+	super();
+	
+}
+	VegetableDao vegetableDao = new VegetableDao();
+	
+protected void doGet(HttpServletRequest request,
  HttpServletResponse response)
 throws IOException, ServletException
 {
 	
+response.getWriter().append("served at: ").append(request.getContextPath());
 
-response.setContentType("text/html");
-String name = request.getParameter("name");
-String price = request.getParameter("price");
-String stock= request.getParameter("stock");
-String minOrderQuantity = request.getParameter("minOrderQuantity");
+RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/addVegetable.jsp");
+requestDispatcher.forward(request, response);
 
-int i = 0;
 
-try {
+}
+
+protected void doPost(HttpServletRequest request,HttpServletResponse response)throws IOException, ServletException
+{
 	
-	Class.forName("com.mysql.cj.jdbc.Driver");
-	   
-    Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lxisoft","root","Mubashir24092000");
-    
-    PreparedStatement ps = con.prepareStatement("insert into vegetablestore(name,price,stock,minOrderQuantity) values(?,?,?,?)");
-
-    ps.setString(1,name);
-    
-    ps.setString(2,price);
-ps.setString(3,stock);
-ps.setString(4,minOrderQuantity);
-
-
-i = ps.executeUpdate();
+	String name = request.getParameter("name");
+	String price = request.getParameter("price");
+	String stock = request.getParameter("stock");
+	String orderQuantity = request.getParameter("orderQuantity");
 	
-}catch (Exception e) {
-
-e.printStackTrace();
-
+	Vegetable veg = new Vegetable();
+	
+	veg.setName(name);
+	veg.setPrice(price);
+	veg.setStock(stock);
+	veg.setOrderQuantity(orderQuantity);
+	
+try{
+	vegetableDao.addVegetable(veg);
+}catch(Exception e)  {
+	e.printStackTrace();
+}
+	
+	RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/vegetableConform.jsp");
+	  requestDispatcher.forward(request, response);
 }
 
-if(i>0) {
-	System.out.println("data");
-}
-else {
-	System.out.println("no data");
-}
-
 
 }
-}
-
-
-
 
 

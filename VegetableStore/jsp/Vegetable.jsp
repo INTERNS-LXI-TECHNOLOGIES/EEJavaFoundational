@@ -9,12 +9,11 @@
 
 
 <body>
-  <form action ="AddPage" method = "POST">
-
-  <button >Add Vegetable</button>
   
+<form action="addpage" method="GET">
+  <button >Add Vegetable</button>
   </form>
-
+ 
  <h1><center>Vegetable Details</center></h1>
 
  <center><table style="width: 90%;" border="1">
