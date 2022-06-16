@@ -16,10 +16,13 @@ import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServlet;
-
+import com.lxisoft.dao.VegetableDao;
 
 public class VegetableServlet extends HttpServlet {
 
+	
+	VegetableDao vegetableDao = new VegetableDao();
+	
  public void doGet(HttpServletRequest request,
  HttpServletResponse response)
 throws IOException, ServletException
@@ -40,7 +43,7 @@ throws IOException, ServletException
 
 while(rs.next())
 {
-vegetables.add(new Vegetable(rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
+vegetables.add(new Vegetable(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
 
 
 }
@@ -77,4 +80,28 @@ catch(Exception e) {
 }
 	
 }
+
+
+public void doDelete(HttpServletRequest request,
+		 HttpServletResponse response)
+		throws IOException, ServletException
+		{
+	
+	int no = Integer.parseInt(request.getParameter("no"));
+	
+	try {
+	
+	vegetableDao.deleteVegetable(no);
+	
+	}catch(Exception e) {
+		
+		e.printStackTrace();
+		
+	}
+	response.sendRedirect("list");
+
+		}
+
+
+
 }

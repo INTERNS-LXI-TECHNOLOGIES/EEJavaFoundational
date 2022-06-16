@@ -19,6 +19,7 @@
  <center><table style="width: 90%;" border="1">
  
  <tr>
+ <th>No</th>
  <th>Name</th>
  <th>Price</th>
  <th>Stock</th>
@@ -35,20 +36,26 @@
 
 <tr>
 
-<td><%out.println("Name :" +vegetable.getName());%></td>
+<td><center><%out.println(vegetable.getNo());%></center></td>
 
-<td><%out.println("Price : " + vegetable.getPrice());%></td>
+<td><center><%out.println(vegetable.getName());%></center></td>
 
-<td><%out.println("Stock :" +vegetable.getStock());%></td>
+<td><center><%out.println( vegetable.getPrice());%></center></td>
 
-<td><%out.println("Minimum Order Quantity :" +vegetable.getOrderQuantity());%></td>
+<td><center><%out.println(vegetable.getStock());%></center></td>
+
+<td><center><%out.println(vegetable.getOrderQuantity());%></center></td>
 
 <td><form action="my-page" method="POST">
 
-<Button>edit</Button>
-  </form>
+<center><Button>Edit</Button></center></form>
 
-<button>Buy</button>
+<form action="my-page" method="delete">
+
+<center><button>Delete</button></center>
+
+</form>
+
 
 </td>
 
@@ -58,3 +65,6 @@
 </body>
 
 </html>
+
+
+

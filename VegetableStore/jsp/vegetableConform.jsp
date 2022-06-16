@@ -2,10 +2,12 @@
 
 <body>
 
+ <center><img src = "..\WEB-INF\classes\com\lxisoft\picture\like.jpg" width="150"></img></center>
 
-<h4>Vegetable Added SuccessFully</h4>
-
-</form>
+ <div style = "color : red"> 
+  <h1><center> Vegetable Added SuccessFully</center></h1>
+  
+</div>
 
 </body>
 

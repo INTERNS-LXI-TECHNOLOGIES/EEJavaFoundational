@@ -41,7 +41,7 @@
 <servlet-name>VegetablePage</servlet-name>
 <url-pattern>/my-page</url-pattern>
 </servlet-mapping>
-
+	
 <servlet-mapping>
 <servlet-name>AddVegetablePage</servlet-name>
 <url-pattern>/addpage</url-pattern>

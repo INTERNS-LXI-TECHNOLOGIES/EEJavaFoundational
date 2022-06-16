@@ -5,6 +5,7 @@ package com.lxisoft.vegetable;
 
 public class Vegetable {
  
+private int no;
 private String name;
 private String price;
 private String stock;
@@ -25,6 +26,29 @@ this.orderQuantity = orderQuantity;
 
 }
 
+public Vegetable(int no,String name,String price,String stock, String orderQuantity) {
+
+	
+this.no = no;
+this.name = name;
+this.price = price;
+this.stock = stock;
+this.orderQuantity = orderQuantity;
+
+
+}
+
+
+
+
+public int getNo() {
+
+	 return no;
+	}
+	public void setNo(int no)  {
+
+	this.no = no;
+	}     
 
 
 public String getName() {
