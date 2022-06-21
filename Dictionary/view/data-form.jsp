@@ -28,37 +28,37 @@
 	<div class="container col-md-5">
 		<div class="card">
 			<div class="card-body">
-				<c:if test="${user != null}">
+				<c:if test="${data != null}">
 					<form action="update" method="post">
 				</c:if>
-				<c:if test="${user == null}">
+				<c:if test="${data == null}">
 					<form action="insert" method="post">
 				</c:if>
 
 				<caption>
 					<h2>
-						<c:if test="${user != null}">
+						<c:if test="${data != null}">
             			Edit Word
             		</c:if>
-						<c:if test="${user == null}">
+						<c:if test="${data == null}">
             			Add New Word
             		</c:if>
 					</h2>
 				</caption>
 
-				<c:if test="${user != null}">
-					<input type="hidden" name="id" value="<c:out value='${user.id}' />" />
+				<c:if test="${data != null}">
+					<input type="hidden" name="id" value="<c:out value='${data.id}' />" />
 				</c:if>
 
 				<fieldset class="form-group">
 					<label>WORD</label> <input type="text"
-						value="<c:out value='${user.word}' />" class="form-control"
+						value="<c:out value='${data.word}' />" class="form-control"
 						name="word" required="required">
 				</fieldset>
 
 				<fieldset class="form-group">
 					<label>MEANING</label> <input type="text"
-						value="<c:out value='${user.meaning}' />" class="form-control"
+						value="<c:out value='${data.meaning}' />" class="form-control"
 						name="meaning">
 				</fieldset>
         

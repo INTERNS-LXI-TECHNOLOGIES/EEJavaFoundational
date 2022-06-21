@@ -20,7 +20,7 @@ public class DictionaryDAO {
     private static final String SELECT_WORDS_BY_id = "select id,Words,Meanings from dictionary where id =?";
     private static final String SELECT_ALL_WORDS = "select * from dictionary";
     private static final String DELETE_WORDS_SQL = "delete from dictionary where id = ?;";
-    private static final String UPDATE_WORDS_SQL = "update dictionary set Words = ? where id = ?;";
+    private static final String UPDATE_WORDS_SQL = "update dictionary set Words = ?, Meanings = ? where id = ?;";
 
     public DictionaryDAO() {
     }
@@ -122,6 +122,7 @@ public class DictionaryDAO {
             statement.setString(2, dictionary.getMeaning());
             statement.setInt(3, dictionary.getId());
 
+            System.out.println("datas :"+dictionary);
             rowUpdated = statement.executeUpdate() > 0;
         }
         return rowUpdated;

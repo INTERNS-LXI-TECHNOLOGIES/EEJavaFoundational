@@ -15,6 +15,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark"
 			style="background-color: blue">
 			<div>
+
 				<a href="https://www.javaguides.net" class="navbar-brand"> Dictionary App </a>
 			</div>
 
@@ -23,15 +24,27 @@
 					class="nav-link">Words</a></li>
 			</ul>
 		</nav>
+
 	</header>
 	<br>
 
 	<div class="row">
-		<!-- <div class="alert alert-success" *ngIf='message'>{{message}}</div> -->
 
 		<div class="container">
 			<h3 class="text-center">List of Words</h3>
-			<hr>
+
+			<div class="container" >
+				<div align="center">
+				<form>
+				<h5><input type="search" placeholder="Search Word">
+				<button type="submit">Search</button></h5>
+		
+			  </form>
+			  <form class="nosubmit">
+			  </form>
+			  </div>
+
+
 			<div class="container text-left">
 
 				<a href="<%=request.getContextPath()%>/new" class="btn btn-success">Add
@@ -50,10 +63,9 @@
 				</thead>
 				<tbody>
 
-					<c:forEach var="data" items="${listData}">
-
+					<c:forEach var="data" items="${listData}" varStatus="status">
 						<tr>
-							<td><c:out value="${data.id}" /></td>
+							<td><c:out value="${status.index + 1}" /></td>
 							<td><c:out value="${data.word}" /></td>
 							<td><c:out value="${data.meaning}" /></td>
 							<td><a href="edit?id=<c:out value='${data.id}' />">Edit</a>

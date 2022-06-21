@@ -18,14 +18,15 @@ public class DictionaryServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
     private DictionaryDAO dictionaryDAO;
 
-    public void init() {
-        dictionaryDAO = new DictionaryDAO();
+    public DictionaryServlet () {
+        this.dictionaryDAO = new DictionaryDAO();
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        doGet(request, response);
-    }
+                
+                    doGet (request, response);
+                    } 
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -86,6 +87,7 @@ public class DictionaryServlet extends HttpServlet {
         String words = request.getParameter("word");
         String meaning = request.getParameter("meaning");
         Dictionary newData = new Dictionary(words, meaning);
+        System.out.println("Dictionary: "+ newData);
         dictionaryDAO.insertData(newData);
         response.sendRedirect("list");
     }
@@ -97,6 +99,7 @@ public class DictionaryServlet extends HttpServlet {
         String meaning = request.getParameter("meaning");
 
         Dictionary book = new Dictionary(id,words, meaning);
+        System.out.println("Dictionary: "+ book);
         dictionaryDAO.updateData(book);
         response.sendRedirect("list");
     }
