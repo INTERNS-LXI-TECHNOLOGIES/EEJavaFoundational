@@ -14,6 +14,19 @@ public class VegetableDao {
 			
 	String DELETE_USER_SQL = "delete from vegetablestore where no = ?;";
 	
+	Connection connection;
+
+	public VegetableDao()  {
+
+
+try {
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	connection =  DriverManager.getConnection("jdbc:mysql://localhost:3306/lxisoft","root","Mubashir24092000");
+} catch (Exception e) {
+	e.printStackTrace();
+}
+
+	}
 	
 
 public int addVegetable(Vegetable vegetable) throws ClassNotFoundException  {
@@ -22,12 +35,10 @@ public int addVegetable(Vegetable vegetable) throws ClassNotFoundException  {
 	
 	int result = 0;
 	
-	Class.forName("com.mysql.cj.jdbc.Driver");
 	
 	try {
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lxisoft","root","Mubashir24092000");
 	
-	PreparedStatement ps = con.prepareStatement(INSERT_USER_SQL);
+	PreparedStatement ps = 	connection.prepareStatement(INSERT_USER_SQL);
 		
 		ps.setString(1,vegetable.getName());
 		ps.setString(2,vegetable.getPrice());
@@ -46,61 +57,43 @@ public int addVegetable(Vegetable vegetable) throws ClassNotFoundException  {
 	
 }
 
-public void updateVegetable(Vegetable vegetable) throws SQLException  {
+public boolean updateVegetable(Vegetable vegetable) throws SQLException, ClassNotFoundException  {
 
 	
 	boolean rowUpdated;
-	
-	try {
 		
-		Class.forName("com.mysql.cj.jdbc.Driver");
-		
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lxisoft","root","Mubashir24092000");
-		
-		PreparedStatement statement = con.prepareStatement(EDIT_USER_SQL);
+		PreparedStatement statement = 	connection.prepareStatement(EDIT_USER_SQL);
 		
 		statement.setString(1,vegetable.getName());
 		statement.setString(2,vegetable.getPrice());
 		statement.setString(3,vegetable.getStock());
 		statement.setString(4,vegetable.getOrderQuantity());
-		statement.setInt(5,vegetable.getNo());
+		statement.setInt(1,vegetable.getId());
 		
 		System.out.println(statement);
 		
 		rowUpdated = statement.executeUpdate() >0;
 		
-		
-	}catch(Exception e)  {
-		
-		e.printStackTrace();
-	}
 	
-	//return rowUpdated;
+	return rowUpdated;
 	
 }
 
-public void deleteVegetable(int no) throws SQLException  {
-	
+public boolean deleteVegetable(int id) throws SQLException, ClassNotFoundException  {
 	boolean rowDeleted;
 	
-	try {
+
 		
-	
+	PreparedStatement statement = 	connection.prepareStatement(DELETE_USER_SQL); 
 		
-		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lxisoft","root","Mubashir24092000");
-		
-	PreparedStatement statement = con.prepareStatement(DELETE_USER_SQL); 
-		
-		statement.setInt(5,no);
+		statement.setInt(1,id);
 		
 		System.out.println(statement);
-		rowDeleted = statement.executeUpdate() >0;
+		int result= statement.executeUpdate();
 		
-	}catch(Exception e ) {
-	e.printStackTrace();
-	
-	}
-	//return rowDeleted;
+ rowDeleted = result >0;
+		
+	return rowDeleted;
 
 }
 }

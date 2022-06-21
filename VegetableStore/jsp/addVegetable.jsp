@@ -4,7 +4,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Vegetable Add Form</title>
 </head>
 
 
@@ -14,10 +14,16 @@
 
 <center>
 
-<div align = "center">
+<div align = "left">
+
+  
+<a href = "vegetable-list"> home
+  </a>
+  
+  </div>
 <h4>Add the Vegetable</h4>
 
-<form action ="<%=request.getContextPath() %>/addpage" method ="post">
+<form action ="<%=request.getContextPath() %>/add-vegetable" method ="post">
 
 <table style = "width: 80%">
 

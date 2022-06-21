@@ -1,17 +1,16 @@
 
 package com.lxisoft.vegetable;
 
-
-
 public class Vegetable {
  
-private int no;
+private int id;
 private String name;
 private String price;
 private String stock;
 private String orderQuantity;
 
 public Vegetable() {
+
 
 }
 
@@ -26,10 +25,10 @@ this.orderQuantity = orderQuantity;
 
 }
 
-public Vegetable(int no,String name,String price,String stock, String orderQuantity) {
+public Vegetable(int id,String name,String price,String stock, String orderQuantity) {
 
 	
-this.no = no;
+this.id = id;
 this.name = name;
 this.price = price;
 this.stock = stock;
@@ -41,13 +40,13 @@ this.orderQuantity = orderQuantity;
 
 
 
-public int getNo() {
+public int getId() {
 
-	 return no;
+	 return id;
 	}
-	public void setNo(int no)  {
+	public void setId(int id)  {
 
-	this.no = no;
+	this.id = id;
 	}     
 
 
