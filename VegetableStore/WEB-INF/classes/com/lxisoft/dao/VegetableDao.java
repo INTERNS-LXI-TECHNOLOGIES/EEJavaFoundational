@@ -57,9 +57,8 @@ public int addVegetable(Vegetable vegetable) throws ClassNotFoundException  {
 	
 }
 
-public boolean updateVegetable(Vegetable vegetable) throws SQLException, ClassNotFoundException  {
+public boolean upDateVegetable(Vegetable vegetable) throws SQLException, ClassNotFoundException  {
 
-	
 	boolean rowUpdated;
 		
 		PreparedStatement statement = 	connection.prepareStatement(EDIT_USER_SQL);
@@ -82,8 +81,6 @@ public boolean updateVegetable(Vegetable vegetable) throws SQLException, ClassNo
 public boolean deleteVegetable(int id) throws SQLException, ClassNotFoundException  {
 	boolean rowDeleted;
 	
-
-		
 	PreparedStatement statement = 	connection.prepareStatement(DELETE_USER_SQL); 
 		
 		statement.setInt(1,id);

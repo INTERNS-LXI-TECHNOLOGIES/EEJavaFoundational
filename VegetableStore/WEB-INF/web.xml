@@ -22,7 +22,7 @@
 <servlet>
 
 <servlet-name>AddVegetablePage</servlet-name>
-<servlet-class>com.lxisoft.servlets.AddVegetableServlet</servlet-class>
+<servlet-class>com.lxisoft.servlets.CreateAndDeleteVegetableServlet</servlet-class>
 
 </servlet>
 

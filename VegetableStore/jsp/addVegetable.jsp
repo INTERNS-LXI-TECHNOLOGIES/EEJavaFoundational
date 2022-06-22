@@ -35,17 +35,17 @@
   
   <tr> 
   <td>Enter Price </td>
-  <td><input type = "number" name = "price"/></td>
+  <td><input type = "text" name = "price"/></td>
 </tr>
 
 <tr>
 <td>Enter Stock</td>
-<td><input type = "number" name = "stock"/></td>
+<td><input type = "text" name = "stock"/></td>
 </tr>
 
 <tr>
 <td>Enter OrderQuantity</td>
-<td><input type = "number" name = "orderQuantity"/></td>
+<td><input type = "text" name = "orderQuantity"/></td>
 </tr>
 
  </table>

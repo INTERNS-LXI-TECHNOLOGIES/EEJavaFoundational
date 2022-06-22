@@ -5,7 +5,6 @@ import com.lxisoft.vegetable.Vegetable;
 
 import java.sql.*;
 
-
 import javax.servlet.http.HttpServlet;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -27,7 +26,7 @@ public class VegetableServlet extends HttpServlet {
  HttpServletResponse response)
 throws IOException, ServletException
 {
-	
+		System.out.println("VegetableServlet get method working");
 	List <Vegetable>vegetables = new ArrayList<Vegetable>();
 	
 	try {
@@ -64,45 +63,31 @@ public void doPost(HttpServletRequest request,
  HttpServletResponse response)
 throws IOException, ServletException
 {
-	System.out.println("post method working");
-	
-try {
-	
+	System.out.println("VegetableServlete post (upDate) method working");
 	
   RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/edit.jsp");
   requestDispatcher.forward(request, response);
-}
 
-catch(Exception e) {
-	
-	e.printStackTrace();
-	
-}
-	
-}
+int id = Integer.parseInt("id");
 
+String name = request.getParameter("name");
+String price = request.getParameter("price");
+String stock = request.getParameter("stock");
+String orderQuantity = request.getParameter("orderQuantity");
 
-protected void doDelete(HttpServletRequest request,
-		 HttpServletResponse response)
-		throws IOException, ServletException
-		{
+Vegetable vegetable = new Vegetable(name,price,stock,orderQuantity);
+try{
 
-	
-	int id = Integer.parseInt(request.getParameter("id"));
-	System.out.println("Delete method working");
-	try {
-	
-	vegetableDao.deleteVegetable(id);
-	
-	}catch(Exception e) {
-		
-		e.printStackTrace();
-		
-	}
-	response.sendRedirect("vegetable-list");
-
-		}
-
-
+vegetableDao.upDateVegetable(vegetable);
+}catch(Exception e) {
+e.printStackTrace();
 
 }
+
+response.sendRedirect("vegetable-list");
+
+}
+	
+}
+
+

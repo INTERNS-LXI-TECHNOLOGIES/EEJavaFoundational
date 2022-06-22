@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServlet;
 import com.lxisoft.dao.VegetableDao;
 import com.lxisoft.vegetable.Vegetable;
 
-public class AddVegetableServlet extends HttpServlet {
 
-public AddVegetableServlet() {
+public class CreateAndDeleteVegetableServlet extends HttpServlet {
+
+public CreateAndDeleteVegetableServlet() {
 	
 	super();
 	
@@ -25,18 +26,33 @@ protected void doGet(HttpServletRequest request,
  HttpServletResponse response)
 throws IOException, ServletException
 {
+
+	int id = Integer.parseInt(request.getParameter("id"));
+	System.out.println("Delete method working");
 	
-response.getWriter().append("served at: ").append(request.getContextPath());
+	try {
+	
+	vegetableDao.deleteVegetable(id);
+	
+	}catch(Exception e) {
+		
+		e.printStackTrace();
+		
+	}
+	response.sendRedirect("vegetable-list");
 
-RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/addVegetable.jsp");
-requestDispatcher.forward(request, response);
+		}
 
-
-}
 
 protected void doPost(HttpServletRequest request,HttpServletResponse response)throws IOException, ServletException
 {
+
+	System.out.println("add method working");
 	
+	RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/addVegetable.jsp");
+	requestDispatcher.forward(request, response);
+
+
 	String name = request.getParameter("name");
 	String price = request.getParameter("price");
 	String stock = request.getParameter("stock");
@@ -55,7 +71,7 @@ try{
 	e.printStackTrace();
 }
 	
-	RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/vegetableConform.jsp");
+	RequestDispatcher requestDispatcher1 = request.getRequestDispatcher("jsp/vegetableConform.jsp");
 	  requestDispatcher.forward(request, response);
 }
 

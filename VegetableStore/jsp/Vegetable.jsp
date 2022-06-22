@@ -30,7 +30,7 @@ color:white;
 background-color:orange;
 color:white;
 border: none;
-margin : 10px 160px;
+margin : 10px 133px;
 height:30px;
 width:100px;
 }
@@ -38,6 +38,11 @@ width:100px;
   background-color:blue;
   color : white;
   border: none;
+}
+.deleteBtn{
+background-color:red;
+border: none;
+color : white;
 }
 
 </style>
@@ -53,11 +58,11 @@ width:100px;
  
  <h1><center>Vegetable Details</center></h1>
 
- <form action="add-vegetable" method="GET">
+ <form action= "add-vegetable" method="POST">
   <button class="vegetableBtn" >Add Vegetable</button>
   </form>
 
- <center><table style="width: 70%;" border="1">
+ <center><table style="width: 75%;" border="1">
  
  <tr>
  <th>Id</th>
@@ -92,15 +97,20 @@ width:100px;
  
   <form action = "vegetable-list" method = "POST">
 
-    <center><button class="edit.Btn">Edit</button></center></form>
+    <center><input type = "hidden" name ="id" value= <%=vegetable.getId()%>
+      <input type = "submit" ><button class = "editBtn">Edit</button></input></center></form>
 
-    <form action = "vegetable-list" method = "DELETE">
 
-      <center><button class="delete.Btn">Delete</button></center></form>
+
+    <form action = "add-vegetable" method = "GET">
+
+      <center><input type = "hidden" name ="id" value= <%=vegetable.getId()%>
+        <input type = "submit" ><button class = "deleteBtn" onclick ="return confirm('Are You Delete Permanently?')">Delete</button></input></center></form>
   
 
-</td>
 
+
+</td>
 </tr>
 <%}%>  
 </table></center>
