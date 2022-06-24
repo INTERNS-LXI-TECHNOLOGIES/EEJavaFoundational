@@ -5,14 +5,14 @@ import com.lxisoft.vegetable.Vegetable;
 public class VegetableDao {
 
 	
-	String INSERT_USER_SQL = "insert into vegetablestore" +
+	String INSERT_SQL = "insert into vegetablestore" +
 			"(name,price,stock,minOrderQuantity) values" +
 					"(?,?,?,?);";
 			
-	String EDIT_USER_SQL ="update vegetablestore set name = ?,price = ?,stock = ?,minOrderQuantity = ? where no =?;";
+	String EDIT_SQL ="update vegetablestore set name = ?,price = ?,stock = ?,minOrderQuantity = ? where no =?;";
 			
 			
-	String DELETE_USER_SQL = "delete from vegetablestore where no = ?;";
+	String DELETE_SQL = "delete from vegetablestore where no = ?;";
 	
 	Connection connection;
 
@@ -38,7 +38,7 @@ public int addVegetable(Vegetable vegetable) throws ClassNotFoundException  {
 	
 	try {
 	
-	PreparedStatement ps = 	connection.prepareStatement(INSERT_USER_SQL);
+	PreparedStatement ps = 	connection.prepareStatement(INSERT_SQL);
 		
 		ps.setString(1,vegetable.getName());
 		ps.setString(2,vegetable.getPrice());
@@ -61,7 +61,7 @@ public boolean upDateVegetable(Vegetable vegetable) throws SQLException, ClassNo
 
 	boolean rowUpdated;
 		
-		PreparedStatement statement = 	connection.prepareStatement(EDIT_USER_SQL);
+		PreparedStatement statement = 	connection.prepareStatement(EDIT_SQL);
 		
 		statement.setString(1,vegetable.getName());
 		statement.setString(2,vegetable.getPrice());
@@ -81,7 +81,7 @@ public boolean upDateVegetable(Vegetable vegetable) throws SQLException, ClassNo
 public boolean deleteVegetable(int id) throws SQLException, ClassNotFoundException  {
 	boolean rowDeleted;
 	
-	PreparedStatement statement = 	connection.prepareStatement(DELETE_USER_SQL); 
+	PreparedStatement statement = 	connection.prepareStatement(DELETE_SQL); 
 		
 		statement.setInt(1,id);
 		

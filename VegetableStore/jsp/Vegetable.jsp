@@ -95,7 +95,7 @@ color : white;
 
 <td>
  
-  <form action = "vegetable-list" method = "POST">
+  <form action = "upDate-vegetable" method = "GET">
 
     <center><input type = "hidden" name ="id" value= <%=vegetable.getId()%>
       <input type = "submit" ><button class = "editBtn">Edit</button></input></center></form>

@@ -1,29 +1,32 @@
 <html>
 
-<body>
- <form action ="<%=request.getContextPath() %>/vegetable-list" method ="post">
 
+<head>
+
+  <%@ page import="com.lxisoft.dao.VegetableDao"%>
+
+<body>
+
+<%VegetableDao veg = new VegetableDao()%>
 <center><h4>Edit the Vegetable</h4></center>
 <center>
 <table style = "width: 80%">
 
  <tr>
  
-   <td>Enter Name</td>
-   <td><input type = "text"  name = "name" /></td>
-   </tr>
+   <td>Enter Name
+  <input type = "text"  name = "name" /></td>
+
    
-   <tr> 
-   <td>Enter Price </td>
-   <td><input type = "text"  name = "price"  /></td>
- </tr>
+     <td>Enter Price
+    <input type = "text"  name = "price"  /></td>
+
  
- <tr>
+
  <td>Enter Stock</td>
  <td><input type = "text"  name = "stock"/></td>
- </tr>
+
  
- <tr>
  <td>Enter OrderQuantity</td>
  <td><input type = "text" name = "orderQuantity"/></td>
  </tr>
@@ -32,7 +35,7 @@
   <center><input type = "submit" value = "submit"/></center>
 
  </center>
-</form>
-</body>
 
+</body>
+</head>
 </html>

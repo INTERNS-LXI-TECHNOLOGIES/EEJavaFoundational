@@ -32,6 +32,18 @@
 <url-pattern>/add-vegetable</url-pattern>
 </servlet-mapping>
 
+<servlet>
+
+<servlet-name>upDateVegetablePage</servlet-name>
+<servlet-class>com.lxisoft.servlets.UpDateVegetableServlet</servlet-class>
+
+</servlet>
+
+<servlet-mapping>
+<servlet-name>upDateVegetablePage</servlet-name>
+<url-pattern>/upDate-vegetable</url-pattern>
+</servlet-mapping>
+
 
 <servlet>
 

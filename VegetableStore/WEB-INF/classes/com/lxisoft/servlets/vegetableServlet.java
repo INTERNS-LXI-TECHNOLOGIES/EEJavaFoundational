@@ -68,14 +68,16 @@ throws IOException, ServletException
   RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/edit.jsp");
   requestDispatcher.forward(request, response);
 
-int id = Integer.parseInt("id");
+	int id = Integer.parseInt(request.getParameter("id"));
 
+
+   
 String name = request.getParameter("name");
 String price = request.getParameter("price");
 String stock = request.getParameter("stock");
 String orderQuantity = request.getParameter("orderQuantity");
 
-Vegetable vegetable = new Vegetable(name,price,stock,orderQuantity);
+Vegetable vegetable = new Vegetable(name,price,stock,orderQuantity); 
 try{
 
 vegetableDao.upDateVegetable(vegetable);
