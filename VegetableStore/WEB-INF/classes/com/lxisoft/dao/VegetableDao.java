@@ -31,10 +31,7 @@ try {
 
 public int addVegetable(Vegetable vegetable) throws ClassNotFoundException  {
 	
-
-	
 	int result = 0;
-	
 	
 	try {
 	
@@ -57,7 +54,7 @@ public int addVegetable(Vegetable vegetable) throws ClassNotFoundException  {
 	
 }
 
-public boolean upDateVegetable(Vegetable vegetable) throws SQLException, ClassNotFoundException  {
+public boolean updateVegetable(Vegetable vegetable) throws SQLException, ClassNotFoundException  {
 
 	boolean rowUpdated;
 		

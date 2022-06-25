@@ -80,7 +80,7 @@ String orderQuantity = request.getParameter("orderQuantity");
 Vegetable vegetable = new Vegetable(name,price,stock,orderQuantity); 
 try{
 
-vegetableDao.upDateVegetable(vegetable);
+vegetableDao.updateVegetable(vegetable);
 }catch(Exception e) {
 e.printStackTrace();
 

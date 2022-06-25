@@ -34,14 +34,14 @@
 
 <servlet>
 
-<servlet-name>upDateVegetablePage</servlet-name>
-<servlet-class>com.lxisoft.servlets.UpDateVegetableServlet</servlet-class>
+<servlet-name>updateVegetablePage</servlet-name>
+<servlet-class>com.lxisoft.servlets.UpdateVegetableServlet</servlet-class>
 
 </servlet>
 
 <servlet-mapping>
-<servlet-name>upDateVegetablePage</servlet-name>
-<url-pattern>/upDate-vegetable</url-pattern>
+<servlet-name>updateVegetablePage</servlet-name>
+<url-pattern>/update-vegetable</url-pattern>
 </servlet-mapping>
 
 

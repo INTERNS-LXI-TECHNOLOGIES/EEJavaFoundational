@@ -3,11 +3,10 @@
 
 <head>
 
-  <%@ page import="com.lxisoft.dao.VegetableDao"%>
 
 <body>
 
-<%VegetableDao veg = new VegetableDao()%>
+
 <center><h4>Edit the Vegetable</h4></center>
 <center>
 <table style = "width: 80%">
