@@ -7,10 +7,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import com.lxisoft.model.Dictionary;
+import com.lxisoft.model.Word;
 
 public class DictionaryDAO {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/lxisoft?useSSL=false";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/lxisoft?true&useSSL=false";
     private String jdbcUsername = "root";
     private String jdbcPassword = "root";
 
@@ -40,7 +40,7 @@ public class DictionaryDAO {
         return connection;
     }
 
-    public void insertData(Dictionary dictonary) throws SQLException {
+    public void insertData(Word dictonary) throws SQLException {
         System.out.println(INSERT_WORDS_SQL);
 
         try { Connection connection = getConnection();
@@ -54,8 +54,8 @@ public class DictionaryDAO {
         }
     }
 
-    public Dictionary selectData(int id) {
-        Dictionary dictionary = null;
+    public Word selectData(int id) {
+        Word dictionary = null;
 
         try (Connection connection = getConnection();
 
@@ -69,7 +69,7 @@ public class DictionaryDAO {
             while (rs.next()) {
                 String Words = rs.getString("Words");
                 String Meanings = rs.getString("Meanings");
-                dictionary = new Dictionary(id, Words, Meanings);
+                dictionary = new Word(id, Words, Meanings);
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -77,10 +77,10 @@ public class DictionaryDAO {
         return dictionary;
     }
 
-    public List<Dictionary> selectAllDatas() {
+    public List<Word> selectAllDatas() {
 
 
-        List<Dictionary> datas = new ArrayList<>();
+        List<Word> datas = new ArrayList<>();
 
         try (Connection connection = getConnection();
 
@@ -95,7 +95,7 @@ public class DictionaryDAO {
                 int id= rs.getInt("id");
                 String Words = rs.getString("Words");
                 String Meanings = rs.getString("Meanings");
-                datas.add(new Dictionary(id, Words, Meanings));
+                datas.add(new Word(id, Words, Meanings));
             }
         } catch (SQLException e) {
             printSQLException(e);
@@ -113,7 +113,7 @@ public class DictionaryDAO {
         return rowDeleted;
     }
 
-    public boolean updateData(Dictionary dictionary) throws SQLException {
+    public boolean updateData(Word dictionary) throws SQLException {
         boolean rowUpdated;
         try (Connection connection = getConnection();
              PreparedStatement statement = connection.prepareStatement(UPDATE_WORDS_SQL);) {

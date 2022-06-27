@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.lxisoft.controller.DictionaryServlet.*;
 import com.lxisoft.dao.DictionaryDAO;
-import com.lxisoft.model.Dictionary;
+import com.lxisoft.model.Word;
 
 //@WebServlet("/")
 public class DictionaryServlet extends HttpServlet {
@@ -60,7 +60,7 @@ public class DictionaryServlet extends HttpServlet {
 
     private void listData(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-        List<Dictionary> listData = dictionaryDAO.selectAllDatas();
+        List<Word> listData = dictionaryDAO.selectAllDatas();
         request.setAttribute("listData", listData);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/data-list.jsp");
         dispatcher.forward(request, response);
@@ -75,7 +75,7 @@ public class DictionaryServlet extends HttpServlet {
     private void showEditForm(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
-        Dictionary existingData = dictionaryDAO.selectData(id);
+        Word existingData = dictionaryDAO.selectData(id);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/data-form.jsp");
         request.setAttribute("data", existingData);
         dispatcher.forward(request, response);
@@ -86,7 +86,7 @@ public class DictionaryServlet extends HttpServlet {
             throws SQLException, IOException {
         String words = request.getParameter("word");
         String meaning = request.getParameter("meaning");
-        Dictionary newData = new Dictionary(words, meaning);
+        Word newData = new Word(words, meaning);
         System.out.println("Dictionary: "+ newData);
         dictionaryDAO.insertData(newData);
         response.sendRedirect("list");
@@ -98,7 +98,7 @@ public class DictionaryServlet extends HttpServlet {
         String words = request.getParameter("word");
         String meaning = request.getParameter("meaning");
 
-        Dictionary book = new Dictionary(id,words, meaning);
+        Word book = new Word(id,words, meaning);
         System.out.println("Dictionary: "+ book);
         dictionaryDAO.updateData(book);
         response.sendRedirect("list");

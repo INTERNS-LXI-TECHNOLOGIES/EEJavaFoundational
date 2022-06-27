@@ -1,13 +1,13 @@
 package com.lxisoft.model;
-public class Dictionary {
+public class Word {
 
     protected int id;
     protected String word;
     protected  String meaning;
 
-    public Dictionary() {
+    public Word() {
     }
-    public Dictionary ( String word, String meaning ){
+    public Word ( String word, String meaning ){
 
         super();
 
@@ -15,7 +15,7 @@ public class Dictionary {
         this.meaning = meaning;
     }
 
-    public Dictionary(int id, String word, String meaning) {
+    public Word(int id, String word, String meaning) {
         super();
         this.id = id;
         this.word = word;
