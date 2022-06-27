@@ -44,15 +44,14 @@ try{
     ResultSet rs = ps.executeQuery();
 
     while(rs.next()){
+
+   int vegId = rs.getInt(1);   
  String name = rs.getString(2);
  String price = rs.getString(3);
  String stock = rs.getString(4);
  String orderQuantity = rs.getString(5);
 
-vegetable.add( new Vegetable(name,price,stock,orderQuantity));
-
-System.out.println(name+price+stock+orderQuantity);
-
+vegetable.add( new Vegetable(vegId,name,price,stock,orderQuantity));
 
     }
 request.setAttribute("vegetable",vegetable);
@@ -71,9 +70,28 @@ public void doPost(HttpServletRequest request,
  HttpServletResponse response)
 throws IOException, ServletException{
 
+System.out.println("post");
+
+int id = Integer.parseInt(request.getParameter("id"));
 
 
-
+String name = request.getParameter("name");
+	String price = request.getParameter("price");
+	String stock = request.getParameter("stock");
+	String orderQuantity = request.getParameter("orderQuantity");
   
+Vegetable vegetable = new Vegetable(id,name,price,stock,orderQuantity);
+
+VegetableDao vegetableDao = new VegetableDao();
+
+try {
+vegetableDao.updateVegetable(vegetable);
+
+}catch( Exception e) {
+e.printStackTrace();
+
+}
+
+response.sendRedirect("vegetable-list");
 }
 }

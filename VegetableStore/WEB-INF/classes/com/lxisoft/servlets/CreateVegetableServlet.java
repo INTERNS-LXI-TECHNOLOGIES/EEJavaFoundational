@@ -13,33 +13,24 @@ import com.lxisoft.dao.VegetableDao;
 import com.lxisoft.vegetable.Vegetable;
 
 
-public class CreateAndDeleteVegetableServlet extends HttpServlet {
+public class CreateVegetableServlet extends HttpServlet {
 
-public CreateAndDeleteVegetableServlet() {
+public CreateVegetableServlet() {
 	
 	super();
 	
 }
-	VegetableDao vegetableDao = new VegetableDao();
 	
 protected void doGet(HttpServletRequest request,
  HttpServletResponse response)
 throws IOException, ServletException
 {
+	
+	response.getWriter().append("served at:").append(request.getContextPath());
 
-	int id = Integer.parseInt(request.getParameter("id"));
-	System.out.println("Delete method working");
-	
-	try {
-	
-	vegetableDao.deleteVegetable(id);
-	
-	}catch(Exception e) {
-		
-		e.printStackTrace();
-		
-	}
-	response.sendRedirect("vegetable-list");
+	RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/addVegetable.jsp");
+	requestDispatcher.forward(request, response);
+
 
 		}
 
@@ -47,19 +38,18 @@ throws IOException, ServletException
 protected void doPost(HttpServletRequest request,HttpServletResponse response)throws IOException, ServletException
 {
 
+	VegetableDao vegetableDao = new VegetableDao();
+
 	System.out.println("add method working");
-	
-	RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/addVegetable.jsp");
-	requestDispatcher.forward(request, response);
 
-
-	String name = request.getParameter("name");
+String	name = request.getParameter("name");
 	String price = request.getParameter("price");
-	String stock = request.getParameter("stock");
-	String orderQuantity = request.getParameter("orderQuantity");
+	 String stock = request.getParameter("stock");
+	 String orderQuantity = request.getParameter("orderQuantity");
 	
 	Vegetable veg = new Vegetable();
-	
+
+
 	veg.setName(name);
 	veg.setPrice(price);
 	veg.setStock(stock);
@@ -71,10 +61,9 @@ try{
 	e.printStackTrace();
 }
 	
-	RequestDispatcher requestDispatcher1 = request.getRequestDispatcher("jsp/vegetableConform.jsp");
+	RequestDispatcher requestDispatcher = request.getRequestDispatcher("jsp/vegetableConform.jsp");
 	  requestDispatcher.forward(request, response);
 }
-
 
 }
 

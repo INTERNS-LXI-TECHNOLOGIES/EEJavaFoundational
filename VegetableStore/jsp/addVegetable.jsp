@@ -23,7 +23,7 @@
   </div>
 <h4>Add the Vegetable</h4>
 
-<form action ="<%=request.getContextPath() %>/upDateVegetablePage" method ="post">
+<form action ="<%=request.getContextPath() %>/add-vegetable" method ="POST">
 
 <table style = "width: 80%">
 

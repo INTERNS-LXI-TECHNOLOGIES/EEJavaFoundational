@@ -59,12 +59,13 @@ public boolean updateVegetable(Vegetable vegetable) throws SQLException, ClassNo
 	boolean rowUpdated;
 		
 		PreparedStatement statement = 	connection.prepareStatement(EDIT_SQL);
-		
+
+		statement.setInt(5,vegetable.getId());
 		statement.setString(1,vegetable.getName());
 		statement.setString(2,vegetable.getPrice());
 		statement.setString(3,vegetable.getStock());
 		statement.setString(4,vegetable.getOrderQuantity());
-		statement.setInt(1,vegetable.getId());
+
 		
 		System.out.println(statement);
 		

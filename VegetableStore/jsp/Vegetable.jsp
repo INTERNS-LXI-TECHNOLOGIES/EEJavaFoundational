@@ -5,18 +5,25 @@
 <title>Vegetable List</title>
 <style> 
 
+
 h1{
 color:white;	
+background-color:rgb(95, 95, 209);
+font-size:40px;
+height:65px;
+width:1200px;
+}
+h2{
+color:white;	
 background-color:chartreuse;
-border-color:red;
-margin : 30px 400px;
-height:50px;
+border-radius:10px;
+margin : 30px 450px;
+height:40px;
 width:300px;
 }
 table{
   border: 1.5px solid red;
 border-collapse: collapse;
-
 }
 th,td{
   padding : 9px;
@@ -30,7 +37,8 @@ color:white;
 background-color:orange;
 color:white;
 border: none;
-margin : 10px 133px;
+margin : 10px 150px;
+border-radius:10px;
 height:30px;
 width:100px;
 }
@@ -38,12 +46,21 @@ width:100px;
   background-color:blue;
   color : white;
   border: none;
+  border-radius:10px;
+  width:70px;
+  height:30px
+
 }
 .deleteBtn{
 background-color:red;
 border: none;
+border-radius:10px;
 color : white;
+width:70px;
+  height:30px
+  
 }
+
 
 </style>
  
@@ -55,10 +72,10 @@ color : white;
 
 <body>
   
- 
- <h1><center>Vegetable Details</center></h1>
+  <h1><center>VEGETABLE STORE</center></h1>
+ <h2><center>Vegetable Details</center></h2>
 
- <form action= "add-vegetable" method="POST">
+ <form action= "add-vegetable" method="GET">
   <button class="vegetableBtn" >Add Vegetable</button>
   </form>
 
@@ -102,13 +119,11 @@ color : white;
 
 
 
-    <form action = "add-vegetable" method = "GET">
+    <form action = "delete-vegetable" method = "POST">
 
       <center><input type = "hidden" name ="id" value= <%=vegetable.getId()%>
         <input type = "submit" ><button class = "deleteBtn" onclick ="return confirm('Are You Delete Permanently?')">Delete</button></input></center></form>
   
-
-
 
 </td>
 </tr>

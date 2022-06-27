@@ -3,38 +3,61 @@
 
 <head>
 
+   <%@ page import="com.lxisoft.vegetable.Vegetable"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.List"%>
+
 
 <body>
 
+   <a href = "vegetable-list"> home</a>
+   
+   <form action ="<%=request.getContextPath() %>/update-vegetable" method ="post">
+
+
+   <%List<Vegetable> vegetables = (ArrayList<Vegetable>)request.getAttribute("vegetable");
+
+ 
+      for (Vegetable vegetable : vegetables) {%>
 
 <center><h4>Edit the Vegetable</h4></center>
 <center>
 <table style = "width: 80%">
 
- <tr>
- 
-   <td>Enter Name
-  <input type = "text"  name = "name" /></td>
-
+  
+   <td><input type = "hidden" name = "id" value =<%=vegetable.getId()%>></td>
+   </tr>
    
-     <td>Enter Price
-    <input type = "text"  name = "price"  /></td>
+   <tr>
 
- 
-
- <td>Enter Stock</td>
- <td><input type = "text"  name = "stock"/></td>
-
- 
- <td>Enter OrderQuantity</td>
- <td><input type = "text" name = "orderQuantity"/></td>
- </tr>
-
-  </table>
-  <center><input type = "submit" value = "submit"/></center>
+      <td>Enter Name</td>
+      <td><input type = "text" name = "name" value =<%=vegetable.getName()%>></td>
+      </tr>
+      
+      <tr> 
+      <td>Enter Price </td>
+      <td><input type = "text" name = "price"  value =<%=vegetable.getPrice()%>></td>
+    </tr>
+    
+    <tr>
+    <td>Enter Stock</td>
+    <td><input type = "text" name = "stock"  value =<%=vegetable.getStock()%>></td>
+    </tr>
+    
+    <tr>
+    <td>Enter OrderQuantity</td>
+    <td><input type = "text" name = "orderQuantity"  value =<%=vegetable.getOrderQuantity()%>></td>
+    </tr>
+    
+     </table>
+     
+     <input type = "submit" value = "submit"/>
+     
+    
 
  </center>
 
+ <%}%>
 </body>
 </head>
 </html>
