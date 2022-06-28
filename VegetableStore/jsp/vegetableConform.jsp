@@ -1,11 +1,23 @@
 <html>
+<head>
+<style>
+.homeBtn{
+margin:50px;
 
+
+}
+
+
+</style>
+
+
+</head>
 <body>
 <div align = "left">
-  <a href = "vegetable-list"> home
+  <a href = "vegetable-list"><img src ="image?name=home.jpeg" alt="google-play" height = 60px  class="homeBtn">
   </a>
 </div>
- <center><img src = " ..\resources\picture\like.jpg" width="150"></img></center>
+<center><a href = "www.google.com"><img src ="image?name=like.jpg" alt="google-play" height = 400px></a>></center>
 
  <div style = "color : red"> 
   <h1><center> Vegetable Added SuccessFully</center></h1>

@@ -5,6 +5,51 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Vegetable Add Form</title>
+
+<style>
+  h1{
+color:white;	
+background-color:rgb(95, 95, 209);
+font-size:40px;
+height:65px;
+width:1200px;
+}
+h4{
+  font-size:30px;
+color:white;	
+background-color:red;
+border-radius:10px;
+margin : 30px 450px;
+height:40px;
+width:300px;
+}
+table{
+border:none;
+}
+th,td{
+ padding : 9px;
+}
+table{
+border:none;
+}
+td{
+  padding : 9px;
+}
+.subBtn{
+background-color:red;
+border: none;
+border-radius:10px;
+color : white;
+width:70px;
+  height:30px
+}
+.homeBtn{
+margin:50px;
+
+
+}
+</style>
+
 </head>
 
 
@@ -14,14 +59,15 @@
 
 <center>
 
+<h1>VEGETABLE ADDING FORM</h1>
+
 <div align = "left">
 
   
-<a href = "vegetable-list"> home
-  </a>
-  
-  </div>
-<h4>Add the Vegetable</h4>
+  <a href = "vegetable-list"><img src ="image?name=home.jpeg" alt="google-play" height = 60px  class="homeBtn">
+    </a>
+    
+    </div>
 
 <form action ="<%=request.getContextPath() %>/add-vegetable" method ="POST">
 
@@ -50,7 +96,7 @@
 
  </table>
  
- <input type = "submit" value = "submit"/>
+ <input type = "submit" value = "submit" class = "subBtn"/>
  
 
 </form>

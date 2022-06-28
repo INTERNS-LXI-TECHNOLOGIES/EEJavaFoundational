@@ -3,14 +3,52 @@
 
 <head>
 
+<style>
+   h1{
+color:white;	
+background-color:red;
+font-size:40px;
+height:65px;
+width:1200px;
+padding : 13px;
+}
+table{
+border:none;
+}
+th,td{
+  padding : 9px;
+}
+.subBtn{
+
+   background-color:blue;
+  color : white;
+  border: none;
+  border-radius:10px;
+  width:70px;
+  height:30px
+
+}
+.homeBtn{
+margin:50px;
+
+
+}
+
+</style>
+
+
    <%@ page import="com.lxisoft.vegetable.Vegetable"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
 
-
+</head>
 <body>
 
-   <a href = "vegetable-list"> home</a>
+<center><h1>VEGETABLE UPDATE FORM</h1></center>
+
+
+<a href = "vegetable-list"><img src ="image?name=home.jpeg" alt="google-play" height = 60px  class="homeBtn">
+</a>
    
    <form action ="<%=request.getContextPath() %>/update-vegetable" method ="post">
 
@@ -20,7 +58,6 @@
  
       for (Vegetable vegetable : vegetables) {%>
 
-<center><h4>Edit the Vegetable</h4></center>
 <center>
 <table style = "width: 80%">
 
@@ -51,7 +88,7 @@
     
      </table>
      
-     <input type = "submit" value = "submit"/>
+     <input type = "submit" value = "submit" class ="subBtn"/>
      
     
 
@@ -59,5 +96,4 @@
 
  <%}%>
 </body>
-</head>
 </html>

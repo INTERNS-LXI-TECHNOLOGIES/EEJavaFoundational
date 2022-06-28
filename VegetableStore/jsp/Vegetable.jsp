@@ -60,7 +60,10 @@ width:70px;
   height:30px
   
 }
+.vegetableBtn{
+height:50px;
 
+}
 
 </style>
  
@@ -75,9 +78,8 @@ width:70px;
   <h1><center>VEGETABLE STORE</center></h1>
  <h2><center>Vegetable Details</center></h2>
 
- <form action= "add-vegetable" method="GET">
-  <button class="vegetableBtn" >Add Vegetable</button>
-  </form>
+  <a href = "add-vegetable"><img src ="image?name=add.jpeg" alt="google-play" height = 50px  class="vegetableBtn"></a></center>
+
 
  <center><table style="width: 75%;" border="1">
  
