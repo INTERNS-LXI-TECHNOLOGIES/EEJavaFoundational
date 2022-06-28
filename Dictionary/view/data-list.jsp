@@ -18,11 +18,18 @@
 
 				<a href="https://www.javaguides.net" class="navbar-brand"> Dictionary App </a>
 			</div>
-
 			<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/list"
 					class="nav-link">Words</a></li>
 			</ul>
+
+			<ul class="navbar-nav">
+				<div class="container text-left">
+				<li><a href="logout"
+				class="nav-link">Log Out</a></li>
+				
+			</ul>
+		</div>
 		</nav>
 
 	</header>

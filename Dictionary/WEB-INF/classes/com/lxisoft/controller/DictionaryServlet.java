@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.lxisoft.controller.DictionaryServlet.*;
+import javax.servlet.http.*;
+
 import com.lxisoft.dao.DictionaryDAO;
 import com.lxisoft.model.Word;
 
@@ -49,16 +51,23 @@ public class DictionaryServlet extends HttpServlet {
                 case "/update":
                     updateData(request, response);
                     break;
-                default:
-                    listData(request, response);
+                case "/logout":
+                    logOut(request, response);
                     break;
+                case "/listdata":
+                    listData(request, response);
+                   break;
+                default:
+                response.sendRedirect("listdata");
+				break;
+                
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
     }
 
-    private void listData(HttpServletRequest request, HttpServletResponse response)
+     private void listData(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         List<Word> listData = dictionaryDAO.selectAllDatas();
         request.setAttribute("listData", listData);
@@ -111,4 +120,12 @@ public class DictionaryServlet extends HttpServlet {
 
     }
 
+	private void logOut(HttpServletRequest request, HttpServletResponse response) throws IOException {
+		HttpSession session = request.getSession();
+		session.invalidate();
+		response.sendRedirect("listdata");
+	}
+
+
 }
+

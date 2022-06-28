@@ -21,7 +21,15 @@
 			<ul class="navbar-nav">
 				<li><a href="<%=request.getContextPath()%>/list"
 					class="nav-link">Words List</a></li>
+
 			</ul>
+			<ul class="navbar-nav">
+				<div class="container text-left">
+				<li><a href="logout"
+				class="nav-link">Log Out</a></li>
+				
+			</ul>
+		</div>
 		</nav>
 	</header>
 	<br>

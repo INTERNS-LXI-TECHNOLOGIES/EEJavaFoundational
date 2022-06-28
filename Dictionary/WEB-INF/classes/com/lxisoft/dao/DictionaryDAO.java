@@ -77,7 +77,7 @@ public class DictionaryDAO {
         return dictionary;
     }
 
-    public List<Word> selectAllDatas() {
+    public List <Word> selectAllDatas() {
 
 
         List<Word> datas = new ArrayList<>();
