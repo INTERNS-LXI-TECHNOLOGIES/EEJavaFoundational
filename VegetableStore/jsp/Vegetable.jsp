@@ -5,7 +5,6 @@
 <title>Vegetable List</title>
 <style> 
 
-
 h1{
 color:white;	
 background-color:rgb(95, 95, 209);
@@ -93,16 +92,17 @@ height:50px;
  
  </tr>
 
+ <%int i= 0;%>
  <%List<Vegetable> vegetables = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
  
   for (Vegetable vegetable : vegetables) {%>
   
-
+<%i = i+1;%>
 
 <tr>
 
-<td><center><%out.println(vegetable.getId());%></center></td>
+<td><center><%out.println(i);%></center></td>
 
 <td><center><%out.println(vegetable.getName());%></center></td>
 

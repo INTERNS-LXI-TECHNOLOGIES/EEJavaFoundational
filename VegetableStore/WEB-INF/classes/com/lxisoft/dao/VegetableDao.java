@@ -5,14 +5,14 @@ import com.lxisoft.vegetable.Vegetable;
 public class VegetableDao {
 
 	
-	String INSERT_SQL = "insert into vegetablestore" +
+private static final	String INSERT_SQL = "insert into vegetablestore" +
 			"(name,price,stock,minOrderQuantity) values" +
 					"(?,?,?,?);";
 			
-	String EDIT_SQL ="update vegetablestore set name = ?,price = ?,stock = ?,minOrderQuantity = ? where no =?;";
+					private static final	String EDIT_SQL ="update vegetablestore set name = ?,price = ?,stock = ?,minOrderQuantity = ? where no =?;";
 			
 			
-	String DELETE_SQL = "delete from vegetablestore where no = ?;";
+					private static final	String DELETE_SQL = "delete from vegetablestore where no = ?;";
 	
 	Connection connection;
 
@@ -28,7 +28,7 @@ try {
 
 	}
 	
-
+ 
 public int addVegetable(Vegetable vegetable) throws ClassNotFoundException  {
 	
 	int result = 0;
