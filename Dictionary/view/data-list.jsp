@@ -26,7 +26,7 @@
 			<ul class="navbar-nav">
 				<div class="container text-left">
 				<li><a href="logout"
-				class="nav-link">Log Out</a></li>
+				class="nav-link" onclick="return confirm('Are you sure you want to Log Out?')">Log Out</a></li>
 				
 			</ul>
 		</div>
@@ -64,8 +64,9 @@
 						<th>ID</th>
 						<th>Word</th>
 						<th>Meaning</th>
+						<% if (request.isUserInRole("admin")) { %>
 						<th>Actions</th>
-
+						<% } %>
 					</tr>
 				</thead>
 				<tbody>
@@ -75,9 +76,11 @@
 							<td><c:out value="${status.index + 1}" /></td>
 							<td><c:out value="${data.word}" /></td>
 							<td><c:out value="${data.meaning}" /></td>
+							<% if (request.isUserInRole("admin")) { %>
 							<td><a href="edit?id=<c:out value='${data.id}' />">Edit</a>
 								&nbsp;&nbsp;&nbsp;&nbsp; <a
 								href="delete?id=<c:out value='${data.id}' />" onclick="return confirm('Are you sure you want to delete?')">Delete</a></td>
+								<% } %>
 						</tr>
 					</c:forEach>
 
