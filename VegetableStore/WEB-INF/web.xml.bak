@@ -59,17 +59,7 @@
 <url-pattern>/image</url-pattern>
 </servlet-mapping>
 
-<servlet>
 
-<servlet-name>logOut</servlet-name>
-<servlet-class>com.lxisoft.servlets.LogOutServlet</servlet-class>
-
-</servlet>
-
-<servlet-mapping>
-<servlet-name>logOut</servlet-name>
-<url-pattern>/log-out</url-pattern>
-</servlet-mapping>
 
 <security-constraint>
 		<web-resource-collection>

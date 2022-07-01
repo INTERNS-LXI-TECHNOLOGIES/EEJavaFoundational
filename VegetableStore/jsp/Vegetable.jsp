@@ -7,16 +7,17 @@
 
 h1{
 color:white;	
-background-color:rgb(95, 95, 209);
-font-size:40px;
-height:65px;
+background-color:blue;
+font-size:37px;
+height:60px;
 width:1200px;
+
 }
 h2{
 color:white;	
 background-color:chartreuse;
 border-radius:10px;
-margin : 30px 450px;
+margin : 5px 410px;
 height:40px;
 width:300px;
 }
@@ -60,9 +61,10 @@ width:70px;
   
 }
 .vegetableBtn{
-height:50px;
-
+height:40px;
 }
+
+
 
 </style>
  
@@ -75,11 +77,18 @@ height:50px;
 <body>
   
   <h1><center>VEGETABLE STORE</center></h1>
+
+  <div
+  style= "text-align: right;">
+  <a href = "log-out"  ><img src ="image?name=logout.jpeg" alt="google-play" height = 60px  class="log" onclick = "return confirm('Are You Sure Want to Logout')"></a></center>
+</div>
+
  <h2><center>Vegetable Details</center></h2>
 
+ <% if (request.isUserInRole("admin")) {  %>
   <a href = "add-vegetable"><img src ="image?name=add.jpeg" alt="google-play" height = 50px  class="vegetableBtn"></a></center>
 
-
+<%}%>
  <center><table style="width: 75%;" border="1">
  
  <tr>
@@ -88,8 +97,12 @@ height:50px;
  <th>Price</th>
  <th>Stock</th>
  <th>Minimum Order Quantity</th>
+
+ <% if (request.isUserInRole("admin")) {  %>
+
  <th>Actions</th>
  
+ <%}%>
  </tr>
 
  <%List<Vegetable> vegetables = (ArrayList<Vegetable>)request.getAttribute("vegetable");
@@ -113,6 +126,9 @@ height:50px;
 
 <td>
  
+
+<% if (request.isUserInRole("admin")) {  %>
+
   <form action = "update-vegetable" method = "GET">
 
     <center><input type = "hidden" name ="id" value= <%=vegetable.getId()%>
@@ -125,6 +141,7 @@ height:50px;
       <center><input type = "hidden" name ="id" value= <%=vegetable.getId()%>
         <input type = "submit" ><button class = "deleteBtn" onclick ="return confirm('Are You Delete Permanently?')">Delete</button></input></center></form>
   
+<%}%>
 
 </td>
 </tr>
