@@ -27,7 +27,7 @@
 				<div class="container text-left">
 				<li><a href="logout"
 				class="nav-link" onclick="return confirm('Are you sure you want to Log Out?')">Log Out</a></li>
-				
+
 			</ul>
 		</div>
 		</nav>
@@ -45,7 +45,7 @@
 				<form>
 				<h5><input type="search" placeholder="Search Word">
 				<button type="submit">Search</button></h5>
-		
+
 			  </form>
 			  <form class="nosubmit">
 			  </form>

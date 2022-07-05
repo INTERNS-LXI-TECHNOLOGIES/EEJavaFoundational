@@ -1,5 +1,4 @@
 package com.lxisoft.controller;
-import com.lxisoft.dao.*;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.List;
@@ -26,9 +25,9 @@ public class DictionaryServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-                
-                    doGet (request, response);
-                    } 
+
+        doGet (request, response);
+    }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -56,28 +55,28 @@ public class DictionaryServlet extends HttpServlet {
                     break;
                 case "/listdata":
                     listData(request, response);
-                   break;
+                    break;
                 default:
-                response.sendRedirect("listdata");
-				break;
-                
+                    response.sendRedirect("listdata");
+                    break;
+
             }
         } catch (SQLException ex) {
             throw new ServletException(ex);
         }
     }
 
-     private void listData(HttpServletRequest request, HttpServletResponse response)
+    private void listData(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
         List<Word> listData = dictionaryDAO.selectAllDatas();
         request.setAttribute("listData", listData);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/data-list.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("data-list.jsp");
         dispatcher.forward(request, response);
     }
 
     private void showNewForm(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/data-form.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("data-form.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -85,7 +84,7 @@ public class DictionaryServlet extends HttpServlet {
             throws SQLException, ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("id"));
         Word existingData = dictionaryDAO.selectData(id);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/data-form.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("data-form.jsp");
         request.setAttribute("data", existingData);
         dispatcher.forward(request, response);
 
@@ -120,11 +119,11 @@ public class DictionaryServlet extends HttpServlet {
 
     }
 
-	private void logOut(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		HttpSession session = request.getSession();
-		session.invalidate();
-		response.sendRedirect("listdata");
-	}
+    private void logOut(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session = request.getSession();
+        session.invalidate();
+        response.sendRedirect("listdata");
+    }
 
 
 }

@@ -1,5 +1,4 @@
 package com.lxisoft.dao;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -10,7 +9,7 @@ import java.util.List;
 import com.lxisoft.model.Word;
 
 public class DictionaryDAO {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/lxisoft?true&useSSL=false";
+    private String jdbcURL = "jdbc:mysql://localhost:3306/lxisoft?allowPublicKeyRetrieval=true&useSSL=false";
     private String jdbcUsername = "root";
     private String jdbcPassword = "root";
 
@@ -44,7 +43,7 @@ public class DictionaryDAO {
         System.out.println(INSERT_WORDS_SQL);
 
         try { Connection connection = getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(INSERT_WORDS_SQL); 
+            PreparedStatement preparedStatement = connection.prepareStatement(INSERT_WORDS_SQL);
             preparedStatement.setString(1, dictonary.getWord());
             preparedStatement.setString(2, dictonary.getMeaning());
             System.out.println(preparedStatement);

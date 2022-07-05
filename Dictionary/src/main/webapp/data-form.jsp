@@ -27,7 +27,7 @@
 				<div class="container text-left">
 				<li><a href="logout"
 				class="nav-link">Log Out</a></li>
-				
+
 			</ul>
 		</div>
 		</nav>
@@ -69,7 +69,7 @@
 						value="<c:out value='${data.meaning}' />" class="form-control"
 						name="meaning">
 				</fieldset>
-        
+
 				<button type="submit" class="btn btn-success">Save</button>
 				</form>
 			</div>
