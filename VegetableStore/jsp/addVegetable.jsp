@@ -95,6 +95,7 @@ margin:50px;
 </tr>
 
  </table>
+
  
  <input type = "submit" value = "submit" class = "subBtn"/>
  

@@ -9,10 +9,10 @@ private static final	String INSERT_SQL = "insert into vegetablestore" +
 			"(name,price,stock,minOrderQuantity) values" +
 					"(?,?,?,?);";
 			
-					private static final	String EDIT_SQL ="update vegetablestore set name = ?,price = ?,stock = ?,minOrderQuantity = ? where no =?;";
+					private static final	String EDIT_SQL ="update vegetablestore set name = ?,price = ?,stock = ?,minOrderQuantity = ? where id =?;";
 			
 			
-					private static final	String DELETE_SQL = "delete from vegetablestore where no = ?;";
+					private static final	String DELETE_SQL = "delete from vegetablestore where id = ?;";
 	
 	Connection connection;
 

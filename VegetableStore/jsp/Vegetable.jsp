@@ -1,3 +1,5 @@
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 
 <head>
@@ -73,7 +75,6 @@ height:40px;
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="java.util.List"%>
 
-
 <body>
   
   <h1><center>VEGETABLE STORE</center></h1>
@@ -85,11 +86,12 @@ height:40px;
 
  <h2><center>Vegetable Details</center></h2>
 
+
  <% if (request.isUserInRole("admin")) {  %>
   <a href = "add-vegetable"><img src ="image?name=add.jpeg" alt="google-play" height = 50px  class="vegetableBtn"></a></center>
 
 <%}%>
- <center><table style="width: 75%;" border="1">
+ <center><table style="width: 75%;" border="1" >
  
  <tr>
  <th>Id</th>
@@ -97,6 +99,7 @@ height:40px;
  <th>Price</th>
  <th>Stock</th>
  <th>Minimum Order Quantity</th>
+ <th>image</th>
 
  <% if (request.isUserInRole("admin")) {  %>
 
@@ -123,6 +126,9 @@ height:40px;
 <td><center><%out.println(vegetable.getStock());%></center></td>
 
 <td><center><%out.println(vegetable.getOrderQuantity());%></center></td>
+
+<td><img src="data:image/jpg;base64,<%= vegetable.getBase64Image()%>"width = "130" height ="130"></td>
+
 
 <td>
  

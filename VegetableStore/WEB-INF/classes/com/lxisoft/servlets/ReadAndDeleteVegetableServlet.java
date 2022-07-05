@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Base64;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -41,7 +42,27 @@ throws IOException, ServletException
 
 while(rs.next())
 {
-vegetables.add(new Vegetable(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5)));
+
+  Blob blob = rs.getBlob(6);
+                 
+  InputStream inputStream = blob.getBinaryStream();
+  ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+  byte[] buffer = new byte[4096];
+  int bytesRead = -1;
+   
+  while ((bytesRead = inputStream.read(buffer)) != -1) {
+      outputStream.write(buffer, 0, bytesRead);                  
+  }
+   
+  byte[] imageBytes = outputStream.toByteArray();
+  String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+   
+   
+  inputStream.close();
+  outputStream.close();
+   
+
+vegetables.add(new Vegetable(rs.getInt(1),rs.getString(2),rs.getString(3),rs.getString(4),rs.getString(5),base64Image));
 
 
 }

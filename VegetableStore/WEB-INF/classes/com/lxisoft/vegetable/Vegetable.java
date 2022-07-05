@@ -1,6 +1,8 @@
 
 package com.lxisoft.vegetable;
 
+import java.sql.Blob;
+
 public class Vegetable {
  
 private int id;
@@ -8,6 +10,8 @@ private String name;
 private String price;
 private String stock;
 private String orderQuantity;
+private String base64Image;
+private Blob image;
 
 public Vegetable() {
 
@@ -27,13 +31,23 @@ this.orderQuantity = orderQuantity;
 
 public Vegetable(int id,String name,String price,String stock, String orderQuantity) {
 
+	this.id = id;
+	this.name = name;
+	this.price = price;
+	this.stock = stock;
+	this.orderQuantity = orderQuantity;
+	
+	
+	}
+public Vegetable(int id,String name,String price,String stock, String orderQuantity,String base64Image) {
+
 	
 this.id = id;
 this.name = name;
 this.price = price;
 this.stock = stock;
 this.orderQuantity = orderQuantity;
-
+this.base64Image = base64Image;
 
 }
 
@@ -88,7 +102,24 @@ public void setOrderQuantity(String orderQuantity)  {
 
 this.orderQuantity = orderQuantity;  
 }  
+ 
+ 
+    public String getBase64Image() {
+        return base64Image;
+    }
+ 
+    public void setBase64Image(String base64Image) {
+        this.base64Image = base64Image;
+    }
 
+				public Blob getImage() {
 
+					return image;
+				}
+				public void setImage(Blob image)  {
+			
+				this.image= image;
+				}     
+			
 
 }

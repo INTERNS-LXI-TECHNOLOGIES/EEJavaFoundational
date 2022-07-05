@@ -29,7 +29,7 @@ try{
 
 	int id = Integer.parseInt(request.getParameter("id"));
 
-  String select_SQL ="select * from vegetablestore where no=?; ";
+  String select_SQL ="select * from vegetablestore where id=?; ";
 
    Class.forName("com.mysql.cj.jdbc.Driver");
 
