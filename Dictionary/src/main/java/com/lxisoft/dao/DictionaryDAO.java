@@ -9,9 +9,9 @@ import java.util.List;
 import com.lxisoft.model.Word;
 
 public class DictionaryDAO {
-    private String jdbcURL = "jdbc:mysql://localhost:3306/lxisoft?allowPublicKeyRetrieval=true&useSSL=false";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "root";
+    private static final String jdbcURL = "jdbc:mysql://localhost:3306/lxisoft?allowPublicKeyRetrieval=true&useSSL=false";
+    private static final String jdbcUsername = "root";
+    private static final String jdbcPassword = "root";
 
     private static final String INSERT_WORDS_SQL = "INSERT INTO dictionary" + "  (Words, Meanings) VALUES "
             + " (?, ?);";
@@ -76,7 +76,7 @@ public class DictionaryDAO {
         return dictionary;
     }
 
-    public List <Word> selectAllDatas() {
+    public List <Word> selectAllData() {
 
 
         List<Word> datas = new ArrayList<>();

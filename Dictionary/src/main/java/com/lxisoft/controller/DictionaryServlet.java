@@ -68,7 +68,7 @@ public class DictionaryServlet extends HttpServlet {
 
     private void listData(HttpServletRequest request, HttpServletResponse response)
             throws SQLException, IOException, ServletException {
-        List<Word> listData = dictionaryDAO.selectAllDatas();
+        List<Word> listData = dictionaryDAO.selectAllData();
         request.setAttribute("listData", listData);
         RequestDispatcher dispatcher = request.getRequestDispatcher("data-list.jsp");
         dispatcher.forward(request, response);
