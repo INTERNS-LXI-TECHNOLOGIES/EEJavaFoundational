@@ -94,6 +94,11 @@ margin:50px;
 <td><input type = "text" name = "orderQuantity"/></td>
 </tr>
 
+<tr>
+  <td>Select Photo</td>
+  <td><input type="file" name="image"></td>
+  </tr>
+
  </table>
 
  

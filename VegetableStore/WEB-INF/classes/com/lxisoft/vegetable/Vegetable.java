@@ -3,6 +3,7 @@ package com.lxisoft.vegetable;
 
 import java.sql.Blob;
 
+
 public class Vegetable {
  
 private int id;
