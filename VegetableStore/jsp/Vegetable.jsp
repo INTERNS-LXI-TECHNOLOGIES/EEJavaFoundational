@@ -19,27 +19,21 @@ h2{
 color:white;	
 background-color:chartreuse;
 border-radius:10px;
-margin : 5px 410px;
+margin : 1px 10px 70px 440px;
 height:40px;
 width:300px;
 }
 table{
-  border: 1.5px solid red;
-border-collapse: collapse;
+  border: none;
 }
-th,td{
-  padding : 9px;
-}
-th{
-background-color:skyblue;
-color:white;
+td{
+  color :red;
+  padding : 20px;
 
 }
 .vegetableBtn{
-background-color:orange;
-color:white;
-border: none;
-margin : 10px 150px;
+
+margin : 0px 1px 1px 70px;
 border-radius:10px;
 height:30px;
 width:100px;
@@ -76,7 +70,7 @@ height:40px;
 <%@ page import="java.util.List"%>
 
 <body>
-  
+
   <h1><center>VEGETABLE STORE</center></h1>
 
   <div
@@ -84,58 +78,40 @@ height:40px;
   <a href = "log-out"  ><img src ="image?name=logout.jpeg" alt="google-play" height = 60px  class="log" onclick = "return confirm('Are You Sure Want to Logout')"></a></center>
 </div>
 
- <h2><center>Vegetable Details</center></h2>
-
 
  <% if (request.isUserInRole("admin")) {  %>
-  <a href = "add-vegetable"><img src ="image?name=add.jpeg" alt="google-play" height = 50px  class="vegetableBtn"></a></center>
+  <a href = "add-vegetable"><img src ="image?name=add.jpeg" alt="google-play" height = 50px  class="vegetableBtn"></a>
 
 <%}%>
- <center><table style="width: 75%;" border="1" >
- 
- <tr>
- <th>Id</th>
- <th>Name</th>
- <th>Price</th>
- <th>Stock</th>
- <th>Minimum Order Quantity</th>
- <th>image</th>
 
- <% if (request.isUserInRole("admin")) {  %>
-
- <th>Actions</th>
+<h2><center>Vegetable Details</center></h2>
+ <center><table style="width: 50%;" border="0" >
  
- <%}%>
- </tr>
 
  <%List<Vegetable> vegetables = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
  
   for (Vegetable vegetable : vegetables) {%>
+
+
+    <%int i = 1;%>
+    <tr>
+
+  <td><img src="data:image/jpg;base64,<%= vegetable.getBase64Image()%>"width = "150" height ="150"></td>
   
+  <td><center><%out.println("Id : " +vegetable.getId());%></center>
 
+<center><%out.println("Name :"+vegetable.getName());%></center>
 
-<tr>
+<center><%out.println( "Price :"+vegetable.getPrice());%></center>
 
-<td><center><%out.println(vegetable.getId());%></center></td>
+<center><%out.println("Stock :"+vegetable.getStock());%></center>
 
-<td><center><%out.println(vegetable.getName());%></center></td>
-
-<td><center><%out.println( vegetable.getPrice());%></center></td>
-
-<td><center><%out.println(vegetable.getStock());%></center></td>
-
-<td><center><%out.println(vegetable.getOrderQuantity());%></center></td>
-
-<td><img src="data:image/jpg;base64,<%= vegetable.getBase64Image()%>"width = "130" height ="130"></td>
-
-
-<td>
- 
+<center><%out.println("Order Quantity :"+vegetable.getOrderQuantity());%></center></td>
 
 <% if (request.isUserInRole("admin")) {  %>
 
-  <form action = "update-vegetable" method = "GET">
+  <td><form action = "update-vegetable" method = "GET">
 
     <center><input type = "hidden" name ="id" value= <%=vegetable.getId()%>
       <input type = "submit" ><button class = "editBtn">Edit</button></input></center></form>
@@ -146,11 +122,12 @@ height:40px;
 
       <center><input type = "hidden" name ="id" value= <%=vegetable.getId()%>
         <input type = "submit" ><button class = "deleteBtn" onclick ="return confirm('Are You Delete Permanently?')">Delete</button></input></center></form>
-  
+        </td>
 <%}%>
+   
 
-</td>
-</tr>
+
+
 <%}%>  
 </table></center>
 </body>

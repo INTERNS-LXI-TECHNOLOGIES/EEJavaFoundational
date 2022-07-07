@@ -1,7 +1,8 @@
 
 package com.lxisoft.vegetable;
 
-import java.sql.Blob;
+import java.io.InputStream;
+
 
 
 public class Vegetable {
@@ -12,7 +13,7 @@ private String price;
 private String stock;
 private String orderQuantity;
 private String base64Image;
-private Blob image;
+private InputStream image;
 
 public Vegetable() {
 
@@ -113,11 +114,11 @@ this.orderQuantity = orderQuantity;
         this.base64Image = base64Image;
     }
 
-				public Blob getImage() {
+				public InputStream getImage() {
 
 					return image;
 				}
-				public void setImage(Blob image)  {
+				public void setImage(InputStream image)  {
 			
 				this.image= image;
 				}     

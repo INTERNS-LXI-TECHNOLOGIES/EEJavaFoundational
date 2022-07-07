@@ -1,5 +1,4 @@
 package com.lxisoft.dao;
- import java.io.InputStream;
 import java.sql.*;
 import com.lxisoft.vegetable.Vegetable;
 
@@ -8,7 +7,7 @@ public class VegetableDao {
 	
 private static final	String INSERT_SQL = "insert into vegetablestore" +
 			"(name,price,stock,minOrderQuantity,image) values" +
-					"(?,?,?,?,LOAD_FILE('C:/ProgramData/MySQL/MySQL Server 8.0/Uploads/?'));";
+					"(?,?,?,?,?);";
 			
 					private static final	String EDIT_SQL ="update vegetablestore set name = ?,price = ?,stock = ?,minOrderQuantity = ? where id =?;";
 			
@@ -30,7 +29,7 @@ try {
 	}
 	
  
-public int addVegetable(Vegetable vegetable,InputStream isp) throws ClassNotFoundException  {
+public int addVegetable(Vegetable vegetable) throws ClassNotFoundException  {
 	
 	int result = 0;
 	
@@ -42,7 +41,7 @@ public int addVegetable(Vegetable vegetable,InputStream isp) throws ClassNotFoun
 		ps.setString(2,vegetable.getPrice());
 		ps.setString(3,vegetable.getStock());
 		ps.setString(4,vegetable.getOrderQuantity());
-		ps.setBlob(5,isp);
+		ps.setBlob(5,vegetable.getImage());
 		
 		System.out.println(ps);
 		
