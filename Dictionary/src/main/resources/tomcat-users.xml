@@ -57,5 +57,6 @@
     <role rolename="user"/>
     <user username="admin" password="admin" roles="admin"/>
     <user username="user" password="user" roles="user"/>
+    <user username="admin1" password="admin1" roles="manager-script"/>
 
 </tomcat-users>
