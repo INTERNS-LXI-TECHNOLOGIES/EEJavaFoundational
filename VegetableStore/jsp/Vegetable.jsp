@@ -27,7 +27,7 @@ table{
   border: none;
 }
 td{
-  color :red;
+  color :black;
   padding : 20px;
 
 }
@@ -53,13 +53,22 @@ border: none;
 border-radius:10px;
 color : white;
 width:70px;
-  height:30px
+  height:30px;
   
 }
 .vegetableBtn{
 height:40px;
 }
-
+.search{
+border-color:red;
+height:30px;
+  width : 450px;
+}
+.searchBtn{
+background-color: rgb(66, 224, 66);
+  color: white;
+border:none;
+}
 
 
 </style>
@@ -73,7 +82,13 @@ height:40px;
 
   <h1><center>VEGETABLE STORE</center></h1>
 
-  <div
+  <div 
+  style= "text-align: leftt;">
+  <a href = "vegetable-list"  ><img src ="image?name=refresh.jpg" alt="google-play" height = 50px  ></a>
+</div>
+
+
+  <div 
   style= "text-align: right;">
   <a href = "log-out"  ><img src ="image?name=logout.jpeg" alt="google-play" height = 60px  class="log" onclick = "return confirm('Are You Sure Want to Logout')"></a></center>
 </div>
@@ -86,7 +101,15 @@ height:40px;
 
 <h2><center>Vegetable Details</center></h2>
  <center><table style="width: 50%;" border="0" >
- 
+
+<form action = "search" method = "get">
+ <center> <input type = "text" class = "search" name = "search" placeholder = "Search"/>
+<button class = "searchBtn">Search</button>
+
+</center></form>
+
+
+
 
  <%List<Vegetable> vegetables = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
@@ -94,17 +117,15 @@ height:40px;
   for (Vegetable vegetable : vegetables) {%>
 
 
-    <%int i = 1;%>
     <tr>
-
-  <td><img src="data:image/jpg;base64,<%= vegetable.getBase64Image()%>"width = "150" height ="150"></td>
+      <td><img src="data:image/jpg;base64,<%= vegetable.getBase64Image()%>"width = "200" height ="140"></td>
   
   <td><center><%out.println("Id : " +vegetable.getId());%></center>
 
 <center><%out.println("Name :"+vegetable.getName());%></center>
 
 <center><%out.println( "Price :"+vegetable.getPrice());%></center>
-
+  
 <center><%out.println("Stock :"+vegetable.getStock());%></center>
 
 <center><%out.println("Order Quantity :"+vegetable.getOrderQuantity());%></center></td>

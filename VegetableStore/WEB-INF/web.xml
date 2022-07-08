@@ -22,12 +22,6 @@
 
 </servlet-mapping>
 
-<multipart-config>
-    <location>/add-vegetable</location>
-    <max-file-size>20848820</max-file-size>
-    <max-request-size>418018841</max-request-size>
-    <file-size-threshold>1048576</file-size-threshold>
-</multipart-config>
 
 <servlet>
 
@@ -41,6 +35,21 @@
 <servlet-name>AddVegetablePage</servlet-name>
 <url-pattern>/add-vegetable</url-pattern>
 </servlet-mapping>
+
+<servlet>
+
+<servlet-name>searchVegetable</servlet-name>
+<servlet-class>com.lxisoft.servlets.SearchServlet</servlet-class>
+
+</servlet>
+
+	
+<servlet-mapping>
+<servlet-name>searchVegetable</servlet-name>
+<url-pattern>/search</url-pattern>
+</servlet-mapping>
+
+
 
 <servlet>
 
