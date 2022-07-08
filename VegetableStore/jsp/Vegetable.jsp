@@ -109,14 +109,14 @@ border:none;
 </center></form>
 
 
-
-
  <%List<Vegetable> vegetables = (ArrayList<Vegetable>)request.getAttribute("vegetable");
 
  
   for (Vegetable vegetable : vegetables) {%>
-
-
+  
+    <div class = "container">
+      <div class = "row">
+<div class = "col">
     <tr>
       <td><img src="data:image/jpg;base64,<%= vegetable.getBase64Image()%>"width = "200" height ="140"></td>
   
@@ -145,10 +145,9 @@ border:none;
         <input type = "submit" ><button class = "deleteBtn" onclick ="return confirm('Are You Delete Permanently?')">Delete</button></input></center></form>
         </td>
 <%}%>
-   
-
-
-
+</div>
+</div>
+</div>
 <%}%>  
 </table></center>
 </body>
