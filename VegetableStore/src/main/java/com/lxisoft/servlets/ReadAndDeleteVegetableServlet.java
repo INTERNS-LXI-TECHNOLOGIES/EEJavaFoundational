@@ -15,7 +15,6 @@ import java.util.Base64;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.http.HttpServlet;
 import main.java.com.lxisoft.dao.VegetableDao;
 
 public class ReadAndDeleteVegetableServlet extends HttpServlet {
@@ -32,7 +31,7 @@ throws IOException, ServletException
 	try {
       
         Class.forName("com.mysql.cj.jdbc.Driver");
-   
+
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/lxisoft","root","Mubashir24092000");
         
         Statement st = con.createStatement();
