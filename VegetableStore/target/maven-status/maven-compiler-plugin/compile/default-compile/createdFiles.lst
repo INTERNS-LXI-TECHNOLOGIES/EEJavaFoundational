@@ -1,8 +1,0 @@
-main\java\com\lxisoft\servlets\LogOutServlet.class
-main\java\com\lxisoft\servlets\ReadAndDeleteVegetableServlet.class
-main\java\com\lxisoft\servlets\CreateVegetableServlet.class
-main\java\com\lxisoft\dao\VegetableDao.class
-main\java\com\lxisoft\servlets\ImageServlet.class
-main\java\com\lxisoft\servlets\UpdateVegetableServlet.class
-main\java\com\lxisoft\servlets\SearchServlet.class
-main\java\com\lxisoft\vegetable\Vegetable.class
