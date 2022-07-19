@@ -53,8 +53,8 @@
         <url>http://localhost:8080/manager/text</url>
         <server>tomcatserver</server>
         <path>/vegetablestore</path>
-        <username>admin</username>
-        <password>admin</password>
+        <username>admin1</username>
+        <password>admin123</password>
     </configuration>
 </plugin>
                 <plugin>
