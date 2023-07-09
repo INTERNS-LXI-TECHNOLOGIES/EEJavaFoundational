@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>demoApp</display-name>
+ <servlet>
+	<servlet-name>abc</servlet-name>
+	<servlet-class>demoApp.Servlet1</servlet-class>
+	
+</servlet>
+
+	
+
+<servlet-mapping>
+	
+	<servlet-name>abc</servlet-name>
+	<url-pattern>/Add</url-pattern>
+
+
+</servlet-mapping>
+
+
+
+
+
+<servlet>
+	<servlet-name>abcd</servlet-name>
+	<servlet-class>demoApp.Servlet2</servlet-class>
+	
+</servlet>
+
+	
+
+<servlet-mapping>
+	
+	<servlet-name>abcd</servlet-name>
+	<url-pattern>/questions</url-pattern>
+
+
+</servlet-mapping>
+</web-app>
