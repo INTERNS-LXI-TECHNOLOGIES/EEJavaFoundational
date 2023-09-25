@@ -1,0 +1,22 @@
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>SecuresPage</web-resource-name>
+      <url-pattern>/company</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>manager-script</role-name>
+    </auth-constraint>
+  </security-constraint>3
+  <!-- Define login configuration -->
+  <login-config>
+    <auth-method>BASIC</auth-method>
+    <realm-name>SecureRealm</realm-name> <!-- Choose a realm name -->
+  </login-config>
+
+</web-app>
