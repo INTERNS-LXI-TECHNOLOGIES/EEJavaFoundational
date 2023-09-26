@@ -1,4 +1,5 @@
-com\lxisoft\ibrahim\workshoptwo\company\companymodel\CompanyModel.class
+com\lxisoft\ibrahim\workshoptwo\company\companycontroller\readcompanycontroller\ReadCompanyController.class
 com\lxisoft\ibrahim\workshoptwo\employee\employeemodel\EmployeeModel.class
 com\lxisoft\ibrahim\workshoptwo\company\companycontroller\createcompanycontroller\CreateCompanyController.class
 com\lxisoft\ibrahim\workshoptwo\product\productmodel\ProductModel.class
+com\lxisoft\ibrahim\workshoptwo\company\companymodel\CompanyModel.class

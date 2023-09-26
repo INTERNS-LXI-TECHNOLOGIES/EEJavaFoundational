@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<%@ page import="java.util.*, com.lxi.ibrahim.workshoptwo.company.companymodel.*" %>
+
+<%@ page import="java.util.*, com.lxisoft.ibrahim.workshoptwo.company.companymodel.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -25,17 +29,35 @@
 </head>
 <body>
     <h1>Items List</h1>
+
+   <% ArrayList<CompanyModel> companyDetails = (ArrayList<CompanyModel>) request.getAttribute("companyDetails"); %>
+
     <table>
-       <tr>
 
+                 <%
+                 ArrayList<CompanyModel> companyDetail = (ArrayList<CompanyModel>) request.getAttribute("companyDetails");
 
-                  <td><%= cm.getCompany_name() %></td>
-                  <td><%= cm.getEmployee_count() %></td>
-                  <td><%= cm.getLocation() %></td>
-                  <td><%= cm.getCeo_name() %></td>
-                  <td><%= cm.getPhone_number() %></td>
+                 if (companyDetails != null && !companyDetails.isEmpty()) {
+                     for (CompanyModel companyModel : companyDetail) {
+                 %>
+                     <tr>
+                         <td><%= companyModel.getCompany_name() %></td>
+                         <td><%= companyModel.getEmployee_count() %></td>
+                         <td><%= companyModel.getLocation() %></td>
+                         <td><%= companyModel.getCeo_name() %></td>
+                         <td><%= companyModel.getPhone_number() %></td>
+                     </tr>
+                 <%
+                     }
+                 } else {
+                 %>
+                     <tr>
+                         <td colspan="5">No company details available.</td>
+                     </tr>
+                 <%
+                 }
+                 %>
 
-               </tr>
                <head>
         <body>
             <c:forEach var="cm" items="${items}">
