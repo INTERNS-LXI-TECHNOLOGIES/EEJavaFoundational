@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: com.lxisoft.yasirhussain.amazon.product.ProductTest
 -------------------------------------------------------------------------------
-Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec <<< FAILURE!
+com.lxisoft.yasirhussain.amazon.product.ProductTest.testCompany()  Time elapsed: 0.001 sec  <<< FAILURE!
+java.lang.NullPointerException
+	at com.lxisoft.yasirhussain.amazon.product.ProductTest.testCompany(ProductTest.java:20)
+

@@ -1,23 +1,10 @@
-<!DOCTYPE web-app PUBLIC
- "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
- "http://java.sun.com/dtd/web-app_2_3.dtd" >
-
-<web-app>
-   <security-constraint>
-        <web-resource-collection>
-            <web-resource-name>SecuresPage</web-resource-name>
-            <url-pattern>/secure/*</url-pattern>
-        </web-resource-collection>
-        
-        <auth-constraint>
-            <role-name>manager-script</role-name> 
-        </auth-constraint>
-   </security-constraint>
-
-   <login-config>
-    <auth-method>BASIC</auth-method>
-    <realm-name>SecureRealm</realm-name>
-   </login-config>
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app 
+    xmlns="https://jakarta.ee/xml/ns/jakartaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+    version="6.0">
+  
+  <display-name>Archetype Created Web Application</display-name>
+  
 </web-app>
-
-

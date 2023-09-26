@@ -10,15 +10,14 @@ public class ProductTest {
     private ProductModel product;
 
     @BeforeEach
-    public void testSetup()
-    {
+    void setUp() {
         product = new ProductModel();
     }
 
     @Test
     public void testCompany()
     {
-        product.setProductName("Meta VR Product");
-        assertEquals("Meta VR Product", product.getProductName(),"Application Script Running Successfully");
+        product.setProductId("Meta123");
+        assertEquals("Meta123", product.getProductId(),"Application Script Running Successfully");
     }
 }

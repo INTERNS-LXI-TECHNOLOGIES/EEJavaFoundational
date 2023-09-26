@@ -10,55 +10,73 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.annotation.WebServlet;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.lxisoft.yasirhussain.amazon.product.model.*;
 
-@WebServlet(name = "/index.jsp ", urlPatterns = "/userServlet")
+@WebServlet("/ProductServlet")
 public class ProductController extends HttpServlet{
+    private static final Logger logger = LogManager.getLogger(ProductController.class);
+    ProductModel productModel ;
 
-	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
-	{
-		RequestDispatcher requestDispatcher = null;
-		PrintWriter out = response.getWriter();
-        Properties properties = new Properties();
+    public void doPost(HttpServletRequest request , HttpServletResponse response) throws IOException, ServletException{
+        logger.info("doPost called");
+        response.setContentType("text/html");
+        List<String> products = (List<String>)request.getAttribute("validationErrors");
 
-		try{
-			Connection connection = null;
+        productModel = new ProductModel(products.get(0), products.get(1), products.get(2),products.get(3));
 
-			InputStream inputStream = getServletContext().getResourceAsStream("/WEB-INF/database.properties");
-            properties.load(inputStream);	
-
-            // Database connection properties
+        try{
+            Properties properties = new Properties();
+            InputStream inputStream = null;
+            Connection connection = null;
+            inputStream = this.getClass().getClassLoader().getResourceAsStream("application.properties");
+            properties.load(inputStream);
             String dbUrl = properties.getProperty("db.url");
             String dbUsername = properties.getProperty("db.username");
             String dbPassword = properties.getProperty("db.password");
-		
-			
-			// Initialize a list to store retrieved data
-            List<String> names = new ArrayList<>();
-
-            // Connect to the database and retrieve data
-            Class.forName("com.mysql.jdbc.Driver");
+            String driverClassName = properties.getProperty("db.driverClassName");
+            Class.forName(driverClassName);
             connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
-            PreparedStatement statement = connection.prepareStatement("SELECT * FROM product_details");
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                String name = resultSet.getString("product_name");
-                names.add(name);
-            }
-
-            // Set the list as an attribute in the request
-            request.setAttribute("names", names);
-
-            resultSet.close();
-            statement.close();
-            connection.close();
-        } 	catch (Exception e) {
-            // Handle any exceptions and set an error attribute
-            request.setAttribute("error", "Error: " + e.getMessage());
-            out.println(e.getMessage());
+            PreparedStatement statement = connection.prepareStatement("INSERT INTO product (product_name,product_category,product_price,product_id) VALUES (?,?,?,?)");
+            statement.setString(1, productModel.getProductName());
+            statement.setString(2, productModel.getProductCategory());
+            statement.setString(3, productModel.getProductPrice());
+            statement.executeUpdate();
+            request.setAttribute("Success", productModel);
+            request.getRequestDispatcher("/product/product.jsp").forward(request, response);
         }
+        catch (Exception e){
+            logger.error("An error occurred:" + e.getMessage());
+        }
+    }
 
-        // Forward the request to the index.jsp page
-        request.getRequestDispatcher("/unsecure/product.jsp").forward(request, response);
-	}	
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        Set<ProductModel> productSet = new TreeSet<>();
+        try {
+            Properties properties = new Properties();
+            InputStream inputStream = null;
+            Connection connection = null;
+            inputStream = this.getClass().getClassLoader().getResourceAsStream("application.properties");
+            properties.load(inputStream);
+            String dbUrl = properties.getProperty("db.url");
+            String dbUsername = properties.getProperty("db.username");
+            String dbPassword = properties.getProperty("db.password");
+            String driverClassName = properties.getProperty("db.driverClassName");
+            Class.forName(driverClassName);
+            connection = DriverManager.getConnection(dbUrl, dbUsername, dbPassword);
+            PreparedStatement statement = connection.prepareStatement("select * from product");
+            ResultSet set = statement.executeQuery();
+            while (set.next()) {
+                ProductModel productModel = new ProductModel(set.getString("product_name"), set.getString("product_category"), set.getString("product_price"), set.getString("product_id"));
+                productSet.add(productModel);
+            }
+            request.setAttribute("set", productSet);
+            request.getRequestDispatcher("/read/product/readProduct.jsp").forward(request, response);
+        }
+        catch(Exception e) {
+            logger.error("e.getMessage()");
+        }
+    }
 }

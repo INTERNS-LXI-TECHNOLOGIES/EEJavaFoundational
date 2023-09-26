@@ -18,7 +18,7 @@ public class EmployeeTest {
     @Test
     public void testCompany()
     {
-        employee.setEmployeeName("yasir hussain");
-        assertEquals("yasir hussain", employee.getEmployeeName(),"Application Script Running Successfully");
+        employee.setEmployeeId("yasir0023");
+        assertEquals("yasir0023", employee.getEmployeeId(),"Application Script Running Successfully");
     }
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="2" failures="0" name="com.lxisoft.yasirhussain.amazon.product.ProductTest" time="0" errors="0" skipped="0">
+<testsuite tests="1" failures="1" name="com.lxisoft.yasirhussain.amazon.product.ProductTest" time="0.001" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.19+7-post-Ubuntu-0ubuntu122.04.1"/>
@@ -43,7 +43,7 @@
     <property name="java.class.path" value="/usr/share/maven/boot/plexus-classworlds-2.x.jar"/>
     <property name="java.vm.specification.version" value="11"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher tomcat7:deploy"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher tomcat7:redeploy"/>
     <property name="java.home" value="/usr/lib/jvm/java-11-openjdk-amd64"/>
     <property name="user.language" value="en"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>
@@ -60,6 +60,9 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="com.lxisoft.yasirhussain.amazon.product.ProductTest" name="com.lxisoft.yasirhussain.amazon.product.ProductTest.testSetup" time="0"/>
-  <testcase classname="com.lxisoft.yasirhussain.amazon.product.ProductTest" name="com.lxisoft.yasirhussain.amazon.product.ProductTest.testCompany" time="0"/>
+  <testcase classname="com.lxisoft.yasirhussain.amazon.product.ProductTest" name="com.lxisoft.yasirhussain.amazon.product.ProductTest.testCompany" time="0.001">
+    <failure type="java.lang.NullPointerException">java.lang.NullPointerException
+	at com.lxisoft.yasirhussain.amazon.product.ProductTest.testCompany(ProductTest.java:20)
+</failure>
+  </testcase>
 </testsuite>
