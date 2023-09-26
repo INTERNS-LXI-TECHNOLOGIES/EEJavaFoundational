@@ -7,7 +7,7 @@ services:
       - "8080:8080"
     environment:
       CATALINA_BASE: /usr/local/tomcat
-      MYSQL_HOST: localhost
+      MYSQL_HOST: mysql
       MYSQL_PORT: 3306
       MYSQL_DATABASE: amazon
       MYSQL_USER: root
@@ -22,3 +22,5 @@ services:
       MYSQL_DATABASE: amazon
     volumes:
       - ./scripts:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"

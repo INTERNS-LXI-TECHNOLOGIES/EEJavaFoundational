@@ -8,7 +8,7 @@ RUN rm -rf /usr/local/tomcat/webapps/workshop.war
 COPY target/workshop.war /usr/local/tomcat/webapps/workshop.war
 
 ENV CATALINA_BASE=/usr/local/tomcat
-ENV DB_HOST=localhost
+ENV DB_HOST=mysql
 ENV DB_PORT=3306
 ENV DB_NAME=amazon
 ENV DB_USER=root

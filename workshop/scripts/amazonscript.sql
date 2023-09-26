@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS company (
 	customer_count VARCHAR(100) NOT NULL,
 	is_deleted BOOLEAN DEFAULT FALSE
 );
-CREATE TABLE IF NOT EXISTS employees( name VARCHAR(50) PRIMARY KEY,employee_data LONG BLOB);
+
 CREATE TABLE IF NOT EXISTS products (
     product_id INT AUTO_INCREMENT PRIMARY KEY,
     product_name VARCHAR(255),
@@ -32,6 +32,6 @@ CREATE TABLE IF NOT EXISTS products (
     product_release_date VARCHAR(50),
     product_availability VARCHAR(50)
 );
-
+CREATE TABLE IF NOT EXISTS employees( name VARCHAR(50) PRIMARY KEY,employee_data BLOB);
 -- Add an index on the 'email' column for faster lookups
 
