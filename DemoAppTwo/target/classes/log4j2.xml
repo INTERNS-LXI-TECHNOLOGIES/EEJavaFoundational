@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="INFO">
+    <Appenders>
+        <RollingFile name="CompanyLogFile" fileName="${env:CATALINA_BASE}/logs/company.log"
+                     filePattern="${env:CATALINA_BASE}/logs/company-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+    </Appenders>
+    <Appenders>
+        <RollingFile name="ProductLogFile" fileName="${env:CATALINA_BASE}/logs/product.log"
+                     filePattern="${env:CATALINA_BASE}/logs/product-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+    </Appenders>
+    <Appenders>
+        <RollingFile name="EmployeeLogFile" fileName="${env:CATALINA_BASE}/logs/employee.log"
+                     filePattern="${env:CATALINA_BASE}/logs/employee-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+    </Appenders>
+    <Loggers>
+        <Root level="INFO">
+            <AppenderRef ref="TomcatLogFile" />
+        </Root>
+        <Logger name="com.lxisoft.fairuz.workshoptwo.product.controller.ProductsController" level="info">
+            <AppenderRef ref="ProductLogFile" />
+        </Logger>
+        <Logger name="com.lxisoft.fairuz.workshoptwo.employee.controller.EmployeeController" level="info">
+            <AppenderRef ref="EmployeeLogFile" />
+        </Logger>
+        <Logger name="com.lxisoft.fairuz.workshoptwo.company.controller.CompanyController" level="info">
+            <AppenderRef ref="CompanyLogFile" />
+        </Logger>
+
+    </Loggers>
+</Configuration>

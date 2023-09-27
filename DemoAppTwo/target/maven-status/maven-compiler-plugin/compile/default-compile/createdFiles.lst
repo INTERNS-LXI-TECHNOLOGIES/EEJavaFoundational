@@ -1,0 +1,6 @@
+com\lxisoft\fairuz\workshoptwo\product\model\Product.class
+com\lxisoft\fairuz\workshoptwo\product\controller\ProductsController.class
+com\lxisoft\fairuz\workshoptwo\employee\controller\EmployeeController.class
+com\lxisoft\fairuz\workshoptwo\company\controller\CompanyController.class
+com\lxisoft\fairuz\workshoptwo\company\model\Company.class
+com\lxisoft\fairuz\workshoptwo\employee\model\Employee.class
