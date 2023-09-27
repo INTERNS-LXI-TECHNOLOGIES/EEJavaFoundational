@@ -1,8 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="INFO">
     <Appenders>
-        <RollingFile name="TomcatLogFile" fileName="${catalina.base}/logs/myapp.log"
-            filePattern="${catalina.base}/logs/myapp-%d{yyyy-MM-dd}-%i.log">
+        <RollingFile name="CompanyLogFile" fileName="${env:CATALINA_BASE}/logs/company.log"
+                     filePattern="${env:CATALINA_BASE}/logs/company-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        <RollingFile name="ProductLogFile" fileName="${env:CATALINA_BASE}/logs/product.log"
+                     filePattern="${env:CATALINA_BASE}/logs/product-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        <RollingFile name="ProductvalidatorLogFile" fileName="${env:CATALINA_BASE}/logs/productValidator.log"
+                     filePattern="${env:CATALINA_BASE}/logs/productValidator-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        <RollingFile name="TomcatLogFile" fileName="${env:CATALINA_BASE}/logs/root.log"
+                     filePattern="${env:CATALINA_BASE}/logs/root-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingFile>
+        <RollingFile name="EmployeeLogFile" fileName="${env:CATALINA_BASE}/logs/employee.log"
+                     filePattern="${env:CATALINA_BASE}/logs/employee-%d{yyyy-MM-dd}-%i.log">
             <PatternLayout>
                 <Pattern>%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %msg%n</Pattern>
             </PatternLayout>
@@ -14,8 +58,20 @@
         </RollingFile>
     </Appenders>
     <Loggers>
-        <Root level="INFO">
+        <Root level="info">
             <AppenderRef ref="TomcatLogFile" />
         </Root>
+        <Logger name="com.lxisoft.yasirhussain.amazon.company.controller.CompanyController" level="info">
+            <AppenderRef ref="CompanyLogFile"/>
+        </Logger>
+        <Logger name="com.lxisoft.yasirhussain.amazon.product.controller..ProductController" level="info">
+            <AppenderRef ref="ProductLogFile"/>
+        </Logger>
+        <Logger name="com.lxisoft.yasirhussain.amazon.employee.controller..EmployeeController" level="info">
+            <AppenderRef ref="EmployeeLogFile"/>
+        </Logger>
+        <Logger name="com.lxisoft.yasirhussain.amazon.validation.ProductValidator" level="info">
+            <AppenderRef ref="ProductvalidatorLogFile"/>
+        </Logger>
     </Loggers>
 </Configuration>

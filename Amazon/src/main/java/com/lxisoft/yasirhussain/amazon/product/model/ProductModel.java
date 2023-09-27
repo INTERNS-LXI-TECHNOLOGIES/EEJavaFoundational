@@ -1,6 +1,12 @@
 package com.lxisoft.yasirhussain.amazon.product.model;
 
+import com.lxisoft.yasirhussain.amazon.product.controller.ProductController;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 public class ProductModel implements Comparable<ProductModel>{
+
+    private static final Logger logger = LogManager.getLogger(ProductController.class);
+
     private String productName;
     private String productCategory;
     private String productPrice;
@@ -35,10 +41,13 @@ public class ProductModel implements Comparable<ProductModel>{
     }
 
     public String getProductId() {
+        logger.info("getting "+ productId);
+
         return productId;
     }
 
     public void setProductId(String productId) {
+        logger.info("setting "+ productId);
         this.productId = productId;
     }
     public ProductModel(String productName, String productCategory, String productPrice)

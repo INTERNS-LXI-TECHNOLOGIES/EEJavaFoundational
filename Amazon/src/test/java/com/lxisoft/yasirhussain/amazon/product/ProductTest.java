@@ -1,23 +1,24 @@
 package com.lxisoft.yasirhussain.amazon.product;
-
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import com.lxisoft.yasirhussain.amazon.product.model.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ProductTest {
 
     private ProductModel product;
 
     @BeforeEach
-    void setUp() {
+    public void testSetUp() {
+
         product = new ProductModel();
+        product.setProductId("yaser");
     }
 
     @Test
-    public void testCompany()
+    public void testProduct()
     {
-        product.setProductId("Meta123");
-        assertEquals("Meta123", product.getProductId(),"Application Script Running Successfully");
+//        product.setProductId("Meta123");
+        assertEquals("yaser", product.getProductId(),"Application Script Running Successfully");
     }
 }
