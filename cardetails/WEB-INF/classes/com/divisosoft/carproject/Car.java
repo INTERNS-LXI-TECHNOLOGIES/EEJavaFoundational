@@ -4,7 +4,7 @@ public class Car
 {
 	private String name;
 	private String color;
-	Steering steer;
+	public Steering steer;
 	
 	public Car(String name, String color) {
 		this.name = name;

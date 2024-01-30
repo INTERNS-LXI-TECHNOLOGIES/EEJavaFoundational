@@ -31,9 +31,9 @@ body {
                 request.setAttribute("tyreObject"+i,tyre);
             }
 
-            Steering steer = new Steering();
-            steer.setColor(request.getParameter("steer")) ;
-            request.setAttribute("steerObject",steer);
+            car.steer = new Steering();
+            car.steer.setColor(request.getParameter("steer")) ;
+            request.setAttribute("steerObject",car);
 
             RequestDispatcher dispatcher = request.getRequestDispatcher("result.jsp");
             dispatcher.forward(request,response);
