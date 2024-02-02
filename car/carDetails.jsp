@@ -22,10 +22,8 @@
 
    for (int i = 0 ;i<4;i++){
    Tyre tyre= new Tyre();
-   String tyreBrand=request.getParameter("TyreBrand"+(i+1));
-   tyre.setBrand(tyreBrand);
-   String tyresize = request.getParameter("TyreSize"+(i+1));
-   tyre.setSize(tyresize);
+   tyre.setBrand(request.getParameter("tyreBrand"+(i+1)));
+   tyre.setSize(request.getParameter("tyresize"+(i+1)));
    request.setAttribute("tyreObjects"+(i+1),tyre);
    }
    Steering steering = new Steering ();

@@ -7,9 +7,8 @@ public class Car{
     public java.lang.String toString() {
         return "Car" +
                 "name=" + name +
-                ", colour=" + colour +
-                ;
-    }
+                ", colour=" + colour;
+    };
 
     public java.lang.String getColour() {
         return colour;
