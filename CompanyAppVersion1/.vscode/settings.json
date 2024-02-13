@@ -1,0 +1,13 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "WEB-INF\\lib\\servlet-api.jar",
+            "d:\\lxi\\tomcat\\apache-tomcat-10.1.18\\apache-tomcat-10.1.18\\lib\\servlet-api.jar",
+            "WEB-INF\\lib\\mysql-connector-j-8.2.0.jar"
+        ],
+        "exclude": [
+            "WEB-INF/lib/servlet-api.jar"
+        ]
+    }
+}
