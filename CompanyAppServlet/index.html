@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JJ Company</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url("4.jpg");
+            background-size: cover;
+            background-position: center center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: rgb(12, 15, 219);
+        }
+
+        h2 {
+            color: rgb(5, 0, 8);
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        input[type="submit"] {
+            background-color: #f44336;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d32f2f;
+        }
+
+        label {
+            font-size: 16px;
+            margin-right: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>WELCOME TO JJ COMPANY</h1>
+    <form action="CompanyDetail.jsp" method="post">
+        <h2>Press <span style="color: #f44336;">company</span> To Enter Company Details </h2>
+        <input type="submit" name="next" value="Company Details">
+    </form>
+
+    <form action="ProductDetail.jsp" method="post">
+        <h2>Press <span style="color: #2196F3;">product</span> To Enter Product Details </h2>
+        <input type="submit" name="next" value="Product Details">
+    </form>
+
+    <form action="EmployeeDetail.jsp" method="post">
+        <h2>Press <span style="color: #4CAF50;">employee</span> To Enter Employee Details </h2>
+        <input type="submit" name="next" value="Employee Details">
+    </form>
+
+    <form action="ReadAll" method="Get">
+        <h2>View All Details:</h2>
+        <input type="checkbox" id="check1" name="option1" value="option1">
+        <label for="check1">Company Details</label><br>
+        
+        <input type="checkbox" id="check2" name="option2" value="option2">
+        <label for="check2">Product Details</label><br>
+        
+        <input type="checkbox" id="check3" name="option3" value="option3">
+        <label for="check3">Employee Details</label><br>
+        
+        <br>
+        <input type="submit" value="View All">
+    </form>
+    <form action="firstPage.html">
+<input type = "submit" value="Go Back">
+        </form>
+</body>
+</html>
