@@ -1,0 +1,20 @@
+<html>
+    <head>
+         <title>THIS IS PRODUCT OPTION PAGE</title>
+    </head>
+    <body>
+        <form action="Productservlet" method="post">
+            <label>ENTER THE PRODUCT NAME</label>
+            <input type="text" name="productname">
+            <label>ENTER THE PRICE OF PRODUCT</label>
+            <input type="text" name="productprice">
+            <select id="productselect" name="option">
+                <option value="addproduct">ADD PRODUCT</option>
+                <option value="readproduct">VIEW PRODUCTS</option>
+                <option value="updateproduct">UPDATE A PRODUCT</option>
+                <option value="deleteproduct">DELETE A PRODUCT</option>
+            </select>
+            <input type="submit" value="DONE">
+        </form>
+    </body>
+</html>
