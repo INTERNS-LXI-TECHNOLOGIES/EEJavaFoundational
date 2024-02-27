@@ -1,0 +1,16 @@
+{
+    "java.project.referencedLibraries": {
+        "include": [
+            "lib/**/*.jar",
+            "WEB-INF\\lib\\mysql-connector-j-8.2.0.jar",
+            "WEB-INF\\lib\\servlet-api.jar"
+        ],
+        "exclude": [
+            "WEB-INF/lib/servlet-api.jar"
+        ]
+    },
+    "java.project.sourcePaths": [
+        "WEB-INF\\lib\\com",
+        "WEB-INF\\classes"
+    ]
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact App</title>
+    <style>
+        body {
+            background-image: url("13.jpeg");
+            text-align: center;
+        }
+
+        .pagination {
+            display: inline-block;
+        }
+
+        .pagination a {
+            color: black;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            transition: background-color .3s;
+        }
+
+        .pagination a.active {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contact App</h1>
+    <form action="ContactApp" method="post">
+        <img src="2.webp">
+        <h2>Enter The Name</h2>
+        <input type="text" name="name">
+        <h2>Enter The ContactNumber</h2>
+        <input type="text" name="contactNumber">
+        <br><br>
+        <button type="submit">Next</button>
+
+        <!-- Pagination Links -->
+        <div class="pagination">
+            <a href="ContactApp" class="active">1</a>
+            <a href="ContactApp">2</a>
+            <a href="ContactApp">3</a>
+            <a href="ContactApp">4</a>
+            <a href="ContactApp">5</a>
+        </div>
+        
+        <!-- Dropdown for CRUD operations -->
+        <select name="select">
+            <option value="create">CREATE</option>
+            <option value="read">READ</option>
+            <option value="update">UPDATE</option>
+            <option value="delete">DELETE</option>
+        </select>
+    </form>
+
+    <!-- Go Back Button -->
+    <form action="index.html" method="post">
+        <a style="color: gold" href="index.html">Go Back</a>
+    </form>
+</body>
+</html>
