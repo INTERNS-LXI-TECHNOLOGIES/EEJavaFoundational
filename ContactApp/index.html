@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>THIS IS  CONTACT WELCOME PAGE</title>
+        <style>
+            body{
+                margin:0;
+                padding:0;
+                height:100%;
+                background-image: url("forntimage.jpg");
+            }
+            P{
+                background-color: #ffffff;
+                text-align: center;
+                font-size:50px;   
+            }
+            button{
+                text-align: center;
+                margin-left:100px;
+                margin-top: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <p style="color:rgb(71, 195, 217);">WELCOME TO CONTACT APP</p>
+       <button style="background-color: rgb(248, 84, 84);color: white;padding: 30;border-radius: 20px;font-size: larger;cursor: pointer;" onclick="navigatePage()">PRESS TO ADD A CONTACT</button>
+       <button style="background-color: rgb(248, 84, 84);color: white;padding: 30;border-radius: 20px;font-size: larger;cursor: pointer;"  onclick="showContacts() ">PRESS TO VIEW CONTACTS</button>
+       
+       <script>
+        function navigatePage(){
+            window.location.href="dataentrypage.html";
+        }
+
+        function showContacts(){
+            window.location.href="Displayingservlet";
+        }
+       </script>
+       
+    </body>
+</html>
