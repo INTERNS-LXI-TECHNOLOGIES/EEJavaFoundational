@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>add Employee</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            label{
+                font-size: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="employeeDetails" method="post">
+
+            <h2>Enter Employee details</h2><br>
+
+            <label>Action</label>
+            <select name="action">
+                <option value="Create">Create</option>
+                <option value="Update">Update</option>
+                <option value="Delete">Delete</option>
+            </select><br><br>
+
+            <label>Enter the Employee Name</label>
+            <input type="text" name="empName"><br><br>
+            <label>Enter the Age</label>
+            <input type="text" name="empAge"><br><br>
+            <label>Enter ID</label>
+            <input type="text" name="empId"><br><br>
+            <label>Enter Salary</label>
+            <input type="text" name="empSalary"><br><br>
+            <label>Enter Phone Number</label>
+            <input type="text" name="empPhone"><br><br><br>
+
+            <h2>if you want Update or delete</h2>
+            <label>Enter Your Id</label>
+            <input type="text" name="updateId"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

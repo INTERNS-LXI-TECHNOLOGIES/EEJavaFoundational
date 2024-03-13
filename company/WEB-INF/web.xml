@@ -1,0 +1,13 @@
+<web-app>
+
+    <servlet>
+        <servlet-name>company</servlet-name>
+        <servlet-class>com.divisosoft.company.CompanyServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>company</servlet-name>
+        <url-pattern>/companyDetails</url-pattern>
+    </servlet-mapping>
+
+</web-app>

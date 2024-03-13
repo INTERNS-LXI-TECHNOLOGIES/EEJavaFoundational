@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>add Product</title>
+        <style>
+            body{
+                text-align: center;
+            }
+            label{
+                font-size: 20px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <form action="productdetails" method="post">
+
+            <h2>Enter Product details</h2><br>
+
+            <label>Action</label>
+            <select name="action">
+                <option value="Create">Create</option>
+                <option value="Update">Update</option>
+                <option value="Delete">Delete</option>
+            </select><br><br>
+
+            <label>Enter the Product Name</label>
+            <input type="text" name="productName"><br><br>
+            <label>Enter the Price</label>
+            <input type="text" name="productPrice"><br><br>
+            <label>Enter Catagory</label>
+            <input type="text" name="productCatagory"><br><br>
+            <label>Enter Rate</label>
+            <input type="text" name="productRate"><br><br>
+            <label>Enter Manufacturing Date</label>
+            <input type="text" name="date"><br><br><br>
+
+            <h2>if you want Update or delete</h2>
+            <label>Enter Your Product Name</label>
+            <input type="text" name="updateId"><br><br>
+
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

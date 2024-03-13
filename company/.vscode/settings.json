@@ -1,0 +1,8 @@
+{
+    "java.project.sourcePaths": [],
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "c:\\Lxi\\Softwares\\apache-tomcat-10.1.18\\apache-tomcat-10.1.18\\lib\\servlet-api.jar",
+        "WEB-INF\\lib\\mysql-connector-j-8.2.0\\mysql-connector-j-8.2.0.jar"
+    ]
+}
