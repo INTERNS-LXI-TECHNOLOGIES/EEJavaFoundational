@@ -1,0 +1,7 @@
+com\lxisoft\contact\Contact.class
+com\lxisoft\contact\imgServlet.class
+com\lxisoft\contact\ReadC.class
+com\lxisoft\contact\Search.class
+com\lxisoft\contact\UpdateContact.class
+com\lxisoft\contact\ContactApp.class
+com\lxisoft\contact\DeleteContact.class
