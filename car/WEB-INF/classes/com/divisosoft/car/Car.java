@@ -16,7 +16,7 @@ public class Car{
     public InputStream getFileData() {
         return fileData;
     }
-
+ 
     public void setFileData(InputStream fileData) {
         this.fileData = fileData;
     }

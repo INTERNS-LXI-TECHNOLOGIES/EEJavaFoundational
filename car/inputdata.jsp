@@ -5,7 +5,7 @@
     <body>
         <% String option = request.getParameter("submit");
         if(option.equals("create")){%>
-            <form action="Createcar" method="post">
+            <form action="Createcar" method="post" enctype="multipart/form-data">
                 <label>ENTER THE CAR NAME</label>
                 <input type="text" name="name"><br><br>
                 <label>UPLOAD CAR DOCUMENT</label>

@@ -4,10 +4,11 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.annotation.MultipartConfig;
+
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.Part;
-
 
 import java.io.IOException;
 import java.rmi.ServerException;
@@ -18,6 +19,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 @WebServlet("/Createcar")
+@jakarta.servlet.annotation.MultipartConfig
 public class Createcar extends HttpServlet{
    
     Connection connection;
@@ -37,7 +39,7 @@ public class Createcar extends HttpServlet{
     public void doPost(HttpServletRequest request,HttpServletResponse respons)throws ServletException,IOException{
         try{
             Car car = this.creatingCar(request,respons);
-            String addQuery = "INSERT INTO cartable (name,document) VALUES (?,?)";
+            String addQuery = "INSERT INTO cartable (car_name,document) VALUES (?,?)";
             PreparedStatement psAddQuery = connection.prepareStatement(addQuery);
             psAddQuery.setString(1,car.getName());
             psAddQuery.setBlob(2,car.getFileData());
@@ -47,14 +49,12 @@ public class Createcar extends HttpServlet{
         catch(SQLException e){
             e.printStackTrace();
         }
-
-
     }
 
     public Car creatingCar(HttpServletRequest request,HttpServletResponse response)throws ServletException,IOException{
         Car car = new Car();
         car.setName(request.getParameter("name"));
-        car.setFileData(request.getPart("carDocument").getInputStream());
+        car.setFileData((request.getPart("carDocument")).getInputStream());
         return car;
     }
 }
