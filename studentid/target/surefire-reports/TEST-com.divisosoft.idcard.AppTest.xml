@@ -15,7 +15,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-20\bin"/>
-    <property name="sun.java.command" value="C:\Users\vipin\AppData\Local\Temp\surefire2104160439799578738\surefirebooter-20240320155729651_3.jar C:\Users\vipin\AppData\Local\Temp\surefire2104160439799578738 2024-03-20T15-57-29_485-jvmRun1 surefire-20240320155729651_1tmp surefire_0-20240320155729651_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\vipin\AppData\Local\Temp\surefire9564653633205588808\surefirebooter-20240321162834704_3.jar C:\Users\vipin\AppData\Local\Temp\surefire9564653633205588808 2024-03-21T16-28-34_560-jvmRun1 surefire-20240321162834704_1tmp surefire_0-20240321162834704_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Lxi\Maven\studentid\target\test-classes;C:\Lxi\Maven\studentid\target\classes;C:\Users\vipin\.m2\repository\junit\junit\3.8.1\junit-3.8.1.jar;C:\Users\vipin\.m2\repository\com\mysql\mysql-connector-j\8.0.33\mysql-connector-j-8.0.33.jar;C:\Users\vipin\.m2\repository\com\google\protobuf\protobuf-java\3.21.9\protobuf-java-3.21.9.jar;C:\Users\vipin\.m2\repository\jakarta\servlet\jakarta.servlet-api\6.1.0-M2\jakarta.servlet-api-6.1.0-M2.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\vipin\AppData\Local\Temp\surefire2104160439799578738\surefirebooter-20240320155729651_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\vipin\AppData\Local\Temp\surefire9564653633205588808\surefirebooter-20240321162834704_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="20.0.2+9-78"/>
@@ -58,5 +58,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="64.0"/>
   </properties>
-  <testcase name="testApp" classname="com.divisosoft.idcard.AppTest" time="0.019"/>
+  <testcase name="testApp" classname="com.divisosoft.idcard.AppTest" time="0.015"/>
 </testsuite>

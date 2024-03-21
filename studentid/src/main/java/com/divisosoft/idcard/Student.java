@@ -7,8 +7,7 @@ public class Student
     String name ;
     int rollno;
     File photo;
-
-
+    
     public String getName() {
         return name;
     }
