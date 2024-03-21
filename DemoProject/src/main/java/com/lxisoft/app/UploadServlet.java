@@ -8,22 +8,26 @@ import java.sql.*;
 @WebServlet("/UploadServlet")
 @MultipartConfig
 public class UploadServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Part filePart = request.getPart("file");
         String fileName = filePart.getSubmittedFileName();
         InputStream fileContent = filePart.getInputStream();
 
+        File file = new File(fileName, fileContent);
+
         // Store file content in the database
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String jdbcUrl = "jdbc:mysql://localhost:3306/your_database_name";
-            String username = "your_mysql_username";
-            String password = "your_mysql_password";
+            String jdbcUrl = "jdbc:mysql://localhost:3306/files";
+            String username = "root";
+            String password = "root";
 
             Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO files (filename, file_content) VALUES (?, ?)");
-            preparedStatement.setString(1, fileName);
-            preparedStatement.setBlob(2, fileContent);
+            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO filestable (filename, file_content) VALUES (?, ?)");
+            preparedStatement.setString(1, file.getFileName());
+            preparedStatement.setBlob(2, file.getFileContent());
             preparedStatement.executeUpdate();
 
             response.getWriter().println("File uploaded successfully and content stored in the database!");
@@ -33,3 +37,143 @@ public class UploadServlet extends HttpServlet {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
