@@ -9,7 +9,7 @@ import java.sql.SQLException;
 
 import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.annotation.*;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -17,6 +17,11 @@ import jakarta.servlet.http.Part;
 
 
 @WebServlet("/studentDetails")
+@MultipartConfig(
+    fileSizeThreshold = 1024 * 1024 * 2,  // 2MB
+    maxFileSize = 1024 * 1024 * 10,       // 10MB
+    maxRequestSize = 1024 * 1024 * 50      // 50MB
+)
 public class StudentServlet extends HttpServlet
 {
     Connection connection;
@@ -37,46 +42,43 @@ public class StudentServlet extends HttpServlet
         }
     }
 
-    public void doGet(HttpServletRequest request,HttpServletResponse response)throws ServletException
-    {
-
-    }
-
-    public void doPost(HttpServletRequest request,HttpServletResponse response)throws ServletException
-    {
-        try{
-            String action = request.getParameter("action");
-
-            switch (action) {
-                case "Create":
-                try{
-                    this.createStudent(request,response);
-                    response.getWriter().println("aaaaaa");
-                }
-                catch(IOException e)
-                {
-                    e.printStackTrace();
-                }
-                break;
+    public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException {
+        try {
+            String action = request.getParameter("actions");
+            response.getWriter().println(action);
             
-                case "Update":
-                    this.updateStudent(request);
-                break;
-
-                case "Delete":
-                    this.deleteStudent(request);
-                break;
-
-                default:
-                break;
+            if (action != null) { // Add null check here
+                switch (action) {
+                    case "Create":
+                        try {
+                            
+                            this.createStudent(request, response);
+                            
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        break;
+    
+                    case "Update":
+                        this.updateStudent(request);
+                        break;
+    
+                    case "Delete":
+                        this.deleteStudent(request);
+                        break;
+    
+                    default:
+                        break;
+                }
+            } else {
+                // Handle case where 'action' is null
+                response.getWriter().println("No action specified");
             }
-        }
-        catch(NullPointerException e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
+    
     public void createStudent(HttpServletRequest request, HttpServletResponse response)throws ServletException,IOException
     {
         try{
