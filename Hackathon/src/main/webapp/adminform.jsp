@@ -3,7 +3,8 @@
         <title>this is admin form</title>
     </head>
     <body>
-        <form  method="post" enctype="multipart/form-data">
+       
+        <form action="adminservlet"  method="post" enctype="multipart/form-data">
             <label>enter name</label>
             <input type="text" name="name"><br><br>
             <label>enter email</label>
@@ -14,6 +15,5 @@
             <input type="file" name="photo"><br><br>
             <input type="submit" name="submit">
         </form>
-    </body>
-    
+    </body> 
 </html>
