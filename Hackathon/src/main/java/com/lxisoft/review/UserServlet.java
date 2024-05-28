@@ -51,31 +51,33 @@ public class UserServlet extends HttpServlet
 
 public void doPost(HttpServletRequest request,HttpServletResponse responce) throws ServletException, IOException
 {
-String name = request.getParameter("name");
-Part part = request.getPart("photo");
-String phone = request.getParameter("phone");
-if(phone.length()<10){
-    request.setAttribute("error", "phone number is not valid");
-    RequestDispatcher re = request.getRequestDispatcher("admin.jsp");
-    re.forward(request,responce);
+    String name = request.getParameter("name");
+    Part part = request.getPart("photo");
+    String phone = request.getParameter("phone");
+    if(phone.length()<10){
+        request.setAttribute("error", "phone number is not valid");
+        RequestDispatcher re = request.getRequestDispatcher("admin.jsp");
+        re.forward(request,responce);
 }
 InputStream inputStream = part.getInputStream();
 
 
 try{
-    String query = "insert into user  (user_name,phone,photo) values (?,?,?)";
+    String query = "insert into admin  (user_name,phone,photo) values (?,?,?)";
     PreparedStatement   preparedStatement = conection.prepareStatement(query);
     preparedStatement.setString(1, name);
     preparedStatement.setString(2, phone);
     preparedStatement.setBlob(3, inputStream);   
     
     preparedStatement.executeUpdate();
+    
 }
 catch(SQLException e)
 {
     e.printStackTrace();
 }
-
+RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+dispatcher.forward(request, responce);
 
 }
 }

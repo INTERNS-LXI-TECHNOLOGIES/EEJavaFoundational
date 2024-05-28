@@ -76,6 +76,7 @@ catch(SQLException e)
     e.printStackTrace();
 }
 
-
+RequestDispatcher dispatcher = request.getRequestDispatcher("success.jsp");
+dispatcher.forward(request, responce);
 }
 }

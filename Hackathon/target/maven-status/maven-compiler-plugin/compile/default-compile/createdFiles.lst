@@ -1,2 +1,3 @@
 com\lxisoft\review\AdminServlet.class
-com\lxisoft\review\Person.class
+com\lxisoft\review\LanguageServlet.class
+com\lxisoft\review\UserServlet.class
