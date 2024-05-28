@@ -11,7 +11,6 @@ import jakarta.servlet.annotation.WebServlet;
 import java.sql.DriverManager;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.*;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import jakarta.servlet.http.Part;

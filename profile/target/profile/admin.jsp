@@ -27,7 +27,7 @@
         .container {
             width: 400px; /* Equal size to the signup page */
             padding: 20px;
-            background-color: #6abf69; /* Light green */
+            background-color: #2980b9; /* Light green */
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             position: relative; /* To position the language switch */
@@ -154,7 +154,7 @@
                     <div class="input-container">
                         <h3>phone</h3>
                         <input type="phone" name="phone">
-                        <% 
+                            <% 
                         String passwordError = (String)request.getAttribute("error");
                         if (passwordError != null) {
                     %>
@@ -174,7 +174,7 @@
             </c:when>
             <c:otherwise>
                 <form action="admin" method="post" enctype="multipart/form-data" >
-                    <h2><c:out value="${language['signup']}"/></h2>
+                    <h2><c:out value="${language['login']}"/></h2>
 
                     <div class="input-container">
                         <i class="fas fa-user"></i>
@@ -195,7 +195,7 @@
                         <span style="color: red;"><%= password %></span><br>
                     <% } %>
 
-                    <input type="submit" value="upload <c:out value="${language['upload']}"/>">
+                    <input type="submit" value=" <c:out value="${language['upload']}"/>">
                    
                 </form>
             </c:otherwise>
