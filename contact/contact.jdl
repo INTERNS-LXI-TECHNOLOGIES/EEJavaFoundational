@@ -1,0 +1,10 @@
+entity Contact {
+  name String required,
+  idNumber String required,
+  email String required pattern(/^[^@\s]+@[^@\s]+\.[^@\s]+$/),
+  address String
+}
+
+dto * with mapstruct
+service * with serviceClass
+paginate * with pagination
