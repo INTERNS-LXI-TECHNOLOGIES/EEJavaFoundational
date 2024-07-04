@@ -1,0 +1,13 @@
+<!-- src/main/resources/beans.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+     
+   <bean id="tyre" class="com.lxisoft.carproject.Tyre" />
+    <bean id="door" class="com.lxisoft.carproject.Door" />
+    <bean id="car" class="com.lxisoft.carproject.Car">
+        <constructor-arg ref="tyre" />
+        <constructor-arg ref="door" />
+    </bean>
+</beans>
