@@ -1,0 +1,13 @@
+<!-- src/main/resources/beans.xml -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="part" class="com.diviso.car.Part" />
+    <bean id="car" class="com.diviso.car.Car">
+        <constructor-arg ref="part" />
+    </bean>
+</beans>
+
+
