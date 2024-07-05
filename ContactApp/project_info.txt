@@ -1,3 +1,0 @@
-ContactApp is a project to do CRUD operation in contact domain that must have the fields like contactName,contactNumber,email and save it in sql database 
-
-requirements:implement mvc,mysql,jsp&servlets.

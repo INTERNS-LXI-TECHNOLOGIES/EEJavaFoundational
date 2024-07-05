@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home Page</title>
+    <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Contact App</h1>
+        <div class="links">
+            <a th:href="@{/add-contact}">Create Contact</a><br>
+            <a th:href="@{/view-contacts}">View Contacts</a><br>
+            <a th:href="@{/update-contact}">Update Contact</a><br>
+            <a th:href="@{/delete-contact}">Delete Contact</a><br>
+            <a th:href="@{/logout}">Logout</a>
+        </div>
+    </div>
+</body>
+</html>
