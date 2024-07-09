@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>First Page</title>
+</head>
+<body>
+    <h3>2 Page</h3>
+    <select name="crud" form="crudForm">
+        <option value="create">Create</option>
+        <option value="read">Read</option>
+        <option value="update">Update</option>
+        <option value="delete">Delete</option>
+    </select>
+    <form id="crudForm" th:action="@{/contacts}" method="get">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>

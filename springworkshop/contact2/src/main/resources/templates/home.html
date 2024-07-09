@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h3>Go To Next Page</h3>
+    <form th:action="@{/firstPage}" method="get">
+        <input type="submit" value="Go to first page">
+    </form>
+    <h3>Go to Contacts</h3>
+    <form th:action="@{/contacts}" method="get">
+        <input type="submit" value="View Contacts">
+    </form>
+</body>
+</html>
