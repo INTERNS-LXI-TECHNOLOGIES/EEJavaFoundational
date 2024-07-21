@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Home Page</title>
+    <title>Add Player</title>
 </head>
 <body>
-    <h1>Welcome to the Game</h1>
-    <a href="/input">Enter Player Name</a>
+    <h2>Add Player</h2>
+    <form  th:action="@{/add}" th:object="${player}" method="post">
+        <label>Name: <input type="text" th:field="*{name}" required /></label><br/>
+        <button type="submit">Add Player</button>
+    </form>
 </body>
 </html>
