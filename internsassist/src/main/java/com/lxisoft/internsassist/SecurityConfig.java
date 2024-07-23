@@ -7,8 +7,8 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
 @EnableWebSecurity
@@ -16,20 +16,23 @@ public class SecurityConfig {
 
     private final UserDetailsService userDetailsService;
     private final PasswordEncoder passwordEncoder;
+    private final CustomAuthenticationSuccessHandler successHandler;
 
-    public SecurityConfig(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder) {
+    @Autowired
+    public SecurityConfig(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder, CustomAuthenticationSuccessHandler successHandler) {
         this.userDetailsService = userDetailsService;
         this.passwordEncoder = passwordEncoder;
+        this.successHandler = successHandler;
     }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authz -> {
-            authz.requestMatchers("/signup", "/login").permitAll()
+            authz.requestMatchers("/","/signup").permitAll()
                     .requestMatchers("/admin/**").hasAuthority("admin")
-                    .requestMatchers("/home/**").hasAnyAuthority("user", "admin")
+                    .requestMatchers("/home/**").hasAnyAuthority("user")
                     .anyRequest().authenticated();
-        }).formLogin(form -> form.loginPage("/login").permitAll())
+        }).formLogin(form -> form.loginPage("/login").permitAll().successHandler(successHandler))
           .logout(form -> form.permitAll());
 
         return http.build();

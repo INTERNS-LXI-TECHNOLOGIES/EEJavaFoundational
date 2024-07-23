@@ -13,10 +13,7 @@ public class AdminController {
     @Autowired
     private UserService userService;
 
-    @GetMapping("/admin")
-    public String adminPage() {
-        return "admin";
-    }
+ 
 
     @PostMapping("/admin/assignRole")
     public String assignRole(@RequestParam String username, @RequestParam String role, Model model) {
@@ -26,6 +23,6 @@ public class AdminController {
         } catch (Exception e) {
             model.addAttribute("message", "Error assigning role: " + e.getMessage());
         }
-        return "admin";
+        return "home";
     }
 }

@@ -2,12 +2,61 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Add Player</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('ludo-board.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+        h2 {
+            color: #ff4500;
+        }
+        label {
+            font-weight: bold;
+        }
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+        button {
+            background-color: #32cd32;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #228b22;
+        }
+    </style>
 </head>
 <body>
-    <h2>Add Player</h2>
-    <form  th:action="@{/add}" th:object="${player}" method="post">
-        <label>Name: <input type="text" th:field="*{name}" required /></label><br/>
-        <button type="submit">Add Player</button>
-    </form>
+    <div class="container">
+        <h2>Add Player</h2>
+        <form th:action="@{/add}" th:object="${player}" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" th:value="${player.user.userName}" required readonly>
+            <br>
+            <button type="submit">Add Player</button>
+        </form>
+    </div>
 </body>
 </html>

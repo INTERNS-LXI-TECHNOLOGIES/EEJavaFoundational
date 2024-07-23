@@ -7,8 +7,12 @@ import java.util.List;
 
 @Service
 public class PlayersService {
+
     @Autowired
     private PlayerRepository playersRepository;
+
+    @Autowired
+    private UserRepository userRepository;
 
     public List<Player> getAllPlayers() {
         return playersRepository.findAll();

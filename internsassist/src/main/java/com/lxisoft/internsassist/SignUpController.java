@@ -23,6 +23,10 @@ public class SignUpController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    @Autowired
+    private PlayerRepository playerRepository;
+
+
     @GetMapping("/signup")
     public String showSignUpForm(Model model) {
         return "signup";
@@ -36,6 +40,10 @@ public class SignUpController {
             model.addAttribute("error", "User already exists");
             return "signup";
         }
+
+        Player player = new Player();
+        player.setName(username);
+        playerRepository.save(player);
 
         User user = new User();
         user.setUserName(username);

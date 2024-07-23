@@ -18,15 +18,9 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            transition: transform 0.3s ease;
-            cursor: pointer;
         }
         .question-link {
             font-size: 12px; /* Adjust font size as needed */
-        }
-        .zoomed {
-            transform: scale(1.5); /* Adjust zoom scale as needed */
-            z-index: 10;
         }
     </style>
 </head>
@@ -34,7 +28,7 @@
     <h1>Ludo Game Board</h1>
     <div class="game-board">
         <!-- Generate 100 cells -->
-        <div th:each="cellNum : ${#numbers.sequence(1, 100)}" class="cell" onclick="zoomCell(this)">
+        <div th:each="cellNum : ${#numbers.sequence(1, 100)}" class="cell">
             <div th:each="questionNum : ${#numbers.sequence(1, 6)}">
                 <a th:href="@{'/random-question/' + ${cellNum} + '/' + ${questionNum}}"
                    th:text="'Question ' + ${questionNum}"
@@ -42,27 +36,5 @@
             </div>
         </div>
     </div>
-    <script>
-        function zoomCell(cell) {
-            // Remove the zoomed class from any other cell
-            var zoomedCells = document.querySelectorAll('.zoomed');
-            zoomedCells.forEach(function(zoomedCell) {
-                zoomedCell.classList.remove('zoomed');
-            });
-
-            // Add the zoomed class to the clicked cell
-            cell.classList.add('zoomed');
-        }
-
-        // Click anywhere on the page to remove zoom effect
-        document.addEventListener('click', function(event) {
-            var zoomedCells = document.querySelectorAll('.zoomed');
-            zoomedCells.forEach(function(zoomedCell) {
-                if (!zoomedCell.contains(event.target)) {
-                    zoomedCell.classList.remove('zoomed');
-                }
-            });
-        });
-    </script>
 </body>
 </html>

@@ -2,21 +2,80 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Admin Page - Assign Roles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-image: url('ludo-board.jpg'); /* Add a Ludo board background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            color: #ff4500; /* Ludo red color */
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        button {
+            background-color: #32cd32; /* Ludo green color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #228b22;
+        }
+
+        .message {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #d2691e; /* Ludo yellow color */
+        }
+    </style>
 </head>
 <body>
-    <h1>Admin Page - Assign Roles</h1>
-    <form th:action="@{/admin/assignRole}" method="post">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-        <br>
-        <label for="role">Role:</label>
-        <select id="role" name="role">
-            <option value="user">USER</option>
-            <option value="admin">ADMIN</option>
-        </select>
-        <br>
-        <button type="submit">Assign Role</button>
-    </form>
-    <div th:if="${message}" th:text="${message}"></div>
+    <div class="container">
+        <h1>Admin Page - Assign Roles</h1>
+        <form th:action="@{/admin/assignRole}" method="post">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+            <label for="role">Role:</label>
+            <select id="role" name="role">
+                <option value="user">USER</option>
+                <option value="admin">ADMIN</option>
+            </select>
+            <br>
+            <button type="submit">Assign Role</button>
+        </form>
+        <div class="message" th:if="${message}" th:text="${message}"></div>
+    </div>
 </body>
 </html>
