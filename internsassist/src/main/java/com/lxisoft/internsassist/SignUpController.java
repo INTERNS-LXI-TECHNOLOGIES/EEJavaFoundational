@@ -6,33 +6,28 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.HashSet;
-import java.util.Set;
-
 @Controller
+@RequestMapping("/signup")
 public class SignUpController {
+    @Autowired
+    private UserService userService;
 
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private RoleRepository roleRepository;
-
+    
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    @Autowired
-    private PlayerRepository playerRepository;
-
-
-    @GetMapping("/signup")
+    @GetMapping
     public String showSignUpForm(Model model) {
+        model.addAttribute("user", new User());
         return "signup";
     }
 
-    @PostMapping("/signup")
+    @PostMapping
     public String signUp(@RequestParam("username") String username, 
                          @RequestParam("password") String password, 
                          Model model) {
@@ -41,21 +36,14 @@ public class SignUpController {
             return "signup";
         }
 
-        Player player = new Player();
-        player.setName(username);
-        playerRepository.save(player);
-
         User user = new User();
         user.setUserName(username);
         user.setPassword(passwordEncoder.encode(password));
-
-        Role userRole = roleRepository.findByName("ROLE_USER");
-        Set<Role> roles = new HashSet<>();
-        roles.add(userRole);
-        user.setRoles(roles);
-
         userRepository.save(user);
-
+        
+        // Assuming UserService.saveUser(user) does additional processing
+        userService.saveUser(user);
+        
         return "redirect:/login";
     }
 }

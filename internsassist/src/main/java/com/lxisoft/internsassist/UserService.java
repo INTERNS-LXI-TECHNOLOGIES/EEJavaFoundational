@@ -5,15 +5,28 @@ import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class UserService {
-
     @Autowired
     private UserRepository userRepository;
     @Autowired
+    private PlayerRepository playerRepository;
+
+    @Autowired
     private RoleRepository roleRepository;
+
+    public void saveUser(User user) {
+        userRepository.save(user);
+
+        Player player = new Player();
+        player.setUser(user);
+        // set other player attributes if necessary
+        playerRepository.save(player);
+    }
+
 
 
     @Transactional
@@ -34,3 +47,5 @@ public class UserService {
         }
     }
 }
+
+

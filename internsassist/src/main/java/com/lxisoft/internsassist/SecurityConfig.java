@@ -29,7 +29,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authz -> {
             authz.requestMatchers("/","/signup").permitAll()
-                    .requestMatchers("/admin/**").hasAuthority("admin")
+                    .requestMatchers("/adminhome/**").hasAuthority("admin")
                     .requestMatchers("/home/**").hasAnyAuthority("user")
                     .anyRequest().authenticated();
         }).formLogin(form -> form.loginPage("/login").permitAll().successHandler(successHandler))

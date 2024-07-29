@@ -1,68 +1,213 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Ludo Game Board</title>
+    <title>Interns Game</title>
     <style>
-        .game-board {
-            display: grid;
-            grid-template-columns: repeat(10, 50px); /* Adjust cell size as needed */
-            grid-template-rows: repeat(10, 50px);
-            gap: 1px;
-        }
-        .cell {
-            background-color: lightblue;
-            border: 1px solid black;
-            text-align: center;
-            line-height: 50px;
+        body {
             display: flex;
-            flex-direction: column;
             justify-content: center;
-            transition: transform 0.3s ease;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: #1d1c16; /* Light background */
+            font-family: 'Arial', sans-serif; /* Standard font */
+            color: #333;
+        }
+        .pagecontainer {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            width: 90%;
+            height: 95%;
+            background: #fff; /* White background */
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        .boardcontainer {
+            display: grid;
+            grid-template-columns: 1fr 3fr 8fr 1fr;
+            height: 100%;
+        }
+        .boardcontainerforplayers, .boardcontainerforboard, .leftnavig, .rightnavig, .header, .footer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1em;
+            padding: 10px;
+        }
+        .header, .footer {
+            background: #e9ecef;
+            font-weight: bold;
+        }
+        .leftnavig, .rightnavig {
+            background: #e9ecef;
+        }
+        .boardcontainerforplayers {
+            flex-direction: column;
+            background: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+        }
+        .boardcontainerforboard {
+            background: #fff;
+        }
+        .board {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            grid-template-rows: repeat(10, 1fr);
+            gap: 2px;
+            width: 100%;
+            height: 100%;
+        }
+        .cell, .call {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f3f5;
+            border: 1px solid #dee2e6;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        .cell:hover, .call:hover {
+            background: #adb5bd;
+            transform: scale(1.05);
             cursor: pointer;
+            box-shadow: 0 0 15px rgba(173, 181, 189, 0.5);
         }
-        .question-link {
-            font-size: 12px; /* Adjust font size as needed */
+        .player {
+            margin: 10px 0;
+            padding: 10px;
+            background: #e9ecef;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
         }
-        .zoomed {
-            transform: scale(1.5); /* Adjust zoom scale as needed */
-            z-index: 10;
+        input[type="text"] {
+            background: #0ce4f0;
+            border: 1px solid #25da05;
+            padding: 10px;
+            border-radius: 5px;
+            color: #495057;
+            font-size: 1em;
+            text-align: center;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>Ludo Game Board</h1>
-    <div class="game-board">
-        <!-- Generate 100 cells -->
-        <div th:each="cellNum : ${#numbers.sequence(1, 100)}" class="cell" onclick="zoomCell(this)">
-            <div th:each="questionNum : ${#numbers.sequence(1, 6)}">
-                <a th:href="@{'/random-question/' + ${cellNum} + '/' + ${questionNum}}"
-                   th:text="'Question ' + ${questionNum}"
-                   class="question-link"></a>
+    <div class="pagecontainer">
+        <div class="header">Game Header</div>
+        <div class="boardcontainer">
+            <div class="leftnavig">Menu</div>
+            <div class="boardcontainerforplayers">
+                <div class="player">Player Name</div>
+                <input type="text" id="name" th:value="${player.user.userName}" readonly>
             </div>
+            <div class="boardcontainerforboard">
+                <div class="board">
+                    <a th:href="@{/questions(cellNumber=1)}" class="cell">Cell 1</a>
+                    <a th:href="@{/questions(cellNumber=2)}" class="cell">Cell 2</a>
+                    <a th:href="@{/questions(cellNumber=3)}" class="cell">Cell 3</a>
+                    <a th:href="@{/questions(cellNumber=4)}" class="cell">Cell 4</a>
+                    <a th:href="@{/questions(cellNumber=5)}" class="cell">Cell 5</a>
+                    <a th:href="@{/questions(cellNumber=6)}" class="cell">Cell 6</a>
+                    <a th:href="@{/questions(cellNumber=7)}" class="cell">Cell 7</a>
+                    <a th:href="@{/questions(cellNumber=8)}" class="cell">Cell 8</a>
+                    <a th:href="@{/questions(cellNumber=9)}" class="cell">Cell 9</a>
+                    <a th:href="@{/questions(cellNumber=10)}" class="cell">Cell 10</a>
+                    <div class="call">Cell 11</div>
+                    <div class="call">Cell 12</div>
+                    <div class="call">Cell 13</div>
+                    <div class="call">Cell 14</div>
+                    <div class="call">Cell 15</div>
+                    <div class="call">Cell 16</div>
+                    <div class="call">Cell 17</div>
+                    <div class="call">Cell 18</div>
+                    <div class="call">Cell 19</div>
+                    <div class="call">Cell 20</div>
+                    <div class="call">Cell 21</div>
+                    <div class="call">Cell 22</div>
+                    <div class="call">Cell 23</div>
+                    <div class="call">Cell 24</div>
+                    <div class="call">Cell 25</div>
+                    <div class="call">Cell 26</div>
+                    <div class="call">Cell 27</div>
+                    <div class="call">Cell 28</div>
+                    <div class="call">Cell 29</div>
+                    <div class="call">Cell 30</div>
+                    <div class="call">Cell 31</div>
+                    <div class="call">Cell 32</div>
+                    <div class="call">Cell 33</div>
+                    <div class="call">Cell 34</div>
+                    <div class="call">Cell 35</div>
+                    <div class="call">Cell 36</div>
+                    <div class="call">Cell 37</div>
+                    <div class="call">Cell 38</div>
+                    <div class="call">Cell 39</div>
+                    <div class="call">Cell 40</div>
+                    <div class="call">Cell 41</div>
+                    <div class="call">Cell 42</div>
+                    <div class="call">Cell 43</div>
+                    <div class="call">Cell 44</div>
+                    <div class="call">Cell 45</div>
+                    <div class="call">Cell 46</div>
+                    <div class="call">Cell 47</div>
+                    <div class="call">Cell 48</div>
+                    <div class="call">Cell 49</div>
+                    <div class="call">Cell 50</div>
+                    <div class="call">Cell 51</div>
+                    <div class="call">Cell 52</div>
+                    <div class="call">Cell 53</div>
+                    <div class="call">Cell 54</div>
+                    <div class="call">Cell 55</div>
+                    <div class="call">Cell 56</div>
+                    <div class="call">Cell 57</div>
+                    <div class="call">Cell 58</div>
+                    <div class="call">Cell 59</div>
+                    <div class="call">Cell 60</div>
+                    <div class="call">Cell 61</div>
+                    <div class="call">Cell 62</div>
+                    <div class="call">Cell 63</div>
+                    <div class="call">Cell 64</div>
+                    <div class="call">Cell 65</div>
+                    <div class="call">Cell 66</div>
+                    <div class="call">Cell 67</div>
+                    <div class="call">Cell 68</div>
+                    <div class="call">Cell 69</div>
+                    <div class="call">Cell 70</div>
+                    <div class="call">Cell 71</div>
+                    <div class="call">Cell 72</div>
+                    <div class="call">Cell 73</div>
+                    <div class="call">Cell 74</div>
+                    <div class="call">Cell 75</div>
+                    <div class="call">Cell 76</div>
+                    <div class="call">Cell 77</div>
+                    <div class="call">Cell 78</div>
+                    <div class="call">Cell 79</div>
+                    <div class="call">Cell 80</div>
+                    <div class="call">Cell 81</div>
+                    <div class="call">Cell 82</div>
+                    <div class="call">Cell 83</div>
+                    <div class="call">Cell 84</div>
+                    <div class="call">Cell 85</div>
+                    <div class="call">Cell 86</div>
+                    <div class="call">Cell 87</div>
+                    <div class="call">Cell 88</div>
+                    <div class="call"><b>Cell 89</b></div>
+                    <div class="call"><b>Cell 90</b></div>
+                    <div class="call"><b>Cell 91</b></div>
+                    <div class="call"><b>Cell 92</b></div>
+                    <div class="call"><b>Cell 93</b></div>
+                    <div class="call"><b>Cell 94</b></div>
+                    <div class="call"><b>Cell 95</b></div>
+                    <div class="call"><b>Cell 96</b></div>
+                    <div class="call"><b>Cell 97</b></div>
+                    <div class="call"><b>Cell 98</b></div>
+                    <div class="call"><b>Cell 99</b></div>
+                    <div class="call"><b>Cell 100</b></div>
+                </div>
+            </div>
+            <div class="rightnavig"><b>Options</b></div>
         </div>
+        <div class="footer"><b>Game Footer</b></div>
     </div>
-    <script>
-        function zoomCell(cell) {
-            // Remove the zoomed class from any other cell
-            var zoomedCells = document.querySelectorAll('.zoomed');
-            zoomedCells.forEach(function(zoomedCell) {
-                zoomedCell.classList.remove('zoomed');
-            });
-
-            // Add the zoomed class to the clicked cell
-            cell.classList.add('zoomed');
-        }
-
-        // Click anywhere on the page to remove zoom effect
-        document.addEventListener('click', function(event) {
-            var zoomedCells = document.querySelectorAll('.zoomed');
-            zoomedCells.forEach(function(zoomedCell) {
-                if (!zoomedCell.contains(event.target)) {
-                    zoomedCell.classList.remove('zoomed');
-                }
-            });
-        });
-    </script>
 </body>
 </html>

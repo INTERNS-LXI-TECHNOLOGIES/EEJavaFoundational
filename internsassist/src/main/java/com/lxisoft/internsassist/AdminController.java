@@ -23,6 +23,21 @@ public class AdminController {
         } catch (Exception e) {
             model.addAttribute("message", "Error assigning role: " + e.getMessage());
         }
-        return "home";
+        return "login";
+    }
+
+    @GetMapping("/adminhome")
+    public String adminPage() {
+        return "adminhome";
+    }
+
+    @GetMapping("/admin")
+    public String adminPagee() {
+        return "admin";
+    }
+
+    @GetMapping("/assignquestion")
+    public String assignquestion() {
+        return "assignquestion";
     }
 }
