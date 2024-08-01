@@ -13,22 +13,28 @@
             background-image: url('ludo-board.jpg'); /* Add a Ludo board background image */
             background-size: cover;
             background-repeat: no-repeat;
+            margin: 0;
         }
 
         .container {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             text-align: center;
+            width: 300px;
         }
 
         h1 {
             color: #ff4500; /* Ludo red color */
+            margin-bottom: 20px;
         }
 
         label {
             font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
         }
 
         input {
@@ -37,6 +43,7 @@
             border-radius: 5px;
             border: 1px solid #ccc;
             width: 100%;
+            box-sizing: border-box;
         }
 
         button {
@@ -47,6 +54,8 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
+            margin-top: 20px;
+            width: 100%;
         }
 
         button:hover {
@@ -58,6 +67,7 @@
             text-decoration: none;
             font-size: 16px;
             margin-top: 20px;
+            display: block;
         }
 
         a:hover {
@@ -70,13 +80,22 @@
         <h1>Sign Up</h1>
         <form th:action="@{/signup}" method="post">
             <div>
-                <label for="username">User Name:</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" required placeholder="Username">
             </div>
+
             <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" required minlength="8" placeholder="Password">
+                <small>Password must be at least 8 characters long.</small>
             </div>
+
+            <div>
+                <input type="email" id="mail" name="mail" required placeholder="Email">
+            </div>
+
+            <div>
+                <input type="tel" id="number" name="number" required placeholder="Phone Number">
+            </div>
+
             <div>
                 <button type="submit">Sign Up</button>
             </div>

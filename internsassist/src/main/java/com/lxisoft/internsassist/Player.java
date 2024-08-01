@@ -13,16 +13,12 @@ public class Player {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    
     @OneToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
-
-  
     private String name;
-
-
- 
+    private String mail;
+    private long phone;
 
     public String getName() {
         return name;
@@ -31,7 +27,6 @@ public class Player {
     public void setName(String name) {
         this.name = name;
     }
-    
 
     public User getUser() {
         return user;
@@ -41,5 +36,19 @@ public class Player {
         this.user = user;
     }
 
-    // Constructor, getters, setters
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+
+    public long getPhone() {
+        return phone;
+    }
+
+    public void setPhone(long phone) {
+        this.phone = phone;
+    }
 }

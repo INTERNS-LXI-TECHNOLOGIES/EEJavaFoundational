@@ -12,11 +12,14 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 @RequestMapping("/signup")
 public class SignUpController {
-    @Autowired
-    private UserService userService;
+    //@Autowired
+   // private UserService userService;
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    public PlayerRepository players;
     
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -30,19 +33,33 @@ public class SignUpController {
     @PostMapping
     public String signUp(@RequestParam("username") String username, 
                          @RequestParam("password") String password, 
+                         @RequestParam("mail") String mail,
+                         @RequestParam("number") String number,
                          Model model) {
         if (userRepository.findByUserName(username) != null) {
             model.addAttribute("error", "User already exists");
             return "signup";
         }
 
-        User user = new User();
-        user.setUserName(username);
-        user.setPassword(passwordEncoder.encode(password));
-        userRepository.save(user);
+        User userr = new User();
+        userr.setUserName(username);
+        userr.setPassword(passwordEncoder.encode(password));
+        userRepository.save(userr);
         
         // Assuming UserService.saveUser(user) does additional processing
-        userService.saveUser(user);
+       // userService.saveUser(user);
+
+
+        Player player = new Player();
+        player.setName(username);
+        player.setMail(mail);
+        Long num = Long.parseLong(number);
+        player.setPhone(num);
+        player.setUser(userr);
+        players.save(player);
+       
+
+
         
         return "redirect:/login";
     }

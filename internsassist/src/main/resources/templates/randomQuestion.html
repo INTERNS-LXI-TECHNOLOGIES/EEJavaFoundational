@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Questions for Cell</title>
+    <title>Random Question</title>
     <style>
         body {
             margin: 0;
@@ -48,20 +48,15 @@
 </head>
 <body>
     <div class="container">
-        <h2>Question for Cell <span th:text="${cellNumber}"></span></h2>
-        <p>Cell Number: <span th:text="${cellNumber}"></span></p>
+        <h2>Final Question to Proceed</h2>
+        <p th:text="${finalQuestion.text}"></p>
 
-        <!-- Display the question texts -->
-        <form class="answer-form" th:action="@{/checkAnswer}" method="post">
-            <div th:each="question, iter : ${questions}">
-                <p th:text="${iter.index + 1} + '. ' + ${question.text}"></p>
-                <input type="text" name="userAnswers" placeholder="Your Answer" required>
-                <input type="hidden" name="correctAnswers" th:value="${question.correctAnswer}" />
-            </div>
+        <form class="answer-form" th:action="@{/checkFinalAnswer}" method="post">
+            <input type="text" name="userAnswer" placeholder="Your Answer" required>
+            <input type="hidden" name="correctAnswer" th:value="${finalQuestion.correctAnswer}" />
             <input type="submit" value="Submit Answer">
         </form>
 
-        <!-- Display the result message if available -->
         <p class="result" th:text="${result}" th:if="${result}"></p>
     </div>
 </body>

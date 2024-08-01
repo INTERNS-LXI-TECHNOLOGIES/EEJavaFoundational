@@ -20,7 +20,9 @@ public class Question {
     private String optionsQuestion;
     private String text;
     private String correctAnswer;
-    private String type;
+      private String type; // "true_false" or "multiple_choice"
+
+    private String[] options; // Only for multiple choice questions
 
 
     public Question(String text, String correctAnswer, String type) {
@@ -92,4 +94,13 @@ public class Question {
     public void setOptionsQuestion(String optionsQuestion) {
         this.optionsQuestion = optionsQuestion;
     }
+
+    public String[] getOptions() {
+        return options;
+    }
+
+    public void setOptions(String[] options) {
+        this.options = options;
+    }
+
 }

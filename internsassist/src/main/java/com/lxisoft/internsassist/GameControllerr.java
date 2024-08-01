@@ -7,42 +7,75 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 @Controller
 public class GameControllerr {
-   @Autowired
+    @Autowired
     private QuestionService questionService;
 
-    List<Question> questions;
+    @Autowired
+    private BooleanQuestionService bquestionService;
 
-   /*  @GetMapping("/questions")
-    private  String viewQuestion(Model model) {
-    questions = questionService.getAllQuestion();
-    model.addAttribute("questions", questions);
-        return "viewQuestions";
-    }*/
-    private final Random random = new Random();
+    private List<Question> questions;
+    private List<BooleanQuestion> booleanQuestions;
+
+    private Random random = new Random();
 
     @GetMapping("/questions")
-    public String getQuestions(Model model) {
+    public String getQuestions(@RequestParam("cellNumber") int cellNumber, Model model) {
         questions = questionService.getAllQuestion();
-        Question question = questions.get(random.nextInt(questions.size()));
-        model.addAttribute("question", question);
+        List<Question> randomQuestions = getRandomQuestions(questions, 3);
+
+        model.addAttribute("cellNumber", cellNumber);
+        model.addAttribute("questions", randomQuestions);
         return "questions";
     }
 
+    private List<Question> getRandomQuestions(List<Question> questions, int numberOfQuestions) {
+        List<Question> randomQuestions = new ArrayList<>();
+        List<Integer> usedIndexes = new ArrayList<>();
+
+        while (randomQuestions.size() < numberOfQuestions) {
+            int index = random.nextInt(questions.size());
+            if (!usedIndexes.contains(index)) {
+                randomQuestions.add(questions.get(index));
+                usedIndexes.add(index);
+            }
+        }
+        return randomQuestions;
+    }
+
     @PostMapping("/checkAnswer")
-    public String checkAnswer(@RequestParam String userAnswer, @RequestParam String correctAnswer, Model model) {
-        if (userAnswer.equalsIgnoreCase(correctAnswer)) {
-            model.addAttribute("result", "Correct! Next question:");
-            return "result";
+    public String checkAnswer(@RequestParam List<String> userAnswers, @RequestParam List<String> correctAnswers, Model model) {
+        boolean allCorrect = true;
+        for (int i = 0; i < userAnswers.size(); i++) {
+            if (!userAnswers.get(i).equalsIgnoreCase(correctAnswers.get(i))) {
+                allCorrect = false;
+                break;
+            }
+        }
+
+        if (allCorrect) {
+            int randomIndex = random.nextInt(correctAnswers.size());
+            Question finalQuestion = questions.get(randomIndex);
+            model.addAttribute("finalQuestion", finalQuestion);
+            return "randomQuestion";
         } else {
-            model.addAttribute("result", "Wrong answer! Try again.");
+            model.addAttribute("result", "Some answers were wrong! Try again.");
             return "result";
         }
     }
 
+    @PostMapping("/checkFinalAnswer")
+    public String checkFinalAnswer(@RequestParam String userAnswer, @RequestParam String correctAnswer, Model model) {
+        if (userAnswer.equalsIgnoreCase(correctAnswer)) {
+            model.addAttribute("result", "Correct! You can proceed to the next cell.");
+        } else {
+            model.addAttribute("result", "Wrong answer! Try again.");
+        }
+        return "result";
+    }
 }

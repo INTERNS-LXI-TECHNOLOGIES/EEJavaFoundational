@@ -18,14 +18,14 @@ public class UserService {
     @Autowired
     private RoleRepository roleRepository;
 
-    public void saveUser(User user) {
+   /*  public void saveUser(User user) {
         userRepository.save(user);
 
         Player player = new Player();
         player.setUser(user);
         // set other player attributes if necessary
         playerRepository.save(player);
-    }
+    }*/
 
 
 

@@ -33,7 +33,7 @@ public class SecurityConfig {
                     .requestMatchers("/home/**").hasAnyAuthority("user")
                     .anyRequest().authenticated();
         }).formLogin(form -> form.loginPage("/login").permitAll().successHandler(successHandler))
-          .logout(form -> form.permitAll());
+        .logout(form -> form.logoutUrl("/logout").logoutSuccessUrl("/login?logout").permitAll());   ;
 
         return http.build();
     }

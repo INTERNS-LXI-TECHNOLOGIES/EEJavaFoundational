@@ -65,13 +65,32 @@
 </head>
 <body>
     <div class="container">
-        <h2>Assign Question</h2>
+        <h2>Assign Question  for one Word</h2>
         <form th:action="@{/assign-question}" method="post">
             <label for="questionText">Question</label>
             <input type="text" id="questionText" name="questionText" required>
             
             <label for="correctAnswer">Correct Answer</label>
             <input type="text" id="correctAnswer" name="correctAnswer" required>
+            
+            <input type="submit" class="button" value="Assign Question">
+        </form>
+    </div>
+
+    <div class="container">
+        <h2>Assign Question For True Or False</h2>
+        <form th:action="@{/assign-questions}" method="post">
+            <label for="questionText">Question</label>
+            <input type="text" id="questionText" name="questionText" required>
+            
+            <div>
+                <input type="radio" id="trueAnswer" name="correctAnswer" value="true" required>
+                <label for="trueAnswer">True</label>
+            </div>
+            <div>
+                <input type="radio" id="falseAnswer" name="correctAnswer" value="false" required>
+                <label for="falseAnswer">False</label>
+            </div>
             
             <input type="submit" class="button" value="Assign Question">
         </form>
