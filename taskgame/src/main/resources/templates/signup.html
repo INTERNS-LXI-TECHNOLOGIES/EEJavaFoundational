@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>sign up page</title>
+    </head>
+    <body>
+        <form th:action="/addUser" method="post" >
+            <label>ENTER YOUR USERNAME</label>
+            <input type="text" name="userName">
+            <label>ENTER YOUR PASSWORD</label>
+            <input type="password" name="pasword">
+            <input type="submit" value="SUBMIT">
+        </form>
+    </body>
+</html>
