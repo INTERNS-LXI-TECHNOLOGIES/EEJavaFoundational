@@ -23,4 +23,6 @@ public class QuestionService {
     {
         return  questionRepository.findAll();
     }
+
+    
  }

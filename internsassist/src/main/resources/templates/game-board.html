@@ -9,8 +9,8 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: #1d1c16; /* Light background */
-            font-family: 'Arial', sans-serif; /* Standard font */
+            background: #1d1c16;
+            font-family: 'Arial', sans-serif;
             color: #333;
         }
         .pagecontainer {
@@ -18,7 +18,7 @@
             grid-template-rows: auto 1fr auto;
             width: 90%;
             height: 95%;
-            background: #fff; /* White background */
+            background: #fff;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
@@ -125,16 +125,16 @@
                     <a th:href="@{/questions(cellNumber=8)}" class="cell">Cell 8</a>
                     <a th:href="@{/questions(cellNumber=9)}" class="cell">Cell 9</a>
                     <a th:href="@{/questions(cellNumber=10)}" class="cell">Cell 10</a>
-                    <div class="call">Cell 11</div>
-                    <div class="call">Cell 12</div>
-                    <div class="call">Cell 13</div>
-                    <div class="call">Cell 14</div>
-                    <div class="call">Cell 15</div>
-                    <div class="call">Cell 16</div>
-                    <div class="call">Cell 17</div>
-                    <div class="call">Cell 18</div>
-                    <div class="call">Cell 19</div>
-                    <div class="call">Cell 20</div>
+                    <a th:href="@{/questions(cellNumber=11)}" class="cell">Cell 11</a>
+                    <a th:href="@{/questions(cellNumber=12)}" class="cell">Cell 12</a>
+                    <a th:href="@{/questions(cellNumber=13)}" class="cell">Cell 13</a>
+                    <a th:href="@{/questions(cellNumber=14)}" class="cell">Cell 14</a>
+                    <a th:href="@{/questions(cellNumber=15)}" class="cell">Cell 15</a>
+                    <a th:href="@{/questions(cellNumber=16)}" class="cell">Cell 16</a>
+                    <a th:href="@{/questions(cellNumber=17)}" class="cell">Cell 17</a>
+                    <a th:href="@{/questions(cellNumber=18)}" class="cell">Cell 18</a>
+                    <a th:href="@{/questions(cellNumber=19)}" class="cell">Cell 19</a>
+                    <a th:href="@{/questions(cellNumber=20)}" class="cell">Cell 20</a>
                     <div class="call">Cell 21</div>
                     <div class="call">Cell 22</div>
                     <div class="call">Cell 23</div>
@@ -203,30 +203,26 @@
                     <div class="call">Cell 86</div>
                     <div class="call">Cell 87</div>
                     <div class="call">Cell 88</div>
-                    <div class="call"><b>Cell 89</b></div>
-                    <div class="call"><b>Cell 90</b></div>
-                    <div class="call"><b>Cell 91</b></div>
-                    <div class="call"><b>Cell 92</b></div>
-                    <div class="call"><b>Cell 93</b></div>
-                    <div class="call"><b>Cell 94</b></div>
-                    <div class="call"><b>Cell 95</b></div>
-                    <div class="call"><b>Cell 96</b></div>
-                    <div class="call"><b>Cell 97</b></div>
-                    <div class="call"><b>Cell 98</b></div>
-                    <div class="call"><b>Cell 99</b></div>
-                    <div class="call"><b>Cell 100</b></div>
+                    <div class="call">Cell 89</div>
+                    <div class="call">Cell 90</div>
+                    <div class="call">Cell 91</div>
+                    <div class="call">Cell 92</div>
+                    <div class="call">Cell 93</div>
+                    <div class="call">Cell 94</div>
+                    <div class="call">Cell 95</div>
+                    <div class="call">Cell 96</div>
+                    <div class="call">Cell 97</div>
+                    <div class="call">Cell 98</div>
+                    <div class="call">Cell 99</div>
+                    <div class="call">Cell 100</div>
                 </div>
             </div>
-            <div class="rightnavig"><b>Options</b></div>
+            <div class="rightnavig">Information</div>
         </div>
-        <div class="footer"><b>Game Footer</b></div>
+        <div class="footer">Game Footer</div>
     </div>
-    <header>
-        <div>
-            <form th:action="@{/logout}" method="post">
-                <button type="submit" class="logout-button">Logout</button>
-            </form>
-        </div>
-    </header>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
 </body>
 </html>

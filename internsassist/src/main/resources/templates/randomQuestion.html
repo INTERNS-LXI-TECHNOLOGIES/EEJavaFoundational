@@ -48,15 +48,18 @@
 </head>
 <body>
     <div class="container">
-        <h2>Final Question to Proceed</h2>
+        <h2>Final Question for Cell <span th:text="${cellNumber}"></span></h2>
         <p th:text="${finalQuestion.text}"></p>
 
+        <!-- Display the question texts -->
         <form class="answer-form" th:action="@{/checkFinalAnswer}" method="post">
+            <input type="hidden" name="cellNumber" th:value="${cellNumber}" />
             <input type="text" name="userAnswer" placeholder="Your Answer" required>
             <input type="hidden" name="correctAnswer" th:value="${finalQuestion.correctAnswer}" />
             <input type="submit" value="Submit Answer">
         </form>
 
+        <!-- Display the result message if available -->
         <p class="result" th:text="${result}" th:if="${result}"></p>
     </div>
 </body>

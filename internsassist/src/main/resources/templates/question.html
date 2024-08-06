@@ -6,7 +6,7 @@
     <style>
         .game-board {
             display: grid;
-            grid-template-columns: repeat(10, 50px); /* Adjust cell size as needed */
+            grid-template-columns: repeat(10, 50px);
             grid-template-rows: repeat(10, 50px);
             gap: 1px;
         }
@@ -20,14 +20,13 @@
             justify-content: center;
         }
         .question-link {
-            font-size: 12px; /* Adjust font size as needed */
+            font-size: 12px;
         }
     </style>
 </head>
 <body>
     <h1>Ludo Game Board</h1>
     <div class="game-board">
-        <!-- Generate 100 cells -->
         <div th:each="cellNum : ${#numbers.sequence(1, 100)}" class="cell">
             <div th:each="questionNum : ${#numbers.sequence(1, 6)}">
                 <a th:href="@{'/random-question/' + ${cellNum} + '/' + ${questionNum}}"

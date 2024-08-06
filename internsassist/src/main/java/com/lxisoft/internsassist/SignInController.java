@@ -9,10 +9,10 @@ public class SignInController {
 
     @GetMapping("/login")
     public String showLoginForm(Model model) {
+        System.out.println("Enter into login page1");
         return "login";
     }
 
-    
     @GetMapping("/sign_in")
     public String showSignForm() {
         return "login";

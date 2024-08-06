@@ -19,7 +19,8 @@ public class SecurityConfig {
     private final CustomAuthenticationSuccessHandler successHandler;
 
     @Autowired
-    public SecurityConfig(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder, CustomAuthenticationSuccessHandler successHandler) {
+    public SecurityConfig(UserDetailsService userDetailsService, PasswordEncoder passwordEncoder,
+            CustomAuthenticationSuccessHandler successHandler) {
         this.userDetailsService = userDetailsService;
         this.passwordEncoder = passwordEncoder;
         this.successHandler = successHandler;
@@ -28,12 +29,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(authz -> {
-            authz.requestMatchers("/","/signup").permitAll()
+            authz.requestMatchers("/", "/signup").permitAll()
                     .requestMatchers("/adminhome/**").hasAuthority("admin")
                     .requestMatchers("/home/**").hasAnyAuthority("user")
                     .anyRequest().authenticated();
         }).formLogin(form -> form.loginPage("/login").permitAll().successHandler(successHandler))
-        .logout(form -> form.logoutUrl("/logout").logoutSuccessUrl("/login?logout").permitAll());   ;
+                .logout(form -> form.logoutUrl("/logout").logoutSuccessUrl("/login?logout").permitAll());
+        ;
 
         return http.build();
     }

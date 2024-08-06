@@ -30,11 +30,27 @@ public class QuestionController {
         return "assignquestion";
     }
 
+   
+
     @PostMapping("/assign-question")
-    public String assignQuestion(@RequestParam String questionText, @RequestParam String correctAnswer) {
+    public String assignQuestion(@RequestParam String questionText,
+                                 @RequestParam String questionType,
+                                 @RequestParam(required = false) Boolean isTrue,
+                                 @RequestParam(required = false) String options,
+                                 @RequestParam(required = false) String correctAnswer) {
         Question question = new Question();
         question.setText(questionText);
-        question.setCorrectAnswer(correctAnswer);
+        question.setType(questionType);
+
+        if ("true_false".equals(questionType)) {
+            question.setCorrectAnswer(isTrue != null ? isTrue.toString() : "false");
+        } else if ("multiple_choice".equals(questionType)) {
+            question.setOptionss(options);
+            question.setCorrectAnswer(correctAnswer);
+        } else {
+            question.setCorrectAnswer(correctAnswer);
+        }
+
         questionService.saveQuestion(question);
         return "redirect:/assign-question?success";
     }

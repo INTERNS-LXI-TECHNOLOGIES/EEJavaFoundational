@@ -19,6 +19,15 @@ public class Player {
     private String name;
     private String mail;
     private long phone;
+    public int getCurrentCell() {
+        return currentCell;
+    }
+
+    public void setCurrentCell(int currentCell) {
+        this.currentCell = currentCell;
+    }
+
+    private int currentCell = 1;
 
     public String getName() {
         return name;

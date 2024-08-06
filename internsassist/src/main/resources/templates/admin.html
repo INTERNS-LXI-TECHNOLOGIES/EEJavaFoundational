@@ -2,10 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Admin Page - Assign Roles</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f0f8ff;
+            font-family: 'Press Start 2P', cursive; /* Gaming-themed font */
+            background-color: #282c34; /* Dark background for gaming look */
             display: flex;
             justify-content: center;
             align-items: center;
@@ -14,27 +15,29 @@
             background-size: cover;
             background-repeat: no-repeat;
             margin: 0;
+            color: #fff;
         }
 
         .container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
             max-width: 400px;
             width: 100%;
             text-align: center;
         }
 
         h1 {
-            color: #ff4500; /* Ludo red color */
-            font-size: 24px;
+            color: #f39c12; /* Bright gold color for the title */
+            font-size: 28px;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000; /* Shadow for a glowing effect */
         }
 
         label {
             font-weight: bold;
-            color: #333;
+            color: #fff;
             display: block;
             margin: 10px 0 5px;
         }
@@ -47,6 +50,8 @@
             width: calc(100% - 24px);
             font-size: 16px;
             box-sizing: border-box;
+            background-color: #333; /* Dark background for input fields */
+            color: #fff; /* White text */
         }
 
         button {
@@ -56,19 +61,24 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-shadow: 1px 1px 2px #000; /* Shadow for text */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            border: 3px solid #fff; /* White border for pixelated look */
         }
 
         button:hover {
             background-color: #228b22;
+            transform: scale(1.05);
         }
 
         .message {
             margin-top: 20px;
             font-size: 18px;
-            color: #d2691e; /* Ludo yellow color */
+            color: #f39c12; /* Bright yellow color */
             font-weight: bold;
+            text-shadow: 1px 1px 2px #000; /* Shadow for readability */
         }
     </style>
 </head>

@@ -1,5 +1,9 @@
 package com.lxisoft.internsassist;
 
+import java.util.List;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -18,11 +22,32 @@ public class Question {
     private Cell cell;
     private String trueFalseQuestion;
     private String optionsQuestion;
+    @Column(nullable = false)
     private String text;
-    private String correctAnswer;
-      private String type; // "true_false" or "multiple_choice"
+    private String correctAnswer;// For both multiple choice and one word questions
+    @Column(nullable = false)
+    private String type; // "true_false", "multiple_choice", "one_word"
 
-    private String[] options; // Only for multiple choice questions
+    @ElementCollection
+    private List<String> options; // Only for multiple choice questions
+ public String getOptionss() {
+        return optionss;
+    }
+
+    public void setOptionss(String optionss) {
+        this.optionss = optionss;
+    }
+
+private String optionss;
+    public Boolean getIsTrue() {
+        return isTrue;
+    }
+
+    public void setIsTrue(Boolean isTrue) {
+        this.isTrue = isTrue;
+    }
+
+    private Boolean isTrue; // Only for true/false questions
 
 
     public Question(String text, String correctAnswer, String type) {
@@ -60,8 +85,6 @@ public class Question {
     }
 
 
-
-
     // Getters and Setters
     public Long getId() {
         return id;
@@ -95,11 +118,11 @@ public class Question {
         this.optionsQuestion = optionsQuestion;
     }
 
-    public String[] getOptions() {
+    public List<String> getOptions() {
         return options;
     }
 
-    public void setOptions(String[] options) {
+    public void setOptions(List<String> options) {
         this.options = options;
     }
 

@@ -51,7 +51,6 @@
         <h2>Question for Cell <span th:text="${cellNumber}"></span></h2>
         <p>Cell Number: <span th:text="${cellNumber}"></span></p>
 
-        <!-- Display the question texts -->
         <form class="answer-form" th:action="@{/checkAnswer}" method="post">
             <div th:each="question, iter : ${questions}">
                 <p th:text="${iter.index + 1} + '. ' + ${question.text}"></p>
@@ -61,7 +60,6 @@
             <input type="submit" value="Submit Answer">
         </form>
 
-        <!-- Display the result message if available -->
         <p class="result" th:text="${result}" th:if="${result}"></p>
     </div>
 </body>
