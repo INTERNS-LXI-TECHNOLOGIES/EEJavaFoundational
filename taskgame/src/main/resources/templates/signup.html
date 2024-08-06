@@ -3,11 +3,11 @@
         <title>sign up page</title>
     </head>
     <body>
-        <form th:action="/addUser" method="post" >
+        <form th:action="@{/addUser}" method="post" th:object="${user}">
             <label>ENTER YOUR USERNAME</label>
-            <input type="text" name="userName">
+            <input type="text" th:field="*{userName}">
             <label>ENTER YOUR PASSWORD</label>
-            <input type="password" name="pasword">
+            <input type="password" th:field="*{password}">
             <input type="submit" value="SUBMIT">
         </form>
     </body>

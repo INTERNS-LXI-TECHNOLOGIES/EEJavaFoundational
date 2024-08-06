@@ -48,4 +48,17 @@ public class QuestionBank{
     public void setLevel(Long level) {
         this.level = level;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        QuestionBank qb = (QuestionBank)obj;
+        if(this.getId()==qb.getId()){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    
 }

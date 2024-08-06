@@ -23,7 +23,7 @@ public class SecurityConfig{
     public SecurityFilterChain securityFilterChain(HttpSecurity http)throws Exception{
         http.authorizeHttpRequests(
             auth->{auth.requestMatchers("/").permitAll()
-                        .requestMatchers("/signup").permitAll()
+                        .requestMatchers("/signup","/addUser").permitAll()
                         .requestMatchers("/gethome").hasAnyAuthority("user","admin")
                         .requestMatchers("/addproject").hasAuthority("admin")
                         .anyRequest().authenticated();
@@ -36,13 +36,10 @@ public class SecurityConfig{
         return http.build();
     }
 
-   
     @Bean
     public PasswordEncoder passwordEncoder()
     {
         return new BCryptPasswordEncoder();
     } 
-
-
 
 }

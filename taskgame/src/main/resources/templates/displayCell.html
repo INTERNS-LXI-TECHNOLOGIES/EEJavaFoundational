@@ -1,0 +1,12 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>SHOWING THE CELL</title>
+    </head>
+    <body>
+        <ul th:object="${cell}">
+            <li>ID: <span th:text="*{id}"></span></li>
+            <li>QB ID: <span th:text="*{qb.id}"></span></li>
+            <li>Question : <span th:text="*{qb.name}"></span></li>
+        </ul>
+    </body>
+</html>

@@ -65,7 +65,7 @@
         <table>
             <tr th:each="cellRow : ${cells}">
                 <td th:each="c : ${cellRow}">
-                    [[${c.getId()}]]
+                    <a th:href="@{/showCell/{id}(id=${c.getId()})}">[[${c.getId()}]]</a> 
                 </td>
             </tr>
         </table>    

@@ -1,6 +1,8 @@
 package com.lxisoft.taskgame.service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,7 +19,10 @@ public class CellService {
     @Autowired
     private QuestionBankService qbService;
 
+    private List <Cell> storedCells;
+
     public Cell getCellByQbLevCell(int level){
+        storedCells = new ArrayList<>();
         List <Cell> cellByQbLevel = cellRepository.findAll();
         Cell cell =null;
         for(Cell c : cellByQbLevel){
@@ -30,6 +35,7 @@ public class CellService {
     }
 
     public Cell[][] generateCells(){
+        
         Cell[][] cells = new Cell[10][10];
         if(cellRepository.count()== 0){           
             for(int i=0; i<10; i++){
@@ -73,12 +79,25 @@ public class CellService {
         else{      
               for(int i =0;i<10;i++){
                 for(int j=0;j<10;j++){
-                    cells[i][j] = getCellByQbLevCell(i+1);   
-                    long id =(long)((i*10)+j+1);
-                    cells[i][j].setId(id);
+                    if(qbService !=null){
+                        cells[i][j] = getCellById((long)(i*10+j+1));
+                        
+                    }
+                    else{
+                        System.out.println("qb is null");
+                    }
                 }
               }
             return cells;
         }
+    }
+
+    public Cell getCellById(Long id){
+        Cell cell =null;
+        Optional<Cell>cellOptional = cellRepository.findById(id);
+        if(cellOptional.isPresent()){
+            cell = cellOptional.get();
+        }
+        return cell;
     }
 }

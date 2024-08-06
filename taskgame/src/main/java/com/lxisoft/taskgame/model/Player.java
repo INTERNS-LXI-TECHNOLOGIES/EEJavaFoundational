@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 
 @Entity
@@ -16,8 +17,9 @@ public class Player{
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-    private Long currentCellId;
+    @ManyToOne(fetch=FetchType.EAGER)
+    @JoinColumn(name="cell_id")
+    private Cell cell;
 
     @OneToOne(fetch= FetchType.EAGER)
     @JoinColumn(name="user_id")
@@ -31,12 +33,12 @@ public class Player{
         this.user = user;
     }
 
-    public Long getCurrentCellId() {
-        return currentCellId;
+    public Cell getCell() {
+        return cell;
     }
 
-    public void setCurrentCellId(Long currentCellId) {
-        this.currentCellId = currentCellId;
+    public void setCell(Cell cell) {
+        this.cell = cell;
     }
     
 }
