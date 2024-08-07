@@ -1,8 +1,7 @@
 package com.lxisoft.taskgame.model;
 
 import java.util.List;
-
-import org.springframework.data.repository.cdi.Eager;
+import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -10,9 +9,10 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Cell {
@@ -24,17 +24,13 @@ public class Cell {
     @OneToMany(mappedBy="cell")
     private List <Player> players;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="qb_id")
-    private QuestionBank qb;
-
-    public QuestionBank getQb() {
-        return qb;
-    }
-
-    public void setQb(QuestionBank qb) {
-        this.qb = qb;
-    }
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        name="cell_qb",
+        joinColumns=@JoinColumn(name="cell_id"),
+        inverseJoinColumns=@JoinColumn(name="qb_id")
+    )
+    private Set<QuestionBank> qbSet;
 
     public Long getId() {
         return id;
@@ -61,6 +57,14 @@ public class Cell {
         else{
             return false;
         }
+    }
+
+    public Set<QuestionBank> getQbSet() {
+        return qbSet;
+    }
+
+    public void setQbSet(Set<QuestionBank> qbSet) {
+        this.qbSet = qbSet;
     }
 
 }
