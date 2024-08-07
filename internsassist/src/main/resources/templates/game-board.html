@@ -3,52 +3,82 @@
 <head>
     <title>Interns Game</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background: #1d1c16;
-            font-family: 'Arial', sans-serif;
-            color: #333;
+            background: radial-gradient(circle, #007dff, #00c6ff);
+            font-family: 'VT323', monospace;
+            color: #fff;
         }
         .pagecontainer {
             display: grid;
             grid-template-rows: auto 1fr auto;
             width: 90%;
             height: 95%;
-            background: #fff;
-            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            position: relative;
+        }
+        .pagecontainer::before,
+        .pagecontainer::after {
+            content: '';
+            position: absolute;
+            width: 150%;
+            height: 150%;
+            top: -25%;
+            left: -25%;
+            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: rotateBeams 6s linear infinite;
+            pointer-events: none;
+        }
+        .pagecontainer::after {
+            animation-delay: -3s;
+        }
+        @keyframes rotateBeams {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        .header, .footer {
+            background: #ffeb3b;
+            color: #333;
+            font-weight: bold;
+            text-align: center;
+            padding: 15px;
         }
         .boardcontainer {
             display: grid;
             grid-template-columns: 1fr 3fr 8fr 1fr;
             height: 100%;
         }
-        .boardcontainerforplayers, .boardcontainerforboard, .leftnavig, .rightnavig, .header, .footer {
+        .leftnavig, .rightnavig {
+            background: #ffeb3b;
+            color: #333;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1em;
+            font-size: 1.5em;
             padding: 10px;
-        }
-        .header, .footer {
-            background: #e9ecef;
-            font-weight: bold;
-        }
-        .leftnavig, .rightnavig {
-            background: #e9ecef;
         }
         .boardcontainerforplayers {
             flex-direction: column;
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.1);
             border-right: 1px solid #dee2e6;
+            padding: 20px;
+            text-align: center;
         }
         .boardcontainerforboard {
-            background: #fff;
+            background: rgba(0, 0, 0, 0.1);
         }
         .board {
             display: grid;
@@ -57,38 +87,44 @@
             gap: 2px;
             width: 100%;
             height: 100%;
+            padding: 10px;
         }
         .cell, .call {
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f1f3f5;
-            border: 1px solid #dee2e6;
+            background: #007dff;
+            border: 2px solid #00c6ff;
+            color: #fff;
+            font-size: 1.5em;
             transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
             position: relative;
+            border-radius: 8px;
+            text-decoration: none;
         }
         .cell:hover, .call:hover {
-            background: #adb5bd;
+            background: #00c6ff;
             transform: scale(1.05);
             cursor: pointer;
-            box-shadow: 0 0 15px rgba(173, 181, 189, 0.5);
+            box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
         }
         .player {
             margin: 10px 0;
             padding: 10px;
-            background: #e9ecef;
+            background: #ffeb3b;
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+            color: #333;
         }
         input[type="text"] {
-            background: #0ce4f0;
-            border: 1px solid #25da05;
+            background: #ffeb3b;
+            border: 2px solid #00c6ff;
             padding: 10px;
             border-radius: 5px;
-            color: #495057;
-            font-size: 1em;
+            color: #333;
+            font-size: 1.5em;
             text-align: center;
             margin-top: 10px;
+            width: 100%;
         }
         .logout-button {
             background-color: #f44336;
@@ -98,131 +134,136 @@
             border-radius: 5px;
             cursor: pointer;
             font-size: 1em;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
         }
         .logout-button:hover {
             background-color: #d32f2f;
+        }
+        .emoji {
+            font-size: 1.5em;
+            margin-left: 5px;
         }
     </style>
 </head>
 <body>
     <div class="pagecontainer">
-        <div class="header">Game Header</div>
+        <div class="header">Game Header <span class="emoji">🎮</span></div>
         <div class="boardcontainer">
-            <div class="leftnavig">Menu</div>
+            <div class="leftnavig">Menu <span class="emoji">📜</span></div>
             <div class="boardcontainerforplayers">
-                <div class="player">Player Name</div>
+                <div class="player">Player Name <span class="emoji">👤</span></div>
                 <input type="text" id="name" th:value="${player.user.userName}" readonly>
             </div>
             <div class="boardcontainerforboard">
                 <div class="board">
-                    <a th:href="@{/questions(cellNumber=1)}" class="cell">Cell 1</a>
-                    <a th:href="@{/questions(cellNumber=2)}" class="cell">Cell 2</a>
-                    <a th:href="@{/questions(cellNumber=3)}" class="cell">Cell 3</a>
-                    <a th:href="@{/questions(cellNumber=4)}" class="cell">Cell 4</a>
-                    <a th:href="@{/questions(cellNumber=5)}" class="cell">Cell 5</a>
-                    <a th:href="@{/questions(cellNumber=6)}" class="cell">Cell 6</a>
-                    <a th:href="@{/questions(cellNumber=7)}" class="cell">Cell 7</a>
-                    <a th:href="@{/questions(cellNumber=8)}" class="cell">Cell 8</a>
-                    <a th:href="@{/questions(cellNumber=9)}" class="cell">Cell 9</a>
-                    <a th:href="@{/questions(cellNumber=10)}" class="cell">Cell 10</a>
-                    <a th:href="@{/questions(cellNumber=11)}" class="cell">Cell 11</a>
-                    <a th:href="@{/questions(cellNumber=12)}" class="cell">Cell 12</a>
-                    <a th:href="@{/questions(cellNumber=13)}" class="cell">Cell 13</a>
-                    <a th:href="@{/questions(cellNumber=14)}" class="cell">Cell 14</a>
-                    <a th:href="@{/questions(cellNumber=15)}" class="cell">Cell 15</a>
-                    <a th:href="@{/questions(cellNumber=16)}" class="cell">Cell 16</a>
-                    <a th:href="@{/questions(cellNumber=17)}" class="cell">Cell 17</a>
-                    <a th:href="@{/questions(cellNumber=18)}" class="cell">Cell 18</a>
-                    <a th:href="@{/questions(cellNumber=19)}" class="cell">Cell 19</a>
-                    <a th:href="@{/questions(cellNumber=20)}" class="cell">Cell 20</a>
-                    <div class="call">Cell 21</div>
-                    <div class="call">Cell 22</div>
-                    <div class="call">Cell 23</div>
-                    <div class="call">Cell 24</div>
-                    <div class="call">Cell 25</div>
-                    <div class="call">Cell 26</div>
-                    <div class="call">Cell 27</div>
-                    <div class="call">Cell 28</div>
-                    <div class="call">Cell 29</div>
-                    <div class="call">Cell 30</div>
-                    <div class="call">Cell 31</div>
-                    <div class="call">Cell 32</div>
-                    <div class="call">Cell 33</div>
-                    <div class="call">Cell 34</div>
-                    <div class="call">Cell 35</div>
-                    <div class="call">Cell 36</div>
-                    <div class="call">Cell 37</div>
-                    <div class="call">Cell 38</div>
-                    <div class="call">Cell 39</div>
-                    <div class="call">Cell 40</div>
-                    <div class="call">Cell 41</div>
-                    <div class="call">Cell 42</div>
-                    <div class="call">Cell 43</div>
-                    <div class="call">Cell 44</div>
-                    <div class="call">Cell 45</div>
-                    <div class="call">Cell 46</div>
-                    <div class="call">Cell 47</div>
-                    <div class="call">Cell 48</div>
-                    <div class="call">Cell 49</div>
-                    <div class="call">Cell 50</div>
-                    <div class="call">Cell 51</div>
-                    <div class="call">Cell 52</div>
-                    <div class="call">Cell 53</div>
-                    <div class="call">Cell 54</div>
-                    <div class="call">Cell 55</div>
-                    <div class="call">Cell 56</div>
-                    <div class="call">Cell 57</div>
-                    <div class="call">Cell 58</div>
-                    <div class="call">Cell 59</div>
-                    <div class="call">Cell 60</div>
-                    <div class="call">Cell 61</div>
-                    <div class="call">Cell 62</div>
-                    <div class="call">Cell 63</div>
-                    <div class="call">Cell 64</div>
-                    <div class="call">Cell 65</div>
-                    <div class="call">Cell 66</div>
-                    <div class="call">Cell 67</div>
-                    <div class="call">Cell 68</div>
-                    <div class="call">Cell 69</div>
-                    <div class="call">Cell 70</div>
-                    <div class="call">Cell 71</div>
-                    <div class="call">Cell 72</div>
-                    <div class="call">Cell 73</div>
-                    <div class="call">Cell 74</div>
-                    <div class="call">Cell 75</div>
-                    <div class="call">Cell 76</div>
-                    <div class="call">Cell 77</div>
-                    <div class="call">Cell 78</div>
-                    <div class="call">Cell 79</div>
-                    <div class="call">Cell 80</div>
-                    <div class="call">Cell 81</div>
-                    <div class="call">Cell 82</div>
-                    <div class="call">Cell 83</div>
-                    <div class="call">Cell 84</div>
-                    <div class="call">Cell 85</div>
-                    <div class="call">Cell 86</div>
-                    <div class="call">Cell 87</div>
-                    <div class="call">Cell 88</div>
-                    <div class="call">Cell 89</div>
-                    <div class="call">Cell 90</div>
-                    <div class="call">Cell 91</div>
-                    <div class="call">Cell 92</div>
-                    <div class="call">Cell 93</div>
-                    <div class="call">Cell 94</div>
-                    <div class="call">Cell 95</div>
-                    <div class="call">Cell 96</div>
-                    <div class="call">Cell 97</div>
-                    <div class="call">Cell 98</div>
-                    <div class="call">Cell 99</div>
-                    <div class="call">Cell 100</div>
+                    <a th:href="@{/questions(cellNumber=1)}" class="cell">1<span class="emoji">🔵</span></a>
+                    <a th:href="@{/questions(cellNumber=2)}" class="cell">2<span class="emoji">🟢</span></a>
+                    <a th:href="@{/questions(cellNumber=3)}" class="cell">3<span class="emoji">🔴</span></a>
+                    <a th:href="@{/questions(cellNumber=4)}" class="cell">4<span class="emoji">🟡</span></a>
+                    <a th:href="@{/questions(cellNumber=5)}" class="cell">5<span class="emoji">🔵</span></a>
+                    <a th:href="@{/questions(cellNumber=6)}" class="cell">6<span class="emoji">🟢</span></a>
+                    <a th:href="@{/questions(cellNumber=7)}" class="cell">7<span class="emoji">🔴</span></a>
+                    <a th:href="@{/questions(cellNumber=8)}" class="cell">8<span class="emoji">🟡</span></a>
+                    <a th:href="@{/questions(cellNumber=9)}" class="cell">9<span class="emoji">🔵</span></a>
+                    <a th:href="@{/questions(cellNumber=10)}" class="cell">10<span class="emoji">🟢</span></a>
+                    <a th:href="@{/questions(cellNumber=11)}" class="cell">11<span class="emoji">🔴</span></a>
+                    <a th:href="@{/questions(cellNumber=12)}" class="cell">12<span class="emoji">🟡</span></a>
+                    <a th:href="@{/questions(cellNumber=13)}" class="cell">13<span class="emoji">🔵</span></a>
+                    <a th:href="@{/questions(cellNumber=14)}" class="cell">14<span class="emoji">🟢</span></a>
+                    <a th:href="@{/questions(cellNumber=15)}" class="cell">15<span class="emoji">🔴</span></a>
+                    <a th:href="@{/questions(cellNumber=16)}" class="cell">16<span class="emoji">🟡</span></a>
+                    <a th:href="@{/questions(cellNumber=17)}" class="cell">17<span class="emoji">🔵</span></a>
+                    <a th:href="@{/questions(cellNumber=18)}" class="cell">18<span class="emoji">🟢</span></a>
+                    <a th:href="@{/questions(cellNumber=19)}" class="cell">19<span class="emoji">🔴</span></a>
+                    <a th:href="@{/questions(cellNumber=20)}" class="cell">20<span class="emoji">🟡</span></a>
+                    <div class="call">21<span class="emoji">🔵</span></div>
+                    <div class="call">22<span class="emoji">🟢</span></div>
+                    <div class="call">23<span class="emoji">🔴</span></div>
+                    <div class="call">24<span class="emoji">🟡</span></div>
+                    <div class="call">25<span class="emoji">🔵</span></div>
+                    <div class="call">26<span class="emoji">🟢</span></div>
+                    <div class="call">27<span class="emoji">🔴</span></div>
+                    <div class="call">28<span class="emoji">🟡</span></div>
+                    <div class="call">29<span class="emoji">🔵</span></div>
+                    <div class="call">30<span class="emoji">🟢</span></div>
+                    <div class="call">31<span class="emoji">🔴</span></div>
+                    <div class="call">32<span class="emoji">🟡</span></div>
+                    <div class="call">33<span class="emoji">🔵</span></div>
+                    <div class="call">34<span class="emoji">🟢</span></div>
+                    <div class="call">35<span class="emoji">🔴</span></div>
+                    <div class="call">36<span class="emoji">🟡</span></div>
+                    <div class="call">37<span class="emoji">🔵</span></div>
+                    <div class="call">38<span class="emoji">🟢</span></div>
+                    <div class="call">39<span class="emoji">🔴</span></div>
+                    <div class="call">40<span class="emoji">🟡</span></div>
+                    <div class="call">41<span class="emoji">🔵</span></div>
+                    <div class="call">42<span class="emoji">🟢</span></div>
+                    <div class="call">43<span class="emoji">🔴</span></div>
+                    <div class="call">44<span class="emoji">🟡</span></div>
+                    <div class="call">45<span class="emoji">🔵</span></div>
+                    <div class="call">46<span class="emoji">🟢</span></div>
+                    <div class="call">47<span class="emoji">🔴</span></div>
+                    <div class="call">48<span class="emoji">🟡</span></div>
+                    <div class="call">49<span class="emoji">🔵</span></div>
+                    <div class="call">50<span class="emoji">🟢</span></div>
+                    <div class="call">51<span class="emoji">🔴</span></div>
+                    <div class="call">52<span class="emoji">🟡</span></div>
+                    <div class="call">53<span class="emoji">🔵</span></div>
+                    <div class="call">54<span class="emoji">🟢</span></div>
+                    <div class="call">55<span class="emoji">🔴</span></div>
+                    <div class="call">56<span class="emoji">🟡</span></div>
+                    <div class="call">57<span class="emoji">🔵</span></div>
+                    <div class="call">58<span class="emoji">🟢</span></div>
+                    <div class="call">59<span class="emoji">🔴</span></div>
+                    <div class="call">60<span class="emoji">🟡</span></div>
+                    <div class="call">61<span class="emoji">🔵</span></div>
+                    <div class="call">62<span class="emoji">🟢</span></div>
+                    <div class="call">63<span class="emoji">🔴</span></div>
+                    <div class="call">64<span class="emoji">🟡</span></div>
+                    <div class="call">65<span class="emoji">🔵</span></div>
+                    <div class="call">66<span class="emoji">🟢</span></div>
+                    <div class="call">67<span class="emoji">🔴</span></div>
+                    <div class="call">68<span class="emoji">🟡</span></div>
+                    <div class="call">69<span class="emoji">🔵</span></div>
+                    <div class="call">70<span class="emoji">🟢</span></div>
+                    <div class="call">71<span class="emoji">🔴</span></div>
+                    <div class="call">72<span class="emoji">🟡</span></div>
+                    <div class="call">73<span class="emoji">🔵</span></div>
+                    <div class="call">74<span class="emoji">🟢</span></div>
+                    <div class="call">75<span class="emoji">🔴</span></div>
+                    <div class="call">76<span class="emoji">🟡</span></div>
+                    <div class="call">77<span class="emoji">🔵</span></div>
+                    <div class="call">78<span class="emoji">🟢</span></div>
+                    <div class="call">79<span class="emoji">🔴</span></div>
+                    <div class="call">80<span class="emoji">🟡</span></div>
+                    <div class="call">81<span class="emoji">🔵</span></div>
+                    <div class="call">82<span class="emoji">🟢</span></div>
+                    <div class="call">83<span class="emoji">🔴</span></div>
+                    <div class="call">84<span class="emoji">🟡</span></div>
+                    <div class="call">85<span class="emoji">🔵</span></div>
+                    <div class="call">86<span class="emoji">🟢</span></div>
+                    <div class="call">87<span class="emoji">🔴</span></div>
+                    <div class="call">88<span class="emoji">🟡</span></div>
+                    <div class="call">89<span class="emoji">🔵</span></div>
+                    <div class="call">90<span class="emoji">🟢</span></div>
+                    <div class="call">91<span class="emoji">🔴</span></div>
+                    <div class="call">92<span class="emoji">🟡</span></div>
+                    <div class="call">93<span class="emoji">🔵</span></div>
+                    <div class="call">94<span class="emoji">🟢</span></div>
+                    <div class="call">95<span class="emoji">🔴</span></div>
+                    <div class="call">96<span class="emoji">🟡</span></div>
+                    <div class="call">97<span class="emoji">🔵</span></div>
+                    <div class="call">98<span class="emoji">🟢</span></div>
+                    <div class="call">99<span class="emoji">🔴</span></div>
+                    <div class="call">100<span class="emoji">🟡</span></div>
                 </div>
             </div>
-            <div class="rightnavig">Information</div>
+            <div class="rightnavig">Info <span class="emoji">ℹ️</span></div>
         </div>
-        <div class="footer">Game Footer</div>
+        <div class="footer">Game Footer <span class="emoji">🏆</span></div>
     </div>
-    <form th:action="@{/logout}" method="post">
-        <button type="submit" class="logout-button">Logout</button>
-    </form>
+    <button class="logout-button" th:href="@{/logout}">Logout</button>
 </body>
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Result</title>
+    <title>Questions for Cell</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
@@ -9,7 +9,7 @@
             margin: 0;
             padding: 0;
             font-family: 'VT323', monospace;
-            background: radial-gradient(circle, #007dff, #00c6ff);
+            background: radial-gradient(circle, #4d9f0c, #092601);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -30,18 +30,18 @@
         .container::after {
             content: '';
             position: absolute;
-            width: 150%;
-            height: 150%;
-            top: -25%;
-            left: -25%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            animation: rotateBeams 6s linear infinite;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: animate 5s linear infinite;
             pointer-events: none;
         }
         .container::after {
-            animation-delay: -3s;
+            animation-delay: -2.5s;
         }
-        @keyframes rotateBeams {
+        @keyframes animate {
             0% {
                 transform: rotate(0deg);
             }
@@ -61,38 +61,59 @@
             margin: 15px 0;
             color: #ffeb3b;
         }
-        .result {
+        .answer-form {
             margin-top: 20px;
-            font-size: 1.5em;
-            color: #00ff00;
         }
-        a {
-            display: inline-block;
-            margin-top: 20px;
+        .answer-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            font-size: 1.5em;
+            padding: 10px;
+            margin-right: 10px;
+            border: 2px solid #ffeb3b;
+            border-radius: 8px;
+            background: #333;
+            color: #fff;
+            flex-grow: 1;
+        }
+        input[type="submit"] {
             font-size: 1.5em;
             padding: 10px 20px;
             background-color: #ffeb3b;
             color: #333;
-            text-decoration: none;
+            border: none;
             border-radius: 8px;
+            cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
         }
-        a:hover {
+        input[type="submit"]:hover {
             background-color: #ffd700;
             transform: scale(1.05);
         }
         .emoji {
-            font-size: 2em;
+            font-size: 1.5em;
             margin-left: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Result <span class="emoji">🎉</span></h2>
-        <p class="result" th:text="${result}"></p>
-        <p>Cell Number: <span th:text="${cell}"></span></p>
-        <a th:href="@{/add}">Go To Next Question_Cell</a>
+        <h2>Question for Cell <span th:text="${cellNumber}"></span></h2>
+        <form class="answer-form" th:action="@{/checkAnswerend}" method="post">
+            <div th:each="question, iter : ${questions}">
+                <p th:text="${iter.index + 1} + '. ' + ${question.text}"></p>
+                <div class="answer-group">
+                    <input type="text" name="userAnswers" th:value="${results != null ? question.correctAnswer : ''}" placeholder="Your Answer" required>
+                    <span class="emoji" th:if="${results != null}" th:text="${results[iter.index] ? '&#10004;' : '&#10008;'}"></span>
+                </div>
+                <input type="hidden" name="correctAnswers" th:value="${question.correctAnswer}" />
+            </div>
+            <input type="submit" value="Submit Answer">
+        </form>
     </div>
 </body>
 </html>
