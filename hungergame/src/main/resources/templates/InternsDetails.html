@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hunger Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffeaa7;
+            color: #2d3436;
+        }
+        .table-container {
+            text-align: center;
+            margin: 20px auto;
+        }
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #f5f6fa;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid #dfe6e9;
+            text-align: left;
+        }
+        th {
+            background-color: #74b9ff;
+            font-weight: bold;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background-color: #dfe6e9;
+        }
+        tr:hover {
+            background-color: #b2bec3;
+        }
+        select {
+            padding: 8px;
+            background-color: #74b9ff;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .fa-star {
+            color: #fdcb6e;
+            margin-right: 10px;
+        }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <h1><i class="fas fa-star"></i>Hunger Game Players</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Role</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody th:each="player : ${players}">
+                <tr>
+                    <td th:text="${player.getId()}">Id</td>
+                    <td th:text="${player.getName()}">Name</td>
+                    <td th:text="${player.getEmail()}">Email</td>
+                    <td th:text="${player.getName()}">Role</td>
+                    <td>
+                        <div class="dropdown">
+                            <button class="dropbtn">Options</button>
+                            <div class="dropdown-content">
+                                <a href="">Assign Role</a>
+                                <a href="">Remove Role</a>
+                                <a href="">Delete Player</a>
+                            </div>                       
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

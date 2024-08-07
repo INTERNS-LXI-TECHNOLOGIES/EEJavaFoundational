@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    .container {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 2rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        border-radius: 15px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 1rem;
+    }
+
+    .username {
+        color: #e94057;
+    }
+
+    .btn-start-game {
+        display: inline-block;
+        margin: 1.5rem 0;
+        padding: 0.75rem 1.5rem;
+        background-color: #e94057;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 25px;
+        font-size: 1rem;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .btn-start-game:hover {
+        background-color: #d32f2f;
+        transform: scale(1.05);
+    }
+
+    .nav-links {
+        margin-top: 1rem;
+    }
+
+    .nav-link {
+        margin: 0 0.75rem;
+        text-decoration: none;
+        color: #e94057;
+        padding: 0.5rem 1rem;
+        border-radius: 25px;
+        background-color: rgba(233, 64, 87, 0.1);
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .nav-link:hover {
+        background-color: #e94057;
+        color: #ffffff;
+    }
+    </style>
+    <script>
+        function handleSelectChange(select) {
+            const value = select.value;
+            if (value) {
+                window.location.href = value;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span class="username" th:text="${username}">User</span></h1>
+        <a href="/game/main" class="btn-start-game">Start Game</a>
+        <div class="nav-links">
+            <a href="/admin/internsDetails" class="nav-link">Interns</a>
+            <select id="questionSelect" onchange="handleSelectChange(this)">
+                <option value="" disabled selected>Add Question</option>
+                <option value="/admin/addMultipleChoice">Multiple Choice</option>
+                <option value="/admin/addTrueOrFalse">True or False</option>
+            </select>
+            <a href="leaderBoard" class="nav-link">LeaderBoard</a>
+        </div>
+    </div>
+</body>
+</html>

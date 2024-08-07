@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cell Details</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #e0f7fa, #00acc1);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #00796b;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #004d40;
+        }
+
+        .details-container {
+            width: 90%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border: 2px solid #00796b;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .details-container h2 {
+            margin-top: 0;
+            color: #00796b;
+        }
+
+        .details-container p {
+            font-size: 1.2em;
+            color: #004d40;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #00796b;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            background-color: #004d40;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-links">
+        <a href="/missionMultipleChoice">Prepare 1</a>
+        <a href="/missionTrueOrFalse">Prepare 2</a>
+        <a href="/missionMultipleChoice">Prepare 3</a>
+        <a href="/missionTrueOrFalse">Prepare 4</a>
+        <a href="/missionMultipleChoice">Prepare 5</a>
+        <a href="/missionTrueOrFalse">Prepare 6</a>
+    </div>
+    
+    <div class="details-container">
+        <h2>Cell Details</h2>
+        <p th:text="'Details for cell ' + (${cell.number})"></p>
+    </div>
+    
+    <div class="footer-links">
+        <a href="/lifeOrDeath">Mission 1</a>
+        <a href="/lifeOrDeath">Mission 2</a>
+        <a href="/lifeOrDeath">Mission 3</a>
+    </div>
+</body>
+</html>

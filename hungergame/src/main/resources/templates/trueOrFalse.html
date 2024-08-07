@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>True or False Question</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #e0f7fa, #00acc1);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .question-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border: 2px solid #00796b;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .question-container h2 {
+            color: #00796b;
+            margin-top: 0;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin: 10px 0;
+        }
+
+        .options input {
+            margin-right: 10px;
+        }
+
+        .reveal-btn, .next-btn {
+            background-color: #00796b;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .reveal-btn:hover, .next-btn:hover {
+            background-color: #004d40;
+        }
+
+        .answer-container {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .answer-container span {
+            font-weight: bold;
+            color: #00796b;
+        }
+    </style>
+    <script>
+        function revealAnswer() {
+            document.getElementById('answerReveal').style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <div class="question-container">
+        <h2 th:text="${question.question}">Question text here</h2>
+        <form action="#" method="post">
+            <ul class="options">
+                <li><label><input type="radio" name="answer" value="true" /> <span>True</span></label></li>
+                <li><label><input type="radio" name="answer" value="false" /> <span>False</span></label></li>
+            </ul>
+        </form>
+        <div class="answer-container" id="answerReveal">
+            <p>Correct Answer: <span th:text="${question.answer}">Answer here</span></p>
+        </div>
+        <button class="reveal-btn" onclick="revealAnswer()">Reveal Answer</button>
+    </div>
+</body>
+</html>

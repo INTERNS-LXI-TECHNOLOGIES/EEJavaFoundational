@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Multiple Choice Question</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom right, #e0f7fa, #00acc1);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .question-container {
+            width: 100%;
+            max-width: 600px;
+            background-color: #ffffff;
+            border: 2px solid #00796b;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .question-container h2 {
+            color: #00796b;
+            margin-top: 0;
+        }
+
+        .options {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .options li {
+            margin: 10px 0;
+        }
+
+        .options input {
+            margin-right: 10px;
+        }
+
+        .submit-btn, .next-btn, .reveal-btn {
+            background-color: #00796b;
+            color: #ffffff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover, .next-btn:hover, .reveal-btn:hover {
+            background-color: #004d40;
+        }
+
+        .answer-container {
+            margin-top: 20px;
+        }
+
+        .answer-container span {
+            font-weight: bold;
+            color: #00796b;
+        }
+    </style>
+</head>
+<body>
+    <div class="question-container">
+        <h2 th:text="${question.question}">Question text here</h2>
+        <form action="/submit-answer" method="post">
+            <ul class="options">
+                <li><label><input type="radio" name="answer" value="option1" th:value="${question.option1}"/> <span th:text="${question.option1}">Option 1</span></label></li>
+                <li><label><input type="radio" name="answer" value="option2" th:value="${question.option2}"/> <span th:text="${question.option2}">Option 2</span></label></li>
+                <li><label><input type="radio" name="answer" value="option3" th:value="${question.option3}"/> <span th:text="${question.option3}">Option 3</span></label></li>
+                <li><label><input type="radio" name="answer" value="option4" th:value="${question.option4}"/> <span th:text="${question.option4}">Option 4</span></label></li>
+            </ul>
+            <input type="hidden" name="questionId" th:value="${question.id}"/>
+        </form>
+        <div class="answer-container" th:if="${answer}">
+            <p>Correct Answer: <span th:text="${answer}">Answer here</span></p>
+            <button class="next-btn" onclick="window.location.href='/missionMultipleChoice'">Next Question</button>
+        </div>
+        <button class="reveal-btn" onclick="document.getElementById('answerReveal').style.display='block'">Reveal Answer</button>
+        <div id="answerReveal" class="answer-container" style="display:none;">
+            <p>Correct Answer: <span th:text="${question.answer}">Answer here</span></p>
+        </div>
+    </div>
+</body>
+</html>

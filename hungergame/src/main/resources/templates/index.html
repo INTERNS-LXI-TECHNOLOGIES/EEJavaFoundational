@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Hunger Game</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #ff6f61, #d32f2f);
+            color: #fff;
+            text-align: center;
+            overflow: hidden;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .welcome-card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 40px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 300%;
+            height: 300%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 30%, rgba(0, 0, 0, 0.2) 70%);
+            animation: pulse 8s infinite;
+            transform: translateX(-50%);
+            z-index: 0;
+        }
+        .welcome-card h1 {
+            font-size: 3em;
+            margin: 0;
+            color: #ffd700;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+            position: relative;
+            z-index: 1;
+        }
+        .welcome-card p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+        .welcome-card a {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1.2em;
+            color: #fff;
+            background: #ff5722;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: background 0.3s ease, transform 0.2s ease;
+            position: relative;
+            z-index: 1;
+        }
+        .welcome-card a:hover {
+            background: #e64a19;
+            transform: scale(1.05);
+        }
+        .welcome-card a:active {
+            background: #ff5722;
+            transform: scale(0.95);
+        }
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.1;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 0.3;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-card">
+        <h1>WELCOME TO HUNGER GAME</h1>
+        <p>Get ready to dive into an exhilarating adventure! Tackle exciting challenges, outsmart your rivals, and achieve glory in the Hunger Game.</p>
+        <a href="/hungergame/home">Start</a>
+    </div>
+</body>
+</html>

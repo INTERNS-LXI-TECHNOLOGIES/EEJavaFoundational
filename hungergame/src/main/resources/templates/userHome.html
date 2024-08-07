@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #e9f5f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #4a4a4a;
+            margin-bottom: 20px;
+            font-size: 30px;
+        }
+
+        .username {
+            color: #6f42c1;
+            font-weight: bold;
+        }
+
+        .btn-start-game {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #20c997;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .btn-start-game:hover {
+            background-color: #17a589;
+        }
+
+        .btn-start-game:active {
+            background-color: #139a7d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome, <span class="username" th:text="${username}">User</span></h1>
+        <a href="/game/main" class="btn-start-game">Start Game</a>
+    </div>
+</body>
+</html>
