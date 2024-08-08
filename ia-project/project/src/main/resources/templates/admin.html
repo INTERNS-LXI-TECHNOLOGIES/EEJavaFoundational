@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Admin Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin: 10px 0;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome Admin</h1>
+        <ul class="nav-links">
+            <li><a th:href="@{/contacts}">View All Contacts</a></li>
+            <li><a th:href="@{/contacts/new}">Add New Contact</a></li>
+            <a href="/logout">logout</a>
+        </ul>
+    </div>
+</body>
+</html>

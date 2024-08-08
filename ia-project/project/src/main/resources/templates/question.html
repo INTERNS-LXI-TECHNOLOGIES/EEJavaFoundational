@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Questions</title>
+</head>
+<body>
+    <h1>Questions</h1>
+    <div th:each="cell : ${cells}">
+        <h2 th:text="${cell.name}"></h2>
+        <div th:each="question : ${cell.questions}">
+            <p th:if="${question.trueFalseQuestion}" th:text="${question.trueFalseQuestion}"></p>
+            <p th:if="${question.optionsQuestion}" th:text="${question.optionsQuestion}"></p>
+        </div>
+    </div>
+    <a href="/logout">Logout</a>
+</body>
+</html>
