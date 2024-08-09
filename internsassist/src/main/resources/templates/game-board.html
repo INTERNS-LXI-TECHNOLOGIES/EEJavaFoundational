@@ -264,6 +264,8 @@
         </div>
         <div class="footer">Game Footer <span class="emoji">🏆</span></div>
     </div>
-    <button class="logout-button" th:href="@{/logout}">Logout</button>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit" class="logout-button">Logout</button>
+    </form>
 </body>
 </html>

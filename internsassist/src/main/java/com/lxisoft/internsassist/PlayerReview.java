@@ -13,6 +13,21 @@ public class PlayerReview {
     
     private String name;
     private int currentCell;
+
+    public boolean[] getCellStatus() {
+        return cellStatus;
+    }
+
+    public void setCellStatus(boolean[] cellStatus) {
+        this.cellStatus = cellStatus;
+    }
+    private boolean[] cellStatus; // Add this to track completion status of each cell
+    
+    public PlayerReview() {
+        cellStatus = new boolean[100]; // Assuming 100 cells
+        cellStatus[0] = true; // Unlock the first cell initially
+    }
+
     public String getName() {
         return name;
     }

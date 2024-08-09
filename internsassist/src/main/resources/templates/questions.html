@@ -80,18 +80,28 @@
 </head>
 <body>
     <div class="container">
-        <h2>Question for Cell <span th:text="${cellNumber}"></span></h2>
+        <h2>Questions for Cell <span th:text="${cellNumber}"></span></h2>
         <form class="answer-form" th:action="@{/checkAnswer}" method="post">
-            <div th:each="question, iter : ${questions}">
-                <p th:text="${iter.index + 1} + '. ' + ${question.text}"></p>
+            <div class="question-section">
+                <h3>One-Word Question</h3>
+                <p th:text="${oneWordQuestion.text}"></p>
                 <div class="answer-group">
-                    <input type="text" name="userAnswers" th:value="${results != null ? question.correctAnswer : ''}" placeholder="Your Answer" required>
-                    <span class="emoji" th:if="${results != null}" th:text="${results[iter.index] ? '&#10004;' : '&#10008;'}"></span>
+                    <input type="text" name="userAnswerOneWord" placeholder="Your Answer" required>
                 </div>
-                <input type="hidden" name="correctAnswers" th:value="${question.correctAnswer}" />
             </div>
+
+            <div class="question-section">
+                <h3>True/False Question</h3>
+                <p th:text="${trueFalseQuestion.questionText}"></p>
+                <div class="answer-group">
+                    <input type="radio" name="userAnswerTrueFalse" value="true" required> True
+                    <input type="radio" name="userAnswerTrueFalse" value="false" required> False
+                </div>
+            </div>
+
             <input type="submit" value="Submit Answer">
         </form>
     </div>
 </body>
+
 </html>

@@ -19,70 +19,72 @@ public class GameControllerr {
     private QuestionService questionService;
 
     @Autowired
+    private TrueFalseQuestionService trueFalseQuestionService;
+
+    @Autowired
     private PlayerReviewRepository playerReviewRepository;
 
     private Random random = new Random();
 
     @GetMapping("/questions")
     public String getQuestions(@RequestParam("cellNumber") int cellNumber, HttpSession session, Model model) {
-        List<Question> questions = questionService.getAllQuestion();
-        List<Question> firstTenQuestions = questions.subList(0, Math.min(10, questions.size()));
-        List<Question> secondTenQuestions = questions.subList(10, Math.min(20, questions.size()));
-        List<Question> remainingQuestions = questions.subList(Math.min(20, questions.size()), questions.size());
+        List<Question> oneWordQuestions = questionService.getAllQuestion();
+        List<TrueFalseQuestion> trueFalseQuestions = trueFalseQuestionService.getAllTrueFalseQuestions();
 
-        List<Question> questionsForCell = (List<Question>) session.getAttribute("questionsForCell");
+        Question oneWordQuestionForCell = null;
+        TrueFalseQuestion trueFalseQuestionForCell = null;
 
-        if (questionsForCell == null || (int) session.getAttribute("cellNumber") != cellNumber) {
-            if (cellNumber <= 10) {
-                questionsForCell = getRandomQuestions(firstTenQuestions, 3);
-            } else if (cellNumber <= 20) {
-                questionsForCell = getRandomQuestions(secondTenQuestions, 3);
-            } else if (cellNumber <= 100) {
-                questionsForCell = List.of(remainingQuestions.get(cellNumber - 21));
-            }
-            session.setAttribute("questionsForCell", questionsForCell);
-            session.setAttribute("cellNumber", cellNumber);
+        if (cellNumber <= 10) {
+            oneWordQuestionForCell = getRandomOneQuestion(oneWordQuestions);
+            trueFalseQuestionForCell = getRandomOneTrueFalseQuestion(trueFalseQuestions);
+        } else if (cellNumber <= 20) {
+            oneWordQuestionForCell = getRandomOneQuestion(oneWordQuestions);
+            trueFalseQuestionForCell = getRandomOneTrueFalseQuestion(trueFalseQuestions);
+        } else if (cellNumber <= 100) {
+            oneWordQuestionForCell = oneWordQuestions.get(cellNumber - 21);
+            trueFalseQuestionForCell = trueFalseQuestions.get(cellNumber - 21);
         }
 
+        session.setAttribute("oneWordQuestionForCell", oneWordQuestionForCell);
+        session.setAttribute("trueFalseQuestionForCell", trueFalseQuestionForCell);
+        session.setAttribute("cellNumber", cellNumber);
+
         model.addAttribute("cellNumber", cellNumber);
-        model.addAttribute("questions", questionsForCell);
+        model.addAttribute("oneWordQuestion", oneWordQuestionForCell);
+        model.addAttribute("trueFalseQuestion", trueFalseQuestionForCell);
         model.addAttribute("results", null);
         return "questions";
     }
 
-    private List<Question> getRandomQuestions(List<Question> questions, int numberOfQuestions) {
-        List<Question> randomQuestions = new ArrayList<>();
-        List<Integer> usedIndexes = new ArrayList<>();
+    private Question getRandomOneQuestion(List<Question> questions) {
+        int index = random.nextInt(questions.size());
+        return questions.get(index);
+    }
 
-        while (randomQuestions.size() < numberOfQuestions) {
-            int index = random.nextInt(questions.size());
-            if (!usedIndexes.contains(index)) {
-                randomQuestions.add(questions.get(index));
-                usedIndexes.add(index);
-            }
-        }
-        return randomQuestions;
+    private TrueFalseQuestion getRandomOneTrueFalseQuestion(List<TrueFalseQuestion> questions) {
+        int index = random.nextInt(questions.size());
+        return questions.get(index);
     }
 
     @PostMapping("/checkAnswer")
-    public String checkAnswer(@RequestParam List<String> userAnswers, HttpSession session, @RequestParam List<String> correctAnswers, Model model) {
-        List<Boolean> results = new ArrayList<>();
-        boolean allCorrect = true;
+    public String checkAnswer(@RequestParam String userAnswerOneWord, 
+                              @RequestParam String userAnswerTrueFalse, 
+                              HttpSession session, 
+                              Model model) {
+        Question oneWordQuestion = (Question) session.getAttribute("oneWordQuestionForCell");
+        TrueFalseQuestion trueFalseQuestion = (TrueFalseQuestion) session.getAttribute("trueFalseQuestionForCell");
 
-        for (int i = 0; i < userAnswers.size(); i++) {
-            boolean correct = userAnswers.get(i).equalsIgnoreCase(correctAnswers.get(i));
-            results.add(correct);
-            if (!correct) {
-                allCorrect = false;
-            }
-        }
+        boolean oneWordCorrect = userAnswerOneWord.equalsIgnoreCase(oneWordQuestion.getCorrectAnswer());
+        boolean trueFalseCorrect = Boolean.parseBoolean(userAnswerTrueFalse) == trueFalseQuestion.isCorrectAnswer();
 
-        model.addAttribute("results", results);
-        model.addAttribute("allCorrect", allCorrect);
+        model.addAttribute("oneWordCorrect", oneWordCorrect);
+        model.addAttribute("trueFalseCorrect", trueFalseCorrect);
+        model.addAttribute("allCorrect", oneWordCorrect && trueFalseCorrect);
         model.addAttribute("cellNumber", session.getAttribute("cellNumber"));
-        model.addAttribute("questions", session.getAttribute("questionsForCell"));
+        model.addAttribute("oneWordQuestion", oneWordQuestion);
+        model.addAttribute("trueFalseQuestion", trueFalseQuestion);
 
-        return "questionend";
+        return oneWordCorrect && trueFalseCorrect ? "result" : "error";
     }
 
     @PostMapping("/checkAnswerend")
@@ -108,7 +110,6 @@ public class GameControllerr {
             return "error";
         }
     }
-
 
     @PostMapping("/checkFinalAnswer")
     public String checkFinalAnswer(@RequestParam String userAnswer, @RequestParam String correctAnswer, @RequestParam int cellNumber, Model model, Principal principal) {
