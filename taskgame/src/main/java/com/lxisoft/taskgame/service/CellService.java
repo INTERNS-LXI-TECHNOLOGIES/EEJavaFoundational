@@ -1,10 +1,8 @@
 package com.lxisoft.taskgame.service;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
-import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.lxisoft.taskgame.model.Cell;
 import com.lxisoft.taskgame.model.QuestionBank;
 import com.lxisoft.taskgame.repository.CellRepository;
+import com.lxisoft.taskgame.repository.QuestionBankRepository;
 
 @Service
 public class CellService {
@@ -22,9 +21,13 @@ public class CellService {
     @Autowired
     private QuestionBankService qbService;
 
+    @Autowired
+    private QuestionBankRepository questionBankRepository;
+
     private List <Cell> storedCells;
 
-    public Cell getCellByQbLevCell(int level){
+//METHOD FOR GETTING THE CELL BY THE QB LEVEL
+   /*  public Cell getCellByQbLevCell(int level){
         storedCells = new ArrayList<>();
         List <Cell> cellByQbLevel = cellRepository.findAll();
         Cell cell =null;
@@ -35,60 +38,224 @@ public class CellService {
             }
         }
         return cell;
+    } */
+
+    //METHOD FOR GET A RANDOM ONE WORD QUESTION
+    public QuestionBank getQuestion(String type,Long level){
+        List<QuestionBank>questionsByIdAndType = qbService.getByQuestionTypeAndLevel(type,level);
+        int index = (int) (Math.random() * questionsByIdAndType.size());
+        return questionsByIdAndType.get(index);
     }
 
+    //METHOD FOR GENARATING 100 CELLS
     public Cell[][] generateCells(){
         
         Cell[][] cells = new Cell[10][10];
         if(cellRepository.count()== 0){ 
-            
-            Set <QuestionBank> cellQuestions = new HashSet<>();
-            List <QuestionBank> qb
-
             for(int i=0; i<10; i++){
                 for(int j=0; j<10; j++){
+
                     cells[i][j] = new Cell();
                     if(i<10){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
+                        List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                        List <QuestionBank> finalQuestionBanks = new ArrayList<>();
+
+                        prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+
+                            while(finalQuestionBanks.size()<=3){
+                                int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                if(!finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                    finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                }
+                            }
+
+                            cells[i][j].setPrepQB(prepQuestionBanks);
+                            cells[i][j].setFinalQB(finalQuestionBanks);
+
                     }
                     if(i>=10 && i<20){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
+                        List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                        List <QuestionBank> finalQuestionBanks = new ArrayList<>();
+
+                        prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+
+                            while(finalQuestionBanks.size()==3){
+                                int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                if(finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                    finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                }
+                            }
+
+                            cells[i][j].setPrepQB(prepQuestionBanks);
+                            cells[i][j].setFinalQB(finalQuestionBanks);
                     }
                     if(i>=20 && i<30){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
+                        List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                        List <QuestionBank> finalQuestionBanks = new ArrayList<>();
+
+                        prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+
+                            while(finalQuestionBanks.size()==3){
+                                int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                if(finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                    finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                }
+                            }
+
+                            cells[i][j].setPrepQB(prepQuestionBanks);
+                            cells[i][j].setFinalQB(finalQuestionBanks);                  
                     }
                     if(i>=30 && i<40){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
-                    }if(i>=40 && i<50){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
+                        List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                        List <QuestionBank> finalQuestionBanks = new ArrayList<>();
+
+                        prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+
+                            while(finalQuestionBanks.size()==3){
+                                int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                if(finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                    finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                }
+                            }
+
+                            cells[i][j].setPrepQB(prepQuestionBanks);
+                            cells[i][j].setFinalQB(finalQuestionBanks);                    
                     }
+                    if(i>=40 && i<50){
+                        List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                        List <QuestionBank> finalQuestionBanks = new ArrayList<>();
+
+                        prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+
+                            while(finalQuestionBanks.size()==3){
+                                int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                if(finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                    finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                }
+                            }
+
+                            cells[i][j].setPrepQB(prepQuestionBanks);
+                            cells[i][j].setFinalQB(finalQuestionBanks);                    
+                    } 
                     if(i>=50 && i<60){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
+                        List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                        List <QuestionBank> finalQuestionBanks = new ArrayList<>();
+
+                        prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+
+                            while(finalQuestionBanks.size()==3){
+                                int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                if(finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                    finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                }
+                            }
+
+                            cells[i][j].setPrepQB(prepQuestionBanks);
+                            cells[i][j].setFinalQB(finalQuestionBanks);                     
                     }
                     if(i>=60 && i<70){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
+                        List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                        List <QuestionBank> finalQuestionBanks = new ArrayList<>();
+
+                        prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+
+                            while(finalQuestionBanks.size()==3){
+                                int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                if(finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                    finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                }
+                            }
+
+                            cells[i][j].setPrepQB(prepQuestionBanks);
+                            cells[i][j].setFinalQB(finalQuestionBanks);                    
                     }
                     if(i>=70 && i<80){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
+                            List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                            List <QuestionBank> finalQuestionBanks = new ArrayList<>();
+    
+                            prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                            prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                            prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                            prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+    
+                                while(finalQuestionBanks.size()==3){
+                                    int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                    if(finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                        finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                    }
+                                }
+    
+                                cells[i][j].setPrepQB(prepQuestionBanks);
+                                cells[i][j].setFinalQB(finalQuestionBanks);                        
                     }
                     if(i>=80 && i<90){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
+                        List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                        List <QuestionBank> finalQuestionBanks = new ArrayList<>();
+
+                        prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+
+                            while(finalQuestionBanks.size()==3){
+                                int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                if(finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                    finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                }
+                            }
+
+                            cells[i][j].setPrepQB(prepQuestionBanks);
+                            cells[i][j].setFinalQB(finalQuestionBanks);                      
                     }
                     if(i>=90 && i<100){
-                        cells[i][j].setQb(qbService.getQbByLevel(i+1));
-                    }
+                        List <QuestionBank> prepQuestionBanks = new ArrayList<>();
+                        List <QuestionBank> finalQuestionBanks = new ArrayList<>();
 
-                cellRepository.save(cells[i][j]);
+                        prepQuestionBanks.add(getQuestion("oneWord",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("objective",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("hackathon",(long)i+1));
+                        prepQuestionBanks.add(getQuestion("speech",(long)i+1));
+
+                            while(finalQuestionBanks.size()==3){
+                                int prepIndex = (int)(Math.random()*prepQuestionBanks.size());
+                                if(finalQuestionBanks.contains(prepQuestionBanks.get(prepIndex))){
+                                    finalQuestionBanks.add(prepQuestionBanks.get(prepIndex));
+                                }
+                            }
+                            cells[i][j].setPrepQB(prepQuestionBanks);
+                            cells[i][j].setFinalQB(finalQuestionBanks);                     
+                    }
+                    cellRepository.save(cells[i][j]);
                 }
             }
-        return cells;
+            return cells;
         }
         else{      
               for(int i =0;i<10;i++){
                 for(int j=0;j<10;j++){
-                    if(qbService !=null){
-                        cells[i][j] = getCellById((long)(i*10+j+1));
-                        
+                    if(questionBankRepository.count()!=0){
+                        cells[i][j] = getCellById((long)(i*10+j+1));    
                     }
                     else{
                         System.out.println("qb is null");

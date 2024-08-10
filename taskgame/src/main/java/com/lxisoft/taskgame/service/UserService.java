@@ -24,19 +24,19 @@ public class UserService{
     @Autowired
     private RoleService roleService;
 
-   public void addUser(User user){
-    User newUser = new User();
-    List <Role> userRoles = new ArrayList<>();
-    userRoles.add(roleService.getRoleByName("user"));
-    newUser.setUserName(user.getUserName());
-    newUser.setPassword(passwordEncoder.encode(user.getPassword()));
-    newUser.setRole(userRoles);
-    userRepository.save(newUser);
+    public void addUser(User user){
+        User newUser = new User();
+        List <Role> userRoles = new ArrayList<>();
+        userRoles.add(roleService.getRoleByName("user"));
+        newUser.setUserName(user.getUserName());
+        newUser.setPassword(passwordEncoder.encode(user.getPassword()));
+        newUser.setRole(userRoles);
+        userRepository.save(newUser);
    }
 
-   public User getUserByUserName(String name){
-    return userRepository.findByUserName(name);
-   }
+    public User getUserByUserName(String name){
+        return userRepository.findByUserName(name);
+    }
 
   
 }

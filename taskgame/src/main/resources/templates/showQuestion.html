@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>question showing page</title>
+    </head>
+
+    <body>
+        <h1 th:text="${cellQB.id}"></h1><br>
+        <h1 th:text="${cellQB.question}"></h1>
+        <p th:if="${cellQB.option_a!=null}"><h1 th:text="${cellQB.option_a}"></h1></p>
+        <p th:if="${cellQB.option_b!=null}"><h1 th:text="${cellQB.option_b}"></h1></p>
+        <p th:if="${cellQB.option_c!=null}"><h1 th:text="${cellQB.option_c}"></h1></p>
+        <p th:if="${cellQB.option_d!=null}"><h1 th:text="${cellQB.option_d}"></h1></p>
+    </body>
+</html>

@@ -10,8 +10,8 @@
     <script>
         function toggleOptions() {
             const questionType = document.querySelector('input[name="questionType"]:checked').value;
-            const isOneWord = questionType === 'oneWord';
-            document.getElementById('option_A').disabled = isOneWord;
+            const isOneWord = questionType !== 'objective';
+            document.getElementById('option_a').disabled = isOneWord;
             document.getElementById('option_b').disabled = isOneWord;
             document.getElementById('option_c').disabled = isOneWord;
             document.getElementById('option_d').disabled = isOneWord;
@@ -20,33 +20,33 @@
 </head>
 <body>
     <h1>ADD A NEW QUESTION</h1>
-    <form th:action="@{/addNewProject}" method="post">
+    <form th:action="@{/addNewProject}" method="post" th:object="${qb}">
         <label>ENTER THE QUESTION</label>
-        <input type="text" name="question"><br>
+        <input type="text" th:field="*{question}"><br>
         
         <label>ENTER THE ANSWER</label>
-        <input type="text" name="answer"><br>
+        <input type="text" th:field="*{answer}"><br>
         
         <label>QUESTION TYPE</label><br>
-        <input type="radio" name="questionType" value="oneWord" onclick="toggleOptions()"> One Word<br>
-        <input type="radio" name="questionType" value="objective" onclick="toggleOptions()"> Objective<br>
-        <input type="radio" name="questionType" value="hackathon" onclick="toggleOptions()"> Hackathon<br>
-        <input type="radio" name="questionType" value="speech" onclick="toggleOptions()"> Speech<br>
+        <input type="radio" th:field="*{questionType}" value="oneWord" onclick="toggleOptions()"> One Word<br>
+        <input type="radio" th:field="*{questionType}" value="objective" onclick="toggleOptions()"> Objective<br>
+        <input type="radio" th:field="*{questionType}" value="hackathon" onclick="toggleOptions()"> Hackathon<br>
+        <input type="radio" th:field="*{questionType}" value="speech" onclick="toggleOptions()"> Speech<br>
         
         <label>OPTION A</label>
-        <input type="text" id="option_A" name="option_A"><br>
+        <input type="text" id="option_a" th:field="*{option_a}"><br>
         
         <label>OPTION B</label>
-        <input type="text" id="option_b" name="option_b"><br>
+        <input type="text" id="option_b" th:field="*{option_b}"><br>
         
         <label>OPTION C</label>
-        <input type="text" id="option_c" name="option_c"><br>
+        <input type="text" id="option_c" th:field="*{option_c}"><br>
         
         <label>OPTION D</label>
-        <input type="text" id="option_d" name="option_d"><br>
+        <input type="text" id="option_d" th:field="*{option_d}"><br>
         
         <label>ENTER THE LEVEL</label>
-        <input type="number" name="level"><br>
+        <input type="number" th:field="*{level}"><br>
         
         <input type="submit" value="ADD">
     </form>

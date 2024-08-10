@@ -10,4 +10,6 @@ import java.util.List;
 @Repository
 public interface QuestionBankRepository extends JpaRepository <QuestionBank,Long>{
     public QuestionBank findByLevel(int level);
+
+    public List<QuestionBank>getByQuestionTypeAndLevel(String questionType,Long level);
 }

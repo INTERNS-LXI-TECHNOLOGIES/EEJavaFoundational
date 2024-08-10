@@ -16,10 +16,11 @@ public class QuestionBank{
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
     
+    @Column(nullable=false)
     private String questionType;
 
     @Column(nullable=false)
-    private String Question;
+    private String question;
 
     @Column(nullable=false)
     private String answer;
@@ -39,8 +40,11 @@ public class QuestionBank{
     @Column(nullable = true)
     private Long level;
     
-    @ManyToMany(mappedBy="qbSet")
+    @ManyToMany(mappedBy="prepQB")
     private List <Cell> cells;
+
+    @ManyToMany(mappedBy="finalQB")
+    private List <Cell>finalCells;
 
     public Long getId() {
         return id;
@@ -70,11 +74,11 @@ public class QuestionBank{
     }
 
     public String getQuestion() {
-        return Question;
+        return question;
     }
 
     public void setQuestion(String Question) {
-        this.Question = Question;
+        this.question = Question;
     }
 
     public String getAnswer() {
@@ -85,11 +89,11 @@ public class QuestionBank{
         this.answer = answer;
     }
 
-    public String getOption_A() {
+    public String getOption_a() {
         return option_a;
     }
 
-    public void setOption_A(String option_A) {
+    public void setOption_a(String option_A) {
         this.option_a = option_A;
     }
 

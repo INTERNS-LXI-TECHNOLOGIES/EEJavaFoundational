@@ -11,7 +11,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 
 @Entity
@@ -28,9 +27,16 @@ public class Cell {
     @JoinTable(
         name="cell_qb",
         joinColumns=@JoinColumn(name="cell_id"),
-        inverseJoinColumns=@JoinColumn(name="qb_id")
-    )
-    private Set<QuestionBank> qbSet;
+        inverseJoinColumns=@JoinColumn(name="qb_id"))
+    private List<QuestionBank> prepQB;
+
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(
+        name="cell_finalQb",
+        joinColumns = @JoinColumn(name="cell_id"),
+        inverseJoinColumns = @JoinColumn(name="qb_id")
+        )
+    private List<QuestionBank>finalQB;
 
     public Long getId() {
         return id;
@@ -59,12 +65,20 @@ public class Cell {
         }
     }
 
-    public Set<QuestionBank> getQbSet() {
-        return qbSet;
+    public List<QuestionBank> getPrepQB() {
+        return prepQB;
     }
 
-    public void setQbSet(Set<QuestionBank> qbSet) {
-        this.qbSet = qbSet;
+    public void setPrepQB(List<QuestionBank> prepQB) {
+        this.prepQB = prepQB;
+    }
+
+    public List<QuestionBank> getFinalQB() {
+        return finalQB;
+    }
+
+    public void setFinalQB(List<QuestionBank> finalQB) {
+        this.finalQB = finalQB;
     }
 
 }

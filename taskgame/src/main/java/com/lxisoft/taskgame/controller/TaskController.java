@@ -71,6 +71,9 @@ public class TaskController {
         Cell[][] cells = cellService.generateCells();
         System.out.println("This is home");
         model.addAttribute("cells",cells);
+        System.out.println(cells[0][0].getPrepQB().get(0).getId());
+        System.out.println(cells[0][0].getPrepQB().get(0).getQuestion());
+
         System.out.println("This is home 2");
         return "home";
     }
@@ -92,7 +95,16 @@ public class TaskController {
     @GetMapping("/showCell/{id}")
     public String showTheCell(@PathVariable("id") Long id,Model model) {
         Cell cell = cellService.getCellById(id);
+        System.out.println("this is cell info");
+        System.out.println(cell.getPrepQB().get(0).getQuestion());
         model.addAttribute("cell",cell);
         return "displayCell";
+    }
+
+    @GetMapping("/showTheQuestion/{id}")
+    public String showQuestionsInCell(@PathVariable("id")Long id,Model model){
+        QuestionBank cellQB = qbService.getQuestionBankById(id);
+        model.addAttribute("cellQB",cellQB);
+        return "showQuestion";
     }
 }

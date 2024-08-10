@@ -4,9 +4,14 @@
     </head>
     <body>
         <ul th:object="${cell}">
-            <li>ID: <span th:text="*{id}"></span></li>
-            <li>QB ID: <span th:text="*{qb.id}"></span></li>
-            <li>Question : <span th:text="*{qb.name}"></span></li>
+            <h1>HERE IS YOUR TASKS...</h1>
+            <li>CELL NUMBER: <span th:text="${cell.id}"></span></li>
+            <h1>Preparation Questions</h1>
+            <li th:each="qb : ${cell.prepQB}">
+                <ul>
+                    <li>Your Task One <a th:href="@{/showTheQuestion/{id}(id=${qb.id})}">ShoW</a></li>
+                </ul>
+            </li>
         </ul>
     </body>
 </html>
