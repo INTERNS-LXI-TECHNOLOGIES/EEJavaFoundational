@@ -4,11 +4,12 @@
     <title>Home</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&display=swap');
 
         body {
+            background: url('welcome.jpg');
             background-color: #0d0d2b;
-            color: #f0f0f0;
-            font-family: 'Press Start 2P', cursive;
             margin: 0;
             padding: 0;
             display: flex;
@@ -16,13 +17,36 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            font-family: 'Caveat', cursive; /* Updated font */
         }
 
         h1 {
-            font-size: 3em;
+            font-size: 4em;
             margin-bottom: 20px;
-            color: #ffcc00;
+            background: linear-gradient(90deg, #ffcc00, #ff33cc, #33ccff, #ff6699);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             text-shadow: 2px 2px #000000;
+            animation: fadeInOut 5s linear infinite; /* Added fadeInOut animation */
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            background: linear-gradient(90deg, #33ccff, #ff6699, #ffcc00, #ff33cc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px #000000;
+            animation: fadeInOut 5s linear infinite; /* Added fadeInOut animation */
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
         }
 
         a {
@@ -34,6 +58,7 @@
             border-radius: 10px;
             box-shadow: 0 4px #999;
             transition: all 0.2s ease;
+            font-family: 'Press Start 2P', cursive;
         }
 
         a:hover {
@@ -46,11 +71,26 @@
             box-shadow: 0 2px #666;
             transform: translateY(4px);
         }
+        
     </style>
+ <audio id="background-music" autoplay loop>
+    <source src="/bgm.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+<script>
+    document.getElementById('background-music').volume = 1; // Set volume to 50%
+</script>
+
+    <!-- Redirect to login page after 3.5 seconds -->
+    <script type="text/javascript">
+        setTimeout(function(){
+            window.location.href = '/login';
+        }, 9000);
+    </script>
+
 </head>
 <body>
-    <h1>Welcome to the journey</h1>
+    <h1>Welcome to the Journey</h1>
     <h2>Get Started</h2>
-    <a href="/login">Login</a>
 </body>
 </html>

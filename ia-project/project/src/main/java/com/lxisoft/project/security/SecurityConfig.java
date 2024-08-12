@@ -30,14 +30,14 @@ public class SecurityConfig  {
             authz -> {
                     authz.requestMatchers("/").permitAll()
                     .requestMatchers("/admin/**").hasAuthority("ROLE_ADMIN")
-                    .requestMatchers("/user/*").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
+                    .requestMatchers("/user/**").hasAnyAuthority("ROLE_USER","ROLE_ADMIN")
                     .anyRequest().authenticated() ;
                      
             }
 
         ).formLogin( form -> 
             form.loginPage("/login")
-            .permitAll() )
+            .permitAll(true) )
             .logout( form -> 
             form.permitAll() 
          ).userDetailsService(userDetailsService);

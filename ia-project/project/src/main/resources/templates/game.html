@@ -1,92 +1,229 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Game Page</title>
+    <title>Game Map</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
         body {
-            background-color: #e8e8ef;
-            color: #f0f0f0;
+            background: url('image.jpg') no-repeat center center fixed; 
+            background-size: cover;
             font-family: 'Press Start 2P', cursive;
+            color: #ffffff;
             margin: 0;
             padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            height: 100vh;
+            justify-content: flex-start;
+            min-height: 100vh;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             margin-bottom: 20px;
             color: #ffcc00;
             text-shadow: 2px 2px #000000;
             text-align: center;
         }
 
-        .cell-container {
-            display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            gap: 10px;
+        .map-container {
+            position: relative;
+            width: 80%;
+            height: 70vh;
             margin-top: 20px;
         }
 
         .cell {
+            position: absolute;
             width: 80px;
             height: 80px;
-            background-color: #e3e3e8;
             border: 2px solid #ffcc00;
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #ffcc00;
-            font-size: 1.5em;
+            color: #ffffff;
+            font-size: 1.2em;
             transition: transform 0.2s ease, background-color 0.2s ease;
+            cursor: pointer;
+        }
+
+        .cell.locked {
+            background-color: #444;
+            color: #888;
+            border-color: #888;
+            cursor: not-allowed;
             position: relative;
         }
 
-        .cell:hover {
+        .cell.locked .lock-icon {
+            position: absolute;
+            font-size: 1.5em;
+            color: #ffcc00;
+        }
+
+        .cell:hover:not(.locked) {
             transform: scale(1.1);
-            background-color: #ffd633;
-            color: #0d0d2b;
         }
 
         .cell span {
             text-shadow: 1px 1px #000000;
         }
 
-        .question-container {
+        /* Custom Colors for Each Cell */
+        .cell:nth-child(1) { top: 10%; left: 10%; background-color: #1e90ff; }  /* Dodger Blue */
+        .cell:nth-child(2) { top: 20%; left: 25%; background-color: #32cd32; }  /* Lime Green */
+        .cell:nth-child(3) { top: 30%; left: 15%; background-color: #ff4500; }  /* Orange Red */
+        .cell:nth-child(4) { top: 40%; left: 30%; background-color: #9400d3; }  /* Dark Violet */
+        .cell:nth-child(5) { top: 50%; left: 20%; background-color: #ff1493; }  /* Deep Pink */
+        .cell:nth-child(6) { top: 60%; left: 35%; background-color: #ffd700; }  /* Gold */
+        .cell:nth-child(7) { top: 70%; left: 25%; background-color: #8a2be2; }  /* Blue Violet */
+        .cell:nth-child(8) { top: 80%; left: 40%; background-color: #00ced1; }  /* Dark Turquoise */
+        .cell:nth-child(9) { top: 70%; left: 55%; background-color: #ff6347; }  /* Tomato */
+        .cell:nth-child(10) { top: 60%; left: 65%; background-color: #7fff00; }  /* Chartreuse */
+        .cell:nth-child(11) { top: 50%; left: 55%; background-color: #dc143c; }  /* Crimson */
+        .cell:nth-child(12) { top: 40%; left: 70%; background-color: #00bfff; }  /* Deep Sky Blue */
+        .cell:nth-child(13) { top: 30%; left: 60%; background-color: #ff8c00; }  /* Dark Orange */
+        .cell:nth-child(14) { top: 20%; left: 75%; background-color: #6a5acd; }  /* Slate Blue */
+        .cell:nth-child(15) { top: 10%; left: 65%; background-color: #00fa9a; }  /* Medium Spring Green */
+        .cell:nth-child(16) { top: 20%; left: 80%; background-color: #db7093; }  /* Pale Violet Red */
+        .cell:nth-child(17) { top: 30%; left: 90%; background-color: #4682b4; }  /* Steel Blue */
+        .cell:nth-child(18) { top: 40%; left: 85%; background-color: #ff69b4; }  /* Hot Pink */
+        .cell:nth-child(19) { top: 50%; left: 95%; background-color: #cd5c5c; }  /* Indian Red */
+        .cell:nth-child(20) { top: 60%; left: 90%; background-color: #20b2aa; }  /* Light Sea Green */
+
+        .modal {
             display: none;
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #e1e1ea;
-            padding: 10px;
-            border: 2px solid #ffcc00;
-            width: 200px;
-            z-index: 10;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding-top: 60px;
         }
 
-        .cell:hover .question-container {
-            display: block;
+        .modal-content {
+            background-color: #2a2b38;
+            margin: 5% auto;
+            padding: 20px;
+            border: 2px solid #ffcc00;
+            width: 50%;
+            color: #ffffff;
+            border-radius: 10px;
+        }
+
+        .close {
+            color: #ffcc00;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #ffffff;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .question {
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        .question input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 10px;
+            font-size: 0.9em;
+            border: 1px solid #ffcc00;
+            border-radius: 5px;
+            background-color: #1d1f27;
+            color: #ffffff;
+        }
+
+        .question button {
+            background-color: #ffcc00;
+            color: #1d1f27;
+            padding: 8px 16px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .question button:hover {
+            background-color: #ffd633;
         }
     </style>
+
+<audio id="background-music" autoplay loop>
+    <source src="/bgm.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+<script>
+    document.getElementById('background-music').volume = 0.5; // Set volume to 50%
+</script>
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <h1>Game Page</h1>
-    <div class="cell-container">
-          <div th:each="cell : ${cells}" class="cell">
+    <h1>Game Map</h1>
+    <div class="map-container">
+        <div th:each="cell, iterStat : ${cells}" 
+             th:id="'cell-' + ${cell.id}" 
+             class="cell" 
+             th:classappend="${iterStat.index != 0 ? ' locked' : ''}" 
+             th:ondblclick="'unlockNextCell(' + ${cell.id} + '); showModal(' + ${cell.id} + ');'">
             <span th:text="${cell.name}"></span>
-            <div class="question-container">
-                <div th:each="question : ${cell.questions}">
-                    <p th:if="${question.trueFalseQuestion}" th:text="${question.trueFalseQuestion}"></p>
-                    <p th:if="${question.optionsQuestion}" th:text="${question.optionsQuestion}"></p>
-                </div>
-            </div>
+            <i class="fas fa-lock lock-icon" th:if="${iterStat.index != 0}"></i>
         </div>
     </div>
+
+    <div th:each="cell : ${cells}" th:id="'modal-' + ${cell.id}" class="modal">
+        <div class="modal-content">
+            <span class="close" th:onclick="'closeModal(' + ${cell.id} + ')'">&times;</span>
+            <h2 th:text="${cell.name}"></h2>
+            <form th:action="@{/submit}" method="post" th:onsubmit="'unlockNextCell(' + ${cell.id} + ');'">
+                <div th:each="question : ${cell.questions}" class="question">
+                    <p th:if="${question.trueFalseQuestion}" th:text="${question.trueFalseQuestion}"></p>
+                    <p th:if="${question.optionsQuestion}" th:text="${question.optionsQuestion}"></p>
+                    <input type="text" name="answer" placeholder="Your answer here" required/>
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function showModal(cellId) {
+            var cell = document.getElementById('cell-' + cellId);
+            if (!cell.classList.contains('locked')) {
+                document.getElementById('modal-' + cellId).style.display = 'block';
+            }
+        }
+
+        function closeModal(cellId) {
+            document.getElementById('modal-' + cellId).style.display = 'none';
+        }
+
+        function unlockNextCell(currentCellId) {
+            var currentCell = document.getElementById('cell-' + currentCellId);
+            var nextCell = currentCell.nextElementSibling;
+
+            while (nextCell && !nextCell.classList.contains('cell')) {
+                nextCell = nextCell.nextElementSibling;
+            }
+
+            if (nextCell) {
+                nextCell.classList.remove('locked');
+            }
+        }
+    </script>
 </body>
 </html>
