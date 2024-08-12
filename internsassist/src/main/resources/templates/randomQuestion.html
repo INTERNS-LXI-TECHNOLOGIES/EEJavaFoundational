@@ -98,18 +98,37 @@
 <body>
     <div class="container">
         <h2>Final Question for Cell <span th:text="${cellNumber}"></span></h2>
-        <p th:text="${finalQuestion.text}"></p>
 
-        <!-- Display the question texts -->
         <form class="answer-form" th:action="@{/checkFinalAnswer}" method="post">
             <input type="hidden" name="cellNumber" th:value="${cellNumber}" />
-            <input type="text" name="userAnswer" placeholder="Your Answer" required>
-            <input type="hidden" name="correctAnswer" th:value="${finalQuestion.correctAnswer}" />
+
+            <!-- Display the appropriate input field based on the question type -->
+            <div th:if="${textQuestion != null}">
+                <p th:text="${textQuestion.text}"></p>
+                <input type="text" name="userAnswer" placeholder="Your Answer" required>
+            </div>
+
+            <div th:if="${booleanQuestion != null}">
+                <p th:text="${booleanQuestion.text}"></p>
+                <select name="userAnswer" required>
+                    <option value="true">True</option>
+                    <option value="false">False</option>
+                </select>
+            </div>
+
+            <div th:if="${mcqQuestion != null}">
+                <p th:text="${mcqQuestion.text}"></p>
+                <div th:each="option : ${#strings.split(mcqQuestion.options, ',')}">
+                    <input type="radio" name="userAnswer" th:value="${option}" required>
+                    <label th:text="${option}"></label><br>
+                </div>
+            </div>
+
+            <input type="hidden" name="correctAnswer" th:value="${mcqQuestion?.correctAnswer ?: booleanQuestion?.correctAnswer ?: textQuestion?.correctAnswer}" />
             <input type="submit" value="Submit Answer">
         </form>
-
-        <!-- Display the result message if available -->
-        <p class="result" th:text="${result}" th:if="${result}"></p>
     </div>
 </body>
+
+
 </html>

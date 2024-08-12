@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Three-Part Page with Questions</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #1f1c2c, #928DAB);
+            color: #fff;
+        }
+        .container {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+        .upper-part {
+            background: linear-gradient(135deg, #f8a5c2, #f9ca24);
+            padding: 20px;
+            border-bottom: 2px solid #f39c12;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+        }
+        .row {
+            background: #2f3640;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        h2 {
+            color: #f39c12;
+            margin: 0 0 10px;
+        }
+        p {
+            margin: 0 0 10px;
+        }
+        .answer-group {
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .answer-group input[type="text"], .answer-group input[type="radio"] {
+            margin-right: 10px;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .answer-group input[type="text"] {
+            background: #e1e8f0;
+            color: #333;
+        }
+        .answer-group input[type="radio"] {
+            background: #f39c12;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        ul li input[type="radio"] {
+            accent-color: #f39c12;
+        }
+        .middle-part, .lower-part {
+            padding: 20px;
+            background: #2f3640;
+            border-top: 2px solid #f39c12;
+        }
+        .middle-part h2, .lower-part h3 {
+            color: #f39c12;
+        }
+        .submit-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #e1e8f0;
+            color: #333;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        .submit-button:hover {
+            background: #f39c12;
+            color: #fff;
+        }
+    </style>
+      <script>
+        // Redirect to the questions page after 8 seconds
+        setTimeout(function() {
+            window.location.href = '/questions?cellNumber=1'; // Update the URL to match your questions page
+        }, 3000);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <!-- Upper Part -->
+        <div class="upper-part">
+            <form th:action="@{/checkAnswer}" method="post">
+                <div class="content">
+                    <!-- One Word Question Row -->
+                    <div class="row">
+                        <h2>One Word Question</h2>
+                        <div th:if="${userAnswerOneWord != null}">
+                            <p th:text="'Your Answer: ' + ${userAnswerOneWord}"></p>
+                            <p th:text="'Correct Answer: ' + ${correctAnswerOneWord}"></p>
+                        </div>
+                    </div>
+                    
+                    <!-- Multiple Choice Question Row -->
+                    <div class="row">
+                        <h2>Multiple Choice Question</h2>
+                        <div th:if="${userAnswerMultipleChoice != null}">
+                            <p>Your Answer: <span th:text="${userAnswerMultipleChoice}"></span></p>
+                            <p>Correct Answer: <span th:text="${correctAnswerMultipleChoice}"></span></p>
+                        </div>
+                    </div>
+                    
+                    <!-- True/False Question Row -->
+                    <div class="row">
+                        <h2>True/False Question</h2>
+                        <div th:if="${userAnswerTrueFalse != null}">
+                            <p>Your Answer: <span th:text="${userAnswerTrueFalse}"></span></p>
+                            <p>Correct Answer: <span th:text="${correctAnswerTrueFalse}"></span></p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

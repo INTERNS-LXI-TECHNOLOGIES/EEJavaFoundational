@@ -1,5 +1,6 @@
 package com.lxisoft.internsassist;
 
+import java.util.Arrays;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -39,6 +40,9 @@ public class Question {
     }
 
 private String optionss;
+public List<String> getOptions() {
+    return Arrays.asList(optionss.split(","));
+}
     public Boolean getIsTrue() {
         return isTrue;
     }
@@ -118,9 +122,7 @@ private String optionss;
         this.optionsQuestion = optionsQuestion;
     }
 
-    public List<String> getOptions() {
-        return options;
-    }
+  
 
     public void setOptions(List<String> options) {
         this.options = options;

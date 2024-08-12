@@ -1,107 +1,218 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Question for Cell</title>
+    <meta charset="UTF-8">
+    <title>Gaming UI</title>
     <style>
         body {
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            font-family: 'Press Start 2P', cursive;
-            background: linear-gradient(135deg, #ff5f6d, #ffc371);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a982a);
             color: #fff;
+            overflow: hidden;
         }
         .container {
-            width: 90%;
-            max-width: 800px;
+            width: 80%;
+            margin: 0 auto;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .upper-part, .lower-part {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        .upper-part {
             background: rgba(0, 0, 0, 0.8);
-            border-radius: 16px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            padding: 30px;
-            text-align: center;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            animation: glow 1.5s ease-in-out infinite alternate;
         }
-        h2 {
-            margin-top: 0;
-            font-size: 2em;
-            color: #ffeb3b;
-            border-bottom: 3px solid #ffeb3b;
-            padding-bottom: 10px;
+        .question-box {
+            background: #2b2d2f;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            width: 30%;
+            box-sizing: border-box;
+            transition: transform 0.3s ease, background 0.3s ease;
         }
-        p {
+        .question-box:hover {
+            transform: scale(1.05);
+            background: #3c3e42;
+        }
+        .question-box h2 {
+            color: #ffcc00;
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+        }
+        .question-box p {
+            margin: 0;
             font-size: 1.2em;
-            margin: 15px 0;
-            color: #ffeb3b;
-        }
-        .answer-form {
-            margin-top: 20px;
         }
         .answer-group {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
+            flex-direction: column;
+            gap: 10px;
         }
-        input[type="text"] {
-            font-size: 1.2em;
+        .answer-group input[type="text"], .answer-group input[type="radio"] {
             padding: 10px;
-            margin-right: 10px;
-            border: 2px solid #ffeb3b;
-            border-radius: 8px;
-            background: #333;
-            color: #fff;
-            flex-grow: 1;
+            border: none;
+            border-radius: 10px;
         }
-        input[type="submit"] {
-            font-size: 1.2em;
-            padding: 10px 20px;
-            background-color: #ffeb3b;
+        .answer-group input[type="text"] {
+            background: #e0e4e8;
+            color: #333;
+        }
+        .answer-group input[type="radio"] {
+            background: #ffcc00;
+        }
+        .middle-part {
+            width: 100%;
+            max-width: 80%;
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+        .middle-part::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255, 204, 0, 0.2) 0%, rgba(255, 204, 0, 0) 70%);
+            border-radius: 15px;
+            z-index: -1;
+        }
+        .middle-part h2 {
+            color: #ffcc00;
+            margin: 0;
+            font-size: 2em;
+            text-shadow: 0 0 10px rgba(255, 204, 0, 0.8);
+        }
+        .lower-part {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 2px solid #ffcc00;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+        }
+        .submit-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: #ffcc00;
             color: #333;
             border: none;
-            border-radius: 8px;
+            border-radius: 10px;
             cursor: pointer;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.1em;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
         }
-        input[type="submit"]:hover {
-            background-color: #ffd700;
+        .submit-button:hover {
+            background: #e6b800;
             transform: scale(1.05);
+        }
+        .submit-button:disabled {
+            background: #b3b3b3;
+            cursor: not-allowed;
+        }
+        @keyframes glow {
+            0% { text-shadow: 0 0 5px rgba(255, 204, 0, 0.6); }
+            100% { text-shadow: 0 0 20px rgba(255, 204, 0, 0.8); }
         }
         .emoji {
             font-size: 1.5em;
-            margin-left: 10px;
-        }
-        @font-face {
-            font-family: 'Press Start 2P';
-            src: url('https://fonts.gstatic.com/s/pressstart2p/v9/e3t4euGcTc3bjGM8AUChkIiHR3kYhVAnMtyo3LWOe5U.woff2') format('woff2');
+            margin-right: 10px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h2>Questions for Cell <span th:text="${cellNumber}"></span></h2>
-        <form class="answer-form" th:action="@{/checkAnswer}" method="post">
-            <div class="question-section">
-                <h3>One-Word Question</h3>
-                <p th:text="${oneWordQuestion.text}"></p>
-                <div class="answer-group">
-                    <input type="text" name="userAnswerOneWord" placeholder="Your Answer" required>
+        <!-- Upper Part -->
+        <form th:action="@{/checkAnswer}" method="post">
+            <div class="upper-part">
+                <div class="question-box">
+                    <h2><span class="emoji">📝</span>One Word Question</h2>
+                    <p th:text="${oneWordQuestion.text}"></p>
+                    <div class="answer-group">
+                        <input type="text" name="userAnswerOneWord" placeholder="Your Answer" th:value="${session.userAnswerOneWord}" th:disabled="${session.questionsLocked}" required />
+                        <input type="hidden" name="correctAnswerOneWord" th:value="${oneWordQuestion.correctAnswer}" />
+                    </div>
+                </div>
+
+                <div class="question-box">
+                    <h2><span class="emoji">🗳️</span>Multiple Choice Question</h2>
+                    <p th:text="${multipleChoiceQuestion.text}"></p>
+                    <ul>
+                        <li th:each="option : ${multipleChoiceQuestion.getOptions()}">
+                            <input type="radio" th:name="'userAnswerMultipleChoice'" th:value="${option}" th:checked="${option == session.userAnswerMultipleChoice}" th:disabled="${session.questionsLocked}" />
+                            <label th:text="${option}"></label>
+                        </li>
+                    </ul>
+                    <input type="hidden" name="correctAnswerMultipleChoice" th:value="${multipleChoiceQuestion.correctAnswer}" />
+                </div>
+
+                <div class="question-box">
+                    <h2><span class="emoji">✅</span>True/False Question</h2>
+                    <p th:text="${trueFalseQuestion.text}"></p>
+                    <div class="answer-group">
+                        <input type="radio" name="userAnswerTrueFalse" value="true" id="true" th:checked="${session.userAnswerTrueFalse == 'true'}" th:disabled="${session.questionsLocked}">
+                        <label for="true">True</label>
+                        <input type="radio" name="userAnswerTrueFalse" value="false" id="false" th:checked="${session.userAnswerTrueFalse == 'false'}" th:disabled="${session.questionsLocked}">
+                        <label for="false">False</label>
+                        <input type="hidden" name="correctAnswerTrueFalse" th:value="${trueFalseQuestion.correctAnswer}" />
+                    </div>
                 </div>
             </div>
-
-            <div class="question-section">
-                <h3>True/False Question</h3>
-                <p th:text="${trueFalseQuestion.questionText}"></p>
-                <div class="answer-group">
-                    <input type="radio" name="userAnswerTrueFalse" value="true" required> True
-                    <input type="radio" name="userAnswerTrueFalse" value="false" required> False
-                </div>
-            </div>
-
-            <input type="submit" value="Submit Answer">
+            <input class="submit-button" type="submit" th:disabled="${session.questionsLocked}" value="Submit Answers">
         </form>
+
+        <!-- Middle Part -->
+        <div class="middle-part">
+            <h2><span class="emoji">🎲</span>Cell Number: <span th:text="${cellNumber}"></span></h2>
+        </div>
+
+        <!-- Lower Part -->
+        <div class="lower-part">
+            <form class="answer-form" th:action="@{/checkFinalAnswer}" method="post">
+                <input type="hidden" name="cellNumber" th:value="${cellNumber}" />
+
+                <!-- Display the appropriate input field based on the question type -->
+                <div th:if="${textQuestion != null}">
+                    <p th:text="${textQuestion.text}"></p>
+                    <input type="text" name="userAnswer" placeholder="Your Answer" required th:disabled="${session.lowerPartLocked}" />
+                </div>
+
+                <div th:if="${booleanQuestion != null}">
+                    <p th:text="${booleanQuestion.text}"></p>
+                    <select name="userAnswer" required th:disabled="${session.lowerPartLocked}">
+                        <option value="true" th:selected="${session.userAnswer == 'true'}">True</option>
+                        <option value="false" th:selected="${session.userAnswer == 'false'}">False</option>
+                    </select>
+                </div>
+
+                <input class="submit-button" type="submit" value="Submit Final Answer" th:disabled="${session.lowerPartLocked}" />
+            </form>
+        </div>
     </div>
 </body>
-
 </html>
