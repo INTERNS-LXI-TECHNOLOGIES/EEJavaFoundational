@@ -1,7 +1,6 @@
 package com.lxisoft.taskgame.model;
 
 import java.util.List;
-import java.util.Set;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -16,11 +15,12 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class Cell {
 
+   //INSTANCE VARIABLES
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
-    @OneToMany(mappedBy="cell")
+    @ManyToMany(mappedBy="cell")
     private List <Player> players;
 
     @ManyToMany(fetch = FetchType.EAGER)
@@ -38,6 +38,11 @@ public class Cell {
         )
     private List<QuestionBank>finalQB;
 
+    @OneToMany(mappedBy = "cell")
+    private List<PlayerCellQuestion> playerCellQuestions;
+
+
+    //GETTERS AND SETTERS
     public Long getId() {
         return id;
     }
@@ -54,17 +59,6 @@ public class Cell {
         this.players = players;
     }
 
-    @Override
-    public boolean equals(Object obj) {
-        Cell cell = (Cell)obj;
-        if(this.getId().equals(cell.getId())){
-            return true;
-        }
-        else{
-            return false;
-        }
-    }
-
     public List<QuestionBank> getPrepQB() {
         return prepQB;
     }
@@ -79,6 +73,27 @@ public class Cell {
 
     public void setFinalQB(List<QuestionBank> finalQB) {
         this.finalQB = finalQB;
+    }
+
+    public List<PlayerCellQuestion> getPlayerCellQuestions() {
+        return playerCellQuestions;
+    }
+
+    public void setPlayerCellQuestions(List<PlayerCellQuestion> playerCellQuestions) {
+        this.playerCellQuestions = playerCellQuestions;
+    }
+
+
+    
+    @Override
+    public boolean equals(Object obj) {
+        Cell cell = (Cell)obj;
+        if(this.getId().equals(cell.getId())){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
 }

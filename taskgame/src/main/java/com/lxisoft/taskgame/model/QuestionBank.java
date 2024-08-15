@@ -46,6 +46,10 @@ public class QuestionBank{
     @ManyToMany(mappedBy="finalQB")
     private List <Cell>finalCells;
 
+    @OneToMany(mappedBy = "questionBank")
+    private List<PlayerCellQuestion> playerCellQuestions;
+
+
     public Long getId() {
         return id;
     }
@@ -135,6 +139,14 @@ public class QuestionBank{
 
     public void setCells(List<Cell> cells) {
         this.cells = cells;
+    }
+
+    public List<PlayerCellQuestion> getPlayerCellQuestions() {
+        return playerCellQuestions;
+    }
+
+    public void setPlayerCellQuestions(List<PlayerCellQuestion> playerCellQuestions) {
+        this.playerCellQuestions = playerCellQuestions;
     }
     
 }

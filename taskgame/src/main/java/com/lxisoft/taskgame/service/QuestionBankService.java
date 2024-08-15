@@ -43,4 +43,10 @@ public class QuestionBankService{
             return new QuestionBank();
         }
     }
+
+    public boolean checkingTheAnswer(Long id,String answer){
+        Optional <QuestionBank> qbOptional = qbRepoitory.findById(id);
+        QuestionBank thisQuestion = qbOptional.get();
+        return thisQuestion.getAnswer().equals(answer);
+    }
 }

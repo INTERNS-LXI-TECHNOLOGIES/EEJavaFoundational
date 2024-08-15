@@ -3,6 +3,8 @@ package com.lxisoft.taskgame.service;
 import java.util.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -34,9 +36,23 @@ public class UserService{
         userRepository.save(newUser);
    }
 
-    public User getUserByUserName(String name){
+    public User getUserByUserName(String userName){
+        return userRepository.findByUserName(userName);
+   }
+
+    public User getCurrentUser(){
+        String name=getCurrentUserName();
         return userRepository.findByUserName(name);
     }
 
+    public String getCurrentUserName(){
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if(authentication!=null){
+            return authentication.getName();
+        }
+        else{
+            return "no user found";
+        }
+    }
   
 }

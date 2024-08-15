@@ -1,7 +1,5 @@
 package com.lxisoft.taskgame.service;
 
-import java.util.Collections;
-import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +9,6 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.lxisoft.taskgame.model.Role;
 import com.lxisoft.taskgame.model.User;
 import com.lxisoft.taskgame.repository.UserRepository;
 
