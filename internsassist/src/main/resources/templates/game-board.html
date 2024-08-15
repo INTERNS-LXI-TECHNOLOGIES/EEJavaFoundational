@@ -89,24 +89,30 @@
             height: 100%;
             padding: 10px;
         }
-        .cell, .call {
+        .cell {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             background: #007dff;
             border: 2px solid #00c6ff;
             color: #fff;
-            font-size: 1.5em;
+            font-size: 0.8em;
             transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
             position: relative;
-            border-radius: 8px;
+            border-radius: 6px;
             text-decoration: none;
+            padding: 0px;
+            box-sizing: border-box;
         }
-        .cell:hover, .call:hover {
+        .cell:hover {
             background: #00c6ff;
             transform: scale(1.05);
             cursor: pointer;
             box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+        }
+        .cell input[type="checkbox"] {
+            margin: 2px;
         }
         .player {
             margin: 10px 0;
@@ -158,106 +164,611 @@
             </div>
             <div class="boardcontainerforboard">
                 <div class="board">
-                    <a th:href="@{/questions(cellNumber=1)}" class="cell">1<span class="emoji">🔵</span></a>
-                    <a th:href="@{/questions(cellNumber=2)}" class="cell">2<span class="emoji">🟢</span></a>
-                    <a th:href="@{/questions(cellNumber=3)}" class="cell">3<span class="emoji">🔴</span></a>
-                    <a th:href="@{/questions(cellNumber=4)}" class="cell">4<span class="emoji">🟡</span></a>
-                    <a th:href="@{/questions(cellNumber=5)}" class="cell">5<span class="emoji">🔵</span></a>
-                    <a th:href="@{/questions(cellNumber=6)}" class="cell">6<span class="emoji">🟢</span></a>
-                    <a th:href="@{/questions(cellNumber=7)}" class="cell">7<span class="emoji">🔴</span></a>
-                    <a th:href="@{/questions(cellNumber=8)}" class="cell">8<span class="emoji">🟡</span></a>
-                    <a th:href="@{/questions(cellNumber=9)}" class="cell">9<span class="emoji">🔵</span></a>
-                    <a th:href="@{/questions(cellNumber=10)}" class="cell">10<span class="emoji">🟢</span></a>
-                    <a th:href="@{/questions(cellNumber=11)}" class="cell">11<span class="emoji">🔴</span></a>
-                    <a th:href="@{/questions(cellNumber=12)}" class="cell">12<span class="emoji">🟡</span></a>
-                    <a th:href="@{/questions(cellNumber=13)}" class="cell">13<span class="emoji">🔵</span></a>
-                    <a th:href="@{/questions(cellNumber=14)}" class="cell">14<span class="emoji">🟢</span></a>
-                    <a th:href="@{/questions(cellNumber=15)}" class="cell">15<span class="emoji">🔴</span></a>
-                    <a th:href="@{/questions(cellNumber=16)}" class="cell">16<span class="emoji">🟡</span></a>
-                    <a th:href="@{/questions(cellNumber=17)}" class="cell">17<span class="emoji">🔵</span></a>
-                    <a th:href="@{/questions(cellNumber=18)}" class="cell">18<span class="emoji">🟢</span></a>
-                    <a th:href="@{/questions(cellNumber=19)}" class="cell">19<span class="emoji">🔴</span></a>
-                    <a th:href="@{/questions(cellNumber=20)}" class="cell">20<span class="emoji">🟡</span></a>
-                    <div class="call">21<span class="emoji">🔵</span></div>
-                    <div class="call">22<span class="emoji">🟢</span></div>
-                    <div class="call">23<span class="emoji">🔴</span></div>
-                    <div class="call">24<span class="emoji">🟡</span></div>
-                    <div class="call">25<span class="emoji">🔵</span></div>
-                    <div class="call">26<span class="emoji">🟢</span></div>
-                    <div class="call">27<span class="emoji">🔴</span></div>
-                    <div class="call">28<span class="emoji">🟡</span></div>
-                    <div class="call">29<span class="emoji">🔵</span></div>
-                    <div class="call">30<span class="emoji">🟢</span></div>
-                    <div class="call">31<span class="emoji">🔴</span></div>
-                    <div class="call">32<span class="emoji">🟡</span></div>
-                    <div class="call">33<span class="emoji">🔵</span></div>
-                    <div class="call">34<span class="emoji">🟢</span></div>
-                    <div class="call">35<span class="emoji">🔴</span></div>
-                    <div class="call">36<span class="emoji">🟡</span></div>
-                    <div class="call">37<span class="emoji">🔵</span></div>
-                    <div class="call">38<span class="emoji">🟢</span></div>
-                    <div class="call">39<span class="emoji">🔴</span></div>
-                    <div class="call">40<span class="emoji">🟡</span></div>
-                    <div class="call">41<span class="emoji">🔵</span></div>
-                    <div class="call">42<span class="emoji">🟢</span></div>
-                    <div class="call">43<span class="emoji">🔴</span></div>
-                    <div class="call">44<span class="emoji">🟡</span></div>
-                    <div class="call">45<span class="emoji">🔵</span></div>
-                    <div class="call">46<span class="emoji">🟢</span></div>
-                    <div class="call">47<span class="emoji">🔴</span></div>
-                    <div class="call">48<span class="emoji">🟡</span></div>
-                    <div class="call">49<span class="emoji">🔵</span></div>
-                    <div class="call">50<span class="emoji">🟢</span></div>
-                    <div class="call">51<span class="emoji">🔴</span></div>
-                    <div class="call">52<span class="emoji">🟡</span></div>
-                    <div class="call">53<span class="emoji">🔵</span></div>
-                    <div class="call">54<span class="emoji">🟢</span></div>
-                    <div class="call">55<span class="emoji">🔴</span></div>
-                    <div class="call">56<span class="emoji">🟡</span></div>
-                    <div class="call">57<span class="emoji">🔵</span></div>
-                    <div class="call">58<span class="emoji">🟢</span></div>
-                    <div class="call">59<span class="emoji">🔴</span></div>
-                    <div class="call">60<span class="emoji">🟡</span></div>
-                    <div class="call">61<span class="emoji">🔵</span></div>
-                    <div class="call">62<span class="emoji">🟢</span></div>
-                    <div class="call">63<span class="emoji">🔴</span></div>
-                    <div class="call">64<span class="emoji">🟡</span></div>
-                    <div class="call">65<span class="emoji">🔵</span></div>
-                    <div class="call">66<span class="emoji">🟢</span></div>
-                    <div class="call">67<span class="emoji">🔴</span></div>
-                    <div class="call">68<span class="emoji">🟡</span></div>
-                    <div class="call">69<span class="emoji">🔵</span></div>
-                    <div class="call">70<span class="emoji">🟢</span></div>
-                    <div class="call">71<span class="emoji">🔴</span></div>
-                    <div class="call">72<span class="emoji">🟡</span></div>
-                    <div class="call">73<span class="emoji">🔵</span></div>
-                    <div class="call">74<span class="emoji">🟢</span></div>
-                    <div class="call">75<span class="emoji">🔴</span></div>
-                    <div class="call">76<span class="emoji">🟡</span></div>
-                    <div class="call">77<span class="emoji">🔵</span></div>
-                    <div class="call">78<span class="emoji">🟢</span></div>
-                    <div class="call">79<span class="emoji">🔴</span></div>
-                    <div class="call">80<span class="emoji">🟡</span></div>
-                    <div class="call">81<span class="emoji">🔵</span></div>
-                    <div class="call">82<span class="emoji">🟢</span></div>
-                    <div class="call">83<span class="emoji">🔴</span></div>
-                    <div class="call">84<span class="emoji">🟡</span></div>
-                    <div class="call">85<span class="emoji">🔵</span></div>
-                    <div class="call">86<span class="emoji">🟢</span></div>
-                    <div class="call">87<span class="emoji">🔴</span></div>
-                    <div class="call">88<span class="emoji">🟡</span></div>
-                    <div class="call">89<span class="emoji">🔵</span></div>
-                    <div class="call">90<span class="emoji">🟢</span></div>
-                    <div class="call">91<span class="emoji">🔴</span></div>
-                    <div class="call">92<span class="emoji">🟡</span></div>
-                    <div class="call">93<span class="emoji">🔵</span></div>
-                    <div class="call">94<span class="emoji">🟢</span></div>
-                    <div class="call">95<span class="emoji">🔴</span></div>
-                    <div class="call">96<span class="emoji">🟡</span></div>
-                    <div class="call">97<span class="emoji">🔵</span></div>
-                    <div class="call">98<span class="emoji">🟢</span></div>
-                    <div class="call">99<span class="emoji">🔴</span></div>
-                    <div class="call">100<span class="emoji">🟡</span></div>
+                    <a th:href="@{/questions(cellNumber=1)}" class="cell">1
+                        <input type="checkbox" id="q1-1">
+                        <input type="checkbox" id="q1-2">
+                        <input type="checkbox" id="q1-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=2)}" class="cell">2
+                        <input type="checkbox" id="q2-1">
+                        <input type="checkbox" id="q2-2">
+                        <input type="checkbox" id="q2-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=3)}" class="cell">3
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=4)}" class="cell">4
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=5)}" class="cell">5
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=6)}" class="cell">6
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=7)}" class="cell">7
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=8)}" class="cell">8
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=9)}" class="cell">9
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=10)}" class="cell">10
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=11)}" class="cell">11
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=12)}" class="cell">12
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=13)}" class="cell">13
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                 
+                    <a th:href="@{/questions(cellNumber=14)}" class="cell">14
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=15)}" class="cell">15
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=16)}" class="cell">16
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=17)}" class="cell">17
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=18)}" class="cell">18
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=19)}" class="cell">19
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=20)}" class="cell">20
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=21)}" class="cell">21
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=22)}" class="cell">22
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=23)}" class="cell">23
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=24)}" class="cell">24
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=25)}" class="cell">25
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=26)}" class="cell">26
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=27)}" class="cell">27
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=28)}" class="cell">28
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=29)}" class="cell">29
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=30)}" class="cell">30
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=31)}" class="cell">31
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=32)}" class="cell">32
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=33)}" class="cell">33
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=34)}" class="cell">34
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=35)}" class="cell">35
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=36)}" class="cell">36
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=37)}" class="cell">37
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=38)}" class="cell">38
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=39)}" class="cell">39
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=40)}" class="cell">40
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=41)}" class="cell">41
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=42)}" class="cell">42
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=43)}" class="cell">43
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=44)}" class="cell">44
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=45)}" class="cell">45
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣v</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=46)}" class="cell">46
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=47)}" class="cell">47
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=48)}" class="cell">48
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=49)}" class="cell">49
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔴</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=50)}" class="cell">50
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟣</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=51)}" class="cell">51
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🔵</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=52)}" class="cell">52
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟢</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=53)}" class="cell">53
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=54)}" class="cell">54
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=55)}" class="cell">55
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=56)}" class="cell">56
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=57)}" class="cell">57
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=58)}" class="cell">58
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=59)}" class="cell">59
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=60)}" class="cell">60
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=61)}" class="cell">61
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=62)}" class="cell">62
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=63)}" class="cell">63
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=64)}" class="cell">64
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=65)}" class="cell">65
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=66)}" class="cell">66
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=67)}" class="cell">67
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                       <a th:href="@{/questions(cellNumber=68)}" class="cell">68
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=69)}" class="cell">69
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=70)}" class="cell">70
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=71)}" class="cell">71
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=72)}" class="cell">72
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=73)}" class="cell">73
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=74)}" class="cell">74
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=75)}" class="cell">75
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=76)}" class="cell">76
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=77)}" class="cell">77
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=78)}" class="cell">78
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=79)}" class="cell">79
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=80)}" class="cell">80
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=81)}" class="cell">81
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=82)}" class="cell">82
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=83)}" class="cell">83
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=84)}" class="cell">84
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=85)}" class="cell">85
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=86)}" class="cell">86
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=87)}" class="cell">87
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=88)}" class="cell">88
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=89)}" class="cell">89
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=90)}" class="cell">90
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=91)}" class="cell">91
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=92)}" class="cell">92
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=93)}" class="cell">93
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=94)}" class="cell">94
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=95)}" class="cell">95
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=96)}" class="cell">96
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=97)}" class="cell">97
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=98)}" class="cell">98
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <a th:href="@{/questions(cellNumber=99)}" class="cell">99
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+                    <!-- Add similar blocks for remaining cells -->
+                    <!-- ... -->
+                    <a th:href="@{/questions(cellNumber=100)}" class="cell">100
+                        <input type="checkbox" id="q100-1">
+                        <input type="checkbox" id="q100-2">
+                        <input type="checkbox" id="q100-3">
+                        <span class="emoji">🟡</span>
+                    </a>
+
+
                 </div>
             </div>
             <div class="rightnavig">Info <span class="emoji">ℹ️</span></div>
