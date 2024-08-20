@@ -12,8 +12,9 @@ import com.lxisoft.taskgame.model.Role;
 import com.lxisoft.taskgame.model.User;
 import com.lxisoft.taskgame.repository.RoleRepository;
 import com.lxisoft.taskgame.repository.UserRepository;
+import com.lxisoft.taskgame.service.QuestionBankService;
 
-//@Component
+@Component
 public class DataInitializer implements CommandLineRunner{
 
     @Autowired
@@ -22,10 +23,12 @@ public class DataInitializer implements CommandLineRunner{
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private QuestionBankService qbService;
+
     PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
-
-    public void run(String[] args){
+    public void run(String[] args) throws Exception{
 
         Role adminRole = new Role();
         adminRole.setName("admin");
@@ -51,6 +54,8 @@ public class DataInitializer implements CommandLineRunner{
         userRoles.add(userRole);
         userUser.setRole(userRoles);
         userRepository.save(userUser);
+
+        qbService.insertQbFromJsonFile("src/main/resources/json/qbdata.json");
 
     }
 }

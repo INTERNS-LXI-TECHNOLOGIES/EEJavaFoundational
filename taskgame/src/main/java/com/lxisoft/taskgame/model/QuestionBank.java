@@ -46,6 +46,14 @@ public class QuestionBank{
     @ManyToMany(mappedBy="finalQB")
     private List <Cell>finalCells;
 
+    public List<Cell> getFinalCells() {
+        return finalCells;
+    }
+
+    public void setFinalCells(List<Cell> finalCells) {
+        this.finalCells = finalCells;
+    }
+
     @OneToMany(mappedBy = "questionBank")
     private List<PlayerCellQuestion> playerCellQuestions;
 
