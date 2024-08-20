@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questions</title>
+    <style>
+        /* Style for the question types */
+        .question-box {
+            padding: 20px;
+            margin: 10px;
+            background-color: lightgreen;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose Question Type</h1>
+    <div class="container">
+        <div class="question-box" onclick="redirectToQuestion(1)">
+            Multiple Choice Questions
+        </div>
+        <div class="question-box" onclick="redirectToTrueFalseQuestions()">
+            True/False Questions
+        </div>
+        <div class="question-box" onclick="redirectToRealTest()">
+            Real Test
+        </div>
+    </div>
+
+    <script>
+        // Function to handle redirection to the multiple-choice question with a specific ID
+        function redirectToQuestion(id) {
+            window.location.href = '/questions/multiple-choice/' + id;
+        }
+
+        // Function to handle redirection to True/False questions
+        function redirectToTrueFalseQuestions() {
+            const cellId = getParameterByName('cellId');
+            window.location.href = '/questions/true-false?cellId=' + cellId;
+        }
+
+        // Function to handle redirection to Real Test
+        function redirectToRealTest() {
+            const cellId = getParameterByName('cellId');
+            window.location.href = '/questions/real-test?cellId=' + cellId;
+        }
+
+        // Function to get the cellId from the URL
+        function getParameterByName(name) {
+            const url = window.location.href;
+            name = name.replace(/[\[\]]/g, "\\$&");
+            const regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+    </script>
+</body>
+</html>

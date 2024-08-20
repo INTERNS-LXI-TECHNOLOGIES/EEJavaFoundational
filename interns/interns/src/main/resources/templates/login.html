@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Black background */
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            background: rgba(31, 37, 49, 0.85); /* Transparent dark background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8); /* Increased shadow intensity */
+            animation: fadeIn 2s ease-in-out;
+            z-index: 2; /* Ensure it stays above the stars */
+        }
+        .container h1 {
+            margin: 0;
+            font-size: 2.5em; /* Increased font size */
+            color: #ff6f61; /* Bright color for title */
+            animation: bounceIn 1s ease-in-out, flicker 1s infinite alternate;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        label {
+            font-size: 1.2em;
+            margin-bottom: 5px;
+        }
+        input {
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            font-size: 1em;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+        button {
+            background-color: #ff6f61;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        button:hover {
+            background-color: #e55e5e;
+            transform: scale(1.05);
+        }
+        a {
+            display: block;
+            margin-top: 20px;
+            color: #ff6f61;
+            text-decoration: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #e55e5e;
+            text-shadow: 0 0 3px rgba(255, 105, 97, 0.5); /* Reduced shadow */
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            20% { opacity: 0.9; }
+            40% { opacity: 0.7; }
+            60% { opacity: 0.9; }
+            80% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: transparent url('https://www.transparenttextures.com/patterns/asfalt-light.png') repeat;
+            z-index: 1;
+            animation: starfield 30s linear infinite;
+            opacity: 0.7;
+        }
+        @keyframes starfield {
+            from { transform: translateY(0); }
+            to { transform: translateY(-1000px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <h1>Login</h1>
+        <form th:action="@{/login}" method="post">
+            <div>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit">Login</button>
+            </div>
+        </form>
+        <a th:href="@{/signup}">Sign Up</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - Interns Assist</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000; /* Black background */
+              background-image: url('https://i.gifer.com/Rn81.gif');
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            overflow: hidden;
+            position: relative;
+        }
+        .container {
+            text-align: center;
+            background: rgba(31, 37, 49, 0.85); /* Transparent dark background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8); /* Increased shadow intensity */
+            animation: fadeIn 2s ease-in-out; /* Fade-in animation */
+            z-index: 2; /* Ensure it stays above the stars */
+        }
+        .container h1 {
+            margin: 0;
+            font-size: 40px; /* Increased font size */
+            animation: bounceIn 1s ease-in-out, flicker 1s infinite alternate; /* Flicker effect */
+        }
+        .container p {
+            margin: 20px 0;
+            font-size: 20px; /* Increased font size */
+            animation: fadeIn 3s ease-in-out;
+        }
+        .progress-bar {
+            width: 80%;
+            background-color: #444b59;
+            border-radius: 5px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .progress {
+            width: 0;
+            height: 20px;
+            background-color: #4caf50;
+            border-radius: 5px;
+            animation: load 4s forwards; /* Load animation */
+        }
+        .badge {
+            display: inline-block;
+            margin: 20px 10px;
+            padding: 10px;
+            background-color: #e91e63;
+            color: white;
+            border-radius: 50%;
+            font-size: 16px; /* Increased font size */
+            animation: popIn 1s ease-in-out;
+        }
+        button {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            animation: pulse 1s infinite;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.1); opacity: 1; }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); }
+        }
+        @keyframes load {
+            from { width: 0; }
+            to { width: 100%; }
+        }
+        @keyframes popIn {
+            0% { transform: scale(0); opacity: 0; }
+            80% { transform: scale(1.2); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        @keyframes flicker {
+            0% { opacity: 1; }
+            20% { opacity: 0.9; }
+            40% { opacity: 0.7; }
+            60% { opacity: 0.9; }
+            80% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: transparent url('https://www.transparenttextures.com/patterns/asfalt-light.png') repeat;
+            z-index: 1;
+            animation: starfield 30s linear infinite; /* Starfield effect */
+            opacity: 0.7; /* Increased opacity */
+        }
+        @keyframes starfield {
+            from { transform: translateY(0); }
+            to { transform: translateY(-1000px); }
+        }
+        audio {
+            display: none;
+        }
+    </style>
+    <script>
+        function startGame() {
+            window.location.href = "/game"; // Redirect to game page
+        }
+    </script>
+</head>
+<body>
+    <div class="stars"></div>
+    <div class="container">
+        <h1>Let's get started with some fun!</h1>
+        <p></p>
+       
+        <button onclick="startGame()">Let's Start</button>
+        <audio autoplay>
+            <source src="/audio/background-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</body>
+</html>
