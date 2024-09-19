@@ -1,0 +1,44 @@
+package com.surveyapp;
+
+import com.surveyapp.controller.*;
+import com.surveyapp.model.*;
+import com.surveyapp.view.SurveyView;
+import java.util.*;
+import com.surveyapp.exception.SurveyException;
+
+public class SurveyApp {
+    public static void main(String[] args) throws SurveyException {
+        // Create a view
+        SurveyView view = new SurveyView();
+        
+        // Create an empty array to hold survey data
+        Survey[] surveys = new Survey[10]; // can hold 10 surveys initially
+		
+		EngineerController engineerController = new EngineerController();
+		
+		SurveyController serveyController = new SurveyController(surveys, view);
+        
+		for(int i =0;i<surveys.length;i++)
+		{
+			Engineer engineer = new Engineer();
+			engineerController.addEngineer(engineer);
+			
+			List<String> skillgaps = engineerController.addSkillGaps();
+			
+			// Example of creating a new survey object
+			Survey survey = new Survey(engineer, skillgaps);
+			
+			serveyController.addSurvey(survey);
+			
+			surveys[i] = survey ;
+			
+			//view.displaySurveyDetails(survey);
+		}
+        
+        // Create controller
+        //SurveyController controller = new SurveyController();
+        
+        // Use controller to add and display surveys
+        serveyController.displaySurvey();
+    }
+}
