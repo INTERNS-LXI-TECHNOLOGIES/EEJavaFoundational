@@ -1,0 +1,52 @@
+package com.surveyapp.view;
+
+import com.surveyapp.model.Survey;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+import com.surveyapp.model.Engineer;
+
+public class SurveyView {
+
+    public Survey addData(Survey survey) {
+    Scanner scanner = new Scanner(System.in);
+
+    System.out.println("Enter the engineer name:");
+    String name = scanner.nextLine();
+    Engineer engineer = new Engineer();
+    engineer.setEngineerName(name);
+    survey.setEngineer(engineer);  
+
+    List<String> engineerSkillgap = new ArrayList<>();
+    String continue1;
+
+    do {
+        System.out.println("Enter a skill gap:");
+        String skill = scanner.nextLine();
+        engineerSkillgap.add(skill);
+
+        System.out.println("Do you want to add another skill gap? (yes/no)");
+        continue1 = scanner.nextLine();
+
+    } while (continue1.equalsIgnoreCase("yes"));
+
+    survey.getEngineer().setSkillgap(engineerSkillgap);
+
+    return survey;
+}
+
+
+    public void displaySurveyDetails(Survey[] survey) {
+    for (Survey s : survey) {
+        if (s != null && s.getEngineer() != null) {
+            System.out.println(s.getEngineer().getEngineerName());
+			System.out.println(s.getEngineer().getSkillgap());
+        } else if (s == null) {
+            System.out.println("null.");
+        } else {
+            System.out.println("Engineer data is missing in the survey.");
+        }
+    }
+}
+
+}
